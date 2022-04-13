@@ -1,0 +1,31 @@
+# Nmap 7.91 scan initiated Wed Apr 13 10:15:45 2022 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln mos.esante.gouv.fr
+Nmap scan report for mos.esante.gouv.fr (31.15.30.112)
+Host is up (0.082s latency).
+rDNS record for 31.15.30.112: asip1.nexen.net
+Not shown: 997 filtered ports
+PORT    STATE  SERVICE  VERSION
+80/tcp  open   http
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.0 301 Moved Permanently
+|     Content-length: 0
+|     Location: https://31.15.30.112/nice%20ports%2C/Tri%6Eity.txt%2ebak
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.0 301 Moved Permanently
+|     Content-length: 0
+|_    Location: https://31.15.30.112/
+113/tcp closed ident
+443/tcp open   ssl/http Apache httpd
+|_http-server-header: Apache
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.91%I=7%D=4/13%Time=6256A2DF%P=x86_64-alpine-linux-musl%r
+SF:(GetRequest,56,"HTTP/1\.0\x20301\x20Moved\x20Permanently\r\nContent-len
+SF:gth:\x200\r\nLocation:\x20https://31\.15\.30\.112/\r\n\r\n")%r(HTTPOpti
+SF:ons,56,"HTTP/1\.0\x20301\x20Moved\x20Permanently\r\nContent-length:\x20
+SF:0\r\nLocation:\x20https://31\.15\.30\.112/\r\n\r\n")%r(FourOhFourReques
+SF:t,79,"HTTP/1\.0\x20301\x20Moved\x20Permanently\r\nContent-length:\x200\
+SF:r\nLocation:\x20https://31\.15\.30\.112/nice%20ports%2C/Tri%6Eity\.txt%
+SF:2ebak\r\n\r\n");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Apr 13 10:17:29 2022 -- 1 IP address (1 host up) scanned in 103.54 seconds
