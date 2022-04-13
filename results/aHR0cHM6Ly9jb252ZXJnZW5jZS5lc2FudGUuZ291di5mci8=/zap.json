@@ -1,0 +1,940 @@
+{
+	"@version": "2.11.1",
+	"@generated": "Wed, 13 Apr 2022 10:30:23",
+	"site":[ 
+		{
+			"@name": "https://convergence.esante.gouv.fr",
+			"@host": "convergence.esante.gouv.fr",
+			"@port": "443",
+			"@ssl": "true",
+			"alerts": [ 
+				{
+					"pluginid": "10038",
+					"alertRef": "10038",
+					"alert": "Content Security Policy (CSP) Header Not Set",
+					"name": "Content Security Policy (CSP) Header Not Set",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medium (High)",
+					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+					"instances":[ 
+						{
+							"uri": "https://convergence.esante.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/acces-rapide-documentation-industrielle/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/acces-rapide-documentation-industrielle/es/default/files/media_entity/documents/ANS_Convergence_Industriels_QuestionsFrequentes_v0.6_20211223.pdf/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/conditions-generales-dutilisation/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/login/?next=/home/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/mentions-legales/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-industrielle/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-mon-espace-sante/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-regionale/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/robots.txt/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/sitemap.xml/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						}
+					],
+					"count": "11",
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header, to achieve optimal browser support: \"Content-Security-Policy\" for Chrome 25+, Firefox 23+ and Safari 7+, \"X-Content-Security-Policy\" for Firefox 4.0+ and Internet Explorer 10+, and \"X-WebKit-CSP\" for Chrome 14+ and Safari 6+.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10020",
+					"alertRef": "10020-2",
+					"alert": "Multiple X-Frame-Options Header Entries",
+					"name": "Multiple X-Frame-Options Header Entries",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>X-Frame-Options (XFO) headers were found, a response with multiple XFO header entries may not be predictably treated by all user-agents.</p>",
+					"instances":[ 
+						{
+							"uri": "https://convergence.esante.gouv.fr/",
+							"method": "GET",
+							"param": "X-Frame-Options",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/acces-rapide-documentation-industrielle/",
+							"method": "GET",
+							"param": "X-Frame-Options",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/accounts/reset/",
+							"method": "GET",
+							"param": "X-Frame-Options",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/conditions-generales-dutilisation/",
+							"method": "GET",
+							"param": "X-Frame-Options",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/login/?next=/home/",
+							"method": "GET",
+							"param": "X-Frame-Options",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/mentions-legales/",
+							"method": "GET",
+							"param": "X-Frame-Options",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/openid/createuser/",
+							"method": "GET",
+							"param": "X-Frame-Options",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/openid/deleteuser/",
+							"method": "GET",
+							"param": "X-Frame-Options",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/openid/getuser/",
+							"method": "GET",
+							"param": "X-Frame-Options",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-industrielle/",
+							"method": "GET",
+							"param": "X-Frame-Options",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-mon-espace-sante/",
+							"method": "GET",
+							"param": "X-Frame-Options",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-regionale/",
+							"method": "GET",
+							"param": "X-Frame-Options",
+							"attack": "",
+							"evidence": ""
+						}
+					],
+					"count": "12",
+					"solution": "<p>Ensure only a single X-Frame-Options header is present in the response.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://tools.ietf.org/html/rfc7034</p>",
+					"cweid": "1021",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "90022",
+					"alertRef": "90022",
+					"alert": "Application Error Disclosure",
+					"name": "Application Error Disclosure",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
+					"instances":[ 
+						{
+							"uri": "https://convergence.esante.gouv.fr/openid/updateuser/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "HTTP/1.1 500 Internal Server Error"
+						}
+					],
+					"count": "1",
+					"solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
+					"otherinfo": "",
+					"reference": "",
+					"cweid": "200",
+					"wascid": "13",
+					"sourceid": "113"
+				},
+				{
+					"pluginid": "10054",
+					"alertRef": "10054",
+					"alert": "Cookie without SameSite Attribute",
+					"name": "Cookie without SameSite Attribute",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>A cookie has been set without the SameSite attribute, which means that the cookie can be sent as a result of a 'cross-site' request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks.</p>",
+					"instances":[ 
+						{
+							"uri": "https://convergence.esante.gouv.fr/",
+							"method": "GET",
+							"param": "django_language",
+							"attack": "",
+							"evidence": "Set-Cookie: django_language"
+						}
+					],
+					"count": "1",
+					"solution": "<p>Ensure that the SameSite attribute is set to either 'lax' or ideally 'strict' for all cookies.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
+					"cweid": "1275",
+					"wascid": "13",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10110",
+					"alertRef": "10110",
+					"alert": "Dangerous JS Functions",
+					"name": "Dangerous JS Functions",
+					"riskcode": "1",
+					"confidence": "1",
+					"riskdesc": "Low (Low)",
+					"desc": "<p>A dangerous JS function seems to be in use that would leave the site vulnerable.</p>",
+					"instances":[ 
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/jquery-3.5.1.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Eval"
+						}
+					],
+					"count": "1",
+					"solution": "<p>See the references for security advice on the use of these functions.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://angular.io/guide/security</p>",
+					"cweid": "749",
+					"wascid": "-1",
+					"sourceid": "55"
+				},
+				{
+					"pluginid": "10063",
+					"alertRef": "10063",
+					"alert": "Permissions Policy Header Not Set",
+					"name": "Permissions Policy Header Not Set",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
+					"instances":[ 
+						{
+							"uri": "https://convergence.esante.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/acces-rapide-documentation-industrielle/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-industrielle/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-mon-espace-sante/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-regionale/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/robots.txt/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/sitemap.xml/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/bootstrap-4.6.0-dist/js/bootstrap.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/jquery-3.5.1.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/popper.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						}
+					],
+					"count": "11",
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy</p><p>https://developers.google.com/web/updates/2018/06/feature-policy</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10096",
+					"alertRef": "10096",
+					"alert": "Timestamp Disclosure - Unix",
+					"name": "Timestamp Disclosure - Unix",
+					"riskcode": "1",
+					"confidence": "1",
+					"riskdesc": "Low (Low)",
+					"desc": "<p>A timestamp was disclosed by the application/web server - Unix</p>",
+					"instances":[ 
+						{
+							"uri": "https://convergence.esante.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "20220322"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "31536000"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "14853974"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "20110525"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "216718158"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "319575939"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "34601363"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "355934167"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "604800000"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "86400000"
+						}
+					],
+					"count": "10",
+					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
+					"otherinfo": "<p>20220322, which evaluates to: 1970-08-23 00:45:22</p>",
+					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
+					"cweid": "200",
+					"wascid": "13",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10094",
+					"alertRef": "10094",
+					"alert": "Base64 Disclosure",
+					"name": "Base64 Disclosure",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>Base64 encoded data was disclosed by the application/web server. Note: in the interests of performance not all base64 strings in the response were analyzed individually, the entire response should be looked at by the analyst/security team/developer(s).</p>",
+					"instances":[ 
+						{
+							"uri": "https://convergence.esante.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "fr/sites/default/files/media_entity/documents/ANS_Convergence_FormulaireInscription_v0"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/acces-rapide-documentation-industrielle/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "es/default/files/media_entity/documents/ANS_Convergence_Industriels_QuestionsFrequentes_v0"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/acces-rapide-documentation-industrielle/es/default/files/media_entity/documents/ANS_Convergence_Industriels_QuestionsFrequentes_v0.6_20211223.pdf",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/acces-rapide-documentation-industrielle/es/default/files/media_entity/documents/ANS_Convergence_Industriels_QuestionsFrequentes_v0"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/accounts/reset/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "bpKZr0u7YYJfAO79YbSPmGxa2zcUfKOFclAWUJdiIEgBD0fbMwKoRDcCQsmwt29n"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/login/?next=/home/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "bpKZr0u7YYJfAO79YbSPmGxa2zcUfKOFclAWUJdiIEgBD0fbMwKoRDcCQsmwt29n"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "HTMLCanvasElement/CanvasRenderingContext2D"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/login/?next=/home/",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "bpKZr0u7YYJfAO79YbSPmGxa2zcUfKOFclAWUJdiIEgBD0fbMwKoRDcCQsmwt29n"
+						}
+					],
+					"count": "7",
+					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
+					"otherinfo": "<p>~\uFFFD\uFFFD\u05EC\uFFFD\u05DFj\uFFFDm\uFFFD\uFFFD\uFFFDz\uFFFD\uFFFDy\u061A\uFFFD\uFFFD\uFFFD\u073Fv\uFFFD.\uFFFD\uFFFD\uFFFD\uFFFD\rK\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD{\uFFFDh\uFFFDk\uFFFDj*\uFFFD\"{\\x001c\uFFFD*m\uFFFD\uFFFD\uFFFD\uFFFD</p>",
+					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
+					"cweid": "200",
+					"wascid": "13",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10027",
+					"alertRef": "10027",
+					"alert": "Information Disclosure - Suspicious Comments",
+					"name": "Information Disclosure - Suspicious Comments",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</p>",
+					"instances":[ 
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/bootstrap-4.6.0-dist/js/bootstrap.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "from"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "DB"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "from"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "later"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "query"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "todo"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "user"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/chart.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "where"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/jquery-3.5.1.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "username"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/login/?next=/home/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "User"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/login/?next=/home/",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "User"
+						}
+					],
+					"count": "12",
+					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"!function(t,e){\"object\"==typeof exports&&\"undefined\"!=typeof module?e(exports,require(\"jquery\"),require(\"popper.js\")):\"function\"\", see evidence field for the suspicious comment/snippet.</p>",
+					"reference": "",
+					"cweid": "200",
+					"wascid": "13",
+					"sourceid": "57"
+				},
+				{
+					"pluginid": "10109",
+					"alertRef": "10109",
+					"alert": "Modern Web Application",
+					"name": "Modern Web Application",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
+					"instances":[ 
+						{
+							"uri": "https://convergence.esante.gouv.fr/conditions-generales-dutilisation/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" style=\"color: #0168B3;\">4. Modalit\u00E9s d\u2019acc\u00E8s</a>"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-industrielle/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" style=\"color: #0168B3;\">1. Questionnaires de maturit\u00E9 transverse</a>"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-mon-espace-sante/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" style=\"color: #0168B3;\">1. Questionnaires de maturit\u00E9 pour les produits</a>"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-regionale/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" style=\"color: #0168B3;\">1. Questionnaires de maturit\u00E9 transverse</a>"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/static/packages/jquery-3.5.1.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a id='\"+S+\"'></a>"
+						}
+					],
+					"count": "5",
+					"solution": "<p>This is an informational alert and so no changes are required.</p>",
+					"otherinfo": "<p>Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</p>",
+					"reference": "",
+					"cweid": "-1",
+					"wascid": "-1",
+					"sourceid": "72"
+				},
+				{
+					"pluginid": "10015",
+					"alertRef": "10015",
+					"alert": "Re-examine Cache-control Directives",
+					"name": "Re-examine Cache-control Directives",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</p>",
+					"instances":[ 
+						{
+							"uri": "https://convergence.esante.gouv.fr/",
+							"method": "GET",
+							"param": "Cache-Control",
+							"attack": "",
+							"evidence": "max-age=59"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/",
+							"method": "GET",
+							"param": "Cache-Control",
+							"attack": "",
+							"evidence": "max-age=60"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/acces-rapide-documentation-industrielle/",
+							"method": "GET",
+							"param": "Cache-Control",
+							"attack": "",
+							"evidence": "max-age=60"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/accounts/reset/",
+							"method": "GET",
+							"param": "Cache-Control",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/conditions-generales-dutilisation/",
+							"method": "GET",
+							"param": "Cache-Control",
+							"attack": "",
+							"evidence": "max-age=60"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/login/?next=/home/",
+							"method": "GET",
+							"param": "Cache-Control",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/mentions-legales/",
+							"method": "GET",
+							"param": "Cache-Control",
+							"attack": "",
+							"evidence": "max-age=60"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/openid/createuser/",
+							"method": "GET",
+							"param": "Cache-Control",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/openid/deleteuser/",
+							"method": "GET",
+							"param": "Cache-Control",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-industrielle/",
+							"method": "GET",
+							"param": "Cache-Control",
+							"attack": "",
+							"evidence": "max-age=60"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-mon-espace-sante/",
+							"method": "GET",
+							"param": "Cache-Control",
+							"attack": "",
+							"evidence": "max-age=60"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-regionale/",
+							"method": "GET",
+							"param": "Cache-Control",
+							"attack": "",
+							"evidence": "max-age=60"
+						}
+					],
+					"count": "12",
+					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
+					"otherinfo": "",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p>",
+					"cweid": "525",
+					"wascid": "13",
+					"sourceid": "8"
+				},
+				{
+					"pluginid": "10049",
+					"alertRef": "10049",
+					"alert": "Storable and Cacheable Content",
+					"name": "Storable and Cacheable Content",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users.  If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
+					"instances":[ 
+						{
+							"uri": "https://convergence.esante.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=59"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=60"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/acces-rapide-documentation-industrielle",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/home",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/mentions-legales",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-industrielle",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-industrielle/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=60"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-mon-espace-sante/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=60"
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/questionnaires-de-convergence-regionale",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/robots.txt/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						}
+					],
+					"count": "12",
+					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
+					"otherinfo": "",
+					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
+					"cweid": "524",
+					"wascid": "13",
+					"sourceid": "8"
+				},
+				{
+					"pluginid": "10031",
+					"alertRef": "10031",
+					"alert": "User Controllable HTML Element Attribute (Potential XSS)",
+					"name": "User Controllable HTML Element Attribute (Potential XSS)",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
+					"instances":[ 
+						{
+							"uri": "https://convergence.esante.gouv.fr/login/?next=/home/",
+							"method": "POST",
+							"param": "password",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://convergence.esante.gouv.fr/login/?next=/home/",
+							"method": "POST",
+							"param": "username",
+							"attack": "",
+							"evidence": ""
+						}
+					],
+					"count": "2",
+					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
+					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://convergence.esante.gouv.fr/login/?next=/home/</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [input] tag [value] attribute </p><p></p><p>The user input found was:</p><p>password=ZAP</p><p></p><p>The user-controlled value was:</p><p>zap</p>",
+					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</p>",
+					"cweid": "20",
+					"wascid": "20",
+					"sourceid": "117"
+				}
+			]
+		}
+	]
+}
