@@ -1,0 +1,63 @@
+# Nmap 7.91 scan initiated Thu Apr 14 02:51:15 2022 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln signalement.social-sante.gouv.fr
+Nmap scan report for signalement.social-sante.gouv.fr (51.178.236.12)
+Host is up (0.086s latency).
+rDNS record for 51.178.236.12: ip12.ip-51-178-236.eu
+Not shown: 998 filtered ports
+PORT     STATE SERVICE  VERSION
+443/tcp  open  ssl/http Apache httpd
+|_http-server-header: Apache
+8008/tcp open  http
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 302 Found
+|     Location: https://:8015/nice%20ports%2C/Tri%6Eity.txt%2ebak
+|     Connection: close
+|     X-Frame-Options: SAMEORIGIN
+|     X-XSS-Protection: 1; mode=block
+|     X-Content-Type-Options: nosniff
+|     Content-Security-Policy: frame-ancestors
+|   GenericLines, HTTPOptions, RTSPRequest, SIPOptions: 
+|     HTTP/1.1 302 Found
+|     Location: https://:8015
+|     Connection: close
+|     X-Frame-Options: SAMEORIGIN
+|     X-XSS-Protection: 1; mode=block
+|     X-Content-Type-Options: nosniff
+|     Content-Security-Policy: frame-ancestors
+|   GetRequest: 
+|     HTTP/1.1 302 Found
+|     Location: https://:8015/
+|     Connection: close
+|     X-Frame-Options: SAMEORIGIN
+|     X-XSS-Protection: 1; mode=block
+|     X-Content-Type-Options: nosniff
+|_    Content-Security-Policy: frame-ancestors
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port8008-TCP:V=7.91%I=7%D=4/14%Time=62578C31%P=x86_64-alpine-linux-musl
+SF:%r(GetRequest,CC,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:80
+SF:15/\r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-
+SF:Protection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20nosniff\r
+SF:\nContent-Security-Policy:\x20frame-ancestors\r\n\r\n")%r(FourOhFourReq
+SF:uest,EF,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:8015/nice%2
+SF:0ports%2C/Tri%6Eity\.txt%2ebak\r\nConnection:\x20close\r\nX-Frame-Optio
+SF:ns:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content
+SF:-Type-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-ancestor
+SF:s\r\n\r\n")%r(GenericLines,CB,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x
+SF:20https://:8015\r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIG
+SF:IN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type-Options:\
+SF:x20nosniff\r\nContent-Security-Policy:\x20frame-ancestors\r\n\r\n")%r(H
+SF:TTPOptions,CB,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:8015\
+SF:r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Prot
+SF:ection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20nosniff\r\nCo
+SF:ntent-Security-Policy:\x20frame-ancestors\r\n\r\n")%r(RTSPRequest,CB,"H
+SF:TTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:8015\r\nConnection:\x
+SF:20close\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x2
+SF:0mode=block\r\nX-Content-Type-Options:\x20nosniff\r\nContent-Security-P
+SF:olicy:\x20frame-ancestors\r\n\r\n")%r(SIPOptions,CB,"HTTP/1\.1\x20302\x
+SF:20Found\r\nLocation:\x20https://:8015\r\nConnection:\x20close\r\nX-Fram
+SF:e-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-
+SF:Content-Type-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-a
+SF:ncestors\r\n\r\n");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Apr 14 02:53:53 2022 -- 1 IP address (1 host up) scanned in 158.44 seconds

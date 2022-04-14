@@ -1,0 +1,104 @@
+# Nmap 7.91 scan initiated Thu Apr 14 02:24:54 2022 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln sondage.esante.gouv.fr
+Nmap scan report for sondage.esante.gouv.fr (31.15.25.184)
+Host is up (0.084s latency).
+rDNS record for 31.15.25.184: asipsurveyvip01.awh.nexen.net
+Not shown: 997 filtered ports
+PORT    STATE  SERVICE   VERSION
+80/tcp  open   http
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.0 301 Moved Permanently
+|     content-length: 0
+|     location: https://31.15.25.184/nice%20ports%2C/Tri%6Eity.txt%2ebak
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.0 301 Moved Permanently
+|     content-length: 0
+|_    location: https://31.15.25.184/
+113/tcp closed ident
+443/tcp open   ssl/https
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.0 404 Not Found
+|     date: Thu, 14 Apr 2022 02:25:14 GMT
+|     content-length: 196
+|     content-type: text/html; charset=iso-8859-1
+|     age: 0
+|     x-cache: MISS
+|     strict-transport-security: max-age=15768000
+|     x-xss-protection: 1; mode=block
+|     x-content-type-options: nosniff
+|     content-security-policy: frame-ancestors esante.gouv.fr
+|     <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+|     <html><head>
+|     <title>404 Not Found</title>
+|     </head><body>
+|     <h1>Not Found</h1>
+|     <p>The requested URL was not found on this server.</p>
+|     </body></html>
+|   GetRequest: 
+|     HTTP/1.0 200 OK
+|     date: Thu, 14 Apr 2022 02:24:45 GMT
+|     last-modified: Tue, 16 Mar 2021 09:30:16 GMT
+|     etag: "6-5bda4039d407c"
+|     content-length: 6
+|     content-type: text/html
+|     age: 27
+|     x-cache: HIT
+|     accept-ranges: bytes
+|     strict-transport-security: max-age=15768000
+|     x-xss-protection: 1; mode=block
+|     x-content-type-options: nosniff
+|     content-security-policy: frame-ancestors esante.gouv.fr
+|     hello
+|   HTTPOptions: 
+|     HTTP/1.0 200 OK
+|     date: Thu, 14 Apr 2022 02:25:13 GMT
+|     allow: GET,POST,OPTIONS,HEAD
+|     content-length: 0
+|     content-type: text/html
+|     age: 0
+|     x-cache: MISS
+|     accept-ranges: bytes
+|     strict-transport-security: max-age=15768000
+|     x-xss-protection: 1; mode=block
+|     x-content-type-options: nosniff
+|_    content-security-policy: frame-ancestors esante.gouv.fr
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.91%I=7%D=4/14%Time=62578603%P=x86_64-alpine-linux-musl%r
+SF:(GetRequest,56,"HTTP/1\.0\x20301\x20Moved\x20Permanently\r\ncontent-len
+SF:gth:\x200\r\nlocation:\x20https://31\.15\.25\.184/\r\n\r\n")%r(HTTPOpti
+SF:ons,56,"HTTP/1\.0\x20301\x20Moved\x20Permanently\r\ncontent-length:\x20
+SF:0\r\nlocation:\x20https://31\.15\.25\.184/\r\n\r\n")%r(FourOhFourReques
+SF:t,79,"HTTP/1\.0\x20301\x20Moved\x20Permanently\r\ncontent-length:\x200\
+SF:r\nlocation:\x20https://31\.15\.25\.184/nice%20ports%2C/Tri%6Eity\.txt%
+SF:2ebak\r\n\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port443-TCP:V=7.91%T=SSL%I=7%D=4/14%Time=62578609%P=x86_64-alpine-linux
+SF:-musl%r(GetRequest,186,"HTTP/1\.0\x20200\x20OK\r\ndate:\x20Thu,\x2014\x
+SF:20Apr\x202022\x2002:24:45\x20GMT\r\nlast-modified:\x20Tue,\x2016\x20Mar
+SF:\x202021\x2009:30:16\x20GMT\r\netag:\x20\"6-5bda4039d407c\"\r\ncontent-
+SF:length:\x206\r\ncontent-type:\x20text/html\r\nage:\x2027\r\nx-cache:\x2
+SF:0HIT\r\naccept-ranges:\x20bytes\r\nstrict-transport-security:\x20max-ag
+SF:e=15768000\r\nx-xss-protection:\x201;\x20mode=block\r\nx-content-type-o
+SF:ptions:\x20nosniff\r\ncontent-security-policy:\x20frame-ancestors\x20es
+SF:ante\.gouv\.fr\r\n\r\nhello\n")%r(HTTPOptions,157,"HTTP/1\.0\x20200\x20
+SF:OK\r\ndate:\x20Thu,\x2014\x20Apr\x202022\x2002:25:13\x20GMT\r\nallow:\x
+SF:20GET,POST,OPTIONS,HEAD\r\ncontent-length:\x200\r\ncontent-type:\x20tex
+SF:t/html\r\nage:\x200\r\nx-cache:\x20MISS\r\naccept-ranges:\x20bytes\r\ns
+SF:trict-transport-security:\x20max-age=15768000\r\nx-xss-protection:\x201
+SF:;\x20mode=block\r\nx-content-type-options:\x20nosniff\r\ncontent-securi
+SF:ty-policy:\x20frame-ancestors\x20esante\.gouv\.fr\r\n\r\n")%r(FourOhFou
+SF:rRequest,204,"HTTP/1\.0\x20404\x20Not\x20Found\r\ndate:\x20Thu,\x2014\x
+SF:20Apr\x202022\x2002:25:14\x20GMT\r\ncontent-length:\x20196\r\ncontent-t
+SF:ype:\x20text/html;\x20charset=iso-8859-1\r\nage:\x200\r\nx-cache:\x20MI
+SF:SS\r\nstrict-transport-security:\x20max-age=15768000\r\nx-xss-protectio
+SF:n:\x201;\x20mode=block\r\nx-content-type-options:\x20nosniff\r\ncontent
+SF:-security-policy:\x20frame-ancestors\x20esante\.gouv\.fr\r\n\r\n<!DOCTY
+SF:PE\x20HTML\x20PUBLIC\x20\"-//IETF//DTD\x20HTML\x202\.0//EN\">\n<html><h
+SF:ead>\n<title>404\x20Not\x20Found</title>\n</head><body>\n<h1>Not\x20Fou
+SF:nd</h1>\n<p>The\x20requested\x20URL\x20was\x20not\x20found\x20on\x20thi
+SF:s\x20server\.</p>\n</body></html>\n");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Apr 14 02:26:53 2022 -- 1 IP address (1 host up) scanned in 119.14 seconds
