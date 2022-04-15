@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Thu, 14 Apr 2022 08:13:59",
+	"@generated": "Fri, 15 Apr 2022 01:46:00",
 	"site":[ 
 		{
 			"@name": "https://industriels.esante.gouv.fr",
@@ -8,6 +8,32 @@
 			"@port": "443",
 			"@ssl": "true",
 			"alerts": [ 
+				{
+					"pluginid": "10062",
+					"alertRef": "10062",
+					"alert": "PII Disclosure",
+					"name": "PII Disclosure",
+					"riskcode": "3",
+					"confidence": "3",
+					"riskdesc": "High (High)",
+					"desc": "<p>The response contains Personally Identifiable Information, such as CC number, SSN and similar sensitive data.</p>",
+					"instances":[ 
+						{
+							"uri": "https://industriels.esante.gouv.fr/sites/default/files/media/document/SEGUR-SONS-Modeles_de_documents-BDC-MOM-VA-v14032022.pdf",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "503503503503"
+						}
+					],
+					"count": "1",
+					"solution": "",
+					"otherinfo": "<p>Credit Card Type detected: Maestro</p><p>Bank Identification Number: 503503</p><p>Brand: MAESTRO</p><p>Category: </p><p>Issuer: </p>",
+					"reference": "",
+					"cweid": "359",
+					"wascid": "13",
+					"sourceid": "1485"
+				},
 				{
 					"pluginid": "10202",
 					"alertRef": "10202",
@@ -116,7 +142,7 @@
 					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>http://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "609"
+					"sourceid": "536"
 				},
 				{
 					"pluginid": "10055",
@@ -255,7 +281,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "364"
+					"sourceid": "266"
 				},
 				{
 					"pluginid": "10099",
@@ -288,7 +314,7 @@
 					"reference": "<p>http://blogs.wsj.com/cio/2013/10/08/adobe-source-code-leak-is-bad-news-for-u-s-government/</p>",
 					"cweid": "540",
 					"wascid": "13",
-					"sourceid": "2359"
+					"sourceid": "1652"
 				},
 				{
 					"pluginid": "10003",
@@ -314,7 +340,7 @@
 					"reference": "<p>https://nvd.nist.gov/vuln/detail/CVE-2012-6708</p><p>https://github.com/jquery/jquery/issues/2432</p><p>http://research.insecurelabs.org/jquery/test/</p><p>http://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/</p><p>http://bugs.jquery.com/ticket/11290</p><p>https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/</p><p>https://nvd.nist.gov/vuln/detail/CVE-2019-11358</p><p>https://nvd.nist.gov/vuln/detail/CVE-2015-9251</p><p>https://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b</p><p>https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "1067"
+					"sourceid": "1065"
 				},
 				{
 					"pluginid": "10044",
@@ -376,21 +402,7 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/node/740",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://industriels.esante.gouv.fr/node/743",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://industriels.esante.gouv.fr/node/744",
+							"uri": "https://industriels.esante.gouv.fr/node/993",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -409,6 +421,20 @@
 							"param": "",
 							"attack": "",
 							"evidence": ""
+						},
+						{
+							"uri": "https://industriels.esante.gouv.fr/webform/share_mail/?objet=A%20d%C3%A9couvrir%20sur%20le%20site%20Portail%20Industriels%20:%20Information&votre_message=Cet%20article%20devrait%20t'int%C3%A9resser%20:%20https://industriels.esante.gouv.fr/information-erreur-403%20",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://industriels.esante.gouv.fr/webform/share_mail/?objet=A%20d%C3%A9couvrir%20sur%20le%20site%20Portail%20Industriels%20:%20Information&votre_message=Cet%20article%20devrait%20t'int%C3%A9resser%20:%20https://industriels.esante.gouv.fr/information-erreur-404%20",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
 						}
 					],
 					"count": "12",
@@ -417,7 +443,7 @@
 					"reference": "",
 					"cweid": "201",
 					"wascid": "13",
-					"sourceid": "432"
+					"sourceid": "336"
 				},
 				{
 					"pluginid": "10055",
@@ -483,7 +509,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "1120"
+					"sourceid": "1117"
 				},
 				{
 					"pluginid": "10063",
@@ -531,28 +557,28 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/modules/contrib/blazy/js/polyfill/blazy.classlist.min.js?ra9uy7",
+							"uri": "https://industriels.esante.gouv.fr/modules/contrib/blazy/js/polyfill/blazy.classlist.min.js?rabuk4",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/modules/contrib/blazy/js/polyfill/blazy.polyfill.min.js?ra9uy7",
+							"uri": "https://industriels.esante.gouv.fr/modules/contrib/blazy/js/polyfill/blazy.polyfill.min.js?rabuk4",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/modules/contrib/blazy/js/polyfill/blazy.promise.min.js?ra9uy7",
+							"uri": "https://industriels.esante.gouv.fr/modules/contrib/blazy/js/polyfill/blazy.promise.min.js?rabuk4",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/modules/contrib/blazy/js/polyfill/blazy.raf.min.js?ra9uy7",
+							"uri": "https://industriels.esante.gouv.fr/modules/contrib/blazy/js/polyfill/blazy.raf.min.js?rabuk4",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -566,7 +592,7 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/sites/default/files/google_tag/tech.esante/google_tag.script.js?ra9uy7",
+							"uri": "https://industriels.esante.gouv.fr/sites/default/files/google_tag/tech.esante/google_tag.script.js?rabuk4",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -586,7 +612,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy</p><p>https://developers.google.com/web/updates/2018/06/feature-policy</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "364"
+					"sourceid": "266"
 				},
 				{
 					"pluginid": "10037",
@@ -702,35 +728,35 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/core/assets/vendor/jquery.ui/themes/base/checkboxradio.css?ra9uy7",
+							"uri": "https://industriels.esante.gouv.fr/core/assets/vendor/jquery.ui/themes/base/checkboxradio.css?rabuk4",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/core/assets/vendor/jquery.ui/themes/base/controlgroup.css?ra9uy7",
+							"uri": "https://industriels.esante.gouv.fr/core/assets/vendor/jquery.ui/themes/base/controlgroup.css?rabuk4",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/core/assets/vendor/jquery.ui/themes/base/core.css?ra9uy7",
+							"uri": "https://industriels.esante.gouv.fr/core/assets/vendor/jquery.ui/themes/base/core.css?rabuk4",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/libraries/slick/slick/slick.css?ra9uy7",
+							"uri": "https://industriels.esante.gouv.fr/libraries/slick/slick/slick.css?rabuk4",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/modules/contrib/slick/css/layout/slick.module.css?ra9uy7",
+							"uri": "https://industriels.esante.gouv.fr/modules/contrib/slick/css/layout/slick.module.css?rabuk4",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -785,7 +811,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>http://caniuse.com/stricttransportsecurity</p><p>http://tools.ietf.org/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "364"
+					"sourceid": "266"
 				},
 				{
 					"pluginid": "10096",
@@ -798,35 +824,49 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server - Unix</p>",
 					"instances":[ 
 						{
-							"uri": "https://industriels.esante.gouv.fr/actualites/comment-l-agence-du-numerique-en-sante-accompagne-les-industriels-et-start-ups-dans-la-mise-en",
+							"uri": "https://industriels.esante.gouv.fr/faq-des-industriels",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "20220301"
+							"evidence": "010010171"
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/themes/custom/ans/style/custom.css?ra9uy7",
+							"uri": "https://industriels.esante.gouv.fr/faq-des-industriels?f%5B0%5D=theme%3A586",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "010010171"
+						},
+						{
+							"uri": "https://industriels.esante.gouv.fr/segur-du-numerique-en-sante",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "010010171"
+						},
+						{
+							"uri": "https://industriels.esante.gouv.fr/themes/custom/ans/style/custom.css?rabuk4",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "23697097"
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/themes/custom/ans/style/style-ans.css?ra9uy7",
+							"uri": "https://industriels.esante.gouv.fr/themes/custom/ans/style/style-ans.css?rabuk4",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "23343852"
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/themes/custom/ans/style/style-asip-2.css?ra9uy7",
+							"uri": "https://industriels.esante.gouv.fr/themes/custom/ans/style/style-asip-2.css?rabuk4",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "23697097"
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/themes/custom/ans/style/style-asip.css?ra9uy7",
+							"uri": "https://industriels.esante.gouv.fr/themes/custom/ans/style/style-asip.css?rabuk4",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -847,13 +887,13 @@
 							"evidence": "123456789"
 						}
 					],
-					"count": "7",
+					"count": "9",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
-					"otherinfo": "<p>20220301, which evaluates to: 1970-08-23 00:45:01</p>",
+					"otherinfo": "<p>010010171, which evaluates to: 1970-04-26 20:36:11</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "781"
+					"sourceid": "779"
 				},
 				{
 					"pluginid": "10094",
@@ -1567,7 +1607,7 @@
 					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "2000"
+					"sourceid": "1192"
 				}
 			]
 		}
