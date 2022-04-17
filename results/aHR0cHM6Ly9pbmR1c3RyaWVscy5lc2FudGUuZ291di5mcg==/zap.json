@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Sat, 16 Apr 2022 01:44:16",
+	"@generated": "Sun, 17 Apr 2022 01:51:08",
 	"site":[ 
 		{
 			"@name": "https://industriels.esante.gouv.fr",
@@ -8,6 +8,32 @@
 			"@port": "443",
 			"@ssl": "true",
 			"alerts": [ 
+				{
+					"pluginid": "10062",
+					"alertRef": "10062",
+					"alert": "PII Disclosure",
+					"name": "PII Disclosure",
+					"riskcode": "3",
+					"confidence": "3",
+					"riskdesc": "High (High)",
+					"desc": "<p>The response contains Personally Identifiable Information, such as CC number, SSN and similar sensitive data.</p>",
+					"instances":[ 
+						{
+							"uri": "https://industriels.esante.gouv.fr/sites/default/files/media/document/SEGUR-SONS-Modeles_de_documents-BDC-MOM-VA-v14032022.pdf",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "503503503503"
+						}
+					],
+					"count": "1",
+					"solution": "",
+					"otherinfo": "<p>Credit Card Type detected: Maestro</p><p>Bank Identification Number: 503503</p><p>Brand: MAESTRO</p><p>Category: </p><p>Issuer: </p>",
+					"reference": "",
+					"cweid": "359",
+					"wascid": "13",
+					"sourceid": "2227"
+				},
 				{
 					"pluginid": "10202",
 					"alertRef": "10202",
@@ -116,7 +142,7 @@
 					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>http://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "579"
+					"sourceid": "612"
 				},
 				{
 					"pluginid": "10055",
@@ -136,7 +162,7 @@
 							"evidence": "default-src 'self' 'unsafe-inline' https://www.youtube-nocookie.com https://www.google-analytics.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://code.jquery.com https://stackpath.bootstrapcdn.com https://cdn.jsdelivr.net https://www.googletagmanager.com https://tagmanager.google.com https://tag.aticdn.net/626733/smarttag.js; object-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://use.typekit.net https://stackpath.bootstrapcdn.com https://www.googletagmanager.com https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://p.typekit.net https://fonts.googleapis.com https://tagmanager.google.com https://ton.twimg.com; img-src 'self' 'unsafe-inline' data: https://i.ytimg.com https://www.googletagmanager.com https://pbs.twimg.com http://pbs.twimg.com https://logs1412.xiti.com https://www.google-analytics.com/g/collect; media-src 'self' 'unsafe-inline'; frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com; child-src 'self' https://www.youtube-nocookie.com; font-src 'self' 'unsafe-inline' https://use.typekit.net *.bootstrapcdn.com https://cdn.jsdelivr.net themes.googleusercontent.com https://fonts.gstatic.com data:; connect-src 'self' https://logs1412.xiti.com https://www.google-analytics.com/g/collect; report-uri /report-csp-violation"
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/core/*.css",
+							"uri": "https://industriels.esante.gouv.fr/core/*.css$",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -169,7 +195,7 @@
 							"evidence": "default-src 'self' 'unsafe-inline' https://www.youtube-nocookie.com https://www.google-analytics.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://code.jquery.com https://stackpath.bootstrapcdn.com https://cdn.jsdelivr.net https://www.googletagmanager.com https://tagmanager.google.com https://tag.aticdn.net/626733/smarttag.js; object-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://use.typekit.net https://stackpath.bootstrapcdn.com https://www.googletagmanager.com https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://p.typekit.net https://fonts.googleapis.com https://tagmanager.google.com https://ton.twimg.com; img-src 'self' 'unsafe-inline' data: https://i.ytimg.com https://www.googletagmanager.com https://pbs.twimg.com http://pbs.twimg.com https://logs1412.xiti.com https://www.google-analytics.com/g/collect; media-src 'self' 'unsafe-inline'; frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com; child-src 'self' https://www.youtube-nocookie.com; font-src 'self' 'unsafe-inline' https://use.typekit.net *.bootstrapcdn.com https://cdn.jsdelivr.net themes.googleusercontent.com https://fonts.gstatic.com data:; connect-src 'self' https://logs1412.xiti.com https://www.google-analytics.com/g/collect; report-uri /report-csp-violation"
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/core/*.css",
+							"uri": "https://industriels.esante.gouv.fr/core/*.css$",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -202,7 +228,7 @@
 							"evidence": "default-src 'self' 'unsafe-inline' https://www.youtube-nocookie.com https://www.google-analytics.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://code.jquery.com https://stackpath.bootstrapcdn.com https://cdn.jsdelivr.net https://www.googletagmanager.com https://tagmanager.google.com https://tag.aticdn.net/626733/smarttag.js; object-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://use.typekit.net https://stackpath.bootstrapcdn.com https://www.googletagmanager.com https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://p.typekit.net https://fonts.googleapis.com https://tagmanager.google.com https://ton.twimg.com; img-src 'self' 'unsafe-inline' data: https://i.ytimg.com https://www.googletagmanager.com https://pbs.twimg.com http://pbs.twimg.com https://logs1412.xiti.com https://www.google-analytics.com/g/collect; media-src 'self' 'unsafe-inline'; frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com; child-src 'self' https://www.youtube-nocookie.com; font-src 'self' 'unsafe-inline' https://use.typekit.net *.bootstrapcdn.com https://cdn.jsdelivr.net themes.googleusercontent.com https://fonts.gstatic.com data:; connect-src 'self' https://logs1412.xiti.com https://www.google-analytics.com/g/collect; report-uri /report-csp-violation"
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/core/*.css",
+							"uri": "https://industriels.esante.gouv.fr/core/*.css$",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -281,7 +307,7 @@
 					"reference": "<p>https://nvd.nist.gov/vuln/detail/CVE-2012-6708</p><p>https://github.com/jquery/jquery/issues/2432</p><p>http://research.insecurelabs.org/jquery/test/</p><p>http://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/</p><p>http://bugs.jquery.com/ticket/11290</p><p>https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/</p><p>https://nvd.nist.gov/vuln/detail/CVE-2019-11358</p><p>https://nvd.nist.gov/vuln/detail/CVE-2015-9251</p><p>https://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b</p><p>https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "1233"
+					"sourceid": "1900"
 				},
 				{
 					"pluginid": "10044",
@@ -384,7 +410,7 @@
 					"reference": "",
 					"cweid": "201",
 					"wascid": "13",
-					"sourceid": "459"
+					"sourceid": "434"
 				},
 				{
 					"pluginid": "10055",
@@ -404,7 +430,7 @@
 							"evidence": "default-src 'self' 'unsafe-inline' https://www.youtube-nocookie.com https://www.google-analytics.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://code.jquery.com https://stackpath.bootstrapcdn.com https://cdn.jsdelivr.net https://www.googletagmanager.com https://tagmanager.google.com https://tag.aticdn.net/626733/smarttag.js; object-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://use.typekit.net https://stackpath.bootstrapcdn.com https://www.googletagmanager.com https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://p.typekit.net https://fonts.googleapis.com https://tagmanager.google.com https://ton.twimg.com; img-src 'self' 'unsafe-inline' data: https://i.ytimg.com https://www.googletagmanager.com https://pbs.twimg.com http://pbs.twimg.com https://logs1412.xiti.com https://www.google-analytics.com/g/collect; media-src 'self' 'unsafe-inline'; frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com; child-src 'self' https://www.youtube-nocookie.com; font-src 'self' 'unsafe-inline' https://use.typekit.net *.bootstrapcdn.com https://cdn.jsdelivr.net themes.googleusercontent.com https://fonts.gstatic.com data:; connect-src 'self' https://logs1412.xiti.com https://www.google-analytics.com/g/collect; report-uri /report-csp-violation"
 						},
 						{
-							"uri": "https://industriels.esante.gouv.fr/core/*.css",
+							"uri": "https://industriels.esante.gouv.fr/core/*.css$",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -450,7 +476,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "1499"
+					"sourceid": "1952"
 				},
 				{
 					"pluginid": "10063",
@@ -834,7 +860,7 @@
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "840"
+					"sourceid": "844"
 				},
 				{
 					"pluginid": "10094",
@@ -1043,7 +1069,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<a></div>\n\n\t\n</div></li><li><div class=\"rounded-md top-left-radius-0 mb-3 py-4 px-3 tweet shadow-lg bg-white\">\n\t<div class=\"tweet-account\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-auto pr-0\">\n\t\t\t\t<div class=\"border rounded-lg account-img\">\n\t\t\t\t\t<img src=\"https://industriels.esante.gouv.fr/themes/custom/ans/img/logo-ANS-footer.svg\" width=\"55\" height=\"55\" alt=\"\" loading=\"lazy\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col\">\n\t\t\t\t<p class=\"mb-0 h6\">Agence du Num\u00E9rique en Sant\u00E9</p>\n\t\t\t\t<p class=\"mb-2\"> "
+							"evidence": "<a></div>\n\n\t\n</div></li></ul></div>\n  </div>\n\n\n\n        </div>\n    </div>\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n\n\n  </div>\n\n  </div>\n\n\t\t\t\t</div>\n\n            \n          </div>\n        </section>\n\t\t<!-- End: Content and Right Sidebar -->\n\t\t\n    </main>\n\n\n      \n    <!-- Start: Footer -->\n\t\n      <footer class=\"footer footer-principal\" role=\"contentinfo\">\n\t  \n        <div class=\"footer__region1\">\n\t\t  <div class=\"container\">\n\t\t\t<div class=\"row\">\n\t\t\t\n\t\t\t  <div class=\"col-md-6 col-lg-3 text-center text-md-left\">\n\t\t\t\t<div class=\"logos\">\n\t\t\t\t  <div class=\"logo logo--0\">\n\t\t\t\t\t"
 						},
 						{
 							"uri": "https://industriels.esante.gouv.fr/admin/",
@@ -1346,6 +1372,41 @@
 					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
 					"instances":[ 
 						{
+							"uri": "https://industriels.esante.gouv.fr/user/password",
+							"method": "POST",
+							"param": "form_id",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://industriels.esante.gouv.fr/user/password",
+							"method": "POST",
+							"param": "honeypot_time",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://industriels.esante.gouv.fr/user/password",
+							"method": "POST",
+							"param": "name",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://industriels.esante.gouv.fr/user/password",
+							"method": "POST",
+							"param": "op",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://industriels.esante.gouv.fr/user/password",
+							"method": "POST",
+							"param": "url",
+							"attack": "",
+							"evidence": ""
+						},
+						{
 							"uri": "https://industriels.esante.gouv.fr/user/register",
 							"method": "POST",
 							"param": "field_adresse[0][address][address_line1]",
@@ -1495,21 +1556,21 @@
 						{
 							"uri": "https://industriels.esante.gouv.fr/user/register",
 							"method": "POST",
-							"param": "op",
+							"param": "url",
 							"attack": "",
 							"evidence": ""
 						},
 						{
 							"uri": "https://industriels.esante.gouv.fr/user/register",
 							"method": "POST",
-							"param": "url",
+							"param": "user_picture_0_upload_button",
 							"attack": "",
 							"evidence": ""
 						}
 					],
-					"count": "23",
+					"count": "28",
 					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
-					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://industriels.esante.gouv.fr/user/register</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [input] tag [value] attribute </p><p></p><p>The user input found was:</p><p>field_adresse[0][address][address_line1]=ZAP</p><p></p><p>The user-controlled value was:</p><p>zap</p>",
+					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://industriels.esante.gouv.fr/user/password</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [input] tag [value] attribute </p><p></p><p>The user input found was:</p><p>form_id=user_pass</p><p></p><p>The user-controlled value was:</p><p>user_pass</p>",
 					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</p>",
 					"cweid": "20",
 					"wascid": "20",
