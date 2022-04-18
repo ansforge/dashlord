@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Mon, 18 Apr 2022 02:23:37",
+	"@generated": "Mon, 18 Apr 2022 23:34:12",
 	"site":[ 
 		{
 			"@name": "https://pfc.eservices.esante.gouv.fr",
@@ -30,7 +30,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"j_idt61\" name=\"j_idt61\" method=\"post\" action=\"/pfcng-ihm/index.xhtml\" enctype=\"application/x-www-form-urlencoded\">"
+							"evidence": "<form id=\"j_idt77\" name=\"j_idt77\" method=\"post\" action=\"/pfcng-ihm/index.xhtml\" enctype=\"application/x-www-form-urlencoded\">"
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/authentication.xhtml",
@@ -52,16 +52,9 @@
 							"param": "",
 							"attack": "",
 							"evidence": "<form id=\"j_idt31\" name=\"j_idt31\" method=\"post\" action=\"/pfcng-ihm/logout.xhtml\" enctype=\"application/x-www-form-urlencoded\">"
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "POST",
-							"param": "",
-							"attack": "",
-							"evidence": "<form id=\"j_idt31\" name=\"j_idt31\" method=\"post\" action=\"/pfcng-ihm/logout.xhtml\" enctype=\"application/x-www-form-urlencoded\">"
 						}
 					],
-					"count": "6",
+					"count": "5",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"j_idt32\" \"javax.faces.ViewState\" ].</p>",
 					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>http://cwe.mitre.org/data/definitions/352.html</p>",
@@ -113,16 +106,9 @@
 							"param": "",
 							"attack": "",
 							"evidence": ""
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "POST",
-							"param": "",
-							"attack": "",
-							"evidence": ""
 						}
 					],
-					"count": "6",
+					"count": "5",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header, to achieve optimal browser support: \"Content-Security-Policy\" for Chrome 25+, Firefox 23+ and Safari 7+, \"X-Content-Security-Policy\" for Firefox 4.0+ and Internet Explorer 10+, and \"X-WebKit-CSP\" for Chrome 14+ and Safari 6+.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
@@ -160,16 +146,9 @@
 							"param": "X-Frame-Options",
 							"attack": "",
 							"evidence": ""
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "POST",
-							"param": "X-Frame-Options",
-							"attack": "",
-							"evidence": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p>",
@@ -201,7 +180,7 @@
 					"reference": "<p>https://nvd.nist.gov/vuln/detail/CVE-2012-6708</p><p>https://github.com/jquery/jquery/issues/2432</p><p>http://research.insecurelabs.org/jquery/test/</p><p>http://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/</p><p>http://bugs.jquery.com/ticket/11290</p><p>https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/</p><p>https://nvd.nist.gov/vuln/detail/CVE-2019-11358</p><p>https://nvd.nist.gov/vuln/detail/CVE-2015-9251</p><p>https://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b</p><p>https://bugs.jquery.com/ticket/11974</p><p>https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "54"
+					"sourceid": "59"
 				},
 				{
 					"pluginid": "10054",
@@ -219,6 +198,13 @@
 							"param": "JSESSIONID",
 							"attack": "",
 							"evidence": "Set-Cookie: JSESSIONID"
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm",
+							"method": "GET",
+							"param": "prod-asip",
+							"attack": "",
+							"evidence": "Set-Cookie: prod-asip"
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/",
@@ -249,14 +235,7 @@
 							"evidence": "Set-Cookie: JSESSIONID"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/bowser.js.xhtml?ln=js",
-							"method": "GET",
-							"param": "JSESSIONID",
-							"attack": "",
-							"evidence": "Set-Cookie: JSESSIONID"
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/images/favicon.ico.xhtml",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/bootstrap.js.xhtml?ln=bootstrap2/js",
 							"method": "GET",
 							"param": "JSESSIONID",
 							"attack": "",
@@ -277,14 +256,14 @@
 							"evidence": "Set-Cookie: JSESSIONID"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/pfcng.css.xhtml?ln=styles",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/primefaces.css.xhtml?ln=primefaces",
 							"method": "GET",
 							"param": "JSESSIONID",
 							"attack": "",
 							"evidence": "Set-Cookie: JSESSIONID"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/primefaces.js.xhtml?ln=primefaces",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
 							"method": "GET",
 							"param": "JSESSIONID",
 							"attack": "",
@@ -330,7 +309,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "54"
+					"sourceid": "59"
 				},
 				{
 					"pluginid": "10063",
@@ -378,14 +357,14 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/bowser.js.xhtml?ln=js",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/checkConfig.js.xhtml?ln=js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/checkConfig.js.xhtml?ln=js",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/html5shiv.js.xhtml?ln=html5shiv",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -458,16 +437,9 @@
 							"param": "",
 							"attack": "",
 							"evidence": ""
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "POST",
-							"param": "",
-							"attack": "",
-							"evidence": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>http://caniuse.com/stricttransportsecurity</p><p>http://tools.ietf.org/html/rfc6797</p>",
@@ -486,6 +458,13 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server - Unix</p>",
 					"instances":[ 
 						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1952059820"
+						},
+						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/authentication.xhtml",
 							"method": "GET",
 							"param": "",
@@ -493,13 +472,13 @@
 							"evidence": "1952059820"
 						}
 					],
-					"count": "1",
+					"count": "2",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
 					"otherinfo": "<p>1952059820, which evaluates to: 2031-11-10 06:50:20</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "13"
 				},
 				{
 					"pluginid": "10021",
@@ -531,16 +510,9 @@
 							"param": "X-Content-Type-Options",
 							"attack": "",
 							"evidence": ""
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "POST",
-							"param": "X-Content-Type-Options",
-							"attack": "",
-							"evidence": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
 					"reference": "<p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://owasp.org/www-community/Security_Headers</p>",
@@ -606,16 +578,9 @@
 							"param": "",
 							"attack": "",
 							"evidence": "resource/LOGO_ANS_2020_Largeur"
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "POST",
-							"param": "",
-							"attack": "",
-							"evidence": "resource/LOGO_ANS_2020_Largeur"
 						}
 					],
-					"count": "8",
+					"count": "7",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
 					"otherinfo": "<p>\uFFFD\uFFFD(\uFFFD\uFFFD\\x001e\uFFFD\uFFFD\uFFFD;\uFFFD\rK\uFFFD\uFFFD\uFFFDO\uFFFDj\uFFFD\\x001e\uFFFD</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
@@ -662,13 +627,6 @@
 							"evidence": "select"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/bowser.js.xhtml?ln=js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "user"
-						},
-						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/jquery/jquery.js.xhtml?ln=primefaces",
 							"method": "GET",
 							"param": "",
@@ -688,6 +646,20 @@
 							"param": "",
 							"attack": "",
 							"evidence": "Bug"
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/pfcng.js.xhtml?ln=js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "from"
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/pfcng.js.xhtml?ln=js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select"
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/primefaces.js.xhtml?ln=primefaces",
@@ -711,7 +683,7 @@
 							"evidence": "select"
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
 					"otherinfo": "<p>The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script type=\"text/javascript\"></p><p>\t\t\t$(document).ready(</p><p>\t\t\t\tfunction(){</p><p>\t\t\t\t    // Check if the user already accepted it</p><p>\t\t\t\t    i\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
@@ -757,7 +729,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "64"
+					"sourceid": "62"
 				},
 				{
 					"pluginid": "10049",
@@ -805,7 +777,7 @@
 							"evidence": "private"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/bootstrap.css.xhtml?ln=bootstrap2/css",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -819,14 +791,14 @@
 							"evidence": "private"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/pfcng.css.xhtml?ln=styles",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/theme.css.xhtml?ln=primefaces-bootstrap",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "private"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/theme.css.xhtml?ln=primefaces-bootstrap",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -899,69 +871,15 @@
 							"param": "Cache-Control",
 							"attack": "",
 							"evidence": "private"
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "POST",
-							"param": "Cache-Control",
-							"attack": "",
-							"evidence": ""
 						}
 					],
-					"count": "6",
+					"count": "5",
 					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p>",
 					"cweid": "525",
 					"wascid": "13",
 					"sourceid": "4"
-				},
-				{
-					"pluginid": "10031",
-					"alertRef": "10031",
-					"alert": "User Controllable HTML Element Attribute (Potential XSS)",
-					"name": "User Controllable HTML Element Attribute (Potential XSS)",
-					"riskcode": "0",
-					"confidence": "1",
-					"riskdesc": "Informational (Low)",
-					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
-					"instances":[ 
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "POST",
-							"param": "j_idt31",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "POST",
-							"param": "j_idt31",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "POST",
-							"param": "j_idt31",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "POST",
-							"param": "j_idt31",
-							"attack": "",
-							"evidence": ""
-						}
-					],
-					"count": "4",
-					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
-					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [form] tag [id] attribute </p><p></p><p>The user input found was:</p><p>j_idt31=j_idt31</p><p></p><p>The user-controlled value was:</p><p>j_idt31</p>",
-					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</p>",
-					"cweid": "20",
-					"wascid": "20",
-					"sourceid": "79"
 				}
 			]
 		}
