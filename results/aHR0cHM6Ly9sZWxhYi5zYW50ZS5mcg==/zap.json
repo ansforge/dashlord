@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Tue, 26 Apr 2022 11:38:58",
+	"@generated": "Wed, 27 Apr 2022 10:08:14",
 	"site":[ 
 		{
 			"@name": "https://lelab.sante.fr",
@@ -98,7 +98,7 @@
 					],
 					"count": "11",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
-					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"edit-targeted-needs-11--2\" \"edit-targeted-needs-35--2\" \"edit-targeted-needs-37--2\" \"edit-targeted-needs-41--2\" \"edit-targeted-needs-all--2\" ].</p>",
+					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"edit-targeted-needs-11\" \"edit-targeted-needs-35\" \"edit-targeted-needs-37\" \"edit-targeted-needs-41\" \"edit-targeted-needs-all\" ].</p>",
 					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>http://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
@@ -348,7 +348,7 @@
 					"reference": "<p>https://github.com/jquery/jquery/issues/2432</p><p>http://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/</p><p>http://research.insecurelabs.org/jquery/test/</p><p>https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/</p><p>https://nvd.nist.gov/vuln/detail/CVE-2019-11358</p><p>https://nvd.nist.gov/vuln/detail/CVE-2015-9251</p><p>https://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b</p><p>https://bugs.jquery.com/ticket/11974</p><p>https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "341"
+					"sourceid": "364"
 				},
 				{
 					"pluginid": "10110",
@@ -409,7 +409,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "341"
+					"sourceid": "364"
 				},
 				{
 					"pluginid": "10063",
@@ -545,7 +545,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>http://caniuse.com/stricttransportsecurity</p><p>http://tools.ietf.org/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "185"
+					"sourceid": "173"
 				},
 				{
 					"pluginid": "10096",
@@ -562,7 +562,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "102900243"
+							"evidence": "93993256"
 						},
 						{
 							"uri": "https://lelab.sante.fr/lister-les-adresses-de-pharmacies-ou-autres-proposant-des-tests-rapides-antigeniquestra-en-30minutes",
@@ -623,11 +623,11 @@
 					],
 					"count": "9",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
-					"otherinfo": "<p>102900243, which evaluates to: 1973-04-05 23:24:03</p>",
+					"otherinfo": "<p>93993256, which evaluates to: 1972-12-23 21:14:16</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "185"
+					"sourceid": "173"
 				},
 				{
 					"pluginid": "10094",
@@ -647,14 +647,14 @@
 							"evidence": "fr/sites/default/files/lab/files/advagg_css/css__9cWqptSUNYq5YedfIwh33VxtugFVWjDdEsblT8GhLKI__quUjyhSfbEukHj8a0hYvzm9VTmPALmSZvA0xfM_Oxzo__eZfomeBSqtl_zpRvY4Oix7dy1qghiez_J0R9ZCUC5cY"
 						},
 						{
-							"uri": "https://lelab.sante.fr/",
+							"uri": "https://lelab.sante.fr/includes/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "fr/sites/default/files/lab/files/advagg_css/css__9cWqptSUNYq5YedfIwh33VxtugFVWjDdEsblT8GhLKI__quUjyhSfbEukHj8a0hYvzm9VTmPALmSZvA0xfM_Oxzo__eZfomeBSqtl_zpRvY4Oix7dy1qghiez_J0R9ZCUC5cY"
 						},
 						{
-							"uri": "https://lelab.sante.fr/conditions-generales-dutilisation",
+							"uri": "https://lelab.sante.fr/misc/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -689,13 +689,6 @@
 							"evidence": "fr/sites/default/files/lab/files/advagg_css/css__9cWqptSUNYq5YedfIwh33VxtugFVWjDdEsblT8GhLKI__quUjyhSfbEukHj8a0hYvzm9VTmPALmSZvA0xfM_Oxzo__eZfomeBSqtl_zpRvY4Oix7dy1qghiez_J0R9ZCUC5cY"
 						},
 						{
-							"uri": "https://lelab.sante.fr/politique-de-confidentialite",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "fr/sites/default/files/lab/files/advagg_css/css__9cWqptSUNYq5YedfIwh33VxtugFVWjDdEsblT8GhLKI__quUjyhSfbEukHj8a0hYvzm9VTmPALmSZvA0xfM_Oxzo__eZfomeBSqtl_zpRvY4Oix7dy1qghiez_J0R9ZCUC5cY"
-						},
-						{
 							"uri": "https://lelab.sante.fr/profiles/*.css$",
 							"method": "GET",
 							"param": "",
@@ -711,6 +704,13 @@
 						},
 						{
 							"uri": "https://lelab.sante.fr/themes/*.css$",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "fr/sites/default/files/lab/files/advagg_css/css__9cWqptSUNYq5YedfIwh33VxtugFVWjDdEsblT8GhLKI__quUjyhSfbEukHj8a0hYvzm9VTmPALmSZvA0xfM_Oxzo__eZfomeBSqtl_zpRvY4Oix7dy1qghiez_J0R9ZCUC5cY"
+						},
+						{
+							"uri": "https://lelab.sante.fr/themes/*.js$",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -869,11 +869,11 @@
 					],
 					"count": "2",
 					"solution": "<p>Always scope cookies to a FQDN (Fully Qualified Domain Name).</p>",
-					"otherinfo": "<p>The origin domain used for comparison was: </p><p>lelab.sante.fr</p><p>SSESS33fd7e5c339bb1d61bf6461aa1299141=ABfRDuxJ7S9Y65OZmcbtWcwp5p8dhh3UuKWsVMOJSSU</p><p></p>",
+					"otherinfo": "<p>The origin domain used for comparison was: </p><p>lelab.sante.fr</p><p>SSESS33fd7e5c339bb1d61bf6461aa1299141=aIY3SQiWpDCMGHM_kmbnVZn-L-HR1O88LU2qhDRQw6U</p><p></p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc6265#section-4.1</p><p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p><p>http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</p>",
 					"cweid": "565",
 					"wascid": "15",
-					"sourceid": "365"
+					"sourceid": "385"
 				},
 				{
 					"pluginid": "10109",
@@ -893,14 +893,14 @@
 							"evidence": "<a id=\"contenu\" tabindex=\"-1\"></a>"
 						},
 						{
-							"uri": "https://lelab.sante.fr/",
+							"uri": "https://lelab.sante.fr/includes/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "<a id=\"contenu\" tabindex=\"-1\"></a>"
 						},
 						{
-							"uri": "https://lelab.sante.fr/conditions-generales-dutilisation",
+							"uri": "https://lelab.sante.fr/misc/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -935,13 +935,6 @@
 							"evidence": "<a id=\"contenu\" tabindex=\"-1\"></a>"
 						},
 						{
-							"uri": "https://lelab.sante.fr/politique-de-confidentialite",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<a id=\"contenu\" tabindex=\"-1\"></a>"
-						},
-						{
 							"uri": "https://lelab.sante.fr/profiles/*.css$",
 							"method": "GET",
 							"param": "",
@@ -957,6 +950,13 @@
 						},
 						{
 							"uri": "https://lelab.sante.fr/themes/*.css$",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a id=\"contenu\" tabindex=\"-1\"></a>"
+						},
+						{
+							"uri": "https://lelab.sante.fr/themes/*.js$",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -996,6 +996,13 @@
 							"evidence": "public, max-age=86400"
 						},
 						{
+							"uri": "https://lelab.sante.fr/?q=filter/tips/",
+							"method": "GET",
+							"param": "Cache-Control",
+							"attack": "",
+							"evidence": "public, max-age=86400"
+						},
+						{
 							"uri": "https://lelab.sante.fr/conditions-generales-dutilisation",
 							"method": "GET",
 							"param": "Cache-Control",
@@ -1010,14 +1017,14 @@
 							"evidence": "public, max-age=86400"
 						},
 						{
-							"uri": "https://lelab.sante.fr/le-lab-santefr",
+							"uri": "https://lelab.sante.fr/filter/tips/",
 							"method": "GET",
 							"param": "Cache-Control",
 							"attack": "",
 							"evidence": "public, max-age=86400"
 						},
 						{
-							"uri": "https://lelab.sante.fr/le-laboratoire-de-depistage-propose-doit-etre-situe-de-preference-dans-la-commune-de-residence-dans",
+							"uri": "https://lelab.sante.fr/le-lab-santefr",
 							"method": "GET",
 							"param": "Cache-Control",
 							"attack": "",
@@ -1050,13 +1057,6 @@
 							"param": "Cache-Control",
 							"attack": "",
 							"evidence": "must-revalidate"
-						},
-						{
-							"uri": "https://lelab.sante.fr/trouver-en-meme-temps-que-les-lieux-de-depistage-du-covid-19-les-delais-de-resultat-des-tests-ou-du",
-							"method": "GET",
-							"param": "Cache-Control",
-							"attack": "",
-							"evidence": "public, max-age=86400"
 						}
 					],
 					"count": "11",
@@ -1276,7 +1276,7 @@
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "107"
+					"sourceid": "77"
 				},
 				{
 					"pluginid": "10031",
@@ -1344,7 +1344,7 @@
 					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "325"
+					"sourceid": "327"
 				}
 			]
 		}
