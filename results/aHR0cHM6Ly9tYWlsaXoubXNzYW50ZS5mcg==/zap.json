@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Thu, 28 Apr 2022 09:59:23",
+	"@generated": "Fri, 29 Apr 2022 09:42:44",
 	"site":[ 
 		{
 			"@name": "https://mailiz.mssante.fr",
@@ -257,7 +257,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "63"
+					"sourceid": "55"
 				},
 				{
 					"pluginid": "10011",
@@ -329,9 +329,37 @@
 							"param": "ROUTEID",
 							"attack": "",
 							"evidence": "Set-Cookie: ROUTEID"
+						},
+						{
+							"uri": "https://mailiz.mssante.fr/robots.txt",
+							"method": "GET",
+							"param": "COOKIE_SUPPORT",
+							"attack": "",
+							"evidence": "Set-Cookie: COOKIE_SUPPORT"
+						},
+						{
+							"uri": "https://mailiz.mssante.fr/robots.txt",
+							"method": "GET",
+							"param": "GUEST_LANGUAGE_ID",
+							"attack": "",
+							"evidence": "Set-Cookie: GUEST_LANGUAGE_ID"
+						},
+						{
+							"uri": "https://mailiz.mssante.fr/robots.txt",
+							"method": "GET",
+							"param": "PAUTSESSIONID",
+							"attack": "",
+							"evidence": "Set-Cookie: PAUTSESSIONID"
+						},
+						{
+							"uri": "https://mailiz.mssante.fr/robots.txt",
+							"method": "GET",
+							"param": "ROUTEID",
+							"attack": "",
+							"evidence": "Set-Cookie: ROUTEID"
 						}
 					],
-					"count": "4",
+					"count": "8",
 					"solution": "<p>Ensure that the SameSite attribute is set to either 'lax' or ideally 'strict' for all cookies.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
@@ -440,7 +468,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "4763"
+					"sourceid": "4775"
 				},
 				{
 					"pluginid": "10063",
@@ -885,7 +913,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "5423"
+					"sourceid": "5432"
 				},
 				{
 					"pluginid": "10027",
@@ -905,14 +933,14 @@
 							"evidence": "query"
 						},
 						{
-							"uri": "https://mailiz.mssante.fr/html/portlet/journal/js/main.js?b=6203&browserId=firefox&languageId=en_US&minifierType=js&t=1651109560000",
+							"uri": "https://mailiz.mssante.fr/html/portlet/journal/js/main.js?b=6203&browserId=firefox&languageId=en_US&minifierType=js&t=1651196341000",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "select"
 						},
 						{
-							"uri": "https://mailiz.mssante.fr/html/portlet/journal/js/navigation.js?b=6203&browserId=firefox&languageId=en_US&minifierType=js&t=1651109560000",
+							"uri": "https://mailiz.mssante.fr/html/portlet/journal/js/navigation.js?b=6203&browserId=firefox&languageId=en_US&minifierType=js&t=1651196341000",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1015,14 +1043,21 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://mailiz.mssante.fr/gestionBAL-portlet/css/main.css?b=6203&browserId=firefox&languageId=es_ES&minifierType=css&t=1651109560000&themeId=mss_WAR_msstheme",
+							"uri": "https://mailiz.mssante.fr/gestionBAL-portlet/css/main.css?b=6203&browserId=firefox&languageId=pt_BR&minifierType=css&t=1651196319000&themeId=mss_WAR_msstheme",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://mailiz.mssante.fr/mss-login-portlet/css/main.css?b=6203&browserId=firefox&languageId=en_US&minifierType=css&t=1651109560000&themeId=mss_WAR_msstheme",
+							"uri": "https://mailiz.mssante.fr/invitation-confreres-portlet/css/main.css?b=6203&browserId=firefox&languageId=pt_BR&minifierType=css&t=1651196305000&themeId=mss_WAR_msstheme",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://mailiz.mssante.fr/mss-login-portlet/css/main.css?b=6203&browserId=firefox&languageId=en_US&minifierType=css&t=1651196289000&themeId=mss_WAR_msstheme",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1043,13 +1078,13 @@
 							"evidence": ""
 						}
 					],
-					"count": "6",
+					"count": "7",
 					"solution": "<p>Always scope cookies to a FQDN (Fully Qualified Domain Name).</p>",
-					"otherinfo": "<p>The origin domain used for comparison was: </p><p>mailiz.mssante.fr</p><p>PAUTSESSIONID=2E2DFAFDE852ECDC83D928AD4AE28A5A.PAUT_2</p><p>ROUTEID=.PAUT_2</p><p></p>",
+					"otherinfo": "<p>The origin domain used for comparison was: </p><p>mailiz.mssante.fr</p><p>PAUTSESSIONID=1A447AFE5066A90E23C0B2BE0594D2C7.PAUT_1</p><p>ROUTEID=.PAUT_1</p><p></p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc6265#section-4.1</p><p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p><p>http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</p>",
 					"cweid": "565",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10109",
@@ -1178,7 +1213,7 @@
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "65"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10015",
@@ -1417,7 +1452,7 @@
 					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "4811"
+					"sourceid": "4801"
 				}
 			]
 		}
