@@ -127,7 +127,7 @@ td {
 	</h2>
 
 	<h3>
-		Generated on Sat, 30 Apr 2022 09:17:06
+		Generated on Sun, 1 May 2022 09:58:21
 	</h3>
 
 	
@@ -160,7 +160,7 @@ td {
 					<div>Low</div>
 				</td>
 				<td align="center">
-					<div>6</div>
+					<div>7</div>
 				</td>
 			</tr>
 			<tr>
@@ -221,7 +221,12 @@ td {
 			<tr>
 				<td><a href="#10063">Permissions Policy Header Not Set</a></td>
 				<td align="center" class="risk-1">Low</td>
-				<td align="center">7</td>
+				<td align="center">8</td>
+			</tr>
+			<tr>
+				<td><a href="#2">Private IP Disclosure</a></td>
+				<td align="center" class="risk-1">Low</td>
+				<td align="center">1</td>
 			</tr>
 			<tr>
 				<td><a href="#10035">Strict-Transport-Security Header Not Set</a></td>
@@ -241,12 +246,12 @@ td {
 			<tr>
 				<td><a href="#10094">Base64 Disclosure</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">8</td>
+				<td align="center">9</td>
 			</tr>
 			<tr>
 				<td><a href="#10027">Information Disclosure - Suspicious Comments</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">3</td>
+				<td align="center">4</td>
 			</tr>
 			<tr>
 				<td><a href="#10109">Modern Web Application</a></td>
@@ -256,7 +261,7 @@ td {
 			<tr>
 				<td><a href="#10049">Non-Storable Content</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">4</td>
+				<td align="center">5</td>
 			</tr>
 			<tr>
 				<td><a href="#10015">Re-examine Cache-control Directives</a></td>
@@ -266,7 +271,7 @@ td {
 			<tr>
 				<td><a href="#10049">Storable and Cacheable Content</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">6</td>
+				<td align="center">5</td>
 			</tr>
 		</table>
 		<div class="spacer-lg"></div>
@@ -1076,6 +1081,32 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js">https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/sitemap.xml">https://wallet.esw.esante.gouv.fr/sitemap.xml</a></td>
 					</tr>
 					<tr>
@@ -1101,7 +1132,7 @@ td {
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">7</td>
+					<td width="80%">8</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -1149,6 +1180,85 @@ td {
 			<table class="results">
 				<tr height="24">
 					<th width="20%" class="risk-1"><a
+						id="2"></a>
+						<div>Low</div></th>
+					<th class="risk-1">Private IP Disclosure</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>A private IP (such as 10.x.x.x, 172.x.x.x, 192.168.x.x) or an Amazon EC2 private hostname (for example, ip-10-0-56-78) has been found in the HTTP response body. This information might be helpful for further attacks targeting internal systems.</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js">https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">10.1.9.34</td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">1</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%">
+							<div>Remove the private IP address from the HTTP response body.  For comments, use JSP/ASP/PHP comment instead of HTML/JavaScript comment which can be seen by client browsers.</div>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%">
+							<a href="https://tools.ietf.org/html/rfc1918">https://tools.ietf.org/html/rfc1918</a>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/200.html">200</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">13</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/2/">2</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
+					<th width="20%" class="risk-1"><a
 						id="10035"></a>
 						<div>Low</div></th>
 					<th class="risk-1">Strict-Transport-Security Header Not Set</th>
@@ -1168,6 +1278,32 @@ td {
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/">https://wallet.esw.esante.gouv.fr/</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/.well-known/assetlinks.json">https://wallet.esw.esante.gouv.fr/.well-known/assetlinks.json</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1220,58 +1356,6 @@ td {
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/login-page">https://wallet.esw.esante.gouv.fr/login-page</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/main.e4ca9e4b8561d1f7f387.js">https://wallet.esw.esante.gouv.fr/main.e4ca9e4b8561d1f7f387.js</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/polyfills-es5.1a82183e0c413aad36ab.js">https://wallet.esw.esante.gouv.fr/polyfills-es5.1a82183e0c413aad36ab.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1350,6 +1434,32 @@ td {
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/runtime.c39564bb6b703669da85.js">https://wallet.esw.esante.gouv.fr/runtime.c39564bb6b703669da85.js</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js">https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1805,6 +1915,32 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/.well-known/assetlinks.json">https://wallet.esw.esante.gouv.fr/.well-known/assetlinks.json</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">X-Content-Type-Options</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/favicon.ico">https://wallet.esw.esante.gouv.fr/favicon.ico</a></td>
 					</tr>
 					<tr>
@@ -1832,58 +1968,6 @@ td {
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/login-page">https://wallet.esw.esante.gouv.fr/login-page</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">X-Content-Type-Options</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/main.e4ca9e4b8561d1f7f387.js">https://wallet.esw.esante.gouv.fr/main.e4ca9e4b8561d1f7f387.js</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">X-Content-Type-Options</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/polyfills-es5.1a82183e0c413aad36ab.js">https://wallet.esw.esante.gouv.fr/polyfills-es5.1a82183e0c413aad36ab.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1962,6 +2046,32 @@ td {
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/runtime.c39564bb6b703669da85.js">https://wallet.esw.esante.gouv.fr/runtime.c39564bb6b703669da85.js</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">X-Content-Type-Options</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js">https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2118,7 +2228,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">J0hj4PLtn4fvg/CO1MFeHIFIiCgtXqbkas1a2DN5VG8YEzwe5NHjIu52P8A1ygiylbK89mHT6Xxj</td>
+						<td width="80%">Szuho9TC3i/L2SGO1MFeHIFIiCgtXkA+ZD65IVyF9nre9agtwddQwEdbEVFVeFkAD45yhNLZ8dah</td>
 					</tr>
 				
 					<tr>
@@ -2144,33 +2254,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">qp5aet35jp8YCx2O1MFeHIFIiCgtXjUDtBJ52VQfmj0Iu+pMSiLHu6KqH7OGBCPv6de/m9xdEUjQ</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/login-page">https://wallet.esw.esante.gouv.fr/login-page</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">a1524seuBJ09Cn+O1MFeHIFIiCgtXsRxRiufCOcYOVV85pLNRItSwQjVE4yYuClMJShqj7gi/lcp</td>
+						<td width="80%">qBdLbvWzqHAqpeKO1MFeHIFIiCgtXhMY4ZlHbs9BWc0k3Ss0/Slk6Q2aHPsYAHfF4ZY6BvG1tklT</td>
 					</tr>
 				
 					<tr>
@@ -2197,6 +2281,32 @@ td {
 						<td width="20%"
 							class="indent2">Evidence</td>
 						<td width="80%">com/s/materialicons/v126/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/login-page">https://wallet.esw.esante.gouv.fr/login-page</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">+cQvLineGgtU7AyO1MFeHIFIiCgtXu4WtguJ5Gp3h7sOwqAJBCcjUHX2bYoHZ2kSLAhjjdQEzTz8</td>
 					</tr>
 				
 					<tr>
@@ -2248,7 +2358,33 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">T3XxbfT/K66qGJaO1MFeHIFIiCgtXplxfNQHdUes8ZT/TUBeIIU4Dxc26Urnb8FA10K7UPXwxLsk</td>
+						<td width="80%">wknyRdSwAdSNYbiO1MFeHIFIiCgtXn3Symg1S/bR9CR/wyp8q0y8w6O6Y2QveUpgVQ70Spk8VTOI</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js">https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">120H8V40h112v112zm40-120v128h128V32H160zm120</td>
 					</tr>
 				
 					<tr>
@@ -2305,7 +2441,7 @@ td {
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">8</td>
+					<td width="80%">9</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -2434,9 +2570,35 @@ td {
 						<td width="80%">select</td>
 					</tr>
 				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js">https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">bug</td>
+					</tr>
+				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">3</td>
+					<td width="80%">4</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -2701,6 +2863,32 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/.well-known/assetlinks.json">https://wallet.esw.esante.gouv.fr/.well-known/assetlinks.json</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">no-store</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/login-page">https://wallet.esw.esante.gouv.fr/login-page</a></td>
 					</tr>
 					<tr>
@@ -2778,7 +2966,7 @@ td {
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">4</td>
+					<td width="80%">5</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -2979,58 +3167,6 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/main.e4ca9e4b8561d1f7f387.js">https://wallet.esw.esante.gouv.fr/main.e4ca9e4b8561d1f7f387.js</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/polyfills-es5.1a82183e0c413aad36ab.js">https://wallet.esw.esante.gouv.fr/polyfills-es5.1a82183e0c413aad36ab.js</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
 						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/polyfills.e9ff1d7f7e5b791ad40f.js">https://wallet.esw.esante.gouv.fr/polyfills.e9ff1d7f7e5b791ad40f.js</a></td>
 					</tr>
 					<tr>
@@ -3083,6 +3219,32 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js">https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/styles.f968f0d682f4edb62cf7.css">https://wallet.esw.esante.gouv.fr/styles.f968f0d682f4edb62cf7.css</a></td>
 					</tr>
 					<tr>
@@ -3108,7 +3270,7 @@ td {
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">6</td>
+					<td width="80%">5</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
