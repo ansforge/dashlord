@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Sat, 30 Apr 2022 09:17:06",
+	"@generated": "Sun, 1 May 2022 09:58:21",
 	"site":[ 
 		{
 			"@name": "https://wallet.esw.esante.gouv.fr",
@@ -192,7 +192,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "25"
+					"sourceid": "28"
 				},
 				{
 					"pluginid": "10063",
@@ -247,6 +247,13 @@
 							"evidence": ""
 						},
 						{
+							"uri": "https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
 							"uri": "https://wallet.esw.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -254,13 +261,39 @@
 							"evidence": ""
 						}
 					],
-					"count": "7",
+					"count": "8",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy</p><p>https://developers.google.com/web/updates/2018/06/feature-policy</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "3"
+				},
+				{
+					"pluginid": "2",
+					"alertRef": "2",
+					"alert": "Private IP Disclosure",
+					"name": "Private IP Disclosure",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>A private IP (such as 10.x.x.x, 172.x.x.x, 192.168.x.x) or an Amazon EC2 private hostname (for example, ip-10-0-56-78) has been found in the HTTP response body. This information might be helpful for further attacks targeting internal systems.</p>",
+					"instances":[ 
+						{
+							"uri": "https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "10.1.9.34"
+						}
+					],
+					"count": "1",
+					"solution": "<p>Remove the private IP address from the HTTP response body.  For comments, use JSP/ASP/PHP comment instead of HTML/JavaScript comment which can be seen by client browsers.</p>",
+					"otherinfo": "<p>10.1.9.34</p><p>10.8.1.1</p><p>10.8.1.1</p><p></p>",
+					"reference": "<p>https://tools.ietf.org/html/rfc1918</p>",
+					"cweid": "200",
+					"wascid": "13",
+					"sourceid": "26"
 				},
 				{
 					"pluginid": "10035",
@@ -280,6 +313,13 @@
 							"evidence": ""
 						},
 						{
+							"uri": "https://wallet.esw.esante.gouv.fr/.well-known/assetlinks.json",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
 							"uri": "https://wallet.esw.esante.gouv.fr/favicon.ico",
 							"method": "GET",
 							"param": "",
@@ -288,20 +328,6 @@
 						},
 						{
 							"uri": "https://wallet.esw.esante.gouv.fr/login-page",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://wallet.esw.esante.gouv.fr/main.e4ca9e4b8561d1f7f387.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://wallet.esw.esante.gouv.fr/polyfills-es5.1a82183e0c413aad36ab.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -323,6 +349,13 @@
 						},
 						{
 							"uri": "https://wallet.esw.esante.gouv.fr/runtime.c39564bb6b703669da85.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -431,7 +464,7 @@
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "25"
+					"sourceid": "28"
 				},
 				{
 					"pluginid": "10021",
@@ -451,6 +484,13 @@
 							"evidence": ""
 						},
 						{
+							"uri": "https://wallet.esw.esante.gouv.fr/.well-known/assetlinks.json",
+							"method": "GET",
+							"param": "X-Content-Type-Options",
+							"attack": "",
+							"evidence": ""
+						},
+						{
 							"uri": "https://wallet.esw.esante.gouv.fr/favicon.ico",
 							"method": "GET",
 							"param": "X-Content-Type-Options",
@@ -459,20 +499,6 @@
 						},
 						{
 							"uri": "https://wallet.esw.esante.gouv.fr/login-page",
-							"method": "GET",
-							"param": "X-Content-Type-Options",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://wallet.esw.esante.gouv.fr/main.e4ca9e4b8561d1f7f387.js",
-							"method": "GET",
-							"param": "X-Content-Type-Options",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://wallet.esw.esante.gouv.fr/polyfills-es5.1a82183e0c413aad36ab.js",
 							"method": "GET",
 							"param": "X-Content-Type-Options",
 							"attack": "",
@@ -494,6 +520,13 @@
 						},
 						{
 							"uri": "https://wallet.esw.esante.gouv.fr/runtime.c39564bb6b703669da85.js",
+							"method": "GET",
+							"param": "X-Content-Type-Options",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js",
 							"method": "GET",
 							"param": "X-Content-Type-Options",
 							"attack": "",
@@ -537,21 +570,14 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "J0hj4PLtn4fvg/CO1MFeHIFIiCgtXqbkas1a2DN5VG8YEzwe5NHjIu52P8A1ygiylbK89mHT6Xxj"
+							"evidence": "Szuho9TC3i/L2SGO1MFeHIFIiCgtXkA+ZD65IVyF9nre9agtwddQwEdbEVFVeFkAD45yhNLZ8dah"
 						},
 						{
 							"uri": "https://wallet.esw.esante.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "qp5aet35jp8YCx2O1MFeHIFIiCgtXjUDtBJ52VQfmj0Iu+pMSiLHu6KqH7OGBCPv6de/m9xdEUjQ"
-						},
-						{
-							"uri": "https://wallet.esw.esante.gouv.fr/login-page",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "a1524seuBJ09Cn+O1MFeHIFIiCgtXsRxRiufCOcYOVV85pLNRItSwQjVE4yYuClMJShqj7gi/lcp"
+							"evidence": "qBdLbvWzqHAqpeKO1MFeHIFIiCgtXhMY4ZlHbs9BWc0k3Ss0/Slk6Q2aHPsYAHfF4ZY6BvG1tklT"
 						},
 						{
 							"uri": "https://wallet.esw.esante.gouv.fr/login-page",
@@ -559,6 +585,13 @@
 							"param": "",
 							"attack": "",
 							"evidence": "com/s/materialicons/v126/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ"
+						},
+						{
+							"uri": "https://wallet.esw.esante.gouv.fr/login-page",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "+cQvLineGgtU7AyO1MFeHIFIiCgtXu4WtguJ5Gp3h7sOwqAJBCcjUHX2bYoHZ2kSLAhjjdQEzTz8"
 						},
 						{
 							"uri": "https://wallet.esw.esante.gouv.fr/main.e4ca9e4b8561d1f7f387.js",
@@ -572,7 +605,14 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "T3XxbfT/K66qGJaO1MFeHIFIiCgtXplxfNQHdUes8ZT/TUBeIIU4Dxc26Urnb8FA10K7UPXwxLsk"
+							"evidence": "wknyRdSwAdSNYbiO1MFeHIFIiCgtXn3Symg1S/bR9CR/wyp8q0y8w6O6Y2QveUpgVQ70Spk8VTOI"
+						},
+						{
+							"uri": "https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "120H8V40h112v112zm40-120v128h128V32H160zm120"
 						},
 						{
 							"uri": "https://wallet.esw.esante.gouv.fr/sitemap.xml",
@@ -589,13 +629,13 @@
 							"evidence": "PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1MTIgNTEyJyB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMic+PHBhdGggZmlsbD0ncmdiKDI1NSwyNTUsMjU1KScgZD0nTTI1NiA4QzExOS4wNDMgOCA4IDExOS4wODMgOCAyNTZjMCAxMzYuOTk3IDExMS4wNDMgMjQ4IDI0OCAyNDhzMjQ4LTExMS4wMDMgMjQ4LTI0OEM1MDQgMTE5LjA4MyAzOTIuOTU3IDggMjU2IDh6bTAgMTEwYzIzLjE5NiAwIDQyIDE4LjgwNCA0MiA0MnMtMTguODA0IDQyLTQyIDQyLTQyLTE4LjgwNC00Mi00MiAxOC44MDQtNDIgNDItNDJ6bTU2IDI1NGMwIDYuNjI3LTUuMzczIDEyLTEyIDEyaC04OGMtNi42MjcgMC0xMi01LjM3My0xMi0xMnYtMjRjMC02LjYyNyA1LjM3My0xMiAxMi0xMmgxMnYtNjRoLTEyYy02LjYyNyAwLTEyLTUuMzczLTEyLTEydi0yNGMwLTYuNjI3IDUuMzczLTEyIDEyLTEyaDY0YzYuNjI3IDAgMTIgNS4zNzMgMTIgMTJ2MTAwaDEyYzYuNjI3IDAgMTIgNS4zNzMgMTIgMTJ2MjR6Jy8+PC9zdmc+"
 						}
 					],
-					"count": "8",
+					"count": "9",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>'Hc\uFFFD\uFFFD\uD7C7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD^\\x001c\uFFFDH\uFFFD(-^\uFFFD\uFFFDj\uFFFDZ\uFFFD3yTo\\x0018\\x0013<\\x001e\uFFFD\uFFFD\uFFFD\"\uFFFDv?\uFFFD5\uFFFD\\x0008\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDa\uFFFD\uFFFD|c</p>",
+					"otherinfo": "<p>K;\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD/\uFFFD\uFFFD!\uFFFD\uFFFD\uFFFD^\\x001c\uFFFDH\uFFFD(-^@>d>\uFFFD!\\\uFFFD\uFFFDz\uFFFD\uFFFD\uFFFD-\uFFFD\uFFFDP\uFFFDG[\\x0011QUxY\\x0000\\x000f\uFFFDr\uFFFD\uFFFD\uFFFD\uFFFD\u05A1</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "8"
+					"sourceid": "3"
 				},
 				{
 					"pluginid": "10027",
@@ -627,15 +667,22 @@
 							"param": "",
 							"attack": "",
 							"evidence": "select"
+						},
+						{
+							"uri": "https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "bug"
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
 					"otherinfo": "<p>The following pattern was used: \\bBUG\\b and was detected in the element starting with: \"(self.webpackChunk_ingroupe_portail_esante_wallet=self.webpackChunk_ingroupe_portail_esante_wallet||[]).push([[179],{98255:funct\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "25"
+					"sourceid": "28"
 				},
 				{
 					"pluginid": "10109",
@@ -709,6 +756,13 @@
 							"evidence": "no-store"
 						},
 						{
+							"uri": "https://wallet.esw.esante.gouv.fr/.well-known/assetlinks.json",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "no-store"
+						},
+						{
 							"uri": "https://wallet.esw.esante.gouv.fr/login-page",
 							"method": "GET",
 							"param": "",
@@ -730,7 +784,7 @@
 							"evidence": "no-store"
 						}
 					],
-					"count": "4",
+					"count": "5",
 					"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).   </p>",
 					"otherinfo": "",
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
@@ -762,7 +816,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "17"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10049",
@@ -776,20 +830,6 @@
 					"instances":[ 
 						{
 							"uri": "https://wallet.esw.esante.gouv.fr/favicon.ico",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://wallet.esw.esante.gouv.fr/main.e4ca9e4b8561d1f7f387.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://wallet.esw.esante.gouv.fr/polyfills-es5.1a82183e0c413aad36ab.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -810,6 +850,13 @@
 							"evidence": ""
 						},
 						{
+							"uri": "https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
 							"uri": "https://wallet.esw.esante.gouv.fr/styles.f968f0d682f4edb62cf7.css",
 							"method": "GET",
 							"param": "",
@@ -817,13 +864,13 @@
 							"evidence": ""
 						}
 					],
-					"count": "6",
+					"count": "5",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
 					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "20"
+					"sourceid": "22"
 				}
 			]
 		}
