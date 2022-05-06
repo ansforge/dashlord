@@ -127,7 +127,7 @@ td {
 	</h2>
 
 	<h3>
-		Generated on Thu, 5 May 2022 10:06:28
+		Generated on Fri, 6 May 2022 08:53:02
 	</h3>
 
 	
@@ -144,7 +144,7 @@ td {
 					<div>High</div>
 				</td>
 				<td align="center">
-					<div>0</div>
+					<div>1</div>
 				</td>
 			</tr>
 			<tr>
@@ -152,7 +152,7 @@ td {
 					<div>Medium</div>
 				</td>
 				<td align="center">
-					<div>7</div>
+					<div>9</div>
 				</td>
 			</tr>
 			<tr>
@@ -194,6 +194,11 @@ td {
 					align="center">Number of Instances</th>
 			</tr>
 			<tr>
+				<td><a href="#10062">PII Disclosure</a></td>
+				<td align="center" class="risk-3">High</td>
+				<td align="center">2</td>
+			</tr>
+			<tr>
 				<td><a href="#10202">Absence of Anti-CSRF Tokens</a></td>
 				<td align="center" class="risk-2">Medium</td>
 				<td align="center">12</td>
@@ -212,6 +217,16 @@ td {
 				<td><a href="#10020">Missing Anti-clickjacking Header</a></td>
 				<td align="center" class="risk-2">Medium</td>
 				<td align="center">10</td>
+			</tr>
+			<tr>
+				<td><a href="#3">Referer Exposes Session ID</a></td>
+				<td align="center" class="risk-2">Medium</td>
+				<td align="center">6</td>
+			</tr>
+			<tr>
+				<td><a href="#3">Session ID in URL Rewrite</a></td>
+				<td align="center" class="risk-2">Medium</td>
+				<td align="center">6</td>
 			</tr>
 			<tr>
 				<td><a href="#10099">Source Code Disclosure - SQL</a></td>
@@ -276,7 +291,7 @@ td {
 			<tr>
 				<td><a href="#10037">Server Leaks Information via &quot;X-Powered-By&quot; HTTP Response Header Field(s)</a></td>
 				<td align="center" class="risk-1">Low</td>
-				<td align="center">2</td>
+				<td align="center">3</td>
 			</tr>
 			<tr>
 				<td><a href="#10036">Server Leaks Version Information via &quot;Server&quot; HTTP Response Header Field</a></td>
@@ -291,7 +306,7 @@ td {
 			<tr>
 				<td><a href="#10096">Timestamp Disclosure - Unix</a></td>
 				<td align="center" class="risk-1">Low</td>
-				<td align="center">70</td>
+				<td align="center">69</td>
 			</tr>
 			<tr>
 				<td><a href="#10021">X-Content-Type-Options Header Missing</a></td>
@@ -352,6 +367,105 @@ td {
 		
 			<table class="results">
 				<tr height="24">
+					<th width="20%" class="risk-3"><a
+						id="10062"></a>
+						<div>High</div></th>
+					<th class="risk-3">PII Disclosure</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>The response contains Personally Identifiable Information, such as CC number, SSN and similar sensitive data.</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=HL7FR&amp;standard=FHIR%20(HL7%20France)&amp;type=FHIR">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=HL7FR&amp;standard=FHIR%20(HL7%20France)&amp;type=FHIR</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">5826746539336995351</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/dicom/allLogs.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0">https://interop.esante.gouv.fr/EVSClient/dicom/allLogs.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">5800570580519405913</td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">2</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%"></td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%"></td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/359.html">359</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">13</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/10062/">10062</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
 					<th width="20%" class="risk-2"><a
 						id="10202"></a>
 						<div>Medium</div></th>
@@ -389,7 +503,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/cda/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=ASIP&amp;standard=CDA-ASIP">https://interop.esante.gouv.fr/EVSClient/cda/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=ASIP&amp;standard=CDA-ASIP</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/cda/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP">https://interop.esante.gouv.fr/EVSClient/cda/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -415,7 +529,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/cda/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=ASIP&amp;standard=CDA-ASIP">https://interop.esante.gouv.fr/EVSClient/cda/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=ASIP&amp;standard=CDA-ASIP</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/cda/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP">https://interop.esante.gouv.fr/EVSClient/cda/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -441,7 +555,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/cda/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=ASIP&amp;standard=CDA-ASIP">https://interop.esante.gouv.fr/EVSClient/cda/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=ASIP&amp;standard=CDA-ASIP</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/cda/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP">https://interop.esante.gouv.fr/EVSClient/cda/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -487,7 +601,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">&lt;form id=&quot;globalForm&quot; name=&quot;globalForm&quot; method=&quot;post&quot; action=&quot;/EVSClient/home.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;</td>
+						<td width="80%">&lt;form id=&quot;globalForm&quot; name=&quot;globalForm&quot; method=&quot;post&quot; action=&quot;/EVSClient/home.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;</td>
 					</tr>
 				
 					<tr>
@@ -513,7 +627,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">&lt;form id=&quot;globalForm&quot; name=&quot;globalForm&quot; method=&quot;post&quot; action=&quot;/EVSClient/home.seam;jsessionid=i2oZcbLBLnff8dOJ0ZjSFno1&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;</td>
+						<td width="80%">&lt;form id=&quot;globalForm&quot; name=&quot;globalForm&quot; method=&quot;post&quot; action=&quot;/EVSClient/home.seam;jsessionid=XkIzCsDa+eLZktUbjr3X-+q4&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;</td>
 					</tr>
 				
 					<tr>
@@ -539,7 +653,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">&lt;form id=&quot;locale&quot; name=&quot;locale&quot; method=&quot;post&quot; action=&quot;/EVSClient/home.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;</td>
+						<td width="80%">&lt;form id=&quot;locale&quot; name=&quot;locale&quot; method=&quot;post&quot; action=&quot;/EVSClient/home.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;</td>
 					</tr>
 				
 					<tr>
@@ -565,7 +679,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">&lt;form id=&quot;locale&quot; name=&quot;locale&quot; method=&quot;post&quot; action=&quot;/EVSClient/home.seam;jsessionid=i2oZcbLBLnff8dOJ0ZjSFno1&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;</td>
+						<td width="80%">&lt;form id=&quot;locale&quot; name=&quot;locale&quot; method=&quot;post&quot; action=&quot;/EVSClient/home.seam;jsessionid=XkIzCsDa+eLZktUbjr3X-+q4&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;</td>
 					</tr>
 				
 					<tr>
@@ -591,7 +705,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">&lt;form id=&quot;banner_form&quot; name=&quot;banner_form&quot; method=&quot;post&quot; action=&quot;/EVSClient/home.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;</td>
+						<td width="80%">&lt;form id=&quot;banner_form&quot; name=&quot;banner_form&quot; method=&quot;post&quot; action=&quot;/EVSClient/home.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;</td>
 					</tr>
 				
 					<tr>
@@ -617,13 +731,13 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">&lt;form id=&quot;banner_form&quot; name=&quot;banner_form&quot; method=&quot;post&quot; action=&quot;/EVSClient/home.seam;jsessionid=i2oZcbLBLnff8dOJ0ZjSFno1&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;</td>
+						<td width="80%">&lt;form id=&quot;banner_form&quot; name=&quot;banner_form&quot; method=&quot;post&quot; action=&quot;/EVSClient/home.seam;jsessionid=XkIzCsDa+eLZktUbjr3X-+q4&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;</td>
 					</tr>
 				
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/home.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9">https://interop.esante.gouv.fr/EVSClient/home.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/home.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0">https://interop.esante.gouv.fr/EVSClient/home.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -649,7 +763,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/home.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9">https://interop.esante.gouv.fr/EVSClient/home.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/home.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0">https://interop.esante.gouv.fr/EVSClient/home.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -675,7 +789,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/home.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9">https://interop.esante.gouv.fr/EVSClient/home.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/home.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0">https://interop.esante.gouv.fr/EVSClient/home.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1504,6 +1618,424 @@ td {
 			<table class="results">
 				<tr height="24">
 					<th width="20%" class="risk-2"><a
+						id="3"></a>
+						<div>Medium</div></th>
+					<th class="risk-2">Referer Exposes Session ID</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>A hyperlink pointing to another host name was found. As session ID URL rewrite is used, it may be disclosed in referer header to external hosts.</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP&amp;type=CDA">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP&amp;type=CDA</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">www.google.com</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/cda/allLogs.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP">https://interop.esante.gouv.fr/EVSClient/cda/allLogs.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">gazelle.ihe.net</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/cda/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP">https://interop.esante.gouv.fr/EVSClient/cda/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">gazelle.ihe.net</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/fhir/allLogs.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ANS&amp;standard=FHIR">https://interop.esante.gouv.fr/EVSClient/fhir/allLogs.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ANS&amp;standard=FHIR</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">gazelle.ihe.net</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/fhir/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ANS&amp;standard=FHIR">https://interop.esante.gouv.fr/EVSClient/fhir/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ANS&amp;standard=FHIR</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">gazelle.ihe.net</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/home.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0">https://interop.esante.gouv.fr/EVSClient/home.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">gazelle.ihe.net</td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">6</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%">
+							<div>This is a risk if the session ID is sensitive and the hyperlink refers to an external or third party host. For secure content, put session ID in secured session cookie.</div>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%">
+							<a href="http://seclists.org/lists/webappsec/2002/Oct-Dec/0111.html">http://seclists.org/lists/webappsec/2002/Oct-Dec/0111.html</a>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/200.html">200</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">13</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/3/">3</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
+					<th width="20%" class="risk-2"><a
+						id="3"></a>
+						<div>Medium</div></th>
+					<th class="risk-2">Session ID in URL Rewrite</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>URL rewrite is used to track user session ID. The session ID may be disclosed via cross-site referer header. In addition, the session ID might be stored in browser history or server logs.</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP&amp;type=CDA">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP&amp;type=CDA</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/cda/allLogs.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP">https://interop.esante.gouv.fr/EVSClient/cda/allLogs.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/cda/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP">https://interop.esante.gouv.fr/EVSClient/cda/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/fhir/allLogs.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ANS&amp;standard=FHIR">https://interop.esante.gouv.fr/EVSClient/fhir/allLogs.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ANS&amp;standard=FHIR</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/fhir/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ANS&amp;standard=FHIR">https://interop.esante.gouv.fr/EVSClient/fhir/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ANS&amp;standard=FHIR</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/home.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0">https://interop.esante.gouv.fr/EVSClient/home.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0</td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">6</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%">
+							<div>For secure content, put session ID in a cookie. To be even more secure consider using a combination of cookie and URL rewrite.</div>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%">
+							<a href="http://seclists.org/lists/webappsec/2002/Oct-Dec/0111.html">http://seclists.org/lists/webappsec/2002/Oct-Dec/0111.html</a>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/200.html">200</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">13</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/3/">3</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
+					<th width="20%" class="risk-2"><a
 						id="10099"></a>
 						<div>Medium</div></th>
 					<th class="risk-2">Source Code Disclosure - SQL</th>
@@ -2123,7 +2655,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/javax.faces.resource/gazelle-evs-deferred-20220124144816.min.js.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?ln=jscript">https://interop.esante.gouv.fr/EVSClient/javax.faces.resource/gazelle-evs-deferred-20220124144816.min.js.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?ln=jscript</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/javax.faces.resource/gazelle-evs-deferred-20220124144816.min.js.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?ln=jscript">https://interop.esante.gouv.fr/EVSClient/javax.faces.resource/gazelle-evs-deferred-20220124144816.min.js.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?ln=jscript</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2149,7 +2681,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/jquery.js;jsessionid=It+-idwY0x+1r4qJDN4J-sf9">https://interop.esante.gouv.fr/EVSClient/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/jquery.js;jsessionid=It+-idwY0x+1r4qJDN4J-sf9</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/jquery.js;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0">https://interop.esante.gouv.fr/EVSClient/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/jquery.js;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3327,7 +3859,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/javax.faces.resource/gazelle-evs-20220124144816.min.js.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?ln=jscript">https://interop.esante.gouv.fr/EVSClient/javax.faces.resource/gazelle-evs-20220124144816.min.js.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?ln=jscript</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/javax.faces.resource/gazelle-evs-20220124144816.min.js.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?ln=jscript">https://interop.esante.gouv.fr/EVSClient/javax.faces.resource/gazelle-evs-20220124144816.min.js.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?ln=jscript</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3353,7 +3885,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/javax.faces.resource/gazelle-evs-deferred-20220124144816.min.js.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?ln=jscript">https://interop.esante.gouv.fr/EVSClient/javax.faces.resource/gazelle-evs-deferred-20220124144816.min.js.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?ln=jscript</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/javax.faces.resource/gazelle-evs-deferred-20220124144816.min.js.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?ln=jscript">https://interop.esante.gouv.fr/EVSClient/javax.faces.resource/gazelle-evs-deferred-20220124144816.min.js.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?ln=jscript</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3379,7 +3911,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/javax.faces.resource/jsf.js.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?ln=javax.faces">https://interop.esante.gouv.fr/EVSClient/javax.faces.resource/jsf.js.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?ln=javax.faces</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/javax.faces.resource/jsf.js.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?ln=javax.faces">https://interop.esante.gouv.fr/EVSClient/javax.faces.resource/jsf.js.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?ln=javax.faces</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3405,7 +3937,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/jquery.js;jsessionid=It+-idwY0x+1r4qJDN4J-sf9">https://interop.esante.gouv.fr/EVSClient/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/jquery.js;jsessionid=It+-idwY0x+1r4qJDN4J-sf9</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/jquery.js;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0">https://interop.esante.gouv.fr/EVSClient/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/jquery.js;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3431,7 +3963,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/packed/packed.js;jsessionid=It+-idwY0x+1r4qJDN4J-sf9">https://interop.esante.gouv.fr/EVSClient/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/packed/packed.js;jsessionid=It+-idwY0x+1r4qJDN4J-sf9</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/packed/packed.js;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0">https://interop.esante.gouv.fr/EVSClient/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/packed/packed.js;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4358,9 +4890,35 @@ td {
 						<td width="80%">X-Powered-By: Undertow/1</td>
 					</tr>
 				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/GazelleFhirValidator/">https://interop.esante.gouv.fr/GazelleFhirValidator/</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">X-Powered-By: Undertow/1</td>
+					</tr>
+				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">2</td>
+					<td width="80%">3</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -6612,35 +7170,9 @@ td {
 						<td width="80%">0000287245</td>
 					</tr>
 				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/gazelle-documentation/SVS-Simulator/user.html">https://interop.esante.gouv.fr/gazelle-documentation/SVS-Simulator/user.html</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">20100726</td>
-					</tr>
-				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">70</td>
+					<td width="80%">69</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -7033,7 +7565,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">C5ySWJv52OR1MO_hF3KeNqCEvxYMTFwJJYemGp1vHQQD8nQhO7VW9A==</td>
+						<td width="80%">2rJXkj_YMsIfnIr-TqL_EyQt_b8dNPehKWHQ8JITmtRyRuTKK3nZlA==</td>
 					</tr>
 				
 					<tr>
@@ -7059,7 +7591,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">9YEyh7-AJJLpnpKLph7W6mhJ7TWNwaAyaaqldGx68aPnumb9S09mPQ==</td>
+						<td width="80%">-1YtGCm3vnDKnrO72OM67oKJDZQNiUkjpDo1aRoqJnw5CoEWczf0ug==</td>
 					</tr>
 				
 					<tr>
@@ -7085,7 +7617,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">Gl3nDTJwATZ-4RR4C9M3tT0vU1SMQYwPUmpVhU1sqOykITWvGfJq7g==</td>
+						<td width="80%">iF_TnQvWCxifVuynpxONLQeZOH6GlllkBTscq6bofYT9Wz_0X8T74Q==</td>
 					</tr>
 				
 					<tr>
@@ -7111,7 +7643,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">KnQctk6Y4X64VQ0s4VuLndkYLKtzTXFRNRfD_r2Z62XZjDtzc7TvqQ==</td>
+						<td width="80%">jyTf_icnwnFLII3xn-trrBUuOHS7-IhVROnPVmwoAqymubRKQGICYQ==</td>
 					</tr>
 				
 					<tr>
@@ -7137,7 +7669,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">rdoITm5i8qe4t7OY0C_GOp_SXL_42sccn-qbiVqCN0fS3eWPIS0lpw==</td>
+						<td width="80%">leewxYyiZBwNUYw2xMt_dbd1BawTLoxsXO-ddFNUA8LSU1cV6_Z2rg==</td>
 					</tr>
 				
 					<tr>
@@ -7163,7 +7695,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">TClkvsugDNY-SJWy52qBIhrCTpIywYEKxhtXy8oYYgmIo7BYevWgzg==</td>
+						<td width="80%">0AD148wqNuW0HQ6WKRBgsWkc96LG-ecoOhdUb10Go3TYtGxmOzt7uw==</td>
 					</tr>
 				
 					<tr>
@@ -7189,7 +7721,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">qPZI2YY4XXYoh6BZEJwLGEvFEOhaC10PLwBw2t8qaVKrbG0fLWMnKw==</td>
+						<td width="80%">l723I_ykvEvAVIobV6C6BYpKUMZ4uN-RIW0BaE7p41bZkrrBz958_w==</td>
 					</tr>
 				
 					<tr>
@@ -7215,7 +7747,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">84XFGFDUm50jq2uVSIq9T8BbBvBWYz1EBKixrSWmd9FEshDp0pIv8g==</td>
+						<td width="80%">iPcsYE-AA0R62QQWTfGV5AeA8CV7N_pTZneNCCJ9fEECx_jHdbLWWQ==</td>
 					</tr>
 				
 					<tr>
@@ -7241,7 +7773,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">mhrPqnswrfm1PwL1VvvFycZGfrtC_j47DCxGh2_AoKzPvIgpbIwSKg==</td>
+						<td width="80%">3UQ7OkOPeFxCPpnUGrCB3jZXN9Fed-ERU56XA7njXV9GO0yEIR7TXw==</td>
 					</tr>
 				
 					<tr>
@@ -7267,7 +7799,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">KhGLRHAuVkh1_6yhq-XYfjVN-0gzp9bNOJBzjzsDHhJNdBk3zwJx2Q==</td>
+						<td width="80%">zy-QyVWcFW1TK4RM1_aYHw62zja2WPcC9HiYBZpYM633EuAteJK_5g==</td>
 					</tr>
 				
 					<tr>
@@ -7293,7 +7825,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">NsIr5G1uJsF8yzYMoJTi0kZ-M3iaxc2vuNwAS5Flmo2VKYqUGw3KIQ==</td>
+						<td width="80%">zi1oCAVVl5wn-rkXIz5Yeq4AJNpf0big_14lUi4x2vNU-Ql6U4Bdiw==</td>
 					</tr>
 				
 					<tr>
@@ -7319,7 +7851,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">YY1fPFhn1lKdbNu3td4RBG7j4jHdXbiD5acJN9TwBaOM4EHHPQbMmw==</td>
+						<td width="80%">QHFBB_dgq-SoJZsWJmPGF3aZ7rHr3y_Mq6kPzq6sAO3Nna6WmTdvmg==</td>
 					</tr>
 				
 				<tr>
@@ -7378,7 +7910,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=ANS&amp;standard=FHIR&amp;type=FHIR">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=ANS&amp;standard=FHIR&amp;type=FHIR</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ANS&amp;standard=FHIR&amp;type=FHIR">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ANS&amp;standard=FHIR&amp;type=FHIR</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -7404,7 +7936,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=ASIP&amp;standard=CDA-ASIP&amp;type=CDA">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=ASIP&amp;standard=CDA-ASIP&amp;type=CDA</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP&amp;type=CDA">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=CDA-ASIP&amp;type=CDA</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -7430,7 +7962,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=ASIP&amp;standard=XDS-ASIP&amp;type=XDS">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=ASIP&amp;standard=XDS-ASIP&amp;type=XDS</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=XDS-ASIP&amp;type=XDS">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=XDS-ASIP&amp;type=XDS</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -7456,7 +7988,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=C-CDA&amp;standard=CDA-C-CDA&amp;type=CDA">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=C-CDA&amp;standard=CDA-C-CDA&amp;type=CDA</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=C-CDA&amp;standard=CDA-C-CDA&amp;type=CDA">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=C-CDA&amp;standard=CDA-C-CDA&amp;type=CDA</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -7482,7 +8014,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=CCD&amp;standard=CDA-CCD&amp;type=CDA">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=CCD&amp;standard=CDA-CCD&amp;type=CDA</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=CCD&amp;standard=CDA-CCD&amp;type=CDA">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=CCD&amp;standard=CDA-CCD&amp;type=CDA</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -7508,7 +8040,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=CNSA&amp;standard=FHIR%20(CNSA)&amp;type=FHIR">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=CNSA&amp;standard=FHIR%20(CNSA)&amp;type=FHIR</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=CNSA&amp;standard=FHIR%20(CNSA)&amp;type=FHIR">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=CNSA&amp;standard=FHIR%20(CNSA)&amp;type=FHIR</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -7534,7 +8066,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE&amp;type=ATNA">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE&amp;type=ATNA</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE&amp;type=ATNA">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE&amp;type=ATNA</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -7560,7 +8092,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=CDA-IHE&amp;type=CDA">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=CDA-IHE&amp;type=CDA</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=CDA-IHE&amp;type=CDA">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=CDA-IHE&amp;type=CDA</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -7586,7 +8118,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=TLS-IHE&amp;type=TLS">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=TLS-IHE&amp;type=TLS</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=TLS-IHE&amp;type=TLS">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=TLS-IHE&amp;type=TLS</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -7612,7 +8144,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=SAS&amp;standard=FHIR%20(SAS)&amp;type=FHIR">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=SAS&amp;standard=FHIR%20(SAS)&amp;type=FHIR</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=SAS&amp;standard=FHIR%20(SAS)&amp;type=FHIR">https://interop.esante.gouv.fr/EVSClient/administration/statisticsByType.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=SAS&amp;standard=FHIR%20(SAS)&amp;type=FHIR</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -8846,7 +9378,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -8872,7 +9404,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -8898,7 +9430,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -8924,7 +9456,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -8950,7 +9482,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -8976,7 +9508,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9002,7 +9534,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9028,7 +9560,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9054,7 +9586,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9080,7 +9612,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9106,7 +9638,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9132,7 +9664,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9158,7 +9690,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9184,7 +9716,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9210,7 +9742,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9236,7 +9768,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9262,7 +9794,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9288,7 +9820,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9314,7 +9846,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9340,7 +9872,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9366,7 +9898,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9392,7 +9924,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9418,7 +9950,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9444,7 +9976,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9470,7 +10002,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9496,7 +10028,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9522,7 +10054,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9548,7 +10080,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9574,7 +10106,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9600,7 +10132,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9626,7 +10158,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9652,7 +10184,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9678,7 +10210,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9704,7 +10236,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9730,7 +10262,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9756,7 +10288,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9782,7 +10314,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9808,7 +10340,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9834,7 +10366,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9860,7 +10392,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9886,7 +10418,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9912,7 +10444,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9938,7 +10470,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9964,7 +10496,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -9990,7 +10522,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10016,7 +10548,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10042,7 +10574,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10068,7 +10600,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10094,7 +10626,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10120,7 +10652,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10146,7 +10678,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10172,7 +10704,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10198,7 +10730,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10224,7 +10756,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10250,7 +10782,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10276,7 +10808,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10302,7 +10834,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10328,7 +10860,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10354,7 +10886,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10380,7 +10912,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10406,7 +10938,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10432,7 +10964,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10458,7 +10990,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10484,7 +11016,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10510,7 +11042,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10536,7 +11068,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10562,7 +11094,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10588,7 +11120,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10614,7 +11146,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10640,7 +11172,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10666,7 +11198,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10692,7 +11224,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10718,7 +11250,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10744,7 +11276,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10770,7 +11302,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10796,7 +11328,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10822,7 +11354,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10848,7 +11380,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10874,7 +11406,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10900,7 +11432,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10926,7 +11458,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10952,7 +11484,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -10978,7 +11510,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -11004,7 +11536,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -11030,7 +11562,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -11056,7 +11588,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -11082,7 +11614,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -11108,7 +11640,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -11134,7 +11666,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=IHE&amp;standard=ATNA-IHE</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE">https://interop.esante.gouv.fr/EVSClient/atna/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=IHE&amp;standard=ATNA-IHE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -11160,7 +11692,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/fhir/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=ANS&amp;standard=FHIR">https://interop.esante.gouv.fr/EVSClient/fhir/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=ANS&amp;standard=FHIR</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/fhir/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ANS&amp;standard=FHIR">https://interop.esante.gouv.fr/EVSClient/fhir/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ANS&amp;standard=FHIR</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -11186,7 +11718,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/xds/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=ASIP&amp;standard=XDS-ASIP">https://interop.esante.gouv.fr/EVSClient/xds/validator.seam;jsessionid=It+-idwY0x+1r4qJDN4J-sf9?extension=ASIP&amp;standard=XDS-ASIP</a></td>
+						<td width="80%"><a href="https://interop.esante.gouv.fr/EVSClient/xds/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=XDS-ASIP">https://interop.esante.gouv.fr/EVSClient/xds/validator.seam;jsessionid=HKPKP0LRz3iGxJ1RbQm06BE0?extension=ASIP&amp;standard=XDS-ASIP</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
