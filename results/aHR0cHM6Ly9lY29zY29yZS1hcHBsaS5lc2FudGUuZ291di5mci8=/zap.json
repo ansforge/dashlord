@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Fri, 13 May 2022 07:35:29",
+	"@generated": "Sun, 15 May 2022 07:13:41",
 	"site":[ 
 		{
 			"@name": "https://ecoscore-appli.esante.gouv.fr",
@@ -32,7 +32,7 @@
 					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>http://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "26"
+					"sourceid": "22"
 				},
 				{
 					"pluginid": "10055",
@@ -1809,7 +1809,7 @@
 					"reference": "<p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "39"
+					"sourceid": "41"
 				},
 				{
 					"pluginid": "10094",
@@ -2073,13 +2073,6 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.c72399a2fbea5d162787.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "max-age=31536000"
-						},
-						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
 							"method": "GET",
 							"param": "",
@@ -2129,7 +2122,7 @@
 							"evidence": ""
 						}
 					],
-					"count": "9",
+					"count": "8",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
 					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
@@ -2155,6 +2148,13 @@
 							"evidence": "max-age=0"
 						},
 						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/static/images/logo-ANS.svg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=0"
+						},
+						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/static/images/logo-ministere.svg",
 							"method": "GET",
 							"param": "",
@@ -2162,13 +2162,13 @@
 							"evidence": "max-age=0"
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "",
 					"otherinfo": "",
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "22"
+					"sourceid": "25"
 				}
 			]
 		}
