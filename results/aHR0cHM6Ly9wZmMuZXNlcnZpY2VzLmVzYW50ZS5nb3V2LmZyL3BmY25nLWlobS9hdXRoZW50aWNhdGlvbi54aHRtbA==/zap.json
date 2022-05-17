@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Sun, 15 May 2022 04:28:27",
+	"@generated": "Tue, 17 May 2022 04:36:04",
 	"site":[ 
 		{
 			"@name": "https://pfc.eservices.esante.gouv.fr",
@@ -30,7 +30,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"j_idt77\" name=\"j_idt77\" method=\"post\" action=\"/pfcng-ihm/index.xhtml\" enctype=\"application/x-www-form-urlencoded\">"
+							"evidence": "<form id=\"j_idt61\" name=\"j_idt61\" method=\"post\" action=\"/pfcng-ihm/index.xhtml\" enctype=\"application/x-www-form-urlencoded\">"
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/authentication.xhtml",
@@ -44,7 +44,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"j_idt77\" name=\"j_idt77\" method=\"post\" action=\"/pfcng-ihm/index.xhtml\" enctype=\"application/x-www-form-urlencoded\">"
+							"evidence": "<form id=\"j_idt61\" name=\"j_idt61\" method=\"post\" action=\"/pfcng-ihm/index.xhtml\" enctype=\"application/x-www-form-urlencoded\">"
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
@@ -58,7 +58,7 @@
 							"method": "POST",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"j_idt77\" name=\"j_idt77\" method=\"post\" action=\"/pfcng-ihm/index.xhtml\" enctype=\"application/x-www-form-urlencoded\">"
+							"evidence": "<form id=\"j_idt61\" name=\"j_idt61\" method=\"post\" action=\"/pfcng-ihm/index.xhtml\" enctype=\"application/x-www-form-urlencoded\">"
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
@@ -208,7 +208,7 @@
 					"reference": "<p>https://bugs.jqueryui.com/ticket/15284</p><p>https://github.com/jquery/jquery-ui/security/advisories/GHSA-gpqq-952q-5327</p><p>https://nvd.nist.gov/vuln/detail/CVE-2021-41184</p><p>https://nvd.nist.gov/vuln/detail/CVE-2021-41183</p><p>https://github.com/jquery/jquery-ui/security/advisories/GHSA-9gj3-hwp5-pmwc</p><p>https://nvd.nist.gov/vuln/detail/CVE-2021-41182</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "88"
+					"sourceid": "87"
 				},
 				{
 					"pluginid": "10054",
@@ -226,6 +226,13 @@
 							"param": "JSESSIONID",
 							"attack": "",
 							"evidence": "Set-Cookie: JSESSIONID"
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm",
+							"method": "GET",
+							"param": "prod-asip",
+							"attack": "",
+							"evidence": "Set-Cookie: prod-asip"
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/",
@@ -249,7 +256,7 @@
 							"evidence": "Set-Cookie: prod-asip"
 						}
 					],
-					"count": "4",
+					"count": "5",
 					"solution": "<p>Ensure that the SameSite attribute is set to either 'lax' or ideally 'strict' for all cookies.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
@@ -302,7 +309,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "88"
+					"sourceid": "87"
 				},
 				{
 					"pluginid": "10063",
@@ -444,11 +451,18 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server - Unix</p>",
 					"instances":[ 
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/authentication.xhtml",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1952059820"
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/authentication.xhtml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1918505388"
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/jquery/jquery-plugins.js.xhtml?ln=primefaces",
@@ -472,13 +486,13 @@
 							"evidence": "86400000"
 						}
 					],
-					"count": "4",
+					"count": "5",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
 					"otherinfo": "<p>1952059820, which evaluates to: 2031-11-10 06:50:20</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "13"
 				},
 				{
 					"pluginid": "10021",
@@ -901,28 +915,28 @@
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
 							"method": "POST",
-							"param": "j_idt77",
+							"param": "j_idt61",
 							"attack": "",
 							"evidence": ""
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
 							"method": "POST",
-							"param": "j_idt77",
+							"param": "j_idt61",
 							"attack": "",
 							"evidence": ""
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
 							"method": "POST",
-							"param": "j_idt77",
+							"param": "j_idt61",
 							"attack": "",
 							"evidence": ""
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
 							"method": "POST",
-							"param": "j_idt77",
+							"param": "j_idt61",
 							"attack": "",
 							"evidence": ""
 						},
@@ -1279,7 +1293,7 @@
 					],
 					"count": "54",
 					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
-					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [form] tag [id] attribute </p><p></p><p>The user input found was:</p><p>j_idt77=j_idt77</p><p></p><p>The user-controlled value was:</p><p>j_idt77</p>",
+					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [form] tag [id] attribute </p><p></p><p>The user input found was:</p><p>j_idt61=j_idt61</p><p></p><p>The user-controlled value was:</p><p>j_idt61</p>",
 					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</p>",
 					"cweid": "20",
 					"wascid": "20",
