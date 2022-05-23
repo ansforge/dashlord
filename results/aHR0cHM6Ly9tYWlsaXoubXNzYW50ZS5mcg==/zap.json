@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Sat, 21 May 2022 05:51:37",
+	"@generated": "Mon, 23 May 2022 06:26:15",
 	"site":[ 
 		{
 			"@name": "https://mailiz.mssante.fr",
@@ -217,7 +217,7 @@
 					"reference": "<p>https://nvd.nist.gov/vuln/detail/CVE-2012-6708</p><p>https://github.com/jquery/jquery/issues/2432</p><p>http://research.insecurelabs.org/jquery/test/</p><p>https://bugs.jquery.com/ticket/9521</p><p>http://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/</p><p>http://bugs.jquery.com/ticket/11290</p><p>https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/</p><p>https://nvd.nist.gov/vuln/detail/CVE-2019-11358</p><p>https://nvd.nist.gov/vuln/detail/CVE-2015-9251</p><p>https://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b</p><p>https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/</p><p>https://nvd.nist.gov/vuln/detail/CVE-2011-4969</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "546"
+					"sourceid": "545"
 				},
 				{
 					"pluginid": "90022",
@@ -243,7 +243,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "39"
+					"sourceid": "50"
 				},
 				{
 					"pluginid": "10011",
@@ -454,7 +454,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "4718"
+					"sourceid": "4862"
 				},
 				{
 					"pluginid": "10063",
@@ -653,7 +653,7 @@
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "672"
+					"sourceid": "670"
 				},
 				{
 					"pluginid": "10094",
@@ -852,7 +852,33 @@
 					"reference": "<p>http://code.google.com/p/browsersec/wiki/Part2#Character_set_handling_and_detection</p>",
 					"cweid": "436",
 					"wascid": "15",
-					"sourceid": "140"
+					"sourceid": "125"
+				},
+				{
+					"pluginid": "10024",
+					"alertRef": "10024",
+					"alert": "Information Disclosure - Sensitive Information in URL",
+					"name": "Information Disclosure - Sensitive Information in URL",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The request appeared to contain sensitive information leaked in the URL. This can violate PCI and most organizational compliance policies. You can configure the list of strings for this check to add or remove values specific to your environment.</p>",
+					"instances":[ 
+						{
+							"uri": "https://mailiz.mssante.fr/web/mss/connexion-otp?_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_dynamicAttributes=%7B%7D&_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_expandTheme=%7E%7E%7Esimple&_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_id=erreurCredentials&_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_struts.portlet.action=%2Fauthentification&_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_struts.portlet.mode=view&_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_template=form-close&_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_templateDir=template&_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_theme=simple&_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_themeExpansionToken=%7E%7E%7E&p_p_col_count=1&p_p_col_id=column-1&p_p_id=msslogin_WAR_mssloginportlet_INSTANCE_5R5f&p_p_lifecycle=1&p_p_mode=view&p_p_state=normal",
+							"method": "POST",
+							"param": "_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_themeExpansionToken",
+							"attack": "",
+							"evidence": "_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_themeExpansionToken"
+						}
+					],
+					"count": "1",
+					"solution": "<p>Do not pass sensitive information in URIs.</p>",
+					"otherinfo": "<p>The URL contains potentially sensitive information. The following string was found via the pattern: token</p><p>_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_themeExpansionToken</p>",
+					"reference": "",
+					"cweid": "200",
+					"wascid": "13",
+					"sourceid": "5176"
 				},
 				{
 					"pluginid": "10027",
@@ -872,14 +898,14 @@
 							"evidence": "query"
 						},
 						{
-							"uri": "https://mailiz.mssante.fr/html/portlet/journal/js/main.js?b=6203&browserId=firefox&languageId=en_US&minifierType=js&t=1653097836000",
+							"uri": "https://mailiz.mssante.fr/html/portlet/journal/js/main.js?b=6203&browserId=firefox&languageId=en_US&minifierType=js&t=1653268126000",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "select"
 						},
 						{
-							"uri": "https://mailiz.mssante.fr/html/portlet/journal/js/navigation.js?b=6203&browserId=firefox&languageId=en_US&minifierType=js&t=1653097836000",
+							"uri": "https://mailiz.mssante.fr/html/portlet/journal/js/navigation.js?b=6203&browserId=firefox&languageId=en_US&minifierType=js&t=1653268126000",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -955,7 +981,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "543"
+					"sourceid": "542"
 				},
 				{
 					"pluginid": "90033",
@@ -982,7 +1008,7 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://mailiz.mssante.fr/mss-login-portlet/css/main.css?b=6203&browserId=firefox&languageId=en_US&minifierType=css&t=1653097836000&themeId=mss_WAR_msstheme",
+							"uri": "https://mailiz.mssante.fr/mss-login-portlet/css/main.css?b=6203&browserId=firefox&languageId=en_US&minifierType=css&t=1653268078000&themeId=mss_WAR_msstheme",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1005,7 +1031,7 @@
 					],
 					"count": "5",
 					"solution": "<p>Always scope cookies to a FQDN (Fully Qualified Domain Name).</p>",
-					"otherinfo": "<p>The origin domain used for comparison was: </p><p>mailiz.mssante.fr</p><p>PAUTSESSIONID=178840B903658F4D91A5BA37F6800E0B.PAUT_2</p><p>ROUTEID=.PAUT_2</p><p></p>",
+					"otherinfo": "<p>The origin domain used for comparison was: </p><p>mailiz.mssante.fr</p><p>PAUTSESSIONID=8F8A9F23710CE859C37D2E60A94E3621.PAUT_1</p><p>ROUTEID=.PAUT_1</p><p></p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc6265#section-4.1</p><p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p><p>http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</p>",
 					"cweid": "565",
 					"wascid": "15",
@@ -1268,14 +1294,14 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://mailiz.mssante.fr/essentiel",
+							"uri": "https://mailiz.mssante.fr/cgu",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://mailiz.mssante.fr/plan-site",
+							"uri": "https://mailiz.mssante.fr/essentiel",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1377,7 +1403,7 @@
 					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "4751"
+					"sourceid": "4882"
 				}
 			]
 		}
