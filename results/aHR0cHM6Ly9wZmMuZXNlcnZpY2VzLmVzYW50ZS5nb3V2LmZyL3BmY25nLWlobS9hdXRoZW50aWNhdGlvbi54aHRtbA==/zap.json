@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Sat, 21 May 2022 03:56:14",
+	"@generated": "Mon, 23 May 2022 04:32:11",
 	"site":[ 
 		{
 			"@name": "https://pfc.eservices.esante.gouv.fr",
@@ -47,13 +47,6 @@
 							"evidence": "<form id=\"j_idt77\" name=\"j_idt77\" method=\"post\" action=\"/pfcng-ihm/index.xhtml\" enctype=\"application/x-www-form-urlencoded\">"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form id=\"j_idt31\" name=\"j_idt31\" method=\"post\" action=\"/pfcng-ihm/logout.xhtml\" enctype=\"application/x-www-form-urlencoded\">"
-						},
-						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
 							"method": "GET",
 							"param": "",
@@ -61,11 +54,18 @@
 							"evidence": "<form id=\"form\" name=\"form\" method=\"post\" action=\"/pfcng-ihm/revocation/index.xhtml\" class=\"form-horizontal pfcng-home\" enctype=\"application/x-www-form-urlencoded\">"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
 							"method": "POST",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"j_idt31\" name=\"j_idt31\" method=\"post\" action=\"/pfcng-ihm/logout.xhtml\" enctype=\"application/x-www-form-urlencoded\">"
+							"evidence": "<form id=\"j_idt77\" name=\"j_idt77\" method=\"post\" action=\"/pfcng-ihm/index.xhtml\" enctype=\"application/x-www-form-urlencoded\">"
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "<form id=\"form\" name=\"form\" method=\"post\" action=\"/pfcng-ihm/revocation/index.xhtml\" class=\"form-horizontal pfcng-home\" enctype=\"application/x-www-form-urlencoded\">"
 						}
 					],
 					"count": "7",
@@ -115,13 +115,6 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": ""
-						},
-						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
 							"method": "GET",
 							"param": "",
@@ -129,7 +122,14 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
 							"method": "POST",
 							"param": "",
 							"attack": "",
@@ -167,23 +167,9 @@
 							"param": "X-Frame-Options",
 							"attack": "",
 							"evidence": ""
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "GET",
-							"param": "X-Frame-Options",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "POST",
-							"param": "X-Frame-Options",
-							"attack": "",
-							"evidence": ""
 						}
 					],
-					"count": "4",
+					"count": "2",
 					"solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p>",
@@ -222,7 +208,7 @@
 					"reference": "<p>https://bugs.jqueryui.com/ticket/15284</p><p>https://github.com/jquery/jquery-ui/security/advisories/GHSA-gpqq-952q-5327</p><p>https://nvd.nist.gov/vuln/detail/CVE-2021-41184</p><p>https://nvd.nist.gov/vuln/detail/CVE-2021-41183</p><p>https://github.com/jquery/jquery-ui/security/advisories/GHSA-9gj3-hwp5-pmwc</p><p>https://nvd.nist.gov/vuln/detail/CVE-2021-41182</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "87"
+					"sourceid": "88"
 				},
 				{
 					"pluginid": "10054",
@@ -261,58 +247,9 @@
 							"param": "prod-asip",
 							"attack": "",
 							"evidence": "Set-Cookie: prod-asip"
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/bootstrap.css.xhtml?ln=bootstrap2/css",
-							"method": "GET",
-							"param": "JSESSIONID",
-							"attack": "",
-							"evidence": "Set-Cookie: JSESSIONID"
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/bootstrap.js.xhtml?ln=bootstrap2/js",
-							"method": "GET",
-							"param": "JSESSIONID",
-							"attack": "",
-							"evidence": "Set-Cookie: JSESSIONID"
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/images/favicon.ico.xhtml",
-							"method": "GET",
-							"param": "JSESSIONID",
-							"attack": "",
-							"evidence": "Set-Cookie: JSESSIONID"
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/pfcng-base.css.xhtml?ln=styles",
-							"method": "GET",
-							"param": "JSESSIONID",
-							"attack": "",
-							"evidence": "Set-Cookie: JSESSIONID"
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/pfcng-ff.js.xhtml?ln=js",
-							"method": "GET",
-							"param": "JSESSIONID",
-							"attack": "",
-							"evidence": "Set-Cookie: JSESSIONID"
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/primefaces.css.xhtml?ln=primefaces",
-							"method": "GET",
-							"param": "JSESSIONID",
-							"attack": "",
-							"evidence": "Set-Cookie: JSESSIONID"
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/primefaces.js.xhtml?ln=primefaces",
-							"method": "GET",
-							"param": "JSESSIONID",
-							"attack": "",
-							"evidence": "Set-Cookie: JSESSIONID"
 						}
 					],
-					"count": "11",
+					"count": "4",
 					"solution": "<p>Ensure that the SameSite attribute is set to either 'lax' or ideally 'strict' for all cookies.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
@@ -365,7 +302,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "87"
+					"sourceid": "88"
 				},
 				{
 					"pluginid": "10063",
@@ -420,13 +357,6 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/checkConfig.js.xhtml?ln=js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": ""
-						},
-						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/jquery/jquery.js.xhtml?ln=primefaces",
 							"method": "GET",
 							"param": "",
@@ -435,6 +365,13 @@
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/pfcng-ff.js.xhtml?ln=js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/pfcng.js.xhtml?ln=js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -486,23 +423,9 @@
 							"param": "",
 							"attack": "",
 							"evidence": ""
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "POST",
-							"param": "",
-							"attack": "",
-							"evidence": ""
 						}
 					],
-					"count": "4",
+					"count": "2",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>http://caniuse.com/stricttransportsecurity</p><p>http://tools.ietf.org/html/rfc6797</p>",
@@ -525,7 +448,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1918505388"
+							"evidence": "1952059820"
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/jquery/jquery-plugins.js.xhtml?ln=primefaces",
@@ -551,7 +474,7 @@
 					],
 					"count": "4",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
-					"otherinfo": "<p>1918505388, which evaluates to: 2030-10-17 22:09:48</p>",
+					"otherinfo": "<p>1952059820, which evaluates to: 2031-11-10 06:50:20</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -580,23 +503,9 @@
 							"param": "X-Content-Type-Options",
 							"attack": "",
 							"evidence": ""
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "GET",
-							"param": "X-Content-Type-Options",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "POST",
-							"param": "X-Content-Type-Options",
-							"attack": "",
-							"evidence": ""
 						}
 					],
-					"count": "4",
+					"count": "2",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
 					"reference": "<p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://owasp.org/www-community/Security_Headers</p>",
@@ -657,13 +566,6 @@
 							"evidence": "PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iIzYzYjNmMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyYTc2YjEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "resource/LOGO_ANS_2020_Largeur"
-						},
-						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
 							"method": "GET",
 							"param": "",
@@ -671,7 +573,14 @@
 							"evidence": "resource/LOGO_ANS_2020_Largeur"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "resource/LOGO_ANS_2020_Largeur"
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
 							"method": "POST",
 							"param": "",
 							"attack": "",
@@ -875,6 +784,13 @@
 							"evidence": "private"
 						},
 						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "private"
+						},
+						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/bootstrap.css.xhtml?ln=bootstrap2/css",
 							"method": "GET",
 							"param": "",
@@ -889,14 +805,7 @@
 							"evidence": "private"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/pfcng.css.xhtml?ln=styles",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "private"
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/theme.css.xhtml?ln=primefaces-bootstrap",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -964,28 +873,14 @@
 							"evidence": "private"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "GET",
-							"param": "Cache-Control",
-							"attack": "",
-							"evidence": "private"
-						},
-						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
 							"method": "GET",
 							"param": "Cache-Control",
 							"attack": "",
 							"evidence": "private"
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
-							"method": "POST",
-							"param": "Cache-Control",
-							"attack": "",
-							"evidence": ""
 						}
 					],
-					"count": "7",
+					"count": "5",
 					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p>",
@@ -1004,41 +899,391 @@
 					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
 					"instances":[ 
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
 							"method": "POST",
-							"param": "j_idt31",
+							"param": "j_idt77",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
 							"method": "POST",
-							"param": "j_idt31",
+							"param": "j_idt77",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
 							"method": "POST",
-							"param": "j_idt31",
+							"param": "j_idt77",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
 							"method": "POST",
-							"param": "j_idt31",
+							"param": "j_idt77",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form:CaptchaID",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form:certificateNumber",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"method": "POST",
+							"param": "form:revocationCode",
 							"attack": "",
 							"evidence": ""
 						}
 					],
-					"count": "4",
+					"count": "54",
 					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
-					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [form] tag [id] attribute </p><p></p><p>The user input found was:</p><p>j_idt31=j_idt31</p><p></p><p>The user-controlled value was:</p><p>j_idt31</p>",
+					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [form] tag [id] attribute </p><p></p><p>The user input found was:</p><p>j_idt77=j_idt77</p><p></p><p>The user-controlled value was:</p><p>j_idt77</p>",
 					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "92"
+					"sourceid": "79"
 				}
 			]
 		}
