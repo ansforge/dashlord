@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Wed, 25 May 2022 07:19:20",
+	"@generated": "Sun, 29 May 2022 07:25:05",
 	"site":[ 
 		{
 			"@name": "https://support.si-samu.fr",
@@ -53,7 +53,7 @@
 					"reference": "",
 					"cweid": "359",
 					"wascid": "13",
-					"sourceid": "483"
+					"sourceid": "479"
 				},
 				{
 					"pluginid": "10202",
@@ -138,7 +138,7 @@
 					],
 					"count": "10",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
-					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"context\" \"searchinput-628dd7bebb6e8628dd7beaef552\" ].</p>",
+					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"context\" \"searchinput-62931f008c48162931f0077a102\" ].</p>",
 					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>http://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
@@ -257,7 +257,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p>",
 					"cweid": "1021",
 					"wascid": "15",
-					"sourceid": "36"
+					"sourceid": "35"
 				},
 				{
 					"pluginid": "10099",
@@ -297,7 +297,7 @@
 					"reference": "<p>http://blogs.wsj.com/cio/2013/10/08/adobe-source-code-leak-is-bad-news-for-u-s-government/</p>",
 					"cweid": "540",
 					"wascid": "13",
-					"sourceid": "483"
+					"sourceid": "479"
 				},
 				{
 					"pluginid": "10099",
@@ -337,7 +337,7 @@
 					"reference": "<p>http://blogs.wsj.com/cio/2013/10/08/adobe-source-code-leak-is-bad-news-for-u-s-government/</p>",
 					"cweid": "540",
 					"wascid": "13",
-					"sourceid": "584"
+					"sourceid": "581"
 				},
 				{
 					"pluginid": "90003",
@@ -446,7 +446,7 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://support.si-samu.fr/login/logout.php?sesskey=AOBmQmhToQ",
+							"uri": "https://support.si-samu.fr/login/logout.php?sesskey=Rm3scjpM54",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -473,7 +473,7 @@
 					"reference": "",
 					"cweid": "201",
 					"wascid": "13",
-					"sourceid": "243"
+					"sourceid": "241"
 				},
 				{
 					"pluginid": "10010",
@@ -535,7 +535,7 @@
 							"evidence": "Set-Cookie: MoodleSession"
 						},
 						{
-							"uri": "https://support.si-samu.fr/login/logout.php?sesskey=AOBmQmhToQ",
+							"uri": "https://support.si-samu.fr/login/logout.php?sesskey=Rm3scjpM54",
 							"method": "GET",
 							"param": "MoodleSession",
 							"attack": "",
@@ -624,7 +624,7 @@
 							"evidence": "Set-Cookie: MoodleSession"
 						},
 						{
-							"uri": "https://support.si-samu.fr/login/logout.php?sesskey=AOBmQmhToQ",
+							"uri": "https://support.si-samu.fr/login/logout.php?sesskey=Rm3scjpM54",
 							"method": "GET",
 							"param": "MoodleSession",
 							"attack": "",
@@ -726,7 +726,7 @@
 					"reference": "",
 					"cweid": "829",
 					"wascid": "15",
-					"sourceid": "437"
+					"sourceid": "434"
 				},
 				{
 					"pluginid": "10110",
@@ -992,6 +992,13 @@
 							"evidence": ""
 						},
 						{
+							"uri": "https://support.si-samu.fr/lib/javascript.php/1653123294/lib/polyfills/polyfill.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
 							"uri": "https://support.si-samu.fr/pluginfile.php/1/theme_adaptable/favicon/1653132927/LOGO_ANS_2020_Principal.ico",
 							"method": "GET",
 							"param": "",
@@ -1000,13 +1007,6 @@
 						},
 						{
 							"uri": "https://support.si-samu.fr/support",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://support.si-samu.fr/theme/styles.php/adaptable/1653132927_1/all",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1114,6 +1114,13 @@
 							"evidence": ""
 						},
 						{
+							"uri": "https://support.si-samu.fr/lib/javascript.php/1653123294/lib/polyfills/polyfill.js",
+							"method": "GET",
+							"param": "X-Content-Type-Options",
+							"attack": "",
+							"evidence": ""
+						},
+						{
 							"uri": "https://support.si-samu.fr/pluginfile.php/1/theme_adaptable/favicon/1653132927/LOGO_ANS_2020_Principal.ico",
 							"method": "GET",
 							"param": "X-Content-Type-Options",
@@ -1122,13 +1129,6 @@
 						},
 						{
 							"uri": "https://support.si-samu.fr/support",
-							"method": "GET",
-							"param": "X-Content-Type-Options",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://support.si-samu.fr/theme/styles.php/adaptable/1653132927_1/all",
 							"method": "GET",
 							"param": "X-Content-Type-Options",
 							"attack": "",
@@ -1360,6 +1360,13 @@
 							"evidence": "<a href=\"#\"></a>"
 						},
 						{
+							"uri": "https://support.si-samu.fr/login/index.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"nav-link dropdown-toggle my-auto\" role=\"button\" href=\"#\"\nid=\"usermenu\" data-toggle=\"dropdown\"\naria-haspopup=\"true\" aria-expanded=\"false\"\naria-controls=\"usermenu-dropdown\"\naria-label=\"Menu utilisateur\"\ntitle=\"Visiteur anonyme  \">\n        <span class=\"d-none d-md-inline-block mx-1\">Visiteur anonyme  </span>\n    <img src=\"https://support.si-samu.fr/theme/image.php/adaptable/core/1653132927/u/f1\" class=\"userpicture defaultuserpic\" width=\"50\" height=\"50\" alt=\"\" />\n</a>"
+						},
+						{
 							"uri": "https://support.si-samu.fr/theme/jquery.php/core/jquery-3.5.1.min.js",
 							"method": "GET",
 							"param": "",
@@ -1388,7 +1395,7 @@
 							"evidence": "<a class=\"nav-link dropdown-toggle my-auto\" role=\"button\" href=\"#\"\nid=\"usermenu\" data-toggle=\"dropdown\"\naria-haspopup=\"true\" aria-expanded=\"false\"\naria-controls=\"usermenu-dropdown\"\naria-label=\"Menu utilisateur\"\ntitle=\"Visiteur anonyme  \">\n        <span class=\"d-none d-md-inline-block mx-1\">Visiteur anonyme  </span>\n    <img src=\"https://support.si-samu.fr/theme/image.php/adaptable/core/1653132927/u/f1\" class=\"userpicture defaultuserpic\" width=\"50\" height=\"50\" alt=\"\" />\n</a>"
 						}
 					],
-					"count": "10",
+					"count": "11",
 					"solution": "<p>This is an informational alert and so no changes are required.</p>",
 					"otherinfo": "<p>A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not.</p>",
 					"reference": "",
@@ -1598,7 +1605,7 @@
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "36"
+					"sourceid": "35"
 				},
 				{
 					"pluginid": "10031",
@@ -1701,7 +1708,7 @@
 					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "199"
+					"sourceid": "197"
 				}
 			]
 		}
