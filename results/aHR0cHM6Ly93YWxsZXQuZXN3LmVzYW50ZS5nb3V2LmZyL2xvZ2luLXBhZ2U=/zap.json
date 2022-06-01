@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Tue, 31 May 2022 06:38:30",
+	"@generated": "Wed, 1 Jun 2022 07:37:21",
 	"site":[ 
 		{
 			"@name": "https://wallet.esw.esante.gouv.fr",
@@ -192,7 +192,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "26"
+					"sourceid": "28"
 				},
 				{
 					"pluginid": "10063",
@@ -293,7 +293,7 @@
 					"reference": "<p>https://tools.ietf.org/html/rfc1918</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "25"
+					"sourceid": "27"
 				},
 				{
 					"pluginid": "10035",
@@ -307,6 +307,13 @@
 					"instances":[ 
 						{
 							"uri": "https://wallet.esw.esante.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://wallet.esw.esante.gouv.fr/.well-known/assetlinks.json",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -349,13 +356,6 @@
 						},
 						{
 							"uri": "https://wallet.esw.esante.gouv.fr/runtime.c39564bb6b703669da85.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -464,7 +464,7 @@
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "26"
+					"sourceid": "28"
 				},
 				{
 					"pluginid": "10021",
@@ -478,6 +478,13 @@
 					"instances":[ 
 						{
 							"uri": "https://wallet.esw.esante.gouv.fr/",
+							"method": "GET",
+							"param": "X-Content-Type-Options",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://wallet.esw.esante.gouv.fr/.well-known/assetlinks.json",
 							"method": "GET",
 							"param": "X-Content-Type-Options",
 							"attack": "",
@@ -526,13 +533,6 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js",
-							"method": "GET",
-							"param": "X-Content-Type-Options",
-							"attack": "",
-							"evidence": ""
-						},
-						{
 							"uri": "https://wallet.esw.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "X-Content-Type-Options",
@@ -570,21 +570,21 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "A6uQNu3OyiPjkymO1MFeHIFIiCgtXgHoCKPFNC3giiIuiS+2UJgxDkQmgPwLeU7K5KjObhBA13aM"
+							"evidence": "FNuvI64urEbMyqiO1MFeHIFIiCgtXhFbnEPbPIIWRTjEcg7/msxLVwe+WfkNrRXHkgKpSXF9Byvz"
 						},
 						{
 							"uri": "https://wallet.esw.esante.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "dBOLHxrK7LNRoHyO1MFeHIFIiCgtXjvQFN78g1xjEiF9vLII3OZBP9K38LZb9g78oUpNvHLunxc5"
+							"evidence": "t1LxNhFmvwGV4nqO1MFeHIFIiCgtXuI8eOvcTYjNepRbLCe1IUwd44JsiS+WXYYqSzro94Dy1bxI"
 						},
 						{
 							"uri": "https://wallet.esw.esante.gouv.fr/login-page",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Stg3kCToBQbZygaO1MFeHIFIiCgtXhRY/N2glrXIb2DZF6KoFiRGRVFCtw1iCLRWVVz63OlPms+b"
+							"evidence": "MtKT0E7sXayXrseO1MFeHIFIiCgtXpwY+Rlkf21TgQqR7PjDoSgqtpzMMRk1k79T6xdONOL5zy+o"
 						},
 						{
 							"uri": "https://wallet.esw.esante.gouv.fr/login-page",
@@ -605,7 +605,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "RVMWamNHzx14ev2O1MFeHIFIiCgtXvq9CjNO+LFd7n1OxE/3ESg6aB89/2alT5tS65x+1ESkcDSw"
+							"evidence": "eOkalh6hIzfEcC+O1MFeHIFIiCgtXtpZjjtzi2LnsqI43QRc3qoLIA7FvoFEgDV4jnBCxtqeBn/E"
 						},
 						{
 							"uri": "https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js",
@@ -631,7 +631,7 @@
 					],
 					"count": "9",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\\x0003\uFFFD\uFFFD6\uFFFD\uFFFD\uFFFD#\uFFFD)\uFFFD\uFFFD\uFFFD^\\x001c\uFFFDH\uFFFD(-^\\x0001\uFFFD\\x0008\uFFFD\uFFFD4-\uFFFD\uFFFD\".\uFFFD/\uFFFDP\uFFFD1\\x000eD&\uFFFD\uFFFD\\x000byN\uFFFD\uFFFD\uFFFDn\\x0010@\uFFFDv\uFFFD</p>",
+					"otherinfo": "<p>\\x0014\u06EF#\uFFFD.\uFFFDF\uFFFD\u02A8\uFFFD\uFFFD\uFFFD^\\x001c\uFFFDH\uFFFD(-^\\x0011[\uFFFDC\uFFFD<\uFFFD\\x0016E8\uFFFDr\\x000e\uFFFD\uFFFD\uFFFDKW\\x0007\uFFFDY\uFFFD\r\uFFFD\\x0015\u01D2\\x0002\uFFFDIq}\\x0007+\uFFFD</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -682,7 +682,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "26"
+					"sourceid": "28"
 				},
 				{
 					"pluginid": "10109",
@@ -756,6 +756,13 @@
 							"evidence": "no-store"
 						},
 						{
+							"uri": "https://wallet.esw.esante.gouv.fr/.well-known/assetlinks.json",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "no-store"
+						},
+						{
 							"uri": "https://wallet.esw.esante.gouv.fr/login-page",
 							"method": "GET",
 							"param": "",
@@ -777,7 +784,7 @@
 							"evidence": "no-store"
 						}
 					],
-					"count": "4",
+					"count": "5",
 					"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).   </p>",
 					"otherinfo": "",
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
@@ -850,13 +857,6 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://wallet.esw.esante.gouv.fr/scripts.980bdb93240c1cee6f86.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": ""
-						},
-						{
 							"uri": "https://wallet.esw.esante.gouv.fr/styles.f968f0d682f4edb62cf7.css",
 							"method": "GET",
 							"param": "",
@@ -864,13 +864,13 @@
 							"evidence": ""
 						}
 					],
-					"count": "6",
+					"count": "5",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
 					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "19"
+					"sourceid": "22"
 				}
 			]
 		}
