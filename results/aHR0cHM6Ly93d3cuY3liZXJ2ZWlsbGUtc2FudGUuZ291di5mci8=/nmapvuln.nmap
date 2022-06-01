@@ -1,8 +1,8 @@
-# Nmap 7.91 scan initiated Tue May 31 05:07:17 2022 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln www.cyberveille-sante.gouv.fr
+# Nmap 7.92 scan initiated Wed Jun  1 05:52:43 2022 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln www.cyberveille-sante.gouv.fr
 Nmap scan report for www.cyberveille-sante.gouv.fr (31.15.27.67)
 Host is up (0.11s latency).
 rDNS record for 31.15.27.67: asipsantecbv1.nexen.net
-Not shown: 997 filtered ports
+Not shown: 997 filtered tcp ports (no-response)
 PORT    STATE  SERVICE   VERSION
 80/tcp  open   http
 | fingerprint-strings: 
@@ -16,10 +16,11 @@ PORT    STATE  SERVICE   VERSION
 |_    location: https://31.15.27.67/
 113/tcp closed ident
 443/tcp open   ssl/https Apache
+|_http-server-header: Apache
 | fingerprint-strings: 
 |   FourOhFourRequest: 
 |     HTTP/1.0 404 Not Found
-|     date: Tue, 31 May 2022 05:07:39 GMT
+|     date: Wed, 01 Jun 2022 05:53:05 GMT
 |     server: Apache
 |     content-length: 196
 |     content-type: text/html; charset=iso-8859-1
@@ -32,43 +33,50 @@ PORT    STATE  SERVICE   VERSION
 |     <h1>Not Found</h1>
 |     <p>The requested URL was not found on this server.</p>
 |     </body></html>
-|   GetRequest, HTTPOptions: 
+|   GetRequest: 
 |     HTTP/1.0 200 OK
-|     date: Tue, 31 May 2022 05:07:39 GMT
+|     date: Wed, 01 Jun 2022 05:53:04 GMT
+|     server: Apache
+|     content-length: 0
+|     content-type: text/html; charset=UTF-8
+|     x-xss-protection: 1; mode=block
+|     x-content-type-options: nosniff
+|   HTTPOptions: 
+|     HTTP/1.0 200 OK
+|     date: Wed, 01 Jun 2022 05:53:05 GMT
 |     server: Apache
 |     content-length: 0
 |     content-type: text/html; charset=UTF-8
 |     x-xss-protection: 1; mode=block
 |_    x-content-type-options: nosniff
-|_http-server-header: Apache
 2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port80-TCP:V=7.91%I=7%D=5/31%Time=6295A294%P=x86_64-alpine-linux-musl%r
-SF:(GetRequest,55,"HTTP/1\.0\x20301\x20Moved\x20Permanently\r\ncontent-len
-SF:gth:\x200\r\nlocation:\x20https://31\.15\.27\.67/\r\n\r\n")%r(HTTPOptio
-SF:ns,55,"HTTP/1\.0\x20301\x20Moved\x20Permanently\r\ncontent-length:\x200
-SF:\r\nlocation:\x20https://31\.15\.27\.67/\r\n\r\n")%r(FourOhFourRequest,
-SF:78,"HTTP/1\.0\x20301\x20Moved\x20Permanently\r\ncontent-length:\x200\r\
-SF:nlocation:\x20https://31\.15\.27\.67/nice%20ports%2C/Tri%6Eity\.txt%2eb
-SF:ak\r\n\r\n");
+SF-Port80-TCP:V=7.92%I=7%D=6/1%Time=6296FEBA%P=x86_64-alpine-linux-musl%r(
+SF:GetRequest,55,"HTTP/1\.0\x20301\x20Moved\x20Permanently\r\ncontent-leng
+SF:th:\x200\r\nlocation:\x20https://31\.15\.27\.67/\r\n\r\n")%r(HTTPOption
+SF:s,55,"HTTP/1\.0\x20301\x20Moved\x20Permanently\r\ncontent-length:\x200\
+SF:r\nlocation:\x20https://31\.15\.27\.67/\r\n\r\n")%r(FourOhFourRequest,7
+SF:8,"HTTP/1\.0\x20301\x20Moved\x20Permanently\r\ncontent-length:\x200\r\n
+SF:location:\x20https://31\.15\.27\.67/nice%20ports%2C/Tri%6Eity\.txt%2eba
+SF:k\r\n\r\n");
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port443-TCP:V=7.91%T=SSL%I=7%D=5/31%Time=6295A29B%P=x86_64-alpine-linux
-SF:-musl%r(GetRequest,C5,"HTTP/1\.0\x20200\x20OK\r\ndate:\x20Tue,\x2031\x2
-SF:0May\x202022\x2005:07:39\x20GMT\r\nserver:\x20Apache\r\ncontent-length:
-SF:\x200\r\ncontent-type:\x20text/html;\x20charset=UTF-8\r\nx-xss-protecti
-SF:on:\x201;\x20mode=block\r\nx-content-type-options:\x20nosniff\r\n\r\n")
-SF:%r(HTTPOptions,C5,"HTTP/1\.0\x20200\x20OK\r\ndate:\x20Tue,\x2031\x20May
-SF:\x202022\x2005:07:39\x20GMT\r\nserver:\x20Apache\r\ncontent-length:\x20
-SF:0\r\ncontent-type:\x20text/html;\x20charset=UTF-8\r\nx-xss-protection:\
-SF:x201;\x20mode=block\r\nx-content-type-options:\x20nosniff\r\n\r\n")%r(F
-SF:ourOhFourRequest,197,"HTTP/1\.0\x20404\x20Not\x20Found\r\ndate:\x20Tue,
-SF:\x2031\x20May\x202022\x2005:07:39\x20GMT\r\nserver:\x20Apache\r\nconten
-SF:t-length:\x20196\r\ncontent-type:\x20text/html;\x20charset=iso-8859-1\r
-SF:\nx-xss-protection:\x201;\x20mode=block\r\nx-content-type-options:\x20n
-SF:osniff\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-//IETF//DTD\x20HTML\x20
-SF:2\.0//EN\">\n<html><head>\n<title>404\x20Not\x20Found</title>\n</head><
-SF:body>\n<h1>Not\x20Found</h1>\n<p>The\x20requested\x20URL\x20was\x20not\
-SF:x20found\x20on\x20this\x20server\.</p>\n</body></html>\n");
+SF-Port443-TCP:V=7.92%T=SSL%I=7%D=6/1%Time=6296FEC0%P=x86_64-alpine-linux-
+SF:musl%r(GetRequest,C5,"HTTP/1\.0\x20200\x20OK\r\ndate:\x20Wed,\x2001\x20
+SF:Jun\x202022\x2005:53:04\x20GMT\r\nserver:\x20Apache\r\ncontent-length:\
+SF:x200\r\ncontent-type:\x20text/html;\x20charset=UTF-8\r\nx-xss-protectio
+SF:n:\x201;\x20mode=block\r\nx-content-type-options:\x20nosniff\r\n\r\n")%
+SF:r(HTTPOptions,C5,"HTTP/1\.0\x20200\x20OK\r\ndate:\x20Wed,\x2001\x20Jun\
+SF:x202022\x2005:53:05\x20GMT\r\nserver:\x20Apache\r\ncontent-length:\x200
+SF:\r\ncontent-type:\x20text/html;\x20charset=UTF-8\r\nx-xss-protection:\x
+SF:201;\x20mode=block\r\nx-content-type-options:\x20nosniff\r\n\r\n")%r(Fo
+SF:urOhFourRequest,197,"HTTP/1\.0\x20404\x20Not\x20Found\r\ndate:\x20Wed,\
+SF:x2001\x20Jun\x202022\x2005:53:05\x20GMT\r\nserver:\x20Apache\r\ncontent
+SF:-length:\x20196\r\ncontent-type:\x20text/html;\x20charset=iso-8859-1\r\
+SF:nx-xss-protection:\x201;\x20mode=block\r\nx-content-type-options:\x20no
+SF:sniff\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-//IETF//DTD\x20HTML\x202
+SF:\.0//EN\">\n<html><head>\n<title>404\x20Not\x20Found</title>\n</head><b
+SF:ody>\n<h1>Not\x20Found</h1>\n<p>The\x20requested\x20URL\x20was\x20not\x
+SF:20found\x20on\x20this\x20server\.</p>\n</body></html>\n");
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Tue May 31 05:09:21 2022 -- 1 IP address (1 host up) scanned in 124.28 seconds
+# Nmap done at Wed Jun  1 05:54:47 2022 -- 1 IP address (1 host up) scanned in 124.10 seconds
