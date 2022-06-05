@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Fri, 3 Jun 2022 05:59:14",
+	"@generated": "Sun, 5 Jun 2022 06:16:38",
 	"site":[ 
 		{
 			"@name": "https://mailiz.mssante.fr",
@@ -61,21 +61,21 @@
 							"evidence": "<form action=\"#\" id=\"hrefFm\" method=\"post\" name=\"hrefFm\">"
 						},
 						{
-							"uri": "https://mailiz.mssante.fr/web/mss/accueil",
+							"uri": "https://mailiz.mssante.fr/essentiel",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "<form action=\"https://authentification.mssante.fr/web/mss/connexion?p_p_id=msslogin_WAR_mssloginportlet_INSTANCE_Hl3E&p_p_lifecycle=1&p_p_state=normal\" method=\"post\" id=\"auth\">"
 						},
 						{
-							"uri": "https://mailiz.mssante.fr/web/mss/accueil",
+							"uri": "https://mailiz.mssante.fr/essentiel",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "<form action=\"https://mailiz.mssante.fr/web/mss/connexion-otp?p_p_id=msslogin_WAR_mssloginportlet_INSTANCE_5R5f&amp;p_p_lifecycle=0\" method=\"post\" onsubmit=\"validOtpForm()\">"
 						},
 						{
-							"uri": "https://mailiz.mssante.fr/web/mss/accueil",
+							"uri": "https://mailiz.mssante.fr/essentiel",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -243,7 +243,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "7"
+					"sourceid": "39"
 				},
 				{
 					"pluginid": "10011",
@@ -413,6 +413,20 @@
 							"evidence": "eval"
 						},
 						{
+							"uri": "https://mailiz.mssante.fr/html/js/barebone.jsp?b=6203&browserId=firefox&colorSchemeId=01&languageId=ja_JP&minifierBundleId=javascript.barebone.files&minifierType=js&t=1429195226000&themeId=mss_WAR_msstheme",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval"
+						},
+						{
+							"uri": "https://mailiz.mssante.fr/html/js/barebone.jsp?b=6203&browserId=firefox&colorSchemeId=01&languageId=pt_BR&minifierBundleId=javascript.barebone.files&minifierType=js&t=1429195226000&themeId=mss_WAR_msstheme",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval"
+						},
+						{
 							"uri": "https://mailiz.mssante.fr/html/js/barebone.jsp?b=6203&browserId=firefox&colorSchemeId=01&languageId=zh_CN&minifierBundleId=javascript.barebone.files&minifierType=js&t=1429195226000&themeId=mss_WAR_msstheme",
 							"method": "GET",
 							"param": "",
@@ -434,13 +448,13 @@
 							"evidence": "eval"
 						}
 					],
-					"count": "10",
+					"count": "12",
 					"solution": "<p>See the references for security advice on the use of these functions.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "4917"
+					"sourceid": "4832"
 				},
 				{
 					"pluginid": "10063",
@@ -639,7 +653,7 @@
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "669"
+					"sourceid": "670"
 				},
 				{
 					"pluginid": "10094",
@@ -838,7 +852,33 @@
 					"reference": "<p>http://code.google.com/p/browsersec/wiki/Part2#Character_set_handling_and_detection</p>",
 					"cweid": "436",
 					"wascid": "15",
-					"sourceid": "141"
+					"sourceid": "140"
+				},
+				{
+					"pluginid": "10024",
+					"alertRef": "10024",
+					"alert": "Information Disclosure - Sensitive Information in URL",
+					"name": "Information Disclosure - Sensitive Information in URL",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The request appeared to contain sensitive information leaked in the URL. This can violate PCI and most organizational compliance policies. You can configure the list of strings for this check to add or remove values specific to your environment.</p>",
+					"instances":[ 
+						{
+							"uri": "https://mailiz.mssante.fr/web/mss/connexion-otp?_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_dynamicAttributes=%7B%7D&_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_expandTheme=%7E%7E%7Esimple&_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_id=erreurCredentials&_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_struts.portlet.action=%2Fauthentification&_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_struts.portlet.mode=view&_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_template=form-close&_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_templateDir=template&_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_theme=simple&_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_themeExpansionToken=%7E%7E%7E&p_p_col_count=1&p_p_col_id=column-1&p_p_id=msslogin_WAR_mssloginportlet_INSTANCE_5R5f&p_p_lifecycle=1&p_p_mode=view&p_p_state=normal",
+							"method": "POST",
+							"param": "_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_themeExpansionToken",
+							"attack": "",
+							"evidence": "_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_themeExpansionToken"
+						}
+					],
+					"count": "1",
+					"solution": "<p>Do not pass sensitive information in URIs.</p>",
+					"otherinfo": "<p>The URL contains potentially sensitive information. The following string was found via the pattern: token</p><p>_msslogin_WAR_mssloginportlet_INSTANCE_5R5f_themeExpansionToken</p>",
+					"reference": "",
+					"cweid": "200",
+					"wascid": "13",
+					"sourceid": "5180"
 				},
 				{
 					"pluginid": "10027",
@@ -858,14 +898,14 @@
 							"evidence": "query"
 						},
 						{
-							"uri": "https://mailiz.mssante.fr/html/portlet/journal/js/main.js?b=6203&browserId=firefox&languageId=en_US&minifierType=js&t=1654220846000",
+							"uri": "https://mailiz.mssante.fr/html/portlet/journal/js/main.js?b=6203&browserId=firefox&languageId=en_US&minifierType=js&t=1654392279000",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "select"
 						},
 						{
-							"uri": "https://mailiz.mssante.fr/html/portlet/journal/js/navigation.js?b=6203&browserId=firefox&languageId=en_US&minifierType=js&t=1654220846000",
+							"uri": "https://mailiz.mssante.fr/html/portlet/journal/js/navigation.js?b=6203&browserId=firefox&languageId=en_US&minifierType=js&t=1654392279000",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -968,7 +1008,7 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://mailiz.mssante.fr/mss-login-portlet/css/main.css?b=6203&browserId=firefox&languageId=en_US&minifierType=css&t=1654220846000&themeId=mss_WAR_msstheme",
+							"uri": "https://mailiz.mssante.fr/mss-login-portlet/css/main.css?b=6203&browserId=firefox&languageId=en_US&minifierType=css&t=1654392279000&themeId=mss_WAR_msstheme",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -991,11 +1031,11 @@
 					],
 					"count": "5",
 					"solution": "<p>Always scope cookies to a FQDN (Fully Qualified Domain Name).</p>",
-					"otherinfo": "<p>The origin domain used for comparison was: </p><p>mailiz.mssante.fr</p><p>PAUTSESSIONID=D7A0378A29A43A855F7D5EF81B40F34F.PAUT_2</p><p>ROUTEID=.PAUT_2</p><p></p>",
+					"otherinfo": "<p>The origin domain used for comparison was: </p><p>mailiz.mssante.fr</p><p>PAUTSESSIONID=C20252C170DB2FBE36871F5817AFC495.PAUT_2</p><p>ROUTEID=.PAUT_2</p><p></p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc6265#section-4.1</p><p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p><p>http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</p>",
 					"cweid": "565",
 					"wascid": "15",
-					"sourceid": "9"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10109",
@@ -1104,13 +1144,6 @@
 					"desc": "<p>The response contents are not storable by caching components such as proxy servers. If the response does not contain sensitive, personal or user-specific information, it may benefit from being stored and cached, to improve performance.</p>",
 					"instances":[ 
 						{
-							"uri": "https://mailiz.mssante.fr/c",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "302"
-						},
-						{
 							"uri": "https://mailiz.mssante.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -1125,13 +1158,13 @@
 							"evidence": "500"
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).   </p>",
 					"otherinfo": "",
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "66"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10015",
@@ -1268,6 +1301,13 @@
 							"evidence": ""
 						},
 						{
+							"uri": "https://mailiz.mssante.fr/plan-site",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
 							"uri": "https://mailiz.mssante.fr/telechargements/mobilite",
 							"method": "GET",
 							"param": "",
@@ -1296,7 +1336,7 @@
 							"evidence": ""
 						}
 					],
-					"count": "8",
+					"count": "9",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
 					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
@@ -1363,7 +1403,7 @@
 					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "4951"
+					"sourceid": "4856"
 				}
 			]
 		}
