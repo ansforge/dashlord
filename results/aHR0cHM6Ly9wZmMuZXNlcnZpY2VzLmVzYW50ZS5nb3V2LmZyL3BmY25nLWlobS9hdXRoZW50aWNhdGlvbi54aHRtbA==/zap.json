@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Thu, 9 Jun 2022 05:14:40",
+	"@generated": "Sat, 11 Jun 2022 05:04:23",
 	"site":[ 
 		{
 			"@name": "https://pfc.eservices.esante.gouv.fr",
@@ -40,6 +40,13 @@
 							"evidence": "<form id=\"j_idt32\" name=\"j_idt32\" method=\"post\" action=\"/pfcng-ihm/authentication.xhtml\" enctype=\"application/x-www-form-urlencoded\">"
 						},
 						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form id=\"j_idt50\" name=\"j_idt50\" method=\"post\" action=\"/pfcng-ihm/index.xhtml\" enctype=\"application/x-www-form-urlencoded\">"
+						},
+						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
 							"method": "GET",
 							"param": "",
@@ -54,7 +61,7 @@
 							"evidence": "<form id=\"form\" name=\"form\" method=\"post\" action=\"/pfcng-ihm/revocation/index.xhtml\" class=\"form-horizontal pfcng-home\" enctype=\"application/x-www-form-urlencoded\">"
 						}
 					],
-					"count": "5",
+					"count": "6",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"j_idt32\" \"javax.faces.ViewState\" ].</p>",
 					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>http://cwe.mitre.org/data/definitions/352.html</p>",
@@ -94,6 +101,13 @@
 							"evidence": ""
 						},
 						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
 							"method": "GET",
 							"param": "",
@@ -108,7 +122,7 @@
 							"evidence": ""
 						}
 					],
-					"count": "5",
+					"count": "6",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header, to achieve optimal browser support: \"Content-Security-Policy\" for Chrome 25+, Firefox 23+ and Safari 7+, \"X-Content-Security-Policy\" for Firefox 4.0+ and Internet Explorer 10+, and \"X-WebKit-CSP\" for Chrome 14+ and Safari 6+.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
@@ -207,13 +221,6 @@
 							"evidence": "Set-Cookie: JSESSIONID"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm",
-							"method": "GET",
-							"param": "prod-asip",
-							"attack": "",
-							"evidence": "Set-Cookie: prod-asip"
-						},
-						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/",
 							"method": "GET",
 							"param": "JSESSIONID",
@@ -235,7 +242,7 @@
 							"evidence": "Set-Cookie: prod-asip"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/bootstrap-responsive.css.xhtml?ln=bootstrap2/css",
 							"method": "GET",
 							"param": "JSESSIONID",
 							"attack": "",
@@ -243,6 +250,13 @@
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/bootstrap.css.xhtml?ln=bootstrap2/css",
+							"method": "GET",
+							"param": "JSESSIONID",
+							"attack": "",
+							"evidence": "Set-Cookie: JSESSIONID"
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/images/favicon.ico.xhtml",
 							"method": "GET",
 							"param": "JSESSIONID",
 							"attack": "",
@@ -263,14 +277,14 @@
 							"evidence": "Set-Cookie: JSESSIONID"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/primefaces.css.xhtml?ln=primefaces",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/styles/pfcng-ie7.css.xhtml",
 							"method": "GET",
 							"param": "JSESSIONID",
 							"attack": "",
 							"evidence": "Set-Cookie: JSESSIONID"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/primefaces.js.xhtml?ln=primefaces",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/theme.css.xhtml?ln=primefaces-bootstrap",
 							"method": "GET",
 							"param": "JSESSIONID",
 							"attack": "",
@@ -364,7 +378,7 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/bootstrap.js.xhtml?ln=bootstrap2/js",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -372,6 +386,13 @@
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/bowser.js.xhtml?ln=js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/checkConfig.js.xhtml?ln=js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -400,13 +421,6 @@
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/pfcng.js.xhtml?ln=js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/primefaces.js.xhtml?ln=primefaces",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -479,13 +493,6 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server - Unix</p>",
 					"instances":[ 
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "1952059820"
-						},
-						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/authentication.xhtml",
 							"method": "GET",
 							"param": "",
@@ -514,13 +521,13 @@
 							"evidence": "86400000"
 						}
 					],
-					"count": "5",
+					"count": "4",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
 					"otherinfo": "<p>1952059820, which evaluates to: 2031-11-10 06:50:20</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "13"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10021",
@@ -594,6 +601,13 @@
 							"evidence": "resource/LOGO_ANS_2020_Largeur"
 						},
 						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "resource/LOGO_ANS_2020_Largeur"
+						},
+						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/jquery/jquery.js.xhtml?ln=primefaces",
 							"method": "GET",
 							"param": "",
@@ -622,7 +636,7 @@
 							"evidence": "resource/LOGO_ANS_2020_Largeur"
 						}
 					],
-					"count": "7",
+					"count": "8",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
 					"otherinfo": "<p>\uFFFD\uFFFD(\uFFFD\uFFFD\\x001e\uFFFD\uFFFD\uFFFD;\uFFFD\rK\uFFFD\uFFFD\uFFFDO\uFFFDj\uFFFD\\x001e\uFFFD</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
@@ -655,25 +669,18 @@
 							"evidence": "user"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/bootstrap.js.xhtml?ln=bootstrap2/js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "query"
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/bootstrap.js.xhtml?ln=bootstrap2/js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "select"
-						},
-						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/bowser.js.xhtml?ln=js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "user"
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/html5shiv.js.xhtml?ln=html5shiv",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select"
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/jquery/jquery.js.xhtml?ln=primefaces",
@@ -697,6 +704,20 @@
 							"evidence": "Bug"
 						},
 						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/pfcng.js.xhtml?ln=js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "from"
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/pfcng.js.xhtml?ln=js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select"
+						},
+						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/primefaces.js.xhtml?ln=primefaces",
 							"method": "GET",
 							"param": "",
@@ -718,7 +739,7 @@
 							"evidence": "select"
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
 					"otherinfo": "<p>The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script type=\"text/javascript\"></p><p>\t\t\t$(document).ready(</p><p>\t\t\t\tfunction(){</p><p>\t\t\t\t    // Check if the user already accepted it</p><p>\t\t\t\t    i\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
@@ -771,7 +792,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "68"
+					"sourceid": "77"
 				},
 				{
 					"pluginid": "10049",
@@ -819,6 +840,13 @@
 							"evidence": "private"
 						},
 						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "private"
+						},
+						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/bootstrap.css.xhtml?ln=bootstrap2/css",
 							"method": "GET",
 							"param": "",
@@ -827,13 +855,6 @@
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/pfcng-base.css.xhtml?ln=styles",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "private"
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/pfcng.css.xhtml?ln=styles",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -901,6 +922,13 @@
 							"evidence": "private"
 						},
 						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
+							"method": "GET",
+							"param": "Cache-Control",
+							"attack": "",
+							"evidence": "private"
+						},
+						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/logout.xhtml",
 							"method": "GET",
 							"param": "Cache-Control",
@@ -915,7 +943,7 @@
 							"evidence": "private"
 						}
 					],
-					"count": "5",
+					"count": "6",
 					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p>",
