@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Fri, 17 Jun 2022 08:30:38",
+	"@generated": "Sun, 19 Jun 2022 08:40:14",
 	"site":[ 
 		{
 			"@name": "https://support.si-samu.fr",
@@ -53,7 +53,7 @@
 					"reference": "",
 					"cweid": "359",
 					"wascid": "13",
-					"sourceid": "483"
+					"sourceid": "481"
 				},
 				{
 					"pluginid": "10202",
@@ -138,7 +138,7 @@
 					],
 					"count": "10",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
-					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"context\" \"searchinput-62ac3ac9da29e62ac3ac9cd4012\" ].</p>",
+					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"context\" \"searchinput-62aee036669ef62aee0365a0852\" ].</p>",
 					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>http://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
@@ -297,7 +297,7 @@
 					"reference": "<p>http://blogs.wsj.com/cio/2013/10/08/adobe-source-code-leak-is-bad-news-for-u-s-government/</p>",
 					"cweid": "540",
 					"wascid": "13",
-					"sourceid": "483"
+					"sourceid": "481"
 				},
 				{
 					"pluginid": "10099",
@@ -337,7 +337,7 @@
 					"reference": "<p>http://blogs.wsj.com/cio/2013/10/08/adobe-source-code-leak-is-bad-news-for-u-s-government/</p>",
 					"cweid": "540",
 					"wascid": "13",
-					"sourceid": "584"
+					"sourceid": "582"
 				},
 				{
 					"pluginid": "90003",
@@ -446,7 +446,7 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://support.si-samu.fr/login/logout.php?sesskey=2tz1BUfEef",
+							"uri": "https://support.si-samu.fr/login/logout.php?sesskey=cWYT4HIWv4",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -473,7 +473,7 @@
 					"reference": "",
 					"cweid": "201",
 					"wascid": "13",
-					"sourceid": "243"
+					"sourceid": "242"
 				},
 				{
 					"pluginid": "10010",
@@ -501,6 +501,13 @@
 						},
 						{
 							"uri": "https://support.si-samu.fr/course/info.php?id=55",
+							"method": "GET",
+							"param": "MoodleSession",
+							"attack": "",
+							"evidence": "Set-Cookie: MoodleSession"
+						},
+						{
+							"uri": "https://support.si-samu.fr/course/view.php?id=35",
 							"method": "GET",
 							"param": "MoodleSession",
 							"attack": "",
@@ -535,7 +542,7 @@
 							"evidence": "Set-Cookie: MoodleSession"
 						},
 						{
-							"uri": "https://support.si-samu.fr/login/logout.php?sesskey=2tz1BUfEef",
+							"uri": "https://support.si-samu.fr/login/logout.php?sesskey=cWYT4HIWv4",
 							"method": "GET",
 							"param": "MoodleSession",
 							"attack": "",
@@ -544,13 +551,6 @@
 						{
 							"uri": "https://support.si-samu.fr/support",
 							"method": "GET",
-							"param": "MoodleSession",
-							"attack": "",
-							"evidence": "Set-Cookie: MoodleSession"
-						},
-						{
-							"uri": "https://support.si-samu.fr/login/index.php",
-							"method": "POST",
 							"param": "MoodleSession",
 							"attack": "",
 							"evidence": "Set-Cookie: MoodleSession"
@@ -596,6 +596,13 @@
 							"evidence": "Set-Cookie: MoodleSession"
 						},
 						{
+							"uri": "https://support.si-samu.fr/course/view.php?id=35",
+							"method": "GET",
+							"param": "MoodleSession",
+							"attack": "",
+							"evidence": "Set-Cookie: MoodleSession"
+						},
+						{
 							"uri": "https://support.si-samu.fr/course/view.php?id=36",
 							"method": "GET",
 							"param": "MoodleSession",
@@ -624,7 +631,7 @@
 							"evidence": "Set-Cookie: MoodleSession"
 						},
 						{
-							"uri": "https://support.si-samu.fr/login/logout.php?sesskey=2tz1BUfEef",
+							"uri": "https://support.si-samu.fr/login/logout.php?sesskey=cWYT4HIWv4",
 							"method": "GET",
 							"param": "MoodleSession",
 							"attack": "",
@@ -633,13 +640,6 @@
 						{
 							"uri": "https://support.si-samu.fr/support",
 							"method": "GET",
-							"param": "MoodleSession",
-							"attack": "",
-							"evidence": "Set-Cookie: MoodleSession"
-						},
-						{
-							"uri": "https://support.si-samu.fr/login/index.php",
-							"method": "POST",
 							"param": "MoodleSession",
 							"attack": "",
 							"evidence": "Set-Cookie: MoodleSession"
@@ -726,7 +726,7 @@
 					"reference": "",
 					"cweid": "829",
 					"wascid": "15",
-					"sourceid": "437"
+					"sourceid": "435"
 				},
 				{
 					"pluginid": "10110",
@@ -759,7 +759,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "88"
+					"sourceid": "89"
 				},
 				{
 					"pluginid": "10063",
@@ -1701,7 +1701,7 @@
 					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "199"
+					"sourceid": "198"
 				}
 			]
 		}
