@@ -1,6 +1,6 @@
-# Nmap 7.92 scan initiated Fri Jun 17 03:08:42 2022 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln testssl.asipsante.fr
+# Nmap 7.92 scan initiated Sun Jun 19 03:17:58 2022 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln testssl.asipsante.fr
 Nmap scan report for testssl.asipsante.fr (135.125.232.117)
-Host is up (0.091s latency).
+Host is up (0.093s latency).
 rDNS record for 135.125.232.117: vps-c4a3f657.vps.ovh.net
 Not shown: 994 filtered tcp ports (no-response)
 PORT     STATE  SERVICE    VERSION
@@ -16,6 +16,7 @@ PORT     STATE  SERVICE    VERSION
 |     	MSF:ILITIES/HUAWEI-EULEROS-2_0_SP5-CVE-2020-14145/	4.3	https://vulners.com/metasploit/MSF:ILITIES/HUAWEI-EULEROS-2_0_SP5-CVE-2020-14145/	*EXPLOIT*
 |_    	MSF:ILITIES/F5-BIG-IP-CVE-2020-14145/	4.3	https://vulners.com/metasploit/MSF:ILITIES/F5-BIG-IP-CVE-2020-14145/	*EXPLOIT*
 80/tcp   open   http       Apache httpd 2.4.37 ((centos) OpenSSL/1.1.1g)
+|_http-server-header: Apache/2.4.37 (centos) OpenSSL/1.1.1g
 | vulners: 
 |   cpe:/a:apache:http_server:2.4.37: 
 |     	E899CC4B-A3FD-5288-BB62-A4201F93FDCC	10.0	https://vulners.com/githubexploit/E899CC4B-A3FD-5288-BB62-A4201F93FDCC	*EXPLOIT*
@@ -25,6 +26,7 @@ PORT     STATE  SERVICE    VERSION
 |     	MSF:ILITIES/HUAWEI-EULEROS-2_0_SP8-CVE-2020-11984/	7.5	https://vulners.com/metasploit/MSF:ILITIES/HUAWEI-EULEROS-2_0_SP8-CVE-2020-11984/	*EXPLOIT*
 |     	MSF:ILITIES/FREEBSD-CVE-2020-11984/	7.5	https://vulners.com/metasploit/MSF:ILITIES/FREEBSD-CVE-2020-11984/	*EXPLOIT*
 |     	MSF:ILITIES/APACHE-HTTPD-CVE-2020-11984/	7.5	https://vulners.com/metasploit/MSF:ILITIES/APACHE-HTTPD-CVE-2020-11984/	*EXPLOIT*
+|     	CVE-2022-31813	7.5	https://vulners.com/cve/CVE-2022-31813
 |     	CVE-2022-23943	7.5	https://vulners.com/cve/CVE-2022-23943
 |     	CVE-2022-22720	7.5	https://vulners.com/cve/CVE-2022-22720
 |     	CVE-2021-44790	7.5	https://vulners.com/cve/CVE-2021-44790
@@ -66,6 +68,7 @@ PORT     STATE  SERVICE    VERSION
 |     	MSF:ILITIES/CENTOS_LINUX-CVE-2020-9490/	5.0	https://vulners.com/metasploit/MSF:ILITIES/CENTOS_LINUX-CVE-2020-9490/	*EXPLOIT*
 |     	MSF:ILITIES/APACHE-HTTPD-CVE-2020-9490/	5.0	https://vulners.com/metasploit/MSF:ILITIES/APACHE-HTTPD-CVE-2020-9490/	*EXPLOIT*
 |     	MSF:ILITIES/AMAZON-LINUX-AMI-2-CVE-2020-9490/	5.0	https://vulners.com/metasploit/MSF:ILITIES/AMAZON-LINUX-AMI-2-CVE-2020-9490/	*EXPLOIT*
+|     	CVE-2022-30556	5.0	https://vulners.com/cve/CVE-2022-30556
 |     	CVE-2022-30522	5.0	https://vulners.com/cve/CVE-2022-30522
 |     	CVE-2022-29404	5.0	https://vulners.com/cve/CVE-2022-29404
 |     	CVE-2022-28614	5.0	https://vulners.com/cve/CVE-2022-28614
@@ -95,9 +98,9 @@ PORT     STATE  SERVICE    VERSION
 |     	1337DAY-ID-35422	4.3	https://vulners.com/zdt/1337DAY-ID-35422	*EXPLOIT*
 |     	1337DAY-ID-33575	4.3	https://vulners.com/zdt/1337DAY-ID-33575	*EXPLOIT*
 |_    	PACKETSTORM:152441	0.0	https://vulners.com/packetstorm/PACKETSTORM:152441	*EXPLOIT*
-|_http-server-header: Apache/2.4.37 (centos) OpenSSL/1.1.1g
 389/tcp  open   ldap       OpenLDAP 2.2.X - 2.3.X
 443/tcp  open   ssl/http   Apache httpd 2.4.37 ((centos) OpenSSL/1.1.1g)
+|_http-server-header: Apache/2.4.37 (centos) OpenSSL/1.1.1g
 | vulners: 
 |   cpe:/a:apache:http_server:2.4.37: 
 |     	E899CC4B-A3FD-5288-BB62-A4201F93FDCC	10.0	https://vulners.com/githubexploit/E899CC4B-A3FD-5288-BB62-A4201F93FDCC	*EXPLOIT*
@@ -107,6 +110,7 @@ PORT     STATE  SERVICE    VERSION
 |     	MSF:ILITIES/HUAWEI-EULEROS-2_0_SP8-CVE-2020-11984/	7.5	https://vulners.com/metasploit/MSF:ILITIES/HUAWEI-EULEROS-2_0_SP8-CVE-2020-11984/	*EXPLOIT*
 |     	MSF:ILITIES/FREEBSD-CVE-2020-11984/	7.5	https://vulners.com/metasploit/MSF:ILITIES/FREEBSD-CVE-2020-11984/	*EXPLOIT*
 |     	MSF:ILITIES/APACHE-HTTPD-CVE-2020-11984/	7.5	https://vulners.com/metasploit/MSF:ILITIES/APACHE-HTTPD-CVE-2020-11984/	*EXPLOIT*
+|     	CVE-2022-31813	7.5	https://vulners.com/cve/CVE-2022-31813
 |     	CVE-2022-23943	7.5	https://vulners.com/cve/CVE-2022-23943
 |     	CVE-2022-22720	7.5	https://vulners.com/cve/CVE-2022-22720
 |     	CVE-2021-44790	7.5	https://vulners.com/cve/CVE-2021-44790
@@ -148,6 +152,7 @@ PORT     STATE  SERVICE    VERSION
 |     	MSF:ILITIES/CENTOS_LINUX-CVE-2020-9490/	5.0	https://vulners.com/metasploit/MSF:ILITIES/CENTOS_LINUX-CVE-2020-9490/	*EXPLOIT*
 |     	MSF:ILITIES/APACHE-HTTPD-CVE-2020-9490/	5.0	https://vulners.com/metasploit/MSF:ILITIES/APACHE-HTTPD-CVE-2020-9490/	*EXPLOIT*
 |     	MSF:ILITIES/AMAZON-LINUX-AMI-2-CVE-2020-9490/	5.0	https://vulners.com/metasploit/MSF:ILITIES/AMAZON-LINUX-AMI-2-CVE-2020-9490/	*EXPLOIT*
+|     	CVE-2022-30556	5.0	https://vulners.com/cve/CVE-2022-30556
 |     	CVE-2022-30522	5.0	https://vulners.com/cve/CVE-2022-30522
 |     	CVE-2022-29404	5.0	https://vulners.com/cve/CVE-2022-29404
 |     	CVE-2022-28614	5.0	https://vulners.com/cve/CVE-2022-28614
@@ -177,9 +182,8 @@ PORT     STATE  SERVICE    VERSION
 |     	1337DAY-ID-35422	4.3	https://vulners.com/zdt/1337DAY-ID-35422	*EXPLOIT*
 |     	1337DAY-ID-33575	4.3	https://vulners.com/zdt/1337DAY-ID-33575	*EXPLOIT*
 |_    	PACKETSTORM:152441	0.0	https://vulners.com/packetstorm/PACKETSTORM:152441	*EXPLOIT*
-|_http-server-header: Apache/2.4.37 (centos) OpenSSL/1.1.1g
 636/tcp  open   ssl/ldap   OpenLDAP 2.2.X - 2.3.X
 9090/tcp closed zeus-admin
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Fri Jun 17 03:09:08 2022 -- 1 IP address (1 host up) scanned in 26.46 seconds
+# Nmap done at Sun Jun 19 03:18:25 2022 -- 1 IP address (1 host up) scanned in 26.84 seconds
