@@ -185,7 +185,7 @@
               "ip"           : "sas.sante.fr/172.65.210.14",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "'server name/#0' 'renegotiation info/#65281' 'EC point formats/#11' 'session ticket/#35' 'next protocol/#13172' 'key share/#51' 'supported versions/#43' 'extended master secret/#23' 'application layer protocol negotiation/#16' 'compress_certificate/#27'"
+              "finding"      : "'server name/#0' 'renegotiation info/#65281' 'EC point formats/#11' 'session ticket/#35' 'status request/#5' 'next protocol/#13172' 'key share/#51' 'supported versions/#43' 'extended master secret/#23' 'application layer protocol negotiation/#16' 'compress_certificate/#27'"
           }
 ,         {
               "id"           : "TLS_session_ticket",
@@ -353,7 +353,7 @@
               "ip"           : "sas.sante.fr/172.65.210.14",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "303 >= 60 days"
+              "finding"      : "301 >= 60 days"
           }
 ,         {
               "id"           : "cert_notBefore",
@@ -401,8 +401,15 @@
               "id"           : "OCSP_stapling",
               "ip"           : "sas.sante.fr/172.65.210.14",
               "port"         : "443",
-              "severity"     : "LOW",
-              "finding"      : "not offered"
+              "severity"     : "OK",
+              "finding"      : "offered"
+          }
+,         {
+              "id"           : "cert_ocspRevoked",
+              "ip"           : "sas.sante.fr/172.65.210.14",
+              "port"         : "443",
+              "severity"     : "OK",
+              "finding"      : "not revoked"
           }
 ,         {
               "id"           : "cert_mustStapleExtension",
@@ -549,21 +556,21 @@
               "ip"           : "sas.sante.fr/172.65.210.14",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "+61 seconds from localtime"
+              "finding"      : "+1874 seconds from localtime"
           }
 ,         {
               "id"           : "HTTP_headerTime",
               "ip"           : "sas.sante.fr/172.65.210.14",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1655626890"
+              "finding"      : "1655803150"
           }
 ,         {
               "id"           : "HTTP_headerAge",
               "ip"           : "sas.sante.fr/172.65.210.14",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "62 seconds"
+              "finding"      : "1874 seconds"
           }
 ,         {
               "id"           : "HSTS_time",
@@ -662,7 +669,7 @@
               "port"         : "443",
               "severity"     : "INFO",
               "cwe"          : "CWE-200",
-              "finding"      : "X-Cache: HITX-Cache-TTL-Remaining: 2806.864X-Cache-Hits: 10"
+              "finding"      : "X-Cache: MISSX-Cache-Hits: 0"
           }
 ,         {
               "id"           : "heartbleed",
@@ -1161,6 +1168,6 @@
               "ip"           : "sas.sante.fr/172.65.210.14",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "131"
+              "finding"      : "146"
           }
 ]
