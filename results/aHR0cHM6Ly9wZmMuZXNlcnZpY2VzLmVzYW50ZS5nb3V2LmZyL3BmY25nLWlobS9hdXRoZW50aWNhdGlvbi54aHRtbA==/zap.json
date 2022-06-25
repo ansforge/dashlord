@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Thu, 23 Jun 2022 05:49:41",
+	"@generated": "Sat, 25 Jun 2022 05:49:40",
 	"site":[ 
 		{
 			"@name": "https://pfc.eservices.esante.gouv.fr",
@@ -8,32 +8,6 @@
 			"@port": "443",
 			"@ssl": "true",
 			"alerts": [ 
-				{
-					"pluginid": "10062",
-					"alertRef": "10062",
-					"alert": "PII Disclosure",
-					"name": "PII Disclosure",
-					"riskcode": "3",
-					"confidence": "3",
-					"riskdesc": "High (High)",
-					"desc": "<p>The response contains Personally Identifiable Information, such as CC number, SSN and similar sensitive data.</p>",
-					"instances":[ 
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/authentication.xhtml",
-							"method": "POST",
-							"param": "",
-							"attack": "",
-							"evidence": "5889219343983284235"
-						}
-					],
-					"count": "1",
-					"solution": "",
-					"otherinfo": "<p>Credit Card Type detected: Maestro</p><p>Bank Identification Number: 588921</p><p>Brand: MAESTRO</p><p>Category: </p><p>Issuer: </p>",
-					"reference": "",
-					"cweid": "359",
-					"wascid": "13",
-					"sourceid": "106"
-				},
 				{
 					"pluginid": "10202",
 					"alertRef": "10202",
@@ -255,7 +229,7 @@
 					"reference": "<p>https://bugs.jqueryui.com/ticket/15284</p><p>https://github.com/jquery/jquery-ui/security/advisories/GHSA-gpqq-952q-5327</p><p>https://nvd.nist.gov/vuln/detail/CVE-2021-41184</p><p>https://nvd.nist.gov/vuln/detail/CVE-2021-41183</p><p>https://github.com/jquery/jquery-ui/security/advisories/GHSA-9gj3-hwp5-pmwc</p><p>https://nvd.nist.gov/vuln/detail/CVE-2021-41182</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "78"
+					"sourceid": "76"
 				},
 				{
 					"pluginid": "10054",
@@ -530,6 +504,13 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
+							"evidence": "1029312940"
+						},
+						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/authentication.xhtml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
 							"evidence": "2052723116"
 						},
 						{
@@ -575,7 +556,7 @@
 							"evidence": "86400000"
 						}
 					],
-					"count": "9",
+					"count": "10",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
 					"otherinfo": "<p>1029312940, which evaluates to: 2002-08-14 08:15:40</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
@@ -758,6 +739,13 @@
 							"evidence": "user"
 						},
 						{
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/html5shiv.js.xhtml?ln=html5shiv",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select"
+						},
+						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/jquery/jquery.js.xhtml?ln=primefaces&v=4.0",
 							"method": "GET",
 							"param": "",
@@ -770,20 +758,6 @@
 							"param": "",
 							"attack": "",
 							"evidence": "Bug"
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/pfcng.js.xhtml?ln=js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "from"
-						},
-						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/pfcng.js.xhtml?ln=js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "select"
 						},
 						{
 							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/primefaces.js.xhtml?ln=primefaces&v=4.0",
@@ -807,7 +781,7 @@
 							"evidence": "select"
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
 					"otherinfo": "<p>The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script type=\"text/javascript\"></p><p>\t\t\t$(document).ready(</p><p>\t\t\t\tfunction(){</p><p>\t\t\t\t    // Check if the user already accepted it</p><p>\t\t\t\t    i\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
@@ -867,7 +841,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "72"
+					"sourceid": "62"
 				},
 				{
 					"pluginid": "10049",
@@ -915,7 +889,7 @@
 							"evidence": "private"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/index.xhtml",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/bootstrap2/css/bootstrap.css.xhtml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -929,14 +903,14 @@
 							"evidence": "private"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/theme.css.xhtml?ln=primefaces-bootstrap",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/pfcng.css.xhtml?ln=styles",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "private"
 						},
 						{
-							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/revocation/index.xhtml",
+							"uri": "https://pfc.eservices.esante.gouv.fr/pfcng-ihm/javax.faces.resource/theme.css.xhtml?ln=primefaces-bootstrap",
 							"method": "GET",
 							"param": "",
 							"attack": "",
