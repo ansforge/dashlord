@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Sun, 3 Jul 2022 05:17:00",
+	"@generated": "Tue, 5 Jul 2022 05:24:44",
 	"site":[ 
 		{
 			"@name": "https://mssante.fr",
@@ -82,41 +82,20 @@
 							"evidence": "503503503503"
 						},
 						{
-							"uri": "https://mssante.fr/documents/16106/30482/Synth%C3%A8se+offres+%C3%A9diteurs+de+connecteurs.pdf/436ce585-7062-439a-a4b3-a772bcf230bc",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "579544533615488"
-						},
-						{
 							"uri": "https://mssante.fr/documents/16106/73317/DOSSIER_DE_PRESSE_MSSANTE_FEVRIER+2018.pdf/80f87501-1f34-4828-88bf-47e301f93517",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "503503503503"
-						},
-						{
-							"uri": "https://mssante.fr/documents/16106/76013/Catalogue+offres+%C3%A9diteurs+de+connecteurs.pdf/64dfd7cb-ee1f-4f10-9263-29ed3328990c",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "503503503503"
-						},
-						{
-							"uri": "https://mssante.fr/documents/16106/76013/Catalogue+offres+%C3%A9diteurs+de+connecteurs.pdf/64dfd7cb-ee1f-4f10-9263-29ed3328990c",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "563473495653591906"
 						}
 					],
-					"count": "13",
+					"count": "10",
 					"solution": "",
 					"otherinfo": "<p>Credit Card Type detected: Maestro</p><p>Bank Identification Number: 503503</p><p>Brand: MAESTRO</p><p>Category: </p><p>Issuer: </p>",
 					"reference": "",
 					"cweid": "359",
 					"wascid": "13",
-					"sourceid": "864"
+					"sourceid": "891"
 				},
 				{
 					"pluginid": "10202",
@@ -320,7 +299,7 @@
 					"reference": "<p>http://blogs.wsj.com/cio/2013/10/08/adobe-source-code-leak-is-bad-news-for-u-s-government/</p>",
 					"cweid": "540",
 					"wascid": "13",
-					"sourceid": "778"
+					"sourceid": "765"
 				},
 				{
 					"pluginid": "10099",
@@ -346,7 +325,7 @@
 					"reference": "<p>http://blogs.wsj.com/cio/2013/10/08/adobe-source-code-leak-is-bad-news-for-u-s-government/</p>",
 					"cweid": "540",
 					"wascid": "13",
-					"sourceid": "906"
+					"sourceid": "932"
 				},
 				{
 					"pluginid": "90003",
@@ -597,6 +576,39 @@
 					"cweid": "345",
 					"wascid": "15",
 					"sourceid": "1"
+				},
+				{
+					"pluginid": "10003",
+					"alertRef": "10003",
+					"alert": "Vulnerable JS Library",
+					"name": "Vulnerable JS Library",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>The identified library jquery, version 1.10.2 is vulnerable.</p>",
+					"instances":[ 
+						{
+							"uri": "https://mssante.fr/sugestions-portlet/js/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "jquery-1.10.2.js"
+						},
+						{
+							"uri": "https://mssante.fr/sugestions-portlet/js/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/*! jQuery UI - v1.10.4"
+						}
+					],
+					"count": "2",
+					"solution": "<p>Please upgrade to the latest version of jquery.</p>",
+					"otherinfo": "<p>CVE-2020-11023</p><p>CVE-2020-11022</p><p>CVE-2015-9251</p><p>CVE-2019-11358</p><p></p>",
+					"reference": "<p>https://github.com/jquery/jquery/issues/2432</p><p>http://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/</p><p>http://research.insecurelabs.org/jquery/test/</p><p>https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/</p><p>https://nvd.nist.gov/vuln/detail/CVE-2019-11358</p><p>https://nvd.nist.gov/vuln/detail/CVE-2015-9251</p><p>https://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b</p><p>https://bugs.jquery.com/ticket/11974</p><p>https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/</p><p></p>",
+					"cweid": "829",
+					"wascid": "-1",
+					"sourceid": "304"
 				},
 				{
 					"pluginid": "90022",
@@ -865,15 +877,43 @@
 							"param": "",
 							"attack": "",
 							"evidence": "eval"
+						},
+						{
+							"uri": "https://mssante.fr/sugestions-portlet/js/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval"
+						},
+						{
+							"uri": "https://mssante.fr/sugestions-portlet/js/jquery.form.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval"
+						},
+						{
+							"uri": "https://mssante.fr/sugestions-portlet/js/jquery.MetaData.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval"
+						},
+						{
+							"uri": "https://mssante.fr/sugestions-portlet/js/jquery.MultiFile.pack.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval"
 						}
 					],
-					"count": "4",
+					"count": "8",
 					"solution": "<p>See the references for security advice on the use of these functions.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "100"
+					"sourceid": "102"
 				},
 				{
 					"pluginid": "10063",
@@ -1289,7 +1329,7 @@
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "125"
+					"sourceid": "141"
 				},
 				{
 					"pluginid": "10094",
@@ -1313,7 +1353,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "msslogin_WAR_mssloginportlet_INSTANCE_xyz1"
+							"evidence": "aide_WAR_aideportlet_INSTANCE_Dih3"
 						},
 						{
 							"uri": "https://mssante.fr/cgu",
@@ -1376,7 +1416,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "msslogin_WAR_mssloginportlet_INSTANCE_xyz1"
+							"evidence": "aide_WAR_aideportlet_INSTANCE_Dih3"
 						}
 					],
 					"count": "11",
@@ -1386,6 +1426,109 @@
 					"cweid": "200",
 					"wascid": "13",
 					"sourceid": "1"
+				},
+				{
+					"pluginid": "90011",
+					"alertRef": "90011",
+					"alert": "Charset Mismatch (Header Versus Meta Content-Type Charset)",
+					"name": "Charset Mismatch (Header Versus Meta Content-Type Charset)",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>This check identifies responses where the HTTP Content-Type header declares a charset different from the charset defined by the body of the HTML or XML. When there's a charset mismatch between the HTTP header and content body Web browsers can be forced into an undesirable content-sniffing mode to determine the content's correct character set.</p><p></p><p>An attacker could manipulate content on the page to be interpreted in an encoding of their choice. For example, if an attacker can control content at the beginning of the page, they could inject script using UTF-7 encoded text and manipulate some browsers into interpreting that text.</p>",
+					"instances":[ 
+						{
+							"uri": "https://mssante.fr/aide?type=accueil",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://mssante.fr/aide?type=application_mobile_autoriser_bloquer_appareil",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://mssante.fr/aide?type=application_mobile_telecharger",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://mssante.fr/aide?type=application_mobile_utiliser",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://mssante.fr/aide?type=service_creer_activer_compte",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://mssante.fr/aide?type=service_fermer_compte",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://mssante.fr/aide?type=service_se_connecter",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://mssante.fr/aide?type=service_utiliser",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://mssante.fr/web/mss/aide?type=accueil",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://mssante.fr/aide?type=accueil",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://mssante.fr/aide?type=service_creer_activer_compte",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://mssante.fr/web/mss/aide?type=accueil",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						}
+					],
+					"count": "12",
+					"solution": "<p>Force UTF-8 for all text content in both the HTTP header and meta tags in HTML or encoding declarations in XML.</p>",
+					"otherinfo": "<p>There was a charset mismatch between the HTTP Header and the META content-type encoding declarations: [UTF-8] and [ISO-8859-1] do not match.</p>",
+					"reference": "<p>http://code.google.com/p/browsersec/wiki/Part2#Character_set_handling_and_detection</p>",
+					"cweid": "436",
+					"wascid": "15",
+					"sourceid": "79"
 				},
 				{
 					"pluginid": "10027",
@@ -1405,13 +1548,6 @@
 							"evidence": "query"
 						},
 						{
-							"uri": "https://mssante.fr/html/js/barebone.jsp?b=6203&browserId=firefox&colorSchemeId=01&languageId=fr_FR&minifierBundleId=javascript.barebone.files&minifierType=js&t=1429195226000&themeId=mssunifie_WAR_MSSunifietheme",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "query"
-						},
-						{
 							"uri": "https://mssante.fr/mss-theme/lib/tarteaucitron/tarteaucitron.js",
 							"method": "GET",
 							"param": "",
@@ -1440,41 +1576,76 @@
 							"evidence": "user"
 						},
 						{
-							"uri": "https://mssante.fr/MSS-unifie-theme/lib/tarteaucitron/tarteaucitron.js",
+							"uri": "https://mssante.fr/sugestions-portlet/js/jquery.blockUI.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "from"
 						},
 						{
-							"uri": "https://mssante.fr/MSS-unifie-theme/lib/tarteaucitron/tarteaucitron.js",
+							"uri": "https://mssante.fr/sugestions-portlet/js/jquery.blockUI.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "later"
+						},
+						{
+							"uri": "https://mssante.fr/sugestions-portlet/js/jquery.blockUI.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "where"
+						},
+						{
+							"uri": "https://mssante.fr/sugestions-portlet/js/jquery.form.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "from"
+						},
+						{
+							"uri": "https://mssante.fr/sugestions-portlet/js/jquery.form.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "later"
+						},
+						{
+							"uri": "https://mssante.fr/sugestions-portlet/js/jquery.form.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "query"
 						},
 						{
-							"uri": "https://mssante.fr/MSS-unifie-theme/lib/tarteaucitron/tarteaucitron.js",
+							"uri": "https://mssante.fr/sugestions-portlet/js/jquery.form.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "TODO"
+							"evidence": "select"
 						},
 						{
-							"uri": "https://mssante.fr/MSS-unifie-theme/lib/tarteaucitron/tarteaucitron.js",
+							"uri": "https://mssante.fr/sugestions-portlet/js/jquery.form.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "user"
+						},
+						{
+							"uri": "https://mssante.fr/sugestions-portlet/js/jquery.form.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "username"
 						}
 					],
-					"count": "10",
+					"count": "14",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
 					"otherinfo": "<p>The following pattern was used: \\bQUERY\\b and was detected 2 times, the first in the element starting with: \"if(typeof YUI!=\"undefined\"){YUI._YUI=YUI}var YUI=function(){var c=0,f=this,b=arguments,a=b.length,e=function(h,g){return(h&&h.ha\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "100"
+					"sourceid": "102"
 				},
 				{
 					"pluginid": "10109",
@@ -1610,7 +1781,7 @@
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "36"
+					"sourceid": "73"
 				},
 				{
 					"pluginid": "10015",
