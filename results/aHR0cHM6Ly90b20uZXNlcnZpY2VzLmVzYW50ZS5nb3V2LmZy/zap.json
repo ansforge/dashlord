@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Mon, 11 Jul 2022 03:41:37",
+	"@generated": "Wed, 13 Jul 2022 03:47:39",
 	"site":[ 
 		{
 			"@name": "https://tom.eservices.esante.gouv.fr",
@@ -28,7 +28,7 @@
 					],
 					"count": "1",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
-					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"siteIE\" \"siteMozilla\" \"versionAcrobatLinux\" \"versionAcrobatMacOS\" \"versionAcrobatWin\" \"versionCryptoDllWin\" \"versionCryptoDMinWin\" \"versionCryptoLibLinux\" \"versionCryptoLibMacOS\" \"versionCryptoLibWin\" \"versionJVMLinux\" \"versionJVMMacOS\" \"versionJVMWin\" \"vMinAcrobat\" \"vMinIE\" \"vMinNescape\" \"vRecAcrobat\" \"vRecIE\" \"vRecJVM\" \"vRecNescape\" ].</p>",
+					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"siteIE\" \"siteMozilla\" \"versionAcrobatLinux\" \"versionAcrobatMacOS\" \"versionAcrobatWin\" \"versionJVMLinux\" \"versionJVMMacOS\" \"versionJVMWin\" \"vMinAcrobat\" \"vMinIE\" \"vMinNescape\" \"vRecAcrobat\" \"vRecIE\" \"vRecJVM\" \"vRecNescape\" ].</p>",
 					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>http://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
@@ -397,14 +397,14 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://tom.eservices.esante.gouv.fr/tom/resources/images/cartes_cps_connect_arrow.png",
+							"uri": "https://tom.eservices.esante.gouv.fr/tom/resources/images/cartes_cps_compatibilite_arrow.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://tom.eservices.esante.gouv.fr/tom/resources/images/haut_n.gif",
+							"uri": "https://tom.eservices.esante.gouv.fr/tom/resources/images/cartes_cps_connect_arrow.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -478,7 +478,7 @@
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "43"
+					"sourceid": "38"
 				},
 				{
 					"pluginid": "10094",
@@ -526,7 +526,7 @@
 					],
 					"count": "1",
 					"solution": "<p>Force UTF-8 for all text content in both the HTTP header and meta tags in HTML or encoding declarations in XML.</p>",
-					"otherinfo": "<p>There was a charset mismatch between the HTTP Header and the META content-type encoding declarations: [ISO-8859-1] and [UTF-8] do not match.</p>",
+					"otherinfo": "<p>There was a charset mismatch between the HTTP Header and the META content-type encoding declarations: [ISO-8859-1] and [UTF8] do not match.</p>",
 					"reference": "<p>http://code.google.com/p/browsersec/wiki/Part2#Character_set_handling_and_detection</p>",
 					"cweid": "436",
 					"wascid": "15",
@@ -643,7 +643,7 @@
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "7"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10015",
@@ -657,20 +657,6 @@
 					"instances":[ 
 						{
 							"uri": "https://tom.eservices.esante.gouv.fr",
-							"method": "GET",
-							"param": "Cache-Control",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://tom.eservices.esante.gouv.fr/tom/aide/TOM%20-%20FAQ%20demarrage%20V1%2013.docx",
-							"method": "GET",
-							"param": "Cache-Control",
-							"attack": "",
-							"evidence": ""
-						},
-						{
-							"uri": "https://tom.eservices.esante.gouv.fr/tom/aide/TOM%20-%20Instructions%20pour%20demarrer%20V1.47.docx",
 							"method": "GET",
 							"param": "Cache-Control",
 							"attack": "",
@@ -698,7 +684,7 @@
 							"evidence": ""
 						}
 					],
-					"count": "6",
+					"count": "4",
 					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p>",
