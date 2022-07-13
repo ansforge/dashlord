@@ -1,6 +1,6 @@
-# Nmap 7.92 scan initiated Mon Jul 11 08:13:56 2022 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln diagcps.eservices.esante.gouv.fr
+# Nmap 7.92 scan initiated Wed Jul 13 08:09:14 2022 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln diagcps.eservices.esante.gouv.fr
 Nmap scan report for diagcps.eservices.esante.gouv.fr (135.125.232.117)
-Host is up (0.16s latency).
+Host is up (0.089s latency).
 rDNS record for 135.125.232.117: vps-c4a3f657.vps.ovh.net
 Not shown: 994 filtered tcp ports (no-response)
 PORT     STATE  SERVICE    VERSION
@@ -11,6 +11,7 @@ PORT     STATE  SERVICE    VERSION
 |     	C94132FD-1FA5-5342-B6EE-0DAF45EEFFE3	6.8	https://vulners.com/githubexploit/C94132FD-1FA5-5342-B6EE-0DAF45EEFFE3	*EXPLOIT*
 |_    	10213DBE-F683-58BB-B6D3-353173626207	6.8	https://vulners.com/githubexploit/10213DBE-F683-58BB-B6D3-353173626207	*EXPLOIT*
 80/tcp   open   http       Apache httpd 2.4.37 ((centos) OpenSSL/1.1.1g)
+|_http-server-header: Apache/2.4.37 (centos) OpenSSL/1.1.1g
 | vulners: 
 |   cpe:/a:apache:http_server:2.4.37: 
 |     	CVE-2022-31813	7.5	https://vulners.com/cve/CVE-2022-31813
@@ -64,7 +65,6 @@ PORT     STATE  SERVICE    VERSION
 |     	1337DAY-ID-35422	4.3	https://vulners.com/zdt/1337DAY-ID-35422	*EXPLOIT*
 |     	1337DAY-ID-33575	4.3	https://vulners.com/zdt/1337DAY-ID-33575	*EXPLOIT*
 |_    	PACKETSTORM:152441	0.0	https://vulners.com/packetstorm/PACKETSTORM:152441	*EXPLOIT*
-|_http-server-header: Apache/2.4.37 (centos) OpenSSL/1.1.1g
 389/tcp  open   ldap       OpenLDAP 2.2.X - 2.3.X
 443/tcp  open   ssl/http   Apache httpd 2.4.37 ((centos) OpenSSL/1.1.1g)
 | vulners: 
@@ -125,4 +125,4 @@ PORT     STATE  SERVICE    VERSION
 9090/tcp closed zeus-admin
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Mon Jul 11 08:14:28 2022 -- 1 IP address (1 host up) scanned in 32.10 seconds
+# Nmap done at Wed Jul 13 08:09:40 2022 -- 1 IP address (1 host up) scanned in 26.13 seconds
