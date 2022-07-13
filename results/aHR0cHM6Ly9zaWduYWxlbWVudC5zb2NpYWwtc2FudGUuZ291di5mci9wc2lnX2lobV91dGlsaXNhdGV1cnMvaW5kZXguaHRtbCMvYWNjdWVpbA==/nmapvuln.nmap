@@ -1,6 +1,6 @@
-# Nmap 7.92 scan initiated Mon Jul 11 08:19:22 2022 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln signalement.social-sante.gouv.fr
+# Nmap 7.92 scan initiated Wed Jul 13 08:25:34 2022 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln signalement.social-sante.gouv.fr
 Nmap scan report for signalement.social-sante.gouv.fr (51.178.236.12)
-Host is up (0.090s latency).
+Host is up (0.15s latency).
 rDNS record for 51.178.236.12: ip12.ip-51-178-236.eu
 Not shown: 998 filtered tcp ports (no-response)
 PORT     STATE SERVICE  VERSION
@@ -15,7 +15,7 @@ PORT     STATE SERVICE  VERSION
 |     X-Frame-Options: SAMEORIGIN
 |     X-XSS-Protection: 1; mode=block
 |     X-Content-Type-Options: nosniff
-|     Content-Security-Policy: frame-ancestors
+|     Content-Security-Policy: frame-ancestors 'self'
 |   GenericLines, HTTPOptions, RTSPRequest, SIPOptions: 
 |     HTTP/1.1 302 Found
 |     Location: https://:8015
@@ -23,7 +23,7 @@ PORT     STATE SERVICE  VERSION
 |     X-Frame-Options: SAMEORIGIN
 |     X-XSS-Protection: 1; mode=block
 |     X-Content-Type-Options: nosniff
-|     Content-Security-Policy: frame-ancestors
+|     Content-Security-Policy: frame-ancestors 'self'
 |   GetRequest: 
 |     HTTP/1.1 302 Found
 |     Location: https://:8015/
@@ -31,33 +31,34 @@ PORT     STATE SERVICE  VERSION
 |     X-Frame-Options: SAMEORIGIN
 |     X-XSS-Protection: 1; mode=block
 |     X-Content-Type-Options: nosniff
-|_    Content-Security-Policy: frame-ancestors
+|_    Content-Security-Policy: frame-ancestors 'self'
 1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
-SF-Port8008-TCP:V=7.92%I=7%D=7/11%Time=62CBDD18%P=x86_64-alpine-linux-musl
-SF:%r(GetRequest,CC,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:80
+SF-Port8008-TCP:V=7.92%I=7%D=7/13%Time=62CE8190%P=x86_64-alpine-linux-musl
+SF:%r(GetRequest,D3,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:80
 SF:15/\r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-
 SF:Protection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20nosniff\r
-SF:\nContent-Security-Policy:\x20frame-ancestors\r\n\r\n")%r(FourOhFourReq
-SF:uest,EF,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:8015/nice%2
-SF:0ports%2C/Tri%6Eity\.txt%2ebak\r\nConnection:\x20close\r\nX-Frame-Optio
-SF:ns:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content
-SF:-Type-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-ancestor
-SF:s\r\n\r\n")%r(GenericLines,CB,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x
-SF:20https://:8015\r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIG
-SF:IN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type-Options:\
-SF:x20nosniff\r\nContent-Security-Policy:\x20frame-ancestors\r\n\r\n")%r(H
-SF:TTPOptions,CB,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:8015\
-SF:r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Prot
-SF:ection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20nosniff\r\nCo
-SF:ntent-Security-Policy:\x20frame-ancestors\r\n\r\n")%r(RTSPRequest,CB,"H
-SF:TTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:8015\r\nConnection:\x
-SF:20close\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x2
-SF:0mode=block\r\nX-Content-Type-Options:\x20nosniff\r\nContent-Security-P
-SF:olicy:\x20frame-ancestors\r\n\r\n")%r(SIPOptions,CB,"HTTP/1\.1\x20302\x
-SF:20Found\r\nLocation:\x20https://:8015\r\nConnection:\x20close\r\nX-Fram
-SF:e-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-
-SF:Content-Type-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-a
-SF:ncestors\r\n\r\n");
+SF:\nContent-Security-Policy:\x20frame-ancestors\x20'self'\r\n\r\n")%r(Fou
+SF:rOhFourRequest,F6,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:8
+SF:015/nice%20ports%2C/Tri%6Eity\.txt%2ebak\r\nConnection:\x20close\r\nX-F
+SF:rame-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\
+SF:nX-Content-Type-Options:\x20nosniff\r\nContent-Security-Policy:\x20fram
+SF:e-ancestors\x20'self'\r\n\r\n")%r(GenericLines,D2,"HTTP/1\.1\x20302\x20
+SF:Found\r\nLocation:\x20https://:8015\r\nConnection:\x20close\r\nX-Frame-
+SF:Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Co
+SF:ntent-Type-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-anc
+SF:estors\x20'self'\r\n\r\n")%r(HTTPOptions,D2,"HTTP/1\.1\x20302\x20Found\
+SF:r\nLocation:\x20https://:8015\r\nConnection:\x20close\r\nX-Frame-Option
+SF:s:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-
+SF:Type-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-ancestors
+SF:\x20'self'\r\n\r\n")%r(RTSPRequest,D2,"HTTP/1\.1\x20302\x20Found\r\nLoc
+SF:ation:\x20https://:8015\r\nConnection:\x20close\r\nX-Frame-Options:\x20
+SF:SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type-O
+SF:ptions:\x20nosniff\r\nContent-Security-Policy:\x20frame-ancestors\x20's
+SF:elf'\r\n\r\n")%r(SIPOptions,D2,"HTTP/1\.1\x20302\x20Found\r\nLocation:\
+SF:x20https://:8015\r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORI
+SF:GIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type-Options:
+SF:\x20nosniff\r\nContent-Security-Policy:\x20frame-ancestors\x20'self'\r\
+SF:n\r\n");
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Mon Jul 11 08:22:01 2022 -- 1 IP address (1 host up) scanned in 159.20 seconds
+# Nmap done at Wed Jul 13 08:28:18 2022 -- 1 IP address (1 host up) scanned in 164.45 seconds
