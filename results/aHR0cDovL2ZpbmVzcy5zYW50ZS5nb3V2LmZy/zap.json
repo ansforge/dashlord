@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Wed, 13 Jul 2022 04:34:27",
+	"@generated": "Fri, 15 Jul 2022 05:03:37",
 	"site":[ 
 		{
 			"@name": "http://finess.sante.gouv.fr",
@@ -354,6 +354,20 @@
 							"evidence": "Set-Cookie: TS01298773"
 						},
 						{
+							"uri": "http://finess.sante.gouv.fr/fininter/jsp/index.jsp",
+							"method": "GET",
+							"param": "TS01298773",
+							"attack": "",
+							"evidence": "Set-Cookie: TS01298773"
+						},
+						{
+							"uri": "http://finess.sante.gouv.fr/fininter/jsp/index.jsp",
+							"method": "GET",
+							"param": "TS01816cc1",
+							"attack": "",
+							"evidence": "Set-Cookie: TS01816cc1"
+						},
+						{
 							"uri": "http://finess.sante.gouv.fr/fininter/robots.txt",
 							"method": "GET",
 							"param": "TS01298773",
@@ -375,7 +389,7 @@
 							"evidence": "Set-Cookie: TS01298773"
 						}
 					],
-					"count": "4",
+					"count": "6",
 					"solution": "<p>Ensure that the HttpOnly flag is set for all cookies.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://owasp.org/www-community/HttpOnly</p>",
@@ -406,6 +420,27 @@
 							"param": "TS01298773",
 							"attack": "",
 							"evidence": "Set-Cookie: TS01298773"
+						},
+						{
+							"uri": "http://finess.sante.gouv.fr/fininter/jsp/index.jsp",
+							"method": "GET",
+							"param": "JSESSIONID",
+							"attack": "",
+							"evidence": "Set-Cookie: JSESSIONID"
+						},
+						{
+							"uri": "http://finess.sante.gouv.fr/fininter/jsp/index.jsp",
+							"method": "GET",
+							"param": "TS01298773",
+							"attack": "",
+							"evidence": "Set-Cookie: TS01298773"
+						},
+						{
+							"uri": "http://finess.sante.gouv.fr/fininter/jsp/index.jsp",
+							"method": "GET",
+							"param": "TS01816cc1",
+							"attack": "",
+							"evidence": "Set-Cookie: TS01816cc1"
 						},
 						{
 							"uri": "http://finess.sante.gouv.fr/fininter/robots.txt",
@@ -443,7 +478,7 @@
 							"evidence": "Set-Cookie: TS01298773"
 						}
 					],
-					"count": "7",
+					"count": "10",
 					"solution": "<p>Ensure that the SameSite attribute is set to either 'lax' or ideally 'strict' for all cookies.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
@@ -602,7 +637,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1987750080"
+							"evidence": "2004527296"
 						},
 						{
 							"uri": "http://finess.sante.gouv.fr/fininter/jsp/pdf.do?xsl=CategEta.xsl",
@@ -742,12 +777,12 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2004527296"
+							"evidence": "1987750080"
 						}
 					],
 					"count": "21",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
-					"otherinfo": "<p>1987750080, which evaluates to: 2032-12-27 08:48:00</p>",
+					"otherinfo": "<p>2004527296, which evaluates to: 2033-07-09 13:08:16</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -1374,7 +1409,7 @@
 					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "105"
+					"sourceid": "106"
 				}
 			]
 		}
