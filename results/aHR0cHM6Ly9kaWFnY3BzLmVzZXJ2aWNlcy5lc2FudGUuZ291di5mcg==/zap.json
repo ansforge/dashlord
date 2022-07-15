@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Wed, 13 Jul 2022 08:06:49",
+	"@generated": "Fri, 15 Jul 2022 08:50:58",
 	"site":[ 
 		{
 			"@name": "https://diagcps.eservices.esante.gouv.fr",
@@ -8,6 +8,32 @@
 			"@port": "443",
 			"@ssl": "true",
 			"alerts": [ 
+				{
+					"pluginid": "90022",
+					"alertRef": "90022",
+					"alert": "Application Error Disclosure",
+					"name": "Application Error Disclosure",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
+					"instances":[ 
+						{
+							"uri": "https://diagcps.eservices.esante.gouv.fr/ODI_PS/php/download_asip.php?installeur=url_interne_xpi_installation_pkcs11",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<b>Warning</b>:  Cannot modify header information - headers already sent by (output started at /var/www/html/ODI_PS/php/download_asip.php:57) in <b>/var/www/html/ODI_PS/php/download_asip.php</b> on line <b>68</b><br />"
+						}
+					],
+					"count": "1",
+					"solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
+					"otherinfo": "",
+					"reference": "",
+					"cweid": "200",
+					"wascid": "13",
+					"sourceid": "67"
+				},
 				{
 					"pluginid": "10038",
 					"alertRef": "10038",
@@ -134,9 +160,16 @@
 							"param": "X-Frame-Options",
 							"attack": "",
 							"evidence": ""
+						},
+						{
+							"uri": "https://diagcps.eservices.esante.gouv.fr/ODI_PS/php/download_asip.php?installeur=url_interne_xpi_installation_pkcs11",
+							"method": "GET",
+							"param": "X-Frame-Options",
+							"attack": "",
+							"evidence": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p>",
@@ -168,7 +201,7 @@
 					"reference": "<p>https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/</p><p>https://nvd.nist.gov/vuln/detail/CVE-2019-11358</p><p>https://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b</p><p>https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "52"
+					"sourceid": "55"
 				},
 				{
 					"pluginid": "10110",
@@ -194,7 +227,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "52"
+					"sourceid": "55"
 				},
 				{
 					"pluginid": "10063",
@@ -329,9 +362,16 @@
 							"param": "",
 							"attack": "",
 							"evidence": "X-Powered-By: PHP/7.2.24"
+						},
+						{
+							"uri": "https://diagcps.eservices.esante.gouv.fr/ODI_PS/php/download_asip.php?installeur=url_interne_xpi_installation_pkcs11",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: PHP/7.2.24"
 						}
 					],
-					"count": "4",
+					"count": "5",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>http://blogs.msdn.com/b/varunm/archive/2013/04/23/remove-unwanted-http-response-headers.aspx</p><p>http://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
@@ -759,7 +799,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "52"
+					"sourceid": "55"
 				},
 				{
 					"pluginid": "10015",
@@ -793,6 +833,13 @@
 							"evidence": ""
 						},
 						{
+							"uri": "https://diagcps.eservices.esante.gouv.fr/ODI_PS/php/download_asip.php?installeur=url_interne_xpi_installation_pkcs11",
+							"method": "GET",
+							"param": "Cache-Control",
+							"attack": "",
+							"evidence": ""
+						},
+						{
 							"uri": "https://diagcps.eservices.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Cache-Control",
@@ -800,7 +847,7 @@
 							"evidence": ""
 						}
 					],
-					"count": "4",
+					"count": "5",
 					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p>",
