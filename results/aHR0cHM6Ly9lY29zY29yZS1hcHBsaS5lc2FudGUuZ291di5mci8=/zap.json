@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Sun, 17 Jul 2022 09:42:50",
+	"@generated": "Tue, 19 Jul 2022 10:09:50",
 	"site":[ 
 		{
 			"@name": "https://ecoscore-appli.esante.gouv.fr",
@@ -32,7 +32,7 @@
 					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>http://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "26"
+					"sourceid": "27"
 				},
 				{
 					"pluginid": "10055",
@@ -92,6 +92,13 @@
 							"evidence": ""
 						},
 						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/contact",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/login",
 							"method": "GET",
 							"param": "",
@@ -106,7 +113,7 @@
 							"evidence": ""
 						}
 					],
-					"count": "4",
+					"count": "5",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header, to achieve optimal browser support: \"Content-Security-Policy\" for Chrome 25+, Firefox 23+ and Safari 7+, \"X-Content-Security-Policy\" for Firefox 4.0+ and Internet Explorer 10+, and \"X-WebKit-CSP\" for Chrome 14+ and Safari 6+.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
@@ -153,6 +160,20 @@
 							"evidence": "<script type=\"text/javascript\" src=\"https://tarteaucitron.io/load.js?locale=fr&amp;domain=DEV_ANS&amp;uuid=a85db0cc515763819ebbb55899eb39ae34324380\"></script>"
 						},
 						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/contact",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<link rel=\"preload\" href=\"https://tarteaucitron.io/load.js?locale=fr&amp;domain=DEV_ANS&amp;uuid=a85db0cc515763819ebbb55899eb39ae34324380\" as=\"script\"/>"
+						},
+						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/contact",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script type=\"text/javascript\" src=\"https://tarteaucitron.io/load.js?locale=fr&amp;domain=DEV_ANS&amp;uuid=a85db0cc515763819ebbb55899eb39ae34324380\"></script>"
+						},
+						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/login",
 							"method": "GET",
 							"param": "",
@@ -181,7 +202,7 @@
 							"evidence": "<script type=\"text/javascript\" src=\"https://tarteaucitron.io/load.js?locale=fr&amp;domain=DEV_ANS&amp;uuid=a85db0cc515763819ebbb55899eb39ae34324380\"></script>"
 						}
 					],
-					"count": "8",
+					"count": "10",
 					"solution": "<p>Provide a valid integrity attribute to the tag.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en/docs/Web/Security/Subresource_Integrity</p>",
@@ -214,6 +235,13 @@
 							"evidence": "<script type=\"text/javascript\" src=\"https://tarteaucitron.io/load.js?locale=fr&amp;domain=DEV_ANS&amp;uuid=a85db0cc515763819ebbb55899eb39ae34324380\"></script>"
 						},
 						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/contact",
+							"method": "GET",
+							"param": "https://tarteaucitron.io/load.js?locale=fr&domain=DEV_ANS&uuid=a85db0cc515763819ebbb55899eb39ae34324380",
+							"attack": "",
+							"evidence": "<script type=\"text/javascript\" src=\"https://tarteaucitron.io/load.js?locale=fr&amp;domain=DEV_ANS&amp;uuid=a85db0cc515763819ebbb55899eb39ae34324380\"></script>"
+						},
+						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/login",
 							"method": "GET",
 							"param": "https://tarteaucitron.io/load.js?locale=fr&domain=DEV_ANS&uuid=a85db0cc515763819ebbb55899eb39ae34324380",
@@ -228,7 +256,7 @@
 							"evidence": "<script type=\"text/javascript\" src=\"https://tarteaucitron.io/load.js?locale=fr&amp;domain=DEV_ANS&amp;uuid=a85db0cc515763819ebbb55899eb39ae34324380\"></script>"
 						}
 					],
-					"count": "4",
+					"count": "5",
 					"solution": "<p>Ensure JavaScript source files are loaded from only trusted sources, and the sources can't be controlled by end users of the application.</p>",
 					"otherinfo": "",
 					"reference": "",
@@ -247,27 +275,20 @@
 					"desc": "<p>A dangerous JS function seems to be in use that would leave the site vulnerable.</p>",
 					"instances":[ 
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "eval"
-						},
-						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/login.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "eval"
 						}
 					],
-					"count": "2",
+					"count": "1",
 					"solution": "<p>See the references for security advice on the use of these functions.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "37"
+					"sourceid": "38"
 				},
 				{
 					"pluginid": "10023",
@@ -313,28 +334,28 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.c72399a2fbea5d162787.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.59542982031b43c4ee6f.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/index.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/index.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/login.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/login.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -348,14 +369,14 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/runtime/webpack-751931bf0b31e9997667.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/runtime/webpack-f68aae7ab41d9ef1ab86.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/cgu",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/contact",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -392,6 +413,32 @@
 					"sourceid": "1"
 				},
 				{
+					"pluginid": "2",
+					"alertRef": "2",
+					"alert": "Private IP Disclosure",
+					"name": "Private IP Disclosure",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>A private IP (such as 10.x.x.x, 172.x.x.x, 192.168.x.x) or an Amazon EC2 private hostname (for example, ip-10-0-56-78) has been found in the HTTP response body. This information might be helpful for further attacks targeting internal systems.</p>",
+					"instances":[ 
+						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.59542982031b43c4ee6f.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "10.33.63.23"
+						}
+					],
+					"count": "1",
+					"solution": "<p>Remove the private IP address from the HTTP response body.  For comments, use JSP/ASP/PHP comment instead of HTML/JavaScript comment which can be seen by client browsers.</p>",
+					"otherinfo": "<p>10.33.63.23</p><p></p>",
+					"reference": "<p>https://tools.ietf.org/html/rfc1918</p>",
+					"cweid": "200",
+					"wascid": "13",
+					"sourceid": "44"
+				},
+				{
 					"pluginid": "10037",
 					"alertRef": "10037",
 					"alert": "Server Leaks Information via \"X-Powered-By\" HTTP Response Header Field(s)",
@@ -409,21 +456,14 @@
 							"evidence": "X-Powered-By: Next.js"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.c72399a2fbea5d162787.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "X-Powered-By: Express"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "X-Powered-By: Express"
-						},
-						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/index.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/index.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -437,7 +477,7 @@
 							"evidence": "X-Powered-By: Express"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/runtime/webpack-751931bf0b31e9997667.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/runtime/webpack-f68aae7ab41d9ef1ab86.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -459,6 +499,13 @@
 						},
 						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/static/images/ans/favicon.svg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: Express"
+						},
+						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/static/images/ans/landingpage/Bandeau_MES_colonne.jpg",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -512,6 +559,13 @@
 							"evidence": ""
 						},
 						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/contact",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/login",
 							"method": "GET",
 							"param": "",
@@ -519,7 +573,7 @@
 							"evidence": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that only one component in your stack: code, web server, application server, load balancer, etc. is configured to set or add a HTTP Strict-Transport-Security (HSTS) header.</p>",
 					"otherinfo": "",
 					"reference": "<p>http://tools.ietf.org/html/rfc6797#section-8.1</p>",
@@ -538,1162 +592,1162 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server - Unix</p>",
 					"instances":[ 
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "00000001"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "00000051"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "00000118"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1013904242"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1014477480"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1017036298"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1034457026"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "106217008"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1073741823"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1086792851"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1116352408"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1125592928"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1126000580"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1126891415"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "11390625"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "113926993"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1163531501"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "116418474"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1164996542"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "11881376"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1188179964"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1200080426"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1203062813"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1206759142"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1236535329"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1246189591"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1249150122"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1272893353"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1288033470"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1290863460"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1294757372"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1309151649"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1322822218"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1323610764"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1352829926"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1359893119"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1363258195"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1396182291"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1426881987"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1432725776"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "14348907"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1467031594"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1495990901"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1501505948"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1508970993"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1518500249"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1522805485"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1537002063"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1541459225"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1546045734"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1548603684"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1555081692"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1575990012"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1595750129"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1607167915"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1654270250"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "16711680"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "16777215"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "16777216"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "16843008"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "16843009"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "168717936"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1694076839"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1695183700"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1700485571"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "17210368"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1731405415"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1732584193"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1735328473"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "174292421"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1747873779"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1750603025"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1770035416"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1779033703"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1804603682"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1816402316"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1836072691"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1839030562"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1856431235"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1859775393"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1873313359"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1894007588"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1899447441"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1914138554"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1925078388"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "19487171"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1955562222"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1986661051"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "1996064986"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "2003034995"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "2007800933"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "2024104815"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "20511149"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "2053994217"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "2147483647"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "24137569"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "264347078"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "268435455"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "271733878"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "275423344"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "28629151"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "289380356"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "310598401"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "320620315"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "327033209"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "33554432"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "338241895"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "34012224"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "344077627"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "355462360"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "35831808"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "365543100"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "38016083"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "39135393"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "40353607"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "430227734"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "43046721"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "442776044"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "45435424"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "460393269"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "47045881"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "48828125"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "506948616"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "51868783"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "52521875"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "528734635"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "530742520"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "56193951"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "566280711"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "568446438"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "587496836"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "593698344"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "602891725"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "60466176"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "604807628"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "606105819"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "607225278"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "62748517"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "633803317"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "64210519"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "643717713"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "659060556"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "666307205"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "67108863"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "67108864"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "681279174"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "685471733"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "718787259"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "72243049"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "725511199"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "76029189"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "766784016"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "770255983"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "773529912"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "812702999"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "851169720"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "852142971"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "883997877"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "899497514"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "91386409"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "914150663"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "944711139"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "958139571"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "961987163"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "987167468"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1706,7 +1760,7 @@
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "37"
+					"sourceid": "38"
 				},
 				{
 					"pluginid": "10021",
@@ -1719,21 +1773,21 @@
 					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
 					"instances":[ 
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.c72399a2fbea5d162787.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.59542982031b43c4ee6f.js",
 							"method": "GET",
 							"param": "X-Content-Type-Options",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "X-Content-Type-Options",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/index.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/index.js",
 							"method": "GET",
 							"param": "X-Content-Type-Options",
 							"attack": "",
@@ -1747,7 +1801,7 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/runtime/webpack-751931bf0b31e9997667.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/runtime/webpack-f68aae7ab41d9ef1ab86.js",
 							"method": "GET",
 							"param": "X-Content-Type-Options",
 							"attack": "",
@@ -1809,7 +1863,7 @@
 					"reference": "<p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "38"
+					"sourceid": "44"
 				},
 				{
 					"pluginid": "10094",
@@ -1826,61 +1880,54 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "9722-VIJELT2F/tEZYfgOC8ptEHai0Xg"
+							"evidence": "a9d9-sCDPvdD8uEL2gPaqyNo7mSZNZ0E"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.c72399a2fbea5d162787.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "static/images/Greenspector_Logo_blanc_2020"
-						},
-						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-						},
-						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/index.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "/static/images/icones/SAAS/CO2_grey"
-						},
-						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/login.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.59542982031b43c4ee6f.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
 						},
 						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+						},
+						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/cgu",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "6e6a-5ZSRzyGg/6G+CMEiZYTgnx+TDbU"
+							"evidence": "7a75-uMAKrkXZQ1OgSkPI6rhIzmzwvYY"
+						},
+						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/contact",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "db0f-gSlj25kJ+TigNyvEY4+a9zOH800"
 						},
 						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/login",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "b9a2-wYapGQPgRmjjUr32jS7whkPAA04"
+							"evidence": "c639-SmeQc9iK5czFojI9Gaa74Sw0RKE"
 						},
 						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "8093-6mvfJo+otErhle9XbT3Y/UfYGeo"
+							"evidence": "8dd2-ntHLpaQJdiSAXow/cyz5Ptr/u/Y"
 						}
 					],
-					"count": "8",
+					"count": "7",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\uFFFD\uFFFD\uFFFD\uFFFDR\t\\x0010\uFFFD\uFFFD\\x0017\uFFFDDe\uFFFD\uFFFD8/)\uFFFDA\u068BE\uFFFD</p>",
+					"otherinfo": "<p>k\uFFFD}\uFFFD\uFFFD\uFFFD>\uFFFDC\uFFFD\uFFFD\\x000b\uFFFD\\x0003\u06AB#h\uFFFDd\uFFFD5\uFFFD\\x0004</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -1904,25 +1951,46 @@
 							"evidence": "query"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.c72399a2fbea5d162787.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.59542982031b43c4ee6f.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "from"
+						},
+						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.59542982031b43c4ee6f.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "query"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.59542982031b43c4ee6f.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "bugs"
+							"evidence": "select"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/login.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.59542982031b43c4ee6f.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "user"
+						},
+						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.59542982031b43c4ee6f.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "where"
+						},
+						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "bugs"
 						},
 						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/runtime/main-195a862edd40905f3234.js",
@@ -1932,7 +2000,7 @@
 							"evidence": "query"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/cgu",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/contact",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1953,7 +2021,7 @@
 							"evidence": "query"
 						}
 					],
-					"count": "8",
+					"count": "11",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
 					"otherinfo": "<p>The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"dataManager\":\"[]\",\"props\":{\"pageProps\":{},\"initialState\":{\"user\":null,\"curr\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
@@ -1979,14 +2047,7 @@
 							"evidence": "<a id=\"loginbutton\" tabindex=\"-1\"></a>"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.c72399a2fbea5d162787.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script>"
-						},
-						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1998,6 +2059,13 @@
 							"param": "",
 							"attack": "",
 							"evidence": "<a id=\"content\" tabindex=\"-1\"></a>"
+						},
+						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/contact",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a id=\"navigation\" tabindex=\"-1\"></a>"
 						},
 						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/login",
@@ -2040,6 +2108,13 @@
 							"evidence": ""
 						},
 						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/contact",
+							"method": "GET",
+							"param": "Cache-Control",
+							"attack": "",
+							"evidence": ""
+						},
+						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/login",
 							"method": "GET",
 							"param": "Cache-Control",
@@ -2047,7 +2122,7 @@
 							"evidence": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p>",
@@ -2073,21 +2148,14 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.c72399a2fbea5d162787.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "max-age=31536000"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/_app.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "max-age=31536000"
-						},
-						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/qjUI9Q6UxTsRfIjwkSLcf/pages/index.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/index.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2101,7 +2169,7 @@
 							"evidence": "max-age=31536000"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/runtime/webpack-751931bf0b31e9997667.js",
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/runtime/webpack-f68aae7ab41d9ef1ab86.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2129,7 +2197,7 @@
 							"evidence": ""
 						}
 					],
-					"count": "9",
+					"count": "8",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
 					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
@@ -2155,6 +2223,13 @@
 							"evidence": "max-age=0"
 						},
 						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/static/images/logo-ANS.svg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=0"
+						},
+						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/static/images/logo-ministere.svg",
 							"method": "GET",
 							"param": "",
@@ -2162,13 +2237,13 @@
 							"evidence": "max-age=0"
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "",
 					"otherinfo": "",
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "22"
+					"sourceid": "23"
 				}
 			]
 		}
