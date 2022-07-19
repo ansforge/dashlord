@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Sun, 17 Jul 2022 04:59:38",
+	"@generated": "Tue, 19 Jul 2022 05:06:01",
 	"site":[ 
 		{
 			"@name": "https://smt.esante.gouv.fr",
@@ -14,39 +14,46 @@
 					"alert": "PII Disclosure",
 					"name": "PII Disclosure",
 					"riskcode": "3",
-					"confidence": "2",
-					"riskdesc": "High (Medium)",
+					"confidence": "3",
+					"riskdesc": "High (High)",
 					"desc": "<p>The response contains Personally Identifiable Information, such as CC number, SSN and similar sensitive data.</p>",
 					"instances":[ 
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/registration?client_id=ans_wordpress&tab_id=-yKhnedMrbU",
+							"uri": "https://smt.esante.gouv.fr/wp-json/ans/terminologies/document?fileName=CGTS_SEM_CCAM_Fiche-detaillee.pdf&terminologyId=terminologie-CCAM",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2322411857718577"
+							"evidence": "503503503503"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/reset-credentials?client_id=ans_wordpress&tab_id=-yKhnedMrbU",
+							"uri": "https://smt.esante.gouv.fr/wp-json/ans/terminologies/document?fileName=CGTS_SEM_CCAM_Fiche-detaillee.pdf&terminologyId=terminologie-CCAM",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2322411857718577"
+							"evidence": "507507507268268"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=GHIIBQNCwwbN8b1WBllCD_LHqlfS0OiynF_yXvOT0mw&tab_id=-yKhnedMrbU",
-							"method": "POST",
+							"uri": "https://smt.esante.gouv.fr/wp-json/ans/terminologies/document?fileName=cgts_sem_cim11-mms_fiche-detaillee.pdf&terminologyId=terminologie-cim11-mms",
+							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2322411857718577"
+							"evidence": "503503503503"
+						},
+						{
+							"uri": "https://smt.esante.gouv.fr/wp-json/ans/terminologies/document?fileName=cgts_sem_cim11-mms_fiche-detaillee.pdf&terminologyId=terminologie-cim11-mms",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "563473495653591906"
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "",
-					"otherinfo": "<p>Credit Card Type detected: Mastercard</p>",
+					"otherinfo": "<p>Credit Card Type detected: Maestro</p><p>Bank Identification Number: 503503</p><p>Brand: MAESTRO</p><p>Category: </p><p>Issuer: </p>",
 					"reference": "",
 					"cweid": "359",
 					"wascid": "13",
-					"sourceid": "968"
+					"sourceid": "1415"
 				},
 				{
 					"pluginid": "10202",
@@ -59,88 +66,88 @@
 					"desc": "<p>No Anti-CSRF tokens were found in a HTML submission form.</p><p>A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent in order to perform an action as the victim. The underlying cause is application functionality using predictable URL/form actions in a repeatable way. The nature of the attack is that CSRF exploits the trust that a web site has for a user. By contrast, cross-site scripting (XSS) exploits the trust that a user has for a web site. Like XSS, CSRF attacks are not necessarily cross-site, but they can be. Cross-site request forgery is also known as CSRF, XSRF, one-click attack, session riding, confused deputy, and sea surf.</p><p></p><p>CSRF attacks are effective in a number of situations, including:</p><p>    * The victim has an active session on the target site.</p><p>    * The victim is authenticated via HTTP auth on the target site.</p><p>    * The victim is on the same local network as the target site.</p><p></p><p>CSRF has primarily been used to perform an action against a target site using the victim's privileges, but recent techniques have been discovered to disclose information by gaining access to the response. The risk of information disclosure is dramatically increased when the target site is vulnerable to XSS, because XSS can be used as a platform for CSRF, allowing the attack to operate within the bounds of the same-origin policy.</p>",
 					"instances":[ 
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=10c08754e962b85659db532737f710c2",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=286024510f213b302252ce9d86da856c",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=06EVdGrl8A4_VtFEW7Mh5JT8WjpvW5jkrOQebTB4GTc&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=9_piZOxudzs\" method=\"post\">"
+							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=aEn_F40-C0AvwHs9ATLKtbMr7Nq3QK7kbav98PIwWNU&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=mGGhjBP3UyA\" method=\"post\">"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=176d28506d0a520ca8003a046c3b0dc5",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=2a2890574ab41031576c6f243e4a5066",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=PQigojgQt36M5W4GXv1oexkslSyP52PudDoo-fEuRIU&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=w5GPuoWz32M\" method=\"post\">"
+							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=Gi44h7AfQsCoQZSjiJJXy3-2h5nqtLCiV3KrAmGrrF0&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=bHNCWHCpp0Y\" method=\"post\">"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=2ad85c1eecf184e7fbf8a3bb1ab624f8",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=7571148e1bd1b047c4fb358786692354",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=34-OIBMKsYfwgujjyrP2dJCBBrM7j5g4OP-0jy95LJo&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=w9RnsTmo0Jg\" method=\"post\">"
+							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=amAszh9GLIIz-6fFpeon2VtoPIL4qs7TN3UkY0jxaz8&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=aOBgz8Z9okE\" method=\"post\">"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=3eff0399e484a3c93e0c2a531e4ae373",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=b87750c591233ed02493503cb2fa4fca",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=L4VEDbWqCgPnxUyyW9G8m0ZPUUaqvbQLYDiLPa_59co&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=golaLwiG2Nk\" method=\"post\">"
+							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=cbickDok1tur2kcktadiFWyXGjCHgFk-EmAKaDvMWHY&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=99en5ezYkpg\" method=\"post\">"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=4bda41e16f53852b19c55c228b47d63f",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=c2ade550efc1603b4d3c40820a358f3e",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=Nq7oQiBYtJMh2Bj4MdgPwk8wf4I79nQIH_BgsMjGryU&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=74mIYlyFPSA\" method=\"post\">"
+							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=r7FaKZ--FdkC0Tr8ALWXbUE9QZWBGYcx12oGd1GwwWA&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=dAwRbeGwl8M\" method=\"post\">"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=4c2ff5b02dfa89d9a9923d7905edb933",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=ce2bc8a27ca85257f24ba9d9ba6bed07",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=SP3_dDmNRZw0Laf8V2KUIBjqqDpV5aEn5rrDbSvXnEI&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=nt5ItJvuhYQ\" method=\"post\">"
+							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=HPd8PiNmmHxAwhiQi3jHncpogszeo7wJo0-qCDX7tyc&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=G9egiv4kCfg\" method=\"post\">"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5916e9234e8910be283a89743a83fef1",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=cf30a2eee0cc415dd06e4b4aba01a687",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=vQWu-LN8Yf_pcfWxgCPzgzT4HWuMahTnPd-Tm-q8dVU&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=TWEQJRfXmTw\" method=\"post\">"
+							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=gKArxMy3xpCwsOoOOvGHm4CqyXCD90T7Q6Os7X1mpsw&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=hHL6p5OuYpo\" method=\"post\">"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=924f3dc43c879f04f034bbb418e064e3",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=cfa08d7d405ce77e28344c009abb2086",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=-gbSUj_4NXXGuuIqxXSCM6IxdxKB_Ftb4gyPAwTEA08&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=t14_6qIb4rw\" method=\"post\">"
+							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=3BihDC6rGnze_ppin22cnxw-q3n7a89CY309Lq8syrM&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=GYpGOVK9OiA\" method=\"post\">"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=a26a8b4d45f2341dae94ebd51962e4f4",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=df284c56a6a5532e5fe63d0d5309c190",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=M8axUZp-R3vm3bsdL7BoqTCy_oiD81-a5sdsyG7SGJ8&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=UNnZXMDTYOU\" method=\"post\">"
+							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=J9JgxsFcLACcLPqivKMZqb90JDM1J6eKo0ybyjwGv1A&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=Mns-4cpj-9k\" method=\"post\">"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=b3fbc40dad899af741a759cf7e706297",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=e96b5e6015411d5c15ef7b851eca765b",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=Hix_Oozeuxo1yPa4DRUNYM0ePCLodMkt64Lu4COglGs&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=xAM5YmNoosw\" method=\"post\">"
+							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=r_zeP6qiFZaqQ5CrTSpOxI6o6N3VAzJy_CF3vCb8VG0&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=RMXB3Sa8Glg\" method=\"post\">"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=b8f28a40a5ef10570dedc683aeb728bf",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=f607851f58acc30b5a9ad542aeee2fed",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=lSRjUMWaTwljcQXhn2gGjK7pMajGUu4-a0zL6PAqQFE&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=LZ52DO6rQk4\" method=\"post\">"
+							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=B-Yhq5jOp_FasNQnL0wvmU8DF4DhBGyPz3upHpCqyVA&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=jelgcstN3W8\" method=\"post\">"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=c1965c03469f897d7195f98e2ba611df",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=f87bbc525844edc415078d5e13692f6f",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=GHIIBQNCwwbN8b1WBllCD_LHqlfS0OiynF_yXvOT0mw&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=-yKhnedMrbU\" method=\"post\">"
+							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=AqUsgpWAU2M9-Rw2SdOPg4w7KVliBiJyX_V10nqH-Ws&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=Yh8ryMHZ-XE\" method=\"post\">"
 						}
 					],
 					"count": "12",
@@ -149,7 +156,7 @@
 					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>http://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "488"
+					"sourceid": "480"
 				},
 				{
 					"pluginid": "10055",
@@ -162,28 +169,28 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=2ad85c1eecf184e7fbf8a3bb1ab624f8",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=2a2890574ab41031576c6f243e4a5066",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
 							"evidence": "frame-src 'self'; frame-ancestors 'self'; object-src 'none';"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=3eff0399e484a3c93e0c2a531e4ae373",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=7571148e1bd1b047c4fb358786692354",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
 							"evidence": "frame-src 'self'; frame-ancestors 'self'; object-src 'none';"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5916e9234e8910be283a89743a83fef1",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=c2ade550efc1603b4d3c40820a358f3e",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
 							"evidence": "frame-src 'self'; frame-ancestors 'self'; object-src 'none';"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=a26a8b4d45f2341dae94ebd51962e4f4",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=e96b5e6015411d5c15ef7b851eca765b",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
@@ -196,7 +203,7 @@
 					"reference": "<p>http://www.w3.org/TR/CSP2/</p><p>http://www.w3.org/TR/CSP/</p><p>http://caniuse.com/#search=content+security+policy</p><p>http://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "415"
+					"sourceid": "388"
 				},
 				{
 					"pluginid": "10055",
@@ -209,28 +216,28 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=2ad85c1eecf184e7fbf8a3bb1ab624f8",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=2a2890574ab41031576c6f243e4a5066",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
 							"evidence": "frame-src 'self'; frame-ancestors 'self'; object-src 'none';"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=3eff0399e484a3c93e0c2a531e4ae373",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=7571148e1bd1b047c4fb358786692354",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
 							"evidence": "frame-src 'self'; frame-ancestors 'self'; object-src 'none';"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5916e9234e8910be283a89743a83fef1",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=c2ade550efc1603b4d3c40820a358f3e",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
 							"evidence": "frame-src 'self'; frame-ancestors 'self'; object-src 'none';"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=a26a8b4d45f2341dae94ebd51962e4f4",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=e96b5e6015411d5c15ef7b851eca765b",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
@@ -243,7 +250,7 @@
 					"reference": "<p>http://www.w3.org/TR/CSP2/</p><p>http://www.w3.org/TR/CSP/</p><p>http://caniuse.com/#search=content+security+policy</p><p>http://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "415"
+					"sourceid": "388"
 				},
 				{
 					"pluginid": "10055",
@@ -256,28 +263,28 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=2ad85c1eecf184e7fbf8a3bb1ab624f8",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=2a2890574ab41031576c6f243e4a5066",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
 							"evidence": "frame-src 'self'; frame-ancestors 'self'; object-src 'none';"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=3eff0399e484a3c93e0c2a531e4ae373",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=7571148e1bd1b047c4fb358786692354",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
 							"evidence": "frame-src 'self'; frame-ancestors 'self'; object-src 'none';"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5916e9234e8910be283a89743a83fef1",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=c2ade550efc1603b4d3c40820a358f3e",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
 							"evidence": "frame-src 'self'; frame-ancestors 'self'; object-src 'none';"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=a26a8b4d45f2341dae94ebd51962e4f4",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=e96b5e6015411d5c15ef7b851eca765b",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
@@ -290,7 +297,7 @@
 					"reference": "<p>http://www.w3.org/TR/CSP2/</p><p>http://www.w3.org/TR/CSP/</p><p>http://caniuse.com/#search=content+security+policy</p><p>http://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "415"
+					"sourceid": "388"
 				},
 				{
 					"pluginid": "10038",
@@ -413,14 +420,14 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/api-docs/",
+							"uri": "https://smt.esante.gouv.fr/actualites/",
 							"method": "GET",
 							"param": "X-Frame-Options",
 							"attack": "",
 							"evidence": ""
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/assistance/",
+							"uri": "https://smt.esante.gouv.fr/api-docs/",
 							"method": "GET",
 							"param": "X-Frame-Options",
 							"attack": "",
@@ -604,7 +611,7 @@
 					"reference": "<p>https://bugs.jqueryui.com/ticket/15284</p><p>https://github.com/jquery/jquery-ui/security/advisories/GHSA-gpqq-952q-5327</p><p>https://nvd.nist.gov/vuln/detail/CVE-2021-41184</p><p>https://nvd.nist.gov/vuln/detail/CVE-2021-41183</p><p>https://github.com/jquery/jquery-ui/security/advisories/GHSA-9gj3-hwp5-pmwc</p><p>https://nvd.nist.gov/vuln/detail/CVE-2021-41182</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "367"
+					"sourceid": "376"
 				},
 				{
 					"pluginid": "10054",
@@ -617,7 +624,7 @@
 					"desc": "<p>A cookie has been set with its SameSite attribute set to \"none\", which means that the cookie can be sent as a result of a 'cross-site' request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks.</p>",
 					"instances":[ 
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=a26a8b4d45f2341dae94ebd51962e4f4",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=e96b5e6015411d5c15ef7b851eca765b",
 							"method": "GET",
 							"param": "AUTH_SESSION_ID",
 							"attack": "",
@@ -630,7 +637,7 @@
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
 					"cweid": "1275",
 					"wascid": "13",
-					"sourceid": "225"
+					"sourceid": "241"
 				},
 				{
 					"pluginid": "10054",
@@ -643,77 +650,77 @@
 					"desc": "<p>A cookie has been set without the SameSite attribute, which means that the cookie can be sent as a result of a 'cross-site' request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks.</p>",
 					"instances":[ 
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=10c08754e962b85659db532737f710c2",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=286024510f213b302252ce9d86da856c",
 							"method": "GET",
 							"param": "KC_RESTART",
 							"attack": "",
 							"evidence": "Set-Cookie: KC_RESTART"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=2ad85c1eecf184e7fbf8a3bb1ab624f8",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=2a2890574ab41031576c6f243e4a5066",
 							"method": "GET",
 							"param": "KC_RESTART",
 							"attack": "",
 							"evidence": "Set-Cookie: KC_RESTART"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=3eff0399e484a3c93e0c2a531e4ae373",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=7571148e1bd1b047c4fb358786692354",
 							"method": "GET",
 							"param": "KC_RESTART",
 							"attack": "",
 							"evidence": "Set-Cookie: KC_RESTART"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=4bda41e16f53852b19c55c228b47d63f",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=c2ade550efc1603b4d3c40820a358f3e",
 							"method": "GET",
 							"param": "KC_RESTART",
 							"attack": "",
 							"evidence": "Set-Cookie: KC_RESTART"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5916e9234e8910be283a89743a83fef1",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=ce2bc8a27ca85257f24ba9d9ba6bed07",
 							"method": "GET",
 							"param": "KC_RESTART",
 							"attack": "",
 							"evidence": "Set-Cookie: KC_RESTART"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=924f3dc43c879f04f034bbb418e064e3",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=cf30a2eee0cc415dd06e4b4aba01a687",
 							"method": "GET",
 							"param": "KC_RESTART",
 							"attack": "",
 							"evidence": "Set-Cookie: KC_RESTART"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=a26a8b4d45f2341dae94ebd51962e4f4",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=cfa08d7d405ce77e28344c009abb2086",
+							"method": "GET",
+							"param": "KC_RESTART",
+							"attack": "",
+							"evidence": "Set-Cookie: KC_RESTART"
+						},
+						{
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=df284c56a6a5532e5fe63d0d5309c190",
+							"method": "GET",
+							"param": "KC_RESTART",
+							"attack": "",
+							"evidence": "Set-Cookie: KC_RESTART"
+						},
+						{
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=e96b5e6015411d5c15ef7b851eca765b",
 							"method": "GET",
 							"param": "AUTH_SESSION_ID_LEGACY",
 							"attack": "",
 							"evidence": "Set-Cookie: AUTH_SESSION_ID_LEGACY"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=a26a8b4d45f2341dae94ebd51962e4f4",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=e96b5e6015411d5c15ef7b851eca765b",
 							"method": "GET",
 							"param": "KC_RESTART",
 							"attack": "",
 							"evidence": "Set-Cookie: KC_RESTART"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=b3fbc40dad899af741a759cf7e706297",
-							"method": "GET",
-							"param": "KC_RESTART",
-							"attack": "",
-							"evidence": "Set-Cookie: KC_RESTART"
-						},
-						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=b8f28a40a5ef10570dedc683aeb728bf",
-							"method": "GET",
-							"param": "KC_RESTART",
-							"attack": "",
-							"evidence": "Set-Cookie: KC_RESTART"
-						},
-						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=c1965c03469f897d7195f98e2ba611df",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=f87bbc525844edc415078d5e13692f6f",
 							"method": "GET",
 							"param": "KC_RESTART",
 							"attack": "",
@@ -726,7 +733,7 @@
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
 					"cweid": "1275",
 					"wascid": "13",
-					"sourceid": "488"
+					"sourceid": "480"
 				},
 				{
 					"pluginid": "10110",
@@ -773,7 +780,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "501"
+					"sourceid": "559"
 				},
 				{
 					"pluginid": "10063",
@@ -902,7 +909,7 @@
 					"reference": "<p>https://tools.ietf.org/html/rfc1918</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "432"
+					"sourceid": "433"
 				},
 				{
 					"pluginid": "10037",
@@ -950,14 +957,14 @@
 							"evidence": "X-Powered-By: PHP/7.4.28"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/formations/faq/",
+							"uri": "https://smt.esante.gouv.fr/formations/formations-generales/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "X-Powered-By: PHP/7.4.28"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/formations/formations-generales/",
+							"uri": "https://smt.esante.gouv.fr/formations/formations-specifiques/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1053,7 +1060,7 @@
 							"evidence": "nginx/1.14.1"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/formations/types-de-terminologies/",
+							"uri": "https://smt.esante.gouv.fr/formations/formations-specifiques/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1385,93 +1392,93 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "PmXP3QaUbcdWi0xIO2Fy0RbQjcGq_akCLUdBAbRApsVCs0M2iAM4dw=="
+							"evidence": "NAlTR4m4L9by4GTUUipQhnVb_0TnRP1GkOCvx0eRyWFD-kEpVNMTBQ=="
 						},
 						{
 							"uri": "https://smt.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "YO0YhL7zhjnrq01HIE7dVTT8ZNHeR3zv2VYN2zYPCI8uKrl4psq13w=="
+							"evidence": "iltpG3lv7hyG7sRnlds14t_W1DD6ehNO30iAm7S7gOiUJDvNBzwTnw=="
 						},
 						{
 							"uri": "https://smt.esante.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "i-IRRqFYmaDrb2LWjyLg84yU0nO6D2qMSut5fJ1HRON-swNut2kAiA=="
+							"evidence": "umyuapuaZDPJ2qpZaU5abGMRpJHpCM2x6_sPM_xZp__7PBwwYnu0qQ=="
 						},
 						{
 							"uri": "https://smt.esante.gouv.fr/catalogue-des-terminologies/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "0DQ53ulZK1IRewjYm1RrorLaNsK7e5tdUOYevriGAAGn74Z_qjepyQ=="
+							"evidence": "77FkpdNk1YfX8iKmP7WLd-WRbJMakHyJnuBjCXi91TS1855J4EJcVg=="
 						},
 						{
 							"uri": "https://smt.esante.gouv.fr/explorer-les-concepts/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "67OhkiJ1gh-ZkOORqNUsXFjHZNT5YqYnr5LOxmh3ZbdhhuETTuy0cA=="
+							"evidence": "u5jmPvvmf7VVxDav3JVq5YAUHCso5KGZJ9ixzItRDj6Kyshdd6ng5g=="
 						},
 						{
 							"uri": "https://smt.esante.gouv.fr/formations/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "8NpkBQ6kR-CAkcf3aORzSZSNwLdKxjousbt1JZDnLbpchMTedhLuDQ=="
+							"evidence": "bHCR8WDqDLRpZuQyGCPAjQPsEli25AotKxLPu5vz7CdqsZRgSOPAtw=="
 						},
 						{
 							"uri": "https://smt.esante.gouv.fr/formations/formations-generales/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "gAzKhj1IbkR1BSVuzzQaa-w6uQ0-4LnoluZF068eokCN7YM0hLwukA=="
+							"evidence": "jyDcV5aeCvuv45jLfSRPTcPDskVZKlryW-L4B9365wYQn7mvqGOTow=="
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/formations/types-de-terminologies/",
+							"uri": "https://smt.esante.gouv.fr/formations/formations-specifiques/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "T_sDZFZT3zb86TcdJQLZaEYaZitXUdZdEm2k36fbuxBN0zmvn2LN9g=="
+							"evidence": "cMnO2QdQ0ZKhd8bVI4JmJ11rqimi7h-6iUchN-wiPKOlMxbq1qw2qQ=="
 						},
 						{
 							"uri": "https://smt.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "cYwyAIjOxH5SOizpuKyfMedxk_S69Qn1LD7MOSyqryXOMtuLBvEi7A=="
+							"evidence": "hN-5GImWL3vYUBhkMyKR2_3r2qj29DwJAXgsC_kfDasIvv72OvJxSw=="
 						},
 						{
 							"uri": "https://smt.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "u4fVwPSSAlOVx7R9moHGAU2UXqI2mr1LHMGNgtTs1utvY-z5_dvzTQ=="
+							"evidence": "kQMpapIovSiK-8C7Y6BOYbwX1rrzjYZSsWsNoRamtYoch2HM-4up6g=="
 						},
 						{
 							"uri": "https://smt.esante.gouv.fr/wp-admin/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "JS9leVoAjhcu6QTx_CVM_gzcojGtEJLYYPGfQYYIVRrylHgzk0j0HA=="
+							"evidence": "Nn7H_hCrSN9uxgj0gfd2arr_OYbuDCnk8n6bWuh9mZ827ApJFzdgIA=="
 						},
 						{
 							"uri": "https://smt.esante.gouv.fr/wp-admin/admin-ajax.php",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "qfpyiBX-0oGVvIkl7clXpQcdBfiJ4Kw_qlyxRdsUN876LEvH_2w45g=="
+							"evidence": "LNDSOjhOFJzd38FZifLtjZxC_opRHBNUUDZSrkBMXNKU5zeH5VP_qw=="
 						}
 					],
 					"count": "12",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>>e\uFFFD\uFFFD\\x0006\uFFFDm\uFFFDV\uFFFDLH;ar\uFFFD\\x0016\u040D\uFFFD\uFFFD\uFFFD\uFFFD\\x0002-GA\\x0001\uFFFD@\uFFFD\uFFFDB\uFFFDC6\uFFFD\\x00038w</p>",
+					"otherinfo": "<p>4\tSG\uFFFD\uFFFD/\uFFFD\uFFFD\uFFFDd\uFFFDR*P\uFFFDu[\uFFFDD\uFFFDD\uFFFDF\uFFFD\uFFFD\uFFFDG\uFFFD\uFFFDaC\uFFFDA)T\uFFFD\\x0013\\x0005</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "9"
 				},
 				{
 					"pluginid": "90011",
@@ -1574,7 +1581,7 @@
 					"reference": "<p>http://code.google.com/p/browsersec/wiki/Part2#Character_set_handling_and_detection</p>",
 					"cweid": "436",
 					"wascid": "15",
-					"sourceid": "624"
+					"sourceid": "615"
 				},
 				{
 					"pluginid": "10024",
@@ -1587,84 +1594,84 @@
 					"desc": "<p>The request appeared to contain sensitive information leaked in the URL. This can violate PCI and most organizational compliance policies. You can configure the list of strings for this check to add or remove values specific to your environment.</p>",
 					"instances":[ 
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=-gbSUj_4NXXGuuIqxXSCM6IxdxKB_Ftb4gyPAwTEA08&tab_id=t14_6qIb4rw",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=3BihDC6rGnze_ppin22cnxw-q3n7a89CY309Lq8syrM&tab_id=GYpGOVK9OiA",
 							"method": "POST",
 							"param": "session_code",
 							"attack": "",
 							"evidence": "session_code"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=06EVdGrl8A4_VtFEW7Mh5JT8WjpvW5jkrOQebTB4GTc&tab_id=9_piZOxudzs",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=aEn_F40-C0AvwHs9ATLKtbMr7Nq3QK7kbav98PIwWNU&tab_id=mGGhjBP3UyA",
 							"method": "POST",
 							"param": "session_code",
 							"attack": "",
 							"evidence": "session_code"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=34-OIBMKsYfwgujjyrP2dJCBBrM7j5g4OP-0jy95LJo&tab_id=w9RnsTmo0Jg",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=amAszh9GLIIz-6fFpeon2VtoPIL4qs7TN3UkY0jxaz8&tab_id=aOBgz8Z9okE",
 							"method": "POST",
 							"param": "session_code",
 							"attack": "",
 							"evidence": "session_code"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=GHIIBQNCwwbN8b1WBllCD_LHqlfS0OiynF_yXvOT0mw&tab_id=-yKhnedMrbU",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=AqUsgpWAU2M9-Rw2SdOPg4w7KVliBiJyX_V10nqH-Ws&tab_id=Yh8ryMHZ-XE",
 							"method": "POST",
 							"param": "session_code",
 							"attack": "",
 							"evidence": "session_code"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=Hix_Oozeuxo1yPa4DRUNYM0ePCLodMkt64Lu4COglGs&tab_id=xAM5YmNoosw",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=B-Yhq5jOp_FasNQnL0wvmU8DF4DhBGyPz3upHpCqyVA&tab_id=jelgcstN3W8",
 							"method": "POST",
 							"param": "session_code",
 							"attack": "",
 							"evidence": "session_code"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=L4VEDbWqCgPnxUyyW9G8m0ZPUUaqvbQLYDiLPa_59co&tab_id=golaLwiG2Nk",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=cbickDok1tur2kcktadiFWyXGjCHgFk-EmAKaDvMWHY&tab_id=99en5ezYkpg",
 							"method": "POST",
 							"param": "session_code",
 							"attack": "",
 							"evidence": "session_code"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=lSRjUMWaTwljcQXhn2gGjK7pMajGUu4-a0zL6PAqQFE&tab_id=LZ52DO6rQk4",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=Gi44h7AfQsCoQZSjiJJXy3-2h5nqtLCiV3KrAmGrrF0&tab_id=bHNCWHCpp0Y",
 							"method": "POST",
 							"param": "session_code",
 							"attack": "",
 							"evidence": "session_code"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=M8axUZp-R3vm3bsdL7BoqTCy_oiD81-a5sdsyG7SGJ8&tab_id=UNnZXMDTYOU",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=gKArxMy3xpCwsOoOOvGHm4CqyXCD90T7Q6Os7X1mpsw&tab_id=hHL6p5OuYpo",
 							"method": "POST",
 							"param": "session_code",
 							"attack": "",
 							"evidence": "session_code"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=Nq7oQiBYtJMh2Bj4MdgPwk8wf4I79nQIH_BgsMjGryU&tab_id=74mIYlyFPSA",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=HPd8PiNmmHxAwhiQi3jHncpogszeo7wJo0-qCDX7tyc&tab_id=G9egiv4kCfg",
 							"method": "POST",
 							"param": "session_code",
 							"attack": "",
 							"evidence": "session_code"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=PQigojgQt36M5W4GXv1oexkslSyP52PudDoo-fEuRIU&tab_id=w5GPuoWz32M",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=J9JgxsFcLACcLPqivKMZqb90JDM1J6eKo0ybyjwGv1A&tab_id=Mns-4cpj-9k",
 							"method": "POST",
 							"param": "session_code",
 							"attack": "",
 							"evidence": "session_code"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=SP3_dDmNRZw0Laf8V2KUIBjqqDpV5aEn5rrDbSvXnEI&tab_id=nt5ItJvuhYQ",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=r7FaKZ--FdkC0Tr8ALWXbUE9QZWBGYcx12oGd1GwwWA&tab_id=dAwRbeGwl8M",
 							"method": "POST",
 							"param": "session_code",
 							"attack": "",
 							"evidence": "session_code"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=vQWu-LN8Yf_pcfWxgCPzgzT4HWuMahTnPd-Tm-q8dVU&tab_id=TWEQJRfXmTw",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=r_zeP6qiFZaqQ5CrTSpOxI6o6N3VAzJy_CF3vCb8VG0&tab_id=RMXB3Sa8Glg",
 							"method": "POST",
 							"param": "session_code",
 							"attack": "",
@@ -1677,7 +1684,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "939"
+					"sourceid": "975"
 				},
 				{
 					"pluginid": "10027",
@@ -1793,14 +1800,14 @@
 							"evidence": "<a role='button' class=\"medium cli-plugin-button cli-plugin-main-button cli_settings_button\" style=\"margin:0px 10px 0px 5px\">Param\u00E9trer les cookies</a>"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/api-docs/",
+							"uri": "https://smt.esante.gouv.fr/actualites/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<a role='button' class=\"medium cli-plugin-button cli-plugin-main-button cli_settings_button\" style=\"margin:0px 10px 0px 5px\">Param\u00E9trer les cookies</a>"
+							"evidence": "<a href=\"\" class=\"page-link\">1</a>"
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/assistance/",
+							"uri": "https://smt.esante.gouv.fr/api-docs/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2039,7 +2046,7 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://smt.esante.gouv.fr/formations/types-de-terminologies/",
+							"uri": "https://smt.esante.gouv.fr/formations/formations-specifiques/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2092,7 +2099,7 @@
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "67"
+					"sourceid": "58"
 				}
 			]
 		}
