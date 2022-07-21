@@ -1,6 +1,6 @@
 {
 	"@version": "2.11.1",
-	"@generated": "Tue, 19 Jul 2022 10:09:50",
+	"@generated": "Thu, 21 Jul 2022 10:25:04",
 	"site":[ 
 		{
 			"@name": "https://ecoscore-appli.esante.gouv.fr",
@@ -355,13 +355,6 @@
 							"evidence": ""
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/login.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": ""
-						},
-						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/runtime/main-195a862edd40905f3234.js",
 							"method": "GET",
 							"param": "",
@@ -370,6 +363,13 @@
 						},
 						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/runtime/webpack-f68aae7ab41d9ef1ab86.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": ""
+						},
+						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/cgu",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -436,7 +436,7 @@
 					"reference": "<p>https://tools.ietf.org/html/rfc1918</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "44"
+					"sourceid": "41"
 				},
 				{
 					"pluginid": "10037",
@@ -454,6 +454,13 @@
 							"param": "",
 							"attack": "",
 							"evidence": "X-Powered-By: Next.js"
+						},
+						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.59542982031b43c4ee6f.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: Express"
 						},
 						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
@@ -499,13 +506,6 @@
 						},
 						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/static/images/ans/favicon.svg",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "X-Powered-By: Express"
-						},
-						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/static/images/ans/landingpage/Bandeau_MES_colonne.jpg",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1863,7 +1863,7 @@
 					"reference": "<p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "44"
+					"sourceid": "41"
 				},
 				{
 					"pluginid": "10094",
@@ -2148,6 +2148,13 @@
 							"evidence": ""
 						},
 						{
+							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/chunks/commons.59542982031b43c4ee6f.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=31536000"
+						},
+						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/_next/static/n-_PpdhQqVn8VaqA5TtUv/pages/_app.js",
 							"method": "GET",
 							"param": "",
@@ -2197,7 +2204,7 @@
 							"evidence": ""
 						}
 					],
-					"count": "8",
+					"count": "9",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
 					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
@@ -2223,13 +2230,6 @@
 							"evidence": "max-age=0"
 						},
 						{
-							"uri": "https://ecoscore-appli.esante.gouv.fr/static/images/logo-ANS.svg",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "max-age=0"
-						},
-						{
 							"uri": "https://ecoscore-appli.esante.gouv.fr/static/images/logo-ministere.svg",
 							"method": "GET",
 							"param": "",
@@ -2237,7 +2237,7 @@
 							"evidence": "max-age=0"
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "",
 					"otherinfo": "",
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
