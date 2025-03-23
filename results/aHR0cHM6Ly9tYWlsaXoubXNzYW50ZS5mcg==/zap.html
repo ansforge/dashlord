@@ -212,7 +212,7 @@ td {
 	</h2>
 
 	<h3>
-		Generated on Thu, 20 Mar 2025 12:03:16
+		Generated on Sun, 23 Mar 2025 02:58:53
 	</h3>
 
 	<h3>
@@ -253,7 +253,7 @@ td {
 					<div>Low</div>
 				</td>
 				<td align="center">
-					<div>6</div>
+					<div>5</div>
 				</td>
 			</tr>
 			<tr>
@@ -311,11 +311,6 @@ td {
 				<td align="center">3</td>
 			</tr>
 			<tr>
-				<td><a href="#90022">Application Error Disclosure</a></td>
-				<td align="center" class="risk-1">Low</td>
-				<td align="center">1</td>
-			</tr>
-			<tr>
 				<td><a href="#10011">Cookie Without Secure Flag</a></td>
 				<td align="center" class="risk-1">Low</td>
 				<td align="center">3</td>
@@ -343,7 +338,7 @@ td {
 			<tr>
 				<td><a href="#10094">Base64 Disclosure</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">12</td>
+				<td align="center">11</td>
 			</tr>
 			<tr>
 				<td><a href="#90011">Charset Mismatch (Header Versus Meta Content-Type Charset)</a></td>
@@ -368,7 +363,7 @@ td {
 			<tr>
 				<td><a href="#10109">Modern Web Application</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">1</td>
+				<td align="center">2</td>
 			</tr>
 			<tr>
 				<td><a href="#10049">Non-Storable Content</a></td>
@@ -403,7 +398,7 @@ td {
 			<tr>
 				<td><a href="#10112">Session Management Response Identified</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">5</td>
+				<td align="center">8</td>
 			</tr>
 			<tr>
 				<td><a href="#10049">Storable and Cacheable Content</a></td>
@@ -413,7 +408,7 @@ td {
 			<tr>
 				<td><a href="#10031">User Controllable HTML Element Attribute (Potential XSS)</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">30</td>
+				<td align="center">46</td>
 			</tr>
 		</table>
 		<div class="spacer-lg"></div>
@@ -1497,87 +1492,6 @@ https://github.com/jquery/jquery-ui/issues/2101
 			<table class="results">
 				<tr height="24">
 					<th width="20%" class="risk-1"><a
-						id="90022"></a>
-						<div>Low</div></th>
-					<th class="risk-1">Application Error Disclosure</th>
-				</tr>
-				<tr>
-					<td width="20%">Description</td>
-					<td width="80%">
-							<div>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</div>
-							
-						</td>
-				</tr>
-				<TR vAlign="top">
-					<TD colspan="2"></TD>
-				</TR>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr/sitemap.xml">https://mailiz.mssante.fr/sitemap.xml</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">HTTP/1.1 500</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
-				<tr>
-					<td width="20%">Instances</td>
-					<td width="80%">1</td>
-				</tr>
-				<tr>
-					<td width="20%">Solution</td>
-					<td width="80%">
-							<div>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</div>
-							
-						</td>
-				</tr>
-				<tr>
-					<td width="20%">Reference</td>
-					<td width="80%"></td>
-				</tr>
-				<tr>
-					<td width="20%">CWE Id</td>
-					<td width="80%"><a
-						href="https://cwe.mitre.org/data/definitions/550.html">550</a></td>
-				</tr>
-				<tr>
-					<td width="20%">WASC Id</td>
-					<td width="80%">13</td>
-				</tr>
-				<tr>
-					<td width="20%">Plugin Id</td>
-					<td width="80%"><a
-						href="https://www.zaproxy.org/docs/alerts/90022/">90022</a></td>
-				</tr>
-			</table>
-			<div class="spacer"></div>
-		
-			<table class="results">
-				<tr height="24">
-					<th width="20%" class="risk-1"><a
 						id="10011"></a>
 						<div>Low</div></th>
 					<th class="risk-1">Cookie Without Secure Flag</th>
@@ -2623,7 +2537,38 @@ https://github.com/jquery/jquery-ui/issues/2101
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr/aide?type=accueil">https://mailiz.mssante.fr/aide?type=accueil</a></td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/">https://mailiz.mssante.fr/</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Cross-Origin-Embedder-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/cgu">https://mailiz.mssante.fr/cgu</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2686,37 +2631,6 @@ https://github.com/jquery/jquery-ui/issues/2101
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/1">https://mailiz.mssante.fr/web/mss/1</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">Cross-Origin-Embedder-Policy</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/aide?type=accueil">https://mailiz.mssante.fr/web/mss/aide?type=accueil</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2778,7 +2692,38 @@ https://github.com/jquery/jquery-ui/issues/2101
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr/aide?type=accueil">https://mailiz.mssante.fr/aide?type=accueil</a></td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/">https://mailiz.mssante.fr/</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Cross-Origin-Opener-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/cgu">https://mailiz.mssante.fr/cgu</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2841,37 +2786,6 @@ https://github.com/jquery/jquery-ui/issues/2101
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/1">https://mailiz.mssante.fr/web/mss/1</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">Cross-Origin-Opener-Policy</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/aide?type=accueil">https://mailiz.mssante.fr/web/mss/aide?type=accueil</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3113,6 +3027,37 @@ https://github.com/jquery/jquery-ui/issues/2101
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/en">https://mailiz.mssante.fr/en</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://mailiz.mssante.fr/essentiel">https://mailiz.mssante.fr/essentiel</a></td>
 					</tr>
 					<tr>
@@ -3238,37 +3183,6 @@ https://github.com/jquery/jquery-ui/issues/2101
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/aide?type=accueil">https://mailiz.mssante.fr/web/mss/aide?type=accueil</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr/zh">https://mailiz.mssante.fr/zh</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3581,37 +3495,6 @@ https://github.com/jquery/jquery-ui/issues/2101
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr/fr">https://mailiz.mssante.fr/fr</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">msslogin_WAR_mssloginportlet_INSTANCE_xyz1</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">��%���`�k,��&quot;��+�W���RLB�r�</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
 						<td width="80%"><a href="https://mailiz.mssante.fr/politique-confidentialite">https://mailiz.mssante.fr/politique-confidentialite</a></td>
 					</tr>
 					<tr>
@@ -3735,7 +3618,7 @@ https://github.com/jquery/jquery-ui/issues/2101
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">12</td>
+					<td width="80%">11</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -3824,6 +3707,99 @@ https://github.com/jquery/jquery-ui/issues/2101
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://mailiz.mssante.fr/aide?type=accueil">https://mailiz.mssante.fr/aide?type=accueil</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">There was a charset mismatch between the HTTP Header and the META content-type encoding declarations: [UTF-8] and [ISO-8859-1] do not match.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/aide?type=application_mobile_autoriser_bloquer_appareil">https://mailiz.mssante.fr/aide?type=application_mobile_autoriser_bloquer_appareil</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">There was a charset mismatch between the HTTP Header and the META content-type encoding declarations: [UTF-8] and [ISO-8859-1] do not match.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/aide?type=application_mobile_telecharger">https://mailiz.mssante.fr/aide?type=application_mobile_telecharger</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">There was a charset mismatch between the HTTP Header and the META content-type encoding declarations: [UTF-8] and [ISO-8859-1] do not match.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/aide?type=application_mobile_utiliser">https://mailiz.mssante.fr/aide?type=application_mobile_utiliser</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3979,99 +3955,6 @@ https://github.com/jquery/jquery-ui/issues/2101
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://mailiz.mssante.fr/ca/aide">https://mailiz.mssante.fr/ca/aide</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">There was a charset mismatch between the HTTP Header and the META content-type encoding declarations: [UTF-8] and [ISO-8859-1] do not match.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr/de/aide">https://mailiz.mssante.fr/de/aide</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">There was a charset mismatch between the HTTP Header and the META content-type encoding declarations: [UTF-8] and [ISO-8859-1] do not match.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr/fi/aide">https://mailiz.mssante.fr/fi/aide</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">There was a charset mismatch between the HTTP Header and the META content-type encoding declarations: [UTF-8] and [ISO-8859-1] do not match.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr/iw/aide">https://mailiz.mssante.fr/iw/aide</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -5100,8 +4983,8 @@ _sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken</td>
 							class="indent2">Other Info</td>
 						<td width="80%">The origin domain used for comparison was:
 mailiz.mssante.fr
-PAUTSESSIONID=4673A97D6CD6C902FCCD8D07DE3B7F82.PAUT_2
-ROUTEID=.PAUT_1
+PAUTSESSIONID=733B51B60FF38F0546E4AFDD3C1E51BE.PAUT_1
+ROUTEID=.PAUT_2
 </td>
 					</tr>
 				
@@ -5135,15 +5018,15 @@ ROUTEID=.PAUT_1
 							class="indent2">Other Info</td>
 						<td width="80%">The origin domain used for comparison was:
 mailiz.mssante.fr
-PAUTSESSIONID=B6D1A500FE7344686F9434EB5805C496.PAUT_2
-ROUTEID=.PAUT_1
+PAUTSESSIONID=C35713E65715F59D3AC87B6369430981.PAUT_1
+ROUTEID=.PAUT_2
 </td>
 					</tr>
 				
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr/mss-login-portlet/css/main.css?b=6203&amp;browserId=other&amp;languageId=en_US&amp;minifierType=css&amp;t=1742438712000&amp;themeId=mss_WAR_msstheme">https://mailiz.mssante.fr/mss-login-portlet/css/main.css?b=6203&amp;browserId=other&amp;languageId=en_US&amp;minifierType=css&amp;t=1742438712000&amp;themeId=mss_WAR_msstheme</a></td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/mss-login-portlet/css/main.css?b=6203&amp;browserId=other&amp;languageId=en_US&amp;minifierType=css&amp;t=1742697772000&amp;themeId=mss_WAR_msstheme">https://mailiz.mssante.fr/mss-login-portlet/css/main.css?b=6203&amp;browserId=other&amp;languageId=en_US&amp;minifierType=css&amp;t=1742697772000&amp;themeId=mss_WAR_msstheme</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -5170,14 +5053,14 @@ ROUTEID=.PAUT_1
 							class="indent2">Other Info</td>
 						<td width="80%">The origin domain used for comparison was:
 mailiz.mssante.fr
-PAUTSESSIONID=B6D1A500FE7344686F9434EB5805C496.PAUT_2
+PAUTSESSIONID=733B51B60FF38F0546E4AFDD3C1E51BE.PAUT_1
 </td>
 					</tr>
 				
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr/mss-theme/css/aui.css?b=6203&amp;browserId=other&amp;languageId=en_US&amp;minifierType=css&amp;t=1734556426000&amp;themeId=mss_WAR_msstheme">https://mailiz.mssante.fr/mss-theme/css/aui.css?b=6203&amp;browserId=other&amp;languageId=en_US&amp;minifierType=css&amp;t=1734556426000&amp;themeId=mss_WAR_msstheme</a></td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/mss-theme/css/aui.css?b=6203&amp;browserId=other&amp;languageId=en_US&amp;minifierType=css&amp;t=1734556542000&amp;themeId=mss_WAR_msstheme">https://mailiz.mssante.fr/mss-theme/css/aui.css?b=6203&amp;browserId=other&amp;languageId=en_US&amp;minifierType=css&amp;t=1734556542000&amp;themeId=mss_WAR_msstheme</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -5204,7 +5087,7 @@ PAUTSESSIONID=B6D1A500FE7344686F9434EB5805C496.PAUT_2
 							class="indent2">Other Info</td>
 						<td width="80%">The origin domain used for comparison was:
 mailiz.mssante.fr
-PAUTSESSIONID=B6D1A500FE7344686F9434EB5805C496.PAUT_2
+PAUTSESSIONID=733B51B60FF38F0546E4AFDD3C1E51BE.PAUT_1
 </td>
 					</tr>
 				
@@ -5238,8 +5121,8 @@ PAUTSESSIONID=B6D1A500FE7344686F9434EB5805C496.PAUT_2
 							class="indent2">Other Info</td>
 						<td width="80%">The origin domain used for comparison was:
 mailiz.mssante.fr
-PAUTSESSIONID=7987AF1F2C6BF4B60C8395A6C9CDA05F.PAUT_2
-ROUTEID=.PAUT_1
+PAUTSESSIONID=EEBA014DEA1420A465C96C7EF702BA09.PAUT_1
+ROUTEID=.PAUT_2
 </td>
 					</tr>
 				
@@ -5273,8 +5156,8 @@ ROUTEID=.PAUT_1
 							class="indent2">Other Info</td>
 						<td width="80%">The origin domain used for comparison was:
 mailiz.mssante.fr
-PAUTSESSIONID=4F7321772C70DA9EE083F5ED31C23CCC.PAUT_2
-ROUTEID=.PAUT_1
+PAUTSESSIONID=96BAFD6A3F1A6A4AC3F807DA08752021.PAUT_1
+ROUTEID=.PAUT_2
 </td>
 					</tr>
 				
@@ -5340,7 +5223,38 @@ ROUTEID=.PAUT_1
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr/hu/formulaire-contact">https://mailiz.mssante.fr/hu/formulaire-contact</a></td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/formulaire-contact">https://mailiz.mssante.fr/formulaire-contact</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">&lt;a href=&quot;javascript&amp;#x3a;&amp;#x3b;&quot; target=&quot;_self&quot; class=&quot; taglib-icon&quot; id=&quot;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_refreshCaptcha&quot; &gt; &lt;img id=&quot;refreshCaptcha&quot; src=&quot;https://mailiz.mssante.fr/mss-theme/images/spacer.png&quot; alt=&quot;Refrescar CAPTCHA&quot; title=&quot;Refrescar CAPTCHA&quot; style=&quot;background-image: url(&#39;https://mailiz.mssante.fr/mss-theme/sprite/images/portlet/_sprite.png&#39;); background-position: 50% -307px; background-repeat: no-repeat; height: 16px; width: 16px;&quot; /&gt; &lt;span class=&quot;taglib-text hide-accessible&quot;&gt;Refrescar CAPTCHA&lt;/span&gt; &lt;/a&gt;</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">Links have been found with a target of &#39;_self&#39; - this is often used by modern frameworks to force a full page reload.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/iw/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal">https://mailiz.mssante.fr/iw/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -5360,7 +5274,7 @@ ROUTEID=.PAUT_1
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">&lt;a href=&quot;javascript&amp;#x3a;&amp;#x3b;&quot; target=&quot;_self&quot; class=&quot; taglib-icon&quot; id=&quot;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_refreshCaptcha&quot; &gt; &lt;img id=&quot;refreshCaptcha&quot; src=&quot;https://mailiz.mssante.fr/mss-theme/images/spacer.png&quot; alt=&quot;CAPTCHA frissítése&quot; title=&quot;CAPTCHA frissítése&quot; style=&quot;background-image: url(&#39;https://mailiz.mssante.fr/mss-theme/sprite/images/portlet/_sprite.png&#39;); background-position: 50% -307px; background-repeat: no-repeat; height: 16px; width: 16px;&quot; /&gt; &lt;span class=&quot;taglib-text hide-accessible&quot;&gt;CAPTCHA frissítése&lt;/span&gt; &lt;/a&gt;</td>
+						<td width="80%">&lt;a href=&quot;javascript&amp;#x3a;&amp;#x3b;&quot; target=&quot;_self&quot; class=&quot; taglib-icon&quot; id=&quot;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_refreshCaptcha&quot; &gt; &lt;img id=&quot;refreshCaptcha&quot; src=&quot;https://mailiz.mssante.fr/mss-theme/images/spacer.png&quot; alt=&quot;רענן CAPTCHA&quot; title=&quot;רענן CAPTCHA&quot; style=&quot;background-image: url(&#39;https://mailiz.mssante.fr/mss-theme/sprite/images/portlet/_sprite.png&#39;); background-position: 50% -307px; background-repeat: no-repeat; height: 16px; width: 16px;&quot; /&gt; &lt;span class=&quot;taglib-text hide-accessible&quot;&gt;רענן CAPTCHA&lt;/span&gt; &lt;/a&gt;</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -5370,7 +5284,7 @@ ROUTEID=.PAUT_1
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">1</td>
+					<td width="80%">2</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -6036,7 +5950,7 @@ ROUTEID=.PAUT_1
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr">https://mailiz.mssante.fr</a></td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/c">https://mailiz.mssante.fr/c</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6182,7 +6096,7 @@ ROUTEID=.PAUT_1
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr">https://mailiz.mssante.fr</a></td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/c">https://mailiz.mssante.fr/c</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6328,7 +6242,7 @@ ROUTEID=.PAUT_1
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr">https://mailiz.mssante.fr</a></td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/c">https://mailiz.mssante.fr/c</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6474,7 +6388,7 @@ ROUTEID=.PAUT_1
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr">https://mailiz.mssante.fr</a></td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/c">https://mailiz.mssante.fr/c</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6640,7 +6554,7 @@ ROUTEID=.PAUT_1
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">4673A97D6CD6C902FCCD8D07DE3B7F82.PAUT_2</td>
+						<td width="80%">733B51B60FF38F0546E4AFDD3C1E51BE.PAUT_1</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6672,7 +6586,7 @@ cookie:PAUTSESSIONID</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">B6D1A500FE7344686F9434EB5805C496.PAUT_2</td>
+						<td width="80%">C35713E65715F59D3AC87B6369430981.PAUT_1</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6684,7 +6598,7 @@ cookie:PAUTSESSIONID</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr/mss-login-portlet/css/main.css?b=6203&amp;browserId=other&amp;languageId=en_US&amp;minifierType=css&amp;t=1742438712000&amp;themeId=mss_WAR_msstheme">https://mailiz.mssante.fr/mss-login-portlet/css/main.css?b=6203&amp;browserId=other&amp;languageId=en_US&amp;minifierType=css&amp;t=1742438712000&amp;themeId=mss_WAR_msstheme</a></td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/mss-login-portlet/css/main.css?b=6203&amp;browserId=other&amp;languageId=en_US&amp;minifierType=css&amp;t=1742697772000&amp;themeId=mss_WAR_msstheme">https://mailiz.mssante.fr/mss-login-portlet/css/main.css?b=6203&amp;browserId=other&amp;languageId=en_US&amp;minifierType=css&amp;t=1742697772000&amp;themeId=mss_WAR_msstheme</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6704,7 +6618,7 @@ cookie:PAUTSESSIONID</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">B6D1A500FE7344686F9434EB5805C496.PAUT_2</td>
+						<td width="80%">733B51B60FF38F0546E4AFDD3C1E51BE.PAUT_1</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6716,7 +6630,7 @@ cookie:PAUTSESSIONID</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr/mss-theme/css/aui.css?b=6203&amp;browserId=other&amp;languageId=en_US&amp;minifierType=css&amp;t=1734556426000&amp;themeId=mss_WAR_msstheme">https://mailiz.mssante.fr/mss-theme/css/aui.css?b=6203&amp;browserId=other&amp;languageId=en_US&amp;minifierType=css&amp;t=1734556426000&amp;themeId=mss_WAR_msstheme</a></td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/mss-theme/css/aui.css?b=6203&amp;browserId=other&amp;languageId=en_US&amp;minifierType=css&amp;t=1734556542000&amp;themeId=mss_WAR_msstheme">https://mailiz.mssante.fr/mss-theme/css/aui.css?b=6203&amp;browserId=other&amp;languageId=en_US&amp;minifierType=css&amp;t=1734556542000&amp;themeId=mss_WAR_msstheme</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6736,7 +6650,7 @@ cookie:PAUTSESSIONID</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">B6D1A500FE7344686F9434EB5805C496.PAUT_2</td>
+						<td width="80%">733B51B60FF38F0546E4AFDD3C1E51BE.PAUT_1</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6768,7 +6682,103 @@ cookie:PAUTSESSIONID</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">7987AF1F2C6BF4B60C8395A6C9CDA05F.PAUT_2</td>
+						<td width="80%">EEBA014DEA1420A465C96C7EF702BA09.PAUT_1</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">
+cookie:PAUTSESSIONID</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/sitemap.xml">https://mailiz.mssante.fr/sitemap.xml</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">PAUTSESSIONID</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">96BAFD6A3F1A6A4AC3F807DA08752021.PAUT_1</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">
+cookie:PAUTSESSIONID</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr">https://mailiz.mssante.fr</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">PAUTSESSIONID</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">733B51B60FF38F0546E4AFDD3C1E51BE.PAUT_1</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">
+cookie:PAUTSESSIONID</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/sitemap.xml">https://mailiz.mssante.fr/sitemap.xml</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">PAUTSESSIONID</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">96BAFD6A3F1A6A4AC3F807DA08752021.PAUT_1</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6779,7 +6789,7 @@ cookie:PAUTSESSIONID</td>
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">5</td>
+					<td width="80%">8</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -6863,7 +6873,38 @@ cookie:PAUTSESSIONID</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr/aide?type=accueil">https://mailiz.mssante.fr/aide?type=accueil</a></td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/">https://mailiz.mssante.fr/</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/cgu">https://mailiz.mssante.fr/cgu</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -7015,37 +7056,6 @@ cookie:PAUTSESSIONID</td>
 						<td width="80%">In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</td>
 					</tr>
 				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/aide?type=accueil">https://mailiz.mssante.fr/web/mss/aide?type=accueil</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</td>
-					</tr>
-				
 				<tr>
 					<td width="20%">Instances</td>
 					<td width="80%">7</td>
@@ -7130,6 +7140,174 @@ cookie:PAUTSESSIONID</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Parameter</td>
+						<td width="80%">_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_captchaText</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_captchaText=ZAP
+
+The user-controlled value was:
+zap</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal">https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">autreDenomination</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+autreDenomination=ZAP
+
+The user-controlled value was:
+zap</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal">https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">autreDenominationEtablissement</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+autreDenominationEtablissement=ZAP
+
+The user-controlled value was:
+zap</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal">https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">autreDenominationIndustriel</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+autreDenominationIndustriel=ZAP
+
+The user-controlled value was:
+zap</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal">https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
 						<td width="80%">connecte</td>
 					</tr>
 					<tr>
@@ -7199,6 +7377,48 @@ connecte=false
 
 The user-controlled value was:
 false</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal">https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">csrfToken</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+csrfToken=2c89884d404884fcf36cb5ac52825d995a0311fd12db482794bda5fecb2cb224
+
+The user-controlled value was:
+2c89884d404884fcf36cb5ac52825d995a0311fd12db482794bda5fecb2cb224</td>
 					</tr>
 				
 					<tr>
@@ -7367,6 +7587,90 @@ demandeThunderbirdMSSante=Configurer un compte Mailiz pour Thunderbird
 
 The user-controlled value was:
 configurer un compte mailiz pour thunderbird</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal">https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">etablissementAdresse</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+etablissementAdresse=ZAP
+
+The user-controlled value was:
+zap</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal">https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">etablissementIdentifiant</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+etablissementIdentifiant=ZAP
+
+The user-controlled value was:
+zap</td>
 					</tr>
 				
 					<tr>
@@ -8180,6 +8484,90 @@ envoyer</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Parameter</td>
+						<td width="80%">industrielAdresse</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+industrielAdresse=ZAP
+
+The user-controlled value was:
+zap</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal">https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">industrielIdentifiant</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+industrielIdentifiant=ZAP
+
+The user-controlled value was:
+zap</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal">https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
 						<td width="80%">p_p_col_id</td>
 					</tr>
 					<tr>
@@ -8207,6 +8595,48 @@ p_p_col_id=column-1
 
 The user-controlled value was:
 column-1</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal">https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">proCarteMSSante</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+proCarteMSSante=ZAP
+
+The user-controlled value was:
+zap</td>
 					</tr>
 				
 					<tr>
@@ -8348,6 +8778,258 @@ m.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Parameter</td>
+						<td width="80%">ps.emailExterne</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+ps.emailExterne=ZAP
+
+The user-controlled value was:
+zap</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal">https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">ps.EmailMSS</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+ps.EmailMSS=ZAP
+
+The user-controlled value was:
+zap</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal">https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">ps.idNat</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+ps.idNat=ZAP
+
+The user-controlled value was:
+zap</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal">https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">ps.nom</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+ps.nom=ZAP
+
+The user-controlled value was:
+zap</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal">https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">ps.prenom</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+ps.prenom=ZAP
+
+The user-controlled value was:
+zap</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal">https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">ps.telephone</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+ps.telephone=ZAP
+
+The user-controlled value was:
+zap</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal">https://mailiz.mssante.fr/web/mss/formulaire-contact?_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_dynamicAttributes=%7B%7D&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_expandTheme=%7E%7E%7Esimple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.action=%2Fsugestions%2Fenvoyersugestion&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_struts.portlet.mode=view&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_template=form-close&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_templateDir=template&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_theme=simple&amp;_sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm_themeExpansionToken=%7E%7E%7E&amp;p_p_col_count=1&amp;p_p_col_id=column-1&amp;p_p_id=sugestions_WAR_sugestionsportlet_INSTANCE_8Ukm&amp;p_p_lifecycle=1&amp;p_p_mode=view&amp;p_p_state=normal</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
 						<td width="80%">sessionId</td>
 					</tr>
 					<tr>
@@ -8371,15 +9053,15 @@ appears to include user input in:
 a(n) [input] tag [value] attribute
 
 The user input found was:
-sessionId=B6D1A500FE7344686F9434EB5805C496.PAUT_2
+sessionId=733B51B60FF38F0546E4AFDD3C1E51BE.PAUT_1
 
 The user-controlled value was:
-b6d1a500fe7344686f9434eb5805c496.paut_2</td>
+733b51b60ff38f0546e4afdd3c1e51be.paut_1</td>
 					</tr>
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">30</td>
+					<td width="80%">46</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
