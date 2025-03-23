@@ -1,10 +1,13 @@
-# Nmap 7.92 scan initiated Thu Mar 20 10:31:42 2025 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln convergence.esante.gouv.fr
+# Nmap 7.92 scan initiated Sun Mar 23 01:30:49 2025 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln convergence.esante.gouv.fr
 Nmap scan report for convergence.esante.gouv.fr (80.78.2.184)
-Host is up (0.10s latency).
-Not shown: 932 filtered tcp ports (no-response), 67 closed tcp ports (reset)
-PORT    STATE SERVICE  VERSION
-443/tcp open  ssl/http Apache httpd 2.4.6 ((Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips)
-|_http-server-header: Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips
+Host is up (0.084s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE  SERVICE  VERSION
+113/tcp closed ident
+443/tcp open   ssl/http Apache httpd 2.4.6 ((Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips)
+| http-server-header: 
+|   Apache
+|_  Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips
 | vulners: 
 |   cpe:/a:apache:http_server:2.4.6: 
 |     	2C119FFA-ECE0-5E14-A4A4-354A2C38071A	10.0	https://vulners.com/githubexploit/2C119FFA-ECE0-5E14-A4A4-354A2C38071A	*EXPLOIT*
@@ -49,7 +52,7 @@ PORT    STATE SERVICE  VERSION
 |     	4810E2D9-AC5F-5B08-BFB3-DDAFA2F63332	9.0	https://vulners.com/githubexploit/4810E2D9-AC5F-5B08-BFB3-DDAFA2F63332	*EXPLOIT*
 |     	4373C92A-2755-5538-9C91-0469C995AA9B	9.0	https://vulners.com/githubexploit/4373C92A-2755-5538-9C91-0469C995AA9B	*EXPLOIT*
 |     	36618CA8-9316-59CA-B748-82F15F407C4F	9.0	https://vulners.com/githubexploit/36618CA8-9316-59CA-B748-82F15F407C4F	*EXPLOIT*
-|     	95499236-C9FE-56A6-9D7D-E943A24B633A	8.9	https://vulners.com/githubexploit/95499236-C9FE-56A6-9D7D-E943A24B633A	*EXPLOIT*
+|     	95499236-C9FE-56A6-9D7D-E943A24B633A	8.7	https://vulners.com/githubexploit/95499236-C9FE-56A6-9D7D-E943A24B633A	*EXPLOIT*
 |     	B0A9E5E8-7CCC-5984-9922-A89F11D6BF38	8.2	https://vulners.com/githubexploit/B0A9E5E8-7CCC-5984-9922-A89F11D6BF38	*EXPLOIT*
 |     	CVE-2017-15715	8.1	https://vulners.com/cve/CVE-2017-15715
 |     	CVE-2016-5387	8.1	https://vulners.com/cve/CVE-2016-5387
@@ -139,4 +142,4 @@ PORT    STATE SERVICE  VERSION
 |_    	PACKETSTORM:140265	0.0	https://vulners.com/packetstorm/PACKETSTORM:140265	*EXPLOIT*
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Thu Mar 20 10:32:31 2025 -- 1 IP address (1 host up) scanned in 49.56 seconds
+# Nmap done at Sun Mar 23 01:32:13 2025 -- 1 IP address (1 host up) scanned in 83.52 seconds
