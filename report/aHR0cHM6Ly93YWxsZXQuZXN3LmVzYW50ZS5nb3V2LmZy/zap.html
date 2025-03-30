@@ -212,11 +212,11 @@ td {
 	</h2>
 
 	<h3>
-		Generated on Sun, 23 Mar 2025 04:43:38
+		Generated on Sun, 30 Mar 2025 04:55:29
 	</h3>
 
 	<h3>
-		ZAP Version: 2.16.0
+		ZAP Version: 2.16.1
 	</h3>
 
 	<h4>
@@ -245,7 +245,7 @@ td {
 					<div>Medium</div>
 				</td>
 				<td align="center">
-					<div>4</div>
+					<div>5</div>
 				</td>
 			</tr>
 			<tr>
@@ -296,19 +296,24 @@ td {
 					align="center">Number of Instances</th>
 			</tr>
 			<tr>
+				<td><a href="#10055">CSP: Failure to Define Directive with No Fallback</a></td>
+				<td align="center" class="risk-2">Medium</td>
+				<td align="center">2</td>
+			</tr>
+			<tr>
 				<td><a href="#10055">CSP: Wildcard Directive</a></td>
 				<td align="center" class="risk-2">Medium</td>
-				<td align="center">3</td>
+				<td align="center">2</td>
 			</tr>
 			<tr>
 				<td><a href="#10055">CSP: script-src unsafe-inline</a></td>
 				<td align="center" class="risk-2">Medium</td>
-				<td align="center">3</td>
+				<td align="center">2</td>
 			</tr>
 			<tr>
 				<td><a href="#10055">CSP: style-src unsafe-inline</a></td>
 				<td align="center" class="risk-2">Medium</td>
-				<td align="center">3</td>
+				<td align="center">2</td>
 			</tr>
 			<tr>
 				<td><a href="#90003">Sub Resource Integrity Attribute Missing</a></td>
@@ -353,7 +358,7 @@ td {
 			<tr>
 				<td><a href="#10049">Non-Storable Content</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">5</td>
+				<td align="center">4</td>
 			</tr>
 			<tr>
 				<td><a href="#10015">Re-examine Cache-control Directives</a></td>
@@ -363,32 +368,32 @@ td {
 			<tr>
 				<td><a href="#90005">Sec-Fetch-Dest Header is Missing</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">4</td>
+				<td align="center">3</td>
 			</tr>
 			<tr>
 				<td><a href="#90005">Sec-Fetch-Mode Header is Missing</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">4</td>
+				<td align="center">3</td>
 			</tr>
 			<tr>
 				<td><a href="#90005">Sec-Fetch-Site Header is Missing</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">4</td>
+				<td align="center">3</td>
 			</tr>
 			<tr>
 				<td><a href="#90005">Sec-Fetch-User Header is Missing</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">4</td>
+				<td align="center">3</td>
 			</tr>
 			<tr>
 				<td><a href="#10112">Session Management Response Identified</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">4</td>
+				<td align="center">1</td>
 			</tr>
 			<tr>
 				<td><a href="#10049">Storable and Cacheable Content</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">6</td>
+				<td align="center">7</td>
 			</tr>
 		</table>
 		<div class="spacer-lg"></div>
@@ -396,6 +401,133 @@ td {
 
 	
 		<h3>Alert Detail</h3>
+		
+			<table class="results">
+				<tr height="24">
+					<th width="20%" class="risk-2"><a
+						id="10055"></a>
+						<div>Medium</div></th>
+					<th class="risk-2">CSP: Failure to Define Directive with No Fallback</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>The Content Security Policy fails to define one of the directives that has no fallback. Missing/excluding them is the same as allowing anything.</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr">https://wallet.esw.esante.gouv.fr</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Content-Security-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">frame-src &#39;self&#39;;frame-ancestors &#39;self&#39;; object-src &#39;none&#39;;</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The directive(s): form-action is/are among the directives that do not fallback to default-src.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/sitemap.xml">https://wallet.esw.esante.gouv.fr/sitemap.xml</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Content-Security-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">frame-src &#39;self&#39;;frame-ancestors &#39;self&#39;; object-src &#39;none&#39;;</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The directive(s): form-action is/are among the directives that do not fallback to default-src.</td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">2</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%">
+							<div>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</div>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%">
+							<a href="https://www.w3.org/TR/CSP/">https://www.w3.org/TR/CSP/</a>
+							<br />
+						
+							<a href="https://caniuse.com/#search=content+security+policy">https://caniuse.com/#search=content+security+policy</a>
+							<br />
+						
+							<a href="https://content-security-policy.com/">https://content-security-policy.com/</a>
+							<br />
+						
+							<a href="https://github.com/HtmlUnit/htmlunit-csp">https://github.com/HtmlUnit/htmlunit-csp</a>
+							<br />
+						
+							<a href="https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources">https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</a>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/693.html">693</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">15</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/10055/">10055</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
 		
 			<table class="results">
 				<tr height="24">
@@ -444,43 +576,7 @@ td {
 						<td width="20%"
 							class="indent2">Other Info</td>
 						<td width="80%">The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined:
-script-src, style-src, img-src, connect-src, font-src, media-src, manifest-src, worker-src, form-action
-
-The directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/">https://wallet.esw.esante.gouv.fr/</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">Content-Security-Policy</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">frame-src &#39;self&#39;;frame-ancestors &#39;self&#39;; object-src &#39;none&#39;;</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined:
-script-src, style-src, img-src, connect-src, font-src, media-src, manifest-src, worker-src, form-action
-
-The directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything.</td>
+script-src, style-src, img-src, connect-src, font-src, media-src, manifest-src, worker-src</td>
 					</tr>
 				
 					<tr>
@@ -512,14 +608,12 @@ The directive(s): form-action are among the directives that do not fallback to d
 						<td width="20%"
 							class="indent2">Other Info</td>
 						<td width="80%">The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined:
-script-src, style-src, img-src, connect-src, font-src, media-src, manifest-src, worker-src, form-action
-
-The directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything.</td>
+script-src, style-src, img-src, connect-src, font-src, media-src, manifest-src, worker-src</td>
 					</tr>
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">3</td>
+					<td width="80%">2</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -616,37 +710,6 @@ The directive(s): form-action are among the directives that do not fallback to d
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/">https://wallet.esw.esante.gouv.fr/</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">Content-Security-Policy</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">frame-src &#39;self&#39;;frame-ancestors &#39;self&#39;; object-src &#39;none&#39;;</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">script-src includes unsafe-inline.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
 						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/sitemap.xml">https://wallet.esw.esante.gouv.fr/sitemap.xml</a></td>
 					</tr>
 					<tr>
@@ -677,7 +740,7 @@ The directive(s): form-action are among the directives that do not fallback to d
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">3</td>
+					<td width="80%">2</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -774,37 +837,6 @@ The directive(s): form-action are among the directives that do not fallback to d
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/">https://wallet.esw.esante.gouv.fr/</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">Content-Security-Policy</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">frame-src &#39;self&#39;;frame-ancestors &#39;self&#39;; object-src &#39;none&#39;;</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">style-src includes unsafe-inline.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
 						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/sitemap.xml">https://wallet.esw.esante.gouv.fr/sitemap.xml</a></td>
 					</tr>
 					<tr>
@@ -835,7 +867,7 @@ The directive(s): form-action are among the directives that do not fallback to d
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">3</td>
+					<td width="80%">2</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -1466,7 +1498,7 @@ The directive(s): form-action are among the directives that do not fallback to d
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/">https://wallet.esw.esante.gouv.fr/</a></td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/chunk-2XJWJ7V3.js">https://wallet.esw.esante.gouv.fr/chunk-2XJWJ7V3.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1683,7 +1715,7 @@ The directive(s): form-action are among the directives that do not fallback to d
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/chunk-WL5VVEPM.js">https://wallet.esw.esante.gouv.fr/chunk-WL5VVEPM.js</a></td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/chunk-X5E7O5IV.js">https://wallet.esw.esante.gouv.fr/chunk-X5E7O5IV.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1714,7 +1746,7 @@ The directive(s): form-action are among the directives that do not fallback to d
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/chunk-X5E7O5IV.js">https://wallet.esw.esante.gouv.fr/chunk-X5E7O5IV.js</a></td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/polyfills-7OKKSWXY.js">https://wallet.esw.esante.gouv.fr/polyfills-7OKKSWXY.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1948,12 +1980,12 @@ The directive(s): form-action are among the directives that do not fallback to d
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">E5C6+f66Tfzw7Qb4RPZxpswqPbuildVt9ulpsasprGlQBEpmEzEybU/lHouGrnQAKivbH/DItdiZ7I8=</td>
+						<td width="80%">mONWwFmU9LB+jHP4RPZxpswqPbuilVSf6ytQH+ltVK0QQvQNL0rxazPXopc9kLLBBrMDrEDoy/K4544=</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">�����M����D�q��*=����m��i��)�iPJf12mO����t *+��ȵؙ�</td>
+						<td width="80%">��V�Y���~�s�D�q��*=���T��+P�mT�B�/J�k3ע�=�����@����</td>
 					</tr>
 				
 					<tr>
@@ -1979,12 +2011,12 @@ The directive(s): form-action are among the directives that do not fallback to d
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">TBK2aoNayaP/gkz4RPZxpswqPbuilSAHO3KX5yXbCNLEZQDZk4GfSlQ7gcfBrscq+ikSIFiPzAaX8jY=</td>
+						<td width="80%">5N/oyS21B25p2YD4RPZxpswqPbuilXAapMYxyEf6prurjcybpHiSOp+iIkMIyRS1JK24nGuF9QQyZdY=</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">L�j�Zɣ��L�D�q��*=��� ;r��%���e ٓ��JT;�����*�) X����6</td>
+						<td width="80%">����-�niـ�D�q��*=���p��1�G�����̛�x�:��&quot;C��$���k��2e�</td>
 					</tr>
 				
 					<tr>
@@ -2073,12 +2105,13 @@ The directive(s): form-action are among the directives that do not fallback to d
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">vsgNBXfQKMKv5kL4RPZxpswqPbuilSPrLEbdbxQc26twvoD8dTRLYrnOD/gVPlD6rvsIvUbJnm+kfmA=</td>
+						<td width="80%">daaokvAm3jkscn34RPZxpswqPbuilVrhCmRUyWmwWI01yr2LVrx0/Myhut4ZIIoPAA9XnN6+Aqy25uU=</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">��w�(¯�B�D�q��*=���#�,F�o۫p���u4Kb���&gt;P����Fɞo�~`</td>
+						<td width="80%">u����&amp;�9,r}�D�q��*=���Z�
+dT�i�X�5ʽ�V�t�̡�� � W�޾����</td>
 					</tr>
 				
 					<tr>
@@ -2135,12 +2168,13 @@ The directive(s): form-action are among the directives that do not fallback to d
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">SxJqIXtYEVnPzMP4RPZxpswqPbuildm+y49JsMsnIP6kjFgc24hYUo9Zu2WrVtXrU4pGv4qIYvpGKpE=</td>
+						<td width="80%">yOXUzNQ+8TIX/U/4RPZxpswqPbuilTZ7QrLvaB4KU9tBCYQR8JfhmvzglT/PobgbH1l/gNsaM2WpdAM=</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">Kj!{XY����D�q��*=���پˏI��&#39; ���XۈXR�Y�e�V��S�F���b�F*�</td>
+						<td width="80%">�����&gt;�2�O�D�q��*=���6{B��h
+S�A	������?ϡ�Y��3e�t</td>
 					</tr>
 				
 					<tr>
@@ -2555,37 +2589,6 @@ The directive(s): form-action are among the directives that do not fallback to d
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/">https://wallet.esw.esante.gouv.fr/</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">no-store</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
 						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/.well-known/assetlinks.json">https://wallet.esw.esante.gouv.fr/.well-known/assetlinks.json</a></td>
 					</tr>
 					<tr>
@@ -2678,7 +2681,7 @@ The directive(s): form-action are among the directives that do not fallback to d
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">5</td>
+					<td width="80%">4</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -2861,7 +2864,7 @@ The directive(s): form-action are among the directives that do not fallback to d
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr">https://wallet.esw.esante.gouv.fr</a></td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/chunk-X5E7O5IV.js">https://wallet.esw.esante.gouv.fr/chunk-X5E7O5IV.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2951,40 +2954,9 @@ The directive(s): form-action are among the directives that do not fallback to d
 						<td width="80%"></td>
 					</tr>
 				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/sitemap.xml">https://wallet.esw.esante.gouv.fr/sitemap.xml</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">Sec-Fetch-Dest</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">4</td>
+					<td width="80%">3</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -3038,7 +3010,7 @@ The directive(s): form-action are among the directives that do not fallback to d
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr">https://wallet.esw.esante.gouv.fr</a></td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/chunk-X5E7O5IV.js">https://wallet.esw.esante.gouv.fr/chunk-X5E7O5IV.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3128,40 +3100,9 @@ The directive(s): form-action are among the directives that do not fallback to d
 						<td width="80%"></td>
 					</tr>
 				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/sitemap.xml">https://wallet.esw.esante.gouv.fr/sitemap.xml</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">Sec-Fetch-Mode</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">4</td>
+					<td width="80%">3</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -3215,7 +3156,7 @@ The directive(s): form-action are among the directives that do not fallback to d
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr">https://wallet.esw.esante.gouv.fr</a></td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/chunk-X5E7O5IV.js">https://wallet.esw.esante.gouv.fr/chunk-X5E7O5IV.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3305,40 +3246,9 @@ The directive(s): form-action are among the directives that do not fallback to d
 						<td width="80%"></td>
 					</tr>
 				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/sitemap.xml">https://wallet.esw.esante.gouv.fr/sitemap.xml</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">Sec-Fetch-Site</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">4</td>
+					<td width="80%">3</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -3392,7 +3302,7 @@ The directive(s): form-action are among the directives that do not fallback to d
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr">https://wallet.esw.esante.gouv.fr</a></td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/chunk-X5E7O5IV.js">https://wallet.esw.esante.gouv.fr/chunk-X5E7O5IV.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3482,40 +3392,9 @@ The directive(s): form-action are among the directives that do not fallback to d
 						<td width="80%"></td>
 					</tr>
 				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/sitemap.xml">https://wallet.esw.esante.gouv.fr/sitemap.xml</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">Sec-Fetch-User</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">4</td>
+					<td width="80%">3</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -3589,103 +3468,7 @@ The directive(s): form-action are among the directives that do not fallback to d
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">!E5C6+f66Tfzw7Qb4RPZxpswqPbuildVt9ulpsasprGlQBEpmEzEybU/lHouGrnQAKivbH/DItdiZ7I8=</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">
-cookie:Cookie-prd-esan-portail</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr">https://wallet.esw.esante.gouv.fr</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">Cookie-prd-esan-portail</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">!TBK2aoNayaP/gkz4RPZxpswqPbuilSAHO3KX5yXbCNLEZQDZk4GfSlQ7gcfBrscq+ikSIFiPzAaX8jY=</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">
-cookie:Cookie-prd-esan-portail</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/robots.txt">https://wallet.esw.esante.gouv.fr/robots.txt</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">Cookie-prd-esan-portail</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">!vsgNBXfQKMKv5kL4RPZxpswqPbuilSPrLEbdbxQc26twvoD8dTRLYrnOD/gVPlD6rvsIvUbJnm+kfmA=</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">
-cookie:Cookie-prd-esan-portail</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/sitemap.xml">https://wallet.esw.esante.gouv.fr/sitemap.xml</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">Cookie-prd-esan-portail</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">!SxJqIXtYEVnPzMP4RPZxpswqPbuildm+y49JsMsnIP6kjFgc24hYUo9Zu2WrVtXrU4pGv4qIYvpGKpE=</td>
+						<td width="80%">!mONWwFmU9LB+jHP4RPZxpswqPbuilVSf6ytQH+ltVK0QQvQNL0rxazPXopc9kLLBBrMDrEDoy/K4544=</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3696,7 +3479,7 @@ cookie:Cookie-prd-esan-portail</td>
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">4</td>
+					<td width="80%">1</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -3749,6 +3532,68 @@ cookie:Cookie-prd-esan-portail</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/chunk-2XJWJ7V3.js">https://wallet.esw.esante.gouv.fr/chunk-2XJWJ7V3.js</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/chunk-3W73RNNX.js">https://wallet.esw.esante.gouv.fr/chunk-3W73RNNX.js</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/chunk-BPK7TNIY.js">https://wallet.esw.esante.gouv.fr/chunk-BPK7TNIY.js</a></td>
 					</tr>
 					<tr>
@@ -3780,7 +3625,7 @@ cookie:Cookie-prd-esan-portail</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/chunk-LERLTJ3L.js">https://wallet.esw.esante.gouv.fr/chunk-LERLTJ3L.js</a></td>
+						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/chunk-EXFRYYOH.js">https://wallet.esw.esante.gouv.fr/chunk-EXFRYYOH.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3812,37 +3657,6 @@ cookie:Cookie-prd-esan-portail</td>
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/chunk-SLGB7ZWM.js">https://wallet.esw.esante.gouv.fr/chunk-SLGB7ZWM.js</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://wallet.esw.esante.gouv.fr/chunk-WL5VVEPM.js">https://wallet.esw.esante.gouv.fr/chunk-WL5VVEPM.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3934,7 +3748,7 @@ cookie:Cookie-prd-esan-portail</td>
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">6</td>
+					<td width="80%">7</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
