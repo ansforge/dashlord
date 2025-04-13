@@ -212,7 +212,7 @@ td {
 	</h2>
 
 	<h3>
-		Generated on Sun, 6 Apr 2025 01:39:33
+		Generated on Sun, 13 Apr 2025 03:03:24
 	</h3>
 
 	<h3>
@@ -245,7 +245,7 @@ td {
 					<div>Medium</div>
 				</td>
 				<td align="center">
-					<div>7</div>
+					<div>8</div>
 				</td>
 			</tr>
 			<tr>
@@ -301,6 +301,11 @@ td {
 				<td align="center">2</td>
 			</tr>
 			<tr>
+				<td><a href="#90022">Application Error Disclosure</a></td>
+				<td align="center" class="risk-2">Medium</td>
+				<td align="center">1</td>
+			</tr>
+			<tr>
 				<td><a href="#10055">CSP: Failure to Define Directive with No Fallback</a></td>
 				<td align="center" class="risk-2">Medium</td>
 				<td align="center">5</td>
@@ -333,7 +338,7 @@ td {
 			<tr>
 				<td><a href="#10044">Big Redirect Detected (Potential Sensitive Information Leak)</a></td>
 				<td align="center" class="risk-1">Low</td>
-				<td align="center">3</td>
+				<td align="center">1</td>
 			</tr>
 			<tr>
 				<td><a href="#10055">CSP: Notices</a></td>
@@ -358,7 +363,7 @@ td {
 			<tr>
 				<td><a href="#2">Private IP Disclosure</a></td>
 				<td align="center" class="risk-1">Low</td>
-				<td align="center">8</td>
+				<td align="center">12</td>
 			</tr>
 			<tr>
 				<td><a href="#10035">Strict-Transport-Security Header Not Set</a></td>
@@ -368,7 +373,7 @@ td {
 			<tr>
 				<td><a href="#10096">Timestamp Disclosure - Unix</a></td>
 				<td align="center" class="risk-1">Low</td>
-				<td align="center">9</td>
+				<td align="center">8</td>
 			</tr>
 			<tr>
 				<td><a href="#10094">Base64 Disclosure</a></td>
@@ -378,12 +383,12 @@ td {
 			<tr>
 				<td><a href="#10027">Information Disclosure - Suspicious Comments</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">8</td>
+				<td align="center">9</td>
 			</tr>
 			<tr>
 				<td><a href="#10109">Modern Web Application</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">6</td>
+				<td align="center">12</td>
 			</tr>
 			<tr>
 				<td><a href="#10015">Re-examine Cache-control Directives</a></td>
@@ -601,6 +606,87 @@ td {
 					<td width="20%">Plugin Id</td>
 					<td width="80%"><a
 						href="https://www.zaproxy.org/docs/alerts/10202/">10202</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
+					<th width="20%" class="risk-2"><a
+						id="90022"></a>
+						<div>Medium</div></th>
+					<th class="risk-2">Application Error Disclosure</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/alertes/microsoft-sql-odbc-driver-cve-2023-21718-2023-02-21">https://cyberveille.esante.gouv.fr/alertes/microsoft-sql-odbc-driver-cve-2023-21718-2023-02-21</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">ODBC Driver</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">1</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%">
+							<div>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</div>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%"></td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/550.html">550</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">13</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/90022/">90022</a></td>
 				</tr>
 			</table>
 			<div class="spacer"></div>
@@ -1897,72 +1983,6 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/sites/default/files/css/css_466LApU8UeDPwHASudVfqxmTzFBQQ0Aa0oxvIZsYjEM.css?delta=6&amp;include=eJxtzDsOAyEMRdENMbCkyIyfBkvmIxuI2H2kNGnS3OIU149P1JTJEe6TYRuiitcsqEiP9kwaBhk9RqN4YluDNP4krjZWVvECDlvw9vRtrJ2X_ptOaedyFYZdG427fQC6FjR1&amp;language=fr&amp;theme=cyberveille_theme">https://cyberveille.esante.gouv.fr/sites/default/files/css/css_466LApU8UeDPwHASudVfqxmTzFBQQ0Aa0oxvIZsYjEM.css?delta=6&amp;include=eJxtzDsOAyEMRdENMbCkyIyfBkvmIxuI2H2kNGnS3OIU149P1JTJEe6TYRuiitcsqEiP9kwaBhk9RqN4YluDNP4krjZWVvECDlvw9vRtrJ2X_ptOaedyFYZdG427fQC6FjR1&amp;language=fr&amp;theme=cyberveille_theme</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">Location header URI length: 261 [/sites/default/files/css/css_QyVRzH1FY3A8gyu3oHRS3hh-KcAYiur1aHv49OvtYBU.css?delta=6&amp;include=eJxtzDsOAyEMRdENMbCkyIyfBkvmIxuI2H2kNGnS3OIU149P1JTJEe6TYRuiitcsqEiP9kwaBhk9RqN4YluDNP4krjZWVvECDlvw9vRtrJ2X_ptOaedyFYZdG427fQC6FjR1&amp;language=fr&amp;theme=cyberveille_theme].
-Predicted response size: 561.
-Response Body Length: 1,394.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/sites/default/files/js/js_LQWGY19GCR1Z8GLP54IFIr3O3trgWHrXoSK0N7HYnT0.js?delta=0&amp;include=eJxtzEEOgzAMRNELUeVIlgmDGDU4yDGNuH2rwgqxm7eYv3WVBv8wQ3r1NzxdPDXkY_wZLAUSC1YktTaEekB0l8zwaunmh1fQjlcrnM6mdIyy7W1JVoMzswariRrX__oCUtQ9JA&amp;language=fr&amp;scope=footer&amp;theme=cyberveille_theme">https://cyberveille.esante.gouv.fr/sites/default/files/js/js_LQWGY19GCR1Z8GLP54IFIr3O3trgWHrXoSK0N7HYnT0.js?delta=0&amp;include=eJxtzEEOgzAMRNELUeVIlgmDGDU4yDGNuH2rwgqxm7eYv3WVBv8wQ3r1NzxdPDXkY_wZLAUSC1YktTaEekB0l8zwaunmh1fQjlcrnM6mdIyy7W1JVoMzswariRrX__oCUtQ9JA&amp;language=fr&amp;scope=footer&amp;theme=cyberveille_theme</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">Location header URI length: 273 [/sites/default/files/js/js_4Pz8SIMZ_4ErMDxYZ1owasYM6yk6aW_SBb2i0c9yHCs.js?delta=0&amp;include=eJxtzEEOgzAMRNELUeVIlgmDGDU4yDGNuH2rwgqxm7eYv3WVBv8wQ3r1NzxdPDXkY_wZLAUSC1YktTaEekB0l8zwaunmh1fQjlcrnM6mdIyy7W1JVoMzswariRrX__oCUtQ9JA&amp;language=fr&amp;scope=footer&amp;theme=cyberveille_theme].
-Predicted response size: 573.
-Response Body Length: 1,402.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
 						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/user/logout">https://cyberveille.esante.gouv.fr/user/logout</a></td>
 					</tr>
 					<tr>
@@ -1995,7 +2015,7 @@ Response Body Length: 386.</td>
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">3</td>
+					<td width="80%">1</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -2391,6 +2411,37 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/filter/tips">https://cyberveille.esante.gouv.fr/filter/tips</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Cross-Origin-Resource-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/robots.txt">https://cyberveille.esante.gouv.fr/robots.txt</a></td>
 					</tr>
 					<tr>
@@ -2453,7 +2504,7 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/user/login">https://cyberveille.esante.gouv.fr/user/login</a></td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr">https://cyberveille.esante.gouv.fr</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2463,7 +2514,7 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 					<tr>
 						<td width="20%"
 							class="indent2">Parameter</td>
-						<td width="80%">Cross-Origin-Resource-Policy</td>
+						<td width="80%">Cross-Origin-Embedder-Policy</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2484,7 +2535,7 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://cyberveille.esante.gouv.fr">https://cyberveille.esante.gouv.fr</a></td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/filter/tips">https://cyberveille.esante.gouv.fr/filter/tips</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2546,37 +2597,6 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/user/login">https://cyberveille.esante.gouv.fr/user/login</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">Cross-Origin-Embedder-Policy</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
 						<td width="80%"><a href="https://cyberveille.esante.gouv.fr">https://cyberveille.esante.gouv.fr</a></td>
 					</tr>
 					<tr>
@@ -2608,7 +2628,7 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/sitemap.xml">https://cyberveille.esante.gouv.fr/sitemap.xml</a></td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/filter/tips">https://cyberveille.esante.gouv.fr/filter/tips</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2639,7 +2659,7 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/user/login">https://cyberveille.esante.gouv.fr/user/login</a></td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/sitemap.xml">https://cyberveille.esante.gouv.fr/sitemap.xml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2764,6 +2784,37 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/core/*.css">https://cyberveille.esante.gouv.fr/core/*.css</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/core/*.css$">https://cyberveille.esante.gouv.fr/core/*.css$</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3011,37 +3062,6 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/profiles/*.jpg">https://cyberveille.esante.gouv.fr/profiles/*.jpg</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
 						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/profiles/*.js">https://cyberveille.esante.gouv.fr/profiles/*.js</a></td>
 					</tr>
 					<tr>
@@ -3134,6 +3154,72 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 				<TR vAlign="top">
 					<TD colspan="2"></TD>
 				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/alertes/aruba-cve-2023-22747-2023-03-01">https://cyberveille.esante.gouv.fr/alertes/aruba-cve-2023-22747-2023-03-01</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">10.3.1.0</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">10.3.1.0
+10.3.1.1
+</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/alertes/aruba-cve-2023-22751-2023-03-01">https://cyberveille.esante.gouv.fr/alertes/aruba-cve-2023-22751-2023-03-01</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">10.3.1.0</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">10.3.1.0
+10.3.1.1
+</td>
+					</tr>
 				
 					<tr>
 						<td width="20%"
@@ -3236,6 +3322,73 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 						<td width="80%">10.4.1.5
 10.4.1.5
 10.7.0.0
+</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/alertes/hpe-aruba-cve-2025-27082-2025-04-11">https://cyberveille.esante.gouv.fr/alertes/hpe-aruba-cve-2025-27082-2025-04-11</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">10.4.1.7</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">10.4.1.7
+10.7.1.1
+10.4.1.7
+10.7.1.1
+</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/alertes/ibm-tivoli-cve-2022-38389-2023-02-09">https://cyberveille.esante.gouv.fr/alertes/ibm-tivoli-cve-2022-38389-2023-02-09</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">10.1.0.1</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">10.1.0.1
 </td>
 					</tr>
 				
@@ -3415,7 +3568,7 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">8</td>
+					<td width="80%">12</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -4050,12 +4203,12 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">1743903511</td>
+						<td width="80%">1744513341</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">1743903511, which evaluates to: 2025-04-06 01:38:31.</td>
+						<td width="80%">1744513341, which evaluates to: 2025-04-13 03:02:21.</td>
 					</tr>
 				
 					<tr>
@@ -4081,12 +4234,12 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">1743903508</td>
+						<td width="80%">1744513338</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">1743903508, which evaluates to: 2025-04-06 01:38:28.</td>
+						<td width="80%">1744513338, which evaluates to: 2025-04-13 03:02:18.</td>
 					</tr>
 				
 					<tr>
@@ -4112,12 +4265,12 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">1743903508</td>
+						<td width="80%">1744513338</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">1743903508, which evaluates to: 2025-04-06 01:38:28.</td>
+						<td width="80%">1744513338, which evaluates to: 2025-04-13 03:02:18.</td>
 					</tr>
 				
 					<tr>
@@ -4143,48 +4296,17 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">1743903514</td>
+						<td width="80%">1744513344</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">1743903514, which evaluates to: 2025-04-06 01:38:34.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/user/register">https://cyberveille.esante.gouv.fr/user/register</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">POST</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">1743903514</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">1743903514, which evaluates to: 2025-04-06 01:38:34.</td>
+						<td width="80%">1744513344, which evaluates to: 2025-04-13 03:02:24.</td>
 					</tr>
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">9</td>
+					<td width="80%">8</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -4663,7 +4785,7 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/sites/default/files/js/js_2rxU8PK06AiKt708cwEU34UmTFbbvsVrX4ChsvBk8BA.js?delta=1&amp;include=eJxtzEEOgzAMRNELUeVIlgmDGDU4yDGNuH2rwgqxm7eYv3WVBv8wQ3r1NzxdPDXkY_wZLAUSC1YktTaEekB0l8zwaunmh1fQjlcrnM6mdIyy7W1JVoMzswariRrX__oCUtQ9JA&amp;language=fr&amp;scope=header&amp;theme=cyberveille_theme">https://cyberveille.esante.gouv.fr/sites/default/files/js/js_2rxU8PK06AiKt708cwEU34UmTFbbvsVrX4ChsvBk8BA.js?delta=1&amp;include=eJxtzEEOgzAMRNELUeVIlgmDGDU4yDGNuH2rwgqxm7eYv3WVBv8wQ3r1NzxdPDXkY_wZLAUSC1YktTaEekB0l8zwaunmh1fQjlcrnM6mdIyy7W1JVoMzswariRrX__oCUtQ9JA&amp;language=fr&amp;scope=header&amp;theme=cyberveille_theme</a></td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/sites/default/files/js/js_4Pz8SIMZ_4ErMDxYZ1owasYM6yk6aW_SBb2i0c9yHCs.js?delta=0&amp;include=eJxtzEEOgzAMRNELUeVIlgmDGDU4yDGNuH2rwgqxm7eYv3WVBv8wQ3r1NzxdPDXkY_wZLAUSC1YktTaEekB0l8zwaunmh1fQjlcrnM6mdIyy7W1JVoMzswariRrX__oCUtQ9JA&amp;language=fr&amp;scope=footer&amp;theme=cyberveille_theme">https://cyberveille.esante.gouv.fr/sites/default/files/js/js_4Pz8SIMZ_4ErMDxYZ1owasYM6yk6aW_SBb2i0c9yHCs.js?delta=0&amp;include=eJxtzEEOgzAMRNELUeVIlgmDGDU4yDGNuH2rwgqxm7eYv3WVBv8wQ3r1NzxdPDXkY_wZLAUSC1YktTaEekB0l8zwaunmh1fQjlcrnM6mdIyy7W1JVoMzswariRrX__oCUtQ9JA&amp;language=fr&amp;scope=footer&amp;theme=cyberveille_theme</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4683,12 +4805,12 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">username</td>
+						<td width="80%">select</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">The following pattern was used: \bUSERNAME\b and was detected in likely comment: &quot;//,Bt={},_t={},zt=&quot;*/&quot;.concat(&quot;*&quot;),Xt=C.createElement(&quot;a&quot;);function Ut(o){return function(e,t){&quot;string&quot;!=typeof e&amp;&amp;(t=e,e=&quot;*&quot;);v&quot;, see evidence field for the suspicious comment/snippet.</td>
+						<td width="80%">The following pattern was used: \bSELECT\b and was detected in likely comment: &quot;//popper.js.org/)&quot;);var o=this._element;&quot;parent&quot;===this._config.reference?o=i:a.default.isElement(this._config.reference)&amp;&amp;(o=th&quot;, see evidence field for the suspicious comment/snippet.</td>
 					</tr>
 				
 					<tr>
@@ -4757,6 +4879,37 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/sites/default/files/js/js_CqNHoTK7XPMHLgEfGcoA9nKPnixVty61o5ibpNYS6tI.js?delta=1&amp;include=eJxdzEsOwzAIANELWeFIiFCioNpgYRyrt-931d28zfRFOCQuZcHlcZeAH78q_NhfFq1VME9pAmSjJEUK0kTWDDf4c2EPgVvMTnU7PNp7g0t27HOcYJ56KFOqG5Jp-9QTTN03uw&amp;language=fr&amp;scope=header&amp;theme=cyberveille_theme">https://cyberveille.esante.gouv.fr/sites/default/files/js/js_CqNHoTK7XPMHLgEfGcoA9nKPnixVty61o5ibpNYS6tI.js?delta=1&amp;include=eJxdzEsOwzAIANELWeFIiFCioNpgYRyrt-931d28zfRFOCQuZcHlcZeAH78q_NhfFq1VME9pAmSjJEUK0kTWDDf4c2EPgVvMTnU7PNp7g0t27HOcYJ56KFOqG5Jp-9QTTN03uw&amp;language=fr&amp;scope=header&amp;theme=cyberveille_theme</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">username</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The following pattern was used: \bUSERNAME\b and was detected in likely comment: &quot;//,Bt={},_t={},zt=&quot;*/&quot;.concat(&quot;*&quot;),Xt=C.createElement(&quot;a&quot;);function Ut(o){return function(e,t){&quot;string&quot;!=typeof e&amp;&amp;(t=e,e=&quot;*&quot;);v&quot;, see evidence field for the suspicious comment/snippet.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/sites/default/files/js/js_CqNHoTK7XPMHLgEfGcoA9nKPnixVty61o5ibpNYS6tI.js?delta=1&amp;include=eJxtzEEOgzAMRNELUeVIlgmDGDU4yDGNuH2rwgqxm7eYv3WVBv8wQ3r1NzxdPDXkY_wZLAUSC1YktTaEekB0l8zwaunmh1fQjlcrnM6mdIyy7W1JVoMzswariRrX__oCUtQ9JA&amp;language=fr&amp;scope=header&amp;theme=cyberveille_theme">https://cyberveille.esante.gouv.fr/sites/default/files/js/js_CqNHoTK7XPMHLgEfGcoA9nKPnixVty61o5ibpNYS6tI.js?delta=1&amp;include=eJxtzEEOgzAMRNELUeVIlgmDGDU4yDGNuH2rwgqxm7eYv3WVBv8wQ3r1NzxdPDXkY_wZLAUSC1YktTaEekB0l8zwaunmh1fQjlcrnM6mdIyy7W1JVoMzswariRrX__oCUtQ9JA&amp;language=fr&amp;scope=header&amp;theme=cyberveille_theme</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4879,7 +5032,7 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">8</td>
+					<td width="80%">9</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -4951,6 +5104,192 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 						<td width="20%"
 							class="indent2">Evidence</td>
 						<td width="80%">&lt;a type=&quot;button&quot; data-toggle=&quot;modal&quot; data-target=&quot;#cyb-modal-login&quot; href=&quot;#&quot; class=&quot;btn btn--default btn--ghost btn-xs&quot;&gt;S&#39;abonner à la recherche&lt;/a&gt;</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/alertes/microsoft-windows-cve-2023-21689-2023-02-16">https://cyberveille.esante.gouv.fr/alertes/microsoft-windows-cve-2023-21689-2023-02-16</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">&lt;a name=&quot;_Hlk127439874&quot;&gt;[&lt;/a&gt;</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/alertes/microsoft-windows-cve-2023-21690-2023-02-16">https://cyberveille.esante.gouv.fr/alertes/microsoft-windows-cve-2023-21690-2023-02-16</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">&lt;a name=&quot;_Hlk127454012&quot;&gt;&lt;span style=&quot;font-size:12.0pt&quot;&gt;&lt;span style=&quot;line-height:115%&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Calibri&amp;quot;,sans-serif&quot;&gt;Les serveurs sont vulnérables seulement si le &lt;i&gt;NPS&lt;/i&gt; est activé et que le protocole PEAP est autorisé. &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/alertes/microsoft-windows-cve-2023-21803-2023-02-16">https://cyberveille.esante.gouv.fr/alertes/microsoft-windows-cve-2023-21803-2023-02-16</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">&lt;a name=&quot;_Hlk127449498&quot;&gt;&lt;/a&gt;</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/alertes/microsoft-windows-cve-2023-21823-2023-02-15">https://cyberveille.esante.gouv.fr/alertes/microsoft-windows-cve-2023-21823-2023-02-15</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">&lt;a name=&quot;_Hlk127354644&quot;&gt;[&lt;/a&gt;</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/alertes/microsoft-windows-cve-2023-23376-2023-02-15">https://cyberveille.esante.gouv.fr/alertes/microsoft-windows-cve-2023-23376-2023-02-15</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">&lt;a name=&quot;_Hlk127360905&quot;&gt;&lt;/a&gt;</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/alertes/microsoft-word-cve-2023-21716-2023-02-15">https://cyberveille.esante.gouv.fr/alertes/microsoft-word-cve-2023-21716-2023-02-15</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">&lt;a name=&quot;_Hlk127352361&quot;&gt;[&lt;/a&gt;</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -5115,7 +5454,7 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">6</td>
+					<td width="80%">12</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -5382,6 +5721,37 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/sitemap.xml?page=3">https://cyberveille.esante.gouv.fr/sitemap.xml?page=3</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">cache-control</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">max-age=300, public</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/user/login">https://cyberveille.esante.gouv.fr/user/login</a></td>
 					</tr>
 					<tr>
@@ -5414,37 +5784,6 @@ The report-uri directive has been deprecated in favor of the new report-to direc
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/user/password">https://cyberveille.esante.gouv.fr/user/password</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">cache-control</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">must-revalidate, no-cache, private</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://cyberveille.esante.gouv.fr/user/register">https://cyberveille.esante.gouv.fr/user/register</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6647,10 +6986,10 @@ appears to include user input in:
 a(n) [input] tag [value] attribute
 
 The user input found was:
-honeypot_time=pYacNWzW_7W5iLhagQc7C66mjwA91vBEzdFmp0I_Qxk
+honeypot_time=-4KdXfRquVEnBEwn-ynCpHIiHErxxF4Kg3j-LE-N3kw
 
 The user-controlled value was:
-pyacnwzw_7w5ilhagqc7c66mjwa91vbezdfmp0i_qxk</td>
+-4kdxfrquvenbewn-yncphiiherxxf4kg3j-le-n3kw</td>
 					</tr>
 				
 					<tr>
@@ -6857,10 +7196,10 @@ appears to include user input in:
 a(n) [input] tag [value] attribute
 
 The user input found was:
-captcha_sid=194827
+captcha_sid=194908
 
 The user-controlled value was:
-194827</td>
+194908</td>
 					</tr>
 				
 					<tr>
@@ -6899,10 +7238,10 @@ appears to include user input in:
 a(n) [input] tag [value] attribute
 
 The user input found was:
-captcha_token=wb23tJ3hKtLRxQQe3_xwBX-YAFLH-SzyOLr1z1c1Y90
+captcha_token=99al96gVaPCWTIJoreO6SObfbsFPXDapuhUc8sDXugE
 
 The user-controlled value was:
-wb23tj3hktlrxqqe3_xwbx-yaflh-szyolr1z1c1y90</td>
+99al96gvapcwtijoreo6sobfbsfpxdapuhuc8sdxuge</td>
 					</tr>
 				
 					<tr>
@@ -7025,10 +7364,10 @@ appears to include user input in:
 a(n) [input] tag [value] attribute
 
 The user input found was:
-honeypot_time=pr8D9A-jCEepjiWqEC77u4DqHH3MFuAUc5jnjM1bKUQ
+honeypot_time=QacC1GTYsDhQ8xyQAW69ctCOHJeBkKzLPThVahSwCbY
 
 The user-controlled value was:
-pr8d9a-jceepjiwqec77u4dqhh3mfuauc5jnjm1bkuq</td>
+qacc1gtysdhq8xyqaw69ctcohjebkkzlpthvahswcby</td>
 					</tr>
 				
 					<tr>
