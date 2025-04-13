@@ -32,89 +32,9 @@
       "type": "dns",
       "host": "portal.api.esante.gouv.fr.",
       "matched-at": "portal.api.esante.gouv.fr",
-      "request": ";; opcode: QUERY, status: NOERROR, id: 748\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;portal.api.esante.gouv.fr.\tIN\t CAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 748\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;portal.api.esante.gouv.fr.\tIN\t CAA\n\n;; AUTHORITY SECTION:\nesante.gouv.fr.\t10800\tIN\tSOA\tns1.gandi.net. hostmaster.gandi.net. 1743769652 10800 3600 604800 10800\n",
-      "timestamp": "2025-04-06T03:26:10.056763546Z",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "x-permitted-cross-domain-policies",
-      "type": "http",
-      "host": "https://portal.api.esante.gouv.fr",
-      "matched-at": "https://portal.api.esante.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 06 Apr 2025 03:27:15 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
-      "ip": "80.78.2.231",
-      "timestamp": "2025-04-06T03:27:15.393720463Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "referrer-policy",
-      "type": "http",
-      "host": "https://portal.api.esante.gouv.fr",
-      "matched-at": "https://portal.api.esante.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 06 Apr 2025 03:27:15 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
-      "ip": "80.78.2.231",
-      "timestamp": "2025-04-06T03:27:15.393779394Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 52917\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;portal.api.esante.gouv.fr.\tIN\t CAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 52917\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;portal.api.esante.gouv.fr.\tIN\t CAA\n\n;; AUTHORITY SECTION:\nesante.gouv.fr.\t10800\tIN\tSOA\tns1.gandi.net. hostmaster.gandi.net. 1744290754 10800 3600 604800 10800\n",
+      "timestamp": "2025-04-13T04:48:57.727658387Z",
       "matcher-status": true
     },
     {
@@ -151,49 +71,9 @@
       "host": "https://portal.api.esante.gouv.fr",
       "matched-at": "https://portal.api.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 06 Apr 2025 03:27:15 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 13 Apr 2025 04:50:02 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
       "ip": "80.78.2.231",
-      "timestamp": "2025-04-06T03:27:15.393798139Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "cross-origin-resource-policy",
-      "type": "http",
-      "host": "https://portal.api.esante.gouv.fr",
-      "matched-at": "https://portal.api.esante.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 06 Apr 2025 03:27:15 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
-      "ip": "80.78.2.231",
-      "timestamp": "2025-04-06T03:27:15.393814279Z",
+      "timestamp": "2025-04-13T04:50:02.660897054Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -231,9 +111,9 @@
       "host": "https://portal.api.esante.gouv.fr",
       "matched-at": "https://portal.api.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 06 Apr 2025 03:27:15 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 13 Apr 2025 04:50:02 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
       "ip": "80.78.2.231",
-      "timestamp": "2025-04-06T03:27:15.393828266Z",
+      "timestamp": "2025-04-13T04:50:02.660963658Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -271,9 +151,9 @@
       "host": "https://portal.api.esante.gouv.fr",
       "matched-at": "https://portal.api.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 06 Apr 2025 03:27:15 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 13 Apr 2025 04:50:02 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
       "ip": "80.78.2.231",
-      "timestamp": "2025-04-06T03:27:15.39384103Z",
+      "timestamp": "2025-04-13T04:50:02.660982664Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -311,9 +191,9 @@
       "host": "https://portal.api.esante.gouv.fr",
       "matched-at": "https://portal.api.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 06 Apr 2025 03:27:15 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 13 Apr 2025 04:50:02 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
       "ip": "80.78.2.231",
-      "timestamp": "2025-04-06T03:27:15.393854755Z",
+      "timestamp": "2025-04-13T04:50:02.660998073Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -351,9 +231,89 @@
       "host": "https://portal.api.esante.gouv.fr",
       "matched-at": "https://portal.api.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 06 Apr 2025 03:27:15 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 13 Apr 2025 04:50:02 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
       "ip": "80.78.2.231",
-      "timestamp": "2025-04-06T03:27:15.393863732Z",
+      "timestamp": "2025-04-13T04:50:02.661013522Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 13 Apr 2025 04:50:02 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
+      "ip": "80.78.2.231",
+      "timestamp": "2025-04-13T04:50:02.661026706Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 13 Apr 2025 04:50:02 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
+      "ip": "80.78.2.231",
+      "timestamp": "2025-04-13T04:50:02.66103912Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -391,9 +351,9 @@
       "host": "https://portal.api.esante.gouv.fr",
       "matched-at": "https://portal.api.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 06 Apr 2025 03:27:15 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 13 Apr 2025 04:50:02 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
       "ip": "80.78.2.231",
-      "timestamp": "2025-04-06T03:27:15.393874141Z",
+      "timestamp": "2025-04-13T04:50:02.661055049Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -431,9 +391,49 @@
       "host": "https://portal.api.esante.gouv.fr",
       "matched-at": "https://portal.api.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 06 Apr 2025 03:27:15 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 13 Apr 2025 04:50:02 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
       "ip": "80.78.2.231",
-      "timestamp": "2025-04-06T03:27:15.393883299Z",
+      "timestamp": "2025-04-13T04:50:02.661069597Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 13 Apr 2025 04:50:02 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
+      "ip": "80.78.2.231",
+      "timestamp": "2025-04-13T04:50:02.661084074Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -473,9 +473,9 @@
       "host": "https://portal.api.esante.gouv.fr",
       "matched-at": "https://portal.api.esante.gouv.fr/",
       "request": "POST / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 06 Apr 2025 03:27:49 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 199\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 13 Apr 2025 04:50:36 GMT\r\nStrict-Transport-Security: max-age=3600; includeSubDomains; preload\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n</body></html>\n",
       "ip": "80.78.2.231",
-      "timestamp": "2025-04-06T03:27:49.283055309Z",
+      "timestamp": "2025-04-13T04:50:36.506179704Z",
       "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: portal.api.esante.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr/'",
       "matcher-status": true
     },
@@ -506,7 +506,7 @@
         "DigiCert Inc"
       ],
       "ip": "80.78.2.231",
-      "timestamp": "2025-04-06T03:29:48.026004707Z",
+      "timestamp": "2025-04-13T04:52:34.028316089Z",
       "matcher-status": true
     },
     {
@@ -536,7 +536,7 @@
         "*.api.esante.gouv.fr"
       ],
       "ip": "80.78.2.231",
-      "timestamp": "2025-04-06T03:29:48.026138378Z",
+      "timestamp": "2025-04-13T04:52:34.028504652Z",
       "matcher-status": true
     },
     {
@@ -567,11 +567,11 @@
       "host": "portal.api.esante.gouv.fr",
       "matched-at": "portal.api.esante.gouv.fr:443",
       "extracted-results": [
-        "CN: *.api.esante.gouv.fr",
-        " SAN: [*.api.esante.gouv.fr]"
+        " SAN: [*.api.esante.gouv.fr]",
+        "CN: *.api.esante.gouv.fr"
       ],
       "ip": "80.78.2.231",
-      "timestamp": "2025-04-06T03:29:48.026186879Z",
+      "timestamp": "2025-04-13T04:52:34.028556439Z",
       "matcher-status": true
     },
     {
@@ -602,7 +602,7 @@
         "tls12"
       ],
       "ip": "80.78.2.231",
-      "timestamp": "2025-04-06T03:29:49.081763263Z",
+      "timestamp": "2025-04-13T04:52:36.213321458Z",
       "matcher-status": true
     }
   ]
