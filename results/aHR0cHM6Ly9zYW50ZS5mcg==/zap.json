@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.16.1",
-	"@generated": "Sun, 6 Apr 2025 03:37:38",
+	"@generated": "Sun, 13 Apr 2025 05:00:42",
 	"site":[ 
 		{
 			"@name": "https://sante.fr",
@@ -57,8 +57,8 @@
 					"desc": "<p>The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.</p>",
 					"instances":[ 
 						{
-							"id": "0",
-							"uri": "https://sante.fr/robots.txt",
+							"id": "1",
+							"uri": "https://sante.fr",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -72,7 +72,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p>",
 					"cweid": "1021",
 					"wascid": "15",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90003",
@@ -113,7 +113,7 @@
 					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
 					"instances":[ 
 						{
-							"id": "31",
+							"id": "33",
 							"uri": "https://sante.fr",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
@@ -122,7 +122,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "29",
+							"id": "27",
 							"uri": "https://sante.fr/robots.txt",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
@@ -131,7 +131,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "32",
+							"id": "34",
 							"uri": "https://sante.fr",
 							"method": "GET",
 							"param": "Cross-Origin-Embedder-Policy",
@@ -140,7 +140,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "33",
+							"id": "28",
 							"uri": "https://sante.fr/robots.txt",
 							"method": "GET",
 							"param": "Cross-Origin-Embedder-Policy",
@@ -158,7 +158,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "34",
+							"id": "29",
 							"uri": "https://sante.fr/robots.txt",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
@@ -186,7 +186,7 @@
 					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
 					"instances":[ 
 						{
-							"id": "30",
+							"id": "32",
 							"uri": "https://sante.fr",
 							"method": "GET",
 							"param": "",
@@ -195,7 +195,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "28",
+							"id": "26",
 							"uri": "https://sante.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -223,7 +223,7 @@
 					"desc": "<p>HTTP Strict Transport Security (HSTS) is a web security policy mechanism whereby a web server declares that complying user agents (such as a web browser) are to interact with it using only secure HTTPS connections (i.e. HTTP layered over TLS/SSL). HSTS is an IETF standards track protocol and is specified in RFC 6797.</p>",
 					"instances":[ 
 						{
-							"id": "3",
+							"id": "2",
 							"uri": "https://sante.fr",
 							"method": "GET",
 							"param": "",
@@ -241,7 +241,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "2",
+							"id": "3",
 							"uri": "https://sante.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -269,7 +269,7 @@
 					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
 					"instances":[ 
 						{
-							"id": "10",
+							"id": "9",
 							"uri": "https://sante.fr/robots.txt",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -284,7 +284,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "7"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10094",
@@ -297,18 +297,18 @@
 					"desc": "<p>Base64 encoded data was disclosed by the application/web server. Note: in the interests of performance not all base64 strings in the response were analyzed individually, the entire response should be looked at by the analyst/security team/developer(s).</p>",
 					"instances":[ 
 						{
-							"id": "24",
+							"id": "30",
 							"uri": "https://sante.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ZVYVaIIawj4MYhoaGDE5QjTcPO2a3OzlDH8kwsnRMIAOIfrur54-YFL0jGC-dH6XKm2g5FfKaG-yOa4dcbuxWJQhHfx7NH7kV9DH-2LScc_TblnwTrVqVRP5DuKjLGGJmcw-omolfEJCBQJlmUWjGDpHjPDsB8HRgwyxGyRbyrS4yUve73uO4LfS1zBdelhJOKzQ7gM2srGPx2vlxuKbkKC5jFPJn22evVkO0EmZuAfkD8ZHaruSAHowSVuqCuiHzvDHfcuU60m3AmMcizI-heR29Fg5p6ojGAYdmPjylQo",
-							"otherinfo": "eV\\x0015h\uFFFD\\x001a\uFFFD>\\x000cb\\x001a\\x001a\\x001819B4\uFFFD<\uFFFD\uFFFD\uFFFD\uFFFD\\x000c$\uFFFD\uFFFD\uFFFD0\uFFFD\\x000e!\uFFFD\uEBDE>`R\uFFFD`\uFFFDt~\uFFFD*m\uFFFD\uFFFDW\uFFFDho\uFFFD9\uFFFD\\x001dq\uFFFD\uFFFDX\uFFFD!\\x001d\uFFFD{4~\uFFFDW\uFFFD\uFFFD\uFFFDb\uFFFDq\uFFFD\uFFFDnY\uFFFDN\uFFFDjU\\x0013\uFFFD\\x000e\uFFFD,a\uFFFD\uFFFD\uFFFD>\uFFFDj%|BB\\x0005\\x0002e\uFFFDE\uFFFD\\x0018:G\uFFFD\uFFFD\uFFFD\\x0007\uFFFD\u0443\\x000c\uFFFD\\x001b$[\u02B4\uFFFD\uFFFDK\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFD0]zXI8\uFFFD\uFFFD\uFFFD\\x00036\uFFFD\uFFFD\uFFFD\uFFFDk\uFFFD\uFFFD\u26D0\uFFFD\uFFFD\uFFFDS\u025Fm\uFFFD\uFFFDY\\x000e\uFFFDI\uFFFD\uFFFD\\x0007\uFFFD\\x000f\uFFFDGj\uFFFD\uFFFD\\x0000z0I[\uFFFD\n\uFFFD\uFFFD\uFFFD\uFFFD}\u02D4\uFFFDI\uFFFD\\x0002c\\x001c\uFFFD2>\uFFFD\uFFFDv\uFFFDX9\uFFFD\uFFFD#\\x0018\\x0006\\x001d\uFFFD\uFFFD\uFFFD\n"
+							"evidence": "5bj09GkPH02tzzGbP9d5BLWMc3ZR_BdNCDj0bJwyfP9ws02AJBWu4MvHR1C5ro5jQsNU7OUbrJqydov7AIOX78aCrr08cLN3bEXzzZRU7ikKkDBaw_79QP68zwqzYz1BWUvWFNgt9Xce0py0IoWY9qNLlNSgdDO-SilYrAOWo5Untj6edJ68G8aND7cEbKC1L0Y3MlocavHdU4-GXyMirEVJe8bjE0e9ukD7M-pN-aXA16DW0gcOPqDhIM2ozFxTOYSiD6Xyyq6O0FBowIwI8fltouGGh95V2eU2k6MY1xw",
+							"otherinfo": "\uFFFD\uFFFD\uFFFDi\\x000f\\x001fM\uFFFD\uFFFD1\uFFFD?\uFFFDy\\x0004\uFFFD\uFFFDsvQ\uFFFD\\x0017M\\x00088\uFFFDl\uFFFD2|\uFFFDp\uFFFDM\uFFFD$\\x0015\uFFFD\uFFFD\uFFFD\uFFFDGP\uFFFD\uFFFD\uFFFDcB\uFFFDT\uFFFD\uFFFD\\x001b\uFFFD\uFFFD\uFFFDv\uFFFD\uFFFD\\x0000\uFFFD\uFFFD\uFFFD\u0182\uFFFD\uFFFD<p\uFFFDwlE\uFFFD\u0354T\uFFFD)\n\uFFFD0Z\uFFFD\uFFFD\uFFFD@\uFFFD\uFFFD\uFFFD\n\uFFFDc=AYK\uFFFD\\x0014\uFFFD-\uFFFDw\\x001e\u049C\uFFFD\"\uFFFD\uFFFD\uFFFD\uFFFDK\uFFFD\u0520t3\uFFFDJ)X\uFFFD\\x0003\uFFFD\uFFFD\uFFFD'\uFFFD>\uFFFDt\uFFFD\uFFFD\\x001b\u018D\\x000f\uFFFD\\x0004l\uFFFD\uFFFD/F72Z\\x001cj\uFFFD\uFFFDS\uFFFD\uFFFD_#\"\uFFFDEI{\uFFFD\uFFFD\\x0013G\uFFFD\uFFFD@\uFFFD3\uFFFDM\uFFFD\uFFFD\uFFFD\u05E0\uFFFD\uFFFD\\x0007\\x000e>\uFFFD\uFFFD \u0368\uFFFD\\S9\uFFFD\uFFFD\\x000f\uFFFD\uFFFD\u02AE\uFFFD\uFFFDPh\uFFFD\uFFFD\\x0008\uFFFD\uFFFDm\uFFFD\u1187\uFFFDU\uFFFD\uFFFD6\uFFFD\uFFFD\\x0018\uFFFD\\x001c"
 						}
 					],
 					"count": "1",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>eV\\x0015h\uFFFD\\x001a\uFFFD>\\x000cb\\x001a\\x001a\\x001819B4\uFFFD<\uFFFD\uFFFD\uFFFD\uFFFD\\x000c$\uFFFD\uFFFD\uFFFD0\uFFFD\\x000e!\uFFFD\uEBDE>`R\uFFFD`\uFFFDt~\uFFFD*m\uFFFD\uFFFDW\uFFFDho\uFFFD9\uFFFD\\x001dq\uFFFD\uFFFDX\uFFFD!\\x001d\uFFFD{4~\uFFFDW\uFFFD\uFFFD\uFFFDb\uFFFDq\uFFFD\uFFFDnY\uFFFDN\uFFFDjU\\x0013\uFFFD\\x000e\uFFFD,a\uFFFD\uFFFD\uFFFD>\uFFFDj%|BB\\x0005\\x0002e\uFFFDE\uFFFD\\x0018:G\uFFFD\uFFFD\uFFFD\\x0007\uFFFD\u0443\\x000c\uFFFD\\x001b$[\u02B4\uFFFD\uFFFDK\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFD0]zXI8\uFFFD\uFFFD\uFFFD\\x00036\uFFFD\uFFFD\uFFFD\uFFFDk\uFFFD\uFFFD\u26D0\uFFFD\uFFFD\uFFFDS\u025Fm\uFFFD\uFFFDY\\x000e\uFFFDI\uFFFD\uFFFD\\x0007\uFFFD\\x000f\uFFFDGj\uFFFD\uFFFD\\x0000z0I[\uFFFD</p><p>\uFFFD\uFFFD\uFFFD\uFFFD}\u02D4\uFFFDI\uFFFD\\x0002c\\x001c\uFFFD2>\uFFFD\uFFFDv\uFFFDX9\uFFFD\uFFFD#\\x0018\\x0006\\x001d\uFFFD\uFFFD\uFFFD</p><p></p>",
+					"otherinfo": "<p>\uFFFD\uFFFD\uFFFDi\\x000f\\x001fM\uFFFD\uFFFD1\uFFFD?\uFFFDy\\x0004\uFFFD\uFFFDsvQ\uFFFD\\x0017M\\x00088\uFFFDl\uFFFD2|\uFFFDp\uFFFDM\uFFFD$\\x0015\uFFFD\uFFFD\uFFFD\uFFFDGP\uFFFD\uFFFD\uFFFDcB\uFFFDT\uFFFD\uFFFD\\x001b\uFFFD\uFFFD\uFFFDv\uFFFD\uFFFD\\x0000\uFFFD\uFFFD\uFFFD\u0182\uFFFD\uFFFD<p\uFFFDwlE\uFFFD\u0354T\uFFFD)</p><p>\uFFFD0Z\uFFFD\uFFFD\uFFFD@\uFFFD\uFFFD\uFFFD</p><p>\uFFFDc=AYK\uFFFD\\x0014\uFFFD-\uFFFDw\\x001e\u049C\uFFFD\"\uFFFD\uFFFD\uFFFD\uFFFDK\uFFFD\u0520t3\uFFFDJ)X\uFFFD\\x0003\uFFFD\uFFFD\uFFFD'\uFFFD>\uFFFDt\uFFFD\uFFFD\\x001b\u018D\\x000f\uFFFD\\x0004l\uFFFD\uFFFD/F72Z\\x001cj\uFFFD\uFFFDS\uFFFD\uFFFD_#\"\uFFFDEI{\uFFFD\uFFFD\\x0013G\uFFFD\uFFFD@\uFFFD3\uFFFDM\uFFFD\uFFFD\uFFFD\u05E0\uFFFD\uFFFD\\x0007\\x000e>\uFFFD\uFFFD \u0368\uFFFD\\S9\uFFFD\uFFFD\\x000f\uFFFD\uFFFD\u02AE\uFFFD\uFFFDPh\uFFFD\uFFFD\\x0008\uFFFD\uFFFDm\uFFFD\u1187\uFFFDU\uFFFD\uFFFD6\uFFFD\uFFFD\\x0018\uFFFD\\x001c</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "319",
 					"wascid": "13",
@@ -325,7 +325,7 @@
 					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
 					"instances":[ 
 						{
-							"id": "9",
+							"id": "10",
 							"uri": "https://sante.fr",
 							"method": "GET",
 							"param": "",
@@ -390,7 +390,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"id": "17",
+							"id": "13",
 							"uri": "https://sante.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -408,7 +408,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "13",
+							"id": "17",
 							"uri": "https://sante.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -436,7 +436,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"id": "16",
+							"id": "12",
 							"uri": "https://sante.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -445,7 +445,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "20",
+							"id": "22",
 							"uri": "https://sante.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -454,7 +454,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "12",
+							"id": "16",
 							"uri": "https://sante.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -482,7 +482,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"id": "14",
+							"id": "11",
 							"uri": "https://sante.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -491,7 +491,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "19",
+							"id": "21",
 							"uri": "https://sante.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -500,7 +500,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "11",
+							"id": "14",
 							"uri": "https://sante.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -528,7 +528,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"id": "18",
+							"id": "15",
 							"uri": "https://sante.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -537,7 +537,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "25",
+							"id": "24",
 							"uri": "https://sante.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -546,7 +546,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "15",
+							"id": "18",
 							"uri": "https://sante.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -574,7 +574,7 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
 					"instances":[ 
 						{
-							"id": "22",
+							"id": "19",
 							"uri": "https://sante.fr",
 							"method": "GET",
 							"param": "",
@@ -583,7 +583,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "26",
+							"id": "25",
 							"uri": "https://sante.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -592,7 +592,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "21",
+							"id": "20",
 							"uri": "https://sante.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -620,7 +620,7 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
 					"instances":[ 
 						{
-							"id": "27",
+							"id": "31",
 							"uri": "https://sante.fr",
 							"method": "GET",
 							"param": "",
