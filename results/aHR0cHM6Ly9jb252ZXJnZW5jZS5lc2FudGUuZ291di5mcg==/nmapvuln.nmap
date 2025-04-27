@@ -1,9 +1,10 @@
-# Nmap 7.92 scan initiated Sun Apr 20 01:33:29 2025 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln convergence.esante.gouv.fr
+# Nmap 7.92 scan initiated Sun Apr 27 01:36:06 2025 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln convergence.esante.gouv.fr
 Nmap scan report for convergence.esante.gouv.fr (80.78.2.184)
-Host is up (0.083s latency).
-Not shown: 907 filtered tcp ports (no-response), 92 closed tcp ports (reset)
-PORT    STATE SERVICE  VERSION
-443/tcp open  ssl/http Apache httpd 2.4.6 ((Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips)
+Host is up (0.13s latency).
+Not shown: 985 filtered tcp ports (no-response)
+PORT      STATE  SERVICE       VERSION
+113/tcp   closed ident
+443/tcp   open   ssl/http      Apache httpd 2.4.6 ((Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips)
 | vulners: 
 |   cpe:/a:apache:http_server:2.4.6: 
 |     	C94CBDE1-4CC5-5C06-9D18-23CAB216705E	10.0	https://vulners.com/githubexploit/C94CBDE1-4CC5-5C06-9D18-23CAB216705E	*EXPLOIT*
@@ -321,6 +322,19 @@ PORT    STATE SERVICE  VERSION
 | http-server-header: 
 |   Apache
 |_  Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips
+668/tcp   closed mecomm
+726/tcp   closed unknown
+1042/tcp  closed afrog
+1122/tcp  closed availant-mgr
+1503/tcp  closed imtc-mcs
+2048/tcp  closed dls-monitor
+3372/tcp  closed msdtc
+5001/tcp  closed commplex-link
+5988/tcp  closed wbem-http
+11110/tcp closed sgi-soap
+16992/tcp closed amt-soap-http
+41511/tcp closed unknown
+52673/tcp closed unknown
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun Apr 20 01:36:21 2025 -- 1 IP address (1 host up) scanned in 171.90 seconds
+# Nmap done at Sun Apr 27 01:39:26 2025 -- 1 IP address (1 host up) scanned in 199.35 seconds
