@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.16.1",
-	"@generated": "Sun, 11 May 2025 04:39:36",
+	"@generated": "Sun, 18 May 2025 04:54:43",
 	"site":[ 
 		{
 			"@name": "http://testssl.eservices.esante.gouv.fr",
@@ -20,7 +20,7 @@
 					"desc": "<p>The identified library appears to be vulnerable.</p>",
 					"instances":[ 
 						{
-							"id": "92",
+							"id": "95",
 							"uri": "http://testssl.eservices.esante.gouv.fr/ua-parser.min.js",
 							"method": "GET",
 							"param": "",
@@ -48,7 +48,7 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "7",
+							"id": "13",
 							"uri": "http://testssl.eservices.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -57,7 +57,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "41",
+							"id": "33",
 							"uri": "http://testssl.eservices.esante.gouv.fr/",
 							"method": "GET",
 							"param": "",
@@ -66,8 +66,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "43",
+							"id": "32",
 							"uri": "http://testssl.eservices.esante.gouv.fr/index.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "1",
+							"uri": "http://testssl.eservices.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -75,13 +84,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10020",
@@ -94,7 +103,7 @@
 					"desc": "<p>The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.</p>",
 					"instances":[ 
 						{
-							"id": "0",
+							"id": "2",
 							"uri": "http://testssl.eservices.esante.gouv.fr",
 							"method": "GET",
 							"param": "x-frame-options",
@@ -103,7 +112,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "29",
+							"id": "22",
 							"uri": "http://testssl.eservices.esante.gouv.fr/",
 							"method": "GET",
 							"param": "x-frame-options",
@@ -112,7 +121,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "28",
+							"id": "23",
 							"uri": "http://testssl.eservices.esante.gouv.fr/index.php",
 							"method": "GET",
 							"param": "x-frame-options",
@@ -140,7 +149,7 @@
 					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
 					"instances":[ 
 						{
-							"id": "33",
+							"id": "37",
 							"uri": "http://testssl.eservices.esante.gouv.fr",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
@@ -149,61 +158,34 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "77",
+							"id": "57",
 							"uri": "http://testssl.eservices.esante.gouv.fr/",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "54",
+							"uri": "http://testssl.eservices.esante.gouv.fr/index.php",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "41",
+							"uri": "http://testssl.eservices.esante.gouv.fr",
+							"method": "GET",
+							"param": "Cross-Origin-Embedder-Policy",
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
 						},
 						{
 							"id": "58",
-							"uri": "http://testssl.eservices.esante.gouv.fr/favicon.ico",
-							"method": "GET",
-							"param": "Cross-Origin-Resource-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "71",
-							"uri": "http://testssl.eservices.esante.gouv.fr/img/story-B.gif",
-							"method": "GET",
-							"param": "Cross-Origin-Resource-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "82",
-							"uri": "http://testssl.eservices.esante.gouv.fr/index.php",
-							"method": "GET",
-							"param": "Cross-Origin-Resource-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "63",
-							"uri": "http://testssl.eservices.esante.gouv.fr/style.css",
-							"method": "GET",
-							"param": "Cross-Origin-Resource-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "34",
-							"uri": "http://testssl.eservices.esante.gouv.fr",
-							"method": "GET",
-							"param": "Cross-Origin-Embedder-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "78",
 							"uri": "http://testssl.eservices.esante.gouv.fr/",
 							"method": "GET",
 							"param": "Cross-Origin-Embedder-Policy",
@@ -212,7 +194,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "84",
+							"id": "55",
 							"uri": "http://testssl.eservices.esante.gouv.fr/index.php",
 							"method": "GET",
 							"param": "Cross-Origin-Embedder-Policy",
@@ -221,7 +203,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "35",
+							"id": "44",
 							"uri": "http://testssl.eservices.esante.gouv.fr",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
@@ -230,7 +212,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "80",
+							"id": "59",
 							"uri": "http://testssl.eservices.esante.gouv.fr/",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
@@ -239,7 +221,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "85",
+							"id": "56",
 							"uri": "http://testssl.eservices.esante.gouv.fr/index.php",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
@@ -248,13 +230,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "12",
+					"count": "9",
 					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy</p>",
 					"cweid": "693",
 					"wascid": "14",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10063",
@@ -276,7 +258,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "74",
+							"id": "53",
 							"uri": "http://testssl.eservices.esante.gouv.fr/",
 							"method": "GET",
 							"param": "",
@@ -285,7 +267,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "79",
+							"id": "52",
 							"uri": "http://testssl.eservices.esante.gouv.fr/index.php",
 							"method": "GET",
 							"param": "",
@@ -294,7 +276,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "19",
+							"id": "8",
 							"uri": "http://testssl.eservices.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -303,7 +285,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "18",
+							"id": "9",
 							"uri": "http://testssl.eservices.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -312,7 +294,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "94",
+							"id": "98",
 							"uri": "http://testssl.eservices.esante.gouv.fr/ua-parser.min.js",
 							"method": "GET",
 							"param": "",
@@ -327,7 +309,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10037",
@@ -340,7 +322,7 @@
 					"desc": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
 					"instances":[ 
 						{
-							"id": "13",
+							"id": "27",
 							"uri": "http://testssl.eservices.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -349,7 +331,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "62",
+							"id": "50",
 							"uri": "http://testssl.eservices.esante.gouv.fr/",
 							"method": "GET",
 							"param": "",
@@ -358,7 +340,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "65",
+							"id": "46",
 							"uri": "http://testssl.eservices.esante.gouv.fr/index.php",
 							"method": "GET",
 							"param": "",
@@ -373,7 +355,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10036",
@@ -386,7 +368,7 @@
 					"desc": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
 					"instances":[ 
 						{
-							"id": "10",
+							"id": "24",
 							"uri": "http://testssl.eservices.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -395,7 +377,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "52",
+							"id": "42",
 							"uri": "http://testssl.eservices.esante.gouv.fr/",
 							"method": "GET",
 							"param": "",
@@ -404,7 +386,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "53",
+							"id": "77",
 							"uri": "http://testssl.eservices.esante.gouv.fr/favicon.ico",
 							"method": "GET",
 							"param": "",
@@ -413,7 +395,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "73",
+							"id": "85",
 							"uri": "http://testssl.eservices.esante.gouv.fr/img/pl_bdr_3.gif",
 							"method": "GET",
 							"param": "",
@@ -422,7 +404,16 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "66",
+							"id": "86",
+							"uri": "http://testssl.eservices.esante.gouv.fr/img/pl_bdr_5.gif",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.37 (centos) OpenSSL/1.1.1g",
+							"otherinfo": ""
+						},
+						{
+							"id": "78",
 							"uri": "http://testssl.eservices.esante.gouv.fr/img/story-B.gif",
 							"method": "GET",
 							"param": "",
@@ -431,7 +422,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "86",
+							"id": "89",
 							"uri": "http://testssl.eservices.esante.gouv.fr/img/story-title.gif",
 							"method": "GET",
 							"param": "",
@@ -440,7 +431,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "56",
+							"id": "38",
 							"uri": "http://testssl.eservices.esante.gouv.fr/index.php",
 							"method": "GET",
 							"param": "",
@@ -449,7 +440,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "4",
+							"id": "5",
 							"uri": "http://testssl.eservices.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -458,7 +449,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "5",
+							"id": "4",
 							"uri": "http://testssl.eservices.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -467,17 +458,8 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "54",
+							"id": "76",
 							"uri": "http://testssl.eservices.esante.gouv.fr/style.css",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Apache/2.4.37 (centos) OpenSSL/1.1.1g",
-							"otherinfo": ""
-						},
-						{
-							"id": "69",
-							"uri": "http://testssl.eservices.esante.gouv.fr/ua-parser.min.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -491,7 +473,7 @@
 					"reference": "<p>https://httpd.apache.org/docs/current/mod/core.html#servertokens</p><p>https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff648552(v=pandp.10)</p><p>https://www.troyhunt.com/shhh-dont-let-your-response-headers/</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10021",
@@ -504,7 +486,7 @@
 					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
 					"instances":[ 
 						{
-							"id": "12",
+							"id": "26",
 							"uri": "http://testssl.eservices.esante.gouv.fr",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -513,7 +495,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "60",
+							"id": "47",
 							"uri": "http://testssl.eservices.esante.gouv.fr/",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -522,7 +504,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "55",
+							"id": "80",
 							"uri": "http://testssl.eservices.esante.gouv.fr/favicon.ico",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -531,35 +513,8 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "76",
-							"uri": "http://testssl.eservices.esante.gouv.fr/img/pl_bdr_3.gif",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"id": "89",
-							"uri": "http://testssl.eservices.esante.gouv.fr/img/pl_bdr_5.gif",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"id": "67",
-							"uri": "http://testssl.eservices.esante.gouv.fr/img/story-B.gif",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"id": "93",
-							"uri": "http://testssl.eservices.esante.gouv.fr/img/story-BR.gif",
+							"id": "96",
+							"uri": "http://testssl.eservices.esante.gouv.fr/img/pl_bdr_1.gif",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -568,7 +523,7 @@
 						},
 						{
 							"id": "87",
-							"uri": "http://testssl.eservices.esante.gouv.fr/img/story-title.gif",
+							"uri": "http://testssl.eservices.esante.gouv.fr/img/pl_bdr_3.gif",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -576,8 +531,26 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "64",
-							"uri": "http://testssl.eservices.esante.gouv.fr/index.php",
+							"id": "90",
+							"uri": "http://testssl.eservices.esante.gouv.fr/img/pl_bdr_5.gif",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "82",
+							"uri": "http://testssl.eservices.esante.gouv.fr/img/story-B.gif",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "94",
+							"uri": "http://testssl.eservices.esante.gouv.fr/img/story-BL.gif",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -586,7 +559,7 @@
 						},
 						{
 							"id": "91",
-							"uri": "http://testssl.eservices.esante.gouv.fr/logo/logo-ANS.svg",
+							"uri": "http://testssl.eservices.esante.gouv.fr/img/story-title.gif",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -594,17 +567,17 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "59",
+							"id": "45",
+							"uri": "http://testssl.eservices.esante.gouv.fr/index.php",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "79",
 							"uri": "http://testssl.eservices.esante.gouv.fr/style.css",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"id": "83",
-							"uri": "http://testssl.eservices.esante.gouv.fr/ua-parser.min.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -612,13 +585,13 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90011",
@@ -631,7 +604,7 @@
 					"desc": "<p>This check identifies responses where the HTTP Content-Type header declares a charset different from the charset defined by the body of the HTML or XML. When there's a charset mismatch between the HTTP header and content body Web browsers can be forced into an undesirable content-sniffing mode to determine the content's correct character set.</p><p></p><p>An attacker could manipulate content on the page to be interpreted in an encoding of their choice. For example, if an attacker can control content at the beginning of the page, they could inject script using UTF-7 encoded text and manipulate some browsers into interpreting that text.</p>",
 					"instances":[ 
 						{
-							"id": "6",
+							"id": "12",
 							"uri": "http://testssl.eservices.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -640,7 +613,7 @@
 							"otherinfo": "There was a charset mismatch between the HTTP Header and the META content-type encoding declarations: [UTF-8] and [iso-8859-1] do not match."
 						},
 						{
-							"id": "40",
+							"id": "29",
 							"uri": "http://testssl.eservices.esante.gouv.fr/",
 							"method": "GET",
 							"param": "",
@@ -649,7 +622,7 @@
 							"otherinfo": "There was a charset mismatch between the HTTP Header and the META content-type encoding declarations: [UTF-8] and [iso-8859-1] do not match."
 						},
 						{
-							"id": "42",
+							"id": "28",
 							"uri": "http://testssl.eservices.esante.gouv.fr/index.php",
 							"method": "GET",
 							"param": "",
@@ -664,7 +637,7 @@
 					"reference": "<p>https://code.google.com/p/browsersec/wiki/Part2#Character_set_handling_and_detection</p>",
 					"cweid": "436",
 					"wascid": "15",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10027",
@@ -677,7 +650,7 @@
 					"desc": "<p>The response appears to contain suspicious comments which may help an attacker.</p>",
 					"instances":[ 
 						{
-							"id": "68",
+							"id": "97",
 							"uri": "http://testssl.eservices.esante.gouv.fr/ua-parser.min.js",
 							"method": "GET",
 							"param": "",
@@ -705,7 +678,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"id": "46",
+							"id": "70",
 							"uri": "http://testssl.eservices.esante.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -714,7 +687,25 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "26",
+							"id": "65",
+							"uri": "http://testssl.eservices.esante.gouv.fr/",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "71",
+							"uri": "http://testssl.eservices.esante.gouv.fr/index.php",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "18",
 							"uri": "http://testssl.eservices.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -723,7 +714,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "22",
+							"id": "15",
 							"uri": "http://testssl.eservices.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -732,7 +723,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "5",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
@@ -751,7 +742,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"id": "45",
+							"id": "66",
 							"uri": "http://testssl.eservices.esante.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -760,7 +751,25 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "25",
+							"id": "61",
+							"uri": "http://testssl.eservices.esante.gouv.fr/",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "67",
+							"uri": "http://testssl.eservices.esante.gouv.fr/index.php",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "17",
 							"uri": "http://testssl.eservices.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -769,7 +778,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "21",
+							"id": "14",
 							"uri": "http://testssl.eservices.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -778,13 +787,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "5",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -797,7 +806,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"id": "44",
+							"id": "63",
 							"uri": "http://testssl.eservices.esante.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -806,7 +815,25 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "23",
+							"id": "60",
+							"uri": "http://testssl.eservices.esante.gouv.fr/",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "64",
+							"uri": "http://testssl.eservices.esante.gouv.fr/index.php",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "10",
 							"uri": "http://testssl.eservices.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -815,7 +842,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "20",
+							"id": "11",
 							"uri": "http://testssl.eservices.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -824,7 +851,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "5",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
@@ -843,7 +870,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"id": "47",
+							"id": "74",
 							"uri": "http://testssl.eservices.esante.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -852,7 +879,25 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "27",
+							"id": "69",
+							"uri": "http://testssl.eservices.esante.gouv.fr/",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "72",
+							"uri": "http://testssl.eservices.esante.gouv.fr/index.php",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "19",
 							"uri": "http://testssl.eservices.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -861,7 +906,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "24",
+							"id": "16",
 							"uri": "http://testssl.eservices.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -870,13 +915,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "5",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -898,7 +943,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "72",
+							"id": "51",
 							"uri": "http://testssl.eservices.esante.gouv.fr/",
 							"method": "GET",
 							"param": "",
@@ -907,7 +952,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "57",
+							"id": "81",
 							"uri": "http://testssl.eservices.esante.gouv.fr/favicon.ico",
 							"method": "GET",
 							"param": "",
@@ -916,7 +961,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "81",
+							"id": "88",
 							"uri": "http://testssl.eservices.esante.gouv.fr/img/pl_bdr_3.gif",
 							"method": "GET",
 							"param": "",
@@ -925,7 +970,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "90",
+							"id": "93",
 							"uri": "http://testssl.eservices.esante.gouv.fr/img/pl_bdr_5.gif",
 							"method": "GET",
 							"param": "",
@@ -934,7 +979,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "70",
+							"id": "83",
 							"uri": "http://testssl.eservices.esante.gouv.fr/img/story-B.gif",
 							"method": "GET",
 							"param": "",
@@ -943,7 +988,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "88",
+							"id": "92",
 							"uri": "http://testssl.eservices.esante.gouv.fr/img/story-title.gif",
 							"method": "GET",
 							"param": "",
@@ -952,7 +997,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "75",
+							"id": "49",
 							"uri": "http://testssl.eservices.esante.gouv.fr/index.php",
 							"method": "GET",
 							"param": "",
@@ -961,7 +1006,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "17",
+							"id": "6",
 							"uri": "http://testssl.eservices.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -970,7 +1015,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "16",
+							"id": "7",
 							"uri": "http://testssl.eservices.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -979,7 +1024,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "61",
+							"id": "84",
 							"uri": "http://testssl.eservices.esante.gouv.fr/style.css",
 							"method": "GET",
 							"param": "",
@@ -994,7 +1039,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "7"
+					"sourceid": "1"
 				}
 			]
 		}
