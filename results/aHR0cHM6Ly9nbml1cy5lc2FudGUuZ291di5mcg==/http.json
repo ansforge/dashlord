@@ -1,32 +1,16 @@
 {
   "scan": {
     "algorithmVersion": 4,
-    "grade": "B",
+    "grade": "D",
     "error": null,
-    "score": 70,
+    "score": 30,
     "statusCode": 200,
-    "testsFailed": 2,
-    "testsPassed": 8,
+    "testsFailed": 4,
+    "testsPassed": 6,
     "testsQuantity": 10,
     "responseHeaders": {
-      "date": "Sun, 18 May 2025 02:28:40 GMT",
-      "server": "Apache",
-      "cache-control": "max-age=3600, public",
-      "x-drupal-dynamic-cache": "UNCACHEABLE (poor cacheability)",
-      "content-language": "fr",
-      "x-frame-options": "SAMEORIGIN",
-      "expires": "Sun, 19 Nov 1978 05:00:00 GMT",
-      "vary": "Cookie,Accept-Encoding",
-      "x-generator": "Drupal 10 (https://www.drupal.org)",
-      "x-drupal-cache": "HIT",
-      "last-modified": "Sun, 18 May 2025 02:28:38 GMT",
-      "etag": "\"1747535318-gzip\"",
-      "content-length": "15063",
-      "content-type": "text/html; charset=UTF-8",
-      "strict-transport-security": "max-age=31536000; preload",
-      "x-xss-protection": "1; mode=block",
-      "x-content-type-options": "nosniff",
-      "x-permitted-cross-domain-policies": "none",
+      "cache-control": "no-cache",
+      "content-type": "text/html",
       "connection": "close"
     }
   },
@@ -62,12 +46,11 @@
       "pass": true,
       "result": "redirection-to-https",
       "scoreModifier": 0,
-      "destination": "https://gnius.esante.gouv.fr/fr",
+      "destination": "https://gnius.esante.gouv.fr/",
       "redirects": true,
       "route": [
         "http://gnius.esante.gouv.fr/",
-        "https://gnius.esante.gouv.fr/",
-        "https://gnius.esante.gouv.fr/fr"
+        "https://gnius.esante.gouv.fr/"
       ],
       "statusCode": 200
     },
@@ -82,40 +65,35 @@
     },
     "strict-transport-security": {
       "expectation": "hsts-implemented-max-age-at-least-six-months",
-      "pass": true,
-      "result": "hsts-implemented-max-age-at-least-six-months",
-      "scoreModifier": 0,
-      "data": "max-age=31536000; preload",
+      "pass": false,
+      "result": "hsts-not-implemented",
+      "scoreModifier": -20,
+      "data": null,
       "includeSubDomains": false,
-      "maxAge": 31536000,
-      "preload": true,
+      "maxAge": null,
+      "preload": false,
       "preloaded": false
     },
     "subresource-integrity": {
       "expectation": "sri-implemented-and-external-scripts-loaded-securely",
-      "pass": false,
-      "result": "sri-not-implemented-but-external-scripts-loaded-securely",
-      "scoreModifier": -5,
-      "data": {
-        "https://genii-script.tolk.ai/lightchat.js": {
-          "crossorigin": null,
-          "integrity": null
-        }
-      }
+      "pass": true,
+      "result": "sri-not-implemented-but-no-scripts-loaded",
+      "scoreModifier": 0,
+      "data": {}
     },
     "x-content-type-options": {
       "expectation": "x-content-type-options-nosniff",
-      "pass": true,
-      "result": "x-content-type-options-nosniff",
-      "scoreModifier": 0,
-      "data": "nosniff"
+      "pass": false,
+      "result": "x-content-type-options-not-implemented",
+      "scoreModifier": -5,
+      "data": null
     },
     "x-frame-options": {
       "expectation": "x-frame-options-sameorigin-or-deny",
-      "pass": true,
-      "result": "x-frame-options-sameorigin-or-deny",
-      "scoreModifier": 0,
-      "data": "SAMEORIGIN"
+      "pass": false,
+      "result": "x-frame-options-not-implemented",
+      "scoreModifier": -20,
+      "data": null
     },
     "cross-origin-resource-policy": {
       "expectation": "corp-implemented-with-same-site",
