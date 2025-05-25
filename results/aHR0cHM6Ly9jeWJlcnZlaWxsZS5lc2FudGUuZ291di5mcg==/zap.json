@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.16.1",
-	"@generated": "Sun, 18 May 2025 01:53:31",
+	"@generated": "Sun, 25 May 2025 01:55:53",
 	"site":[ 
 		{
 			"@name": "https://cyberveille.esante.gouv.fr",
@@ -20,7 +20,7 @@
 					"desc": "<p>No Anti-CSRF tokens were found in a HTML submission form.</p><p>A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent in order to perform an action as the victim. The underlying cause is application functionality using predictable URL/form actions in a repeatable way. The nature of the attack is that CSRF exploits the trust that a web site has for a user. By contrast, cross-site scripting (XSS) exploits the trust that a user has for a web site. Like XSS, CSRF attacks are not necessarily cross-site, but they can be. Cross-site request forgery is also known as CSRF, XSRF, one-click attack, session riding, confused deputy, and sea surf.</p><p></p><p>CSRF attacks are effective in a number of situations, including:</p><p>    * The victim has an active session on the target site.</p><p>    * The victim is authenticated via HTTP auth on the target site.</p><p>    * The victim is on the same local network as the target site.</p><p></p><p>CSRF has primarily been used to perform an action against a target site using the victim's privileges, but recent techniques have been discovered to disclose information by gaining access to the response. The risk of information disclosure is dramatically increased when the target site is vulnerable to XSS, because XSS can be used as a platform for CSRF, allowing the attack to operate within the bounds of the same-origin policy.</p>",
 					"instances":[ 
 						{
-							"id": "111",
+							"id": "99",
 							"uri": "https://cyberveille.esante.gouv.fr/user/login",
 							"method": "GET",
 							"param": "",
@@ -29,7 +29,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 2: \"edit-eyecolor\" \"edit-name\" \"edit-pass\" \"edit-submit\" \"form_build_id\" \"form_id\" \"honeypot_time\" ]."
 						},
 						{
-							"id": "159",
+							"id": "136",
 							"uri": "https://cyberveille.esante.gouv.fr/user/login",
 							"method": "POST",
 							"param": "",
@@ -44,7 +44,44 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "173"
+					"sourceid": "161"
+				},
+				{
+					"pluginid": "90022",
+					"alertRef": "90022",
+					"alert": "Application Error Disclosure",
+					"name": "Application Error Disclosure",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
+					"instances":[ 
+						{
+							"id": "179",
+							"uri": "https://cyberveille.esante.gouv.fr/alertes/microsoft-publie-son-patch-tuesday-de-mai-2019-06-27",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Error Report",
+							"otherinfo": ""
+						},
+						{
+							"id": "180",
+							"uri": "https://cyberveille.esante.gouv.fr/alertes/mise-jour-du-120619-decouverte-de-cinq-nouvelles-vulnerabilites-jour-zero-dans-les-systemes",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Error Report",
+							"otherinfo": ""
+						}
+					],
+					"count": "2",
+					"solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
+					"otherinfo": "",
+					"reference": "",
+					"cweid": "550",
+					"wascid": "13",
+					"sourceid": "5912"
 				},
 				{
 					"pluginid": "10055",
@@ -57,7 +94,7 @@
 					"desc": "<p>The Content Security Policy fails to define one of the directives that has no fallback. Missing/excluding them is the same as allowing anything.</p>",
 					"instances":[ 
 						{
-							"id": "19",
+							"id": "29",
 							"uri": "https://cyberveille.esante.gouv.fr",
 							"method": "GET",
 							"param": "content-security-policy",
@@ -66,7 +103,7 @@
 							"otherinfo": "The directive(s): form-action is/are among the directives that do not fallback to default-src."
 						},
 						{
-							"id": "49",
+							"id": "19",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.css",
 							"method": "GET",
 							"param": "content-security-policy",
@@ -75,25 +112,7 @@
 							"otherinfo": "The directive(s): form-action is/are among the directives that do not fallback to default-src."
 						},
 						{
-							"id": "61",
-							"uri": "https://cyberveille.esante.gouv.fr/core/*.gif",
-							"method": "GET",
-							"param": "content-security-policy",
-							"attack": "",
-							"evidence": "default-src 'self'; child-src 'none'; connect-src 'self' https://use.typekit.net https://p.typekit.net https://cdnjs.cloudflare.com/ajax/libs/cropper https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.css https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.js; font-src 'self' https://use.typekit.net; frame-src 'self' https://www.youtube-nocookie.com; img-src 'self' data: https://i.ytimg.com; media-src 'none'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.google.com; style-src 'self' 'unsafe-inline' https://p.typekit.net https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://use.typekit.net; worker-src 'self'; base-uri 'none'; frame-ancestors 'self'; report-uri https://cyberveille.esante.gouv.fr/report-uri/enforce",
-							"otherinfo": "The directive(s): form-action is/are among the directives that do not fallback to default-src."
-						},
-						{
-							"id": "54",
-							"uri": "https://cyberveille.esante.gouv.fr/core/*.jpg",
-							"method": "GET",
-							"param": "content-security-policy",
-							"attack": "",
-							"evidence": "default-src 'self'; child-src 'none'; connect-src 'self' https://use.typekit.net https://p.typekit.net https://cdnjs.cloudflare.com/ajax/libs/cropper https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.css https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.js; font-src 'self' https://use.typekit.net; frame-src 'self' https://www.youtube-nocookie.com; img-src 'self' data: https://i.ytimg.com; media-src 'none'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.google.com; style-src 'self' 'unsafe-inline' https://p.typekit.net https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://use.typekit.net; worker-src 'self'; base-uri 'none'; frame-ancestors 'self'; report-uri https://cyberveille.esante.gouv.fr/report-uri/enforce",
-							"otherinfo": "The directive(s): form-action is/are among the directives that do not fallback to default-src."
-						},
-						{
-							"id": "57",
+							"id": "22",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.js",
 							"method": "GET",
 							"param": "content-security-policy",
@@ -102,13 +121,13 @@
 							"otherinfo": "The directive(s): form-action is/are among the directives that do not fallback to default-src."
 						}
 					],
-					"count": "5",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>The directive(s): form-action is/are among the directives that do not fallback to default-src.</p>",
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "55"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10055",
@@ -121,7 +140,7 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "22",
+							"id": "32",
 							"uri": "https://cyberveille.esante.gouv.fr",
 							"method": "GET",
 							"param": "content-security-policy",
@@ -130,7 +149,7 @@
 							"otherinfo": "script-src includes unsafe-inline."
 						},
 						{
-							"id": "51",
+							"id": "20",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.css",
 							"method": "GET",
 							"param": "content-security-policy",
@@ -139,25 +158,7 @@
 							"otherinfo": "script-src includes unsafe-inline."
 						},
 						{
-							"id": "65",
-							"uri": "https://cyberveille.esante.gouv.fr/core/*.gif",
-							"method": "GET",
-							"param": "content-security-policy",
-							"attack": "",
-							"evidence": "default-src 'self'; child-src 'none'; connect-src 'self' https://use.typekit.net https://p.typekit.net https://cdnjs.cloudflare.com/ajax/libs/cropper https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.css https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.js; font-src 'self' https://use.typekit.net; frame-src 'self' https://www.youtube-nocookie.com; img-src 'self' data: https://i.ytimg.com; media-src 'none'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.google.com; style-src 'self' 'unsafe-inline' https://p.typekit.net https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://use.typekit.net; worker-src 'self'; base-uri 'none'; frame-ancestors 'self'; report-uri https://cyberveille.esante.gouv.fr/report-uri/enforce",
-							"otherinfo": "script-src includes unsafe-inline."
-						},
-						{
-							"id": "55",
-							"uri": "https://cyberveille.esante.gouv.fr/core/*.jpg",
-							"method": "GET",
-							"param": "content-security-policy",
-							"attack": "",
-							"evidence": "default-src 'self'; child-src 'none'; connect-src 'self' https://use.typekit.net https://p.typekit.net https://cdnjs.cloudflare.com/ajax/libs/cropper https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.css https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.js; font-src 'self' https://use.typekit.net; frame-src 'self' https://www.youtube-nocookie.com; img-src 'self' data: https://i.ytimg.com; media-src 'none'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.google.com; style-src 'self' 'unsafe-inline' https://p.typekit.net https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://use.typekit.net; worker-src 'self'; base-uri 'none'; frame-ancestors 'self'; report-uri https://cyberveille.esante.gouv.fr/report-uri/enforce",
-							"otherinfo": "script-src includes unsafe-inline."
-						},
-						{
-							"id": "58",
+							"id": "23",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.js",
 							"method": "GET",
 							"param": "content-security-policy",
@@ -166,13 +167,13 @@
 							"otherinfo": "script-src includes unsafe-inline."
 						}
 					],
-					"count": "5",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>script-src includes unsafe-inline.</p>",
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "55"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10055",
@@ -185,7 +186,7 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "23",
+							"id": "33",
 							"uri": "https://cyberveille.esante.gouv.fr",
 							"method": "GET",
 							"param": "content-security-policy",
@@ -194,7 +195,7 @@
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
-							"id": "53",
+							"id": "21",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.css",
 							"method": "GET",
 							"param": "content-security-policy",
@@ -203,25 +204,7 @@
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
-							"id": "66",
-							"uri": "https://cyberveille.esante.gouv.fr/core/*.gif",
-							"method": "GET",
-							"param": "content-security-policy",
-							"attack": "",
-							"evidence": "default-src 'self'; child-src 'none'; connect-src 'self' https://use.typekit.net https://p.typekit.net https://cdnjs.cloudflare.com/ajax/libs/cropper https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.css https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.js; font-src 'self' https://use.typekit.net; frame-src 'self' https://www.youtube-nocookie.com; img-src 'self' data: https://i.ytimg.com; media-src 'none'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.google.com; style-src 'self' 'unsafe-inline' https://p.typekit.net https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://use.typekit.net; worker-src 'self'; base-uri 'none'; frame-ancestors 'self'; report-uri https://cyberveille.esante.gouv.fr/report-uri/enforce",
-							"otherinfo": "style-src includes unsafe-inline."
-						},
-						{
-							"id": "56",
-							"uri": "https://cyberveille.esante.gouv.fr/core/*.jpg",
-							"method": "GET",
-							"param": "content-security-policy",
-							"attack": "",
-							"evidence": "default-src 'self'; child-src 'none'; connect-src 'self' https://use.typekit.net https://p.typekit.net https://cdnjs.cloudflare.com/ajax/libs/cropper https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.css https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.js; font-src 'self' https://use.typekit.net; frame-src 'self' https://www.youtube-nocookie.com; img-src 'self' data: https://i.ytimg.com; media-src 'none'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.google.com; style-src 'self' 'unsafe-inline' https://p.typekit.net https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://use.typekit.net; worker-src 'self'; base-uri 'none'; frame-ancestors 'self'; report-uri https://cyberveille.esante.gouv.fr/report-uri/enforce",
-							"otherinfo": "style-src includes unsafe-inline."
-						},
-						{
-							"id": "59",
+							"id": "24",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.js",
 							"method": "GET",
 							"param": "content-security-policy",
@@ -230,13 +213,13 @@
 							"otherinfo": "style-src includes unsafe-inline."
 						}
 					],
-					"count": "5",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>style-src includes unsafe-inline.</p>",
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "55"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10038",
@@ -249,7 +232,7 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "87",
+							"id": "82",
 							"uri": "https://cyberveille.esante.gouv.fr/core/",
 							"method": "GET",
 							"param": "",
@@ -258,7 +241,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "91",
+							"id": "84",
 							"uri": "https://cyberveille.esante.gouv.fr/profiles/",
 							"method": "GET",
 							"param": "",
@@ -273,7 +256,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "136"
+					"sourceid": "138"
 				},
 				{
 					"pluginid": "10099",
@@ -286,7 +269,7 @@
 					"desc": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
 					"instances":[ 
 						{
-							"id": "164",
+							"id": "162",
 							"uri": "https://cyberveille.esante.gouv.fr/alertes/palo-alto-cve-2024-9465-2024-10-10",
 							"method": "GET",
 							"param": "",
@@ -301,7 +284,7 @@
 					"reference": "<p>https://www.wsj.com/articles/BL-CIOB-2999</p>",
 					"cweid": "540",
 					"wascid": "13",
-					"sourceid": "5448"
+					"sourceid": "5467"
 				},
 				{
 					"pluginid": "90003",
@@ -314,7 +297,7 @@
 					"desc": "<p>The integrity attribute is missing on a script or link tag served by an external server. The integrity tag prevents an attacker who have gained access to this server from injecting a malicious content.</p>",
 					"instances":[ 
 						{
-							"id": "39",
+							"id": "57",
 							"uri": "https://cyberveille.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -323,16 +306,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "37",
-							"uri": "https://cyberveille.esante.gouv.fr",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link rel='dns-prefetch' href='https://use.typekit.net'>",
-							"otherinfo": ""
-						},
-						{
-							"id": "98",
+							"id": "91",
 							"uri": "https://cyberveille.esante.gouv.fr/comment/reply/",
 							"method": "GET",
 							"param": "",
@@ -341,7 +315,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "81",
+							"id": "78",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.css$",
 							"method": "GET",
 							"param": "",
@@ -350,7 +324,16 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "84",
+							"id": "74",
+							"uri": "https://cyberveille.esante.gouv.fr/core/*.css$",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<link rel='dns-prefetch' href='https://use.typekit.net'>",
+							"otherinfo": ""
+						},
+						{
+							"id": "72",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.js$",
 							"method": "GET",
 							"param": "",
@@ -359,7 +342,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "83",
+							"id": "75",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.svg",
 							"method": "GET",
 							"param": "",
@@ -368,7 +351,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "89",
+							"id": "87",
 							"uri": "https://cyberveille.esante.gouv.fr/profiles/*.css$",
 							"method": "GET",
 							"param": "",
@@ -377,7 +360,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "92",
+							"id": "80",
 							"uri": "https://cyberveille.esante.gouv.fr/profiles/*.js$",
 							"method": "GET",
 							"param": "",
@@ -386,7 +369,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "96",
+							"id": "89",
 							"uri": "https://cyberveille.esante.gouv.fr/profiles/*.svg",
 							"method": "GET",
 							"param": "",
@@ -395,7 +378,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "100",
+							"id": "93",
 							"uri": "https://cyberveille.esante.gouv.fr/search/",
 							"method": "GET",
 							"param": "",
@@ -423,43 +406,7 @@
 					"desc": "<p>The server has responded with a redirect that seems to provide a large response. This may indicate that although the server sent a redirect it also responded with body content (which may include sensitive details, PII, etc.).</p>",
 					"instances":[ 
 						{
-							"id": "176",
-							"uri": "https://cyberveille.esante.gouv.fr/sites/default/files/css/css_cfg7TMayluoYO1typegXQGVMtc9sRxZF6xaqQrHbjOk.css?delta=2&include=eJxFyFEKgCAMANALmTtSzJxOmDY2Dbx9P0FfD55vn9QhoVO4diJ7qInQOZk6QZU7oQRFw2qo7JBtKUr8J66hK0lzphyc0Vop8Hn0Nl5RKSYK&language=fr&theme=cyberveille_theme",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "Location header URI length: 237 [/sites/default/files/css/css_LwNARXIhOBQYqim_xDUFOBewrXo6TvLBtuJV7XQUJ8g.css?delta=2&include=eJxFyFEKgCAMANALmTtSzJxOmDY2Dbx9P0FfD55vn9QhoVO4diJ7qInQOZk6QZU7oQRFw2qo7JBtKUr8J66hK0lzphyc0Vop8Hn0Nl5RKSYK&language=fr&theme=cyberveille_theme].\nPredicted response size: 537.\nResponse Body Length: 1,242."
-						},
-						{
-							"id": "178",
-							"uri": "https://cyberveille.esante.gouv.fr/sites/default/files/css/css_FeKwj3Moxwq6HVZl_8YN2eSx9BDg9fGhnXyHG0gyNcU.css?delta=4&include=eJxFyFEKgCAMANALmTtSzJxOmDY2Dbx9P0FfD55vn9QhoVO4diJ7qInQOZk6QZU7oQRFw2qo7JBtKUr8J66hK0lzphyc0Vop8Hn0Nl5RKSYK&language=fr&theme=cyberveille_theme",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "Location header URI length: 237 [/sites/default/files/css/css_59SuuUvN81lwaTGtftGK5FFoVkAATCiuddeSnoXNedw.css?delta=4&include=eJxFyFEKgCAMANALmTtSzJxOmDY2Dbx9P0FfD55vn9QhoVO4diJ7qInQOZk6QZU7oQRFw2qo7JBtKUr8J66hK0lzphyc0Vop8Hn0Nl5RKSYK&language=fr&theme=cyberveille_theme].\nPredicted response size: 537.\nResponse Body Length: 1,242."
-						},
-						{
-							"id": "177",
-							"uri": "https://cyberveille.esante.gouv.fr/sites/default/files/css/css_IUoX1MtboCkV-O7uY0zLEsu2y4_XJEeEojANVOaauMw.css?delta=3&include=eJxFyFEKgCAMANALmTtSzJxOmDY2Dbx9P0FfD55vn9QhoVO4diJ7qInQOZk6QZU7oQRFw2qo7JBtKUr8J66hK0lzphyc0Vop8Hn0Nl5RKSYK&language=fr&theme=cyberveille_theme",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "Location header URI length: 237 [/sites/default/files/css/css__ETSyxo8GvGD-evcq_RO1VInH758_PmO7zinzum65do.css?delta=3&include=eJxFyFEKgCAMANALmTtSzJxOmDY2Dbx9P0FfD55vn9QhoVO4diJ7qInQOZk6QZU7oQRFw2qo7JBtKUr8J66hK0lzphyc0Vop8Hn0Nl5RKSYK&language=fr&theme=cyberveille_theme].\nPredicted response size: 537.\nResponse Body Length: 1,242."
-						},
-						{
-							"id": "175",
-							"uri": "https://cyberveille.esante.gouv.fr/sites/default/files/css/css_kQtORiLs74GKsieJoh670L9BBJ83px1DueNuOWqftK4.css?delta=0&include=eJxFyFEKgCAMANALmTtSzJxOmDY2Dbx9P0FfD55vn9QhoVO4diJ7qInQOZk6QZU7oQRFw2qo7JBtKUr8J66hK0lzphyc0Vop8Hn0Nl5RKSYK&language=fr&theme=cyberveille_theme",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "Location header URI length: 237 [/sites/default/files/css/css_qY2lAdEpL58_mLyG7RNBR4A_2WE68lhc6DkfcVS3Ikw.css?delta=0&include=eJxFyFEKgCAMANALmTtSzJxOmDY2Dbx9P0FfD55vn9QhoVO4diJ7qInQOZk6QZU7oQRFw2qo7JBtKUr8J66hK0lzphyc0Vop8Hn0Nl5RKSYK&language=fr&theme=cyberveille_theme].\nPredicted response size: 537.\nResponse Body Length: 1,242."
-						},
-						{
-							"id": "95",
+							"id": "86",
 							"uri": "https://cyberveille.esante.gouv.fr/user/logout",
 							"method": "GET",
 							"param": "",
@@ -468,13 +415,13 @@
 							"otherinfo": "Location header URI length: 35 [https://cyberveille.esante.gouv.fr/].\nPredicted response size: 335.\nResponse Body Length: 386."
 						}
 					],
-					"count": "5",
+					"count": "1",
 					"solution": "<p>Ensure that no sensitive information is leaked via redirect responses. Redirect responses should have almost no content.</p>",
-					"otherinfo": "<p>Location header URI length: 237 [/sites/default/files/css/css_LwNARXIhOBQYqim_xDUFOBewrXo6TvLBtuJV7XQUJ8g.css?delta=2&include=eJxFyFEKgCAMANALmTtSzJxOmDY2Dbx9P0FfD55vn9QhoVO4diJ7qInQOZk6QZU7oQRFw2qo7JBtKUr8J66hK0lzphyc0Vop8Hn0Nl5RKSYK&language=fr&theme=cyberveille_theme].</p><p>Predicted response size: 537.</p><p>Response Body Length: 1,242.</p>",
+					"otherinfo": "<p>Location header URI length: 35 [https://cyberveille.esante.gouv.fr/].</p><p>Predicted response size: 335.</p><p>Response Body Length: 386.</p>",
 					"reference": "",
 					"cweid": "201",
 					"wascid": "13",
-					"sourceid": "5630"
+					"sourceid": "149"
 				},
 				{
 					"pluginid": "10055",
@@ -487,7 +434,7 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "18",
+							"id": "27",
 							"uri": "https://cyberveille.esante.gouv.fr",
 							"method": "GET",
 							"param": "content-security-policy",
@@ -496,7 +443,7 @@
 							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
 						},
 						{
-							"id": "47",
+							"id": "17",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.css",
 							"method": "GET",
 							"param": "content-security-policy",
@@ -505,25 +452,7 @@
 							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
 						},
 						{
-							"id": "52",
-							"uri": "https://cyberveille.esante.gouv.fr/core/*.gif",
-							"method": "GET",
-							"param": "content-security-policy",
-							"attack": "",
-							"evidence": "default-src 'self'; child-src 'none'; connect-src 'self' https://use.typekit.net https://p.typekit.net https://cdnjs.cloudflare.com/ajax/libs/cropper https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.css https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.js; font-src 'self' https://use.typekit.net; frame-src 'self' https://www.youtube-nocookie.com; img-src 'self' data: https://i.ytimg.com; media-src 'none'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.google.com; style-src 'self' 'unsafe-inline' https://p.typekit.net https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://use.typekit.net; worker-src 'self'; base-uri 'none'; frame-ancestors 'self'; report-uri https://cyberveille.esante.gouv.fr/report-uri/enforce",
-							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
-						},
-						{
-							"id": "48",
-							"uri": "https://cyberveille.esante.gouv.fr/core/*.jpg",
-							"method": "GET",
-							"param": "content-security-policy",
-							"attack": "",
-							"evidence": "default-src 'self'; child-src 'none'; connect-src 'self' https://use.typekit.net https://p.typekit.net https://cdnjs.cloudflare.com/ajax/libs/cropper https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.css https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.js; font-src 'self' https://use.typekit.net; frame-src 'self' https://www.youtube-nocookie.com; img-src 'self' data: https://i.ytimg.com; media-src 'none'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.google.com; style-src 'self' 'unsafe-inline' https://p.typekit.net https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://use.typekit.net; worker-src 'self'; base-uri 'none'; frame-ancestors 'self'; report-uri https://cyberveille.esante.gouv.fr/report-uri/enforce",
-							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
-						},
-						{
-							"id": "50",
+							"id": "18",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.js",
 							"method": "GET",
 							"param": "content-security-policy",
@@ -532,13 +461,13 @@
 							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
 						}
 					],
-					"count": "5",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>Warnings:</p><p>The report-uri directive has been deprecated in favor of the new report-to directive</p><p></p>",
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "55"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10110",
@@ -551,7 +480,7 @@
 					"desc": "<p>A dangerous JS function seems to be in use that would leave the site vulnerable.</p>",
 					"instances":[ 
 						{
-							"id": "137",
+							"id": "129",
 							"uri": "https://cyberveille.esante.gouv.fr/libraries/tarteaucitron/tarteaucitron.js?v=0",
 							"method": "GET",
 							"param": "",
@@ -566,7 +495,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "5335"
+					"sourceid": "5361"
 				},
 				{
 					"pluginid": "90004",
@@ -579,7 +508,7 @@
 					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
 					"instances":[ 
 						{
-							"id": "29",
+							"id": "49",
 							"uri": "https://cyberveille.esante.gouv.fr",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
@@ -588,7 +517,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "106",
+							"id": "98",
 							"uri": "https://cyberveille.esante.gouv.fr/filter/tips",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
@@ -615,7 +544,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "30",
+							"id": "50",
 							"uri": "https://cyberveille.esante.gouv.fr",
 							"method": "GET",
 							"param": "Cross-Origin-Embedder-Policy",
@@ -624,7 +553,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "107",
+							"id": "100",
 							"uri": "https://cyberveille.esante.gouv.fr/filter/tips",
 							"method": "GET",
 							"param": "Cross-Origin-Embedder-Policy",
@@ -642,7 +571,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "32",
+							"id": "51",
 							"uri": "https://cyberveille.esante.gouv.fr",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
@@ -651,7 +580,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "108",
+							"id": "101",
 							"uri": "https://cyberveille.esante.gouv.fr/filter/tips",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
@@ -675,7 +604,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy</p>",
 					"cweid": "693",
 					"wascid": "14",
-					"sourceid": "1"
+					"sourceid": "55"
 				},
 				{
 					"pluginid": "10063",
@@ -688,7 +617,7 @@
 					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
 					"instances":[ 
 						{
-							"id": "28",
+							"id": "48",
 							"uri": "https://cyberveille.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -697,7 +626,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "62",
+							"id": "28",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.css",
 							"method": "GET",
 							"param": "",
@@ -706,7 +635,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "79",
+							"id": "71",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.css$",
 							"method": "GET",
 							"param": "",
@@ -715,7 +644,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "70",
+							"id": "46",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.gif",
 							"method": "GET",
 							"param": "",
@@ -724,7 +653,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "72",
+							"id": "62",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.jpeg",
 							"method": "GET",
 							"param": "",
@@ -733,7 +662,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "64",
+							"id": "45",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.jpg",
 							"method": "GET",
 							"param": "",
@@ -742,7 +671,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "68",
+							"id": "34",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.js",
 							"method": "GET",
 							"param": "",
@@ -751,7 +680,16 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "77",
+							"id": "69",
+							"uri": "https://cyberveille.esante.gouv.fr/core/*.js$",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "64",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.png",
 							"method": "GET",
 							"param": "",
@@ -760,7 +698,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "74",
+							"id": "66",
 							"uri": "https://cyberveille.esante.gouv.fr/profiles/*.css",
 							"method": "GET",
 							"param": "",
@@ -769,7 +707,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "80",
+							"id": "70",
 							"uri": "https://cyberveille.esante.gouv.fr/profiles/*.gif",
 							"method": "GET",
 							"param": "",
@@ -778,7 +716,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "78",
+							"id": "68",
 							"uri": "https://cyberveille.esante.gouv.fr/profiles/*.js",
 							"method": "GET",
 							"param": "",
@@ -787,13 +725,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "55"
 				},
 				{
 					"pluginid": "2",
@@ -806,7 +744,7 @@
 					"desc": "<p>A private IP (such as 10.x.x.x, 172.x.x.x, 192.168.x.x) or an Amazon EC2 private hostname (for example, ip-10-0-56-78) has been found in the HTTP response body. This information might be helpful for further attacks targeting internal systems.</p>",
 					"instances":[ 
 						{
-							"id": "169",
+							"id": "167",
 							"uri": "https://cyberveille.esante.gouv.fr/alertes/dell-cve-2024-48837-2024-11-12",
 							"method": "GET",
 							"param": "",
@@ -815,7 +753,16 @@
 							"otherinfo": "10.5.4.13\n10.5.5.12\n10.5.6.6\n10.5.5.12\n10.5.6.6\n"
 						},
 						{
-							"id": "167",
+							"id": "178",
+							"uri": "https://cyberveille.esante.gouv.fr/alertes/exploitation-dune-vulnerabilite-sur-oracle-weblogic-2019-05-14",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "10.3.6.0",
+							"otherinfo": "10.3.6.0\n"
+						},
+						{
+							"id": "165",
 							"uri": "https://cyberveille.esante.gouv.fr/alertes/hpe-aruba-cve-2024-42509-2024-11-06",
 							"method": "GET",
 							"param": "",
@@ -824,7 +771,7 @@
 							"otherinfo": "10.4.1.5\n10.4.1.5\n10.7.0.0\n"
 						},
 						{
-							"id": "168",
+							"id": "166",
 							"uri": "https://cyberveille.esante.gouv.fr/alertes/hpe-aruba-cve-2024-47460-2024-11-07",
 							"method": "GET",
 							"param": "",
@@ -833,7 +780,7 @@
 							"otherinfo": "10.4.1.5\n10.4.1.5\n10.7.0.0\n"
 						},
 						{
-							"id": "163",
+							"id": "161",
 							"uri": "https://cyberveille.esante.gouv.fr/alertes/mitel-cve-2024-42514-2024-10-02",
 							"method": "GET",
 							"param": "",
@@ -842,7 +789,7 @@
 							"otherinfo": "10.1.0.4\n10.1.0.5\n10.0.0.4\n"
 						},
 						{
-							"id": "180",
+							"id": "176",
 							"uri": "https://cyberveille.esante.gouv.fr/alertes/sonicwall-cve-2024-45318-2024-12-06",
 							"method": "GET",
 							"param": "",
@@ -851,7 +798,7 @@
 							"otherinfo": "10.2.1.13\n10.2.1.14\n"
 						},
 						{
-							"id": "181",
+							"id": "177",
 							"uri": "https://cyberveille.esante.gouv.fr/alertes/une-vulnerabilite-de-type-jour-zero-decouverte-sur-oracle-weblogic-2019-05-09",
 							"method": "GET",
 							"param": "",
@@ -860,7 +807,7 @@
 							"otherinfo": "10.3.6.0\n"
 						},
 						{
-							"id": "170",
+							"id": "168",
 							"uri": "https://cyberveille.esante.gouv.fr/alertes/veritas-netbackup-cve-2024-52945-2024-11-18",
 							"method": "GET",
 							"param": "",
@@ -869,7 +816,7 @@
 							"otherinfo": "10.0.0.1\n10.2.0.1\n10.3.0.1\n10.4.0.1\n10.3.0.1\n10.4.0.1\n"
 						},
 						{
-							"id": "179",
+							"id": "175",
 							"uri": "https://cyberveille.esante.gouv.fr/alertes/veritas-netbackup-cve-2024-54664-2024-12-04",
 							"method": "GET",
 							"param": "",
@@ -878,7 +825,7 @@
 							"otherinfo": "10.2.0.1\n10.3.0.1\n10.4.0.1\n10.2.0.1\n10.3.0.1\n10.4.0.1\n"
 						},
 						{
-							"id": "142",
+							"id": "130",
 							"uri": "https://cyberveille.esante.gouv.fr/sites/default/files/media/image/2024-11/Label_Cert_Sante_0.svg",
 							"method": "GET",
 							"param": "",
@@ -887,13 +834,13 @@
 							"otherinfo": "10.95.59.53\n10.15.06.58\n"
 						}
 					],
-					"count": "9",
+					"count": "10",
 					"solution": "<p>Remove the private IP address from the HTTP response body. For comments, use JSP/ASP/PHP comment instead of HTML/JavaScript comment which can be seen by client browsers.</p>",
 					"otherinfo": "<p>10.5.4.13</p><p>10.5.5.12</p><p>10.5.6.6</p><p>10.5.5.12</p><p>10.5.6.6</p><p></p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc1918</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "5555"
+					"sourceid": "5573"
 				},
 				{
 					"pluginid": "10035",
@@ -906,7 +853,7 @@
 					"desc": "<p>HTTP Strict Transport Security (HSTS) is a web security policy mechanism whereby a web server declares that complying user agents (such as a web browser) are to interact with it using only secure HTTPS connections (i.e. HTTP layered over TLS/SSL). HSTS is an IETF standards track protocol and is specified in RFC 6797.</p>",
 					"instances":[ 
 						{
-							"id": "88",
+							"id": "83",
 							"uri": "https://cyberveille.esante.gouv.fr/core/",
 							"method": "GET",
 							"param": "",
@@ -915,7 +862,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "119",
+							"id": "114",
 							"uri": "https://cyberveille.esante.gouv.fr/index.php/*/media/oembed",
 							"method": "GET",
 							"param": "",
@@ -924,7 +871,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "116",
+							"id": "107",
 							"uri": "https://cyberveille.esante.gouv.fr/index.php/comment/reply/",
 							"method": "GET",
 							"param": "",
@@ -933,7 +880,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "117",
+							"id": "110",
 							"uri": "https://cyberveille.esante.gouv.fr/index.php/filter/tips",
 							"method": "GET",
 							"param": "",
@@ -942,7 +889,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "118",
+							"id": "112",
 							"uri": "https://cyberveille.esante.gouv.fr/index.php/media/oembed",
 							"method": "GET",
 							"param": "",
@@ -951,7 +898,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "113",
+							"id": "108",
 							"uri": "https://cyberveille.esante.gouv.fr/index.php/search/",
 							"method": "GET",
 							"param": "",
@@ -960,7 +907,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "122",
+							"id": "109",
 							"uri": "https://cyberveille.esante.gouv.fr/index.php/user/login",
 							"method": "GET",
 							"param": "",
@@ -969,7 +916,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "115",
+							"id": "113",
 							"uri": "https://cyberveille.esante.gouv.fr/index.php/user/logout",
 							"method": "GET",
 							"param": "",
@@ -978,7 +925,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "120",
+							"id": "111",
 							"uri": "https://cyberveille.esante.gouv.fr/index.php/user/password",
 							"method": "GET",
 							"param": "",
@@ -987,7 +934,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "121",
+							"id": "115",
 							"uri": "https://cyberveille.esante.gouv.fr/index.php/user/register",
 							"method": "GET",
 							"param": "",
@@ -996,7 +943,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "93",
+							"id": "85",
 							"uri": "https://cyberveille.esante.gouv.fr/profiles/",
 							"method": "GET",
 							"param": "",
@@ -1020,7 +967,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "136"
+					"sourceid": "138"
 				},
 				{
 					"pluginid": "10096",
@@ -1033,7 +980,7 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server. - Unix</p>",
 					"instances":[ 
 						{
-							"id": "165",
+							"id": "163",
 							"uri": "https://cyberveille.esante.gouv.fr/alertes/linux-cve-2024-50080-2024-11-04",
 							"method": "GET",
 							"param": "",
@@ -1043,6 +990,15 @@
 						},
 						{
 							"id": "173",
+							"uri": "https://cyberveille.esante.gouv.fr/alertes/linux-cve-2024-50288-2024-11-22",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "2024111950",
+							"otherinfo": "2024111950, which evaluates to: 2034-02-21 05:19:10."
+						},
+						{
+							"id": "171",
 							"uri": "https://cyberveille.esante.gouv.fr/alertes/linux-cve-2024-50290-2024-11-21",
 							"method": "GET",
 							"param": "",
@@ -1051,7 +1007,7 @@
 							"otherinfo": "2024111953, which evaluates to: 2034-02-21 05:19:13."
 						},
 						{
-							"id": "171",
+							"id": "169",
 							"uri": "https://cyberveille.esante.gouv.fr/alertes/linux-cve-2024-50291-2024-11-19",
 							"method": "GET",
 							"param": "",
@@ -1060,58 +1016,49 @@
 							"otherinfo": "2024111954, which evaluates to: 2034-02-21 05:19:14."
 						},
 						{
-							"id": "133",
-							"uri": "https://cyberveille.esante.gouv.fr/alertes/linuxjuniper-cve-2024-38541-2025-05-16",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "2024061948",
-							"otherinfo": "2024061948, which evaluates to: 2034-02-20 15:25:48."
-						},
-						{
-							"id": "132",
+							"id": "125",
 							"uri": "https://cyberveille.esante.gouv.fr/avertir-un-etablissement",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1747533148",
-							"otherinfo": "1747533148, which evaluates to: 2025-05-18 01:52:28."
+							"evidence": "1748138090",
+							"otherinfo": "1748138090, which evaluates to: 2025-05-25 01:54:50."
 						},
 						{
-							"id": "105",
+							"id": "102",
 							"uri": "https://cyberveille.esante.gouv.fr/user/password",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1747533145",
-							"otherinfo": "1747533145, which evaluates to: 2025-05-18 01:52:25."
+							"evidence": "1748138087",
+							"otherinfo": "1748138087, which evaluates to: 2025-05-25 01:54:47."
 						},
 						{
-							"id": "112",
+							"id": "106",
 							"uri": "https://cyberveille.esante.gouv.fr/user/register",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1747533145",
-							"otherinfo": "1747533145, which evaluates to: 2025-05-18 01:52:25."
+							"evidence": "1748138087",
+							"otherinfo": "1748138087, which evaluates to: 2025-05-25 01:54:47."
 						},
 						{
-							"id": "147",
+							"id": "137",
 							"uri": "https://cyberveille.esante.gouv.fr/user/password",
 							"method": "POST",
 							"param": "",
 							"attack": "",
-							"evidence": "1747533152",
-							"otherinfo": "1747533152, which evaluates to: 2025-05-18 01:52:32."
+							"evidence": "1748138093",
+							"otherinfo": "1748138093, which evaluates to: 2025-05-25 01:54:53."
 						},
 						{
-							"id": "160",
+							"id": "158",
 							"uri": "https://cyberveille.esante.gouv.fr/user/register",
 							"method": "POST",
 							"param": "",
 							"attack": "",
-							"evidence": "1747533153",
-							"otherinfo": "1747533153, which evaluates to: 2025-05-18 01:52:33."
+							"evidence": "1748138094",
+							"otherinfo": "1748138094, which evaluates to: 2025-05-25 01:54:54."
 						}
 					],
 					"count": "9",
@@ -1120,7 +1067,7 @@
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "5533"
+					"sourceid": "5552"
 				},
 				{
 					"pluginid": "10094",
@@ -1133,7 +1080,7 @@
 					"desc": "<p>Base64 encoded data was disclosed by the application/web server. Note: in the interests of performance not all base64 strings in the response were analyzed individually, the entire response should be looked at by the analyst/security team/developer(s).</p>",
 					"instances":[ 
 						{
-							"id": "40",
+							"id": "58",
 							"uri": "https://cyberveille.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -1142,7 +1089,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\r\\x0004\uFFFD\\x0011\\x0010^\uFFFD@-;<Q+I\uFFFD\\x0002\\x0001\\x0006q\uFFFD\\x0005N^pDF\uFFFDE~\uFFFD\uFFFD\uFFFD"
 						},
 						{
-							"id": "99",
+							"id": "92",
 							"uri": "https://cyberveille.esante.gouv.fr/comment/reply/",
 							"method": "GET",
 							"param": "",
@@ -1151,7 +1098,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFDc~}6\\x0012\uFFFDn\uFFFDoBo\uFFFD6.4\\x0013\uFFFD\\x000e\uFFFD\uFFFD~\\x0002\\x000bgik\uFFFD\uFFFD\uFFFD\\x0000$"
 						},
 						{
-							"id": "82",
+							"id": "79",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.css$",
 							"method": "GET",
 							"param": "",
@@ -1160,7 +1107,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFDc~}6\\x0012\uFFFDn\uFFFDoBo\uFFFD6.4\\x0013\uFFFD\\x000e\uFFFD\uFFFD~\\x0002\\x000bgik\uFFFD\uFFFD\uFFFD\\x0000$"
 						},
 						{
-							"id": "86",
+							"id": "73",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.js$",
 							"method": "GET",
 							"param": "",
@@ -1169,7 +1116,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFDc~}6\\x0012\uFFFDn\uFFFDoBo\uFFFD6.4\\x0013\uFFFD\\x000e\uFFFD\uFFFD~\\x0002\\x000bgik\uFFFD\uFFFD\uFFFD\\x0000$"
 						},
 						{
-							"id": "85",
+							"id": "76",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.svg",
 							"method": "GET",
 							"param": "",
@@ -1178,7 +1125,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFDc~}6\\x0012\uFFFDn\uFFFDoBo\uFFFD6.4\\x0013\uFFFD\\x000e\uFFFD\uFFFD~\\x0002\\x000bgik\uFFFD\uFFFD\uFFFD\\x0000$"
 						},
 						{
-							"id": "110",
+							"id": "105",
 							"uri": "https://cyberveille.esante.gouv.fr/filter/tips",
 							"method": "GET",
 							"param": "",
@@ -1187,7 +1134,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFDc~}6\\x0012\uFFFDn\uFFFDoBo\uFFFD6.4\\x0013\uFFFD\\x000e\uFFFD\uFFFD~\\x0002\\x000bgik\uFFFD\uFFFD\uFFFD\\x0000$"
 						},
 						{
-							"id": "90",
+							"id": "88",
 							"uri": "https://cyberveille.esante.gouv.fr/profiles/*.css$",
 							"method": "GET",
 							"param": "",
@@ -1196,7 +1143,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFDc~}6\\x0012\uFFFDn\uFFFDoBo\uFFFD6.4\\x0013\uFFFD\\x000e\uFFFD\uFFFD~\\x0002\\x000bgik\uFFFD\uFFFD\uFFFD\\x0000$"
 						},
 						{
-							"id": "94",
+							"id": "81",
 							"uri": "https://cyberveille.esante.gouv.fr/profiles/*.js$",
 							"method": "GET",
 							"param": "",
@@ -1205,7 +1152,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFDc~}6\\x0012\uFFFDn\uFFFDoBo\uFFFD6.4\\x0013\uFFFD\\x000e\uFFFD\uFFFD~\\x0002\\x000bgik\uFFFD\uFFFD\uFFFD\\x0000$"
 						},
 						{
-							"id": "97",
+							"id": "90",
 							"uri": "https://cyberveille.esante.gouv.fr/profiles/*.svg",
 							"method": "GET",
 							"param": "",
@@ -1214,7 +1161,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFDc~}6\\x0012\uFFFDn\uFFFDoBo\uFFFD6.4\\x0013\uFFFD\\x000e\uFFFD\uFFFD~\\x0002\\x000bgik\uFFFD\uFFFD\uFFFD\\x0000$"
 						},
 						{
-							"id": "101",
+							"id": "95",
 							"uri": "https://cyberveille.esante.gouv.fr/search/",
 							"method": "GET",
 							"param": "",
@@ -1223,7 +1170,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFDc~}6\\x0012\uFFFDn\uFFFDoBo\uFFFD6.4\\x0013\uFFFD\\x000e\uFFFD\uFFFD~\\x0002\\x000bgik\uFFFD\uFFFD\uFFFD\\x0000$"
 						},
 						{
-							"id": "114",
+							"id": "104",
 							"uri": "https://cyberveille.esante.gouv.fr/user/password",
 							"method": "GET",
 							"param": "",
@@ -1251,7 +1198,7 @@
 					"desc": "<p>The response appears to contain suspicious comments which may help an attacker.</p>",
 					"instances":[ 
 						{
-							"id": "136",
+							"id": "128",
 							"uri": "https://cyberveille.esante.gouv.fr/libraries/tarteaucitron/tarteaucitron.js?v=0",
 							"method": "GET",
 							"param": "",
@@ -1260,7 +1207,7 @@
 							"otherinfo": "The following pattern was used: \\bTODO\\b and was detected in likely comment: \"// css for the middle bar TODO: add it on the css file\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "138",
+							"id": "127",
 							"uri": "https://cyberveille.esante.gouv.fr/sites/default/files/js/js_4Pz8SIMZ_4ErMDxYZ1owasYM6yk6aW_SBb2i0c9yHCs.js?delta=0&include=eJxtzEEOgzAMRNELUeVIlgmDGDU4yDGNuH2rwgqxm7eYv3WVBv8wQ3r1NzxdPDXkY_wZLAUSC1YktTaEekB0l8zwaunmh1fQjlcrnM6mdIyy7W1JVoMzswariRrX__oCUtQ9JA&language=fr&scope=footer&theme=cyberveille_theme",
 							"method": "GET",
 							"param": "",
@@ -1269,7 +1216,7 @@
 							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in likely comment: \"//popper.js.org/)\");var o=this._element;\"parent\"===this._config.reference?o=i:a.default.isElement(this._config.reference)&&(o=th\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "141",
+							"id": "132",
 							"uri": "https://cyberveille.esante.gouv.fr/sites/default/files/js/js_CqNHoTK7XPMHLgEfGcoA9nKPnixVty61o5ibpNYS6tI.js?delta=1&include=eJxdy0sKgDAMRdENCVlSiOVJg5qWNFrcvd-Rs3sGt3bhBt81gXvxGU4fXw3pGC9DlwUcGStIrA0hHmDZOGl4Mfr5vrhj5Lq1TFZCJ00SWozFdH3qBN1hMU0&language=fr&scope=header&theme=cyberveille_theme",
 							"method": "GET",
 							"param": "",
@@ -1278,7 +1225,7 @@
 							"otherinfo": "The following pattern was used: \\bUSERNAME\\b and was detected in likely comment: \"//,Bt={},_t={},zt=\"*/\".concat(\"*\"),Xt=C.createElement(\"a\");function Ut(o){return function(e,t){\"string\"!=typeof e&&(t=e,e=\"*\");v\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "161",
+							"id": "159",
 							"uri": "https://cyberveille.esante.gouv.fr/sites/default/files/js/js_CqNHoTK7XPMHLgEfGcoA9nKPnixVty61o5ibpNYS6tI.js?delta=1&include=eJxdzEEOgzAMRNELBflIlokcZVTiIMcQ9fYtlFVX899m9ik81E9k5dn9pU4Pf0r5vX6t2DblqNqUxEYK8VCWgzPCu9Gf06jiKIWeXRrseuKpK-_HqGQ9UJAl0I3F0O76APT6ON8&language=fr&scope=header&theme=cyberveille_theme",
 							"method": "GET",
 							"param": "",
@@ -1287,7 +1234,7 @@
 							"otherinfo": "The following pattern was used: \\bUSERNAME\\b and was detected in likely comment: \"//,Bt={},_t={},zt=\"*/\".concat(\"*\"),Xt=C.createElement(\"a\");function Ut(o){return function(e,t){\"string\"!=typeof e&&(t=e,e=\"*\");v\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "143",
+							"id": "135",
 							"uri": "https://cyberveille.esante.gouv.fr/sites/default/files/js/js_CqNHoTK7XPMHLgEfGcoA9nKPnixVty61o5ibpNYS6tI.js?delta=1&include=eJxdzEsOwzAIANELWeFIiFCioNpgYRyrt-931d28zfRFOCQuZcHlcZeAH78q_NhfFq1VME9pAmSjJEUK0kTWDDf4c2EPgVvMTnU7PNp7g0t27HOcYJ56KFOqG5Jp-9QTTN03uw&language=fr&scope=header&theme=cyberveille_theme",
 							"method": "GET",
 							"param": "",
@@ -1296,7 +1243,7 @@
 							"otherinfo": "The following pattern was used: \\bUSERNAME\\b and was detected in likely comment: \"//,Bt={},_t={},zt=\"*/\".concat(\"*\"),Xt=C.createElement(\"a\");function Ut(o){return function(e,t){\"string\"!=typeof e&&(t=e,e=\"*\");v\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "139",
+							"id": "131",
 							"uri": "https://cyberveille.esante.gouv.fr/sites/default/files/js/js_CqNHoTK7XPMHLgEfGcoA9nKPnixVty61o5ibpNYS6tI.js?delta=1&include=eJxtzEEOgzAMRNELUeVIlgmDGDU4yDGNuH2rwgqxm7eYv3WVBv8wQ3r1NzxdPDXkY_wZLAUSC1YktTaEekB0l8zwaunmh1fQjlcrnM6mdIyy7W1JVoMzswariRrX__oCUtQ9JA&language=fr&scope=header&theme=cyberveille_theme",
 							"method": "GET",
 							"param": "",
@@ -1305,7 +1252,7 @@
 							"otherinfo": "The following pattern was used: \\bUSERNAME\\b and was detected in likely comment: \"//,Bt={},_t={},zt=\"*/\".concat(\"*\"),Xt=C.createElement(\"a\");function Ut(o){return function(e,t){\"string\"!=typeof e&&(t=e,e=\"*\");v\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "162",
+							"id": "160",
 							"uri": "https://cyberveille.esante.gouv.fr/sites/default/files/js/js_EdwVLR6cBGRoSaFRAIgylQacO9ovVNAhDPrCZkNMFZg.js?delta=0&include=eJxdzEEOgzAMRNELBflIlokcZVTiIMcQ9fYtlFVX899m9ik81E9k5dn9pU4Pf0r5vX6t2DblqNqUxEYK8VCWgzPCu9Gf06jiKIWeXRrseuKpK-_HqGQ9UJAl0I3F0O76APT6ON8&language=fr&scope=footer&theme=cyberveille_theme",
 							"method": "GET",
 							"param": "",
@@ -1314,7 +1261,7 @@
 							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in likely comment: \"//popper.js.org/)\");var o=this._element;\"parent\"===this._config.reference?o=i:a.default.isElement(this._config.reference)&&(o=th\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "140",
+							"id": "133",
 							"uri": "https://cyberveille.esante.gouv.fr/sites/default/files/js/js_OHqmEM44oZeNEKyFSxX0abtVlZb68hWnaiISFiX0_vI.js?delta=0&include=eJxdy0sKgDAMRdENCVlSiOVJg5qWNFrcvd-Rs3sGt3bhBt81gXvxGU4fXw3pGC9DlwUcGStIrA0hHmDZOGl4Mfr5vrhj5Lq1TFZCJ00SWozFdH3qBN1hMU0&language=fr&scope=footer&theme=cyberveille_theme",
 							"method": "GET",
 							"param": "",
@@ -1323,7 +1270,7 @@
 							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in likely comment: \"//popper.js.org/)\");var o=this._element;\"parent\"===this._config.reference?o=i:a.default.isElement(this._config.reference)&&(o=th\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "146",
+							"id": "134",
 							"uri": "https://cyberveille.esante.gouv.fr/sites/default/files/js/js_UDl8hA9KZ-KY4t_hxcTpoKvfScmtxx3sg8QHQ0BkbIk.js?delta=0&include=eJxdzEsOwzAIANELWeFIiFCioNpgYRyrt-931d28zfRFOCQuZcHlcZeAH78q_NhfFq1VME9pAmSjJEUK0kTWDDf4c2EPgVvMTnU7PNp7g0t27HOcYJ56KFOqG5Jp-9QTTN03uw&language=fr&scope=footer&theme=cyberveille_theme",
 							"method": "GET",
 							"param": "",
@@ -1338,7 +1285,7 @@
 					"reference": "",
 					"cweid": "615",
 					"wascid": "13",
-					"sourceid": "5335"
+					"sourceid": "5361"
 				},
 				{
 					"pluginid": "10109",
@@ -1351,7 +1298,7 @@
 					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
 					"instances":[ 
 						{
-							"id": "127",
+							"id": "121",
 							"uri": "https://cyberveille.esante.gouv.fr/alertes-et-vulnerabilites",
 							"method": "GET",
 							"param": "",
@@ -1360,7 +1307,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "128",
+							"id": "120",
 							"uri": "https://cyberveille.esante.gouv.fr/liste/actualites",
 							"method": "GET",
 							"param": "",
@@ -1369,7 +1316,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "130",
+							"id": "123",
 							"uri": "https://cyberveille.esante.gouv.fr/liste/evenements",
 							"method": "GET",
 							"param": "",
@@ -1378,7 +1325,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "129",
+							"id": "122",
 							"uri": "https://cyberveille.esante.gouv.fr/liste/indicateurs",
 							"method": "GET",
 							"param": "",
@@ -1387,7 +1334,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "131",
+							"id": "124",
 							"uri": "https://cyberveille.esante.gouv.fr/liste/retours-d-experience",
 							"method": "GET",
 							"param": "",
@@ -1396,7 +1343,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "135",
+							"id": "126",
 							"uri": "https://cyberveille.esante.gouv.fr/sitemap",
 							"method": "GET",
 							"param": "",
@@ -1411,7 +1358,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1966"
+					"sourceid": "1510"
 				},
 				{
 					"pluginid": "10015",
@@ -1424,7 +1371,7 @@
 					"desc": "<p>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</p>",
 					"instances":[ 
 						{
-							"id": "17",
+							"id": "25",
 							"uri": "https://cyberveille.esante.gouv.fr",
 							"method": "GET",
 							"param": "cache-control",
@@ -1433,7 +1380,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "125",
+							"id": "118",
 							"uri": "https://cyberveille.esante.gouv.fr/",
 							"method": "GET",
 							"param": "cache-control",
@@ -1442,7 +1389,16 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "103",
+							"id": "116",
+							"uri": "https://cyberveille.esante.gouv.fr/contact",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=300, public",
+							"otherinfo": ""
+						},
+						{
+							"id": "94",
 							"uri": "https://cyberveille.esante.gouv.fr/filter/tips",
 							"method": "GET",
 							"param": "cache-control",
@@ -1451,7 +1407,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "123",
+							"id": "117",
 							"uri": "https://cyberveille.esante.gouv.fr/les-missions",
 							"method": "GET",
 							"param": "cache-control",
@@ -1460,8 +1416,8 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "126",
-							"uri": "https://cyberveille.esante.gouv.fr/les-services",
+							"id": "119",
+							"uri": "https://cyberveille.esante.gouv.fr/lobservatoire-des-incidents",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1469,12 +1425,12 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "124",
-							"uri": "https://cyberveille.esante.gouv.fr/lobservatoire-des-incidents",
+							"id": "1",
+							"uri": "https://cyberveille.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
-							"evidence": "max-age=300, public",
+							"evidence": "max-age=31536000",
 							"otherinfo": ""
 						},
 						{
@@ -1487,7 +1443,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "109",
+							"id": "97",
 							"uri": "https://cyberveille.esante.gouv.fr/user/login",
 							"method": "GET",
 							"param": "cache-control",
@@ -1496,7 +1452,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "102",
+							"id": "96",
 							"uri": "https://cyberveille.esante.gouv.fr/user/password",
 							"method": "GET",
 							"param": "cache-control",
@@ -1505,7 +1461,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "104",
+							"id": "103",
 							"uri": "https://cyberveille.esante.gouv.fr/user/register",
 							"method": "GET",
 							"param": "cache-control",
@@ -1514,13 +1470,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "10",
+					"count": "11",
 					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "55"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1533,8 +1489,8 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"id": "44",
-							"uri": "https://cyberveille.esante.gouv.fr",
+							"id": "37",
+							"uri": "https://cyberveille.esante.gouv.fr/core/*.css",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1542,7 +1498,16 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "11",
+							"id": "40",
+							"uri": "https://cyberveille.esante.gouv.fr/core/*.js",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "14",
 							"uri": "https://cyberveille.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -1551,7 +1516,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "15",
+							"id": "13",
 							"uri": "https://cyberveille.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -1560,13 +1525,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "55"
+					"sourceid": "111"
 				},
 				{
 					"pluginid": "90005",
@@ -1579,8 +1544,8 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"id": "43",
-							"uri": "https://cyberveille.esante.gouv.fr",
+							"id": "35",
+							"uri": "https://cyberveille.esante.gouv.fr/core/*.css",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1588,7 +1553,16 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "10",
+							"id": "39",
+							"uri": "https://cyberveille.esante.gouv.fr/core/*.js",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "11",
 							"uri": "https://cyberveille.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -1597,7 +1571,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "14",
+							"id": "12",
 							"uri": "https://cyberveille.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -1606,13 +1580,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "55"
+					"sourceid": "111"
 				},
 				{
 					"pluginid": "90005",
@@ -1625,8 +1599,17 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"id": "41",
-							"uri": "https://cyberveille.esante.gouv.fr",
+							"id": "30",
+							"uri": "https://cyberveille.esante.gouv.fr/core/*.css",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "36",
+							"uri": "https://cyberveille.esante.gouv.fr/core/*.js",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1643,7 +1626,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "13",
+							"id": "10",
 							"uri": "https://cyberveille.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -1652,13 +1635,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "55"
+					"sourceid": "111"
 				},
 				{
 					"pluginid": "90005",
@@ -1671,8 +1654,8 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"id": "45",
-							"uri": "https://cyberveille.esante.gouv.fr",
+							"id": "38",
+							"uri": "https://cyberveille.esante.gouv.fr/core/*.css",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1680,7 +1663,16 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "12",
+							"id": "41",
+							"uri": "https://cyberveille.esante.gouv.fr/core/*.js",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "15",
 							"uri": "https://cyberveille.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -1698,13 +1690,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "55"
+					"sourceid": "111"
 				},
 				{
 					"pluginid": "10049",
@@ -1717,7 +1709,7 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
 					"instances":[ 
 						{
-							"id": "27",
+							"id": "47",
 							"uri": "https://cyberveille.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -1726,7 +1718,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "60",
+							"id": "26",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.css",
 							"method": "GET",
 							"param": "",
@@ -1735,7 +1727,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "69",
+							"id": "44",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.gif",
 							"method": "GET",
 							"param": "",
@@ -1744,7 +1736,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "71",
+							"id": "61",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.jpeg",
 							"method": "GET",
 							"param": "",
@@ -1753,7 +1745,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "63",
+							"id": "43",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.jpg",
 							"method": "GET",
 							"param": "",
@@ -1762,7 +1754,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "67",
+							"id": "31",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.js",
 							"method": "GET",
 							"param": "",
@@ -1771,7 +1763,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "75",
+							"id": "63",
 							"uri": "https://cyberveille.esante.gouv.fr/core/*.png",
 							"method": "GET",
 							"param": "",
@@ -1780,7 +1772,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "73",
+							"id": "65",
 							"uri": "https://cyberveille.esante.gouv.fr/profiles/*.css",
 							"method": "GET",
 							"param": "",
@@ -1789,7 +1781,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "76",
+							"id": "67",
 							"uri": "https://cyberveille.esante.gouv.fr/profiles/*.js",
 							"method": "GET",
 							"param": "",
@@ -1822,7 +1814,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "55"
 				},
 				{
 					"pluginid": "10031",
@@ -1835,16 +1827,61 @@
 					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
 					"instances":[ 
 						{
-							"id": "144",
-							"uri": "https://cyberveille.esante.gouv.fr/recherche?search_api_fulltext=ZAP",
-							"method": "GET",
-							"param": "search_api_fulltext",
+							"id": "148",
+							"uri": "https://cyberveille.esante.gouv.fr/user/login",
+							"method": "POST",
+							"param": "eyecolor",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/recherche?search_api_fulltext=ZAP\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nsearch_api_fulltext=ZAP\n\nThe user-controlled value was:\nzap"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/user/login\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\neyecolor=ZAP\n\nThe user-controlled value was:\nzap"
 						},
 						{
-							"id": "148",
+							"id": "152",
+							"uri": "https://cyberveille.esante.gouv.fr/user/login",
+							"method": "POST",
+							"param": "form_id",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/user/login\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nform_id=user_login_form\n\nThe user-controlled value was:\nuser_login_form"
+						},
+						{
+							"id": "153",
+							"uri": "https://cyberveille.esante.gouv.fr/user/login",
+							"method": "POST",
+							"param": "honeypot_time",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/user/login\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nhoneypot_time=Wd3dv14usTSP97a0_oHxMpmminy0pGUxPsmiWR5axuU\n\nThe user-controlled value was:\nwd3dv14ustsp97a0_ohxmpmminy0pguxpsmiwr5axuu"
+						},
+						{
+							"id": "149",
+							"uri": "https://cyberveille.esante.gouv.fr/user/login",
+							"method": "POST",
+							"param": "name",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/user/login\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nname=ZAP\n\nThe user-controlled value was:\nzap"
+						},
+						{
+							"id": "154",
+							"uri": "https://cyberveille.esante.gouv.fr/user/login",
+							"method": "POST",
+							"param": "op",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/user/login\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nop=Connexion\n\nThe user-controlled value was:\nconnexion"
+						},
+						{
+							"id": "151",
+							"uri": "https://cyberveille.esante.gouv.fr/user/login",
+							"method": "POST",
+							"param": "pass",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/user/login\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\npass=ZAP\n\nThe user-controlled value was:\nzap"
+						},
+						{
+							"id": "138",
 							"uri": "https://cyberveille.esante.gouv.fr/user/password",
 							"method": "POST",
 							"param": "captcha_response",
@@ -1853,25 +1890,25 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/user/password\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\ncaptcha_response=ZAP\n\nThe user-controlled value was:\nzap"
 						},
 						{
-							"id": "153",
+							"id": "143",
 							"uri": "https://cyberveille.esante.gouv.fr/user/password",
 							"method": "POST",
 							"param": "captcha_sid",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/user/password\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\ncaptcha_sid=195322\n\nThe user-controlled value was:\n195322"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/user/password\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\ncaptcha_sid=195428\n\nThe user-controlled value was:\n195428"
 						},
 						{
-							"id": "154",
+							"id": "144",
 							"uri": "https://cyberveille.esante.gouv.fr/user/password",
 							"method": "POST",
 							"param": "captcha_token",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/user/password\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\ncaptcha_token=7uoTXWow7zfJ_LnGr3U0rw9rgWmuE7OBbRS5NlUvK1Q\n\nThe user-controlled value was:\n7uotxwow7zfj_lngr3u0rw9rgwmue7obbrs5nluvk1q"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/user/password\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\ncaptcha_token=9oj-rqe95kwPQU3sneWpuALgaYlMD_GEqpViKTEQ-CY\n\nThe user-controlled value was:\n9oj-rqe95kwpqu3snewpualgaylmd_geqpvikteq-cy"
 						},
 						{
-							"id": "149",
+							"id": "139",
 							"uri": "https://cyberveille.esante.gouv.fr/user/password",
 							"method": "POST",
 							"param": "eyecolor",
@@ -1880,7 +1917,7 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/user/password\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\neyecolor=ZAP\n\nThe user-controlled value was:\nzap"
 						},
 						{
-							"id": "151",
+							"id": "141",
 							"uri": "https://cyberveille.esante.gouv.fr/user/password",
 							"method": "POST",
 							"param": "form_id",
@@ -1889,16 +1926,16 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/user/password\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nform_id=user_pass\n\nThe user-controlled value was:\nuser_pass"
 						},
 						{
-							"id": "152",
+							"id": "142",
 							"uri": "https://cyberveille.esante.gouv.fr/user/password",
 							"method": "POST",
 							"param": "honeypot_time",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/user/password\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nhoneypot_time=HKQrmJzZYgtujykze8S3LYiJijRN8_To6sXcG3aZC90\n\nThe user-controlled value was:\nhkqrmjzzygtujykze8s3lyijijrn8_to6sxcg3azc90"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/user/password\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nhoneypot_time=2Ct9Vi-RIqXU80qSUlM2JoHjpcSLOA_tLGDM-L0uVhg\n\nThe user-controlled value was:\n2ct9vi-riqxu80qsulm2johjpcsloa_tlgdm-l0uvhg"
 						},
 						{
-							"id": "150",
+							"id": "140",
 							"uri": "https://cyberveille.esante.gouv.fr/user/password",
 							"method": "POST",
 							"param": "name",
@@ -1907,7 +1944,7 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/user/password\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nname=ZAP\n\nThe user-controlled value was:\nzap"
 						},
 						{
-							"id": "155",
+							"id": "145",
 							"uri": "https://cyberveille.esante.gouv.fr/user/password",
 							"method": "POST",
 							"param": "op",
@@ -1916,13 +1953,13 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://cyberveille.esante.gouv.fr/user/password\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nop=Soumettre\n\nThe user-controlled value was:\nsoumettre"
 						}
 					],
-					"count": "9",
+					"count": "14",
 					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
-					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://cyberveille.esante.gouv.fr/recherche?search_api_fulltext=ZAP</p><p></p><p>appears to include user input in:</p><p>a(n) [input] tag [value] attribute</p><p></p><p>The user input found was:</p><p>search_api_fulltext=ZAP</p><p></p><p>The user-controlled value was:</p><p>zap</p>",
+					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://cyberveille.esante.gouv.fr/user/login</p><p></p><p>appears to include user input in:</p><p>a(n) [input] tag [value] attribute</p><p></p><p>The user input found was:</p><p>eyecolor=ZAP</p><p></p><p>The user-controlled value was:</p><p>zap</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "5362"
+					"sourceid": "5383"
 				}
 			]
 		}
