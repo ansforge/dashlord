@@ -346,7 +346,7 @@
               "ip"           : "gnius.esante.gouv.fr/37.59.26.43",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "97 >= 60 days"
+              "finding"      : "94 >= 60 days"
           }
 ,         {
               "id"           : "cert_notBefore",
@@ -493,21 +493,42 @@
               "ip"           : "gnius.esante.gouv.fr/37.59.26.43",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "200 OK ('/')"
+              "finding"      : "301 Moved Permanently ('/')"
           }
 ,         {
               "id"           : "HTTP_clock_skew",
               "ip"           : "gnius.esante.gouv.fr/37.59.26.43",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "Got no HTTP time, maybe try different URL?"
+              "finding"      : "-1 seconds from localtime"
           }
 ,         {
-              "id"           : "HSTS",
+              "id"           : "HTTP_headerTime",
               "ip"           : "gnius.esante.gouv.fr/37.59.26.43",
               "port"         : "443",
-              "severity"     : "LOW",
-              "finding"      : "not offered"
+              "severity"     : "INFO",
+              "finding"      : "1748448212"
+          }
+,         {
+              "id"           : "HSTS_time",
+              "ip"           : "gnius.esante.gouv.fr/37.59.26.43",
+              "port"         : "443",
+              "severity"     : "OK",
+              "finding"      : "365 days (=31536000 seconds) > 15552000 seconds"
+          }
+,         {
+              "id"           : "HSTS_subdomains",
+              "ip"           : "gnius.esante.gouv.fr/37.59.26.43",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "only for this domain"
+          }
+,         {
+              "id"           : "HSTS_preload",
+              "ip"           : "gnius.esante.gouv.fr/37.59.26.43",
+              "port"         : "443",
+              "severity"     : "OK",
+              "finding"      : "domain IS marked for preloading"
           }
 ,         {
               "id"           : "HPKP",
@@ -521,7 +542,7 @@
               "ip"           : "gnius.esante.gouv.fr/37.59.26.43",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "No Server banner line in header, interesting!"
+              "finding"      : "Apache"
           }
 ,         {
               "id"           : "banner_application",
@@ -535,14 +556,35 @@
               "ip"           : "gnius.esante.gouv.fr/37.59.26.43",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "0 at '/'"
+              "finding"      : "0 at '/' (30x detected, better try target URL of 30x)"
+          }
+,         {
+              "id"           : "X-Frame-Options",
+              "ip"           : "gnius.esante.gouv.fr/37.59.26.43",
+              "port"         : "443",
+              "severity"     : "OK",
+              "finding"      : "SAMEORIGIN"
+          }
+,         {
+              "id"           : "X-Content-Type-Options",
+              "ip"           : "gnius.esante.gouv.fr/37.59.26.43",
+              "port"         : "443",
+              "severity"     : "OK",
+              "finding"      : "nosniff"
+          }
+,         {
+              "id"           : "X-XSS-Protection",
+              "ip"           : "gnius.esante.gouv.fr/37.59.26.43",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "1; mode=block"
           }
 ,         {
               "id"           : "Cache-Control",
               "ip"           : "gnius.esante.gouv.fr/37.59.26.43",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "no-cache"
+              "finding"      : "max-age=3600, public"
           }
 ,         {
               "id"           : "banner_reverseproxy",
@@ -1042,20 +1084,13 @@
               "ip"           : "gnius.esante.gouv.fr/37.59.26.43",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "A"
-          }
-,         {
-              "id"           : "grade_cap_reason_1",
-              "ip"           : "gnius.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "Grade capped to A. HSTS is not offered"
+              "finding"      : "A+"
           }
 ,         {
               "id"           : "scanTime",
               "ip"           : "gnius.esante.gouv.fr/37.59.26.43",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "53"
+              "finding"      : "93"
           }
 ]
