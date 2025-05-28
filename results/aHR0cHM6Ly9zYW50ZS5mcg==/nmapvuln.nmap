@@ -1,6 +1,6 @@
-# Nmap 7.92 scan initiated Sun May 25 04:02:17 2025 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln sante.fr
+# Nmap 7.92 scan initiated Wed May 28 17:32:27 2025 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln sante.fr
 Nmap scan report for sante.fr (51.68.85.251)
-Host is up (0.089s latency).
+Host is up (0.12s latency).
 Not shown: 995 filtered tcp ports (no-response)
 PORT     STATE  SERVICE   VERSION
 80/tcp   open   http
@@ -28,7 +28,7 @@ PORT     STATE  SERVICE   VERSION
 | fingerprint-strings: 
 |   FourOhFourRequest, HTTPOptions: 
 |     HTTP/1.1 400 Bad Request
-|     date: Sun, 25 May 2025 04:02:37 GMT
+|     date: Wed, 28 May 2025 17:32:49 GMT
 |     content-type: text/html
 |     content-length: 150
 |     age: 0
@@ -46,7 +46,7 @@ PORT     STATE  SERVICE   VERSION
 |     </html>
 |   GetRequest: 
 |     HTTP/1.1 400 Bad Request
-|     date: Sun, 25 May 2025 04:02:36 GMT
+|     date: Wed, 28 May 2025 17:32:48 GMT
 |     content-type: text/html
 |     content-length: 150
 |     age: 0
@@ -62,7 +62,7 @@ PORT     STATE  SERVICE   VERSION
 |     <hr><center>nginx</center>
 |     </body>
 |     </html>
-|   RPCCheck, tor-versions: 
+|   RPCCheck: 
 |     HTTP/1.1 400 Bad request
 |     content-length: 90
 |     cache-control: no-cache
@@ -75,13 +75,19 @@ PORT     STATE  SERVICE   VERSION
 |     HTTP/1.1 400 Bad Request
 |     x-xss-protection: 1; mode=block
 |     x-content-type-options: nosniff
+|     connection: close
+|   tor-versions: 
+|     HTTP/1.1 400 Bad request
+|     content-length: 90
+|     cache-control: no-cache
+|     content-type: text/html
 |_    connection: close
 1027/tcp closed IIS
 1028/tcp closed unknown
 1029/tcp closed ms-lsa
 2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port80-TCP:V=7.92%I=7%D=5/25%Time=68329656%P=x86_64-alpine-linux-musl%r
+SF-Port80-TCP:V=7.92%I=7%D=5/28%Time=683748BA%P=x86_64-alpine-linux-musl%r
 SF:(GetRequest,5D,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\ncontent-len
 SF:gth:\x200\r\nlocation:\x20https:///\r\nconnection:\x20close\r\n\r\n")%r
 SF:(HTTPOptions,5D,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\ncontent-le
@@ -114,40 +120,38 @@ SF:nCache-Control:\x20no-cache\r\nConnection:\x20close\r\nContent-Type:\x2
 SF:0text/html\r\n\r\n<html><body><h1>400\x20Bad\x20request</h1>\nYour\x20b
 SF:rowser\x20sent\x20an\x20invalid\x20request\.\n</body></html>\n");
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port443-TCP:V=7.92%T=SSL%I=7%D=5/25%Time=6832965C%P=x86_64-alpine-linux
+SF-Port443-TCP:V=7.92%T=SSL%I=7%D=5/28%Time=683748C1%P=x86_64-alpine-linux
 SF:-musl%r(GetRequest,182,"HTTP/1\.1\x20400\x20Bad\x20Request\r\ndate:\x20
-SF:Sun,\x2025\x20May\x202025\x2004:02:36\x20GMT\r\ncontent-type:\x20text/h
+SF:Wed,\x2028\x20May\x202025\x2017:32:48\x20GMT\r\ncontent-type:\x20text/h
 SF:tml\r\ncontent-length:\x20150\r\nage:\x200\r\nx-cache:\x20MISS\r\nx-cac
 SF:he-hits:\x200\r\nx-xss-protection:\x201;\x20mode=block\r\nx-content-typ
 SF:e-options:\x20nosniff\r\nconnection:\x20close\r\n\r\n<html>\r\n<head><t
 SF:itle>400\x20Bad\x20Request</title></head>\r\n<body>\r\n<center><h1>400\
 SF:x20Bad\x20Request</h1></center>\r\n<hr><center>nginx</center>\r\n</body
 SF:>\r\n</html>\r\n")%r(HTTPOptions,182,"HTTP/1\.1\x20400\x20Bad\x20Reques
-SF:t\r\ndate:\x20Sun,\x2025\x20May\x202025\x2004:02:37\x20GMT\r\ncontent-t
+SF:t\r\ndate:\x20Wed,\x2028\x20May\x202025\x2017:32:49\x20GMT\r\ncontent-t
 SF:ype:\x20text/html\r\ncontent-length:\x20150\r\nage:\x200\r\nx-cache:\x2
 SF:0MISS\r\nx-cache-hits:\x200\r\nx-xss-protection:\x201;\x20mode=block\r\
 SF:nx-content-type-options:\x20nosniff\r\nconnection:\x20close\r\n\r\n<htm
 SF:l>\r\n<head><title>400\x20Bad\x20Request</title></head>\r\n<body>\r\n<c
 SF:enter><h1>400\x20Bad\x20Request</h1></center>\r\n<hr><center>nginx</cen
 SF:ter>\r\n</body>\r\n</html>\r\n")%r(FourOhFourRequest,182,"HTTP/1\.1\x20
-SF:400\x20Bad\x20Request\r\ndate:\x20Sun,\x2025\x20May\x202025\x2004:02:37
+SF:400\x20Bad\x20Request\r\ndate:\x20Wed,\x2028\x20May\x202025\x2017:32:49
 SF:\x20GMT\r\ncontent-type:\x20text/html\r\ncontent-length:\x20150\r\nage:
 SF:\x200\r\nx-cache:\x20MISS\r\nx-cache-hits:\x200\r\nx-xss-protection:\x2
 SF:01;\x20mode=block\r\nx-content-type-options:\x20nosniff\r\nconnection:\
 SF:x20close\r\n\r\n<html>\r\n<head><title>400\x20Bad\x20Request</title></h
 SF:ead>\r\n<body>\r\n<center><h1>400\x20Bad\x20Request</h1></center>\r\n<h
-SF:r><center>nginx</center>\r\n</body>\r\n</html>\r\n")%r(tor-versions,CF,
+SF:r><center>nginx</center>\r\n</body>\r\n</html>\r\n")%r(tor-versions,75,
 SF:"HTTP/1\.1\x20400\x20Bad\x20request\r\ncontent-length:\x2090\r\ncache-c
 SF:ontrol:\x20no-cache\r\ncontent-type:\x20text/html\r\nconnection:\x20clo
-SF:se\r\n\r\n<html><body><h1>400\x20Bad\x20request</h1>\nYour\x20browser\x
-SF:20sent\x20an\x20invalid\x20request\.\n</body></html>\n")%r(RTSPRequest,
-SF:71,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nx-xss-protection:\x201;\x20mo
-SF:de=block\r\nx-content-type-options:\x20nosniff\r\nconnection:\x20close\
-SF:r\n\r\n")%r(RPCCheck,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\ncontent-
-SF:length:\x2090\r\ncache-control:\x20no-cache\r\ncontent-type:\x20text/ht
-SF:ml\r\nconnection:\x20close\r\n\r\n<html><body><h1>400\x20Bad\x20request
-SF:</h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</body></
-SF:html>\n");
+SF:se\r\n\r\n")%r(RTSPRequest,71,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nx-
+SF:xss-protection:\x201;\x20mode=block\r\nx-content-type-options:\x20nosni
+SF:ff\r\nconnection:\x20close\r\n\r\n")%r(RPCCheck,CF,"HTTP/1\.1\x20400\x2
+SF:0Bad\x20request\r\ncontent-length:\x2090\r\ncache-control:\x20no-cache\
+SF:r\ncontent-type:\x20text/html\r\nconnection:\x20close\r\n\r\n<html><bod
+SF:y><h1>400\x20Bad\x20request</h1>\nYour\x20browser\x20sent\x20an\x20inva
+SF:lid\x20request\.\n</body></html>\n");
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun May 25 04:02:53 2025 -- 1 IP address (1 host up) scanned in 36.04 seconds
+# Nmap done at Wed May 28 17:33:08 2025 -- 1 IP address (1 host up) scanned in 41.33 seconds

@@ -212,7 +212,7 @@ td {
 	</h2>
 
 	<h3>
-		Generated on Sun, 25 May 2025 04:00:31
+		Generated on Wed, 28 May 2025 17:29:56
 	</h3>
 
 	<h3>
@@ -245,7 +245,7 @@ td {
 					<div>Medium</div>
 				</td>
 				<td align="center">
-					<div>2</div>
+					<div>3</div>
 				</td>
 			</tr>
 			<tr>
@@ -299,6 +299,11 @@ td {
 				<td><a href="#10038">Content Security Policy (CSP) Header Not Set</a></td>
 				<td align="center" class="risk-2">Medium</td>
 				<td align="center">2</td>
+			</tr>
+			<tr>
+				<td><a href="#10020">Missing Anti-clickjacking Header</a></td>
+				<td align="center" class="risk-2">Medium</td>
+				<td align="center">1</td>
 			</tr>
 			<tr>
 				<td><a href="#90003">Sub Resource Integrity Attribute Missing</a></td>
@@ -506,6 +511,93 @@ td {
 					<td width="20%">Plugin Id</td>
 					<td width="80%"><a
 						href="https://www.zaproxy.org/docs/alerts/10038/">10038</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
+					<th width="20%" class="risk-2"><a
+						id="10020"></a>
+						<div>Medium</div></th>
+					<th class="risk-2">Missing Anti-clickjacking Header</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>The response does not protect against &#39;ClickJacking&#39; attacks. It should include either Content-Security-Policy with &#39;frame-ancestors&#39; directive or X-Frame-Options.</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://sante.fr">https://sante.fr</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">x-frame-options</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">1</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%">
+							<div>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</div>
+							<br />
+						
+							<div>If you expect the page to be framed only by pages on your server (e.g. it&#39;s part of a FRAMESET) then you&#39;ll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy&#39;s &quot;frame-ancestors&quot; directive.</div>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%">
+							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</a>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/1021.html">1021</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">15</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/10020/">10020</a></td>
 				</tr>
 			</table>
 			<div class="spacer"></div>
@@ -990,7 +1082,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://sante.fr">https://sante.fr</a></td>
+						<td width="80%"><a href="https://sante.fr/robots.txt">https://sante.fr/robots.txt</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1021,7 +1113,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://sante.fr/robots.txt">https://sante.fr/robots.txt</a></td>
+						<td width="80%"><a href="https://sante.fr/sitemap.xml">https://sante.fr/sitemap.xml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1228,12 +1320,12 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">ZVYVaIIawj4MYhoaGDE5QlWevZTqstv1gtK-UNEnrnvgkj-C6s5yzZlRPNXYpFHwx3kV1hcbYZ1XyQz3s8eKe9bL_EKTRgcXSyHxTj3uzcXhter8owFQqK1RXKkjaCMNcaz7xlk78noZGfPmaPTmxtV5_GplEED1KOpk3dE6qtoM-7LSOP7vVXcDmaeFL2zpqdwySo4iQzRY8GT7V3wkQIGGoLc1UR4h7ZUAHlLps5lN6b3BIEMajqYG7ErTqmEoEWOMXKIumhRS1A4fZi4P_MsFuSQlSG5m5CKg4zLa9Dk</td>
+						<td width="80%">lP0b6-U7GNNUdWMfAKdzNk3a9xCcTnHvNzsp3aJmBn6G_TziJFlrdkuJ0XSLpnT03awR-_uTAgFPHIuoKa5qqnHmC_1rBovwXsfhQN5T46JL4Phw_kbYLFBj8axqpJ88DxBaGyF_McfGg__H2GltVCaR5d2f2gFuI7anf1YSDX0LZYgZX7eko8fwOLS-7s5fdKbjYhEgdiimFiHasoVqd8LgjTGeklDFcVs3qZ-ggbJUTBWKOFBzKjtWPfJK8LE2Ftrb4MqYbqR7X2wQqW0WKf7_Y_HQ1pfqOZ944jrRknlx-ou-tHg6V0FVrVZJlSow</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">eVh��&gt;b19BU�������ҾP�&#39;�{��?���r͙Q&lt;�ؤQ��y�a�W���Ǌ{���B�FK!�N=�������P��Q\�#h#q���Y;�z��h����y�je@�(�d��:�����8��Uw���/l��2J�&quot;C4X�d�W|$@����5Q!� R鳙M�� C���JӪa(c�\�.�R�f.���$%Hnf�&quot;��2��9</td>
+						<td width="80%">����;�Tuc �s6M���Nq�7;)ݢf~��&lt;�$YkvK��t��t�ݬ���O��)�j�q��k��^��@�S�K��p�F�,Pc�j��&lt;Z!1�ƃ���imT&amp;��ݟ�n#��V}e�_�����8����_t��b v(�!ڲ�jw���1��P�q[7�����TL�8Ps*;V=�J�6���ʘn�{_l�m)��c��֗�9�x�:ђyq����x:WAU�VI�*0</td>
 					</tr>
 				
 				<tr>
