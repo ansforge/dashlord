@@ -1,6 +1,6 @@
-# Nmap 7.92 scan initiated Sun May 25 02:29:35 2025 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln esante.gouv.fr
+# Nmap 7.92 scan initiated Wed May 28 15:50:02 2025 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln esante.gouv.fr
 Nmap scan report for esante.gouv.fr (37.59.26.43)
-Host is up (0.10s latency).
+Host is up (0.087s latency).
 rDNS record for 37.59.26.43: ns329358.ip-37-59-26.eu
 Not shown: 996 filtered tcp ports (no-response)
 PORT     STATE  SERVICE      VERSION
@@ -27,33 +27,52 @@ PORT     STATE  SERVICE      VERSION
 |_    connection: close
 443/tcp  open   ssl/https    Apache
 | fingerprint-strings: 
-|   GetRequest, HTTPOptions: 
-|     HTTP/1.1 200 OK
-|     cache-control: no-cache
-|     content-type: text/html
+|   FourOhFourRequest: 
+|     HTTP/1.1 503 Service Unavailable
+|     date: Wed, 28 May 2025 15:50:22 GMT
+|     server: Apache
+|     content-length: 299
+|     content-type: text/html; charset=iso-8859-1
+|     strict-transport-security: max-age=31536000; preload
+|     x-xss-protection: 1; mode=block
+|     x-content-type-options: nosniff
+|     x-permitted-cross-domain-policies: none
 |     connection: close
-|     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-|     <html xmlns="http://www.w3.org/1999/xhtml">
-|     <head>
-|     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-|     <meta name="robots" content="noindex, nofollow">
-|     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
-|     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
-|     <style type="text/css">
-|     .ReadMsgBody {
-|     width: 100%;
-|     .ExternalClass {
-|     width: 100%;
-|     .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
-|     line-height: 100%;
-|     body, table, td, a {
-|_    -webkit-text-size-adjust: 100%;
+|     <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+|     <html><head>
+|     <title>503 Service Unavailable</title>
+|     </head><body>
+|     <h1>Service Unavailable</h1>
+|     <p>The server is temporarily unable to service your
+|     request due to maintenance downtime or capacity
+|     problems. Please try again later.</p>
+|     </body></html>
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.1 503 Service Unavailable
+|     date: Wed, 28 May 2025 15:50:21 GMT
+|     server: Apache
+|     content-length: 299
+|     content-type: text/html; charset=iso-8859-1
+|     strict-transport-security: max-age=31536000; preload
+|     x-xss-protection: 1; mode=block
+|     x-content-type-options: nosniff
+|     x-permitted-cross-domain-policies: none
+|     connection: close
+|     <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+|     <html><head>
+|     <title>503 Service Unavailable</title>
+|     </head><body>
+|     <h1>Service Unavailable</h1>
+|     <p>The server is temporarily unable to service your
+|     request due to maintenance downtime or capacity
+|     problems. Please try again later.</p>
+|_    </body></html>
 |_http-server-header: Apache
 1025/tcp closed NFS-or-IIS
 1026/tcp closed LSA-or-nterm
 2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port80-TCP:V=7.92%I=7%D=5/25%Time=6832809D%P=x86_64-alpine-linux-musl%r
+SF-Port80-TCP:V=7.92%I=7%D=5/28%Time=683730B7%P=x86_64-alpine-linux-musl%r
 SF:(GetRequest,5D,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\ncontent-len
 SF:gth:\x200\r\nlocation:\x20https:///\r\nconnection:\x20close\r\n\r\n")%r
 SF:(HTTPOptions,5D,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\ncontent-le
@@ -86,44 +105,43 @@ SF:nCache-Control:\x20no-cache\r\nConnection:\x20close\r\nContent-Type:\x2
 SF:0text/html\r\n\r\n<html><body><h1>400\x20Bad\x20request</h1>\nYour\x20b
 SF:rowser\x20sent\x20an\x20invalid\x20request\.\n</body></html>\n");
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port443-TCP:V=7.92%T=SSL%I=7%D=5/25%Time=683280A4%P=x86_64-alpine-linux
-SF:-musl%r(GetRequest,4000,"HTTP/1\.1\x20200\x20OK\r\ncache-control:\x20no
-SF:-cache\r\ncontent-type:\x20text/html\r\nconnection:\x20close\r\n\r\n<!D
-SF:OCTYPE\x20html\x20PUBLIC\x20\"-//W3C//DTD\x20XHTML\x201\.0\x20Transitio
-SF:nal//EN\"\x20\"http://www\.w3\.org/TR/xhtml1/DTD/xhtml1-transitional\.d
-SF:td\">\r\n<html\x20xmlns=\"http://www\.w3\.org/1999/xhtml\">\r\n\x20\x20
-SF:\x20\x20<head>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20http-equiv=\
-SF:"Content-Type\"\x20content=\"text/html;\x20charset=utf-8\"\x20/>\r\n\t<
-SF:meta\x20name=\"robots\"\x20content=\"noindex,\x20nofollow\">\r\n\x20\x2
-SF:0\x20\x20\x20\x20\x20\x20<meta\x20name=\"viewport\"\x20content=\"width=
-SF:device-width,\x20initial-scale=1\.0,\x20minimum-scale=1\.0,\x20maximum-
-SF:scale=1\.0\"\x20/>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20http-equ
-SF:iv=\"X-UA-Compatible\"\x20content=\"IE=9;\x20IE=8;\x20IE=7;\x20IE=EDGE\
-SF:"\x20/>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<style\x20type=\"text/css\">
-SF:\r\n\.ReadMsgBody\x20{\r\nwidth:\x20100%;\r\n}\r\n\.ExternalClass\x20{\
-SF:r\nwidth:\x20100%;\r\n}\r\n\.ExternalClass,\x20\.ExternalClass\x20p,\x2
-SF:0\.ExternalClass\x20span,\x20\.ExternalClass\x20font,\x20\.ExternalClas
-SF:s\x20td,\x20\.ExternalClass\x20div\x20{\r\nline-height:\x20100%;\r\n}\r
-SF:\nbody,\x20table,\x20td,\x20a\x20{\r\n-webkit-text-size-adjust:\x20100%
-SF:;\r\n-ms")%r(HTTPOptions,4000,"HTTP/1\.1\x20200\x20OK\r\ncache-control:
-SF:\x20no-cache\r\ncontent-type:\x20text/html\r\nconnection:\x20close\r\n\
-SF:r\n<!DOCTYPE\x20html\x20PUBLIC\x20\"-//W3C//DTD\x20XHTML\x201\.0\x20Tra
-SF:nsitional//EN\"\x20\"http://www\.w3\.org/TR/xhtml1/DTD/xhtml1-transitio
-SF:nal\.dtd\">\r\n<html\x20xmlns=\"http://www\.w3\.org/1999/xhtml\">\r\n\x
-SF:20\x20\x20\x20<head>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20http-e
-SF:quiv=\"Content-Type\"\x20content=\"text/html;\x20charset=utf-8\"\x20/>\
-SF:r\n\t<meta\x20name=\"robots\"\x20content=\"noindex,\x20nofollow\">\r\n\
-SF:x20\x20\x20\x20\x20\x20\x20\x20<meta\x20name=\"viewport\"\x20content=\"
-SF:width=device-width,\x20initial-scale=1\.0,\x20minimum-scale=1\.0,\x20ma
-SF:ximum-scale=1\.0\"\x20/>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20ht
-SF:tp-equiv=\"X-UA-Compatible\"\x20content=\"IE=9;\x20IE=8;\x20IE=7;\x20IE
-SF:=EDGE\"\x20/>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<style\x20type=\"text/
-SF:css\">\r\n\.ReadMsgBody\x20{\r\nwidth:\x20100%;\r\n}\r\n\.ExternalClass
-SF:\x20{\r\nwidth:\x20100%;\r\n}\r\n\.ExternalClass,\x20\.ExternalClass\x2
-SF:0p,\x20\.ExternalClass\x20span,\x20\.ExternalClass\x20font,\x20\.Extern
-SF:alClass\x20td,\x20\.ExternalClass\x20div\x20{\r\nline-height:\x20100%;\
-SF:r\n}\r\nbody,\x20table,\x20td,\x20a\x20{\r\n-webkit-text-size-adjust:\x
-SF:20100%;\r\n-ms");
+SF-Port443-TCP:V=7.92%T=SSL%I=7%D=5/28%Time=683730BD%P=x86_64-alpine-linux
+SF:-musl%r(GetRequest,27A,"HTTP/1\.1\x20503\x20Service\x20Unavailable\r\nd
+SF:ate:\x20Wed,\x2028\x20May\x202025\x2015:50:21\x20GMT\r\nserver:\x20Apac
+SF:he\r\ncontent-length:\x20299\r\ncontent-type:\x20text/html;\x20charset=
+SF:iso-8859-1\r\nstrict-transport-security:\x20max-age=31536000;\x20preloa
+SF:d\r\nx-xss-protection:\x201;\x20mode=block\r\nx-content-type-options:\x
+SF:20nosniff\r\nx-permitted-cross-domain-policies:\x20none\r\nconnection:\
+SF:x20close\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-//IETF//DTD\x20HTML\x
+SF:202\.0//EN\">\n<html><head>\n<title>503\x20Service\x20Unavailable</titl
+SF:e>\n</head><body>\n<h1>Service\x20Unavailable</h1>\n<p>The\x20server\x2
+SF:0is\x20temporarily\x20unable\x20to\x20service\x20your\nrequest\x20due\x
+SF:20to\x20maintenance\x20downtime\x20or\x20capacity\nproblems\.\x20Please
+SF:\x20try\x20again\x20later\.</p>\n</body></html>\n")%r(HTTPOptions,27A,"
+SF:HTTP/1\.1\x20503\x20Service\x20Unavailable\r\ndate:\x20Wed,\x2028\x20Ma
+SF:y\x202025\x2015:50:21\x20GMT\r\nserver:\x20Apache\r\ncontent-length:\x2
+SF:0299\r\ncontent-type:\x20text/html;\x20charset=iso-8859-1\r\nstrict-tra
+SF:nsport-security:\x20max-age=31536000;\x20preload\r\nx-xss-protection:\x
+SF:201;\x20mode=block\r\nx-content-type-options:\x20nosniff\r\nx-permitted
+SF:-cross-domain-policies:\x20none\r\nconnection:\x20close\r\n\r\n<!DOCTYP
+SF:E\x20HTML\x20PUBLIC\x20\"-//IETF//DTD\x20HTML\x202\.0//EN\">\n<html><he
+SF:ad>\n<title>503\x20Service\x20Unavailable</title>\n</head><body>\n<h1>S
+SF:ervice\x20Unavailable</h1>\n<p>The\x20server\x20is\x20temporarily\x20un
+SF:able\x20to\x20service\x20your\nrequest\x20due\x20to\x20maintenance\x20d
+SF:owntime\x20or\x20capacity\nproblems\.\x20Please\x20try\x20again\x20late
+SF:r\.</p>\n</body></html>\n")%r(FourOhFourRequest,27A,"HTTP/1\.1\x20503\x
+SF:20Service\x20Unavailable\r\ndate:\x20Wed,\x2028\x20May\x202025\x2015:50
+SF::22\x20GMT\r\nserver:\x20Apache\r\ncontent-length:\x20299\r\ncontent-ty
+SF:pe:\x20text/html;\x20charset=iso-8859-1\r\nstrict-transport-security:\x
+SF:20max-age=31536000;\x20preload\r\nx-xss-protection:\x201;\x20mode=block
+SF:\r\nx-content-type-options:\x20nosniff\r\nx-permitted-cross-domain-poli
+SF:cies:\x20none\r\nconnection:\x20close\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLI
+SF:C\x20\"-//IETF//DTD\x20HTML\x202\.0//EN\">\n<html><head>\n<title>503\x2
+SF:0Service\x20Unavailable</title>\n</head><body>\n<h1>Service\x20Unavaila
+SF:ble</h1>\n<p>The\x20server\x20is\x20temporarily\x20unable\x20to\x20serv
+SF:ice\x20your\nrequest\x20due\x20to\x20maintenance\x20downtime\x20or\x20c
+SF:apacity\nproblems\.\x20Please\x20try\x20again\x20later\.</p>\n</body></
+SF:html>\n");
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun May 25 02:30:22 2025 -- 1 IP address (1 host up) scanned in 46.49 seconds
+# Nmap done at Wed May 28 15:50:41 2025 -- 1 IP address (1 host up) scanned in 39.20 seconds
