@@ -1,6 +1,43 @@
 [
   [
     {
+      "template": "dns/caa-fingerprint.yaml",
+      "template-url": "https://templates.nuclei.sh/public/caa-fingerprint",
+      "template-id": "caa-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/caa-fingerprint.yaml",
+      "info": {
+        "name": "CAA Record",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "caa"
+        ],
+        "description": "A CAA record was discovered. A CAA record is used to specify which certificate authorities (CAs) are allowed to issue certificates for a domain.",
+        "reference": [
+          "https://support.dnsimple.com/articles/caa-record/#whats-a-caa-record"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "wallet.esw.esante.gouv.fr.",
+      "matched-at": "wallet.esw.esante.gouv.fr",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 53322\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;wallet.esw.esante.gouv.fr.\tIN\t CAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 53322\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;wallet.esw.esante.gouv.fr.\tIN\t CAA\n\n;; ANSWER SECTION:\nwallet.esw.esante.gouv.fr.\t300\tIN\tCNAME\twallet.esw.esante.gouv.fr.edgekey.net.\nwallet.esw.esante.gouv.fr.edgekey.net.\t21600\tIN\tCNAME\te17297.b.akamaiedge.net.\n\n;; AUTHORITY SECTION:\nb.akamaiedge.net.\t1000\tIN\tSOA\tn0b.akamaiedge.net. hostmaster.akamai.com. 1749964824 1000 1000 1000 1800\n",
+      "timestamp": "2025-06-15T05:20:24.455318189Z",
+      "matcher-status": true
+    },
+    {
       "template": "dns/dns-saas-service-detection.yaml",
       "template-url": "https://templates.nuclei.sh/public/dns-saas-service-detection",
       "template-id": "dns-saas-service-detection",
@@ -33,46 +70,9 @@
       "extracted-results": [
         "wallet.esw.esante.gouv.fr.edgekey.net."
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 5200\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;wallet.esw.esante.gouv.fr.\tIN\t CNAME\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 5200\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;wallet.esw.esante.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nwallet.esw.esante.gouv.fr.\t300\tIN\tCNAME\twallet.esw.esante.gouv.fr.edgekey.net.\n",
-      "timestamp": "2025-06-08T05:15:34.185821369Z",
-      "matcher-status": true
-    },
-    {
-      "template": "dns/caa-fingerprint.yaml",
-      "template-url": "https://templates.nuclei.sh/public/caa-fingerprint",
-      "template-id": "caa-fingerprint",
-      "template-path": "/home/runner/nuclei-templates/dns/caa-fingerprint.yaml",
-      "info": {
-        "name": "CAA Record",
-        "author": [
-          "pdteam"
-        ],
-        "tags": [
-          "dns",
-          "caa"
-        ],
-        "description": "A CAA record was discovered. A CAA record is used to specify which certificate authorities (CAs) are allowed to issue certificates for a domain.",
-        "reference": [
-          "https://support.dnsimple.com/articles/caa-record/#whats-a-caa-record"
-        ],
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-200"
-          ]
-        }
-      },
-      "type": "dns",
-      "host": "wallet.esw.esante.gouv.fr.",
-      "matched-at": "wallet.esw.esante.gouv.fr",
-      "request": ";; opcode: QUERY, status: NOERROR, id: 49135\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;wallet.esw.esante.gouv.fr.\tIN\t CAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 49135\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;wallet.esw.esante.gouv.fr.\tIN\t CAA\n\n;; ANSWER SECTION:\nwallet.esw.esante.gouv.fr.\t300\tIN\tCNAME\twallet.esw.esante.gouv.fr.edgekey.net.\nwallet.esw.esante.gouv.fr.edgekey.net.\t21600\tIN\tCNAME\te17297.b.akamaiedge.net.\n\n;; AUTHORITY SECTION:\nb.akamaiedge.net.\t1000\tIN\tSOA\tn0b.akamaiedge.net. hostmaster.akamai.com. 1749359735 1000 1000 1000 1800\n",
-      "timestamp": "2025-06-08T05:15:35.358526373Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 47210\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;wallet.esw.esante.gouv.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 47210\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;wallet.esw.esante.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nwallet.esw.esante.gouv.fr.\t300\tIN\tCNAME\twallet.esw.esante.gouv.fr.edgekey.net.\n",
+      "timestamp": "2025-06-15T05:20:24.820564368Z",
       "matcher-status": true
     },
     {
@@ -99,89 +99,9 @@
       "host": "https://wallet.esw.esante.gouv.fr",
       "matched-at": "https://wallet.esw.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 387\r\nContent-Type: text/html\r\nDate: Sun, 08 Jun 2025 05:16:05 GMT\r\nExpires: Sun, 08 Jun 2025 05:16:05 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=15~id=78a0090004951add81b2bc3c5e4c6f34; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;916adc17&#46;1749359765&#46;64106f79\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;916adc17&#46;1749359765&#46;64106f79</P>\n</BODY>\n</HTML>\n",
-      "ip": "104.81.164.214",
-      "timestamp": "2025-06-08T05:16:05.287362961Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "content-security-policy",
-      "type": "http",
-      "host": "https://wallet.esw.esante.gouv.fr",
-      "matched-at": "https://wallet.esw.esante.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 387\r\nContent-Type: text/html\r\nDate: Sun, 08 Jun 2025 05:16:12 GMT\r\nExpires: Sun, 08 Jun 2025 05:16:12 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=88~id=1dd76e42f84866a15a976ea9b8a750d0; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;916adc17&#46;1749359772&#46;64108da0\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;916adc17&#46;1749359772&#46;64108da0</P>\n</BODY>\n</HTML>\n",
-      "ip": "104.81.164.214",
-      "timestamp": "2025-06-08T05:16:12.145710653Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "x-frame-options",
-      "type": "http",
-      "host": "https://wallet.esw.esante.gouv.fr",
-      "matched-at": "https://wallet.esw.esante.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 387\r\nContent-Type: text/html\r\nDate: Sun, 08 Jun 2025 05:16:12 GMT\r\nExpires: Sun, 08 Jun 2025 05:16:12 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=88~id=1dd76e42f84866a15a976ea9b8a750d0; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;916adc17&#46;1749359772&#46;64108da0\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;916adc17&#46;1749359772&#46;64108da0</P>\n</BODY>\n</HTML>\n",
-      "ip": "104.81.164.214",
-      "timestamp": "2025-06-08T05:16:12.1457459Z",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 385\r\nContent-Type: text/html\r\nDate: Sun, 15 Jun 2025 05:20:55 GMT\r\nExpires: Sun, 15 Jun 2025 05:20:55 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=83~id=a2127871ed19162f2f3ab19349edc435; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;d1ed2717&#46;1749964855&#46;3e1bab6\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d1ed2717&#46;1749964855&#46;3e1bab6</P>\n</BODY>\n</HTML>\n",
+      "ip": "173.223.151.63",
+      "timestamp": "2025-06-15T05:20:55.869752744Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -219,9 +139,9 @@
       "host": "https://wallet.esw.esante.gouv.fr",
       "matched-at": "https://wallet.esw.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 387\r\nContent-Type: text/html\r\nDate: Sun, 08 Jun 2025 05:16:12 GMT\r\nExpires: Sun, 08 Jun 2025 05:16:12 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=88~id=1dd76e42f84866a15a976ea9b8a750d0; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;916adc17&#46;1749359772&#46;64108da0\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;916adc17&#46;1749359772&#46;64108da0</P>\n</BODY>\n</HTML>\n",
-      "ip": "104.81.164.214",
-      "timestamp": "2025-06-08T05:16:12.145764725Z",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 385\r\nContent-Type: text/html\r\nDate: Sun, 15 Jun 2025 05:21:02 GMT\r\nExpires: Sun, 15 Jun 2025 05:21:02 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=36~id=0d5e2df8323088ecdf24132692a10f48; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;d1ed2717&#46;1749964862&#46;3e3a361\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d1ed2717&#46;1749964862&#46;3e3a361</P>\n</BODY>\n</HTML>\n",
+      "ip": "173.223.151.63",
+      "timestamp": "2025-06-15T05:21:02.640556944Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -259,129 +179,9 @@
       "host": "https://wallet.esw.esante.gouv.fr",
       "matched-at": "https://wallet.esw.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 387\r\nContent-Type: text/html\r\nDate: Sun, 08 Jun 2025 05:16:12 GMT\r\nExpires: Sun, 08 Jun 2025 05:16:12 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=88~id=1dd76e42f84866a15a976ea9b8a750d0; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;916adc17&#46;1749359772&#46;64108da0\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;916adc17&#46;1749359772&#46;64108da0</P>\n</BODY>\n</HTML>\n",
-      "ip": "104.81.164.214",
-      "timestamp": "2025-06-08T05:16:12.145778621Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "clear-site-data",
-      "type": "http",
-      "host": "https://wallet.esw.esante.gouv.fr",
-      "matched-at": "https://wallet.esw.esante.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 387\r\nContent-Type: text/html\r\nDate: Sun, 08 Jun 2025 05:16:12 GMT\r\nExpires: Sun, 08 Jun 2025 05:16:12 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=88~id=1dd76e42f84866a15a976ea9b8a750d0; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;916adc17&#46;1749359772&#46;64108da0\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;916adc17&#46;1749359772&#46;64108da0</P>\n</BODY>\n</HTML>\n",
-      "ip": "104.81.164.214",
-      "timestamp": "2025-06-08T05:16:12.145797156Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "cross-origin-resource-policy",
-      "type": "http",
-      "host": "https://wallet.esw.esante.gouv.fr",
-      "matched-at": "https://wallet.esw.esante.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 387\r\nContent-Type: text/html\r\nDate: Sun, 08 Jun 2025 05:16:12 GMT\r\nExpires: Sun, 08 Jun 2025 05:16:12 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=88~id=1dd76e42f84866a15a976ea9b8a750d0; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;916adc17&#46;1749359772&#46;64108da0\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;916adc17&#46;1749359772&#46;64108da0</P>\n</BODY>\n</HTML>\n",
-      "ip": "104.81.164.214",
-      "timestamp": "2025-06-08T05:16:12.145809359Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "strict-transport-security",
-      "type": "http",
-      "host": "https://wallet.esw.esante.gouv.fr",
-      "matched-at": "https://wallet.esw.esante.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 387\r\nContent-Type: text/html\r\nDate: Sun, 08 Jun 2025 05:16:12 GMT\r\nExpires: Sun, 08 Jun 2025 05:16:12 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=88~id=1dd76e42f84866a15a976ea9b8a750d0; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;916adc17&#46;1749359772&#46;64108da0\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;916adc17&#46;1749359772&#46;64108da0</P>\n</BODY>\n</HTML>\n",
-      "ip": "104.81.164.214",
-      "timestamp": "2025-06-08T05:16:12.145823386Z",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 385\r\nContent-Type: text/html\r\nDate: Sun, 15 Jun 2025 05:21:02 GMT\r\nExpires: Sun, 15 Jun 2025 05:21:02 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=36~id=0d5e2df8323088ecdf24132692a10f48; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;d1ed2717&#46;1749964862&#46;3e3a361\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d1ed2717&#46;1749964862&#46;3e3a361</P>\n</BODY>\n</HTML>\n",
+      "ip": "173.223.151.63",
+      "timestamp": "2025-06-15T05:21:02.640595866Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -419,9 +219,9 @@
       "host": "https://wallet.esw.esante.gouv.fr",
       "matched-at": "https://wallet.esw.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 387\r\nContent-Type: text/html\r\nDate: Sun, 08 Jun 2025 05:16:12 GMT\r\nExpires: Sun, 08 Jun 2025 05:16:12 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=88~id=1dd76e42f84866a15a976ea9b8a750d0; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;916adc17&#46;1749359772&#46;64108da0\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;916adc17&#46;1749359772&#46;64108da0</P>\n</BODY>\n</HTML>\n",
-      "ip": "104.81.164.214",
-      "timestamp": "2025-06-08T05:16:12.145835578Z",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 385\r\nContent-Type: text/html\r\nDate: Sun, 15 Jun 2025 05:21:02 GMT\r\nExpires: Sun, 15 Jun 2025 05:21:02 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=36~id=0d5e2df8323088ecdf24132692a10f48; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;d1ed2717&#46;1749964862&#46;3e3a361\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d1ed2717&#46;1749964862&#46;3e3a361</P>\n</BODY>\n</HTML>\n",
+      "ip": "173.223.151.63",
+      "timestamp": "2025-06-15T05:21:02.640607618Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -454,14 +254,14 @@
           "max-request": 1
         }
       },
-      "matcher-name": "x-content-type-options",
+      "matcher-name": "x-frame-options",
       "type": "http",
       "host": "https://wallet.esw.esante.gouv.fr",
       "matched-at": "https://wallet.esw.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 387\r\nContent-Type: text/html\r\nDate: Sun, 08 Jun 2025 05:16:12 GMT\r\nExpires: Sun, 08 Jun 2025 05:16:12 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=88~id=1dd76e42f84866a15a976ea9b8a750d0; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;916adc17&#46;1749359772&#46;64108da0\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;916adc17&#46;1749359772&#46;64108da0</P>\n</BODY>\n</HTML>\n",
-      "ip": "104.81.164.214",
-      "timestamp": "2025-06-08T05:16:12.14584703Z",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 385\r\nContent-Type: text/html\r\nDate: Sun, 15 Jun 2025 05:21:02 GMT\r\nExpires: Sun, 15 Jun 2025 05:21:02 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=36~id=0d5e2df8323088ecdf24132692a10f48; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;d1ed2717&#46;1749964862&#46;3e3a361\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d1ed2717&#46;1749964862&#46;3e3a361</P>\n</BODY>\n</HTML>\n",
+      "ip": "173.223.151.63",
+      "timestamp": "2025-06-15T05:21:02.640620242Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -499,9 +299,9 @@
       "host": "https://wallet.esw.esante.gouv.fr",
       "matched-at": "https://wallet.esw.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 387\r\nContent-Type: text/html\r\nDate: Sun, 08 Jun 2025 05:16:12 GMT\r\nExpires: Sun, 08 Jun 2025 05:16:12 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=88~id=1dd76e42f84866a15a976ea9b8a750d0; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;916adc17&#46;1749359772&#46;64108da0\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;916adc17&#46;1749359772&#46;64108da0</P>\n</BODY>\n</HTML>\n",
-      "ip": "104.81.164.214",
-      "timestamp": "2025-06-08T05:16:12.145858522Z",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 385\r\nContent-Type: text/html\r\nDate: Sun, 15 Jun 2025 05:21:02 GMT\r\nExpires: Sun, 15 Jun 2025 05:21:02 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=36~id=0d5e2df8323088ecdf24132692a10f48; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;d1ed2717&#46;1749964862&#46;3e3a361\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d1ed2717&#46;1749964862&#46;3e3a361</P>\n</BODY>\n</HTML>\n",
+      "ip": "173.223.151.63",
+      "timestamp": "2025-06-15T05:21:02.640634087Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -539,9 +339,209 @@
       "host": "https://wallet.esw.esante.gouv.fr",
       "matched-at": "https://wallet.esw.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 387\r\nContent-Type: text/html\r\nDate: Sun, 08 Jun 2025 05:16:12 GMT\r\nExpires: Sun, 08 Jun 2025 05:16:12 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=88~id=1dd76e42f84866a15a976ea9b8a750d0; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;916adc17&#46;1749359772&#46;64108da0\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;916adc17&#46;1749359772&#46;64108da0</P>\n</BODY>\n</HTML>\n",
-      "ip": "104.81.164.214",
-      "timestamp": "2025-06-08T05:16:12.145870474Z",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 385\r\nContent-Type: text/html\r\nDate: Sun, 15 Jun 2025 05:21:02 GMT\r\nExpires: Sun, 15 Jun 2025 05:21:02 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=36~id=0d5e2df8323088ecdf24132692a10f48; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;d1ed2717&#46;1749964862&#46;3e3a361\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d1ed2717&#46;1749964862&#46;3e3a361</P>\n</BODY>\n</HTML>\n",
+      "ip": "173.223.151.63",
+      "timestamp": "2025-06-15T05:21:02.640647012Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "https://wallet.esw.esante.gouv.fr",
+      "matched-at": "https://wallet.esw.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 385\r\nContent-Type: text/html\r\nDate: Sun, 15 Jun 2025 05:21:02 GMT\r\nExpires: Sun, 15 Jun 2025 05:21:02 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=36~id=0d5e2df8323088ecdf24132692a10f48; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;d1ed2717&#46;1749964862&#46;3e3a361\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d1ed2717&#46;1749964862&#46;3e3a361</P>\n</BODY>\n</HTML>\n",
+      "ip": "173.223.151.63",
+      "timestamp": "2025-06-15T05:21:02.640665646Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "strict-transport-security",
+      "type": "http",
+      "host": "https://wallet.esw.esante.gouv.fr",
+      "matched-at": "https://wallet.esw.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 385\r\nContent-Type: text/html\r\nDate: Sun, 15 Jun 2025 05:21:02 GMT\r\nExpires: Sun, 15 Jun 2025 05:21:02 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=36~id=0d5e2df8323088ecdf24132692a10f48; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;d1ed2717&#46;1749964862&#46;3e3a361\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d1ed2717&#46;1749964862&#46;3e3a361</P>\n</BODY>\n</HTML>\n",
+      "ip": "173.223.151.63",
+      "timestamp": "2025-06-15T05:21:02.640681877Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "https://wallet.esw.esante.gouv.fr",
+      "matched-at": "https://wallet.esw.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 385\r\nContent-Type: text/html\r\nDate: Sun, 15 Jun 2025 05:21:02 GMT\r\nExpires: Sun, 15 Jun 2025 05:21:02 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=36~id=0d5e2df8323088ecdf24132692a10f48; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;d1ed2717&#46;1749964862&#46;3e3a361\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d1ed2717&#46;1749964862&#46;3e3a361</P>\n</BODY>\n</HTML>\n",
+      "ip": "173.223.151.63",
+      "timestamp": "2025-06-15T05:21:02.640711532Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-content-type-options",
+      "type": "http",
+      "host": "https://wallet.esw.esante.gouv.fr",
+      "matched-at": "https://wallet.esw.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 385\r\nContent-Type: text/html\r\nDate: Sun, 15 Jun 2025 05:21:02 GMT\r\nExpires: Sun, 15 Jun 2025 05:21:02 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=36~id=0d5e2df8323088ecdf24132692a10f48; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;d1ed2717&#46;1749964862&#46;3e3a361\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d1ed2717&#46;1749964862&#46;3e3a361</P>\n</BODY>\n</HTML>\n",
+      "ip": "173.223.151.63",
+      "timestamp": "2025-06-15T05:21:02.64072654Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "clear-site-data",
+      "type": "http",
+      "host": "https://wallet.esw.esante.gouv.fr",
+      "matched-at": "https://wallet.esw.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 385\r\nContent-Type: text/html\r\nDate: Sun, 15 Jun 2025 05:21:02 GMT\r\nExpires: Sun, 15 Jun 2025 05:21:02 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=36~id=0d5e2df8323088ecdf24132692a10f48; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;d1ed2717&#46;1749964862&#46;3e3a361\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d1ed2717&#46;1749964862&#46;3e3a361</P>\n</BODY>\n</HTML>\n",
+      "ip": "173.223.151.63",
+      "timestamp": "2025-06-15T05:21:02.640738963Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -581,9 +581,9 @@
       "host": "https://wallet.esw.esante.gouv.fr",
       "matched-at": "https://wallet.esw.esante.gouv.fr/",
       "request": "POST / HTTP/1.1\r\nHost: wallet.esw.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 387\r\nContent-Type: text/html\r\nDate: Sun, 08 Jun 2025 05:16:28 GMT\r\nExpires: Sun, 08 Jun 2025 05:16:28 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=20~id=64d96a51cbe191b37dc02e03a0624781; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;916adc17&#46;1749359788&#46;6410cfbd\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;916adc17&#46;1749359788&#46;6410cfbd</P>\n</BODY>\n</HTML>\n",
-      "ip": "104.81.164.214",
-      "timestamp": "2025-06-08T05:16:28.286008025Z",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nContent-Length: 385\r\nContent-Type: text/html\r\nDate: Sun, 15 Jun 2025 05:21:18 GMT\r\nExpires: Sun, 15 Jun 2025 05:21:18 GMT\r\nMime-Version: 1.0\r\nServer: AkamaiGHost\r\nSet-Cookie: akacd_Policy_PRD_ESAN=2147483647~rv=86~id=df405ad1cfd6feac4629e4bfc1a45750; path=/; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; SameSite=None\r\n\r\n<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;wallet&#46;esw&#46;esante&#46;gouv&#46;fr&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;d1ed2717&#46;1749964878&#46;3e7ee0e\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d1ed2717&#46;1749964878&#46;3e7ee0e</P>\n</BODY>\n</HTML>\n",
+      "ip": "173.223.151.63",
+      "timestamp": "2025-06-15T05:21:18.892163951Z",
       "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: wallet.esw.esante.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://wallet.esw.esante.gouv.fr/'",
       "matcher-status": true
     },
@@ -613,8 +613,8 @@
       "extracted-results": [
         "GlobalSign nv-sa"
       ],
-      "ip": "104.81.164.214",
-      "timestamp": "2025-06-08T05:18:04.631048237Z",
+      "ip": "173.223.151.63",
+      "timestamp": "2025-06-15T05:22:55.607225223Z",
       "matcher-status": true
     },
     {
@@ -644,8 +644,8 @@
         "wallet.esw.esante.gouv.fr",
         "api.esw.esante.gouv.fr"
       ],
-      "ip": "104.81.164.214",
-      "timestamp": "2025-06-08T05:18:04.631194072Z",
+      "ip": "173.223.151.63",
+      "timestamp": "2025-06-15T05:22:55.607367468Z",
       "matcher-status": true
     },
     {
@@ -675,8 +675,8 @@
       "extracted-results": [
         "tls12"
       ],
-      "ip": "104.81.164.214",
-      "timestamp": "2025-06-08T05:18:04.82340849Z",
+      "ip": "173.223.151.63",
+      "timestamp": "2025-06-15T05:22:56.765106212Z",
       "matcher-status": true
     }
   ]
