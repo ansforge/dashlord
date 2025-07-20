@@ -1,4 +1,4 @@
-# Nmap 7.92 scan initiated Sun Jul 13 04:58:50 2025 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln testssl.eservices.esante.gouv.fr
+# Nmap 7.92 scan initiated Sun Jul 20 05:02:12 2025 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln testssl.eservices.esante.gouv.fr
 Nmap scan report for testssl.eservices.esante.gouv.fr (135.125.232.117)
 Host is up (0.094s latency).
 rDNS record for 135.125.232.117: vps-c4a3f657.vps.ovh.net
@@ -36,6 +36,7 @@ PORT     STATE  SERVICE    VERSION
 |     	CVE-2016-20012	5.3	https://vulners.com/cve/CVE-2016-20012
 |_    	PACKETSTORM:140261	0.0	https://vulners.com/packetstorm/PACKETSTORM:140261	*EXPLOIT*
 80/tcp   open   http       Apache httpd 2.4.37 ((centos) OpenSSL/1.1.1g)
+|_http-server-header: Apache/2.4.37 (centos) OpenSSL/1.1.1g
 | vulners: 
 |   cpe:/a:apache:http_server:2.4.37: 
 |     	C94CBDE1-4CC5-5C06-9D18-23CAB216705E	10.0	https://vulners.com/githubexploit/C94CBDE1-4CC5-5C06-9D18-23CAB216705E	*EXPLOIT*
@@ -148,6 +149,7 @@ PORT     STATE  SERVICE    VERSION
 |     	FD2EE3A5-BAEA-5845-BA35-E6889992214F	9.1	https://vulners.com/githubexploit/FD2EE3A5-BAEA-5845-BA35-E6889992214F	*EXPLOIT*
 |     	E606D7F4-5FA2-5907-B30E-367D6FFECD89	9.1	https://vulners.com/githubexploit/E606D7F4-5FA2-5907-B30E-367D6FFECD89	*EXPLOIT*
 |     	D8A19443-2A37-5592-8955-F614504AAF45	9.1	https://vulners.com/githubexploit/D8A19443-2A37-5592-8955-F614504AAF45	*EXPLOIT*
+|     	CVE-2025-23048	9.1	https://vulners.com/cve/CVE-2025-23048
 |     	CVE-2024-40898	9.1	https://vulners.com/cve/CVE-2024-40898
 |     	CVE-2024-38475	9.1	https://vulners.com/cve/CVE-2024-38475
 |     	CVE-2022-28615	9.1	https://vulners.com/cve/CVE-2022-28615
@@ -226,6 +228,12 @@ PORT     STATE  SERVICE    VERSION
 |     	DBF996C3-DC2A-5859-B767-6B2FC38F2185	7.5	https://vulners.com/githubexploit/DBF996C3-DC2A-5859-B767-6B2FC38F2185	*EXPLOIT*
 |     	DB6E1BBD-08B1-574D-A351-7D6BB9898A4A	7.5	https://vulners.com/githubexploit/DB6E1BBD-08B1-574D-A351-7D6BB9898A4A	*EXPLOIT*
 |     	D0E79214-C9E8-52BD-BC24-093970F5F34E	7.5	https://vulners.com/githubexploit/D0E79214-C9E8-52BD-BC24-093970F5F34E	*EXPLOIT*
+|     	CVE-2025-53020	7.5	https://vulners.com/cve/CVE-2025-53020
+|     	CVE-2025-49630	7.5	https://vulners.com/cve/CVE-2025-49630
+|     	CVE-2024-47252	7.5	https://vulners.com/cve/CVE-2024-47252
+|     	CVE-2024-43394	7.5	https://vulners.com/cve/CVE-2024-43394
+|     	CVE-2024-43204	7.5	https://vulners.com/cve/CVE-2024-43204
+|     	CVE-2024-42516	7.5	https://vulners.com/cve/CVE-2024-42516
 |     	CVE-2024-39573	7.5	https://vulners.com/cve/CVE-2024-39573
 |     	CVE-2024-38477	7.5	https://vulners.com/cve/CVE-2024-38477
 |     	CVE-2024-38472	7.5	https://vulners.com/cve/CVE-2024-38472
@@ -342,6 +350,7 @@ PORT     STATE  SERVICE    VERSION
 |     	06076ECD-3FB7-53EC-8572-ABBB20029812	7.5	https://vulners.com/githubexploit/06076ECD-3FB7-53EC-8572-ABBB20029812	*EXPLOIT*
 |     	04E3583E-DFED-5D0D-BCF2-1C1230EB666D	7.5	https://vulners.com/githubexploit/04E3583E-DFED-5D0D-BCF2-1C1230EB666D	*EXPLOIT*
 |     	00EC8F03-D8A3-56D4-9F8C-8DD1F5ACCA08	7.5	https://vulners.com/githubexploit/00EC8F03-D8A3-56D4-9F8C-8DD1F5ACCA08	*EXPLOIT*
+|     	CVE-2025-49812	7.4	https://vulners.com/cve/CVE-2025-49812
 |     	HTTPD:D66D5F45690EBE82B48CC81EF6388EE8	7.3	https://vulners.com/httpd/HTTPD:D66D5F45690EBE82B48CC81EF6388EE8
 |     	CVE-2023-38709	7.3	https://vulners.com/cve/CVE-2023-38709
 |     	CVE-2020-35452	7.3	https://vulners.com/cve/CVE-2020-35452
@@ -388,10 +397,8 @@ PORT     STATE  SERVICE    VERSION
 |     	PACKETSTORM:164418	0.0	https://vulners.com/packetstorm/PACKETSTORM:164418	*EXPLOIT*
 |     	PACKETSTORM:152441	0.0	https://vulners.com/packetstorm/PACKETSTORM:152441	*EXPLOIT*
 |_    	05403438-4985-5E78-A702-784E03F724D4	0.0	https://vulners.com/githubexploit/05403438-4985-5E78-A702-784E03F724D4	*EXPLOIT*
-|_http-server-header: Apache/2.4.37 (centos) OpenSSL/1.1.1g
 389/tcp  closed ldap
 443/tcp  open   ssl/http   Apache httpd 2.4.37 ((centos) OpenSSL/1.1.1g)
-|_http-server-header: Apache/2.4.37 (centos) OpenSSL/1.1.1g
 | vulners: 
 |   cpe:/a:apache:http_server:2.4.37: 
 |     	C94CBDE1-4CC5-5C06-9D18-23CAB216705E	10.0	https://vulners.com/githubexploit/C94CBDE1-4CC5-5C06-9D18-23CAB216705E	*EXPLOIT*
@@ -504,6 +511,7 @@ PORT     STATE  SERVICE    VERSION
 |     	FD2EE3A5-BAEA-5845-BA35-E6889992214F	9.1	https://vulners.com/githubexploit/FD2EE3A5-BAEA-5845-BA35-E6889992214F	*EXPLOIT*
 |     	E606D7F4-5FA2-5907-B30E-367D6FFECD89	9.1	https://vulners.com/githubexploit/E606D7F4-5FA2-5907-B30E-367D6FFECD89	*EXPLOIT*
 |     	D8A19443-2A37-5592-8955-F614504AAF45	9.1	https://vulners.com/githubexploit/D8A19443-2A37-5592-8955-F614504AAF45	*EXPLOIT*
+|     	CVE-2025-23048	9.1	https://vulners.com/cve/CVE-2025-23048
 |     	CVE-2024-40898	9.1	https://vulners.com/cve/CVE-2024-40898
 |     	CVE-2024-38475	9.1	https://vulners.com/cve/CVE-2024-38475
 |     	CVE-2022-28615	9.1	https://vulners.com/cve/CVE-2022-28615
@@ -582,6 +590,12 @@ PORT     STATE  SERVICE    VERSION
 |     	DBF996C3-DC2A-5859-B767-6B2FC38F2185	7.5	https://vulners.com/githubexploit/DBF996C3-DC2A-5859-B767-6B2FC38F2185	*EXPLOIT*
 |     	DB6E1BBD-08B1-574D-A351-7D6BB9898A4A	7.5	https://vulners.com/githubexploit/DB6E1BBD-08B1-574D-A351-7D6BB9898A4A	*EXPLOIT*
 |     	D0E79214-C9E8-52BD-BC24-093970F5F34E	7.5	https://vulners.com/githubexploit/D0E79214-C9E8-52BD-BC24-093970F5F34E	*EXPLOIT*
+|     	CVE-2025-53020	7.5	https://vulners.com/cve/CVE-2025-53020
+|     	CVE-2025-49630	7.5	https://vulners.com/cve/CVE-2025-49630
+|     	CVE-2024-47252	7.5	https://vulners.com/cve/CVE-2024-47252
+|     	CVE-2024-43394	7.5	https://vulners.com/cve/CVE-2024-43394
+|     	CVE-2024-43204	7.5	https://vulners.com/cve/CVE-2024-43204
+|     	CVE-2024-42516	7.5	https://vulners.com/cve/CVE-2024-42516
 |     	CVE-2024-39573	7.5	https://vulners.com/cve/CVE-2024-39573
 |     	CVE-2024-38477	7.5	https://vulners.com/cve/CVE-2024-38477
 |     	CVE-2024-38472	7.5	https://vulners.com/cve/CVE-2024-38472
@@ -698,6 +712,7 @@ PORT     STATE  SERVICE    VERSION
 |     	06076ECD-3FB7-53EC-8572-ABBB20029812	7.5	https://vulners.com/githubexploit/06076ECD-3FB7-53EC-8572-ABBB20029812	*EXPLOIT*
 |     	04E3583E-DFED-5D0D-BCF2-1C1230EB666D	7.5	https://vulners.com/githubexploit/04E3583E-DFED-5D0D-BCF2-1C1230EB666D	*EXPLOIT*
 |     	00EC8F03-D8A3-56D4-9F8C-8DD1F5ACCA08	7.5	https://vulners.com/githubexploit/00EC8F03-D8A3-56D4-9F8C-8DD1F5ACCA08	*EXPLOIT*
+|     	CVE-2025-49812	7.4	https://vulners.com/cve/CVE-2025-49812
 |     	HTTPD:D66D5F45690EBE82B48CC81EF6388EE8	7.3	https://vulners.com/httpd/HTTPD:D66D5F45690EBE82B48CC81EF6388EE8
 |     	CVE-2023-38709	7.3	https://vulners.com/cve/CVE-2023-38709
 |     	CVE-2020-35452	7.3	https://vulners.com/cve/CVE-2020-35452
@@ -744,8 +759,9 @@ PORT     STATE  SERVICE    VERSION
 |     	PACKETSTORM:164418	0.0	https://vulners.com/packetstorm/PACKETSTORM:164418	*EXPLOIT*
 |     	PACKETSTORM:152441	0.0	https://vulners.com/packetstorm/PACKETSTORM:152441	*EXPLOIT*
 |_    	05403438-4985-5E78-A702-784E03F724D4	0.0	https://vulners.com/githubexploit/05403438-4985-5E78-A702-784E03F724D4	*EXPLOIT*
+|_http-server-header: Apache/2.4.37 (centos) OpenSSL/1.1.1g
 636/tcp  closed ldapssl
 9090/tcp closed zeus-admin
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun Jul 13 04:59:12 2025 -- 1 IP address (1 host up) scanned in 22.03 seconds
+# Nmap done at Sun Jul 20 05:02:34 2025 -- 1 IP address (1 host up) scanned in 21.51 seconds
