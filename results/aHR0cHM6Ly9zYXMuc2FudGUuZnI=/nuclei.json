@@ -1,43 +1,6 @@
 [
   [
     {
-      "template": "dns/caa-fingerprint.yaml",
-      "template-url": "https://templates.nuclei.sh/public/caa-fingerprint",
-      "template-id": "caa-fingerprint",
-      "template-path": "/home/runner/nuclei-templates/dns/caa-fingerprint.yaml",
-      "info": {
-        "name": "CAA Record",
-        "author": [
-          "pdteam"
-        ],
-        "tags": [
-          "dns",
-          "caa"
-        ],
-        "description": "A CAA record was discovered. A CAA record is used to specify which certificate authorities (CAs) are allowed to issue certificates for a domain.",
-        "reference": [
-          "https://support.dnsimple.com/articles/caa-record/#whats-a-caa-record"
-        ],
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-200"
-          ]
-        }
-      },
-      "type": "dns",
-      "host": "sas.sante.fr.",
-      "matched-at": "sas.sante.fr",
-      "request": ";; opcode: QUERY, status: NOERROR, id: 47584\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;sas.sante.fr.\tIN\t CAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 47584\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;sas.sante.fr.\tIN\t CAA\n\n;; ANSWER SECTION:\nsas.sante.fr.\t102\tIN\tCNAME\thsellkzl-ans-sas-publique-prod.baleen.cshield.net.\n\n;; AUTHORITY SECTION:\nbaleen.cshield.net.\t300\tIN\tSOA\tdns1.p01.nsone.net. depot\\.domaine.cdiscount.com. 1682602546 3600 600 604800 300\n",
-      "timestamp": "2025-07-27T04:21:54.04533713Z",
-      "matcher-status": true
-    },
-    {
       "template": "dns/dns-saas-service-detection.yaml",
       "template-url": "https://templates.nuclei.sh/public/dns-saas-service-detection",
       "template-id": "dns-saas-service-detection",
@@ -69,9 +32,46 @@
       "extracted-results": [
         "hsellkzl-ans-sas-publique-prod.baleen.cshield.net."
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 63604\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;sas.sante.fr.\tIN\t CNAME\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 63604\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;sas.sante.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nsas.sante.fr.\t3600\tIN\tCNAME\thsellkzl-ans-sas-publique-prod.baleen.cshield.net.\n",
-      "timestamp": "2025-07-27T04:21:54.122921419Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 15413\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;sas.sante.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 15413\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;sas.sante.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nsas.sante.fr.\t3600\tIN\tCNAME\thsellkzl-ans-sas-publique-prod.baleen.cshield.net.\n",
+      "timestamp": "2025-08-10T04:16:50.18830227Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/caa-fingerprint.yaml",
+      "template-url": "https://templates.nuclei.sh/public/caa-fingerprint",
+      "template-id": "caa-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/caa-fingerprint.yaml",
+      "info": {
+        "name": "CAA Record",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "caa"
+        ],
+        "description": "A CAA record was discovered. A CAA record is used to specify which certificate authorities (CAs) are allowed to issue certificates for a domain.",
+        "reference": [
+          "https://support.dnsimple.com/articles/caa-record/#whats-a-caa-record"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "sas.sante.fr.",
+      "matched-at": "sas.sante.fr",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 35802\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;sas.sante.fr.\tIN\t CAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 35802\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;sas.sante.fr.\tIN\t CAA\n\n;; ANSWER SECTION:\nsas.sante.fr.\t2756\tIN\tCNAME\thsellkzl-ans-sas-publique-prod.baleen.cshield.net.\n\n;; AUTHORITY SECTION:\nbaleen.cshield.net.\t300\tIN\tSOA\tdns1.p01.nsone.net. depot\\.domaine.cdiscount.com. 1682602546 3600 600 604800 300\n",
+      "timestamp": "2025-08-10T04:16:50.198564015Z",
       "matcher-status": true
     },
     {
@@ -111,129 +111,9 @@
         "1; mode=block"
       ],
       "request": "GET / HTTP/1.1\r\nHost: sas.sante.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 27 Jul 2025 04:22:04 GMT\r\nReferrer-Policy: origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <title></title>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\">\n    <link rel=\"icon\" href=\"https://console.baleen.cloud/favicon.ico\">\n    <link href=\"/.well-known/baleen/error-pages-in/assets/style.css\" rel=\"stylesheet\" />\n    <script src=\"/.well-known/baleen/error-pages-in/assets/script.js\"></script>\n</head>\n<body>\n<div class=\"error-page-container\">\n    <div class=\"error-body-container\">\n        <div class=\"left-container\">\n            <div class=\"error-body\">\n                <h1><span id=\"title\"></span></h1>\n                <div id=\"status-code\"></div>\n                <div id=\"description\" class=\"description\"></div>\n                <a href=\"#\" onclick=\"location.reload(); return false;\">\n                    <span id=\"reload\"></span>\n                </a>\n                <br><br>\n                <div id=\"request-id-description\" class=\"description\"></div>\n                <div><b>c0fd792dd2c36c886d1738bd38bcc196</b></div>\n            </div>\n        </div>\n        <div class=\"right-container\">\n            <img class=\"img-error\"\n                 src=\"/.well-known/baleen/error-pages-in/assets/error.png\"\n                 alt=\"Error page\">\n        </div>\n        <div class=\"footer\">\n            <div class=\"logo-baleen\"></div>\n        </div>\n    </div>\n</div>\n<script>\n    const additionalTranslations = {\n        title: {\n            en: \"Unauthorized access\",\n            fr: \"Accès non autorisé\"\n        },\n        description: {\n            en: \"You don't have access to this resource. Check your permissions or contact an admin.\",\n            fr: \"Vous n’avez pas accès à cette ressource. Vérifiez vos droits ou contactez un administrateur.\"\n        },\n        \"status-code\": {\n            en: \"Error 403\",\n            fr: \"Erreur 403\"\n        }\n    };\n    translate(additionalTranslations);\n</script>\n</body>\n</html>",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 10 Aug 2025 04:17:05 GMT\r\nReferrer-Policy: origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <title></title>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\">\n    <link rel=\"icon\" href=\"https://console.baleen.cloud/favicon.ico\">\n    <link href=\"/.well-known/baleen/error-pages-in/assets/style.css\" rel=\"stylesheet\" />\n    <script src=\"/.well-known/baleen/error-pages-in/assets/script.js\"></script>\n</head>\n<body>\n<div class=\"error-page-container\">\n    <div class=\"error-body-container\">\n        <div class=\"left-container\">\n            <div class=\"error-body\">\n                <h1><span id=\"title\"></span></h1>\n                <div id=\"status-code\"></div>\n                <div id=\"description\" class=\"description\"></div>\n                <a href=\"#\" onclick=\"location.reload(); return false;\">\n                    <span id=\"reload\"></span>\n                </a>\n                <br><br>\n                <div id=\"request-id-description\" class=\"description\"></div>\n                <div><b>62f7d0736b36a998cdd76017dabdb6cb</b></div>\n            </div>\n        </div>\n        <div class=\"right-container\">\n            <img class=\"img-error\"\n                 src=\"/.well-known/baleen/error-pages-in/assets/error.png\"\n                 alt=\"Error page\">\n        </div>\n        <div class=\"footer\">\n            <div class=\"logo-baleen\"></div>\n        </div>\n    </div>\n</div>\n<script>\n    const additionalTranslations = {\n        title: {\n            en: \"Unauthorized access\",\n            fr: \"Accès non autorisé\"\n        },\n        description: {\n            en: \"You don't have access to this resource. Check your permissions or contact an admin.\",\n            fr: \"Vous n’avez pas accès à cette ressource. Vérifiez vos droits ou contactez un administrateur.\"\n        },\n        \"status-code\": {\n            en: \"Error 403\",\n            fr: \"Erreur 403\"\n        }\n    };\n    translate(additionalTranslations);\n</script>\n</body>\n</html>",
       "ip": "185.231.164.110",
-      "timestamp": "2025-07-27T04:22:04.90552745Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sas.sante.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "cross-origin-embedder-policy",
-      "type": "http",
-      "host": "https://sas.sante.fr",
-      "matched-at": "https://sas.sante.fr",
-      "request": "GET / HTTP/1.1\r\nHost: sas.sante.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 27 Jul 2025 04:22:47 GMT\r\nReferrer-Policy: origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <title></title>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\">\n    <link rel=\"icon\" href=\"https://console.baleen.cloud/favicon.ico\">\n    <link href=\"/.well-known/baleen/error-pages-in/assets/style.css\" rel=\"stylesheet\" />\n    <script src=\"/.well-known/baleen/error-pages-in/assets/script.js\"></script>\n</head>\n<body>\n<div class=\"error-page-container\">\n    <div class=\"error-body-container\">\n        <div class=\"left-container\">\n            <div class=\"error-body\">\n                <h1><span id=\"title\"></span></h1>\n                <div id=\"status-code\"></div>\n                <div id=\"description\" class=\"description\"></div>\n                <a href=\"#\" onclick=\"location.reload(); return false;\">\n                    <span id=\"reload\"></span>\n                </a>\n                <br><br>\n                <div id=\"request-id-description\" class=\"description\"></div>\n                <div><b>224bd97644739d826b4145dcaedcf333</b></div>\n            </div>\n        </div>\n        <div class=\"right-container\">\n            <img class=\"img-error\"\n                 src=\"/.well-known/baleen/error-pages-in/assets/error.png\"\n                 alt=\"Error page\">\n        </div>\n        <div class=\"footer\">\n            <div class=\"logo-baleen\"></div>\n        </div>\n    </div>\n</div>\n<script>\n    const additionalTranslations = {\n        title: {\n            en: \"Unauthorized access\",\n            fr: \"Accès non autorisé\"\n        },\n        description: {\n            en: \"You don't have access to this resource. Check your permissions or contact an admin.\",\n            fr: \"Vous n’avez pas accès à cette ressource. Vérifiez vos droits ou contactez un administrateur.\"\n        },\n        \"status-code\": {\n            en: \"Error 403\",\n            fr: \"Erreur 403\"\n        }\n    };\n    translate(additionalTranslations);\n</script>\n</body>\n</html>",
-      "ip": "185.231.164.110",
-      "timestamp": "2025-07-27T04:22:47.096781878Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sas.sante.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "cross-origin-opener-policy",
-      "type": "http",
-      "host": "https://sas.sante.fr",
-      "matched-at": "https://sas.sante.fr",
-      "request": "GET / HTTP/1.1\r\nHost: sas.sante.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 27 Jul 2025 04:22:47 GMT\r\nReferrer-Policy: origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <title></title>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\">\n    <link rel=\"icon\" href=\"https://console.baleen.cloud/favicon.ico\">\n    <link href=\"/.well-known/baleen/error-pages-in/assets/style.css\" rel=\"stylesheet\" />\n    <script src=\"/.well-known/baleen/error-pages-in/assets/script.js\"></script>\n</head>\n<body>\n<div class=\"error-page-container\">\n    <div class=\"error-body-container\">\n        <div class=\"left-container\">\n            <div class=\"error-body\">\n                <h1><span id=\"title\"></span></h1>\n                <div id=\"status-code\"></div>\n                <div id=\"description\" class=\"description\"></div>\n                <a href=\"#\" onclick=\"location.reload(); return false;\">\n                    <span id=\"reload\"></span>\n                </a>\n                <br><br>\n                <div id=\"request-id-description\" class=\"description\"></div>\n                <div><b>224bd97644739d826b4145dcaedcf333</b></div>\n            </div>\n        </div>\n        <div class=\"right-container\">\n            <img class=\"img-error\"\n                 src=\"/.well-known/baleen/error-pages-in/assets/error.png\"\n                 alt=\"Error page\">\n        </div>\n        <div class=\"footer\">\n            <div class=\"logo-baleen\"></div>\n        </div>\n    </div>\n</div>\n<script>\n    const additionalTranslations = {\n        title: {\n            en: \"Unauthorized access\",\n            fr: \"Accès non autorisé\"\n        },\n        description: {\n            en: \"You don't have access to this resource. Check your permissions or contact an admin.\",\n            fr: \"Vous n’avez pas accès à cette ressource. Vérifiez vos droits ou contactez un administrateur.\"\n        },\n        \"status-code\": {\n            en: \"Error 403\",\n            fr: \"Erreur 403\"\n        }\n    };\n    translate(additionalTranslations);\n</script>\n</body>\n</html>",
-      "ip": "185.231.164.110",
-      "timestamp": "2025-07-27T04:22:47.096831621Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sas.sante.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "cross-origin-resource-policy",
-      "type": "http",
-      "host": "https://sas.sante.fr",
-      "matched-at": "https://sas.sante.fr",
-      "request": "GET / HTTP/1.1\r\nHost: sas.sante.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 27 Jul 2025 04:22:47 GMT\r\nReferrer-Policy: origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <title></title>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\">\n    <link rel=\"icon\" href=\"https://console.baleen.cloud/favicon.ico\">\n    <link href=\"/.well-known/baleen/error-pages-in/assets/style.css\" rel=\"stylesheet\" />\n    <script src=\"/.well-known/baleen/error-pages-in/assets/script.js\"></script>\n</head>\n<body>\n<div class=\"error-page-container\">\n    <div class=\"error-body-container\">\n        <div class=\"left-container\">\n            <div class=\"error-body\">\n                <h1><span id=\"title\"></span></h1>\n                <div id=\"status-code\"></div>\n                <div id=\"description\" class=\"description\"></div>\n                <a href=\"#\" onclick=\"location.reload(); return false;\">\n                    <span id=\"reload\"></span>\n                </a>\n                <br><br>\n                <div id=\"request-id-description\" class=\"description\"></div>\n                <div><b>224bd97644739d826b4145dcaedcf333</b></div>\n            </div>\n        </div>\n        <div class=\"right-container\">\n            <img class=\"img-error\"\n                 src=\"/.well-known/baleen/error-pages-in/assets/error.png\"\n                 alt=\"Error page\">\n        </div>\n        <div class=\"footer\">\n            <div class=\"logo-baleen\"></div>\n        </div>\n    </div>\n</div>\n<script>\n    const additionalTranslations = {\n        title: {\n            en: \"Unauthorized access\",\n            fr: \"Accès non autorisé\"\n        },\n        description: {\n            en: \"You don't have access to this resource. Check your permissions or contact an admin.\",\n            fr: \"Vous n’avez pas accès à cette ressource. Vérifiez vos droits ou contactez un administrateur.\"\n        },\n        \"status-code\": {\n            en: \"Error 403\",\n            fr: \"Erreur 403\"\n        }\n    };\n    translate(additionalTranslations);\n</script>\n</body>\n</html>",
-      "ip": "185.231.164.110",
-      "timestamp": "2025-07-27T04:22:47.096850487Z",
+      "timestamp": "2025-08-10T04:17:06.02514824Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sas.sante.fr'",
       "matcher-status": true
     },
@@ -271,9 +151,9 @@
       "host": "https://sas.sante.fr",
       "matched-at": "https://sas.sante.fr",
       "request": "GET / HTTP/1.1\r\nHost: sas.sante.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 27 Jul 2025 04:22:47 GMT\r\nReferrer-Policy: origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <title></title>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\">\n    <link rel=\"icon\" href=\"https://console.baleen.cloud/favicon.ico\">\n    <link href=\"/.well-known/baleen/error-pages-in/assets/style.css\" rel=\"stylesheet\" />\n    <script src=\"/.well-known/baleen/error-pages-in/assets/script.js\"></script>\n</head>\n<body>\n<div class=\"error-page-container\">\n    <div class=\"error-body-container\">\n        <div class=\"left-container\">\n            <div class=\"error-body\">\n                <h1><span id=\"title\"></span></h1>\n                <div id=\"status-code\"></div>\n                <div id=\"description\" class=\"description\"></div>\n                <a href=\"#\" onclick=\"location.reload(); return false;\">\n                    <span id=\"reload\"></span>\n                </a>\n                <br><br>\n                <div id=\"request-id-description\" class=\"description\"></div>\n                <div><b>224bd97644739d826b4145dcaedcf333</b></div>\n            </div>\n        </div>\n        <div class=\"right-container\">\n            <img class=\"img-error\"\n                 src=\"/.well-known/baleen/error-pages-in/assets/error.png\"\n                 alt=\"Error page\">\n        </div>\n        <div class=\"footer\">\n            <div class=\"logo-baleen\"></div>\n        </div>\n    </div>\n</div>\n<script>\n    const additionalTranslations = {\n        title: {\n            en: \"Unauthorized access\",\n            fr: \"Accès non autorisé\"\n        },\n        description: {\n            en: \"You don't have access to this resource. Check your permissions or contact an admin.\",\n            fr: \"Vous n’avez pas accès à cette ressource. Vérifiez vos droits ou contactez un administrateur.\"\n        },\n        \"status-code\": {\n            en: \"Error 403\",\n            fr: \"Erreur 403\"\n        }\n    };\n    translate(additionalTranslations);\n</script>\n</body>\n</html>",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 10 Aug 2025 04:18:03 GMT\r\nReferrer-Policy: origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <title></title>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\">\n    <link rel=\"icon\" href=\"https://console.baleen.cloud/favicon.ico\">\n    <link href=\"/.well-known/baleen/error-pages-in/assets/style.css\" rel=\"stylesheet\" />\n    <script src=\"/.well-known/baleen/error-pages-in/assets/script.js\"></script>\n</head>\n<body>\n<div class=\"error-page-container\">\n    <div class=\"error-body-container\">\n        <div class=\"left-container\">\n            <div class=\"error-body\">\n                <h1><span id=\"title\"></span></h1>\n                <div id=\"status-code\"></div>\n                <div id=\"description\" class=\"description\"></div>\n                <a href=\"#\" onclick=\"location.reload(); return false;\">\n                    <span id=\"reload\"></span>\n                </a>\n                <br><br>\n                <div id=\"request-id-description\" class=\"description\"></div>\n                <div><b>8abe1f5a12f7376d8c3bf6867a074585</b></div>\n            </div>\n        </div>\n        <div class=\"right-container\">\n            <img class=\"img-error\"\n                 src=\"/.well-known/baleen/error-pages-in/assets/error.png\"\n                 alt=\"Error page\">\n        </div>\n        <div class=\"footer\">\n            <div class=\"logo-baleen\"></div>\n        </div>\n    </div>\n</div>\n<script>\n    const additionalTranslations = {\n        title: {\n            en: \"Unauthorized access\",\n            fr: \"Accès non autorisé\"\n        },\n        description: {\n            en: \"You don't have access to this resource. Check your permissions or contact an admin.\",\n            fr: \"Vous n’avez pas accès à cette ressource. Vérifiez vos droits ou contactez un administrateur.\"\n        },\n        \"status-code\": {\n            en: \"Error 403\",\n            fr: \"Erreur 403\"\n        }\n    };\n    translate(additionalTranslations);\n</script>\n</body>\n</html>",
       "ip": "185.231.164.110",
-      "timestamp": "2025-07-27T04:22:47.096866136Z",
+      "timestamp": "2025-08-10T04:18:03.073955331Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sas.sante.fr'",
       "matcher-status": true
     },
@@ -311,9 +191,9 @@
       "host": "https://sas.sante.fr",
       "matched-at": "https://sas.sante.fr",
       "request": "GET / HTTP/1.1\r\nHost: sas.sante.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 27 Jul 2025 04:22:47 GMT\r\nReferrer-Policy: origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <title></title>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\">\n    <link rel=\"icon\" href=\"https://console.baleen.cloud/favicon.ico\">\n    <link href=\"/.well-known/baleen/error-pages-in/assets/style.css\" rel=\"stylesheet\" />\n    <script src=\"/.well-known/baleen/error-pages-in/assets/script.js\"></script>\n</head>\n<body>\n<div class=\"error-page-container\">\n    <div class=\"error-body-container\">\n        <div class=\"left-container\">\n            <div class=\"error-body\">\n                <h1><span id=\"title\"></span></h1>\n                <div id=\"status-code\"></div>\n                <div id=\"description\" class=\"description\"></div>\n                <a href=\"#\" onclick=\"location.reload(); return false;\">\n                    <span id=\"reload\"></span>\n                </a>\n                <br><br>\n                <div id=\"request-id-description\" class=\"description\"></div>\n                <div><b>224bd97644739d826b4145dcaedcf333</b></div>\n            </div>\n        </div>\n        <div class=\"right-container\">\n            <img class=\"img-error\"\n                 src=\"/.well-known/baleen/error-pages-in/assets/error.png\"\n                 alt=\"Error page\">\n        </div>\n        <div class=\"footer\">\n            <div class=\"logo-baleen\"></div>\n        </div>\n    </div>\n</div>\n<script>\n    const additionalTranslations = {\n        title: {\n            en: \"Unauthorized access\",\n            fr: \"Accès non autorisé\"\n        },\n        description: {\n            en: \"You don't have access to this resource. Check your permissions or contact an admin.\",\n            fr: \"Vous n’avez pas accès à cette ressource. Vérifiez vos droits ou contactez un administrateur.\"\n        },\n        \"status-code\": {\n            en: \"Error 403\",\n            fr: \"Erreur 403\"\n        }\n    };\n    translate(additionalTranslations);\n</script>\n</body>\n</html>",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 10 Aug 2025 04:18:03 GMT\r\nReferrer-Policy: origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <title></title>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\">\n    <link rel=\"icon\" href=\"https://console.baleen.cloud/favicon.ico\">\n    <link href=\"/.well-known/baleen/error-pages-in/assets/style.css\" rel=\"stylesheet\" />\n    <script src=\"/.well-known/baleen/error-pages-in/assets/script.js\"></script>\n</head>\n<body>\n<div class=\"error-page-container\">\n    <div class=\"error-body-container\">\n        <div class=\"left-container\">\n            <div class=\"error-body\">\n                <h1><span id=\"title\"></span></h1>\n                <div id=\"status-code\"></div>\n                <div id=\"description\" class=\"description\"></div>\n                <a href=\"#\" onclick=\"location.reload(); return false;\">\n                    <span id=\"reload\"></span>\n                </a>\n                <br><br>\n                <div id=\"request-id-description\" class=\"description\"></div>\n                <div><b>8abe1f5a12f7376d8c3bf6867a074585</b></div>\n            </div>\n        </div>\n        <div class=\"right-container\">\n            <img class=\"img-error\"\n                 src=\"/.well-known/baleen/error-pages-in/assets/error.png\"\n                 alt=\"Error page\">\n        </div>\n        <div class=\"footer\">\n            <div class=\"logo-baleen\"></div>\n        </div>\n    </div>\n</div>\n<script>\n    const additionalTranslations = {\n        title: {\n            en: \"Unauthorized access\",\n            fr: \"Accès non autorisé\"\n        },\n        description: {\n            en: \"You don't have access to this resource. Check your permissions or contact an admin.\",\n            fr: \"Vous n’avez pas accès à cette ressource. Vérifiez vos droits ou contactez un administrateur.\"\n        },\n        \"status-code\": {\n            en: \"Error 403\",\n            fr: \"Erreur 403\"\n        }\n    };\n    translate(additionalTranslations);\n</script>\n</body>\n</html>",
       "ip": "185.231.164.110",
-      "timestamp": "2025-07-27T04:22:47.096880713Z",
+      "timestamp": "2025-08-10T04:18:03.074026765Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sas.sante.fr'",
       "matcher-status": true
     },
@@ -351,9 +231,9 @@
       "host": "https://sas.sante.fr",
       "matched-at": "https://sas.sante.fr",
       "request": "GET / HTTP/1.1\r\nHost: sas.sante.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 27 Jul 2025 04:22:47 GMT\r\nReferrer-Policy: origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <title></title>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\">\n    <link rel=\"icon\" href=\"https://console.baleen.cloud/favicon.ico\">\n    <link href=\"/.well-known/baleen/error-pages-in/assets/style.css\" rel=\"stylesheet\" />\n    <script src=\"/.well-known/baleen/error-pages-in/assets/script.js\"></script>\n</head>\n<body>\n<div class=\"error-page-container\">\n    <div class=\"error-body-container\">\n        <div class=\"left-container\">\n            <div class=\"error-body\">\n                <h1><span id=\"title\"></span></h1>\n                <div id=\"status-code\"></div>\n                <div id=\"description\" class=\"description\"></div>\n                <a href=\"#\" onclick=\"location.reload(); return false;\">\n                    <span id=\"reload\"></span>\n                </a>\n                <br><br>\n                <div id=\"request-id-description\" class=\"description\"></div>\n                <div><b>224bd97644739d826b4145dcaedcf333</b></div>\n            </div>\n        </div>\n        <div class=\"right-container\">\n            <img class=\"img-error\"\n                 src=\"/.well-known/baleen/error-pages-in/assets/error.png\"\n                 alt=\"Error page\">\n        </div>\n        <div class=\"footer\">\n            <div class=\"logo-baleen\"></div>\n        </div>\n    </div>\n</div>\n<script>\n    const additionalTranslations = {\n        title: {\n            en: \"Unauthorized access\",\n            fr: \"Accès non autorisé\"\n        },\n        description: {\n            en: \"You don't have access to this resource. Check your permissions or contact an admin.\",\n            fr: \"Vous n’avez pas accès à cette ressource. Vérifiez vos droits ou contactez un administrateur.\"\n        },\n        \"status-code\": {\n            en: \"Error 403\",\n            fr: \"Erreur 403\"\n        }\n    };\n    translate(additionalTranslations);\n</script>\n</body>\n</html>",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 10 Aug 2025 04:18:03 GMT\r\nReferrer-Policy: origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <title></title>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\">\n    <link rel=\"icon\" href=\"https://console.baleen.cloud/favicon.ico\">\n    <link href=\"/.well-known/baleen/error-pages-in/assets/style.css\" rel=\"stylesheet\" />\n    <script src=\"/.well-known/baleen/error-pages-in/assets/script.js\"></script>\n</head>\n<body>\n<div class=\"error-page-container\">\n    <div class=\"error-body-container\">\n        <div class=\"left-container\">\n            <div class=\"error-body\">\n                <h1><span id=\"title\"></span></h1>\n                <div id=\"status-code\"></div>\n                <div id=\"description\" class=\"description\"></div>\n                <a href=\"#\" onclick=\"location.reload(); return false;\">\n                    <span id=\"reload\"></span>\n                </a>\n                <br><br>\n                <div id=\"request-id-description\" class=\"description\"></div>\n                <div><b>8abe1f5a12f7376d8c3bf6867a074585</b></div>\n            </div>\n        </div>\n        <div class=\"right-container\">\n            <img class=\"img-error\"\n                 src=\"/.well-known/baleen/error-pages-in/assets/error.png\"\n                 alt=\"Error page\">\n        </div>\n        <div class=\"footer\">\n            <div class=\"logo-baleen\"></div>\n        </div>\n    </div>\n</div>\n<script>\n    const additionalTranslations = {\n        title: {\n            en: \"Unauthorized access\",\n            fr: \"Accès non autorisé\"\n        },\n        description: {\n            en: \"You don't have access to this resource. Check your permissions or contact an admin.\",\n            fr: \"Vous n’avez pas accès à cette ressource. Vérifiez vos droits ou contactez un administrateur.\"\n        },\n        \"status-code\": {\n            en: \"Error 403\",\n            fr: \"Erreur 403\"\n        }\n    };\n    translate(additionalTranslations);\n</script>\n</body>\n</html>",
       "ip": "185.231.164.110",
-      "timestamp": "2025-07-27T04:22:47.096894359Z",
+      "timestamp": "2025-08-10T04:18:03.074050951Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sas.sante.fr'",
       "matcher-status": true
     },
@@ -391,9 +271,129 @@
       "host": "https://sas.sante.fr",
       "matched-at": "https://sas.sante.fr",
       "request": "GET / HTTP/1.1\r\nHost: sas.sante.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 27 Jul 2025 04:22:47 GMT\r\nReferrer-Policy: origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <title></title>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\">\n    <link rel=\"icon\" href=\"https://console.baleen.cloud/favicon.ico\">\n    <link href=\"/.well-known/baleen/error-pages-in/assets/style.css\" rel=\"stylesheet\" />\n    <script src=\"/.well-known/baleen/error-pages-in/assets/script.js\"></script>\n</head>\n<body>\n<div class=\"error-page-container\">\n    <div class=\"error-body-container\">\n        <div class=\"left-container\">\n            <div class=\"error-body\">\n                <h1><span id=\"title\"></span></h1>\n                <div id=\"status-code\"></div>\n                <div id=\"description\" class=\"description\"></div>\n                <a href=\"#\" onclick=\"location.reload(); return false;\">\n                    <span id=\"reload\"></span>\n                </a>\n                <br><br>\n                <div id=\"request-id-description\" class=\"description\"></div>\n                <div><b>224bd97644739d826b4145dcaedcf333</b></div>\n            </div>\n        </div>\n        <div class=\"right-container\">\n            <img class=\"img-error\"\n                 src=\"/.well-known/baleen/error-pages-in/assets/error.png\"\n                 alt=\"Error page\">\n        </div>\n        <div class=\"footer\">\n            <div class=\"logo-baleen\"></div>\n        </div>\n    </div>\n</div>\n<script>\n    const additionalTranslations = {\n        title: {\n            en: \"Unauthorized access\",\n            fr: \"Accès non autorisé\"\n        },\n        description: {\n            en: \"You don't have access to this resource. Check your permissions or contact an admin.\",\n            fr: \"Vous n’avez pas accès à cette ressource. Vérifiez vos droits ou contactez un administrateur.\"\n        },\n        \"status-code\": {\n            en: \"Error 403\",\n            fr: \"Erreur 403\"\n        }\n    };\n    translate(additionalTranslations);\n</script>\n</body>\n</html>",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 10 Aug 2025 04:18:03 GMT\r\nReferrer-Policy: origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <title></title>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\">\n    <link rel=\"icon\" href=\"https://console.baleen.cloud/favicon.ico\">\n    <link href=\"/.well-known/baleen/error-pages-in/assets/style.css\" rel=\"stylesheet\" />\n    <script src=\"/.well-known/baleen/error-pages-in/assets/script.js\"></script>\n</head>\n<body>\n<div class=\"error-page-container\">\n    <div class=\"error-body-container\">\n        <div class=\"left-container\">\n            <div class=\"error-body\">\n                <h1><span id=\"title\"></span></h1>\n                <div id=\"status-code\"></div>\n                <div id=\"description\" class=\"description\"></div>\n                <a href=\"#\" onclick=\"location.reload(); return false;\">\n                    <span id=\"reload\"></span>\n                </a>\n                <br><br>\n                <div id=\"request-id-description\" class=\"description\"></div>\n                <div><b>8abe1f5a12f7376d8c3bf6867a074585</b></div>\n            </div>\n        </div>\n        <div class=\"right-container\">\n            <img class=\"img-error\"\n                 src=\"/.well-known/baleen/error-pages-in/assets/error.png\"\n                 alt=\"Error page\">\n        </div>\n        <div class=\"footer\">\n            <div class=\"logo-baleen\"></div>\n        </div>\n    </div>\n</div>\n<script>\n    const additionalTranslations = {\n        title: {\n            en: \"Unauthorized access\",\n            fr: \"Accès non autorisé\"\n        },\n        description: {\n            en: \"You don't have access to this resource. Check your permissions or contact an admin.\",\n            fr: \"Vous n’avez pas accès à cette ressource. Vérifiez vos droits ou contactez un administrateur.\"\n        },\n        \"status-code\": {\n            en: \"Error 403\",\n            fr: \"Erreur 403\"\n        }\n    };\n    translate(additionalTranslations);\n</script>\n</body>\n</html>",
       "ip": "185.231.164.110",
-      "timestamp": "2025-07-27T04:22:47.096909096Z",
+      "timestamp": "2025-08-10T04:18:03.074068264Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sas.sante.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "https://sas.sante.fr",
+      "matched-at": "https://sas.sante.fr",
+      "request": "GET / HTTP/1.1\r\nHost: sas.sante.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 10 Aug 2025 04:18:03 GMT\r\nReferrer-Policy: origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <title></title>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\">\n    <link rel=\"icon\" href=\"https://console.baleen.cloud/favicon.ico\">\n    <link href=\"/.well-known/baleen/error-pages-in/assets/style.css\" rel=\"stylesheet\" />\n    <script src=\"/.well-known/baleen/error-pages-in/assets/script.js\"></script>\n</head>\n<body>\n<div class=\"error-page-container\">\n    <div class=\"error-body-container\">\n        <div class=\"left-container\">\n            <div class=\"error-body\">\n                <h1><span id=\"title\"></span></h1>\n                <div id=\"status-code\"></div>\n                <div id=\"description\" class=\"description\"></div>\n                <a href=\"#\" onclick=\"location.reload(); return false;\">\n                    <span id=\"reload\"></span>\n                </a>\n                <br><br>\n                <div id=\"request-id-description\" class=\"description\"></div>\n                <div><b>8abe1f5a12f7376d8c3bf6867a074585</b></div>\n            </div>\n        </div>\n        <div class=\"right-container\">\n            <img class=\"img-error\"\n                 src=\"/.well-known/baleen/error-pages-in/assets/error.png\"\n                 alt=\"Error page\">\n        </div>\n        <div class=\"footer\">\n            <div class=\"logo-baleen\"></div>\n        </div>\n    </div>\n</div>\n<script>\n    const additionalTranslations = {\n        title: {\n            en: \"Unauthorized access\",\n            fr: \"Accès non autorisé\"\n        },\n        description: {\n            en: \"You don't have access to this resource. Check your permissions or contact an admin.\",\n            fr: \"Vous n’avez pas accès à cette ressource. Vérifiez vos droits ou contactez un administrateur.\"\n        },\n        \"status-code\": {\n            en: \"Error 403\",\n            fr: \"Erreur 403\"\n        }\n    };\n    translate(additionalTranslations);\n</script>\n</body>\n</html>",
+      "ip": "185.231.164.110",
+      "timestamp": "2025-08-10T04:18:03.074083783Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sas.sante.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "https://sas.sante.fr",
+      "matched-at": "https://sas.sante.fr",
+      "request": "GET / HTTP/1.1\r\nHost: sas.sante.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 10 Aug 2025 04:18:03 GMT\r\nReferrer-Policy: origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <title></title>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\">\n    <link rel=\"icon\" href=\"https://console.baleen.cloud/favicon.ico\">\n    <link href=\"/.well-known/baleen/error-pages-in/assets/style.css\" rel=\"stylesheet\" />\n    <script src=\"/.well-known/baleen/error-pages-in/assets/script.js\"></script>\n</head>\n<body>\n<div class=\"error-page-container\">\n    <div class=\"error-body-container\">\n        <div class=\"left-container\">\n            <div class=\"error-body\">\n                <h1><span id=\"title\"></span></h1>\n                <div id=\"status-code\"></div>\n                <div id=\"description\" class=\"description\"></div>\n                <a href=\"#\" onclick=\"location.reload(); return false;\">\n                    <span id=\"reload\"></span>\n                </a>\n                <br><br>\n                <div id=\"request-id-description\" class=\"description\"></div>\n                <div><b>8abe1f5a12f7376d8c3bf6867a074585</b></div>\n            </div>\n        </div>\n        <div class=\"right-container\">\n            <img class=\"img-error\"\n                 src=\"/.well-known/baleen/error-pages-in/assets/error.png\"\n                 alt=\"Error page\">\n        </div>\n        <div class=\"footer\">\n            <div class=\"logo-baleen\"></div>\n        </div>\n    </div>\n</div>\n<script>\n    const additionalTranslations = {\n        title: {\n            en: \"Unauthorized access\",\n            fr: \"Accès non autorisé\"\n        },\n        description: {\n            en: \"You don't have access to this resource. Check your permissions or contact an admin.\",\n            fr: \"Vous n’avez pas accès à cette ressource. Vérifiez vos droits ou contactez un administrateur.\"\n        },\n        \"status-code\": {\n            en: \"Error 403\",\n            fr: \"Erreur 403\"\n        }\n    };\n    translate(additionalTranslations);\n</script>\n</body>\n</html>",
+      "ip": "185.231.164.110",
+      "timestamp": "2025-08-10T04:18:03.074100875Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sas.sante.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "https://sas.sante.fr",
+      "matched-at": "https://sas.sante.fr",
+      "request": "GET / HTTP/1.1\r\nHost: sas.sante.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 10 Aug 2025 04:18:03 GMT\r\nReferrer-Policy: origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <title></title>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\">\n    <link rel=\"icon\" href=\"https://console.baleen.cloud/favicon.ico\">\n    <link href=\"/.well-known/baleen/error-pages-in/assets/style.css\" rel=\"stylesheet\" />\n    <script src=\"/.well-known/baleen/error-pages-in/assets/script.js\"></script>\n</head>\n<body>\n<div class=\"error-page-container\">\n    <div class=\"error-body-container\">\n        <div class=\"left-container\">\n            <div class=\"error-body\">\n                <h1><span id=\"title\"></span></h1>\n                <div id=\"status-code\"></div>\n                <div id=\"description\" class=\"description\"></div>\n                <a href=\"#\" onclick=\"location.reload(); return false;\">\n                    <span id=\"reload\"></span>\n                </a>\n                <br><br>\n                <div id=\"request-id-description\" class=\"description\"></div>\n                <div><b>8abe1f5a12f7376d8c3bf6867a074585</b></div>\n            </div>\n        </div>\n        <div class=\"right-container\">\n            <img class=\"img-error\"\n                 src=\"/.well-known/baleen/error-pages-in/assets/error.png\"\n                 alt=\"Error page\">\n        </div>\n        <div class=\"footer\">\n            <div class=\"logo-baleen\"></div>\n        </div>\n    </div>\n</div>\n<script>\n    const additionalTranslations = {\n        title: {\n            en: \"Unauthorized access\",\n            fr: \"Accès non autorisé\"\n        },\n        description: {\n            en: \"You don't have access to this resource. Check your permissions or contact an admin.\",\n            fr: \"Vous n’avez pas accès à cette ressource. Vérifiez vos droits ou contactez un administrateur.\"\n        },\n        \"status-code\": {\n            en: \"Error 403\",\n            fr: \"Erreur 403\"\n        }\n    };\n    translate(additionalTranslations);\n</script>\n</body>\n</html>",
+      "ip": "185.231.164.110",
+      "timestamp": "2025-08-10T04:18:03.074115533Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sas.sante.fr'",
       "matcher-status": true
     },
@@ -424,7 +424,7 @@
         "DHIMYOTIS"
       ],
       "ip": "185.231.164.110",
-      "timestamp": "2025-07-27T04:24:59.780748347Z",
+      "timestamp": "2025-08-10T04:20:36.621677711Z",
       "matcher-status": true
     },
     {
@@ -451,14 +451,14 @@
       "host": "sas.sante.fr",
       "matched-at": "sas.sante.fr:443",
       "extracted-results": [
-        "sas.sante.fr",
-        "seconnecter.sante.fr",
         "lelab.sante.fr",
         "sante.fr",
-        "www.sante.fr"
+        "www.sante.fr",
+        "sas.sante.fr",
+        "seconnecter.sante.fr"
       ],
       "ip": "185.231.164.110",
-      "timestamp": "2025-07-27T04:24:59.78090468Z",
+      "timestamp": "2025-08-10T04:20:36.621845257Z",
       "matcher-status": true
     },
     {
@@ -489,7 +489,7 @@
         "tls12"
       ],
       "ip": "185.231.164.110",
-      "timestamp": "2025-07-27T04:25:00.265180738Z",
+      "timestamp": "2025-08-10T04:20:36.805235933Z",
       "matcher-status": true
     },
     {
@@ -520,7 +520,7 @@
         "tls13"
       ],
       "ip": "185.231.164.110",
-      "timestamp": "2025-07-27T04:25:01.153507182Z",
+      "timestamp": "2025-08-10T04:20:38.016496305Z",
       "matcher-status": true
     }
   ]
