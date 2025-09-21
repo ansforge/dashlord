@@ -212,7 +212,7 @@ td {
 	</h2>
 
 	<h3>
-		Generated on Sun, 14 Sept 2025 02:26:06
+		Generated on Sun, 21 Sept 2025 02:27:39
 	</h3>
 
 	<h3>
@@ -245,7 +245,7 @@ td {
 					<div>Medium</div>
 				</td>
 				<td align="center">
-					<div>2</div>
+					<div>3</div>
 				</td>
 			</tr>
 			<tr>
@@ -301,6 +301,11 @@ td {
 				<td align="center">12</td>
 			</tr>
 			<tr>
+				<td><a href="#10099">Source Code Disclosure - SQL</a></td>
+				<td align="center" class="risk-2">Medium</td>
+				<td align="center">1</td>
+			</tr>
+			<tr>
 				<td><a href="#90003">Sub Resource Integrity Attribute Missing</a></td>
 				<td align="center" class="risk-2">Medium</td>
 				<td align="center">12</td>
@@ -308,7 +313,7 @@ td {
 			<tr>
 				<td><a href="#10044">Big Redirect Detected (Potential Sensitive Information Leak)</a></td>
 				<td align="center" class="risk-1">Low</td>
-				<td align="center">11</td>
+				<td align="center">12</td>
 			</tr>
 			<tr>
 				<td><a href="#10017">Cross-Domain JavaScript Source File Inclusion</a></td>
@@ -323,7 +328,7 @@ td {
 			<tr>
 				<td><a href="#90004">Insufficient Site Isolation Against Spectre Vulnerability</a></td>
 				<td align="center" class="risk-1">Low</td>
-				<td align="center">13</td>
+				<td align="center">19</td>
 			</tr>
 			<tr>
 				<td><a href="#10063">Permissions Policy Header Not Set</a></td>
@@ -333,7 +338,7 @@ td {
 			<tr>
 				<td><a href="#10096">Timestamp Disclosure - Unix</a></td>
 				<td align="center" class="risk-1">Low</td>
-				<td align="center">4</td>
+				<td align="center">6</td>
 			</tr>
 			<tr>
 				<td><a href="#10094">Base64 Disclosure</a></td>
@@ -348,7 +353,7 @@ td {
 			<tr>
 				<td><a href="#10015">Re-examine Cache-control Directives</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">13</td>
+				<td align="center">12</td>
 			</tr>
 			<tr>
 				<td><a href="#90005">Sec-Fetch-Dest Header is Missing</a></td>
@@ -786,7 +791,7 @@ td {
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy">https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</a>
+							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP">https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP</a>
 							<br />
 						
 							<a href="https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</a>
@@ -821,6 +826,90 @@ td {
 					<td width="20%">Plugin Id</td>
 					<td width="80%"><a
 						href="https://www.zaproxy.org/docs/alerts/10038/">10038</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
+					<th width="20%" class="risk-2"><a
+						id="10099"></a>
+						<div>Medium</div></th>
+					<th class="risk-2">Source Code Disclosure - SQL</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>Application Source Code was disclosed by the web server. - SQL</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://gnius.esante.gouv.fr/en/reussir-votre-connexion-au-ror-national/mes-etapes-de-connexion-au-ror/jidentifie-les-donnees-dont-jai-besoin-et-le-mode-dacces-associe">https://gnius.esante.gouv.fr/en/reussir-votre-connexion-au-ror-national/mes-etapes-de-connexion-au-ror/jidentifie-les-donnees-dont-jai-besoin-et-le-mode-dacces-associe</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">select the webservices I need from the following 3 cases</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">1</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%">
+							<div>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</div>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%">
+							<a href="https://nhimg.org/twitter-breach">https://nhimg.org/twitter-breach</a>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/540.html">540</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">13</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/10099/">10099</a></td>
 				</tr>
 			</table>
 			<div class="spacer"></div>
@@ -1271,6 +1360,39 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://gnius.esante.gouv.fr">https://gnius.esante.gouv.fr</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">Location header URI length: 31 [https://gnius.esante.gouv.fr/fr].
+Predicted response size: 331.
+Response Body Length: 370.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://gnius.esante.gouv.fr/filter/tips">https://gnius.esante.gouv.fr/filter/tips</a></td>
 					</tr>
 					<tr>
@@ -1633,7 +1755,7 @@ Response Body Length: 426.</td>
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">11</td>
+					<td width="80%">12</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -2562,6 +2684,37 @@ Response Body Length: 426.</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://gnius.esante.gouv.fr/en/10-questions-get-your-project-ground">https://gnius.esante.gouv.fr/en/10-questions-get-your-project-ground</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Cross-Origin-Resource-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://gnius.esante.gouv.fr/fr">https://gnius.esante.gouv.fr/fr</a></td>
 					</tr>
 					<tr>
@@ -2594,6 +2747,37 @@ Response Body Length: 426.</td>
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://gnius.esante.gouv.fr/fr/financements/4-questions-pour-ameliorer-votre-candidature-un-projet-collaboratif">https://gnius.esante.gouv.fr/fr/financements/4-questions-pour-ameliorer-votre-candidature-un-projet-collaboratif</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Cross-Origin-Resource-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://gnius.esante.gouv.fr/fr/le-dispositif-medical-numerique/4-questions-pour-anticiper-le-remboursement-de-mon-dm">https://gnius.esante.gouv.fr/fr/le-dispositif-medical-numerique/4-questions-pour-anticiper-le-remboursement-de-mon-dm</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2717,6 +2901,37 @@ Response Body Length: 426.</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://gnius.esante.gouv.fr/en/10-questions-get-your-project-ground">https://gnius.esante.gouv.fr/en/10-questions-get-your-project-ground</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Cross-Origin-Embedder-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://gnius.esante.gouv.fr/fr">https://gnius.esante.gouv.fr/fr</a></td>
 					</tr>
 					<tr>
@@ -2749,6 +2964,37 @@ Response Body Length: 426.</td>
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://gnius.esante.gouv.fr/fr/financements/4-questions-pour-ameliorer-votre-candidature-un-projet-collaboratif">https://gnius.esante.gouv.fr/fr/financements/4-questions-pour-ameliorer-votre-candidature-un-projet-collaboratif</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Cross-Origin-Embedder-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://gnius.esante.gouv.fr/fr/le-dispositif-medical-numerique/4-questions-pour-anticiper-le-remboursement-de-mon-dm">https://gnius.esante.gouv.fr/fr/le-dispositif-medical-numerique/4-questions-pour-anticiper-le-remboursement-de-mon-dm</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2841,6 +3087,37 @@ Response Body Length: 426.</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://gnius.esante.gouv.fr/en/10-questions-get-your-project-ground">https://gnius.esante.gouv.fr/en/10-questions-get-your-project-ground</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Cross-Origin-Opener-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://gnius.esante.gouv.fr/fr">https://gnius.esante.gouv.fr/fr</a></td>
 					</tr>
 					<tr>
@@ -2903,6 +3180,37 @@ Response Body Length: 426.</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://gnius.esante.gouv.fr/fr/le-dispositif-medical-numerique/4-questions-pour-anticiper-le-remboursement-de-mon-dm">https://gnius.esante.gouv.fr/fr/le-dispositif-medical-numerique/4-questions-pour-anticiper-le-remboursement-de-mon-dm</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Cross-Origin-Opener-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://gnius.esante.gouv.fr/sitemap.xml">https://gnius.esante.gouv.fr/sitemap.xml</a></td>
 					</tr>
 					<tr>
@@ -2933,7 +3241,7 @@ Response Body Length: 426.</td>
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">13</td>
+					<td width="80%">19</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -2954,7 +3262,7 @@ Response Body Length: 426.</td>
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy">https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy</a>
+							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy">https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy</a>
 							
 						</td>
 				</tr>
@@ -3379,7 +3687,7 @@ Response Body Length: 426.</td>
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</a>
+							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy">https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy</a>
 							<br />
 						
 							<a href="https://developer.chrome.com/blog/feature-policy/">https://developer.chrome.com/blog/feature-policy/</a>
@@ -3459,6 +3767,37 @@ Response Body Length: 426.</td>
 						<td width="20%"
 							class="indent2">Other Info</td>
 						<td width="80%">1751634825, which evaluates to: 2025-07-04 13:13:45.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://gnius.esante.gouv.fr/en/get-your-solution-reimbursed/check-my-registration-type/reimbursement-in-generic-form/lodge-my-application-with-the-ministers-in-charge-of-health-and-social-security-on-the-platform-xxx">https://gnius.esante.gouv.fr/en/get-your-solution-reimbursed/check-my-registration-type/reimbursement-in-generic-form/lodge-my-application-with-the-ministers-in-charge-of-health-and-social-security-on-the-platform-xxx</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">1688587024</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">1688587024, which evaluates to: 2023-07-05 19:57:04.</td>
 					</tr>
 				
 					<tr>
@@ -3554,9 +3893,40 @@ Response Body Length: 426.</td>
 						<td width="80%">1751634825, which evaluates to: 2025-07-04 13:13:45.</td>
 					</tr>
 				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://gnius.esante.gouv.fr/fr/faire-rembourser-sa-solution-de-telesurveillance/je-verifie-mon-type-dinscription/remboursement-en-forme-generique/je-depose-ma-candidature-aupres-des-ministres-charges-de-la-sante-et-de-la-securite-sociale-sur-la-plateforme-xxx">https://gnius.esante.gouv.fr/fr/faire-rembourser-sa-solution-de-telesurveillance/je-verifie-mon-type-dinscription/remboursement-en-forme-generique/je-depose-ma-candidature-aupres-des-ministres-charges-de-la-sante-et-de-la-securite-sociale-sur-la-plateforme-xxx</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">1688587024</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">1688587024, which evaluates to: 2023-07-05 19:57:04.</td>
+					</tr>
+				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">4</td>
+					<td width="80%">6</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -3796,37 +4166,6 @@ Response Body Length: 426.</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://gnius.esante.gouv.fr/node/add/">https://gnius.esante.gouv.fr/node/add/</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">/sites/default/files/2025-01/ATerr2</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">�ȭz��y����ߊW��m6��5�ޮ�</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
 						<td width="80%"><a href="https://gnius.esante.gouv.fr/profiles/">https://gnius.esante.gouv.fr/profiles/</a></td>
 					</tr>
 					<tr>
@@ -3921,6 +4260,37 @@ Response Body Length: 426.</td>
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://gnius.esante.gouv.fr/profiles/*.svg">https://gnius.esante.gouv.fr/profiles/*.svg</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">/sites/default/files/2025-01/ATerr2</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">�ȭz��y����ߊW��m6��5�ޮ�</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://gnius.esante.gouv.fr/search/">https://gnius.esante.gouv.fr/search/</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4560,37 +4930,6 @@ Response Body Length: 426.</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://gnius.esante.gouv.fr/en/regulations/3-questions-about-lines-am-I-relevant">https://gnius.esante.gouv.fr/en/regulations/3-questions-about-lines-am-I-relevant</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">cache-control</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">max-age=3600, public</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
 						<td width="80%"><a href="https://gnius.esante.gouv.fr/en/the-medical-digital-device/4-questions-about-anticipating-the-reimbursement-of-my-dm">https://gnius.esante.gouv.fr/en/the-medical-digital-device/4-questions-about-anticipating-the-reimbursement-of-my-dm</a></td>
 					</tr>
 					<tr>
@@ -4715,7 +5054,7 @@ Response Body Length: 426.</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://gnius.esante.gouv.fr/fr/financements/construire-un-modele-economique-en-sante">https://gnius.esante.gouv.fr/fr/financements/construire-un-modele-economique-en-sante</a></td>
+						<td width="80%"><a href="https://gnius.esante.gouv.fr/fr/le-dispositif-medical-numerique/4-questions-pour-anticiper-le-remboursement-de-mon-dm">https://gnius.esante.gouv.fr/fr/le-dispositif-medical-numerique/4-questions-pour-anticiper-le-remboursement-de-mon-dm</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4746,7 +5085,7 @@ Response Body Length: 426.</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://gnius.esante.gouv.fr/fr/le-dispositif-medical-numerique/4-questions-pour-anticiper-le-remboursement-de-mon-dm">https://gnius.esante.gouv.fr/fr/le-dispositif-medical-numerique/4-questions-pour-anticiper-le-remboursement-de-mon-dm</a></td>
+						<td width="80%"><a href="https://gnius.esante.gouv.fr/fr/le-dispositif-medical-numerique/4-questions-pour-preparer-la-mise-sur-le-marche-de-mon-dm">https://gnius.esante.gouv.fr/fr/le-dispositif-medical-numerique/4-questions-pour-preparer-la-mise-sur-le-marche-de-mon-dm</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4869,7 +5208,7 @@ Response Body Length: 426.</td>
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">13</td>
+					<td width="80%">12</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -4884,7 +5223,7 @@ Response Body Length: 426.</td>
 							<a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching">https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</a>
 							<br />
 						
-							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</a>
+							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control">https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control</a>
 							<br />
 						
 							<a href="https://grayduck.mn/2021/09/13/cache-control-recommendations/">https://grayduck.mn/2021/09/13/cache-control-recommendations/</a>
@@ -5002,7 +5341,7 @@ Response Body Length: 426.</td>
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</a>
+							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Dest">https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Dest</a>
 							
 						</td>
 				</tr>
@@ -5117,7 +5456,7 @@ Response Body Length: 426.</td>
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</a>
+							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Mode">https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Mode</a>
 							
 						</td>
 				</tr>
@@ -5232,7 +5571,7 @@ Response Body Length: 426.</td>
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</a>
+							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Site">https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Site</a>
 							
 						</td>
 				</tr>
@@ -5347,7 +5686,7 @@ Response Body Length: 426.</td>
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</a>
+							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-User">https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-User</a>
 							
 						</td>
 				</tr>
@@ -5606,37 +5945,6 @@ Response Body Length: 426.</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://gnius.esante.gouv.fr/core/*.js$">https://gnius.esante.gouv.fr/core/*.js$</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">max-age=3600</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
 						<td width="80%"><a href="https://gnius.esante.gouv.fr/core/*.png">https://gnius.esante.gouv.fr/core/*.png</a></td>
 					</tr>
 					<tr>
@@ -5700,6 +6008,37 @@ Response Body Length: 426.</td>
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://gnius.esante.gouv.fr/robots.txt">https://gnius.esante.gouv.fr/robots.txt</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">max-age=3600</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://gnius.esante.gouv.fr/sitemap.xml">https://gnius.esante.gouv.fr/sitemap.xml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
