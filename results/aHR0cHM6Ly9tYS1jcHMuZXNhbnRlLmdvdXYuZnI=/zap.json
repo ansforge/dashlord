@@ -1,8 +1,8 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.16.1",
-	"@generated": "Sun, 5 Oct 2025 02:49:50",
-	"created": "2025-10-05T02:49:50.984510899Z",
+	"@generated": "Sun, 12 Oct 2025 02:49:21",
+	"created": "2025-10-12T02:49:21.762120628Z",
 	"site":[ 
 		{
 			"@name": "https://ma-cps.esante.gouv.fr",
@@ -21,7 +21,7 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "24",
+							"id": "7",
 							"uri": "https://ma-cps.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -30,7 +30,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "20",
+							"id": "6",
 							"uri": "https://ma-cps.esante.gouv.fr/",
 							"method": "GET",
 							"param": "",
@@ -39,16 +39,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "73",
-							"uri": "https://ma-cps.esante.gouv.fr/favicon.ico",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "71",
+							"id": "69",
 							"uri": "https://ma-cps.esante.gouv.fr/img/logos/favicon.ico",
 							"method": "GET",
 							"param": "",
@@ -57,7 +48,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "66",
+							"id": "61",
 							"uri": "https://ma-cps.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -67,6 +58,15 @@
 						},
 						{
 							"id": "68",
+							"uri": "https://ma-cps.esante.gouv.fr/scripts/elastic-apm-rum.umd.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "74",
 							"uri": "https://ma-cps.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -81,7 +81,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10020",
@@ -94,7 +94,7 @@
 					"desc": "<p>X-Frame-Options (XFO) headers were found, a response with multiple XFO header entries may not be predictably treated by all user-agents.</p>",
 					"instances":[ 
 						{
-							"id": "13",
+							"id": "1",
 							"uri": "https://ma-cps.esante.gouv.fr",
 							"method": "GET",
 							"param": "x-frame-options",
@@ -103,16 +103,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "12",
-							"uri": "https://ma-cps.esante.gouv.fr/",
-							"method": "GET",
-							"param": "x-frame-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "64",
+							"id": "93",
 							"uri": "https://ma-cps.esante.gouv.fr/favicon.ico",
 							"method": "GET",
 							"param": "x-frame-options",
@@ -121,7 +112,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "63",
+							"id": "66",
 							"uri": "https://ma-cps.esante.gouv.fr/img/logos/favicon.ico",
 							"method": "GET",
 							"param": "x-frame-options",
@@ -130,7 +121,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "62",
+							"id": "50",
 							"uri": "https://ma-cps.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "x-frame-options",
@@ -139,7 +130,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "61",
+							"id": "67",
 							"uri": "https://ma-cps.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "x-frame-options",
@@ -148,13 +139,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "6",
+					"count": "5",
 					"solution": "<p>Ensure only a single X-Frame-Options header is present in the response.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7034</p>",
 					"cweid": "1021",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90003",
@@ -167,7 +158,7 @@
 					"desc": "<p>The integrity attribute is missing on a script or link tag served by an external server. The integrity tag prevents an attacker who have gained access to this server from injecting a malicious content.</p>",
 					"instances":[ 
 						{
-							"id": "53",
+							"id": "56",
 							"uri": "https://ma-cps.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -176,7 +167,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "54",
+							"id": "57",
 							"uri": "https://ma-cps.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -185,12 +176,21 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "51",
+							"id": "55",
 							"uri": "https://ma-cps.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "<link rel=\"stylesheet\" href=\"https://use.typekit.net/jjx2ksb.css\">",
+							"otherinfo": ""
+						},
+						{
+							"id": "54",
+							"uri": "https://ma-cps.esante.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">",
 							"otherinfo": ""
 						},
 						{
@@ -199,20 +199,11 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">",
-							"otherinfo": ""
-						},
-						{
-							"id": "59",
-							"uri": "https://ma-cps.esante.gouv.fr/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
 							"evidence": "<link rel=\"stylesheet\" href=\"https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css\">",
 							"otherinfo": ""
 						},
 						{
-							"id": "57",
+							"id": "53",
 							"uri": "https://ma-cps.esante.gouv.fr/",
 							"method": "GET",
 							"param": "",
@@ -221,61 +212,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "94",
-							"uri": "https://ma-cps.esante.gouv.fr/favicon.ico",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">",
-							"otherinfo": ""
-						},
-						{
-							"id": "98",
-							"uri": "https://ma-cps.esante.gouv.fr/favicon.ico",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link rel=\"stylesheet\" href=\"https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css\">",
-							"otherinfo": ""
-						},
-						{
-							"id": "92",
-							"uri": "https://ma-cps.esante.gouv.fr/favicon.ico",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link rel=\"stylesheet\" href=\"https://use.typekit.net/jjx2ksb.css\">",
-							"otherinfo": ""
-						},
-						{
-							"id": "97",
-							"uri": "https://ma-cps.esante.gouv.fr/img/logos/favicon.ico",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">",
-							"otherinfo": ""
-						},
-						{
-							"id": "100",
-							"uri": "https://ma-cps.esante.gouv.fr/img/logos/favicon.ico",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link rel=\"stylesheet\" href=\"https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css\">",
-							"otherinfo": ""
-						},
-						{
-							"id": "96",
-							"uri": "https://ma-cps.esante.gouv.fr/img/logos/favicon.ico",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link rel=\"stylesheet\" href=\"https://use.typekit.net/jjx2ksb.css\">",
-							"otherinfo": ""
-						},
-						{
-							"id": "101",
+							"id": "89",
 							"uri": "https://ma-cps.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -284,7 +221,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "102",
+							"id": "91",
 							"uri": "https://ma-cps.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -293,7 +230,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "99",
+							"id": "87",
 							"uri": "https://ma-cps.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -302,7 +239,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "15",
+					"count": "9",
 					"solution": "<p>Provide a valid integrity attribute to the tag.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
@@ -321,7 +258,7 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "28",
+							"id": "12",
 							"uri": "https://ma-cps.esante.gouv.fr",
 							"method": "GET",
 							"param": "X-WebKit-CSP",
@@ -330,7 +267,7 @@
 							"otherinfo": "The header X-WebKit-CSP was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
 						},
 						{
-							"id": "23",
+							"id": "14",
 							"uri": "https://ma-cps.esante.gouv.fr/",
 							"method": "GET",
 							"param": "X-WebKit-CSP",
@@ -339,7 +276,7 @@
 							"otherinfo": "The header X-WebKit-CSP was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
 						},
 						{
-							"id": "79",
+							"id": "97",
 							"uri": "https://ma-cps.esante.gouv.fr/favicon.ico",
 							"method": "GET",
 							"param": "X-WebKit-CSP",
@@ -348,7 +285,7 @@
 							"otherinfo": "The header X-WebKit-CSP was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
 						},
 						{
-							"id": "77",
+							"id": "73",
 							"uri": "https://ma-cps.esante.gouv.fr/img/logos/favicon.ico",
 							"method": "GET",
 							"param": "X-WebKit-CSP",
@@ -357,7 +294,7 @@
 							"otherinfo": "The header X-WebKit-CSP was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
 						},
 						{
-							"id": "72",
+							"id": "63",
 							"uri": "https://ma-cps.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "X-WebKit-CSP",
@@ -366,7 +303,7 @@
 							"otherinfo": "The header X-WebKit-CSP was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
 						},
 						{
-							"id": "105",
+							"id": "81",
 							"uri": "https://ma-cps.esante.gouv.fr/scripts/elastic-apm-rum.umd.min.js",
 							"method": "GET",
 							"param": "X-WebKit-CSP",
@@ -375,7 +312,7 @@
 							"otherinfo": "The header X-WebKit-CSP was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
 						},
 						{
-							"id": "74",
+							"id": "76",
 							"uri": "https://ma-cps.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "X-WebKit-CSP",
@@ -390,7 +327,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90004",
@@ -403,7 +340,7 @@
 					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
 					"instances":[ 
 						{
-							"id": "39",
+							"id": "43",
 							"uri": "https://ma-cps.esante.gouv.fr",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
@@ -412,7 +349,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "46",
+							"id": "39",
 							"uri": "https://ma-cps.esante.gouv.fr/",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
@@ -421,17 +358,8 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "85",
+							"id": "83",
 							"uri": "https://ma-cps.esante.gouv.fr/robots.txt",
-							"method": "GET",
-							"param": "Cross-Origin-Resource-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "36",
-							"uri": "https://ma-cps.esante.gouv.fr/runtime-es5.a4dadbc03350107420a4.js",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
 							"attack": "",
@@ -440,6 +368,15 @@
 						},
 						{
 							"id": "42",
+							"uri": "https://ma-cps.esante.gouv.fr/runtime-es5.a4dadbc03350107420a4.js",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "47",
 							"uri": "https://ma-cps.esante.gouv.fr",
 							"method": "GET",
 							"param": "Cross-Origin-Embedder-Policy",
@@ -448,7 +385,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "47",
+							"id": "45",
 							"uri": "https://ma-cps.esante.gouv.fr/",
 							"method": "GET",
 							"param": "Cross-Origin-Embedder-Policy",
@@ -457,7 +394,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "88",
+							"id": "84",
 							"uri": "https://ma-cps.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Cross-Origin-Embedder-Policy",
@@ -466,7 +403,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "44",
+							"id": "48",
 							"uri": "https://ma-cps.esante.gouv.fr",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
@@ -475,7 +412,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "52",
+							"id": "46",
 							"uri": "https://ma-cps.esante.gouv.fr/",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
@@ -484,7 +421,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "89",
+							"id": "85",
 							"uri": "https://ma-cps.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
@@ -512,7 +449,7 @@
 					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
 					"instances":[ 
 						{
-							"id": "38",
+							"id": "41",
 							"uri": "https://ma-cps.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -521,7 +458,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "43",
+							"id": "36",
 							"uri": "https://ma-cps.esante.gouv.fr/",
 							"method": "GET",
 							"param": "",
@@ -530,7 +467,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "91",
+							"id": "102",
 							"uri": "https://ma-cps.esante.gouv.fr/favicon.ico",
 							"method": "GET",
 							"param": "",
@@ -539,7 +476,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "95",
+							"id": "90",
 							"uri": "https://ma-cps.esante.gouv.fr/img/logos/favicon.ico",
 							"method": "GET",
 							"param": "",
@@ -548,7 +485,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "110",
+							"id": "104",
 							"uri": "https://ma-cps.esante.gouv.fr/polyfills-es2015.c3c294aaf81d14183aba.js",
 							"method": "GET",
 							"param": "",
@@ -557,7 +494,16 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "84",
+							"id": "108",
+							"uri": "https://ma-cps.esante.gouv.fr/polyfills-es5.75d8bdaa4171047d2dc7.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "80",
 							"uri": "https://ma-cps.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -566,7 +512,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "104",
+							"id": "100",
 							"uri": "https://ma-cps.esante.gouv.fr/runtime-es2015.a4dadbc03350107420a4.js",
 							"method": "GET",
 							"param": "",
@@ -575,7 +521,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "35",
+							"id": "37",
 							"uri": "https://ma-cps.esante.gouv.fr/runtime-es5.a4dadbc03350107420a4.js",
 							"method": "GET",
 							"param": "",
@@ -584,16 +530,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "114",
-							"uri": "https://ma-cps.esante.gouv.fr/scripts.84960589e89760329259.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "108",
+							"id": "96",
 							"uri": "https://ma-cps.esante.gouv.fr/scripts/elastic-apm-rum.umd.min.js",
 							"method": "GET",
 							"param": "",
@@ -602,7 +539,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "93",
+							"id": "94",
 							"uri": "https://ma-cps.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -630,7 +567,7 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server. - Unix</p>",
 					"instances":[ 
 						{
-							"id": "130",
+							"id": "122",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -639,7 +576,7 @@
 							"otherinfo": "1467031594, which evaluates to: 2016-06-27 12:46:34."
 						},
 						{
-							"id": "152",
+							"id": "144",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -648,7 +585,7 @@
 							"otherinfo": "1479516111, which evaluates to: 2016-11-19 00:41:51."
 						},
 						{
-							"id": "122",
+							"id": "114",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -657,7 +594,7 @@
 							"otherinfo": "1495990901, which evaluates to: 2017-05-28 17:01:41."
 						},
 						{
-							"id": "149",
+							"id": "141",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -666,7 +603,7 @@
 							"otherinfo": "1497426621, which evaluates to: 2017-06-14 07:50:21."
 						},
 						{
-							"id": "138",
+							"id": "130",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -675,7 +612,7 @@
 							"otherinfo": "1501505948, which evaluates to: 2017-07-31 12:59:08."
 						},
 						{
-							"id": "119",
+							"id": "111",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -684,7 +621,7 @@
 							"otherinfo": "1508970993, which evaluates to: 2017-10-25 22:36:33."
 						},
 						{
-							"id": "156",
+							"id": "148",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -693,7 +630,7 @@
 							"otherinfo": "1518500249, which evaluates to: 2018-02-13 05:37:29."
 						},
 						{
-							"id": "127",
+							"id": "119",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -702,7 +639,7 @@
 							"otherinfo": "1522805485, which evaluates to: 2018-04-04 01:31:25."
 						},
 						{
-							"id": "131",
+							"id": "123",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -711,7 +648,7 @@
 							"otherinfo": "1537002063, which evaluates to: 2018-09-15 09:01:03."
 						},
 						{
-							"id": "143",
+							"id": "135",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -720,7 +657,7 @@
 							"otherinfo": "1541459225, which evaluates to: 2018-11-05 23:07:05."
 						},
 						{
-							"id": "126",
+							"id": "118",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -729,7 +666,7 @@
 							"otherinfo": "1546045734, which evaluates to: 2018-12-29 01:08:54."
 						},
 						{
-							"id": "124",
+							"id": "116",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -738,7 +675,7 @@
 							"otherinfo": "1555081692, which evaluates to: 2019-04-12 15:08:12."
 						},
 						{
-							"id": "135",
+							"id": "127",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -747,7 +684,7 @@
 							"otherinfo": "1575990012, which evaluates to: 2019-12-10 15:00:12."
 						},
 						{
-							"id": "142",
+							"id": "134",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -756,7 +693,7 @@
 							"otherinfo": "1595750129, which evaluates to: 2020-07-26 07:55:29."
 						},
 						{
-							"id": "139",
+							"id": "131",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -765,7 +702,7 @@
 							"otherinfo": "1607167915, which evaluates to: 2020-12-05 11:31:55."
 						},
 						{
-							"id": "144",
+							"id": "136",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -774,7 +711,7 @@
 							"otherinfo": "1654270250, which evaluates to: 2022-06-03 15:30:50."
 						},
 						{
-							"id": "147",
+							"id": "139",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -783,7 +720,7 @@
 							"otherinfo": "1694076839, which evaluates to: 2023-09-07 08:53:59."
 						},
 						{
-							"id": "128",
+							"id": "120",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -792,7 +729,7 @@
 							"otherinfo": "1695183700, which evaluates to: 2023-09-20 04:21:40."
 						},
 						{
-							"id": "145",
+							"id": "137",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -801,7 +738,7 @@
 							"otherinfo": "1731405415, which evaluates to: 2024-11-12 09:56:55."
 						},
 						{
-							"id": "155",
+							"id": "147",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -810,7 +747,7 @@
 							"otherinfo": "1732584193, which evaluates to: 2024-11-26 01:23:13."
 						},
 						{
-							"id": "151",
+							"id": "143",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -819,7 +756,7 @@
 							"otherinfo": "1738396948, which evaluates to: 2025-02-01 08:02:28."
 						},
 						{
-							"id": "133",
+							"id": "125",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -828,7 +765,7 @@
 							"otherinfo": "1747873779, which evaluates to: 2025-05-22 00:29:39."
 						},
 						{
-							"id": "146",
+							"id": "138",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -837,7 +774,7 @@
 							"otherinfo": "1750603025, which evaluates to: 2025-06-22 14:37:05."
 						},
 						{
-							"id": "141",
+							"id": "133",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -846,7 +783,7 @@
 							"otherinfo": "1779033703, which evaluates to: 2026-05-17 16:01:43."
 						},
 						{
-							"id": "154",
+							"id": "146",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -855,7 +792,7 @@
 							"otherinfo": "1780299464, which evaluates to: 2026-06-01 07:37:44."
 						},
 						{
-							"id": "140",
+							"id": "132",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -864,7 +801,7 @@
 							"otherinfo": "1816402316, which evaluates to: 2027-07-24 04:11:56."
 						},
 						{
-							"id": "123",
+							"id": "115",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -873,7 +810,7 @@
 							"otherinfo": "1856431235, which evaluates to: 2028-10-29 11:20:35."
 						},
 						{
-							"id": "158",
+							"id": "150",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -882,7 +819,7 @@
 							"otherinfo": "1859775393, which evaluates to: 2028-12-07 04:16:33."
 						},
 						{
-							"id": "148",
+							"id": "140",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -891,7 +828,7 @@
 							"otherinfo": "1867755857, which evaluates to: 2029-03-09 13:04:17."
 						},
 						{
-							"id": "118",
+							"id": "110",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -900,7 +837,7 @@
 							"otherinfo": "1899447441, which evaluates to: 2030-03-11 08:17:21."
 						},
 						{
-							"id": "137",
+							"id": "129",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -909,7 +846,7 @@
 							"otherinfo": "1914138554, which evaluates to: 2030-08-28 09:09:14."
 						},
 						{
-							"id": "120",
+							"id": "112",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -918,7 +855,7 @@
 							"otherinfo": "1925078388, which evaluates to: 2031-01-01 23:59:48."
 						},
 						{
-							"id": "150",
+							"id": "142",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -927,7 +864,7 @@
 							"otherinfo": "1944164710, which evaluates to: 2031-08-10 21:45:10."
 						},
 						{
-							"id": "134",
+							"id": "126",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -936,7 +873,7 @@
 							"otherinfo": "1955562222, which evaluates to: 2031-12-20 19:43:42."
 						},
 						{
-							"id": "129",
+							"id": "121",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -945,7 +882,7 @@
 							"otherinfo": "1986661051, which evaluates to: 2032-12-14 18:17:31."
 						},
 						{
-							"id": "125",
+							"id": "117",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -954,7 +891,7 @@
 							"otherinfo": "1996064986, which evaluates to: 2033-04-02 14:29:46."
 						},
 						{
-							"id": "132",
+							"id": "124",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -963,7 +900,7 @@
 							"otherinfo": "2003034995, which evaluates to: 2033-06-22 06:36:35."
 						},
 						{
-							"id": "121",
+							"id": "113",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -972,7 +909,7 @@
 							"otherinfo": "2007800933, which evaluates to: 2033-08-16 10:28:53."
 						},
 						{
-							"id": "153",
+							"id": "145",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -981,7 +918,7 @@
 							"otherinfo": "2011393907, which evaluates to: 2033-09-27 00:31:47."
 						},
 						{
-							"id": "136",
+							"id": "128",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -996,7 +933,7 @@
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "34"
+					"sourceid": "33"
 				},
 				{
 					"pluginid": "10094",
@@ -1009,7 +946,7 @@
 					"desc": "<p>Base64 encoded data was disclosed by the application/web server. Note: in the interests of performance not all base64 strings in the response were analyzed individually, the entire response should be looked at by the analyst/security team/developer(s).</p>",
 					"instances":[ 
 						{
-							"id": "174",
+							"id": "168",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es2015.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -1018,7 +955,7 @@
 							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDR\\x001c\\x0000'w\uFFFD{$\uB299^\\x000cD\uFFFD\\x0008\\x0010"
 						},
 						{
-							"id": "115",
+							"id": "166",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -1046,7 +983,7 @@
 					"desc": "<p>The response appears to contain suspicious comments which may help an attacker.</p>",
 					"instances":[ 
 						{
-							"id": "175",
+							"id": "167",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es2015.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -1055,7 +992,7 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in likely comment: \"//www.w3.org/2000/svg\"}function gr(){Ut.lFrame.currentNamespace=null}function _r(e,t){for(let r=t.directiveStart,n=t.directiveEn\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "117",
+							"id": "109",
 							"uri": "https://ma-cps.esante.gouv.fr/main-es5.31d29ad3b7644d4f61d9.js",
 							"method": "GET",
 							"param": "",
@@ -1064,7 +1001,7 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in likely comment: \"//www.w3.org/2000/svg\"}function xn(){nn.lFrame.currentNamespace=null}function Bn(e,t){for(var n=t.directiveStart,r=t.directiveEn\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "116",
+							"id": "105",
 							"uri": "https://ma-cps.esante.gouv.fr/polyfills-es5.75d8bdaa4171047d2dc7.js",
 							"method": "GET",
 							"param": "",
@@ -1073,7 +1010,7 @@
 							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in likely comment: \"//\"+h.host)};v&&d||(v=function(t){for(var e=[],n=1;arguments.length>n;)e.push(arguments[n++]);return k[++m]=function(){(\"functio\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "111",
+							"id": "106",
 							"uri": "https://ma-cps.esante.gouv.fr/scripts.84960589e89760329259.js",
 							"method": "GET",
 							"param": "",
@@ -1101,7 +1038,7 @@
 					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
 					"instances":[ 
 						{
-							"id": "32",
+							"id": "17",
 							"uri": "https://ma-cps.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -1110,7 +1047,7 @@
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "31",
+							"id": "16",
 							"uri": "https://ma-cps.esante.gouv.fr/",
 							"method": "GET",
 							"param": "",
@@ -1119,7 +1056,7 @@
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "83",
+							"id": "98",
 							"uri": "https://ma-cps.esante.gouv.fr/favicon.ico",
 							"method": "GET",
 							"param": "",
@@ -1128,7 +1065,7 @@
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "81",
+							"id": "79",
 							"uri": "https://ma-cps.esante.gouv.fr/img/logos/favicon.ico",
 							"method": "GET",
 							"param": "",
@@ -1137,7 +1074,7 @@
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "78",
+							"id": "71",
 							"uri": "https://ma-cps.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -1146,7 +1083,7 @@
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "106",
+							"id": "86",
 							"uri": "https://ma-cps.esante.gouv.fr/scripts/elastic-apm-rum.umd.min.js",
 							"method": "GET",
 							"param": "",
@@ -1155,7 +1092,7 @@
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "80",
+							"id": "82",
 							"uri": "https://ma-cps.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -1170,7 +1107,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10038",
@@ -1183,7 +1120,7 @@
 					"desc": "<p>The \"X-Content-Security-Policy\" and \"X-WebKit-CSP\" headers are no longer recommended.</p>",
 					"instances":[ 
 						{
-							"id": "25",
+							"id": "8",
 							"uri": "https://ma-cps.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -1192,7 +1129,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "21",
+							"id": "11",
 							"uri": "https://ma-cps.esante.gouv.fr/",
 							"method": "GET",
 							"param": "",
@@ -1201,16 +1138,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "76",
-							"uri": "https://ma-cps.esante.gouv.fr/favicon.ico",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "75",
+							"id": "72",
 							"uri": "https://ma-cps.esante.gouv.fr/img/logos/favicon.ico",
 							"method": "GET",
 							"param": "",
@@ -1219,7 +1147,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "70",
+							"id": "62",
 							"uri": "https://ma-cps.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -1228,7 +1156,16 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "69",
+							"id": "77",
+							"uri": "https://ma-cps.esante.gouv.fr/scripts/elastic-apm-rum.umd.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "75",
 							"uri": "https://ma-cps.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -1243,7 +1180,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10015",
@@ -1256,7 +1193,7 @@
 					"desc": "<p>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</p>",
 					"instances":[ 
 						{
-							"id": "22",
+							"id": "5",
 							"uri": "https://ma-cps.esante.gouv.fr",
 							"method": "GET",
 							"param": "cache-control",
@@ -1265,7 +1202,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "19",
+							"id": "3",
 							"uri": "https://ma-cps.esante.gouv.fr/",
 							"method": "GET",
 							"param": "cache-control",
@@ -1274,7 +1211,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "65",
+							"id": "59",
 							"uri": "https://ma-cps.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "cache-control",
@@ -1283,7 +1220,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "67",
+							"id": "70",
 							"uri": "https://ma-cps.esante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "cache-control",
@@ -1298,7 +1235,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1311,7 +1248,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"id": "10",
+							"id": "29",
 							"uri": "https://ma-cps.esante.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -1320,7 +1257,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "6",
+							"id": "22",
 							"uri": "https://ma-cps.esante.gouv.fr/",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -1329,7 +1266,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "16",
+							"id": "23",
 							"uri": "https://ma-cps.esante.gouv.fr/runtime-es5.a4dadbc03350107420a4.js",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -1344,7 +1281,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1357,7 +1294,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"id": "8",
+							"id": "27",
 							"uri": "https://ma-cps.esante.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -1366,7 +1303,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "5",
+							"id": "20",
 							"uri": "https://ma-cps.esante.gouv.fr/",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -1375,7 +1312,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "9",
+							"id": "21",
 							"uri": "https://ma-cps.esante.gouv.fr/runtime-es5.a4dadbc03350107420a4.js",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -1390,7 +1327,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1403,7 +1340,16 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"id": "0",
+							"id": "25",
+							"uri": "https://ma-cps.esante.gouv.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "18",
 							"uri": "https://ma-cps.esante.gouv.fr/",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -1412,7 +1358,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "2",
+							"id": "19",
 							"uri": "https://ma-cps.esante.gouv.fr/runtime-es5.a4dadbc03350107420a4.js",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -1421,13 +1367,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "19"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1440,7 +1386,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"id": "11",
+							"id": "34",
 							"uri": "https://ma-cps.esante.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -1449,7 +1395,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "7",
+							"id": "24",
 							"uri": "https://ma-cps.esante.gouv.fr/",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -1458,7 +1404,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "17",
+							"id": "30",
 							"uri": "https://ma-cps.esante.gouv.fr/runtime-es5.a4dadbc03350107420a4.js",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -1473,7 +1419,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",
@@ -1486,7 +1432,7 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
 					"instances":[ 
 						{
-							"id": "37",
+							"id": "40",
 							"uri": "https://ma-cps.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -1495,7 +1441,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "41",
+							"id": "31",
 							"uri": "https://ma-cps.esante.gouv.fr/",
 							"method": "GET",
 							"param": "",
@@ -1504,7 +1450,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "87",
+							"id": "101",
 							"uri": "https://ma-cps.esante.gouv.fr/favicon.ico",
 							"method": "GET",
 							"param": "",
@@ -1513,7 +1459,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "86",
+							"id": "88",
 							"uri": "https://ma-cps.esante.gouv.fr/img/logos/favicon.ico",
 							"method": "GET",
 							"param": "",
@@ -1522,7 +1468,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "109",
+							"id": "103",
 							"uri": "https://ma-cps.esante.gouv.fr/polyfills-es2015.c3c294aaf81d14183aba.js",
 							"method": "GET",
 							"param": "",
@@ -1531,7 +1477,16 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "82",
+							"id": "107",
+							"uri": "https://ma-cps.esante.gouv.fr/polyfills-es5.75d8bdaa4171047d2dc7.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"id": "78",
 							"uri": "https://ma-cps.esante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -1540,7 +1495,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "103",
+							"id": "99",
 							"uri": "https://ma-cps.esante.gouv.fr/runtime-es2015.a4dadbc03350107420a4.js",
 							"method": "GET",
 							"param": "",
@@ -1549,7 +1504,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "34",
+							"id": "33",
 							"uri": "https://ma-cps.esante.gouv.fr/runtime-es5.a4dadbc03350107420a4.js",
 							"method": "GET",
 							"param": "",
@@ -1558,16 +1513,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "113",
-							"uri": "https://ma-cps.esante.gouv.fr/scripts.84960589e89760329259.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
-							"id": "107",
+							"id": "95",
 							"uri": "https://ma-cps.esante.gouv.fr/scripts/elastic-apm-rum.umd.min.js",
 							"method": "GET",
 							"param": "",
@@ -1576,17 +1522,8 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "90",
+							"id": "92",
 							"uri": "https://ma-cps.esante.gouv.fr/sitemap.xml",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
-							"id": "112",
-							"uri": "https://ma-cps.esante.gouv.fr/styles.573850e63fecf4278ea0.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1594,7 +1531,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
 					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
