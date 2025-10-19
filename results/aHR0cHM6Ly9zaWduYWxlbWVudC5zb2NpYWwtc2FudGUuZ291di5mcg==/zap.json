@@ -1,8 +1,8 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.16.1",
-	"@generated": "Sun, 12 Oct 2025 04:03:51",
-	"created": "2025-10-12T04:03:51.387542488Z",
+	"@generated": "Sun, 19 Oct 2025 04:27:20",
+	"created": "2025-10-19T04:27:20.473225552Z",
 	"site":[ 
 		{
 			"@name": "https://signalement.social-sante.gouv.fr",
@@ -21,7 +21,7 @@
 					"desc": "<p>The Content Security Policy fails to define one of the directives that has no fallback. Missing/excluding them is the same as allowing anything.</p>",
 					"instances":[ 
 						{
-							"id": "6",
+							"id": "5",
 							"uri": "https://signalement.social-sante.gouv.fr",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -30,7 +30,7 @@
 							"otherinfo": "The directive(s): form-action is/are among the directives that do not fallback to default-src."
 						},
 						{
-							"id": "54",
+							"id": "7",
 							"uri": "https://signalement.social-sante.gouv.fr/",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -39,7 +39,7 @@
 							"otherinfo": "The directive(s): form-action is/are among the directives that do not fallback to default-src."
 						},
 						{
-							"id": "5",
+							"id": "49",
 							"uri": "https://signalement.social-sante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -85,7 +85,7 @@
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
-							"id": "55",
+							"id": "9",
 							"uri": "https://signalement.social-sante.gouv.fr/",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -94,7 +94,7 @@
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
-							"id": "11",
+							"id": "50",
 							"uri": "https://signalement.social-sante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -103,7 +103,7 @@
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
-							"id": "9",
+							"id": "8",
 							"uri": "https://signalement.social-sante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -118,7 +118,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10011",
@@ -131,8 +131,17 @@
 					"desc": "<p>A cookie has been set without the secure flag, which means that the cookie can be accessed via unencrypted connections.</p>",
 					"instances":[ 
 						{
-							"id": "17",
+							"id": "14",
 							"uri": "https://signalement.social-sante.gouv.fr",
+							"method": "GET",
+							"param": "cookiesession1",
+							"attack": "",
+							"evidence": "Set-Cookie: cookiesession1",
+							"otherinfo": ""
+						},
+						{
+							"id": "52",
+							"uri": "https://signalement.social-sante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "cookiesession1",
 							"attack": "",
@@ -149,7 +158,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Whenever a cookie contains sensitive information or is a session token, then it should always be passed using an encrypted channel. Ensure that the secure flag is set for cookies containing such sensitive information.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p>",
@@ -168,8 +177,17 @@
 					"desc": "<p>A cookie has been set without the SameSite attribute, which means that the cookie can be sent as a result of a 'cross-site' request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks.</p>",
 					"instances":[ 
 						{
-							"id": "14",
+							"id": "13",
 							"uri": "https://signalement.social-sante.gouv.fr",
+							"method": "GET",
+							"param": "cookiesession1",
+							"attack": "",
+							"evidence": "Set-Cookie: cookiesession1",
+							"otherinfo": ""
+						},
+						{
+							"id": "51",
+							"uri": "https://signalement.social-sante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "cookiesession1",
 							"attack": "",
@@ -186,7 +204,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that the SameSite attribute is set to either 'lax' or ideally 'strict' for all cookies.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cookie-same-site</p>",
@@ -220,7 +238,7 @@
 					"reference": "<p>https://v17.angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "30"
+					"sourceid": "31"
 				},
 				{
 					"pluginid": "90004",
@@ -233,7 +251,7 @@
 					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
 					"instances":[ 
 						{
-							"id": "42",
+							"id": "37",
 							"uri": "https://signalement.social-sante.gouv.fr",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
@@ -242,8 +260,8 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "60",
-							"uri": "https://signalement.social-sante.gouv.fr/robots.txt",
+							"id": "44",
+							"uri": "https://signalement.social-sante.gouv.fr/",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
 							"attack": "",
@@ -251,34 +269,34 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "48",
+							"id": "41",
 							"uri": "https://signalement.social-sante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "39",
+							"uri": "https://signalement.social-sante.gouv.fr",
+							"method": "GET",
+							"param": "Cross-Origin-Embedder-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "46",
+							"uri": "https://signalement.social-sante.gouv.fr/",
+							"method": "GET",
+							"param": "Cross-Origin-Embedder-Policy",
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
 						},
 						{
 							"id": "43",
-							"uri": "https://signalement.social-sante.gouv.fr",
-							"method": "GET",
-							"param": "Cross-Origin-Embedder-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "61",
-							"uri": "https://signalement.social-sante.gouv.fr/robots.txt",
-							"method": "GET",
-							"param": "Cross-Origin-Embedder-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "49",
 							"uri": "https://signalement.social-sante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Cross-Origin-Embedder-Policy",
@@ -287,7 +305,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "47",
+							"id": "42",
 							"uri": "https://signalement.social-sante.gouv.fr",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
@@ -296,8 +314,8 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "62",
-							"uri": "https://signalement.social-sante.gouv.fr/robots.txt",
+							"id": "47",
+							"uri": "https://signalement.social-sante.gouv.fr/",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
 							"attack": "",
@@ -305,7 +323,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "50",
+							"id": "45",
 							"uri": "https://signalement.social-sante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
@@ -320,7 +338,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy</p>",
 					"cweid": "693",
 					"wascid": "14",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10063",
@@ -333,7 +351,7 @@
 					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
 					"instances":[ 
 						{
-							"id": "39",
+							"id": "35",
 							"uri": "https://signalement.social-sante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -342,7 +360,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "74",
+							"id": "40",
 							"uri": "https://signalement.social-sante.gouv.fr/",
 							"method": "GET",
 							"param": "",
@@ -369,7 +387,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "59",
+							"id": "67",
 							"uri": "https://signalement.social-sante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -378,7 +396,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "70",
+							"id": "64",
 							"uri": "https://signalement.social-sante.gouv.fr/runtime.d926da70f8191136.js",
 							"method": "GET",
 							"param": "",
@@ -387,7 +405,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "66",
+							"id": "75",
 							"uri": "https://signalement.social-sante.gouv.fr/scripts.b1ea372fd10c1b99.js",
 							"method": "GET",
 							"param": "",
@@ -396,7 +414,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "46",
+							"id": "38",
 							"uri": "https://signalement.social-sante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -411,7 +429,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10096",
@@ -424,7 +442,7 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server. - Unix</p>",
 					"instances":[ 
 						{
-							"id": "79",
+							"id": "80",
 							"uri": "https://signalement.social-sante.gouv.fr/main.6d8149458a04e492.js",
 							"method": "GET",
 							"param": "",
@@ -433,7 +451,7 @@
 							"otherinfo": "1508970993, which evaluates to: 2017-10-25 22:36:33."
 						},
 						{
-							"id": "85",
+							"id": "86",
 							"uri": "https://signalement.social-sante.gouv.fr/main.6d8149458a04e492.js",
 							"method": "GET",
 							"param": "",
@@ -442,7 +460,7 @@
 							"otherinfo": "1537002063, which evaluates to: 2018-09-15 09:01:03."
 						},
 						{
-							"id": "90",
+							"id": "91",
 							"uri": "https://signalement.social-sante.gouv.fr/main.6d8149458a04e492.js",
 							"method": "GET",
 							"param": "",
@@ -451,7 +469,7 @@
 							"otherinfo": "1541459225, which evaluates to: 2018-11-05 23:07:05."
 						},
 						{
-							"id": "81",
+							"id": "82",
 							"uri": "https://signalement.social-sante.gouv.fr/main.6d8149458a04e492.js",
 							"method": "GET",
 							"param": "",
@@ -460,7 +478,7 @@
 							"otherinfo": "1555081692, which evaluates to: 2019-04-12 15:08:12."
 						},
 						{
-							"id": "83",
+							"id": "84",
 							"uri": "https://signalement.social-sante.gouv.fr/main.6d8149458a04e492.js",
 							"method": "GET",
 							"param": "",
@@ -469,7 +487,7 @@
 							"otherinfo": "1695183700, which evaluates to: 2023-09-20 04:21:40."
 						},
 						{
-							"id": "86",
+							"id": "87",
 							"uri": "https://signalement.social-sante.gouv.fr/main.6d8149458a04e492.js",
 							"method": "GET",
 							"param": "",
@@ -478,7 +496,7 @@
 							"otherinfo": "1747873779, which evaluates to: 2025-05-22 00:29:39."
 						},
 						{
-							"id": "89",
+							"id": "90",
 							"uri": "https://signalement.social-sante.gouv.fr/main.6d8149458a04e492.js",
 							"method": "GET",
 							"param": "",
@@ -487,7 +505,7 @@
 							"otherinfo": "1779033703, which evaluates to: 2026-05-17 16:01:43."
 						},
 						{
-							"id": "78",
+							"id": "79",
 							"uri": "https://signalement.social-sante.gouv.fr/main.6d8149458a04e492.js",
 							"method": "GET",
 							"param": "",
@@ -496,7 +514,7 @@
 							"otherinfo": "1899447441, which evaluates to: 2030-03-11 08:17:21."
 						},
 						{
-							"id": "80",
+							"id": "81",
 							"uri": "https://signalement.social-sante.gouv.fr/main.6d8149458a04e492.js",
 							"method": "GET",
 							"param": "",
@@ -505,7 +523,7 @@
 							"otherinfo": "1925078388, which evaluates to: 2031-01-01 23:59:48."
 						},
 						{
-							"id": "87",
+							"id": "88",
 							"uri": "https://signalement.social-sante.gouv.fr/main.6d8149458a04e492.js",
 							"method": "GET",
 							"param": "",
@@ -514,7 +532,7 @@
 							"otherinfo": "1955562222, which evaluates to: 2031-12-20 19:43:42."
 						},
 						{
-							"id": "84",
+							"id": "85",
 							"uri": "https://signalement.social-sante.gouv.fr/main.6d8149458a04e492.js",
 							"method": "GET",
 							"param": "",
@@ -523,7 +541,7 @@
 							"otherinfo": "1986661051, which evaluates to: 2032-12-14 18:17:31."
 						},
 						{
-							"id": "82",
+							"id": "83",
 							"uri": "https://signalement.social-sante.gouv.fr/main.6d8149458a04e492.js",
 							"method": "GET",
 							"param": "",
@@ -532,7 +550,7 @@
 							"otherinfo": "1996064986, which evaluates to: 2033-04-02 14:29:46."
 						},
 						{
-							"id": "88",
+							"id": "89",
 							"uri": "https://signalement.social-sante.gouv.fr/main.6d8149458a04e492.js",
 							"method": "GET",
 							"param": "",
@@ -547,7 +565,7 @@
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "30"
+					"sourceid": "31"
 				},
 				{
 					"pluginid": "10021",
@@ -560,7 +578,7 @@
 					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
 					"instances":[ 
 						{
-							"id": "52",
+							"id": "68",
 							"uri": "https://signalement.social-sante.gouv.fr/lib/dsfr/favicon/apple-touch-icon.png",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -569,7 +587,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "67",
+							"id": "60",
 							"uri": "https://signalement.social-sante.gouv.fr/lib/dsfr/favicon/favicon.ico",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -578,7 +596,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "57",
+							"id": "70",
 							"uri": "https://signalement.social-sante.gouv.fr/lib/dsfr/favicon/favicon.svg",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -593,7 +611,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "19"
+					"sourceid": "26"
 				},
 				{
 					"pluginid": "10094",
@@ -615,7 +633,7 @@
 							"otherinfo": "\\x0000\\x0010\uFFFD\\x0010Q\uFFFD \uFFFD\uFFFD0\u04CFA\\x0014\uFFFDQU\uFFFDa\uFFFD\uFFFDq\u05DF\uFFFD\\x0018\uFFFD\uFFFDY\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\u06EF\uFFFD\\x001c\uFFFD\uFFFD]\uFFFD\u37BB\uFFFD\uFFFD"
 						},
 						{
-							"id": "91",
+							"id": "77",
 							"uri": "https://signalement.social-sante.gouv.fr/styles.d5a7bf210d160e38.css",
 							"method": "GET",
 							"param": "",
@@ -630,7 +648,7 @@
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "319",
 					"wascid": "13",
-					"sourceid": "30"
+					"sourceid": "31"
 				},
 				{
 					"pluginid": "10027",
@@ -643,7 +661,7 @@
 					"desc": "<p>The response appears to contain suspicious comments which may help an attacker.</p>",
 					"instances":[ 
 						{
-							"id": "77",
+							"id": "78",
 							"uri": "https://signalement.social-sante.gouv.fr/main.6d8149458a04e492.js",
 							"method": "GET",
 							"param": "",
@@ -652,7 +670,7 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in likely comment: \"//g.co/ng/security#xss\";class O extends Error{constructor(n,e){super(function Wo(t,n){return`NG0${Math.abs(t)}${n?\": \"+n:\"\"}`}(n\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "64",
+							"id": "72",
 							"uri": "https://signalement.social-sante.gouv.fr/scripts.b1ea372fd10c1b99.js",
 							"method": "GET",
 							"param": "",
@@ -667,7 +685,7 @@
 					"reference": "",
 					"cweid": "615",
 					"wascid": "13",
-					"sourceid": "30"
+					"sourceid": "31"
 				},
 				{
 					"pluginid": "10109",
@@ -680,7 +698,7 @@
 					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
 					"instances":[ 
 						{
-							"id": "19",
+							"id": "16",
 							"uri": "https://signalement.social-sante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -689,7 +707,7 @@
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "56",
+							"id": "17",
 							"uri": "https://signalement.social-sante.gouv.fr/",
 							"method": "GET",
 							"param": "",
@@ -698,7 +716,7 @@
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "16",
+							"id": "53",
 							"uri": "https://signalement.social-sante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -707,7 +725,7 @@
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "20",
+							"id": "19",
 							"uri": "https://signalement.social-sante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -722,7 +740,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10015",
@@ -735,8 +753,8 @@
 					"desc": "<p>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</p>",
 					"instances":[ 
 						{
-							"id": "53",
-							"uri": "https://signalement.social-sante.gouv.fr/",
+							"id": "3",
+							"uri": "https://signalement.social-sante.gouv.fr",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -744,8 +762,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "2",
+							"id": "48",
 							"uri": "https://signalement.social-sante.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "no-cache",
+							"otherinfo": ""
+						},
+						{
+							"id": "0",
+							"uri": "https://signalement.social-sante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -753,13 +780,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "24"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -772,7 +799,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"id": "30",
+							"id": "27",
 							"uri": "https://signalement.social-sante.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -781,7 +808,16 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "33",
+							"id": "26",
+							"uri": "https://signalement.social-sante.gouv.fr/",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "29",
 							"uri": "https://signalement.social-sante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -790,13 +826,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -809,7 +845,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"id": "28",
+							"id": "24",
 							"uri": "https://signalement.social-sante.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -818,7 +854,16 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "31",
+							"id": "25",
+							"uri": "https://signalement.social-sante.gouv.fr/",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "28",
 							"uri": "https://signalement.social-sante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -827,13 +872,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -846,7 +891,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"id": "25",
+							"id": "22",
 							"uri": "https://signalement.social-sante.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -855,7 +900,16 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "27",
+							"id": "21",
+							"uri": "https://signalement.social-sante.gouv.fr/",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "23",
 							"uri": "https://signalement.social-sante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -864,13 +918,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -883,7 +937,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"id": "34",
+							"id": "30",
 							"uri": "https://signalement.social-sante.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -892,7 +946,16 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "35",
+							"id": "32",
+							"uri": "https://signalement.social-sante.gouv.fr/",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "31",
 							"uri": "https://signalement.social-sante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -901,13 +964,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10112",
@@ -920,7 +983,7 @@
 					"desc": "<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to \"Auto-Detect\" then this rule will change the session management to use the tokens identified.</p>",
 					"instances":[ 
 						{
-							"id": "23",
+							"id": "54",
 							"uri": "https://signalement.social-sante.gouv.fr",
 							"method": "GET",
 							"param": "cookiesession1",
@@ -929,7 +992,16 @@
 							"otherinfo": "cookie:cookiesession1"
 						},
 						{
-							"id": "24",
+							"id": "65",
+							"uri": "https://signalement.social-sante.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "cookiesession1",
+							"attack": "",
+							"evidence": "cookiesession1",
+							"otherinfo": "cookie:cookiesession1"
+						},
+						{
+							"id": "20",
 							"uri": "https://signalement.social-sante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "cookiesession1",
@@ -938,13 +1010,13 @@
 							"otherinfo": "cookie:cookiesession1"
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p>cookie:cookiesession1</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id/</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -957,7 +1029,7 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
 					"instances":[ 
 						{
-							"id": "71",
+							"id": "69",
 							"uri": "https://signalement.social-sante.gouv.fr/lib/dsfr/favicon/apple-touch-icon.png",
 							"method": "GET",
 							"param": "",
@@ -966,7 +1038,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "68",
+							"id": "61",
 							"uri": "https://signalement.social-sante.gouv.fr/lib/dsfr/favicon/favicon.ico",
 							"method": "GET",
 							"param": "",
@@ -975,7 +1047,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "72",
+							"id": "71",
 							"uri": "https://signalement.social-sante.gouv.fr/lib/dsfr/favicon/favicon.svg",
 							"method": "GET",
 							"param": "",
@@ -990,7 +1062,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "19"
+					"sourceid": "26"
 				},
 				{
 					"pluginid": "10049",
@@ -1003,7 +1075,7 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
 					"instances":[ 
 						{
-							"id": "36",
+							"id": "33",
 							"uri": "https://signalement.social-sante.gouv.fr",
 							"method": "GET",
 							"param": "",
@@ -1012,7 +1084,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "73",
+							"id": "34",
 							"uri": "https://signalement.social-sante.gouv.fr/",
 							"method": "GET",
 							"param": "",
@@ -1030,7 +1102,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "75",
+							"id": "74",
 							"uri": "https://signalement.social-sante.gouv.fr/polyfills.341c38a37251c5e2.js",
 							"method": "GET",
 							"param": "",
@@ -1039,7 +1111,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "58",
+							"id": "66",
 							"uri": "https://signalement.social-sante.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -1048,7 +1120,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "69",
+							"id": "62",
 							"uri": "https://signalement.social-sante.gouv.fr/runtime.d926da70f8191136.js",
 							"method": "GET",
 							"param": "",
@@ -1057,7 +1129,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "65",
+							"id": "73",
 							"uri": "https://signalement.social-sante.gouv.fr/scripts.b1ea372fd10c1b99.js",
 							"method": "GET",
 							"param": "",
@@ -1066,7 +1138,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "40",
+							"id": "36",
 							"uri": "https://signalement.social-sante.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -1081,7 +1153,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				}
 			]
 		}
