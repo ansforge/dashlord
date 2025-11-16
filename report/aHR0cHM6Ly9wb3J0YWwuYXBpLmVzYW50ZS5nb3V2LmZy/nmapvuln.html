@@ -54,7 +54,7 @@
 <h1>Scan Report<br><small>Nmap 7.92</small>
 </h1>
 <pre style="white-space:pre-wrap; word-wrap:break-word;">nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln portal.api.esante.gouv.fr</pre>
-<p class="lead">Sun Nov  9 03:50:00 2025 – Sun Nov  9 03:50:23 2025<br>1 hosts scanned.
+<p class="lead">Sun Nov 16 03:51:09 2025 – Sun Nov 16 03:51:36 2025<br>1 hosts scanned.
               1 hosts up.
               0 hosts down.
             </p>
@@ -78,7 +78,7 @@
 <td><span class="label label-success">up</span></td>
 <td>146.59.202.59</td>
 <td>portal.api.esante.gouv.fr</td>
-<td>1</td>
+<td>2</td>
 <td>0</td>
 </tr></tbody>
 </table></div>
@@ -108,6 +108,16 @@
 </tr></thead>
 <tbody>
 <tr class="success">
+<td title="Port">80</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">http</td>
+<td title="Product">Golang net/http server</td>
+<td title="Version"></td>
+<td title="Extra Info">Go-IPFS json-rpc or InfluxDB API</td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/a:protocol_labs:go-ipfs">cpe:/a:protocol_labs:go-ipfs</a></td></tr>
+<tr class="success">
 <td title="Port">443</td>
 <td title="Protocol">tcp</td>
 <td title="State / Reason">open<br>syn-ack</td>
@@ -129,6 +139,15 @@
 <td></td>
 <td></td>
 </tr>
+<tr class="active">
+<td>1026</td>
+<td>tcp</td>
+<td>closed<br>reset</td>
+<td>LSA-or-nterm</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table></div>
 </div>
@@ -145,7 +164,18 @@
 <th>CPE</th>
 <th>Extra info</th>
 </tr></thead>
-<tbody><tr>
+<tbody>
+<tr>
+<td>146.59.202.59 - portal.api.esante.gouv.fr</td>
+<td>80</td>
+<td>tcp</td>
+<td>http</td>
+<td>Golang net/http server</td>
+<td></td>
+<td>cpe:/a:protocol_labs:go-ipfs</td>
+<td>Go-IPFS json-rpc or InfluxDB API</td>
+</tr>
+<tr>
 <td>146.59.202.59 - portal.api.esante.gouv.fr</td>
 <td>443</td>
 <td>tcp</td>
@@ -154,7 +184,8 @@
 <td></td>
 <td>cpe:/a:protocol_labs:go-ipfs</td>
 <td>Go-IPFS json-rpc or InfluxDB API</td>
-</tr></tbody>
+</tr>
+</tbody>
 </table></div>
 <script>
             $(document).ready(function() {
