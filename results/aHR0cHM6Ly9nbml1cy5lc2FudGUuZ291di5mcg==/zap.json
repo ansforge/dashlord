@@ -1,8 +1,8 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.16.1",
-	"@generated": "Sun, 9 Nov 2025 02:40:07",
-	"created": "2025-11-09T02:40:07.793157421Z",
+	"@generated": "Sun, 16 Nov 2025 02:38:17",
+	"created": "2025-11-16T02:38:17.807343176Z",
 	"site":[ 
 		{
 			"@name": "https://gnius.esante.gouv.fr",
@@ -21,7 +21,7 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "3",
+							"id": "1",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -31,7 +31,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "38",
+							"id": "46",
 							"uri": "https://gnius.esante.gouv.fr/core/*.css",
 							"nodeName": null,
 							"method": "GET",
@@ -41,7 +41,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "53",
+							"id": "62",
 							"uri": "https://gnius.esante.gouv.fr/core/*.css$",
 							"nodeName": null,
 							"method": "GET",
@@ -61,7 +61,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "42",
+							"id": "51",
 							"uri": "https://gnius.esante.gouv.fr/core/*.jpeg",
 							"nodeName": null,
 							"method": "GET",
@@ -71,7 +71,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "41",
+							"id": "45",
 							"uri": "https://gnius.esante.gouv.fr/core/*.jpg",
 							"nodeName": null,
 							"method": "GET",
@@ -81,7 +81,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "28",
+							"id": "20",
 							"uri": "https://gnius.esante.gouv.fr/core/*.js",
 							"nodeName": null,
 							"method": "GET",
@@ -91,7 +91,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "54",
+							"id": "61",
 							"uri": "https://gnius.esante.gouv.fr/core/*.js$",
 							"nodeName": null,
 							"method": "GET",
@@ -101,7 +101,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "47",
+							"id": "52",
 							"uri": "https://gnius.esante.gouv.fr/core/*.png",
 							"nodeName": null,
 							"method": "GET",
@@ -111,7 +111,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "48",
+							"id": "57",
+							"uri": "https://gnius.esante.gouv.fr/fr",
+							"nodeName": null,
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "88",
 							"uri": "https://gnius.esante.gouv.fr/profiles/*.css",
 							"nodeName": null,
 							"method": "GET",
@@ -121,17 +131,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "62",
-							"uri": "https://gnius.esante.gouv.fr/profiles/*.gif",
-							"nodeName": null,
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "57",
+							"id": "90",
 							"uri": "https://gnius.esante.gouv.fr/profiles/*.js",
 							"nodeName": null,
 							"method": "GET",
@@ -151,6 +151,36 @@
 					"sourceid": "1"
 				},
 				{
+					"pluginid": "10099",
+					"alertRef": "10099",
+					"alert": "Source Code Disclosure - SQL",
+					"name": "Source Code Disclosure - SQL",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
+					"instances":[ 
+						{
+							"id": "159",
+							"uri": "https://gnius.esante.gouv.fr/en/reussir-votre-connexion-au-ror-national/mes-etapes-de-connexion-au-ror/jidentifie-les-donnees-dont-jai-besoin-et-le-mode-dacces-associe",
+							"nodeName": null,
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select the webservices I need from the following 3 cases",
+							"otherinfo": ""
+						}
+					],
+					"count": "1",
+					"systemic": false,
+					"solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://nhimg.org/twitter-breach</p>",
+					"cweid": "540",
+					"wascid": "13",
+					"sourceid": "2404"
+				},
+				{
 					"pluginid": "90003",
 					"alertRef": "90003",
 					"alert": "Sub Resource Integrity Attribute Missing",
@@ -161,7 +191,7 @@
 					"desc": "<p>The integrity attribute is missing on a script or link tag served by an external server. The integrity tag prevents an attacker who have gained access to this server from injecting a malicious content.</p>",
 					"instances":[ 
 						{
-							"id": "19",
+							"id": "16",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -171,7 +201,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "20",
+							"id": "17",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -181,7 +211,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "82",
+							"id": "94",
 							"uri": "https://gnius.esante.gouv.fr/core/*.css$",
 							"nodeName": null,
 							"method": "GET",
@@ -191,7 +221,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "83",
+							"id": "95",
 							"uri": "https://gnius.esante.gouv.fr/core/*.css$",
 							"nodeName": null,
 							"method": "GET",
@@ -201,7 +231,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "80",
+							"id": "86",
 							"uri": "https://gnius.esante.gouv.fr/core/*.js$",
 							"nodeName": null,
 							"method": "GET",
@@ -211,7 +241,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "81",
+							"id": "87",
 							"uri": "https://gnius.esante.gouv.fr/core/*.js$",
 							"nodeName": null,
 							"method": "GET",
@@ -221,7 +251,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "78",
+							"id": "104",
 							"uri": "https://gnius.esante.gouv.fr/core/*.svg",
 							"nodeName": null,
 							"method": "GET",
@@ -231,8 +261,28 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "79",
+							"id": "105",
 							"uri": "https://gnius.esante.gouv.fr/core/*.svg",
+							"nodeName": null,
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"https://tag.aticdn.net/js-sdk/piano-analytics-6.15.2.js\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "106",
+							"uri": "https://gnius.esante.gouv.fr/fr",
+							"nodeName": null,
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"https://genii-script.tolk.ai/lightchat.js\" type=\"module\" id=\"lightchat-bot\" project-id=\"4163902b-3848-47bc-b0d3-84b263d017f4\" template=\"widget\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "107",
+							"uri": "https://gnius.esante.gouv.fr/fr",
 							"nodeName": null,
 							"method": "GET",
 							"param": "",
@@ -242,7 +292,7 @@
 						},
 						{
 							"id": "108",
-							"uri": "https://gnius.esante.gouv.fr/profiles/",
+							"uri": "https://gnius.esante.gouv.fr/profiles/*.css$",
 							"nodeName": null,
 							"method": "GET",
 							"param": "",
@@ -252,47 +302,7 @@
 						},
 						{
 							"id": "109",
-							"uri": "https://gnius.esante.gouv.fr/profiles/",
-							"nodeName": null,
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script src=\"https://tag.aticdn.net/js-sdk/piano-analytics-6.15.2.js\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"id": "102",
-							"uri": "https://gnius.esante.gouv.fr/profiles/*.js$",
-							"nodeName": null,
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script src=\"https://genii-script.tolk.ai/lightchat.js\" type=\"module\" id=\"lightchat-bot\" project-id=\"4163902b-3848-47bc-b0d3-84b263d017f4\" template=\"widget\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"id": "103",
-							"uri": "https://gnius.esante.gouv.fr/profiles/*.js$",
-							"nodeName": null,
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script src=\"https://tag.aticdn.net/js-sdk/piano-analytics-6.15.2.js\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"id": "107",
-							"uri": "https://gnius.esante.gouv.fr/profiles/*.svg",
-							"nodeName": null,
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script src=\"https://genii-script.tolk.ai/lightchat.js\" type=\"module\" id=\"lightchat-bot\" project-id=\"4163902b-3848-47bc-b0d3-84b263d017f4\" template=\"widget\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"id": "110",
-							"uri": "https://gnius.esante.gouv.fr/profiles/*.svg",
+							"uri": "https://gnius.esante.gouv.fr/profiles/*.css$",
 							"nodeName": null,
 							"method": "GET",
 							"param": "",
@@ -301,7 +311,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "14",
+					"count": "12",
 					"systemic": false,
 					"solution": "<p>Provide a valid integrity attribute to the tag.</p>",
 					"otherinfo": "",
@@ -321,7 +331,7 @@
 					"desc": "<p>The server has responded with a redirect that seems to provide a large response. This may indicate that although the server sent a redirect it also responded with body content (which may include sensitive details, PII, etc.).</p>",
 					"instances":[ 
 						{
-							"id": "0",
+							"id": "19",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -331,7 +341,7 @@
 							"otherinfo": "Location header URI length: 31 [https://gnius.esante.gouv.fr/fr].\nPredicted response size: 331.\nResponse Body Length: 370."
 						},
 						{
-							"id": "93",
+							"id": "114",
 							"uri": "https://gnius.esante.gouv.fr/filter/tips",
 							"nodeName": null,
 							"method": "GET",
@@ -341,7 +351,7 @@
 							"otherinfo": "Location header URI length: 43 [https://gnius.esante.gouv.fr/fr/filter/tips].\nPredicted response size: 343.\nResponse Body Length: 418."
 						},
 						{
-							"id": "128",
+							"id": "139",
 							"uri": "https://gnius.esante.gouv.fr/index.php/filter/tips",
 							"nodeName": null,
 							"method": "GET",
@@ -351,7 +361,7 @@
 							"otherinfo": "Location header URI length: 43 [https://gnius.esante.gouv.fr/fr/filter/tips].\nPredicted response size: 343.\nResponse Body Length: 418."
 						},
 						{
-							"id": "132",
+							"id": "143",
 							"uri": "https://gnius.esante.gouv.fr/index.php/media/oembed",
 							"nodeName": null,
 							"method": "GET",
@@ -361,7 +371,7 @@
 							"otherinfo": "Location header URI length: 44 [https://gnius.esante.gouv.fr/fr/media/oembed].\nPredicted response size: 344.\nResponse Body Length: 422."
 						},
 						{
-							"id": "129",
+							"id": "141",
 							"uri": "https://gnius.esante.gouv.fr/index.php/user/login",
 							"nodeName": null,
 							"method": "GET",
@@ -371,7 +381,7 @@
 							"otherinfo": "Location header URI length: 42 [https://gnius.esante.gouv.fr/fr/user/login].\nPredicted response size: 342.\nResponse Body Length: 414."
 						},
 						{
-							"id": "131",
+							"id": "142",
 							"uri": "https://gnius.esante.gouv.fr/index.php/user/logout",
 							"nodeName": null,
 							"method": "GET",
@@ -381,7 +391,7 @@
 							"otherinfo": "Location header URI length: 41 [https://gnius.esante.gouv.fr/index.php/fr].\nPredicted response size: 341.\nResponse Body Length: 410."
 						},
 						{
-							"id": "130",
+							"id": "140",
 							"uri": "https://gnius.esante.gouv.fr/index.php/user/password",
 							"nodeName": null,
 							"method": "GET",
@@ -391,7 +401,7 @@
 							"otherinfo": "Location header URI length: 45 [https://gnius.esante.gouv.fr/fr/user/password].\nPredicted response size: 345.\nResponse Body Length: 426."
 						},
 						{
-							"id": "124",
+							"id": "135",
 							"uri": "https://gnius.esante.gouv.fr/media/oembed",
 							"nodeName": null,
 							"method": "GET",
@@ -401,7 +411,7 @@
 							"otherinfo": "Location header URI length: 44 [https://gnius.esante.gouv.fr/fr/media/oembed].\nPredicted response size: 344.\nResponse Body Length: 422."
 						},
 						{
-							"id": "126",
+							"id": "136",
 							"uri": "https://gnius.esante.gouv.fr/secteur-social-medico-social/acteurs/*",
 							"nodeName": null,
 							"method": "GET",
@@ -411,7 +421,7 @@
 							"otherinfo": "Location header URI length: 72 [https://gnius.esante.gouv.fr/fr/secteur-social-medico-social/acteurs/%2A].\nPredicted response size: 372.\nResponse Body Length: 534."
 						},
 						{
-							"id": "123",
+							"id": "133",
 							"uri": "https://gnius.esante.gouv.fr/user/login",
 							"nodeName": null,
 							"method": "GET",
@@ -421,7 +431,7 @@
 							"otherinfo": "Location header URI length: 42 [https://gnius.esante.gouv.fr/fr/user/login].\nPredicted response size: 342.\nResponse Body Length: 414."
 						},
 						{
-							"id": "125",
+							"id": "134",
 							"uri": "https://gnius.esante.gouv.fr/user/logout",
 							"nodeName": null,
 							"method": "GET",
@@ -431,7 +441,7 @@
 							"otherinfo": "Location header URI length: 31 [https://gnius.esante.gouv.fr/fr].\nPredicted response size: 331.\nResponse Body Length: 370."
 						},
 						{
-							"id": "111",
+							"id": "115",
 							"uri": "https://gnius.esante.gouv.fr/user/password",
 							"nodeName": null,
 							"method": "GET",
@@ -448,7 +458,7 @@
 					"reference": "",
 					"cweid": "201",
 					"wascid": "13",
-					"sourceid": "52"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10017",
@@ -461,7 +471,7 @@
 					"desc": "<p>The page includes one or more script files from a third-party domain.</p>",
 					"instances":[ 
 						{
-							"id": "4",
+							"id": "2",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -471,7 +481,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "5",
+							"id": "3",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -481,48 +491,28 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "55",
+							"id": "65",
 							"uri": "https://gnius.esante.gouv.fr/core/*.css$",
 							"nodeName": null,
 							"method": "GET",
 							"param": "https://genii-script.tolk.ai/lightchat.js",
 							"attack": "",
 							"evidence": "<script src=\"https://genii-script.tolk.ai/lightchat.js\" type=\"module\" id=\"lightchat-bot\" project-id=\"4163902b-3848-47bc-b0d3-84b263d017f4\" template=\"widget\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"id": "56",
-							"uri": "https://gnius.esante.gouv.fr/core/*.css$",
-							"nodeName": null,
-							"method": "GET",
-							"param": "https://tag.aticdn.net/js-sdk/piano-analytics-6.15.2.js",
-							"attack": "",
-							"evidence": "<script src=\"https://tag.aticdn.net/js-sdk/piano-analytics-6.15.2.js\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"id": "58",
-							"uri": "https://gnius.esante.gouv.fr/core/*.js$",
-							"nodeName": null,
-							"method": "GET",
-							"param": "https://genii-script.tolk.ai/lightchat.js",
-							"attack": "",
-							"evidence": "<script src=\"https://genii-script.tolk.ai/lightchat.js\" type=\"module\" id=\"lightchat-bot\" project-id=\"4163902b-3848-47bc-b0d3-84b263d017f4\" template=\"widget\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"id": "59",
-							"uri": "https://gnius.esante.gouv.fr/core/*.js$",
-							"nodeName": null,
-							"method": "GET",
-							"param": "https://tag.aticdn.net/js-sdk/piano-analytics-6.15.2.js",
-							"attack": "",
-							"evidence": "<script src=\"https://tag.aticdn.net/js-sdk/piano-analytics-6.15.2.js\"></script>",
 							"otherinfo": ""
 						},
 						{
 							"id": "66",
-							"uri": "https://gnius.esante.gouv.fr/core/*.svg",
+							"uri": "https://gnius.esante.gouv.fr/core/*.css$",
+							"nodeName": null,
+							"method": "GET",
+							"param": "https://tag.aticdn.net/js-sdk/piano-analytics-6.15.2.js",
+							"attack": "",
+							"evidence": "<script src=\"https://tag.aticdn.net/js-sdk/piano-analytics-6.15.2.js\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "63",
+							"uri": "https://gnius.esante.gouv.fr/core/*.js$",
 							"nodeName": null,
 							"method": "GET",
 							"param": "https://genii-script.tolk.ai/lightchat.js",
@@ -532,6 +522,26 @@
 						},
 						{
 							"id": "67",
+							"uri": "https://gnius.esante.gouv.fr/core/*.js$",
+							"nodeName": null,
+							"method": "GET",
+							"param": "https://tag.aticdn.net/js-sdk/piano-analytics-6.15.2.js",
+							"attack": "",
+							"evidence": "<script src=\"https://tag.aticdn.net/js-sdk/piano-analytics-6.15.2.js\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "92",
+							"uri": "https://gnius.esante.gouv.fr/core/*.svg",
+							"nodeName": null,
+							"method": "GET",
+							"param": "https://genii-script.tolk.ai/lightchat.js",
+							"attack": "",
+							"evidence": "<script src=\"https://genii-script.tolk.ai/lightchat.js\" type=\"module\" id=\"lightchat-bot\" project-id=\"4163902b-3848-47bc-b0d3-84b263d017f4\" template=\"widget\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "93",
 							"uri": "https://gnius.esante.gouv.fr/core/*.svg",
 							"nodeName": null,
 							"method": "GET",
@@ -541,8 +551,8 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "88",
-							"uri": "https://gnius.esante.gouv.fr/profiles/*.css$",
+							"id": "59",
+							"uri": "https://gnius.esante.gouv.fr/fr",
 							"nodeName": null,
 							"method": "GET",
 							"param": "https://genii-script.tolk.ai/lightchat.js",
@@ -551,8 +561,8 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "89",
-							"uri": "https://gnius.esante.gouv.fr/profiles/*.css$",
+							"id": "60",
+							"uri": "https://gnius.esante.gouv.fr/fr",
 							"nodeName": null,
 							"method": "GET",
 							"param": "https://tag.aticdn.net/js-sdk/piano-analytics-6.15.2.js",
@@ -561,8 +571,8 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "90",
-							"uri": "https://gnius.esante.gouv.fr/profiles/*.js$",
+							"id": "96",
+							"uri": "https://gnius.esante.gouv.fr/profiles/*.css$",
 							"nodeName": null,
 							"method": "GET",
 							"param": "https://genii-script.tolk.ai/lightchat.js",
@@ -571,8 +581,8 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "91",
-							"uri": "https://gnius.esante.gouv.fr/profiles/*.js$",
+							"id": "97",
+							"uri": "https://gnius.esante.gouv.fr/profiles/*.css$",
 							"nodeName": null,
 							"method": "GET",
 							"param": "https://tag.aticdn.net/js-sdk/piano-analytics-6.15.2.js",
@@ -601,7 +611,7 @@
 					"desc": "<p>The full path of files which might be sensitive has been exposed to the client.</p>",
 					"instances":[ 
 						{
-							"id": "119",
+							"id": "128",
 							"uri": "https://gnius.esante.gouv.fr/admin/",
 							"nodeName": null,
 							"method": "GET",
@@ -611,7 +621,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "116",
+							"id": "132",
 							"uri": "https://gnius.esante.gouv.fr/comment/reply/",
 							"nodeName": null,
 							"method": "GET",
@@ -621,7 +631,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "74",
+							"id": "75",
 							"uri": "https://gnius.esante.gouv.fr/core/*.css$",
 							"nodeName": null,
 							"method": "GET",
@@ -631,7 +641,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "71",
+							"id": "77",
 							"uri": "https://gnius.esante.gouv.fr/core/*.js$",
 							"nodeName": null,
 							"method": "GET",
@@ -641,7 +651,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "77",
+							"id": "103",
 							"uri": "https://gnius.esante.gouv.fr/core/*.svg",
 							"nodeName": null,
 							"method": "GET",
@@ -651,7 +661,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "122",
+							"id": "130",
 							"uri": "https://gnius.esante.gouv.fr/node/add/",
 							"nodeName": null,
 							"method": "GET",
@@ -661,7 +671,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "101",
+							"id": "124",
 							"uri": "https://gnius.esante.gouv.fr/profiles/",
 							"nodeName": null,
 							"method": "GET",
@@ -671,7 +681,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "99",
+							"id": "102",
 							"uri": "https://gnius.esante.gouv.fr/profiles/*.css$",
 							"nodeName": null,
 							"method": "GET",
@@ -681,7 +691,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "95",
+							"id": "122",
 							"uri": "https://gnius.esante.gouv.fr/profiles/*.js$",
 							"nodeName": null,
 							"method": "GET",
@@ -691,7 +701,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "106",
+							"id": "119",
 							"uri": "https://gnius.esante.gouv.fr/profiles/*.svg",
 							"nodeName": null,
 							"method": "GET",
@@ -701,7 +711,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "120",
+							"id": "137",
 							"uri": "https://gnius.esante.gouv.fr/search/",
 							"nodeName": null,
 							"method": "GET",
@@ -711,7 +721,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "127",
+							"id": "138",
 							"uri": "https://gnius.esante.gouv.fr/user/register",
 							"nodeName": null,
 							"method": "GET",
@@ -728,7 +738,7 @@
 					"reference": "<p>https://owasp.org/www-community/attacks/Full_Path_Disclosure</p>",
 					"cweid": "209",
 					"wascid": "13",
-					"sourceid": "1536"
+					"sourceid": "1595"
 				},
 				{
 					"pluginid": "90004",
@@ -741,7 +751,7 @@
 					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
 					"instances":[ 
 						{
-							"id": "15",
+							"id": "13",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -751,8 +761,8 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "140",
-							"uri": "https://gnius.esante.gouv.fr/fr/10-questions-pour-demarrer-son-projet",
+							"id": "80",
+							"uri": "https://gnius.esante.gouv.fr/fr",
 							"nodeName": null,
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
@@ -761,7 +771,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "136",
+							"id": "145",
 							"uri": "https://gnius.esante.gouv.fr/fr/financements/4-questions-pour-ameliorer-votre-candidature-un-projet-collaboratif",
 							"nodeName": null,
 							"method": "GET",
@@ -771,7 +781,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "36",
+							"id": "41",
 							"uri": "https://gnius.esante.gouv.fr/robots.txt",
 							"nodeName": null,
 							"method": "GET",
@@ -781,7 +791,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "85",
+							"id": "111",
 							"uri": "https://gnius.esante.gouv.fr/sitemap.xml",
 							"nodeName": null,
 							"method": "GET",
@@ -791,7 +801,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "16",
+							"id": "14",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -801,8 +811,8 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "141",
-							"uri": "https://gnius.esante.gouv.fr/fr/10-questions-pour-demarrer-son-projet",
+							"id": "81",
+							"uri": "https://gnius.esante.gouv.fr/fr",
 							"nodeName": null,
 							"method": "GET",
 							"param": "Cross-Origin-Embedder-Policy",
@@ -811,7 +821,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "137",
+							"id": "146",
 							"uri": "https://gnius.esante.gouv.fr/fr/financements/4-questions-pour-ameliorer-votre-candidature-un-projet-collaboratif",
 							"nodeName": null,
 							"method": "GET",
@@ -821,7 +831,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "86",
+							"id": "112",
 							"uri": "https://gnius.esante.gouv.fr/sitemap.xml",
 							"nodeName": null,
 							"method": "GET",
@@ -831,7 +841,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "17",
+							"id": "15",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -841,8 +851,8 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "142",
-							"uri": "https://gnius.esante.gouv.fr/fr/10-questions-pour-demarrer-son-projet",
+							"id": "82",
+							"uri": "https://gnius.esante.gouv.fr/fr",
 							"nodeName": null,
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
@@ -851,7 +861,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "138",
+							"id": "147",
 							"uri": "https://gnius.esante.gouv.fr/fr/financements/4-questions-pour-ameliorer-votre-candidature-un-projet-collaboratif",
 							"nodeName": null,
 							"method": "GET",
@@ -861,7 +871,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "87",
+							"id": "113",
 							"uri": "https://gnius.esante.gouv.fr/sitemap.xml",
 							"nodeName": null,
 							"method": "GET",
@@ -891,7 +901,7 @@
 					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
 					"instances":[ 
 						{
-							"id": "14",
+							"id": "12",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -901,7 +911,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "40",
+							"id": "48",
 							"uri": "https://gnius.esante.gouv.fr/core/*.css",
 							"nodeName": null,
 							"method": "GET",
@@ -911,7 +921,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "27",
+							"id": "84",
+							"uri": "https://gnius.esante.gouv.fr/core/*.css$",
+							"nodeName": null,
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "43",
 							"uri": "https://gnius.esante.gouv.fr/core/*.gif",
 							"nodeName": null,
 							"method": "GET",
@@ -921,7 +941,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "46",
+							"id": "54",
 							"uri": "https://gnius.esante.gouv.fr/core/*.jpeg",
 							"nodeName": null,
 							"method": "GET",
@@ -931,7 +951,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "44",
+							"id": "50",
 							"uri": "https://gnius.esante.gouv.fr/core/*.jpg",
 							"nodeName": null,
 							"method": "GET",
@@ -941,7 +961,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "34",
+							"id": "44",
 							"uri": "https://gnius.esante.gouv.fr/core/*.js",
 							"nodeName": null,
 							"method": "GET",
@@ -951,7 +971,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "72",
+							"id": "85",
 							"uri": "https://gnius.esante.gouv.fr/core/*.js$",
 							"nodeName": null,
 							"method": "GET",
@@ -961,7 +981,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "50",
+							"id": "58",
 							"uri": "https://gnius.esante.gouv.fr/core/*.png",
 							"nodeName": null,
 							"method": "GET",
@@ -971,7 +991,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "52",
+							"id": "79",
+							"uri": "https://gnius.esante.gouv.fr/fr",
+							"nodeName": null,
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "89",
 							"uri": "https://gnius.esante.gouv.fr/profiles/*.css",
 							"nodeName": null,
 							"method": "GET",
@@ -981,27 +1011,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "64",
-							"uri": "https://gnius.esante.gouv.fr/profiles/*.gif",
-							"nodeName": null,
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "65",
-							"uri": "https://gnius.esante.gouv.fr/profiles/*.jpg",
-							"nodeName": null,
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "61",
+							"id": "91",
 							"uri": "https://gnius.esante.gouv.fr/profiles/*.js",
 							"nodeName": null,
 							"method": "GET",
@@ -1031,7 +1041,7 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server. - Unix</p>",
 					"instances":[ 
 						{
-							"id": "7",
+							"id": "5",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -1041,7 +1051,17 @@
 							"otherinfo": "1751634825, which evaluates to: 2025-07-04 13:13:45."
 						},
 						{
-							"id": "150",
+							"id": "157",
+							"uri": "https://gnius.esante.gouv.fr/en/get-your-solution-reimbursed/check-my-registration-type/reimbursement-in-generic-form/lodge-my-application-with-the-ministers-in-charge-of-health-and-social-security-on-the-platform-xxx",
+							"nodeName": null,
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1688587024",
+							"otherinfo": "1688587024, which evaluates to: 2023-07-05 19:57:04."
+						},
+						{
+							"id": "155",
 							"uri": "https://gnius.esante.gouv.fr/en/headlines",
 							"nodeName": null,
 							"method": "GET",
@@ -1051,7 +1071,7 @@
 							"otherinfo": "1751634825, which evaluates to: 2025-07-04 13:13:45."
 						},
 						{
-							"id": "148",
+							"id": "68",
 							"uri": "https://gnius.esante.gouv.fr/fr",
 							"nodeName": null,
 							"method": "GET",
@@ -1061,7 +1081,7 @@
 							"otherinfo": "1751634825, which evaluates to: 2025-07-04 13:13:45."
 						},
 						{
-							"id": "149",
+							"id": "156",
 							"uri": "https://gnius.esante.gouv.fr/fr/a-la-une",
 							"nodeName": null,
 							"method": "GET",
@@ -1069,9 +1089,19 @@
 							"attack": "",
 							"evidence": "1751634825",
 							"otherinfo": "1751634825, which evaluates to: 2025-07-04 13:13:45."
+						},
+						{
+							"id": "158",
+							"uri": "https://gnius.esante.gouv.fr/fr/faire-rembourser-sa-solution-de-telesurveillance/je-verifie-mon-type-dinscription/remboursement-en-forme-generique/je-depose-ma-candidature-aupres-des-ministres-charges-de-la-sante-et-de-la-securite-sociale-sur-la-plateforme-xxx",
+							"nodeName": null,
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1688587024",
+							"otherinfo": "1688587024, which evaluates to: 2023-07-05 19:57:04."
 						}
 					],
-					"count": "4",
+					"count": "6",
 					"systemic": false,
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
 					"otherinfo": "<p>1751634825, which evaluates to: 2025-07-04 13:13:45.</p>",
@@ -1091,7 +1121,7 @@
 					"desc": "<p>Base64 encoded data was disclosed by the application/web server. Note: in the interests of performance not all base64 strings in the response were analyzed individually, the entire response should be looked at by the analyst/security team/developer(s).</p>",
 					"instances":[ 
 						{
-							"id": "8",
+							"id": "6",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -1101,7 +1131,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFDm6\uFFFD\uFFFD5\uFFFD\\x0004\u07AE\uFFFD"
 						},
 						{
-							"id": "118",
+							"id": "127",
 							"uri": "https://gnius.esante.gouv.fr/admin/",
 							"nodeName": null,
 							"method": "GET",
@@ -1111,17 +1141,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFDm6\uFFFD\uFFFD5\uFFFD\\x0004\u07AE\uFFFD"
 						},
 						{
-							"id": "114",
-							"uri": "https://gnius.esante.gouv.fr/comment/reply/",
-							"nodeName": null,
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "/sites/default/files/2025-01/ATerr2",
-							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFDm6\uFFFD\uFFFD5\uFFFD\\x0004\u07AE\uFFFD"
-						},
-						{
-							"id": "73",
+							"id": "71",
 							"uri": "https://gnius.esante.gouv.fr/core/*.css$",
 							"nodeName": null,
 							"method": "GET",
@@ -1131,7 +1151,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFDm6\uFFFD\uFFFD5\uFFFD\\x0004\u07AE\uFFFD"
 						},
 						{
-							"id": "70",
+							"id": "74",
 							"uri": "https://gnius.esante.gouv.fr/core/*.js$",
 							"nodeName": null,
 							"method": "GET",
@@ -1141,7 +1161,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFDm6\uFFFD\uFFFD5\uFFFD\\x0004\u07AE\uFFFD"
 						},
 						{
-							"id": "76",
+							"id": "101",
 							"uri": "https://gnius.esante.gouv.fr/core/*.svg",
 							"nodeName": null,
 							"method": "GET",
@@ -1151,7 +1171,27 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFDm6\uFFFD\uFFFD5\uFFFD\\x0004\u07AE\uFFFD"
 						},
 						{
-							"id": "100",
+							"id": "72",
+							"uri": "https://gnius.esante.gouv.fr/fr",
+							"nodeName": null,
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/sites/default/files/2025-01/ATerr2",
+							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFDm6\uFFFD\uFFFD5\uFFFD\\x0004\u07AE\uFFFD"
+						},
+						{
+							"id": "129",
+							"uri": "https://gnius.esante.gouv.fr/node/add/",
+							"nodeName": null,
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/sites/default/files/2025-01/ATerr2",
+							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFDm6\uFFFD\uFFFD5\uFFFD\\x0004\u07AE\uFFFD"
+						},
+						{
+							"id": "123",
 							"uri": "https://gnius.esante.gouv.fr/profiles/",
 							"nodeName": null,
 							"method": "GET",
@@ -1161,7 +1201,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFDm6\uFFFD\uFFFD5\uFFFD\\x0004\u07AE\uFFFD"
 						},
 						{
-							"id": "97",
+							"id": "100",
 							"uri": "https://gnius.esante.gouv.fr/profiles/*.css$",
 							"nodeName": null,
 							"method": "GET",
@@ -1171,7 +1211,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFDm6\uFFFD\uFFFD5\uFFFD\\x0004\u07AE\uFFFD"
 						},
 						{
-							"id": "94",
+							"id": "121",
 							"uri": "https://gnius.esante.gouv.fr/profiles/*.js$",
 							"nodeName": null,
 							"method": "GET",
@@ -1181,7 +1221,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFDm6\uFFFD\uFFFD5\uFFFD\\x0004\u07AE\uFFFD"
 						},
 						{
-							"id": "105",
+							"id": "118",
 							"uri": "https://gnius.esante.gouv.fr/profiles/*.svg",
 							"nodeName": null,
 							"method": "GET",
@@ -1191,17 +1231,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFDm6\uFFFD\uFFFD5\uFFFD\\x0004\u07AE\uFFFD"
 						},
 						{
-							"id": "117",
-							"uri": "https://gnius.esante.gouv.fr/search/",
-							"nodeName": null,
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "/sites/default/files/2025-01/ATerr2",
-							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFDm6\uFFFD\uFFFD5\uFFFD\\x0004\u07AE\uFFFD"
-						},
-						{
-							"id": "84",
+							"id": "110",
 							"uri": "https://gnius.esante.gouv.fr/sitemap.xml",
 							"nodeName": null,
 							"method": "GET",
@@ -1231,7 +1261,7 @@
 					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
 					"instances":[ 
 						{
-							"id": "6",
+							"id": "4",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -1241,7 +1271,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "115",
+							"id": "125",
 							"uri": "https://gnius.esante.gouv.fr/admin/",
 							"nodeName": null,
 							"method": "GET",
@@ -1251,7 +1281,7 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"id": "112",
+							"id": "131",
 							"uri": "https://gnius.esante.gouv.fr/comment/reply/",
 							"nodeName": null,
 							"method": "GET",
@@ -1261,7 +1291,7 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"id": "68",
+							"id": "69",
 							"uri": "https://gnius.esante.gouv.fr/core/*.css$",
 							"nodeName": null,
 							"method": "GET",
@@ -1271,7 +1301,7 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"id": "69",
+							"id": "70",
 							"uri": "https://gnius.esante.gouv.fr/core/*.js$",
 							"nodeName": null,
 							"method": "GET",
@@ -1281,7 +1311,7 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"id": "75",
+							"id": "99",
 							"uri": "https://gnius.esante.gouv.fr/core/*.svg",
 							"nodeName": null,
 							"method": "GET",
@@ -1291,7 +1321,17 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"id": "121",
+							"id": "64",
+							"uri": "https://gnius.esante.gouv.fr/fr",
+							"nodeName": null,
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"#\" class=\"btn--link\"> Afficher plus </a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"id": "126",
 							"uri": "https://gnius.esante.gouv.fr/node/add/",
 							"nodeName": null,
 							"method": "GET",
@@ -1301,7 +1341,7 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"id": "98",
+							"id": "120",
 							"uri": "https://gnius.esante.gouv.fr/profiles/",
 							"nodeName": null,
 							"method": "GET",
@@ -1311,7 +1351,7 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"id": "96",
+							"id": "98",
 							"uri": "https://gnius.esante.gouv.fr/profiles/*.css$",
 							"nodeName": null,
 							"method": "GET",
@@ -1321,7 +1361,7 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"id": "92",
+							"id": "117",
 							"uri": "https://gnius.esante.gouv.fr/profiles/*.js$",
 							"nodeName": null,
 							"method": "GET",
@@ -1331,18 +1371,8 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"id": "104",
+							"id": "116",
 							"uri": "https://gnius.esante.gouv.fr/profiles/*.svg",
-							"nodeName": null,
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<noscript><style>form.antibot * :not(.antibot-message) { display: none !important; }</style>\n</noscript>",
-							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
-						},
-						{
-							"id": "113",
-							"uri": "https://gnius.esante.gouv.fr/search/",
 							"nodeName": null,
 							"method": "GET",
 							"param": "",
@@ -1371,7 +1401,7 @@
 					"desc": "<p>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</p>",
 					"instances":[ 
 						{
-							"id": "2",
+							"id": "0",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -1381,7 +1411,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "143",
+							"id": "150",
 							"uri": "https://gnius.esante.gouv.fr/en/10-questions-get-your-project-ground",
 							"nodeName": null,
 							"method": "GET",
@@ -1391,7 +1421,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "135",
+							"id": "152",
 							"uri": "https://gnius.esante.gouv.fr/en/funding/4-questions-to-better-your-application-for-a-collaborative-project",
 							"nodeName": null,
 							"method": "GET",
@@ -1401,17 +1431,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "147",
-							"uri": "https://gnius.esante.gouv.fr/en/regulations/3-questions-about-lines-am-I-relevant",
-							"nodeName": null,
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "max-age=3600, public",
-							"otherinfo": ""
-						},
-						{
-							"id": "144",
+							"id": "151",
 							"uri": "https://gnius.esante.gouv.fr/en/the-medical-digital-device/4-questions-about-anticipating-the-reimbursement-of-my-dm",
 							"nodeName": null,
 							"method": "GET",
@@ -1421,7 +1441,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "134",
+							"id": "55",
+							"uri": "https://gnius.esante.gouv.fr/fr",
+							"nodeName": null,
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=3600, public",
+							"otherinfo": ""
+						},
+						{
+							"id": "148",
 							"uri": "https://gnius.esante.gouv.fr/fr/10-questions-pour-demarrer-son-projet",
 							"nodeName": null,
 							"method": "GET",
@@ -1431,7 +1461,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "133",
+							"id": "144",
 							"uri": "https://gnius.esante.gouv.fr/fr/financements/4-questions-pour-ameliorer-votre-candidature-un-projet-collaboratif",
 							"nodeName": null,
 							"method": "GET",
@@ -1441,7 +1471,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "139",
+							"id": "153",
 							"uri": "https://gnius.esante.gouv.fr/fr/le-dispositif-medical-numerique/4-questions-pour-anticiper-le-remboursement-de-mon-dm",
 							"nodeName": null,
 							"method": "GET",
@@ -1451,8 +1481,8 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "146",
-							"uri": "https://gnius.esante.gouv.fr/fr/le-dispositif-medical-numerique/4-questions-pour-preparer-la-mise-sur-le-marche-de-mon-dm",
+							"id": "154",
+							"uri": "https://gnius.esante.gouv.fr/fr/merci",
 							"nodeName": null,
 							"method": "GET",
 							"param": "cache-control",
@@ -1461,7 +1491,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "145",
+							"id": "149",
 							"uri": "https://gnius.esante.gouv.fr/fr/reglementation/3-questions-sur-lins-suis-je-concerne",
 							"nodeName": null,
 							"method": "GET",
@@ -1471,7 +1501,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "1",
+							"id": "18",
 							"uri": "https://gnius.esante.gouv.fr/robots.txt",
 							"nodeName": null,
 							"method": "GET",
@@ -1481,7 +1511,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "18",
+							"id": "83",
 							"uri": "https://gnius.esante.gouv.fr/sitemap.xml",
 							"nodeName": null,
 							"method": "GET",
@@ -1511,7 +1541,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"id": "11",
+							"id": "9",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -1521,7 +1551,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "24",
+							"id": "32",
 							"uri": "https://gnius.esante.gouv.fr/core/*.gif",
 							"nodeName": null,
 							"method": "GET",
@@ -1531,8 +1561,18 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "31",
+							"id": "26",
 							"uri": "https://gnius.esante.gouv.fr/core/*.js",
+							"nodeName": null,
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "33",
+							"uri": "https://gnius.esante.gouv.fr/robots.txt",
 							"nodeName": null,
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -1541,7 +1581,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"systemic": false,
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
@@ -1561,7 +1601,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"id": "10",
+							"id": "8",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -1571,7 +1611,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "23",
+							"id": "30",
 							"uri": "https://gnius.esante.gouv.fr/core/*.gif",
 							"nodeName": null,
 							"method": "GET",
@@ -1581,8 +1621,18 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "30",
+							"id": "23",
 							"uri": "https://gnius.esante.gouv.fr/core/*.js",
+							"nodeName": null,
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "31",
+							"uri": "https://gnius.esante.gouv.fr/robots.txt",
 							"nodeName": null,
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -1591,7 +1641,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"systemic": false,
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
@@ -1611,7 +1661,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"id": "9",
+							"id": "7",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -1621,7 +1671,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "22",
+							"id": "25",
 							"uri": "https://gnius.esante.gouv.fr/core/*.gif",
 							"nodeName": null,
 							"method": "GET",
@@ -1631,8 +1681,18 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "29",
+							"id": "22",
 							"uri": "https://gnius.esante.gouv.fr/core/*.js",
+							"nodeName": null,
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "24",
+							"uri": "https://gnius.esante.gouv.fr/robots.txt",
 							"nodeName": null,
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -1641,7 +1701,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"systemic": false,
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
@@ -1661,7 +1721,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"id": "12",
+							"id": "10",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -1671,7 +1731,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "25",
+							"id": "34",
 							"uri": "https://gnius.esante.gouv.fr/core/*.gif",
 							"nodeName": null,
 							"method": "GET",
@@ -1681,8 +1741,18 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "32",
+							"id": "27",
 							"uri": "https://gnius.esante.gouv.fr/core/*.js",
+							"nodeName": null,
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "36",
+							"uri": "https://gnius.esante.gouv.fr/robots.txt",
 							"nodeName": null,
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -1691,7 +1761,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"systemic": false,
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
@@ -1711,7 +1781,7 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
 					"instances":[ 
 						{
-							"id": "13",
+							"id": "11",
 							"uri": "https://gnius.esante.gouv.fr",
 							"nodeName": null,
 							"method": "GET",
@@ -1721,7 +1791,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "39",
+							"id": "47",
 							"uri": "https://gnius.esante.gouv.fr/core/*.css",
 							"nodeName": null,
 							"method": "GET",
@@ -1731,7 +1801,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "26",
+							"id": "76",
+							"uri": "https://gnius.esante.gouv.fr/core/*.css$",
+							"nodeName": null,
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=3600",
+							"otherinfo": ""
+						},
+						{
+							"id": "39",
 							"uri": "https://gnius.esante.gouv.fr/core/*.gif",
 							"nodeName": null,
 							"method": "GET",
@@ -1741,7 +1821,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "45",
+							"id": "53",
 							"uri": "https://gnius.esante.gouv.fr/core/*.jpeg",
 							"nodeName": null,
 							"method": "GET",
@@ -1751,7 +1831,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "43",
+							"id": "49",
 							"uri": "https://gnius.esante.gouv.fr/core/*.jpg",
 							"nodeName": null,
 							"method": "GET",
@@ -1761,7 +1841,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "33",
+							"id": "40",
 							"uri": "https://gnius.esante.gouv.fr/core/*.js",
 							"nodeName": null,
 							"method": "GET",
@@ -1771,7 +1851,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "49",
+							"id": "78",
+							"uri": "https://gnius.esante.gouv.fr/core/*.js$",
+							"nodeName": null,
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=3600",
+							"otherinfo": ""
+						},
+						{
+							"id": "56",
 							"uri": "https://gnius.esante.gouv.fr/core/*.png",
 							"nodeName": null,
 							"method": "GET",
@@ -1781,8 +1871,8 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "51",
-							"uri": "https://gnius.esante.gouv.fr/profiles/*.css",
+							"id": "73",
+							"uri": "https://gnius.esante.gouv.fr/fr",
 							"nodeName": null,
 							"method": "GET",
 							"param": "",
@@ -1791,27 +1881,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "63",
-							"uri": "https://gnius.esante.gouv.fr/profiles/*.gif",
-							"nodeName": null,
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "max-age=3600",
-							"otherinfo": ""
-						},
-						{
-							"id": "60",
-							"uri": "https://gnius.esante.gouv.fr/profiles/*.js",
-							"nodeName": null,
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "max-age=3600",
-							"otherinfo": ""
-						},
-						{
-							"id": "35",
+							"id": "37",
 							"uri": "https://gnius.esante.gouv.fr/robots.txt",
 							"nodeName": null,
 							"method": "GET",
