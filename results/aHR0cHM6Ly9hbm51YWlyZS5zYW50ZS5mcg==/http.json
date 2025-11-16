@@ -1,31 +1,21 @@
 {
   "scan": {
     "algorithmVersion": 4,
-    "grade": "D",
+    "grade": "A+",
     "error": null,
-    "score": 30,
+    "score": 105,
     "statusCode": 200,
-    "testsFailed": 4,
-    "testsPassed": 6,
+    "testsFailed": 1,
+    "testsPassed": 9,
     "testsQuantity": 10,
     "responseHeaders": {
-      "date": "Sun, 09 Nov 2025 01:44:33 GMT",
-      "server": "Apache",
-      "x-frame-options": "SAMEORIGIN, SAMEORIGIN",
+      "date": "Sun, 16 Nov 2025 01:43:00 GMT",
+      "content-security-policy": "default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-0117bb27ae15278c28c7efb2de61651d'; script-src 'self' 'nonce-0117bb27ae15278c28c7efb2de61651d'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';",
+      "content-type": "text/html",
+      "strict-transport-security": "max-age=31536000",
+      "referrer-policy": "strict-origin-when-cross-origin",
       "x-content-type-options": "nosniff",
-      "x-xss-protection": "1;mode=block",
-      "expires": "Thu, 01 Jan 1970 00:00:00 GMT",
-      "cache-control": "private, no-cache, no-store, must-revalidate",
-      "pragma": "no-cache",
-      "liferay-portal": "Liferay Digital Experience Platform 7.0.10 GA1 (Wilberforce / Build 7010 / June 15, 2016)",
-      "content-type": "text/html;charset=UTF-8",
-      "set-cookie": [
-        "JSESSIONID=C01BD6AC67F82A0E6C4E292AC673D4B9; Path=/; Secure; HttpOnly;HttpOnly;Secure",
-        "COOKIE_SUPPORT=true; Expires=Mon, 09-Nov-2026 01:44:33 GMT; Path=/; Secure; HttpOnly;HttpOnly;Secure",
-        "GUEST_LANGUAGE_ID=fr_FR; Domain=.sante.fr; Expires=Mon, 09-Nov-2026 01:44:33 GMT; Path=/; Secure; HttpOnly;HttpOnly;Secure"
-      ],
-      "x-webkit-csp": "default-src 'self'",
-      "x-permitted-cross-domain-policies": "master-only",
+      "x-frame-options": "DENY",
       "connection": "close",
       "transfer-encoding": "chunked"
     }
@@ -33,45 +23,60 @@
   "tests": {
     "content-security-policy": {
       "expectation": "csp-implemented-with-no-unsafe",
-      "pass": false,
-      "result": "csp-not-implemented",
-      "scoreModifier": -25,
-      "data": null,
-      "http": false,
+      "pass": true,
+      "result": "csp-implemented-with-no-unsafe",
+      "scoreModifier": 5,
+      "data": {
+        "default-src": [
+          "'self'",
+          "https://use.typekit.net"
+        ],
+        "style-src": [
+          "'nonce-0117bb27ae15278c28c7efb2de61651d'",
+          "'self'",
+          "https://p.typekit.net"
+        ],
+        "script-src": [
+          "'nonce-0117bb27ae15278c28c7efb2de61651d'",
+          "'self'"
+        ],
+        "img-src": [
+          "'self'",
+          "data:"
+        ],
+        "base-uri": [
+          "'self'"
+        ],
+        "trusted-types": [
+          "angular"
+        ],
+        "require-trusted-types-for": [
+          "'script'"
+        ]
+      },
+      "http": true,
       "meta": false,
-      "policy": null,
-      "numPolicies": 0
+      "policy": {
+        "antiClickjacking": false,
+        "defaultNone": false,
+        "insecureBaseUri": false,
+        "insecureFormAction": true,
+        "insecureSchemeActive": false,
+        "insecureSchemePassive": false,
+        "strictDynamic": false,
+        "unsafeEval": false,
+        "unsafeInline": false,
+        "unsafeInlineStyle": false,
+        "unsafeObjects": false
+      },
+      "numPolicies": 1
     },
     "cookies": {
       "expectation": "cookies-secure-with-httponly-sessions",
       "pass": true,
-      "result": "cookies-secure-with-httponly-sessions",
+      "result": "cookies-not-found",
       "scoreModifier": 0,
-      "data": {
-        "JSESSIONID": {
-          "domain": "annuaire.sante.fr",
-          "httponly": true,
-          "path": "/",
-          "port": null,
-          "secure": true
-        },
-        "COOKIE_SUPPORT": {
-          "domain": "annuaire.sante.fr",
-          "expires": "2026-11-09T01:44:33.000Z",
-          "httponly": true,
-          "path": "/",
-          "port": null,
-          "secure": true
-        },
-        "GUEST_LANGUAGE_ID": {
-          "domain": "sante.fr",
-          "expires": "2026-11-09T01:44:33.000Z",
-          "httponly": true,
-          "path": "/",
-          "port": null,
-          "secure": true
-        }
-      },
+      "data": null,
       "sameSite": false
     },
     "cross-origin-resource-sharing": {
@@ -83,48 +88,43 @@
     },
     "redirection": {
       "expectation": "redirection-to-https",
-      "pass": true,
-      "result": "redirection-to-https",
-      "scoreModifier": 0,
-      "destination": "https://annuaire.sante.fr/",
+      "pass": false,
+      "result": "redirection-off-host-from-http",
+      "scoreModifier": -5,
+      "destination": "https://annuaire.esante.gouv.fr/",
       "redirects": true,
       "route": [
         "http://annuaire.sante.fr/",
-        "https://annuaire.sante.fr/"
+        "https://annuaire.esante.gouv.fr/"
       ],
       "statusCode": 200
     },
     "referrer-policy": {
       "expectation": "referrer-policy-private",
       "pass": true,
-      "result": "referrer-policy-not-implemented",
-      "scoreModifier": 0,
-      "data": null,
-      "http": false,
+      "result": "referrer-policy-private",
+      "scoreModifier": 5,
+      "data": "strict-origin-when-cross-origin",
+      "http": true,
       "meta": false
     },
     "strict-transport-security": {
       "expectation": "hsts-implemented-max-age-at-least-six-months",
-      "pass": false,
-      "result": "hsts-not-implemented",
-      "scoreModifier": -20,
-      "data": null,
+      "pass": true,
+      "result": "hsts-implemented-max-age-at-least-six-months",
+      "scoreModifier": 0,
+      "data": "max-age=31536000",
       "includeSubDomains": false,
-      "maxAge": null,
+      "maxAge": 31536000,
       "preload": false,
       "preloaded": false
     },
     "subresource-integrity": {
       "expectation": "sri-implemented-and-external-scripts-loaded-securely",
-      "pass": false,
-      "result": "sri-not-implemented-but-external-scripts-loaded-securely",
-      "scoreModifier": -5,
-      "data": {
-        "https://cdn.alloyui.com/1.5.1/aui/aui-min.js": {
-          "crossorigin": null,
-          "integrity": null
-        }
-      }
+      "pass": true,
+      "result": "sri-not-implemented-but-all-scripts-loaded-from-secure-origin",
+      "scoreModifier": 0,
+      "data": {}
     },
     "x-content-type-options": {
       "expectation": "x-content-type-options-nosniff",
@@ -135,10 +135,10 @@
     },
     "x-frame-options": {
       "expectation": "x-frame-options-sameorigin-or-deny",
-      "pass": false,
-      "result": "x-frame-options-header-invalid",
-      "scoreModifier": -20,
-      "data": "SAMEORIGIN, SAMEORIGIN"
+      "pass": true,
+      "result": "x-frame-options-sameorigin-or-deny",
+      "scoreModifier": 0,
+      "data": "DENY"
     },
     "cross-origin-resource-policy": {
       "expectation": "corp-implemented-with-same-site",

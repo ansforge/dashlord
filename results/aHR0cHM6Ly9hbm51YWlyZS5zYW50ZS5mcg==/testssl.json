@@ -304,7 +304,7 @@
               "ip"           : "annuaire.sante.fr/80.78.2.206",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "annuaire.sante.fr"
+              "finding"      : "old.annuaire.sante.fr"
           }
 ,         {
               "id"           : "cert_subjectAltName",
@@ -318,7 +318,7 @@
               "ip"           : "annuaire.sante.fr/80.78.2.206",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "Ok via SAN and CN (same w/o SNI)"
+              "finding"      : "Ok via SAN and CN (SNI mandatory)"
           }
 ,         {
               "id"           : "cert_chain_of_trust",
@@ -339,7 +339,7 @@
               "ip"           : "annuaire.sante.fr/80.78.2.206",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "253 >= 60 days"
+              "finding"      : "246 >= 60 days"
           }
 ,         {
               "id"           : "cert_notBefore",
@@ -486,21 +486,21 @@
               "ip"           : "annuaire.sante.fr/80.78.2.206",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "200 OK ('/')"
+              "finding"      : "301 Moved Permanently ('/')"
           }
 ,         {
               "id"           : "HTTP_clock_skew",
               "ip"           : "annuaire.sante.fr/80.78.2.206",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "-1 seconds from localtime"
+              "finding"      : "0 seconds from localtime"
           }
 ,         {
               "id"           : "HTTP_headerTime",
               "ip"           : "annuaire.sante.fr/80.78.2.206",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1762652699"
+              "finding"      : "1763257413"
           }
 ,         {
               "id"           : "HSTS",
@@ -528,35 +528,14 @@
               "ip"           : "annuaire.sante.fr/80.78.2.206",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "Liferay-Portal: Liferay Digital Experience Platform 7.0.10 GA1 (Wilberforce / Build 7010 / June 15, 2016)"
+              "finding"      : "No application banner found"
           }
 ,         {
               "id"           : "cookie_count",
               "ip"           : "annuaire.sante.fr/80.78.2.206",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "3 at '/'"
-          }
-,         {
-              "id"           : "cookie_secure",
-              "ip"           : "annuaire.sante.fr/80.78.2.206",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "All (3) at '/' marked as secure"
-          }
-,         {
-              "id"           : "cookie_httponly",
-              "ip"           : "annuaire.sante.fr/80.78.2.206",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "All (3) at '/' marked as HttpOnly"
-          }
-,         {
-              "id"           : "X-Frame-Options_multiple",
-              "ip"           : "annuaire.sante.fr/80.78.2.206",
-              "port"         : "443",
-              "severity"     : "MEDIUM",
-              "finding"      : "Multiple X-Frame-Options headers. Using first header: SAMEORIGIN"
+              "finding"      : "0 at '/' (30x detected, better try target URL of 30x)"
           }
 ,         {
               "id"           : "X-Frame-Options",
@@ -564,41 +543,6 @@
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "SAMEORIGIN"
-          }
-,         {
-              "id"           : "X-Content-Type-Options",
-              "ip"           : "annuaire.sante.fr/80.78.2.206",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "nosniff"
-          }
-,         {
-              "id"           : "X-WebKit-CSP",
-              "ip"           : "annuaire.sante.fr/80.78.2.206",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "default-src 'self'"
-          }
-,         {
-              "id"           : "X-XSS-Protection",
-              "ip"           : "annuaire.sante.fr/80.78.2.206",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "1;mode=block"
-          }
-,         {
-              "id"           : "Cache-Control",
-              "ip"           : "annuaire.sante.fr/80.78.2.206",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "private, no-cache, no-store, must-revalidate"
-          }
-,         {
-              "id"           : "Pragma",
-              "ip"           : "annuaire.sante.fr/80.78.2.206",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "no-cache"
           }
 ,         {
               "id"           : "banner_reverseproxy",
@@ -1112,6 +1056,6 @@
               "ip"           : "annuaire.sante.fr/80.78.2.206",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "77"
+              "finding"      : "85"
           }
 ]
