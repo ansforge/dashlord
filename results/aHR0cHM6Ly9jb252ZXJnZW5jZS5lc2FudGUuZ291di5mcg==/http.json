@@ -1,30 +1,30 @@
 {
   "scan": {
     "algorithmVersion": 4,
-    "grade": "B",
+    "grade": "B-",
     "error": null,
-    "score": 75,
+    "score": 65,
     "statusCode": 200,
-    "testsFailed": 1,
-    "testsPassed": 9,
+    "testsFailed": 2,
+    "testsPassed": 8,
     "testsQuantity": 10,
     "responseHeaders": {
-      "date": "Sun, 16 Nov 2025 01:44:14 GMT",
-      "server": "Apache",
+      "date": "Sun, 23 Nov 2025 01:50:02 GMT",
+      "server": "gunicorn",
       "strict-transport-security": "max-age=63072000; includeSubdomains;",
       "x-frame-options": "sameorigin",
-      "content-length": "49525",
-      "expires": "Sun, 16 Nov 2025 01:44:45 GMT",
-      "cache-control": "max-age=31",
-      "vary": "Accept-Language,Cookie",
+      "content-type": "text/html; charset=utf-8",
+      "expires": "Sun, 23 Nov 2025 01:50:43 GMT",
+      "cache-control": "max-age=41",
+      "vary": "origin,Accept-Language,Cookie",
       "content-language": "fr",
+      "content-length": "46672",
       "x-content-type-options": "nosniff",
       "referrer-policy": "same-origin",
-      "content-type": "text/html; charset=utf-8",
+      "cross-origin-opener-policy": "same-origin",
       "set-cookie": [
-        "django_language=fr; expires=Mon, 16 Nov 2026 01:44:14 GMT; Max-Age=31536000; Path=/;HttpOnly;Secure",
-        "csrftoken=hCiyhv8s7ssQYiFbsmn4bQo6lulaVizOpJLSmuli7tVZ2eoiGQOfSMZfsLHfbEKN; expires=Sun, 15 Nov 2026 01:44:14 GMT; Max-Age=31449600; Path=/; SameSite=Lax;HttpOnly;Secure",
-        "sessionid=1581uov52lcev2s1g1xukf5avsgvnbwc; HttpOnly; Path=/; SameSite=Lax;HttpOnly;Secure"
+        "django_language=fr; expires=Mon, 23 Nov 2026 01:50:02 GMT; Max-Age=31536000; Path=/",
+        "sessionid=gafxhdivas05as1zraiz4a226ljgw8wz; HttpOnly; Path=/; SameSite=Lax"
       ],
       "connection": "close"
     }
@@ -43,36 +43,23 @@
     },
     "cookies": {
       "expectation": "cookies-secure-with-httponly-sessions",
-      "pass": true,
-      "result": "cookies-secure-with-httponly-sessions",
-      "scoreModifier": 0,
+      "pass": false,
+      "result": "cookies-session-without-secure-flag-but-protected-by-hsts",
+      "scoreModifier": -10,
       "data": {
         "django_language": {
           "domain": "convergence.esante.gouv.fr",
-          "expires": "2026-11-16T01:44:14.000Z",
-          "httponly": true,
+          "expires": "2026-11-23T01:50:02.000Z",
           "max-age": 31536000,
           "path": "/",
-          "port": null,
-          "secure": true
-        },
-        "csrftoken": {
-          "domain": "convergence.esante.gouv.fr",
-          "expires": "2026-11-15T01:44:14.000Z",
-          "httponly": true,
-          "max-age": 31449600,
-          "path": "/",
-          "port": null,
-          "samesite": "lax",
-          "secure": true
+          "port": null
         },
         "sessionid": {
           "domain": "convergence.esante.gouv.fr",
           "httponly": true,
           "path": "/",
           "port": null,
-          "samesite": "lax",
-          "secure": true
+          "samesite": "lax"
         }
       },
       "sameSite": false
