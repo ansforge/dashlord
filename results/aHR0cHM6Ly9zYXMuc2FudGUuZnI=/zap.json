@@ -1,8 +1,66 @@
 {
 	"@programName": "ZAP",
-	"@version": "2.16.1",
-	"@generated": "Sun, 14 Dec 2025 04:12:05",
-	"created": "2025-12-14T04:12:05.791754501Z",
+	"@version": "2.17.0",
+	"@generated": "Sun, 21 Dec 2025 04:18:59",
+	"created": "2025-12-21T04:18:59.779471795Z",
+	"insights":[
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://sas.sante.fr",
+			"key": "insight.code.2xx",
+			"description": "Percentage of responses with status code 2xx",
+			"statistic": "100"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://sas.sante.fr",
+			"key": "insight.endpoint.ctype.image/svg+xml",
+			"description": "Percentage of endpoints with content type image/svg+xml",
+			"statistic": "25"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://sas.sante.fr",
+			"key": "insight.endpoint.ctype.text/css",
+			"description": "Percentage of endpoints with content type text/css",
+			"statistic": "25"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://sas.sante.fr",
+			"key": "insight.endpoint.ctype.text/html",
+			"description": "Percentage of endpoints with content type text/html",
+			"statistic": "50"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://sas.sante.fr",
+			"key": "insight.endpoint.method.GET",
+			"description": "Percentage of endpoints with method GET",
+			"statistic": "100"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://sas.sante.fr",
+			"key": "insight.endpoint.total",
+			"description": "Count of total endpoints",
+			"statistic": "4"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://sas.sante.fr",
+			"key": "insight.response.slow",
+			"description": "Percentage of slow responses",
+			"statistic": "100"
+		}
+	],
 	"site":[ 
 		{
 			"@name": "https://sas.sante.fr",
@@ -21,9 +79,9 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "7",
+							"id": "6",
 							"uri": "https://sas.sante.fr",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -31,9 +89,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "6",
+							"id": "4",
 							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -43,7 +101,7 @@
 						{
 							"id": "5",
 							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -52,7 +110,7 @@
 						}
 					],
 					"count": "3",
-					"systemic": false,
+					"systemic": true,
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
@@ -71,9 +129,9 @@
 					"desc": "<p>The integrity attribute is missing on a script or link tag served by an external server. The integrity tag prevents an attacker who have gained access to this server from injecting a malicious content.</p>",
 					"instances":[ 
 						{
-							"id": "43",
+							"id": "14",
 							"uri": "https://sas.sante.fr",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -81,9 +139,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "42",
+							"id": "12",
 							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -91,9 +149,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "51",
+							"id": "13",
 							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -102,13 +160,13 @@
 						}
 					],
 					"count": "3",
-					"systemic": false,
+					"systemic": true,
 					"solution": "<p>Provide a valid integrity attribute to the tag.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90004",
@@ -121,89 +179,89 @@
 					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
 					"instances":[ 
 						{
-							"id": "37",
+							"id": "23",
 							"uri": "https://sas.sante.fr",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "25",
+							"uri": "https://sas.sante.fr/robots.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "24",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "30",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "Cross-Origin-Embedder-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "28",
+							"uri": "https://sas.sante.fr/robots.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"method": "GET",
+							"param": "Cross-Origin-Embedder-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "27",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "Cross-Origin-Embedder-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "32",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "Cross-Origin-Opener-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "31",
+							"uri": "https://sas.sante.fr/robots.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"method": "GET",
+							"param": "Cross-Origin-Opener-Policy",
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
 						},
 						{
 							"id": "29",
-							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": null,
-							"method": "GET",
-							"param": "Cross-Origin-Resource-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "48",
 							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": null,
-							"method": "GET",
-							"param": "Cross-Origin-Resource-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "39",
-							"uri": "https://sas.sante.fr",
-							"nodeName": null,
-							"method": "GET",
-							"param": "Cross-Origin-Embedder-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "33",
-							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": null,
-							"method": "GET",
-							"param": "Cross-Origin-Embedder-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "49",
-							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": null,
-							"method": "GET",
-							"param": "Cross-Origin-Embedder-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "40",
-							"uri": "https://sas.sante.fr",
-							"nodeName": null,
-							"method": "GET",
-							"param": "Cross-Origin-Opener-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "36",
-							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": null,
-							"method": "GET",
-							"param": "Cross-Origin-Opener-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "50",
-							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
 							"attack": "",
@@ -212,13 +270,13 @@
 						}
 					],
 					"count": "9",
-					"systemic": false,
+					"systemic": true,
 					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy</p>",
 					"cweid": "693",
 					"wascid": "14",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10063",
@@ -231,9 +289,9 @@
 					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
 					"instances":[ 
 						{
-							"id": "31",
+							"id": "20",
 							"uri": "https://sas.sante.fr",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -241,9 +299,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "23",
+							"id": "22",
 							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -251,9 +309,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "47",
+							"id": "18",
 							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -262,7 +320,7 @@
 						}
 					],
 					"count": "3",
-					"systemic": false,
+					"systemic": true,
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
@@ -281,54 +339,54 @@
 					"desc": "<p>Base64 encoded data was disclosed by the application/web server. Note: in the interests of performance not all base64 strings in the response were analyzed individually, the entire response should be looked at by the analyst/security team/developer(s).</p>",
 					"instances":[ 
 						{
-							"id": "20",
+							"id": "39",
 							"uri": "https://sas.sante.fr",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "fHx_BWv87fc4gtRJhHR4PT09rghQBbztt-02N1deXJ0IbHYjkQwppJNvI6ju8dFxmh6yD_a3MjwKXTD3vX-QIHE-OPK9w4kuJhTssObrUwUcAlEvigJoR92xTqUlSmO9qOLM8DfHYtEO_9f1bD-Oqg",
-							"otherinfo": "||\\x0005k\uFFFD\uFFFD\uFFFD8\uFFFD\uFFFDI\uFFFDtx===\uFFFD\\x0008P\\x0005\uFFFD\uFFFD\uFFFD67W^\\\uFFFD\\x0008lv#\uFFFD\\x000c)\uFFFD\uFFFDo#\uFFFD\uFFFD\uFFFD\uFFFDq\uFFFD\\x001e\uFFFD\\x000f\uFFFD\uFFFD2<\n]0\uFFFD\uFFFD\uFFFD q>8\uFFFD\u00C9.&\\x0014\uFFFD\uFFFD\uFFFDS\\x0005\\x001c\\x0002Q/\uFFFD\\x0002hG\u0771N\uFFFD%Jc\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD7\uFFFDb\uFFFD\\x000e\uFFFD\uFFFD\uFFFDl?\uFFFD\uFFFD"
+							"evidence": "ho9f3edMcPom0w9pJCW80fxRQc0sN3QFrCw-V1HrRhIGWMKgmgo6KokYOtpRrQ2hX3KqSl4xRkEZGXb0ZtiO-TfnoRTCiOZ8s84nu5oHjtCmB4WqJg3GDyjZILuJachMWZ6rm3djN4wMTLGzhtU1Fw",
+							"otherinfo": "\uFFFD\uFFFD_\uFFFD\uFFFDLp\uFFFD&\uFFFD\\x000fi$%\uFFFD\uFFFD\uFFFDQA\uFFFD,7t\\x0005\uFFFD,>WQ\uFFFDF\\x0012\\x0006X\u00A0\uFFFD\n:*\uFFFD\\x0018:\uFFFDQ\uFFFD\r\uFFFD_r\uFFFDJ^1FA\\x0019\\x0019v\uFFFDf\u060E\uFFFD7\uFFFD\\x0014\u0088\uFFFD|\uFFFD\uFFFD'\uFFFD\uFFFD\\x0007\uFFFD\u0426\\x0007\uFFFD\uFFFD&\r\uFFFD\\x000f(\uFFFD \uFFFD\uFFFDi\uFFFDLY\uFFFD\uFFFD\uFFFDwc7\uFFFD\\x000cL\uFFFD\uFFFD\uFFFD\uFFFD5\\x0017"
 						},
 						{
-							"id": "18",
+							"id": "37",
 							"uri": "https://sas.sante.fr",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "32Hmdeo2y3Rw8g8rMh348KYOd5Mba09_Kg_-jN3HSSoovD8DBR5J0YGaWayViKrF6_5-y_KonOk0zOn3DbLJv0SfMiOk5w1arOk0CP06lC6m3gTQTZPZoxXzZwmdurkqdAbcCLFjxF8rfMi2fMW6LFySoTRd3Cqos7dsyqrT9w-BoOkH9DfLry2iu07muR6ODtK_C84BjIi0oN-qv4SZ47gqc-NS_FDVpql7063YQQWdkGu3bjRK0ZtOn7Tdgg7VrrsEuR5YRgxr02fYQgWdWSKrsrn5YrhWbazKVFxB69hwTeh5aPv0AVHa_9nfG0WP",
-							"otherinfo": "\uFFFDa\uFFFDu\uFFFD6\uFFFDtp\uFFFD\\x000f+2\\x001d\uFFFD\uFFFD\\x000ew\uFFFD\\x001bkO*\\x000f\uFFFD\uFFFD\uFFFD\uFFFDI*(\uFFFD?\\x0003\\x0005\\x001eI\u0441\uFFFDY\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD~\uFFFD\uFFFD\uFFFD4\uFFFD\uFFFD\uFFFD\r\uFFFD\u027FD\uFFFD2#\uFFFD\uFFFD\rZ\uFFFD\uFFFD4\\x0008\uFFFD:\uFFFD.\uFFFD\uFFFD\\x0004\uFFFDM\uFFFD\u0663\\x0015\uFFFDg\t\uFFFD\uFFFD\uFFFD*t\\x0006\uFFFD\\x0008\uFFFDc\uFFFD_+|\u0236|\u017A,\\\uFFFD\uFFFD4]\uFFFD*\uFFFD\uFFFD\uFFFDl\u02AA\uFFFD\uFFFD\\x000f\uFFFD\uFFFD\uFFFD\\x0007\uFFFD7\u02EF-\uFFFD\uFFFDN\uFFFD\\x001e\uFFFD\\x000e\u04BF\\x000b\uFFFD\\x0001\uFFFD\uFFFD\uFFFD\uFFFD\u07EA\uFFFD\uFFFD\uFFFD\uFFFD*s\uFFFDR\uFFFDP\u0566\uFFFD{\u04ED\uFFFDA\\x0005\uFFFD\uFFFDk\uFFFDn4J\u045BN\uFFFD\uFFFD\u0742\\x000e\u056E\uFFFD\\x0004\uFFFD\\x001eXF\\x000ck\uFFFDg\uFFFDB\\x0005\uFFFDY\"\uFFFD\uFFFD\uFFFD\uFFFDb\uFFFDVm\uFFFD\uFFFDT\\A\uFFFD\uFFFDpM\uFFFDyh\uFFFD\uFFFD\\x0001Q\uFFFD\uFFFD\uFFFD\uFFFD\\x001bE\uFFFD"
+							"evidence": "ho9f3edMcPom0w9pJCW80fxRQc0sN3QFrCw-V1HrRhJvob-0wMYmNoeSAnXO66F8-V4_Rf9cKOiYAtZ4vmgKM25-zlZEvZMiDAQclaCpvcpYUZGox30eEuTRfR0SsC7vpuYOXk32miJzY-1ogvi5_MAdZkae1E4rTU7eRo0otswf10BzgpL4raOurh0BNoM3eWlv9Q1N7mdJ4PRYh_eb_n-oz-p51__ebyBTzBN6r3bUW4veeKrZhqg9RjQE69PwBUFLeSBiOqO6RjPnJqaSvWE9iLOV-iRYPorKERGnp7DN7VEmuhX_rD9gxR6s1Dfh",
+							"otherinfo": "\uFFFD\uFFFD_\uFFFD\uFFFDLp\uFFFD&\uFFFD\\x000fi$%\uFFFD\uFFFD\uFFFDQA\uFFFD,7t\\x0005\uFFFD,>WQ\uFFFDF\\x0012o\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD&6\uFFFD\uFFFD\\x0002u\uFFFD\uFFFD|\uFFFD^?E\uFFFD\\(\uFFFD\\x0002\uFFFDx\uFFFDh\n3n~\uFFFDVD\uFFFD\uFFFD\"\\x000c\\x0004\\x001c\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDXQ\uFFFD\uFFFD\uFFFD}\\x001e\\x0012\uFFFD\uFFFD}\\x001d\\x0012\uFFFD.\uFFFD\uFFFD\\x000e^M\uFFFD\uFFFD\"sc\uFFFDh\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001dfF\uFFFD\uFFFDN+MN\uFFFDF\uFFFD(\uFFFD\uFFFD\\x001f\uFFFD@s\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001d\\x00016\uFFFD7yio\uFFFD\rM\uFFFDgI\uFFFD\uFFFDX\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFDo S\uFFFD\\x0013z\uFFFDv\uFFFD[\uFFFD\uFFFDx\uFFFD\u0646\uFFFD=F4\\x0004\uFFFD\uFFFD\uFFFD\\x0005AKy b:\uFFFD\uFFFDF3\uFFFD&\uFFFD\uFFFD\uFFFDa=\uFFFD\uFFFD\uFFFD\uFFFD$X>\uFFFD\uFFFD\\x0011\\x0011\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDQ&\uFFFD\\x0015\uFFFD\uFFFD?`\uFFFD\\x001e\uFFFD\uFFFD7\uFFFD"
 						},
 						{
-							"id": "12",
+							"id": "38",
 							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "IKfDAs58MUiIkKDiskN2M0KtqhcisUULuYoKAKUikaSd7sfoB-J0Z8ne5izitSflkm1JUMZXoekxO4iiTDW4IQ0sE30HFtWqE6c2-8y283A8cECSRyW62pkpyAOq4mG4fEafQvvfYlhBVrqv9uxikw",
-							"otherinfo": " \uFFFD\uFFFD\\x0002\uFFFD|1H\uFFFD\uFFFD\uFFFD\uFFFDCv3B\uFFFD\uFFFD\\x0017\"\uFFFDE\\x000b\uFFFD\uFFFD\n\\x0000\uFFFD\"\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0007\uFFFDtg\uFFFD\uFFFD\uFFFD,\uFFFD'\uFFFDmIP\uFFFDW\uFFFD\uFFFD1;\uFFFD\uFFFDL5\uFFFD!\r,\\x0013}\\x0007\\x0016\u056A\\x0013\uFFFD6\uFFFD\u0336\uFFFDp<p@\uFFFDG%\uFFFD\u0699)\uFFFD\\x0003\uFFFD\uFFFDa\uFFFD|F\uFFFDB\uFFFD\uFFFDbXAV\uFFFD\uFFFD\uFFFD\uFFFDb\uFFFD"
+							"evidence": "ho9f3edMcPom0w9pJCW80XoyxZNMj9XvXrX13F8ZVgipG_Cx3N3I6HTbxkSWkP6jVr_k5T9LPRdohYGxlnhAaZjDQaXCswg50GITLKaR9nv5juw_Z8sDx47EVeTRHU6ZFkBt1xLiajBHEe5B47iKsQ",
+							"otherinfo": "\uFFFD\uFFFD_\uFFFD\uFFFDLp\uFFFD&\uFFFD\\x000fi$%\uFFFD\uFFFDz2\u0153L\uFFFD\uFFFD\uFFFD^\uFFFD\uFFFD\uFFFD_\\x0019V\\x0008\uFFFD\\x001b\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDt\uFFFD\uFFFDD\uFFFD\uFFFD\uFFFD\uFFFDV\uFFFD\uFFFD\uFFFD?K=\\x0017h\uFFFD\uFFFD\uFFFD\uFFFDx@i\uFFFD\uFFFDA\uFFFD\u00B3\\x00089\uFFFDb\\x0013,\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD?g\uFFFD\\x0003\u01CE\uFFFDU\uFFFD\uFFFD\\x001dN\uFFFD\\x0016@m\uFFFD\\x0012\uFFFDj0G\\x0011\uFFFDA\u3E0A\uFFFD"
 						},
 						{
-							"id": "45",
+							"id": "36",
 							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "0yNsIO7sTU1F64j1NENb6iUFxk_ybsfGhnP94ywd1tnSEdqMM7_i0ssjTOoZzpPJH5IIF7sV34pti5qqlTTthhoQqu84m6_WcWZh5Lf-YxJSJpXLOnZpUlWnQ8nDI9KhYHQ8t3ZndID9t-aNHMBXDA",
-							"otherinfo": "\uFFFD#l \uFFFD\uFFFDMME\uFFFD\uFFFD4C[\uFFFD%\\x0005\uFFFDO\uFFFDn\uFFFD\u0186s\uFFFD\uFFFD,\\x001d\uFFFD\uFFFD\uFFFD\\x0011\u068C3\uFFFD\uFFFD\uFFFD\uFFFD#L\uFFFD\\x0019\u0393\uFFFD\\x001f\uFFFD\\x0008\\x0017\uFFFD\\x0015\u07CAm\uFFFD\uFFFD\uFFFD\uFFFD4\uFFFD\\x001a\\x0010\uFFFD\uFFFD8\uFFFD\uFFFD\uFFFDqfa\uFFFD\uFFFDc\\x0012R&\uFFFD\uFFFD:viRU\uFFFDC\uFFFD\uFFFD#\u04A1`t<\uFFFDvgt\uFFFD\uFFFD\uFFFD\uFFFD\\x001c\uFFFDW\\x000c"
+							"evidence": "xUjO9Ue-W_bg7_fZM9cnQ4WCbY2pGppKJu_V7v8DsZ5vNeIyUv9OLEzZw7Vix9MxvNumjpH_USCuQ9FxI0Yt-plruJBNNFkXMr_y3lUO7V55rqv2RUU3pxPFnYDrp3UxBquv2jID_k3vjiDCJ5jinQ",
+							"otherinfo": "\uFFFDH\uFFFD\uFFFDG\uFFFD[\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD3\uFFFD'C\uFFFD\uFFFDm\uFFFD\uFFFD\\x001a\uFFFDJ&\uFFFD\uFFFD\uFFFD\uFFFD\\x0003\uFFFD\uFFFDo5\uFFFD2R\uFFFDN,L\uFFFD\u00F5b\uFFFD\uFFFD1\uFFFD\u06E6\uFFFD\uFFFD\uFFFDQ \uFFFDC\uFFFDq#F-\uFFFD\uFFFDk\uFFFD\uFFFDM4Y\\x00172\uFFFD\uFFFD\uFFFDU\\x000e\uFFFD^y\uFFFD\uFFFD\uFFFDEE7\uFFFD\\x0013\u015D\uFFFD\uFFFDu1\\x0006\uFFFD\uFFFD\uFFFD2\\x0003\uFFFDM\uFFFD \uFFFD'\uFFFD\uFFFD"
 						}
 					],
 					"count": "4",
 					"systemic": false,
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>||\\x0005k\uFFFD\uFFFD\uFFFD8\uFFFD\uFFFDI\uFFFDtx===\uFFFD\\x0008P\\x0005\uFFFD\uFFFD\uFFFD67W^\\\uFFFD\\x0008lv#\uFFFD\\x000c)\uFFFD\uFFFDo#\uFFFD\uFFFD\uFFFD\uFFFDq\uFFFD\\x001e\uFFFD\\x000f\uFFFD\uFFFD2<</p><p>]0\uFFFD\uFFFD\uFFFD q>8\uFFFD\u00C9.&\\x0014\uFFFD\uFFFD\uFFFDS\\x0005\\x001c\\x0002Q/\uFFFD\\x0002hG\u0771N\uFFFD%Jc\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD7\uFFFDb\uFFFD\\x000e\uFFFD\uFFFD\uFFFDl?\uFFFD\uFFFD</p>",
+					"otherinfo": "<p>\uFFFD\uFFFD_\uFFFD\uFFFDLp\uFFFD&\uFFFD\\x000fi$%\uFFFD\uFFFD\uFFFDQA\uFFFD,7t\\x0005\uFFFD,>WQ\uFFFDF\\x0012\\x0006X\u00A0\uFFFD</p><p>:*\uFFFD\\x0018:\uFFFDQ\uFFFD\r\uFFFD_r\uFFFDJ^1FA\\x0019\\x0019v\uFFFDf\u060E\uFFFD7\uFFFD\\x0014\u0088\uFFFD|\uFFFD\uFFFD'\uFFFD\uFFFD\\x0007\uFFFD\u0426\\x0007\uFFFD\uFFFD&\r\uFFFD\\x000f(\uFFFD \uFFFD\uFFFDi\uFFFDLY\uFFFD\uFFFD\uFFFDwc7\uFFFD\\x000cL\uFFFD\uFFFD\uFFFD\uFFFD5\\x0017</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "319",
 					"wascid": "13",
-					"sourceid": "8"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10109",
@@ -343,7 +401,17 @@
 						{
 							"id": "9",
 							"uri": "https://sas.sante.fr",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<noscript><div class=\"challengejs-container\"><div class=\"container\"><div class=\"challengejs-body\"><div class=\"challengejs-card\"><img src=\"/.well-known/baleen/challengejs/assets/logo.svg\"><div class=\"challengejs-message-1\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur.</div><div class=\"separator\"></div><div class=\"challengejs-message-2\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur. Pour vous permettre de naviguer correctement sur notre site, il est n\u00E9cessaire qu'il soit activ\u00E9.</div><div class=\"challengejs-message-3\"><div class=\"how\"><span>Comment activer le JavaScript ?</span></div><div class=\"drop\"><div class=\"how-to chrome\"><div>Chrome</div><a href=\"https://support.google.com/chrome\">https://support.google.com/chrome</a></div><div class=\"how-to firefox\"><div>Mozilla Firefox</div><a href=\"https://support.mozilla.org/fr/home\">https://support.mozilla.org/fr/home</a></div><div class=\"how-to safari\"><div>Safari</div><a href=\"https://www.apple.com/support/safari/\">https://www.apple.com/support/safari/</a></div><div class=\"how-to opera\"><div>Opera</div><a href=\"https://support.google.com/adsense/answer/12654?hl=fr\">https://support.google.com/adsense/answer/12654?hl=fr</a></div><div class=\"how-to explorer\"><div>Internet Explorer</div><a href=\"https://support.microsoft.com/product/internet-explorer\">https://support.microsoft.com/product/internet-explorer</a></div></div></div></div></div></div></div></noscript>",
+							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
+						},
+						{
+							"id": "11",
+							"uri": "https://sas.sante.fr/robots.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -352,18 +420,8 @@
 						},
 						{
 							"id": "8",
-							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": null,
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<noscript><div class=\"challengejs-container\"><div class=\"container\"><div class=\"challengejs-body\"><div class=\"challengejs-card\"><img src=\"/.well-known/baleen/challengejs/assets/logo.svg\"><div class=\"challengejs-message-1\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur.</div><div class=\"separator\"></div><div class=\"challengejs-message-2\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur. Pour vous permettre de naviguer correctement sur notre site, il est n\u00E9cessaire qu'il soit activ\u00E9.</div><div class=\"challengejs-message-3\"><div class=\"how\"><span>Comment activer le JavaScript ?</span></div><div class=\"drop\"><div class=\"how-to chrome\"><div>Chrome</div><a href=\"https://support.google.com/chrome\">https://support.google.com/chrome</a></div><div class=\"how-to firefox\"><div>Mozilla Firefox</div><a href=\"https://support.mozilla.org/fr/home\">https://support.mozilla.org/fr/home</a></div><div class=\"how-to safari\"><div>Safari</div><a href=\"https://www.apple.com/support/safari/\">https://www.apple.com/support/safari/</a></div><div class=\"how-to opera\"><div>Opera</div><a href=\"https://support.google.com/adsense/answer/12654?hl=fr\">https://support.google.com/adsense/answer/12654?hl=fr</a></div><div class=\"how-to explorer\"><div>Internet Explorer</div><a href=\"https://support.microsoft.com/product/internet-explorer\">https://support.microsoft.com/product/internet-explorer</a></div></div></div></div></div></div></div></noscript>",
-							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
-						},
-						{
-							"id": "10",
 							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -372,13 +430,13 @@
 						}
 					],
 					"count": "3",
-					"systemic": false,
+					"systemic": true,
 					"solution": "<p>This is an informational alert and so no changes are required.</p>",
 					"otherinfo": "<p>A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not.</p>",
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10015",
@@ -393,27 +451,7 @@
 						{
 							"id": "1",
 							"uri": "https://sas.sante.fr",
-							"nodeName": null,
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "no-cache",
-							"otherinfo": ""
-						},
-						{
-							"id": "3",
-							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": null,
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "no-cache",
-							"otherinfo": ""
-						},
-						{
-							"id": "2",
-							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -421,14 +459,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
-					"systemic": false,
+					"count": "1",
+					"systemic": true,
 					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -441,9 +479,9 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"id": "22",
+							"id": "49",
 							"uri": "https://sas.sante.fr",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -451,9 +489,19 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "15",
+							"id": "46",
 							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "54",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -461,14 +509,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
-					"systemic": false,
+					"count": "3",
+					"systemic": true,
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -481,9 +529,9 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"id": "21",
+							"id": "45",
 							"uri": "https://sas.sante.fr",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -491,9 +539,19 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "14",
+							"id": "44",
 							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "52",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -501,14 +559,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
-					"systemic": false,
+					"count": "3",
+					"systemic": true,
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -521,9 +579,9 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"id": "19",
+							"id": "43",
 							"uri": "https://sas.sante.fr",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -531,9 +589,19 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "13",
+							"id": "41",
 							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "42",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -541,14 +609,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
-					"systemic": false,
+					"count": "3",
+					"systemic": true,
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -561,9 +629,9 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"id": "26",
+							"id": "50",
 							"uri": "https://sas.sante.fr",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -571,9 +639,19 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "16",
+							"id": "48",
 							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "55",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -581,14 +659,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
-					"systemic": false,
+					"count": "3",
+					"systemic": true,
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",
@@ -601,9 +679,9 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
 					"instances":[ 
 						{
-							"id": "53",
+							"id": "57",
 							"uri": "https://sas.sante.fr/.well-known/baleen/challengejs/assets/logo.svg",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr\/.well-known\/baleen\/challengejs\/assets\/logo.svg",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -611,9 +689,9 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "52",
+							"id": "56",
 							"uri": "https://sas.sante.fr/.well-known/baleen/challengejs/assets/style.css",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr\/.well-known\/baleen\/challengejs\/assets\/style.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -622,7 +700,7 @@
 						}
 					],
 					"count": "2",
-					"systemic": false,
+					"systemic": true,
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
 					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
@@ -641,19 +719,9 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
 					"instances":[ 
 						{
-							"id": "27",
-							"uri": "https://sas.sante.fr",
-							"nodeName": null,
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "no-cache",
-							"otherinfo": ""
-						},
-						{
 							"id": "17",
-							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": null,
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -661,9 +729,19 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "46",
+							"id": "19",
+							"uri": "https://sas.sante.fr/robots.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "no-cache",
+							"otherinfo": ""
+						},
+						{
+							"id": "16",
 							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": null,
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -672,7 +750,7 @@
 						}
 					],
 					"count": "3",
-					"systemic": false,
+					"systemic": true,
 					"solution": "",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
