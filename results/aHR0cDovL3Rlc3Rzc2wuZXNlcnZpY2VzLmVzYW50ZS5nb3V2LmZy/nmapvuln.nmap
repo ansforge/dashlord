@@ -1,6 +1,6 @@
-# Nmap 7.92 scan initiated Sun Dec 21 04:58:12 2025 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln testssl.eservices.esante.gouv.fr
+# Nmap 7.92 scan initiated Sun Dec 28 04:57:54 2025 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln testssl.eservices.esante.gouv.fr
 Nmap scan report for testssl.eservices.esante.gouv.fr (135.125.232.117)
-Host is up (0.15s latency).
+Host is up (0.12s latency).
 rDNS record for 135.125.232.117: vps-c4a3f657.vps.ovh.net
 Not shown: 994 filtered tcp ports (no-response)
 PORT     STATE  SERVICE    VERSION
@@ -48,6 +48,7 @@ PORT     STATE  SERVICE    VERSION
 |     	4C6E2182-0E99-5626-83F6-1646DD648C57	3.6	https://vulners.com/githubexploit/4C6E2182-0E99-5626-83F6-1646DD648C57	*EXPLOIT*
 |_    	PACKETSTORM:140261	0.0	https://vulners.com/packetstorm/PACKETSTORM:140261	*EXPLOIT*
 80/tcp   open   http       Apache httpd 2.4.37 ((centos) OpenSSL/1.1.1g)
+|_http-server-header: Apache/2.4.37 (centos) OpenSSL/1.1.1g
 | vulners: 
 |   cpe:/a:apache:http_server:2.4.37: 
 |     	PACKETSTORM:176334	9.8	https://vulners.com/packetstorm/PACKETSTORM:176334	*EXPLOIT*
@@ -84,6 +85,7 @@ PORT     STATE  SERVICE    VERSION
 |     	1337DAY-ID-39214	9.8	https://vulners.com/zdt/1337DAY-ID-39214	*EXPLOIT*
 |     	1337DAY-ID-38427	9.8	https://vulners.com/zdt/1337DAY-ID-38427	*EXPLOIT*
 |     	1337DAY-ID-34882	9.8	https://vulners.com/zdt/1337DAY-ID-34882	*EXPLOIT*
+|     	PACKETSTORM:213257	9.1	https://vulners.com/packetstorm/PACKETSTORM:213257	*EXPLOIT*
 |     	HTTPD:509B04B8CC51879DD0A561AC4FDBE0A6	9.1	https://vulners.com/httpd/HTTPD:509B04B8CC51879DD0A561AC4FDBE0A6
 |     	HTTPD:3512E3F62E72F03B59F5E9CF8ECB3EEF	9.1	https://vulners.com/httpd/HTTPD:3512E3F62E72F03B59F5E9CF8ECB3EEF
 |     	HTTPD:2C227652EE0B3B961706AAFCACA3D1E1	9.1	https://vulners.com/httpd/HTTPD:2C227652EE0B3B961706AAFCACA3D1E1
@@ -184,6 +186,8 @@ PORT     STATE  SERVICE    VERSION
 |     	CVE-2019-0190	7.5	https://vulners.com/cve/CVE-2019-0190
 |     	CVE-2018-17199	7.5	https://vulners.com/cve/CVE-2018-17199
 |     	CVE-2006-20001	7.5	https://vulners.com/cve/CVE-2006-20001
+|     	CNVD-2025-30837	7.5	https://vulners.com/cnvd/CNVD-2025-30837
+|     	CNVD-2025-30836	7.5	https://vulners.com/cnvd/CNVD-2025-30836
 |     	CNVD-2025-16614	7.5	https://vulners.com/cnvd/CNVD-2025-16614
 |     	CNVD-2025-16613	7.5	https://vulners.com/cnvd/CNVD-2025-16613
 |     	CNVD-2025-16612	7.5	https://vulners.com/cnvd/CNVD-2025-16612
@@ -230,6 +234,7 @@ PORT     STATE  SERVICE    VERSION
 |     	CVE-2019-10097	7.2	https://vulners.com/cve/CVE-2019-10097
 |     	1337DAY-ID-32502	7.2	https://vulners.com/zdt/1337DAY-ID-32502	*EXPLOIT*
 |     	CVE-2025-65082	6.5	https://vulners.com/cve/CVE-2025-65082
+|     	CNVD-2025-30833	6.5	https://vulners.com/cnvd/CNVD-2025-30833
 |     	CVE-2024-24795	6.3	https://vulners.com/cve/CVE-2024-24795
 |     	CNVD-2024-36394	6.3	https://vulners.com/cnvd/CNVD-2024-36394
 |     	HTTPD:E3E8BE7E36621C4506552BA051ECC3C8	6.1	https://vulners.com/httpd/HTTPD:E3E8BE7E36621C4506552BA051ECC3C8
@@ -247,6 +252,7 @@ PORT     STATE  SERVICE    VERSION
 |     	CVE-2020-13938	5.5	https://vulners.com/cve/CVE-2020-13938
 |     	CNVD-2021-44765	5.5	https://vulners.com/cnvd/CNVD-2021-44765
 |     	CVE-2025-66200	5.4	https://vulners.com/cve/CVE-2025-66200
+|     	CNVD-2025-30835	5.4	https://vulners.com/cnvd/CNVD-2025-30835
 |     	HTTPD:FCCF5DB14D66FA54B47C34D9680C0335	5.3	https://vulners.com/httpd/HTTPD:FCCF5DB14D66FA54B47C34D9680C0335
 |     	HTTPD:EB26BC6B6E566C865F53A311FC1A6744	5.3	https://vulners.com/httpd/HTTPD:EB26BC6B6E566C865F53A311FC1A6744
 |     	HTTPD:C1BCB024FBDBA4C7909CE6FABA8E1422	5.3	https://vulners.com/httpd/HTTPD:C1BCB024FBDBA4C7909CE6FABA8E1422
@@ -272,7 +278,6 @@ PORT     STATE  SERVICE    VERSION
 |     	CNVD-2019-02938	5.3	https://vulners.com/cnvd/CNVD-2019-02938
 |     	1337DAY-ID-33575	4.3	https://vulners.com/zdt/1337DAY-ID-33575	*EXPLOIT*
 |_    	PACKETSTORM:152441	0.0	https://vulners.com/packetstorm/PACKETSTORM:152441	*EXPLOIT*
-|_http-server-header: Apache/2.4.37 (centos) OpenSSL/1.1.1g
 389/tcp  open   ldap       OpenLDAP 2.2.X - 2.3.X
 443/tcp  open   ssl/http   Apache httpd 2.4.37 ((centos) OpenSSL/1.1.1g)
 | vulners: 
@@ -311,6 +316,7 @@ PORT     STATE  SERVICE    VERSION
 |     	1337DAY-ID-39214	9.8	https://vulners.com/zdt/1337DAY-ID-39214	*EXPLOIT*
 |     	1337DAY-ID-38427	9.8	https://vulners.com/zdt/1337DAY-ID-38427	*EXPLOIT*
 |     	1337DAY-ID-34882	9.8	https://vulners.com/zdt/1337DAY-ID-34882	*EXPLOIT*
+|     	PACKETSTORM:213257	9.1	https://vulners.com/packetstorm/PACKETSTORM:213257	*EXPLOIT*
 |     	HTTPD:509B04B8CC51879DD0A561AC4FDBE0A6	9.1	https://vulners.com/httpd/HTTPD:509B04B8CC51879DD0A561AC4FDBE0A6
 |     	HTTPD:3512E3F62E72F03B59F5E9CF8ECB3EEF	9.1	https://vulners.com/httpd/HTTPD:3512E3F62E72F03B59F5E9CF8ECB3EEF
 |     	HTTPD:2C227652EE0B3B961706AAFCACA3D1E1	9.1	https://vulners.com/httpd/HTTPD:2C227652EE0B3B961706AAFCACA3D1E1
@@ -411,6 +417,8 @@ PORT     STATE  SERVICE    VERSION
 |     	CVE-2019-0190	7.5	https://vulners.com/cve/CVE-2019-0190
 |     	CVE-2018-17199	7.5	https://vulners.com/cve/CVE-2018-17199
 |     	CVE-2006-20001	7.5	https://vulners.com/cve/CVE-2006-20001
+|     	CNVD-2025-30837	7.5	https://vulners.com/cnvd/CNVD-2025-30837
+|     	CNVD-2025-30836	7.5	https://vulners.com/cnvd/CNVD-2025-30836
 |     	CNVD-2025-16614	7.5	https://vulners.com/cnvd/CNVD-2025-16614
 |     	CNVD-2025-16613	7.5	https://vulners.com/cnvd/CNVD-2025-16613
 |     	CNVD-2025-16612	7.5	https://vulners.com/cnvd/CNVD-2025-16612
@@ -457,6 +465,7 @@ PORT     STATE  SERVICE    VERSION
 |     	CVE-2019-10097	7.2	https://vulners.com/cve/CVE-2019-10097
 |     	1337DAY-ID-32502	7.2	https://vulners.com/zdt/1337DAY-ID-32502	*EXPLOIT*
 |     	CVE-2025-65082	6.5	https://vulners.com/cve/CVE-2025-65082
+|     	CNVD-2025-30833	6.5	https://vulners.com/cnvd/CNVD-2025-30833
 |     	CVE-2024-24795	6.3	https://vulners.com/cve/CVE-2024-24795
 |     	CNVD-2024-36394	6.3	https://vulners.com/cnvd/CNVD-2024-36394
 |     	HTTPD:E3E8BE7E36621C4506552BA051ECC3C8	6.1	https://vulners.com/httpd/HTTPD:E3E8BE7E36621C4506552BA051ECC3C8
@@ -474,6 +483,7 @@ PORT     STATE  SERVICE    VERSION
 |     	CVE-2020-13938	5.5	https://vulners.com/cve/CVE-2020-13938
 |     	CNVD-2021-44765	5.5	https://vulners.com/cnvd/CNVD-2021-44765
 |     	CVE-2025-66200	5.4	https://vulners.com/cve/CVE-2025-66200
+|     	CNVD-2025-30835	5.4	https://vulners.com/cnvd/CNVD-2025-30835
 |     	HTTPD:FCCF5DB14D66FA54B47C34D9680C0335	5.3	https://vulners.com/httpd/HTTPD:FCCF5DB14D66FA54B47C34D9680C0335
 |     	HTTPD:EB26BC6B6E566C865F53A311FC1A6744	5.3	https://vulners.com/httpd/HTTPD:EB26BC6B6E566C865F53A311FC1A6744
 |     	HTTPD:C1BCB024FBDBA4C7909CE6FABA8E1422	5.3	https://vulners.com/httpd/HTTPD:C1BCB024FBDBA4C7909CE6FABA8E1422
@@ -504,4 +514,4 @@ PORT     STATE  SERVICE    VERSION
 9090/tcp closed zeus-admin
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun Dec 21 04:58:43 2025 -- 1 IP address (1 host up) scanned in 30.72 seconds
+# Nmap done at Sun Dec 28 04:58:23 2025 -- 1 IP address (1 host up) scanned in 29.10 seconds
