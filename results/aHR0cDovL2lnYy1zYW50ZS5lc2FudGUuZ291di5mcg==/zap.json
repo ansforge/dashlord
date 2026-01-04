@@ -1,8 +1,8 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.17.0",
-	"@generated": "Sun, 28 Dec 2025 02:49:28",
-	"created": "2025-12-28T02:49:28.678101767Z",
+	"@generated": "Sun, 4 Jan 2026 02:54:44",
+	"created": "2026-01-04T02:54:44.918108468Z",
 	"insights":[
 		{
 			"level": "Low",
@@ -106,7 +106,7 @@
 			"site": "http://igc-sante.esante.gouv.fr",
 			"key": "insight.response.slow",
 			"description": "Percentage of slow responses",
-			"statistic": "39"
+			"statistic": "100"
 		}
 	],
 	"site":[ 
@@ -147,9 +147,19 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "23",
+							"id": "50",
 							"uri": "http://igc-sante.esante.gouv.fr/PC/",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/PC\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "1",
+							"uri": "http://igc-sante.esante.gouv.fr/robots.txt",
+							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -167,7 +177,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "5",
 					"systemic": true,
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
@@ -207,7 +217,7 @@
 							"otherinfo": "The header X-WebKit-CSP was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
 						},
 						{
-							"id": "25",
+							"id": "55",
 							"uri": "http://igc-sante.esante.gouv.fr/PC/",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/PC\/",
 							"method": "GET",
@@ -237,7 +247,7 @@
 					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
 					"instances":[ 
 						{
-							"id": "49",
+							"id": "32",
 							"uri": "http://igc-sante.esante.gouv.fr",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr",
 							"method": "GET",
@@ -247,9 +257,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "56",
-							"uri": "http://igc-sante.esante.gouv.fr/AC/ACI-EL-ORG.cer",
-							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/AC\/ACI-EL-ORG.cer",
+							"id": "65",
+							"uri": "http://igc-sante.esante.gouv.fr/AC/ACI-ST-PP.cer",
+							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/AC\/ACI-ST-PP.cer",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
 							"attack": "",
@@ -257,7 +267,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "39",
+							"id": "45",
 							"uri": "http://igc-sante.esante.gouv.fr/AC/ACR-EL.cer",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/AC\/ACR-EL.cer",
 							"method": "GET",
@@ -267,7 +277,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "45",
+							"id": "40",
 							"uri": "http://igc-sante.esante.gouv.fr/CRL/ACR-EL.crl",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/CRL\/ACR-EL.crl",
 							"method": "GET",
@@ -277,9 +287,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "59",
-							"uri": "http://igc-sante.esante.gouv.fr/PC/",
-							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/PC\/",
+							"id": "53",
+							"uri": "http://igc-sante.esante.gouv.fr/CRL/ACR-ST.crl",
+							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/CRL\/ACR-ST.crl",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
 							"attack": "",
@@ -287,7 +297,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "52",
+							"id": "33",
 							"uri": "http://igc-sante.esante.gouv.fr",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr",
 							"method": "GET",
@@ -297,29 +307,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "60",
-							"uri": "http://igc-sante.esante.gouv.fr/PC/",
-							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/PC\/",
-							"method": "GET",
-							"param": "Cross-Origin-Embedder-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "53",
+							"id": "34",
 							"uri": "http://igc-sante.esante.gouv.fr",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr",
-							"method": "GET",
-							"param": "Cross-Origin-Opener-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "61",
-							"uri": "http://igc-sante.esante.gouv.fr/PC/",
-							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/PC\/",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
 							"attack": "",
@@ -327,7 +317,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "9",
+					"count": "7",
 					"systemic": true,
 					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
 					"otherinfo": "",
@@ -347,7 +337,7 @@
 					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
 					"instances":[ 
 						{
-							"id": "48",
+							"id": "31",
 							"uri": "http://igc-sante.esante.gouv.fr",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr",
 							"method": "GET",
@@ -367,7 +357,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "58",
+							"id": "77",
 							"uri": "http://igc-sante.esante.gouv.fr/PC/",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/PC\/",
 							"method": "GET",
@@ -377,7 +367,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "30",
+							"id": "20",
 							"uri": "http://igc-sante.esante.gouv.fr/robots.txt",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -387,7 +377,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "12",
+							"id": "19",
 							"uri": "http://igc-sante.esante.gouv.fr/sitemap.xml",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -427,7 +417,7 @@
 							"otherinfo": "1875127511, which evaluates to: 2029-06-02 20:45:11."
 						},
 						{
-							"id": "63",
+							"id": "57",
 							"uri": "http://igc-sante.esante.gouv.fr/AC/ACI-EL-PP.cer",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/AC\/ACI-EL-PP.cer",
 							"method": "GET",
@@ -437,17 +427,7 @@
 							"otherinfo": "1875127511, which evaluates to: 2029-06-02 20:45:11."
 						},
 						{
-							"id": "66",
-							"uri": "http://igc-sante.esante.gouv.fr/AC/ACI-ST-PP.cer",
-							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/AC\/ACI-ST-PP.cer",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "1875127511",
-							"otherinfo": "1875127511, which evaluates to: 2029-06-02 20:45:11."
-						},
-						{
-							"id": "36",
+							"id": "38",
 							"uri": "http://igc-sante.esante.gouv.fr/AC/ACR-EL.cer",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/AC\/ACR-EL.cer",
 							"method": "GET",
@@ -457,9 +437,19 @@
 							"otherinfo": "1875127511, which evaluates to: 2029-06-02 20:45:11."
 						},
 						{
-							"id": "43",
+							"id": "37",
 							"uri": "http://igc-sante.esante.gouv.fr/CRL/ACR-EL.crl",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/CRL\/ACR-EL.crl",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1875127511",
+							"otherinfo": "1875127511, which evaluates to: 2029-06-02 20:45:11."
+						},
+						{
+							"id": "48",
+							"uri": "http://igc-sante.esante.gouv.fr/CRL/ACR-ST.crl",
+							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/CRL\/ACR-ST.crl",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -474,7 +464,7 @@
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "74"
+					"sourceid": "75"
 				},
 				{
 					"pluginid": "10094",
@@ -514,7 +504,7 @@
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "319",
 					"wascid": "13",
-					"sourceid": "163"
+					"sourceid": "164"
 				},
 				{
 					"pluginid": "10019",
@@ -554,7 +544,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p>",
 					"cweid": "345",
 					"wascid": "12",
-					"sourceid": "163"
+					"sourceid": "164"
 				},
 				{
 					"pluginid": "10027",
@@ -577,7 +567,7 @@
 							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected 2 times, the first in likely comment: \"<!-- table doc-admin -->\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "26",
+							"id": "68",
 							"uri": "http://igc-sante.esante.gouv.fr/PC/",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/PC\/",
 							"method": "GET",
@@ -627,7 +617,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "27",
+							"id": "70",
 							"uri": "http://igc-sante.esante.gouv.fr/PC/",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/PC\/",
 							"method": "GET",
@@ -707,7 +697,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "24",
+							"id": "54",
 							"uri": "http://igc-sante.esante.gouv.fr/PC/",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/PC\/",
 							"method": "GET",
@@ -737,7 +727,7 @@
 					"desc": "<p>The content was retrieved from a shared cache. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
 					"instances":[ 
 						{
-							"id": "3",
+							"id": "2",
 							"uri": "http://igc-sante.esante.gouv.fr",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr",
 							"method": "GET",
@@ -747,7 +737,17 @@
 							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"id": "22",
+							"id": "35",
+							"uri": "http://igc-sante.esante.gouv.fr/AC/ACR-EL.cer",
+							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/AC\/ACR-EL.cer",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"id": "16",
 							"uri": "http://igc-sante.esante.gouv.fr/PC",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/PC",
 							"method": "GET",
@@ -757,17 +757,7 @@
 							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"id": "28",
-							"uri": "http://igc-sante.esante.gouv.fr/PC/",
-							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/PC\/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Age: 0",
-							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
-						},
-						{
-							"id": "4",
+							"id": "3",
 							"uri": "http://igc-sante.esante.gouv.fr/robots.txt",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -777,7 +767,7 @@
 							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"id": "2",
+							"id": "4",
 							"uri": "http://igc-sante.esante.gouv.fr/sitemap.xml",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -807,7 +797,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"id": "15",
+							"id": "13",
 							"uri": "http://igc-sante.esante.gouv.fr",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr",
 							"method": "GET",
@@ -817,7 +807,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "33",
+							"id": "23",
 							"uri": "http://igc-sante.esante.gouv.fr/robots.txt",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -827,7 +817,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "20",
+							"id": "27",
 							"uri": "http://igc-sante.esante.gouv.fr/sitemap.xml",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -857,7 +847,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"id": "14",
+							"id": "12",
 							"uri": "http://igc-sante.esante.gouv.fr",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr",
 							"method": "GET",
@@ -867,7 +857,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "32",
+							"id": "22",
 							"uri": "http://igc-sante.esante.gouv.fr/robots.txt",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -877,7 +867,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "19",
+							"id": "26",
 							"uri": "http://igc-sante.esante.gouv.fr/sitemap.xml",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -907,7 +897,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"id": "13",
+							"id": "11",
 							"uri": "http://igc-sante.esante.gouv.fr",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr",
 							"method": "GET",
@@ -917,7 +907,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "31",
+							"id": "21",
 							"uri": "http://igc-sante.esante.gouv.fr/robots.txt",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -927,7 +917,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "16",
+							"id": "24",
 							"uri": "http://igc-sante.esante.gouv.fr/sitemap.xml",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -957,7 +947,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"id": "17",
+							"id": "14",
 							"uri": "http://igc-sante.esante.gouv.fr",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr",
 							"method": "GET",
@@ -967,7 +957,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "34",
+							"id": "25",
 							"uri": "http://igc-sante.esante.gouv.fr/robots.txt",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -977,7 +967,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "21",
+							"id": "28",
 							"uri": "http://igc-sante.esante.gouv.fr/sitemap.xml",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -1007,9 +997,9 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
 					"instances":[ 
 						{
-							"id": "38",
-							"uri": "http://igc-sante.esante.gouv.fr/AC/ACR-EL.cer",
-							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/AC\/ACR-EL.cer",
+							"id": "30",
+							"uri": "http://igc-sante.esante.gouv.fr",
+							"nodeName": "http:\/\/igc-sante.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1017,7 +1007,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "44",
+							"id": "39",
 							"uri": "http://igc-sante.esante.gouv.fr/CRL/ACR-EL.crl",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/CRL\/ACR-EL.crl",
 							"method": "GET",
@@ -1027,9 +1017,9 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "41",
-							"uri": "http://igc-sante.esante.gouv.fr/PC%20TEST",
-							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/PC TEST",
+							"id": "29",
+							"uri": "http://igc-sante.esante.gouv.fr/PC",
+							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/PC",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1037,7 +1027,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "29",
+							"id": "17",
 							"uri": "http://igc-sante.esante.gouv.fr/robots.txt",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -1047,7 +1037,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "11",
+							"id": "18",
 							"uri": "http://igc-sante.esante.gouv.fr/sitemap.xml",
 							"nodeName": "http:\/\/igc-sante.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -1064,7 +1054,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "68"
+					"sourceid": "1"
 				}
 			]
 		}
