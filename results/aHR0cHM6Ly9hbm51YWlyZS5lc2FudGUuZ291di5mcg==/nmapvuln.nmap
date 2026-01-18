@@ -1,84 +1,42 @@
-# Nmap 7.92 scan initiated Sun Jan 11 01:56:44 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln annuaire.esante.gouv.fr
+# Nmap 7.92 scan initiated Sun Jan 18 01:55:32 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln annuaire.esante.gouv.fr
 Nmap scan report for annuaire.esante.gouv.fr (80.78.2.219)
 Host is up (0.082s latency).
-Not shown: 919 filtered tcp ports (no-response), 80 closed tcp ports (reset)
-PORT    STATE SERVICE   VERSION
-443/tcp open  ssl/https
-| fingerprint-strings: 
-|   FourOhFourRequest: 
-|     HTTP/1.1 400 Bad Request
-|     Date: Sun, 11 Jan 2026 01:57:16 GMT
-|     Content-Length: 226
-|     Connection: close
-|     Content-Type: text/html; charset=iso-8859-1
-|     <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-|     <html><head>
-|     <title>400 Bad Request</title>
-|     </head><body>
-|     <h1>Bad Request</h1>
-|     <p>Your browser sent a request that this server could not understand.<br />
-|     </p>
-|     </body></html>
-|   GetRequest, HTTPOptions: 
-|     HTTP/1.1 400 Bad Request
-|     Date: Sun, 11 Jan 2026 01:57:15 GMT
-|     Content-Length: 226
-|     Connection: close
-|     Content-Type: text/html; charset=iso-8859-1
-|     <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-|     <html><head>
-|     <title>400 Bad Request</title>
-|     </head><body>
-|     <h1>Bad Request</h1>
-|     <p>Your browser sent a request that this server could not understand.<br />
-|     </p>
-|     </body></html>
-|   RTSPRequest: 
-|     HTTP/1.1 400 Bad Request
-|     Date: Sun, 11 Jan 2026 01:57:26 GMT
-|     Content-Length: 226
-|     Connection: close
-|     Content-Type: text/html; charset=iso-8859-1
-|     <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-|     <html><head>
-|     <title>400 Bad Request</title>
-|     </head><body>
-|     <h1>Bad Request</h1>
-|     <p>Your browser sent a request that this server could not understand.<br />
-|     </p>
-|_    </body></html>
-1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
-SF-Port443-TCP:V=7.92%T=SSL%I=7%D=1/11%Time=6963037B%P=x86_64-alpine-linux
-SF:-musl%r(GetRequest,178,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nDate:\x20
-SF:Sun,\x2011\x20Jan\x202026\x2001:57:15\x20GMT\r\nContent-Length:\x20226\
-SF:r\nConnection:\x20close\r\nContent-Type:\x20text/html;\x20charset=iso-8
-SF:859-1\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-//IETF//DTD\x20HTML\x202
-SF:\.0//EN\">\n<html><head>\n<title>400\x20Bad\x20Request</title>\n</head>
-SF:<body>\n<h1>Bad\x20Request</h1>\n<p>Your\x20browser\x20sent\x20a\x20req
-SF:uest\x20that\x20this\x20server\x20could\x20not\x20understand\.<br\x20/>
-SF:\n</p>\n</body></html>\n")%r(HTTPOptions,178,"HTTP/1\.1\x20400\x20Bad\x
-SF:20Request\r\nDate:\x20Sun,\x2011\x20Jan\x202026\x2001:57:15\x20GMT\r\nC
-SF:ontent-Length:\x20226\r\nConnection:\x20close\r\nContent-Type:\x20text/
-SF:html;\x20charset=iso-8859-1\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-//
-SF:IETF//DTD\x20HTML\x202\.0//EN\">\n<html><head>\n<title>400\x20Bad\x20Re
-SF:quest</title>\n</head><body>\n<h1>Bad\x20Request</h1>\n<p>Your\x20brows
-SF:er\x20sent\x20a\x20request\x20that\x20this\x20server\x20could\x20not\x2
-SF:0understand\.<br\x20/>\n</p>\n</body></html>\n")%r(FourOhFourRequest,17
-SF:8,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nDate:\x20Sun,\x2011\x20Jan\x20
-SF:2026\x2001:57:16\x20GMT\r\nContent-Length:\x20226\r\nConnection:\x20clo
-SF:se\r\nContent-Type:\x20text/html;\x20charset=iso-8859-1\r\n\r\n<!DOCTYP
-SF:E\x20HTML\x20PUBLIC\x20\"-//IETF//DTD\x20HTML\x202\.0//EN\">\n<html><he
-SF:ad>\n<title>400\x20Bad\x20Request</title>\n</head><body>\n<h1>Bad\x20Re
-SF:quest</h1>\n<p>Your\x20browser\x20sent\x20a\x20request\x20that\x20this\
-SF:x20server\x20could\x20not\x20understand\.<br\x20/>\n</p>\n</body></html
-SF:>\n")%r(RTSPRequest,178,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nDate:\x2
-SF:0Sun,\x2011\x20Jan\x202026\x2001:57:26\x20GMT\r\nContent-Length:\x20226
-SF:\r\nConnection:\x20close\r\nContent-Type:\x20text/html;\x20charset=iso-
-SF:8859-1\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-//IETF//DTD\x20HTML\x20
-SF:2\.0//EN\">\n<html><head>\n<title>400\x20Bad\x20Request</title>\n</head
-SF:><body>\n<h1>Bad\x20Request</h1>\n<p>Your\x20browser\x20sent\x20a\x20re
-SF:quest\x20that\x20this\x20server\x20could\x20not\x20understand\.<br\x20/
-SF:>\n</p>\n</body></html>\n");
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE  SERVICE  VERSION
+113/tcp closed ident
+443/tcp open   ssl/http Apache httpd 2.4.62 ((Red Hat Enterprise Linux) OpenSSL/3.2.2)
+| http-server-header: 
+|   Apache/2.4.62 (Red Hat Enterprise Linux) OpenSSL/3.2.2
+|_  nginx/1.29.3
+| vulners: 
+|   cpe:/a:apache:http_server:2.4.62: 
+|     	PACKETSTORM:213257	9.1	https://vulners.com/packetstorm/PACKETSTORM:213257	*EXPLOIT*
+|     	CVE-2025-23048	9.1	https://vulners.com/cve/CVE-2025-23048
+|     	CNVD-2025-16610	9.1	https://vulners.com/cnvd/CNVD-2025-16610
+|     	CVE-2025-58098	8.3	https://vulners.com/cve/CVE-2025-58098
+|     	CVE-2025-59775	7.5	https://vulners.com/cve/CVE-2025-59775
+|     	CVE-2025-55753	7.5	https://vulners.com/cve/CVE-2025-55753
+|     	CVE-2025-53020	7.5	https://vulners.com/cve/CVE-2025-53020
+|     	CVE-2025-49630	7.5	https://vulners.com/cve/CVE-2025-49630
+|     	CVE-2024-47252	7.5	https://vulners.com/cve/CVE-2024-47252
+|     	CVE-2024-43394	7.5	https://vulners.com/cve/CVE-2024-43394
+|     	CVE-2024-43204	7.5	https://vulners.com/cve/CVE-2024-43204
+|     	CVE-2024-42516	7.5	https://vulners.com/cve/CVE-2024-42516
+|     	CNVD-2025-30837	7.5	https://vulners.com/cnvd/CNVD-2025-30837
+|     	CNVD-2025-30836	7.5	https://vulners.com/cnvd/CNVD-2025-30836
+|     	CNVD-2025-16614	7.5	https://vulners.com/cnvd/CNVD-2025-16614
+|     	CNVD-2025-16613	7.5	https://vulners.com/cnvd/CNVD-2025-16613
+|     	CNVD-2025-16612	7.5	https://vulners.com/cnvd/CNVD-2025-16612
+|     	CNVD-2025-16609	7.5	https://vulners.com/cnvd/CNVD-2025-16609
+|     	CNVD-2025-16608	7.5	https://vulners.com/cnvd/CNVD-2025-16608
+|     	CNVD-2025-16603	7.5	https://vulners.com/cnvd/CNVD-2025-16603
+|     	0E08753E-C6D7-5E76-A61F-6CA6F7F87AA8	7.5	https://vulners.com/githubexploit/0E08753E-C6D7-5E76-A61F-6CA6F7F87AA8	*EXPLOIT*
+|     	CVE-2025-49812	7.4	https://vulners.com/cve/CVE-2025-49812
+|     	CVE-2025-65082	6.5	https://vulners.com/cve/CVE-2025-65082
+|     	CNVD-2025-30833	6.5	https://vulners.com/cnvd/CNVD-2025-30833
+|     	CVE-2025-66200	5.4	https://vulners.com/cve/CVE-2025-66200
+|_    	CNVD-2025-30835	5.4	https://vulners.com/cnvd/CNVD-2025-30835
+|_http-trane-info: Problem with XML parsing of /evox/about
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun Jan 11 01:59:35 2026 -- 1 IP address (1 host up) scanned in 171.17 seconds
+# Nmap done at Sun Jan 18 01:56:27 2026 -- 1 IP address (1 host up) scanned in 54.64 seconds
