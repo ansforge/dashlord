@@ -1,6 +1,6 @@
-# Nmap 7.92 scan initiated Sun Jan 11 05:03:20 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln testssl.eservices.esante.gouv.fr
+# Nmap 7.92 scan initiated Sun Jan 18 04:53:27 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln testssl.eservices.esante.gouv.fr
 Nmap scan report for testssl.eservices.esante.gouv.fr (135.125.232.117)
-Host is up (0.16s latency).
+Host is up (0.12s latency).
 rDNS record for 135.125.232.117: vps-c4a3f657.vps.ovh.net
 Not shown: 994 filtered tcp ports (no-response)
 PORT     STATE  SERVICE    VERSION
@@ -20,6 +20,7 @@ PORT     STATE  SERVICE    VERSION
 |     	CVE-2020-15778	7.8	https://vulners.com/cve/CVE-2020-15778
 |     	CVE-2019-16905	7.8	https://vulners.com/cve/CVE-2019-16905
 |     	C94132FD-1FA5-5342-B6EE-0DAF45EEFFE3	7.8	https://vulners.com/githubexploit/C94132FD-1FA5-5342-B6EE-0DAF45EEFFE3	*EXPLOIT*
+|     	991D2CC4-0E09-5745-97A2-4917461BD6EC	7.8	https://vulners.com/githubexploit/991D2CC4-0E09-5745-97A2-4917461BD6EC	*EXPLOIT*
 |     	2E719186-2FED-58A8-A150-762EFBAAA523	7.8	https://vulners.com/gitee/2E719186-2FED-58A8-A150-762EFBAAA523	*EXPLOIT*
 |     	23CC97BE-7C95-513B-9E73-298C48D74432	7.8	https://vulners.com/githubexploit/23CC97BE-7C95-513B-9E73-298C48D74432	*EXPLOIT*
 |     	10213DBE-F683-58BB-B6D3-353173626207	7.8	https://vulners.com/githubexploit/10213DBE-F683-58BB-B6D3-353173626207	*EXPLOIT*
@@ -223,6 +224,7 @@ PORT     STATE  SERVICE    VERSION
 |     	1F6E0709-DA03-564E-925F-3177657C053E	7.5	https://vulners.com/githubexploit/1F6E0709-DA03-564E-925F-3177657C053E	*EXPLOIT*
 |     	135C45BD-4652-5EEE-8890-2D3C62709016	7.5	https://vulners.com/githubexploit/135C45BD-4652-5EEE-8890-2D3C62709016	*EXPLOIT*
 |     	1337DAY-ID-35422	7.5	https://vulners.com/zdt/1337DAY-ID-35422	*EXPLOIT*
+|     	0E08753E-C6D7-5E76-A61F-6CA6F7F87AA8	7.5	https://vulners.com/githubexploit/0E08753E-C6D7-5E76-A61F-6CA6F7F87AA8	*EXPLOIT*
 |     	CVE-2025-49812	7.4	https://vulners.com/cve/CVE-2025-49812
 |     	HTTPD:D66D5F45690EBE82B48CC81EF6388EE8	7.3	https://vulners.com/httpd/HTTPD:D66D5F45690EBE82B48CC81EF6388EE8
 |     	CVE-2023-38709	7.3	https://vulners.com/cve/CVE-2023-38709
@@ -280,6 +282,7 @@ PORT     STATE  SERVICE    VERSION
 |_http-server-header: Apache/2.4.37 (centos) OpenSSL/1.1.1g
 389/tcp  open   ldap       OpenLDAP 2.2.X - 2.3.X
 443/tcp  open   ssl/http   Apache httpd 2.4.37 ((centos) OpenSSL/1.1.1g)
+|_http-server-header: Apache/2.4.37 (centos) OpenSSL/1.1.1g
 | vulners: 
 |   cpe:/a:apache:http_server:2.4.37: 
 |     	PACKETSTORM:176334	9.8	https://vulners.com/packetstorm/PACKETSTORM:176334	*EXPLOIT*
@@ -455,6 +458,7 @@ PORT     STATE  SERVICE    VERSION
 |     	1F6E0709-DA03-564E-925F-3177657C053E	7.5	https://vulners.com/githubexploit/1F6E0709-DA03-564E-925F-3177657C053E	*EXPLOIT*
 |     	135C45BD-4652-5EEE-8890-2D3C62709016	7.5	https://vulners.com/githubexploit/135C45BD-4652-5EEE-8890-2D3C62709016	*EXPLOIT*
 |     	1337DAY-ID-35422	7.5	https://vulners.com/zdt/1337DAY-ID-35422	*EXPLOIT*
+|     	0E08753E-C6D7-5E76-A61F-6CA6F7F87AA8	7.5	https://vulners.com/githubexploit/0E08753E-C6D7-5E76-A61F-6CA6F7F87AA8	*EXPLOIT*
 |     	CVE-2025-49812	7.4	https://vulners.com/cve/CVE-2025-49812
 |     	HTTPD:D66D5F45690EBE82B48CC81EF6388EE8	7.3	https://vulners.com/httpd/HTTPD:D66D5F45690EBE82B48CC81EF6388EE8
 |     	CVE-2023-38709	7.3	https://vulners.com/cve/CVE-2023-38709
@@ -509,9 +513,8 @@ PORT     STATE  SERVICE    VERSION
 |     	CNVD-2019-02938	5.3	https://vulners.com/cnvd/CNVD-2019-02938
 |     	1337DAY-ID-33575	4.3	https://vulners.com/zdt/1337DAY-ID-33575	*EXPLOIT*
 |_    	PACKETSTORM:152441	0.0	https://vulners.com/packetstorm/PACKETSTORM:152441	*EXPLOIT*
-|_http-server-header: Apache/2.4.37 (centos) OpenSSL/1.1.1g
 636/tcp  open   ssl/ldap   OpenLDAP 2.2.X - 2.3.X
 9090/tcp closed zeus-admin
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun Jan 11 05:03:51 2026 -- 1 IP address (1 host up) scanned in 31.32 seconds
+# Nmap done at Sun Jan 18 04:53:57 2026 -- 1 IP address (1 host up) scanned in 29.33 seconds
