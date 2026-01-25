@@ -1,8 +1,8 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.17.0",
-	"@generated": "Sun, 18 Jan 2026 04:08:02",
-	"created": "2026-01-18T04:08:02.156240333Z",
+	"@generated": "Sun, 25 Jan 2026 04:17:13",
+	"created": "2026-01-25T04:17:13.508373675Z",
 	"insights":[
 		{
 			"level": "Info",
@@ -50,7 +50,7 @@
 			"site": "https://sante.fr",
 			"key": "insight.response.slow",
 			"description": "Percentage of slow responses",
-			"statistic": "75"
+			"statistic": "100"
 		}
 	],
 	"site":[ 
@@ -101,6 +101,46 @@
 					"sourceid": "1"
 				},
 				{
+					"pluginid": "10020",
+					"alertRef": "10020-1",
+					"alert": "Missing Anti-clickjacking Header",
+					"name": "Missing Anti-clickjacking Header",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.</p>",
+					"instances":[ 
+						{
+							"id": "0",
+							"uri": "https://sante.fr",
+							"nodeName": "https:\/\/sante.fr",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "1",
+							"uri": "https://sante.fr/robots.txt",
+							"nodeName": "https:\/\/sante.fr\/robots.txt",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "2",
+					"systemic": true,
+					"solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options</p>",
+					"cweid": "1021",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
 					"pluginid": "90003",
 					"alertRef": "90003",
 					"alert": "Sub Resource Integrity Attribute Missing",
@@ -141,7 +181,7 @@
 					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
 					"instances":[ 
 						{
-							"id": "27",
+							"id": "28",
 							"uri": "https://sante.fr",
 							"nodeName": "https:\/\/sante.fr",
 							"method": "GET",
@@ -161,7 +201,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "30",
+							"id": "29",
 							"uri": "https://sante.fr",
 							"nodeName": "https:\/\/sante.fr",
 							"method": "GET",
@@ -171,7 +211,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "28",
+							"id": "26",
 							"uri": "https://sante.fr/robots.txt",
 							"nodeName": "https:\/\/sante.fr\/robots.txt",
 							"method": "GET",
@@ -181,7 +221,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "31",
+							"id": "32",
 							"uri": "https://sante.fr",
 							"nodeName": "https:\/\/sante.fr",
 							"method": "GET",
@@ -191,7 +231,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "29",
+							"id": "30",
 							"uri": "https://sante.fr/robots.txt",
 							"nodeName": "https:\/\/sante.fr\/robots.txt",
 							"method": "GET",
@@ -221,7 +261,7 @@
 					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
 					"instances":[ 
 						{
-							"id": "26",
+							"id": "27",
 							"uri": "https://sante.fr",
 							"nodeName": "https:\/\/sante.fr",
 							"method": "GET",
@@ -231,7 +271,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "23",
+							"id": "24",
 							"uri": "https://sante.fr/robots.txt",
 							"nodeName": "https:\/\/sante.fr\/robots.txt",
 							"method": "GET",
@@ -279,16 +319,26 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"id": "3",
+							"uri": "https://sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sante.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"systemic": true,
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10021",
@@ -318,7 +368,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "7"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10094",
@@ -337,14 +387,14 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "G2asMhWHdsYXIB25ysym7kESklmqjXZuSFCGYyyfjXeQxoeLJnZxeqMOA5__f9nkX9CYB2QaX5Ci8lVpnrzyzk-rHYyy4kbm6lJBJBM9R186bpt5Pas1CaiteDNAl0B_cSozjeX2wvuUbJllTMyWxGxp86s4kSQodkXvdBMXbYI8IzocyO6f4qoIUyJdsCgcnHIzAHRmnjM2oU55gVhDd9MIhkVRhFM3zB3o5csnqXRcK6c47Jj1vH4vuR1ZuERa3XWL1zE8f1G5wGCBe3zWFrLtYac_N8Vc-WA-HXJZsQk2ltzGp3uRwmMGR3xABakV",
-							"otherinfo": "\\x001bf\uFFFD2\\x0015\uFFFDv\uFFFD\\x0017 \\x001d\uFFFD\uFFFD\u0326\uFFFDA\\x0012\uFFFDY\uFFFD\uFFFDvnHP\uFFFDc,\uFFFD\uFFFDw\uFFFD\u0187\uFFFD&vqz\uFFFD\\x000e\\x0003\uFFFD\uFFFD\uFFFD\uFFFD_\u0418\\x0007d\\x001a_\uFFFD\uFFFD\uFFFDUi\uFFFD\uFFFD\uFFFD\uFFFDO\uFFFD\\x001d\uFFFD\uFFFD\uFFFDF\uFFFD\uFFFDRA$\\x0013=G_:n\uFFFDy=\uFFFD5\t\uFFFD\uFFFDx3@\uFFFD@q*3\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFDeL\u0316\uFFFDli\uFFFD8\uFFFD$(vE\uFFFDt\\x0013\\x0017m\uFFFD<#:\\x001c\uFFFD\uFFFD\uFFFD\\x0008S\"]\uFFFD(\\x001c\uFFFDr3\\x0000tf\uFFFD36\uFFFDNy\uFFFDXCw\uFFFD\\x0008\uFFFDEQ\uFFFDS7\uFFFD\\x001d\uFFFD\uFFFD\uFFFD'\uFFFDt\\+\uFFFD8\uFFFD\uFFFD\uFFFD~/\uFFFD\\x001dY\uFFFDDZ\uFFFDu\uFFFD\uFFFD1<Q\uFFFD\uFFFD`\uFFFD{|\uFFFD\\x0016\uFFFD\uFFFDa\uFFFD?7\uFFFD\\\uFFFD`>\\x001drY\uFFFD\t6\uFFFD\uFFFD\u01A7{\uFFFD\uFFFDc\\x0006G|@\\x0005\uFFFD\\x0015"
+							"evidence": "ZVYVaIIawj4MYhoaGDE5QldLCjNhUIZcplOye4DPIAEIw-u0giH0Iml7CkIpdnJgPyMx8Ys0KP0QvGWtTVM7P7JPD8PiVYtvjXr9nBUaaPCMooJTSiTiqXMPdOv9ek_4m9u-DT3WOWvOVivH5esRJmtIlseODb4QF48aVq_qUdSlrLnDxeHmht7ymtDlYCZFIsae7jVndeilFAg11TJ8yt9PRvbGrlIC9BO3pnZPmu04kz4JnBL8Kz5GA0B3RAZ6VRO3_M3Lsg3A51YTNS895yDDWVxjK7Wl1MksdL59-bw",
+							"otherinfo": "eV\\x0015h\uFFFD\\x001a\uFFFD>\\x000cb\\x001a\\x001a\\x001819BWK\n3aP\uFFFD\\\uFFFDS\uFFFD{\uFFFD\uFFFD \\x0001\\x0008\uFFFD\uBD02!\uFFFD\"i{\nB)vr`?#1\uFFFD4(\uFFFD\\x0010\uFFFDe\uFFFDMS;?\uFFFDO\\x000f\uFFFD\uFFFDU\uFFFDo\uFFFDz\uFFFD\uFFFD\\x0015\\x001ah\uFFFD\uFFFD\uFFFD\uFFFDSJ$\uFFFDs\\x000ft\uFFFD\uFFFDzO\uFFFD\uFFFD\u06FE\r=\uFFFD9k\uFFFDV+\uFFFD\uFFFD\uFFFD\\x0011&kH\uFFFD\u01CE\r\uFFFD\\x0010\\x0017\uFFFD\\x001aV\uFFFD\uFFFDQ\u0525\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD`&E\"\u019E\uFFFD5gu\uFFFD\\x0014\\x00085\uFFFD2|\uFFFD\uFFFDOF\uFFFD\u01AER\\x0002\uFFFD\\x0013\uFFFD\uFFFDvO\uFFFD\uFFFD8\uFFFD>\t\uFFFD\\x0012\uFFFD+>F\\x0003@wD\\x0006zU\\x0013\uFFFD\uFFFD\uFFFD\u02F2\r\uFFFD\uFFFDV\\x00135/=\uFFFD \uFFFDY\\c+\uFFFD\uFFFD\uFFFD\uFFFD,t\uFFFD}\uFFFD\uFFFD"
 						}
 					],
 					"count": "1",
 					"systemic": false,
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\\x001bf\uFFFD2\\x0015\uFFFDv\uFFFD\\x0017 \\x001d\uFFFD\uFFFD\u0326\uFFFDA\\x0012\uFFFDY\uFFFD\uFFFDvnHP\uFFFDc,\uFFFD\uFFFDw\uFFFD\u0187\uFFFD&vqz\uFFFD\\x000e\\x0003\uFFFD\uFFFD\uFFFD\uFFFD_\u0418\\x0007d\\x001a_\uFFFD\uFFFD\uFFFDUi\uFFFD\uFFFD\uFFFD\uFFFDO\uFFFD\\x001d\uFFFD\uFFFD\uFFFDF\uFFFD\uFFFDRA$\\x0013=G_:n\uFFFDy=\uFFFD5\t\uFFFD\uFFFDx3@\uFFFD@q*3\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFDeL\u0316\uFFFDli\uFFFD8\uFFFD$(vE\uFFFDt\\x0013\\x0017m\uFFFD<#:\\x001c\uFFFD\uFFFD\uFFFD\\x0008S\"]\uFFFD(\\x001c\uFFFDr3\\x0000tf\uFFFD36\uFFFDNy\uFFFDXCw\uFFFD\\x0008\uFFFDEQ\uFFFDS7\uFFFD\\x001d\uFFFD\uFFFD\uFFFD'\uFFFDt\\+\uFFFD8\uFFFD\uFFFD\uFFFD~/\uFFFD\\x001dY\uFFFDDZ\uFFFDu\uFFFD\uFFFD1<Q\uFFFD\uFFFD`\uFFFD{|\uFFFD\\x0016\uFFFD\uFFFDa\uFFFD?7\uFFFD\\\uFFFD`>\\x001drY\uFFFD\t6\uFFFD\uFFFD\u01A7{\uFFFD\uFFFDc\\x0006G|@\\x0005\uFFFD\\x0015</p>",
+					"otherinfo": "<p>eV\\x0015h\uFFFD\\x001a\uFFFD>\\x000cb\\x001a\\x001a\\x001819BWK</p><p>3aP\uFFFD\\\uFFFDS\uFFFD{\uFFFD\uFFFD \\x0001\\x0008\uFFFD\uBD02!\uFFFD\"i{</p><p>B)vr`?#1\uFFFD4(\uFFFD\\x0010\uFFFDe\uFFFDMS;?\uFFFDO\\x000f\uFFFD\uFFFDU\uFFFDo\uFFFDz\uFFFD\uFFFD\\x0015\\x001ah\uFFFD\uFFFD\uFFFD\uFFFDSJ$\uFFFDs\\x000ft\uFFFD\uFFFDzO\uFFFD\uFFFD\u06FE\r=\uFFFD9k\uFFFDV+\uFFFD\uFFFD\uFFFD\\x0011&kH\uFFFD\u01CE\r\uFFFD\\x0010\\x0017\uFFFD\\x001aV\uFFFD\uFFFDQ\u0525\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD`&E\"\u019E\uFFFD5gu\uFFFD\\x0014\\x00085\uFFFD2|\uFFFD\uFFFDOF\uFFFD\u01AER\\x0002\uFFFD\\x0013\uFFFD\uFFFDvO\uFFFD\uFFFD8\uFFFD>\t\uFFFD\\x0012\uFFFD+>F\\x0003@wD\\x0006zU\\x0013\uFFFD\uFFFD\uFFFD\u02F2\r\uFFFD\uFFFDV\\x00135/=\uFFFD \uFFFDY\\c+\uFFFD\uFFFD\uFFFD\uFFFD,t\uFFFD}\uFFFD\uFFFD</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "319",
 					"wascid": "13",
@@ -431,7 +481,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"id": "16",
+							"id": "19",
 							"uri": "https://sante.fr",
 							"nodeName": "https:\/\/sante.fr",
 							"method": "GET",
@@ -451,7 +501,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "20",
+							"id": "17",
 							"uri": "https://sante.fr/sitemap.xml",
 							"nodeName": "https:\/\/sante.fr\/sitemap.xml",
 							"method": "GET",
@@ -468,7 +518,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "90005",
@@ -481,7 +531,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"id": "15",
+							"id": "18",
 							"uri": "https://sante.fr",
 							"nodeName": "https:\/\/sante.fr",
 							"method": "GET",
@@ -501,7 +551,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "19",
+							"id": "15",
 							"uri": "https://sante.fr/sitemap.xml",
 							"nodeName": "https:\/\/sante.fr\/sitemap.xml",
 							"method": "GET",
@@ -518,7 +568,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "90005",
@@ -531,7 +581,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"id": "14",
+							"id": "16",
 							"uri": "https://sante.fr",
 							"nodeName": "https:\/\/sante.fr",
 							"method": "GET",
@@ -541,7 +591,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "32",
+							"id": "31",
 							"uri": "https://sante.fr/robots.txt",
 							"nodeName": "https:\/\/sante.fr\/robots.txt",
 							"method": "GET",
@@ -551,7 +601,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "18",
+							"id": "14",
 							"uri": "https://sante.fr/sitemap.xml",
 							"nodeName": "https:\/\/sante.fr\/sitemap.xml",
 							"method": "GET",
@@ -568,7 +618,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "90005",
@@ -581,7 +631,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"id": "17",
+							"id": "21",
 							"uri": "https://sante.fr",
 							"nodeName": "https:\/\/sante.fr",
 							"method": "GET",
@@ -601,7 +651,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "21",
+							"id": "20",
 							"uri": "https://sante.fr/sitemap.xml",
 							"nodeName": "https:\/\/sante.fr\/sitemap.xml",
 							"method": "GET",
@@ -618,7 +668,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10049",
@@ -668,7 +718,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10049",
@@ -681,7 +731,7 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
 					"instances":[ 
 						{
-							"id": "24",
+							"id": "23",
 							"uri": "https://sante.fr",
 							"nodeName": "https:\/\/sante.fr",
 							"method": "GET",
