@@ -1,18 +1,21 @@
 {
   "scan": {
     "algorithmVersion": 4,
-    "grade": "C",
+    "grade": "A+",
     "error": null,
-    "score": 55,
+    "score": 110,
     "statusCode": 200,
-    "testsFailed": 3,
-    "testsPassed": 7,
+    "testsFailed": 0,
+    "testsPassed": 10,
     "testsQuantity": 10,
     "responseHeaders": {
-      "date": "Sun, 01 Feb 2026 02:27:38 GMT",
-      "server": "nginx/1.29.4",
-      "content-security-policy": "default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-a9272f0abadfe9a5256bdc123c2091ae'; script-src 'self' 'nonce-a9272f0abadfe9a5256bdc123c2091ae'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';",
-      "content-type": "text/html; charset=UTF-8",
+      "date": "Sun, 08 Feb 2026 02:35:17 GMT",
+      "content-security-policy": "default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-127c4d553db6cf536e81881572e99c3e'; script-src 'self' 'nonce-127c4d553db6cf536e81881572e99c3e'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';",
+      "content-type": "text/html",
+      "strict-transport-security": "max-age=31536000",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
       "connection": "close",
       "transfer-encoding": "chunked"
     }
@@ -29,12 +32,12 @@
           "https://use.typekit.net"
         ],
         "style-src": [
-          "'nonce-a9272f0abadfe9a5256bdc123c2091ae'",
+          "'nonce-127c4d553db6cf536e81881572e99c3e'",
           "'self'",
           "https://p.typekit.net"
         ],
         "script-src": [
-          "'nonce-a9272f0abadfe9a5256bdc123c2091ae'",
+          "'nonce-127c4d553db6cf536e81881572e99c3e'",
           "'self'"
         ],
         "img-src": [
@@ -96,20 +99,20 @@
     "referrer-policy": {
       "expectation": "referrer-policy-private",
       "pass": true,
-      "result": "referrer-policy-not-implemented",
-      "scoreModifier": 0,
-      "data": null,
-      "http": false,
+      "result": "referrer-policy-private",
+      "scoreModifier": 5,
+      "data": "strict-origin-when-cross-origin",
+      "http": true,
       "meta": false
     },
     "strict-transport-security": {
       "expectation": "hsts-implemented-max-age-at-least-six-months",
-      "pass": false,
-      "result": "hsts-not-implemented",
-      "scoreModifier": -20,
-      "data": null,
+      "pass": true,
+      "result": "hsts-implemented-max-age-at-least-six-months",
+      "scoreModifier": 0,
+      "data": "max-age=31536000",
       "includeSubDomains": false,
-      "maxAge": null,
+      "maxAge": 31536000,
       "preload": false,
       "preloaded": false
     },
@@ -122,17 +125,17 @@
     },
     "x-content-type-options": {
       "expectation": "x-content-type-options-nosniff",
-      "pass": false,
-      "result": "x-content-type-options-not-implemented",
-      "scoreModifier": -5,
-      "data": null
+      "pass": true,
+      "result": "x-content-type-options-nosniff",
+      "scoreModifier": 0,
+      "data": "nosniff"
     },
     "x-frame-options": {
       "expectation": "x-frame-options-sameorigin-or-deny",
-      "pass": false,
-      "result": "x-frame-options-not-implemented",
-      "scoreModifier": -20,
-      "data": null
+      "pass": true,
+      "result": "x-frame-options-sameorigin-or-deny",
+      "scoreModifier": 0,
+      "data": "DENY"
     },
     "cross-origin-resource-policy": {
       "expectation": "corp-implemented-with-same-site",
