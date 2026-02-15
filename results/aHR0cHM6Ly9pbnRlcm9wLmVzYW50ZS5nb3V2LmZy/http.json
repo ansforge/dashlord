@@ -1,24 +1,28 @@
 {
   "scan": {
     "algorithmVersion": 4,
-    "grade": "D",
+    "grade": "B",
     "error": null,
-    "score": 30,
+    "score": 70,
     "statusCode": 200,
-    "testsFailed": 4,
-    "testsPassed": 6,
+    "testsFailed": 2,
+    "testsPassed": 8,
     "testsQuantity": 10,
     "responseHeaders": {
       "content-type": "text/html",
-      "transfer-encoding": "chunked",
+      "content-length": "6558",
       "connection": "close",
-      "date": "Sun, 08 Feb 2026 03:55:25 GMT",
-      "cache-control": "no-cache",
-      "vary": "accept-encoding",
+      "date": "Sun, 15 Feb 2026 03:40:29 GMT",
+      "x-frame-options": "SAMEORIGIN",
+      "strict-transport-security": "max-age=63072000; includeSubdomains;",
+      "vary": "x-webfence-id,Accept-Encoding",
+      "last-modified": "Wed, 21 Jan 2026 08:16:54 GMT",
+      "etag": "\"5dcf-648e18c0470f0-gzip\"",
+      "accept-ranges": "bytes",
       "x-cache": "Miss from cloudfront",
-      "via": "1.1 00de01ace0877cfbdcb5e351c5b887f8.cloudfront.net (CloudFront)",
-      "x-amz-cf-pop": "IAD61-P9",
-      "x-amz-cf-id": "rnU6X_Vr5wAt_XEKubY2_al85g3CKl2QdH_LKkiXp-AypDzxj_71vg=="
+      "via": "1.1 dfb7216a55ac722dffc96aa9104d91f4.cloudfront.net (CloudFront)",
+      "x-amz-cf-pop": "PHX50-P1",
+      "x-amz-cf-id": "-fpPTo5A13rLmIkG8tcgbwPLj-uXMot65xSEYDKX_v6wd1fzkTFO6g=="
     }
   },
   "tests": {
@@ -72,12 +76,12 @@
     },
     "strict-transport-security": {
       "expectation": "hsts-implemented-max-age-at-least-six-months",
-      "pass": false,
-      "result": "hsts-not-implemented",
-      "scoreModifier": -20,
-      "data": null,
-      "includeSubDomains": false,
-      "maxAge": null,
+      "pass": true,
+      "result": "hsts-implemented-max-age-at-least-six-months",
+      "scoreModifier": 0,
+      "data": "max-age=63072000; includeSubdomains;",
+      "includeSubDomains": true,
+      "maxAge": 63072000,
       "preload": false,
       "preloaded": false
     },
@@ -97,10 +101,10 @@
     },
     "x-frame-options": {
       "expectation": "x-frame-options-sameorigin-or-deny",
-      "pass": false,
-      "result": "x-frame-options-not-implemented",
-      "scoreModifier": -20,
-      "data": null
+      "pass": true,
+      "result": "x-frame-options-sameorigin-or-deny",
+      "scoreModifier": 0,
+      "data": "SAMEORIGIN"
     },
     "cross-origin-resource-policy": {
       "expectation": "corp-implemented-with-same-site",
