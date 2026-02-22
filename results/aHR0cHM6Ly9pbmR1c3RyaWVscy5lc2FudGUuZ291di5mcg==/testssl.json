@@ -3,8 +3,8 @@
               "id"           : "service",
               "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
               "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "HTTP"
+              "severity"     : "DEBUG",
+              "finding"      : "Couldn't determine service, skipping all HTTP checks"
           }
 ,         {
               "id"           : "pre_128cipher",
@@ -353,7 +353,7 @@
               "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "173 >= 60 days"
+              "finding"      : "166 >= 60 days"
           }
 ,         {
               "id"           : "cert_notBefore",
@@ -496,133 +496,6 @@
               "finding"      : "intermediate certificate(s) is/are ok"
           }
 ,         {
-              "id"           : "HTTP_status_code",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "200 OK ('/')"
-          }
-,         {
-              "id"           : "HTTP_clock_skew",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "-71254 seconds from localtime"
-          }
-,         {
-              "id"           : "HTTP_headerTime",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "1771054454"
-          }
-,         {
-              "id"           : "HSTS_time",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "365 days (=31536000 seconds) > 15552000 seconds"
-          }
-,         {
-              "id"           : "HSTS_subdomains",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "only for this domain"
-          }
-,         {
-              "id"           : "HSTS_preload",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "domain IS marked for preloading"
-          }
-,         {
-              "id"           : "HPKP",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "No support for HTTP Public Key Pinning"
-          }
-,         {
-              "id"           : "banner_server",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "Apache"
-          }
-,         {
-              "id"           : "banner_application",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "No application banner found"
-          }
-,         {
-              "id"           : "cookie_count",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "0 at '/'"
-          }
-,         {
-              "id"           : "X-Frame-Options",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "SAMEORIGIN"
-          }
-,         {
-              "id"           : "X-Content-Type-Options",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "nosniff"
-          }
-,         {
-              "id"           : "Content-Security-Policy",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "default-src 'self' 'unsafe-inline' www.youtube-nocookie.com www.google-analytics.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' code.jquery.com stackpath.bootstrapcdn.com cdn.jsdelivr.net www.googletagmanager.com tagmanager.google.com tag.aticdn.net www.gstatic.com cdnjs.cloudflare.com js/intlTelInput.js www.google.com static.hotjar.com script.hotjar.com static.hotjar.com/c/hotjar-3253247.js script.hotjar.com/modules.bd615e91f206bba6c106.js; object-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' use.typekit.net stackpath.bootstrapcdn.com www.googletagmanager.com cdn.jsdelivr.net maxcdn.bootstrapcdn.com p.typekit.net fonts.googleapis.com tagmanager.google.com ton.twimg.com www.gstatic.com/charts/ css/intlTelInput.css static.hotjar.com script.hotjar.com cdnjs.cloudflare.com static.piste.gouv.fr; img-src 'self' 'unsafe-inline' data: i.ytimg.com www.googletagmanager.com pbs.twimg.com logs1412.xiti.com www.google-analytics.com/g/collect static.hotjar.com script.hotjar.com cdn.jsdelivr.net static.piste.gouv.fr; media-src 'self' 'unsafe-inline'; frame-src 'self' www.youtube-nocookie.com www.youtube.com view.genial.ly www.google.com vars.hotjar.com view.genially.com; child-src 'self' www.youtube-nocookie.com; font-src 'self' 'unsafe-inline' use.typekit.net *.bootstrapcdn.com cdn.jsdelivr.net themes.googleusercontent.com fonts.gstatic.com data: script.hotjar.com cdnjs.cloudflare.com; connect-src 'self' logs1412.xiti.com www.google-analytics.com/g/collect *.hotjar.com *.hotjar.io wss://*.hotjar.com"
-          }
-,         {
-              "id"           : "Expect-CT",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "max-age=86400, report-uri='/report-expect-ct-failure'"
-          }
-,         {
-              "id"           : "X-XSS-Protection",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "1; mode=block"
-          }
-,         {
-              "id"           : "Referrer-Policy",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "no-referrer"
-          }
-,         {
-              "id"           : "Cache-Control",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "max-age=10800, public"
-          }
-,         {
-              "id"           : "banner_reverseproxy",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "cwe"          : "CWE-200",
-              "finding"      : "--"
-          }
-,         {
               "id"           : "heartbleed",
               "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
               "port"         : "443",
@@ -644,10 +517,10 @@
               "id"           : "ticketbleed",
               "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
               "port"         : "443",
-              "severity"     : "OK",
+              "severity"     : "INFO",
               "cve"          : "CVE-2016-9244",
               "cwe"          : "CWE-200",
-              "finding"      : "no session ticket extension"
+              "finding"      : "not applicable, not HTTP"
           }
 ,         {
               "id"           : "ROBOT",
@@ -682,16 +555,7 @@
               "severity"     : "OK",
               "cve"          : "CVE-2012-4929",
               "cwe"          : "CWE-310",
-              "finding"      : "not vulnerable"
-          }
-,         {
-              "id"           : "BREACH",
-              "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
-              "port"         : "443",
-              "severity"     : "MEDIUM",
-              "cve"          : "CVE-2013-3587",
-              "cwe"          : "CWE-310",
-              "finding"      : "potentially VULNERABLE, gzip HTTP compression detected  - only supplied '/' tested"
+              "finding"      : "not vulnerable (not using HTTP anyway)"
           }
 ,         {
               "id"           : "POODLE_SSL",
@@ -1119,6 +983,6 @@
               "ip"           : "industriels.esante.gouv.fr/37.59.26.43",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "62"
+              "finding"      : "53"
           }
 ]
