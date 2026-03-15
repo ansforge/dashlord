@@ -1,24 +1,64 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.17.0",
-	"@generated": "Sun, 8 Mar 2026 04:17:33",
-	"created": "2026-03-08T04:17:33.053800508Z",
+	"@generated": "Sun, 15 Mar 2026 04:46:28",
+	"created": "2026-03-15T04:46:28.753132139Z",
 	"insights":[
+		{
+			"level": "Low",
+			"reason": "Warning",
+			"site": "",
+			"key": "insight.log.warn",
+			"description": "ZAP warnings logged - see the zap.log file for details",
+			"statistic": "3"
+		},
 		{
 			"level": "Info",
 			"reason": "Informational",
 			"site": "https://sas.sante.fr",
 			"key": "insight.code.2xx",
 			"description": "Percentage of responses with status code 2xx",
-			"statistic": "100"
+			"statistic": "56"
 		},
 		{
 			"level": "Info",
 			"reason": "Informational",
 			"site": "https://sas.sante.fr",
-			"key": "insight.endpoint.ctype.image/svg+xml",
-			"description": "Percentage of endpoints with content type image/svg+xml",
-			"statistic": "25"
+			"key": "insight.code.3xx",
+			"description": "Percentage of responses with status code 3xx",
+			"statistic": "23"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://sas.sante.fr",
+			"key": "insight.code.4xx",
+			"description": "Percentage of responses with status code 4xx",
+			"statistic": "19"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://sas.sante.fr",
+			"key": "insight.endpoint.ctype.application/javascript",
+			"description": "Percentage of endpoints with content type application/javascript",
+			"statistic": "14"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://sas.sante.fr",
+			"key": "insight.endpoint.ctype.image/png",
+			"description": "Percentage of endpoints with content type image/png",
+			"statistic": "1"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://sas.sante.fr",
+			"key": "insight.endpoint.ctype.image/x-icon",
+			"description": "Percentage of endpoints with content type image/x-icon",
+			"statistic": "1"
 		},
 		{
 			"level": "Info",
@@ -26,7 +66,7 @@
 			"site": "https://sas.sante.fr",
 			"key": "insight.endpoint.ctype.text/css",
 			"description": "Percentage of endpoints with content type text/css",
-			"statistic": "25"
+			"statistic": "5"
 		},
 		{
 			"level": "Info",
@@ -34,7 +74,23 @@
 			"site": "https://sas.sante.fr",
 			"key": "insight.endpoint.ctype.text/html",
 			"description": "Percentage of endpoints with content type text/html",
-			"statistic": "50"
+			"statistic": "76"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://sas.sante.fr",
+			"key": "insight.endpoint.ctype.text/javascript",
+			"description": "Percentage of endpoints with content type text/javascript",
+			"statistic": "1"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://sas.sante.fr",
+			"key": "insight.endpoint.ctype.text/plain",
+			"description": "Percentage of endpoints with content type text/plain",
+			"statistic": "1"
 		},
 		{
 			"level": "Info",
@@ -42,7 +98,15 @@
 			"site": "https://sas.sante.fr",
 			"key": "insight.endpoint.method.GET",
 			"description": "Percentage of endpoints with method GET",
-			"statistic": "100"
+			"statistic": "76"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://sas.sante.fr",
+			"key": "insight.endpoint.method.POST",
+			"description": "Percentage of endpoints with method POST",
+			"statistic": "23"
 		},
 		{
 			"level": "Info",
@@ -50,7 +114,7 @@
 			"site": "https://sas.sante.fr",
 			"key": "insight.endpoint.total",
 			"description": "Count of total endpoints",
-			"statistic": "4"
+			"statistic": "134"
 		},
 		{
 			"level": "Info",
@@ -58,7 +122,7 @@
 			"site": "https://sas.sante.fr",
 			"key": "insight.response.slow",
 			"description": "Percentage of slow responses",
-			"statistic": "100"
+			"statistic": "61"
 		}
 	],
 	"site":[ 
@@ -68,6 +132,326 @@
 			"@port": "443",
 			"@ssl": "true",
 			"alerts": [ 
+				{
+					"pluginid": "10202",
+					"alertRef": "10202",
+					"alert": "Absence of Anti-CSRF Tokens",
+					"name": "Absence of Anti-CSRF Tokens",
+					"riskcode": "2",
+					"confidence": "1",
+					"riskdesc": "Medium (Low)",
+					"desc": "<p>No Anti-CSRF tokens were found in a HTML submission form.</p><p>A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent in order to perform an action as the victim. The underlying cause is application functionality using predictable URL/form actions in a repeatable way. The nature of the attack is that CSRF exploits the trust that a web site has for a user. By contrast, cross-site scripting (XSS) exploits the trust that a user has for a web site. Like XSS, CSRF attacks are not necessarily cross-site, but they can be. Cross-site request forgery is also known as CSRF, XSRF, one-click attack, session riding, confused deputy, and sea surf.</p><p></p><p>CSRF attacks are effective in a number of situations, including:</p><p>    * The victim has an active session on the target site.</p><p>    * The victim is authenticated via HTTP auth on the target site.</p><p>    * The victim is on the same local network as the target site.</p><p></p><p>CSRF has primarily been used to perform an action against a target site using the victim's privileges, but recent techniques have been discovered to disclose information by gaining access to the response. The risk of information disclosure is dramatically increased when the target site is vulnerable to XSS, because XSS can be used as a platform for CSRF, allowing the attack to operate within the bounds of the same-origin policy.</p>",
+					"instances":[ 
+						{
+							"id": "14",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"ans-openid-connect-login-form\" data-drupal-selector=\"ans-openid-connect-login-form\" action=\"/\" method=\"post\" id=\"ans-openid-connect-login-form\" accept-charset=\"UTF-8\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"form_build_id\" \"form_id\" ]."
+						},
+						{
+							"id": "109",
+							"uri": "https://sas.sante.fr/core/*.css$",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css$",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"ans-openid-connect-login-form\" data-drupal-selector=\"ans-openid-connect-login-form\" action=\"/core/*.css$\" method=\"post\" id=\"ans-openid-connect-login-form\" accept-charset=\"UTF-8\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"form_build_id\" \"form_id\" ]."
+						},
+						{
+							"id": "118",
+							"uri": "https://sas.sante.fr/core/*.js$",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.js$",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"ans-openid-connect-login-form\" data-drupal-selector=\"ans-openid-connect-login-form\" action=\"/core/*.js$\" method=\"post\" id=\"ans-openid-connect-login-form\" accept-charset=\"UTF-8\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"form_build_id\" \"form_id\" ]."
+						},
+						{
+							"id": "133",
+							"uri": "https://sas.sante.fr/profiles/*.css$",
+							"nodeName": "https:\/\/sas.sante.fr\/profiles\/*.css$",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"ans-openid-connect-login-form\" data-drupal-selector=\"ans-openid-connect-login-form\" action=\"/profiles/*.css$\" method=\"post\" id=\"ans-openid-connect-login-form\" accept-charset=\"UTF-8\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"form_build_id\" \"form_id\" ]."
+						},
+						{
+							"id": "143",
+							"uri": "https://sas.sante.fr/profiles/*.js$",
+							"nodeName": "https:\/\/sas.sante.fr\/profiles\/*.js$",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"ans-openid-connect-login-form\" data-drupal-selector=\"ans-openid-connect-login-form\" action=\"/profiles/*.js$\" method=\"post\" id=\"ans-openid-connect-login-form\" accept-charset=\"UTF-8\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"form_build_id\" \"form_id\" ]."
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
+					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"form_build_id\" \"form_id\" ].</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
+					"cweid": "352",
+					"wascid": "9",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10055",
+					"alertRef": "10055-13",
+					"alert": "CSP: Failure to Define Directive with No Fallback",
+					"name": "CSP: Failure to Define Directive with No Fallback",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medium (High)",
+					"desc": "<p>The Content Security Policy fails to define one of the directives that has no fallback. Missing/excluding them is the same as allowing anything.</p>",
+					"instances":[ 
+						{
+							"id": "3",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "The directive(s): frame-ancestors, form-action is/are among the directives that do not fallback to default-src."
+						},
+						{
+							"id": "36",
+							"uri": "https://sas.sante.fr/core/*.css",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "The directive(s): frame-ancestors, form-action is/are among the directives that do not fallback to default-src."
+						},
+						{
+							"id": "41",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "The directive(s): frame-ancestors, form-action is/are among the directives that do not fallback to default-src."
+						}
+					],
+					"count": "3",
+					"systemic": true,
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
+					"otherinfo": "<p>The directive(s): frame-ancestors, form-action is/are among the directives that do not fallback to default-src.</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10055",
+					"alertRef": "10055-4",
+					"alert": "CSP: Wildcard Directive",
+					"name": "CSP: Wildcard Directive",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medium (High)",
+					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+					"instances":[ 
+						{
+							"id": "4",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined:\nimg-src, frame-src, font-src, media-src, worker-src"
+						},
+						{
+							"id": "37",
+							"uri": "https://sas.sante.fr/core/*.css",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined:\nimg-src, frame-src, font-src, media-src, worker-src"
+						},
+						{
+							"id": "44",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined:\nimg-src, frame-src, font-src, media-src, worker-src"
+						}
+					],
+					"count": "3",
+					"systemic": true,
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
+					"otherinfo": "<p>The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined:</p><p>img-src, frame-src, font-src, media-src, worker-src</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10055",
+					"alertRef": "10055-10",
+					"alert": "CSP: script-src unsafe-eval",
+					"name": "CSP: script-src unsafe-eval",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medium (High)",
+					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+					"instances":[ 
+						{
+							"id": "7",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "script-src includes unsafe-eval."
+						},
+						{
+							"id": "45",
+							"uri": "https://sas.sante.fr/core/*.css",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "script-src includes unsafe-eval."
+						},
+						{
+							"id": "53",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "script-src includes unsafe-eval."
+						}
+					],
+					"count": "3",
+					"systemic": true,
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
+					"otherinfo": "<p>script-src includes unsafe-eval.</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10055",
+					"alertRef": "10055-5",
+					"alert": "CSP: script-src unsafe-inline",
+					"name": "CSP: script-src unsafe-inline",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medium (High)",
+					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+					"instances":[ 
+						{
+							"id": "5",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "script-src includes unsafe-inline."
+						},
+						{
+							"id": "40",
+							"uri": "https://sas.sante.fr/core/*.css",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "script-src includes unsafe-inline."
+						},
+						{
+							"id": "48",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "script-src includes unsafe-inline."
+						}
+					],
+					"count": "3",
+					"systemic": true,
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
+					"otherinfo": "<p>script-src includes unsafe-inline.</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10055",
+					"alertRef": "10055-6",
+					"alert": "CSP: style-src unsafe-inline",
+					"name": "CSP: style-src unsafe-inline",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medium (High)",
+					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+					"instances":[ 
+						{
+							"id": "6",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "style-src includes unsafe-inline."
+						},
+						{
+							"id": "42",
+							"uri": "https://sas.sante.fr/core/*.css",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "style-src includes unsafe-inline."
+						},
+						{
+							"id": "50",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "style-src includes unsafe-inline."
+						}
+					],
+					"count": "3",
+					"systemic": true,
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
+					"otherinfo": "<p>style-src includes unsafe-inline.</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "1"
+				},
 				{
 					"pluginid": "10038",
 					"alertRef": "10038-1",
@@ -79,9 +463,9 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "2",
-							"uri": "https://sas.sante.fr",
-							"nodeName": "https:\/\/sas.sante.fr",
+							"id": "139",
+							"uri": "https://sas.sante.fr/composer/Metapackage/README.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/composer\/Metapackage\/README.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -89,9 +473,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "5",
-							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"id": "141",
+							"uri": "https://sas.sante.fr/composer/Plugin/VendorHardening/README.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/composer\/Plugin\/VendorHardening\/README.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -99,9 +483,29 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "3",
-							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"id": "142",
+							"uri": "https://sas.sante.fr/composer/Template/README.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/composer\/Template\/README.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "146",
+							"uri": "https://sas.sante.fr/sites/README.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/sites\/README.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "163",
+							"uri": "https://sas.sante.fr/themes/README.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/themes\/README.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -109,14 +513,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "5",
 					"systemic": true,
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "135"
 				},
 				{
 					"pluginid": "90003",
@@ -129,43 +533,443 @@
 					"desc": "<p>The integrity attribute is missing on a script or link tag served by an external server. The integrity tag prevents an attacker who have gained access to this server from injecting a malicious content.</p>",
 					"instances":[ 
 						{
-							"id": "14",
+							"id": "17",
 							"uri": "https://sas.sante.fr",
 							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap\"rel=\"stylesheet\">",
+							"evidence": "<link rel=\"stylesheet\" media=\"all\" href=\"https://use.fontawesome.com/releases/v6.1.0/css/all.css\" />",
 							"otherinfo": ""
 						},
 						{
-							"id": "12",
-							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"id": "125",
+							"uri": "https://sas.sante.fr/core/*.css$",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css$",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap\"rel=\"stylesheet\">",
+							"evidence": "<link rel=\"stylesheet\" media=\"all\" href=\"https://use.fontawesome.com/releases/v6.1.0/css/all.css\" />",
 							"otherinfo": ""
 						},
 						{
-							"id": "15",
-							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"id": "130",
+							"uri": "https://sas.sante.fr/core/*.js$",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.js$",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap\"rel=\"stylesheet\">",
+							"evidence": "<link rel=\"stylesheet\" media=\"all\" href=\"https://use.fontawesome.com/releases/v6.1.0/css/all.css\" />",
+							"otherinfo": ""
+						},
+						{
+							"id": "138",
+							"uri": "https://sas.sante.fr/profiles/*.css$",
+							"nodeName": "https:\/\/sas.sante.fr\/profiles\/*.css$",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<link rel=\"stylesheet\" media=\"all\" href=\"https://use.fontawesome.com/releases/v6.1.0/css/all.css\" />",
+							"otherinfo": ""
+						},
+						{
+							"id": "147",
+							"uri": "https://sas.sante.fr/profiles/*.js$",
+							"nodeName": "https:\/\/sas.sante.fr\/profiles\/*.js$",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<link rel=\"stylesheet\" media=\"all\" href=\"https://use.fontawesome.com/releases/v6.1.0/css/all.css\" />",
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "5",
 					"systemic": true,
 					"solution": "<p>Provide a valid integrity attribute to the tag.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10044",
+					"alertRef": "10044-1",
+					"alert": "Big Redirect Detected (Potential Sensitive Information Leak)",
+					"name": "Big Redirect Detected (Potential Sensitive Information Leak)",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>The server has responded with a redirect that seems to provide a large response. This may indicate that although the server sent a redirect it also responded with body content (which may include sensitive details, PII, etc.).</p>",
+					"instances":[ 
+						{
+							"id": "213",
+							"uri": "https://sas.sante.fr/contact",
+							"nodeName": "https:\/\/sas.sante.fr\/contact",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 257 [https://seconnecter.sante.fr/realms/sas/protocol/openid-connect/auth?client_id=sas&response_type=code&scope=openid%20email%20profile%20pro_sante_connect&redirect_uri=https%3A//sas.sante.fr/openid-connect/sas&state=qDcb3vlJ6NQFYViDmxrxmzF6hFAklMiSiZEBEDsCYww].\nPredicted response size: 557.\nResponse Body Length: 1,338."
+						},
+						{
+							"id": "169",
+							"uri": "https://sas.sante.fr/filter/tips",
+							"nodeName": "https:\/\/sas.sante.fr\/filter\/tips",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 257 [https://seconnecter.sante.fr/realms/sas/protocol/openid-connect/auth?client_id=sas&response_type=code&scope=openid%20email%20profile%20pro_sante_connect&redirect_uri=https%3A//sas.sante.fr/openid-connect/sas&state=mm5iaG3NPE2h5WJwyIoc8LWgdWIhW5hM-4cOqgwEi6Y].\nPredicted response size: 557.\nResponse Body Length: 1,338."
+						},
+						{
+							"id": "175",
+							"uri": "https://sas.sante.fr/media/oembed",
+							"nodeName": "https:\/\/sas.sante.fr\/media\/oembed",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 257 [https://seconnecter.sante.fr/realms/sas/protocol/openid-connect/auth?client_id=sas&response_type=code&scope=openid%20email%20profile%20pro_sante_connect&redirect_uri=https%3A//sas.sante.fr/openid-connect/sas&state=_YzTZqfVd-T29_G-QdkNYUvOapnWJm-xAOfvEUMg0co].\nPredicted response size: 557.\nResponse Body Length: 1,338."
+						},
+						{
+							"id": "31",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 257 [https://seconnecter.sante.fr/realms/sas/protocol/openid-connect/auth?client_id=sas&response_type=code&scope=openid%20email%20profile%20pro_sante_connect&redirect_uri=https%3A//sas.sante.fr/openid-connect/sas&state=bfggMh7N79NziLhK5qxTbk2wax1_w1JKq9JVAcAz1RI].\nPredicted response size: 557.\nResponse Body Length: 1,338."
+						},
+						{
+							"id": "174",
+							"uri": "https://sas.sante.fr/user/logout",
+							"nodeName": "https:\/\/sas.sante.fr\/user\/logout",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 21 [https://sas.sante.fr/].\nPredicted response size: 321.\nResponse Body Length: 330."
+						},
+						{
+							"id": "214",
+							"uri": "https://sas.sante.fr/",
+							"nodeName": "https:\/\/sas.sante.fr\/ ()(form_build_id,form_id,sas)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 257 [https://seconnecter.sante.fr/realms/sas/protocol/openid-connect/auth?client_id=sas&response_type=code&scope=openid%20email%20profile%20pro_sante_connect&redirect_uri=https%3A//sas.sante.fr/openid-connect/sas&state=fzXDadmhlTYJPuZc9e8oJ0LvUS2CW_jDESJfoyyWAd0].\nPredicted response size: 557.\nResponse Body Length: 1,338."
+						},
+						{
+							"id": "230",
+							"uri": "https://sas.sante.fr/README.md",
+							"nodeName": "https:\/\/sas.sante.fr\/README.md ()(form_build_id,form_id,sas)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 257 [https://seconnecter.sante.fr/realms/sas/protocol/openid-connect/auth?client_id=sas&response_type=code&scope=openid%20email%20profile%20pro_sante_connect&redirect_uri=https%3A//sas.sante.fr/openid-connect/sas&state=1OlcGIBL07SWlLHhzm_wTTJ8fn-sE87_YRCs8pU4XPk].\nPredicted response size: 557.\nResponse Body Length: 1,338."
+						},
+						{
+							"id": "229",
+							"uri": "https://sas.sante.fr/core/",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/ ()(form_build_id,form_id,sas)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 257 [https://seconnecter.sante.fr/realms/sas/protocol/openid-connect/auth?client_id=sas&response_type=code&scope=openid%20email%20profile%20pro_sante_connect&redirect_uri=https%3A//sas.sante.fr/openid-connect/sas&state=ZjU_qOiy2HF2_C4U4xZEU5R-1Y1ClgF0rdZOCTmQDko].\nPredicted response size: 557.\nResponse Body Length: 1,338."
+						},
+						{
+							"id": "224",
+							"uri": "https://sas.sante.fr/core/*.css$",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css$ ()(form_build_id,form_id,sas)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 257 [https://seconnecter.sante.fr/realms/sas/protocol/openid-connect/auth?client_id=sas&response_type=code&scope=openid%20email%20profile%20pro_sante_connect&redirect_uri=https%3A//sas.sante.fr/openid-connect/sas&state=9zHbWNtsiow35Rjy_vxMIa89Z18PMrgEbTAg9MuHcZI].\nPredicted response size: 557.\nResponse Body Length: 1,338."
+						},
+						{
+							"id": "225",
+							"uri": "https://sas.sante.fr/core/*.js$",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.js$ ()(form_build_id,form_id,sas)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 257 [https://seconnecter.sante.fr/realms/sas/protocol/openid-connect/auth?client_id=sas&response_type=code&scope=openid%20email%20profile%20pro_sante_connect&redirect_uri=https%3A//sas.sante.fr/openid-connect/sas&state=djbu_PUittYy_qx8qJhCqka__ZRQADEq5A-ZBQa6yXU].\nPredicted response size: 557.\nResponse Body Length: 1,338."
+						},
+						{
+							"id": "227",
+							"uri": "https://sas.sante.fr/profiles/*.css$",
+							"nodeName": "https:\/\/sas.sante.fr\/profiles\/*.css$ ()(form_build_id,form_id,sas)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 257 [https://seconnecter.sante.fr/realms/sas/protocol/openid-connect/auth?client_id=sas&response_type=code&scope=openid%20email%20profile%20pro_sante_connect&redirect_uri=https%3A//sas.sante.fr/openid-connect/sas&state=zAvIWSrDUENyMFQI5KtoeSwUJVKVio-NXuUkyattu24].\nPredicted response size: 557.\nResponse Body Length: 1,338."
+						},
+						{
+							"id": "228",
+							"uri": "https://sas.sante.fr/profiles/*.js$",
+							"nodeName": "https:\/\/sas.sante.fr\/profiles\/*.js$ ()(form_build_id,form_id,sas)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 257 [https://seconnecter.sante.fr/realms/sas/protocol/openid-connect/auth?client_id=sas&response_type=code&scope=openid%20email%20profile%20pro_sante_connect&redirect_uri=https%3A//sas.sante.fr/openid-connect/sas&state=1UhcXdks8W9Bmbnp4QEuepvTBv9hyoCrvJMMLHWwLRg].\nPredicted response size: 557.\nResponse Body Length: 1,338."
+						}
+					],
+					"count": "12",
+					"systemic": false,
+					"solution": "<p>Ensure that no sensitive information is leaked via redirect responses. Redirect responses should have almost no content.</p>",
+					"otherinfo": "<p>Location header URI length: 257 [https://seconnecter.sante.fr/realms/sas/protocol/openid-connect/auth?client_id=sas&response_type=code&scope=openid%20email%20profile%20pro_sante_connect&redirect_uri=https%3A//sas.sante.fr/openid-connect/sas&state=qDcb3vlJ6NQFYViDmxrxmzF6hFAklMiSiZEBEDsCYww].</p><p>Predicted response size: 557.</p><p>Response Body Length: 1,338.</p>",
+					"reference": "",
+					"cweid": "201",
+					"wascid": "13",
+					"sourceid": "356"
+				},
+				{
+					"pluginid": "10055",
+					"alertRef": "10055-3",
+					"alert": "CSP: Notices",
+					"name": "CSP: Notices",
+					"riskcode": "1",
+					"confidence": "3",
+					"riskdesc": "Low (High)",
+					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+					"instances":[ 
+						{
+							"id": "2",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
+						},
+						{
+							"id": "32",
+							"uri": "https://sas.sante.fr/core/*.css",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
+						},
+						{
+							"id": "35",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "default-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.facebook.com *.snapchat.com *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net data.geopf.fr; script-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net *.snapchat.com sc-static.net secure.adnxs.com ads-engagement.presage.io *.criteo.com unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr *.ckeditor.com bam.eu01.nr-data.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' sante.fr *.sante.fr *.gouv.fr *.dmcdn.net *.synapse-medicine.com *.twitter.com *.twimg.com *.data.gouv *.rogervoice.com *.googleapis.com *.mapbox.com *.cloudflareinsights.com *.cloudflare.com googletagmanager.com *.googletagmanager.com api-adresse.data.gouv.fr *.google.com vitemadose.gitlab.io *.dailymotion.com *.youtube.com *.soundcloud.com *.c-napps.com gstatic.com *.gstatic.com *.adform.net *.facebook.net unpkg.com *.fontawesome.com *.newrelic.com *.linkedin.com *.licdn.com *.atlasante.fr bam.eu01.nr-data.net 'unsafe-inline'; img-src * data:; media-src *; frame-src *; frame-ancestors *; child-src *; font-src * data:; report-uri /report-csp-violation",
+							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
+						}
+					],
+					"count": "3",
+					"systemic": true,
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
+					"otherinfo": "<p>Warnings:</p><p>The report-uri directive has been deprecated in favor of the new report-to directive</p><p></p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10010",
+					"alertRef": "10010",
+					"alert": "Cookie No HttpOnly Flag",
+					"name": "Cookie No HttpOnly Flag",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>A cookie has been set without the HttpOnly flag, which means that the cookie can be accessed by JavaScript. If a malicious script can be run on this page then the cookie will be accessible and can be transmitted to another site. If this is a session cookie then session hijacking may be possible.</p>",
+					"instances":[ 
+						{
+							"id": "8",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "incap_ses_1840_3307491",
+							"attack": "",
+							"evidence": "Set-Cookie: incap_ses_1840_3307491",
+							"otherinfo": ""
+						},
+						{
+							"id": "34",
+							"uri": "https://sas.sante.fr/robots.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"method": "GET",
+							"param": "incap_ses_1840_3307491",
+							"attack": "",
+							"evidence": "Set-Cookie: incap_ses_1840_3307491",
+							"otherinfo": ""
+						},
+						{
+							"id": "54",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "incap_ses_1840_3307491",
+							"attack": "",
+							"evidence": "Set-Cookie: incap_ses_1840_3307491",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"systemic": true,
+					"solution": "<p>Ensure that the HttpOnly flag is set for all cookies.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://owasp.org/www-community/HttpOnly</p>",
+					"cweid": "1004",
+					"wascid": "13",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10011",
+					"alertRef": "10011",
+					"alert": "Cookie Without Secure Flag",
+					"name": "Cookie Without Secure Flag",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>A cookie has been set without the secure flag, which means that the cookie can be accessed via unencrypted connections.</p>",
+					"instances":[ 
+						{
+							"id": "13",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "incap_ses_1840_3307491",
+							"attack": "",
+							"evidence": "Set-Cookie: incap_ses_1840_3307491",
+							"otherinfo": ""
+						},
+						{
+							"id": "12",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "visid_incap_3307491",
+							"attack": "",
+							"evidence": "Set-Cookie: visid_incap_3307491",
+							"otherinfo": ""
+						},
+						{
+							"id": "49",
+							"uri": "https://sas.sante.fr/robots.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"method": "GET",
+							"param": "incap_ses_1840_3307491",
+							"attack": "",
+							"evidence": "Set-Cookie: incap_ses_1840_3307491",
+							"otherinfo": ""
+						},
+						{
+							"id": "47",
+							"uri": "https://sas.sante.fr/robots.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"method": "GET",
+							"param": "visid_incap_3307491",
+							"attack": "",
+							"evidence": "Set-Cookie: visid_incap_3307491",
+							"otherinfo": ""
+						},
+						{
+							"id": "69",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "visid_incap_3307491",
+							"attack": "",
+							"evidence": "Set-Cookie: visid_incap_3307491",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Whenever a cookie contains sensitive information or is a session token, then it should always be passed using an encrypted channel. Ensure that the secure flag is set for cookies containing such sensitive information.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p>",
+					"cweid": "614",
+					"wascid": "13",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10054",
+					"alertRef": "10054-1",
+					"alert": "Cookie without SameSite Attribute",
+					"name": "Cookie without SameSite Attribute",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>A cookie has been set without the SameSite attribute, which means that the cookie can be sent as a result of a 'cross-site' request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks.</p>",
+					"instances":[ 
+						{
+							"id": "11",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "incap_ses_1840_3307491",
+							"attack": "",
+							"evidence": "Set-Cookie: incap_ses_1840_3307491",
+							"otherinfo": ""
+						},
+						{
+							"id": "10",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "visid_incap_3307491",
+							"attack": "",
+							"evidence": "Set-Cookie: visid_incap_3307491",
+							"otherinfo": ""
+						},
+						{
+							"id": "43",
+							"uri": "https://sas.sante.fr/robots.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"method": "GET",
+							"param": "incap_ses_1840_3307491",
+							"attack": "",
+							"evidence": "Set-Cookie: incap_ses_1840_3307491",
+							"otherinfo": ""
+						},
+						{
+							"id": "39",
+							"uri": "https://sas.sante.fr/robots.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"method": "GET",
+							"param": "visid_incap_3307491",
+							"attack": "",
+							"evidence": "Set-Cookie: visid_incap_3307491",
+							"otherinfo": ""
+						},
+						{
+							"id": "65",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "visid_incap_3307491",
+							"attack": "",
+							"evidence": "Set-Cookie: visid_incap_3307491",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Ensure that the SameSite attribute is set to either 'lax' or ideally 'strict' for all cookies.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cookie-same-site</p>",
+					"cweid": "1275",
+					"wascid": "13",
 					"sourceid": "1"
 				},
 				{
@@ -179,7 +983,7 @@
 					"desc": "<p>Cross-Origin-Embedder-Policy header is a response header that prevents a document from loading any cross-origin resources that don't explicitly grant the document permission (using CORP or CORS).</p>",
 					"instances":[ 
 						{
-							"id": "42",
+							"id": "22",
 							"uri": "https://sas.sante.fr",
 							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
@@ -189,9 +993,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "21",
-							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"id": "183",
+							"uri": "https://sas.sante.fr/formation",
+							"nodeName": "https:\/\/sas.sante.fr\/formation",
 							"method": "GET",
 							"param": "Cross-Origin-Embedder-Policy",
 							"attack": "",
@@ -199,9 +1003,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "24",
-							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"id": "179",
+							"uri": "https://sas.sante.fr/sas/faq",
+							"nodeName": "https:\/\/sas.sante.fr\/sas\/faq",
 							"method": "GET",
 							"param": "Cross-Origin-Embedder-Policy",
 							"attack": "",
@@ -229,7 +1033,7 @@
 					"desc": "<p>Cross-Origin-Opener-Policy header is a response header that allows a site to control if others included documents share the same browsing context. Sharing the same browsing context with untrusted documents might lead to data leak.</p>",
 					"instances":[ 
 						{
-							"id": "45",
+							"id": "23",
 							"uri": "https://sas.sante.fr",
 							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
@@ -239,9 +1043,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "23",
-							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"id": "184",
+							"uri": "https://sas.sante.fr/formation",
+							"nodeName": "https:\/\/sas.sante.fr\/formation",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
 							"attack": "",
@@ -249,9 +1053,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "25",
-							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"id": "180",
+							"uri": "https://sas.sante.fr/sas/faq",
+							"nodeName": "https:\/\/sas.sante.fr\/sas\/faq",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
 							"attack": "",
@@ -266,7 +1070,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Opener-Policy</p>",
 					"cweid": "693",
 					"wascid": "14",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90004",
@@ -279,7 +1083,7 @@
 					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
 					"instances":[ 
 						{
-							"id": "40",
+							"id": "21",
 							"uri": "https://sas.sante.fr",
 							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
@@ -289,7 +1093,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "20",
+							"id": "182",
+							"uri": "https://sas.sante.fr/formation",
+							"nodeName": "https:\/\/sas.sante.fr\/formation",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "63",
 							"uri": "https://sas.sante.fr/robots.txt",
 							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
 							"method": "GET",
@@ -299,9 +1113,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "22",
-							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"id": "178",
+							"uri": "https://sas.sante.fr/sas/faq",
+							"nodeName": "https:\/\/sas.sante.fr\/sas\/faq",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
 							"attack": "",
@@ -309,7 +1123,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"systemic": true,
 					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
 					"otherinfo": "",
@@ -329,7 +1143,7 @@
 					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
 					"instances":[ 
 						{
-							"id": "38",
+							"id": "20",
 							"uri": "https://sas.sante.fr",
 							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
@@ -339,9 +1153,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "18",
-							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"id": "57",
+							"uri": "https://sas.sante.fr/core/*.css",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -349,9 +1163,29 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "19",
-							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"id": "92",
+							"uri": "https://sas.sante.fr/core/*.gif",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.gif",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "88",
+							"uri": "https://sas.sante.fr/core/*.jpeg",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.jpeg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "97",
+							"uri": "https://sas.sante.fr/core/*.png",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -359,7 +1193,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "5",
 					"systemic": true,
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
 					"otherinfo": "",
@@ -367,6 +1201,136 @@
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
+				},
+				{
+					"pluginid": "10035",
+					"alertRef": "10035-1",
+					"alert": "Strict-Transport-Security Header Not Set",
+					"name": "Strict-Transport-Security Header Not Set",
+					"riskcode": "1",
+					"confidence": "3",
+					"riskdesc": "Low (High)",
+					"desc": "<p>HTTP Strict Transport Security (HSTS) is a web security policy mechanism whereby a web server declares that complying user agents (such as a web browser) are to interact with it using only secure HTTPS connections (i.e. HTTP layered over TLS/SSL). HSTS is an IETF standards track protocol and is specified in RFC 6797.</p>",
+					"instances":[ 
+						{
+							"id": "191",
+							"uri": "https://sas.sante.fr/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&cb=577951733&ns=8",
+							"nodeName": "https:\/\/sas.sante.fr\/_Incapsula_Resource (SWJIYLWA,cb,ns)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "1",
+					"systemic": true,
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
+					"cweid": "319",
+					"wascid": "15",
+					"sourceid": "334"
+				},
+				{
+					"pluginid": "10096",
+					"alertRef": "10096",
+					"alert": "Timestamp Disclosure - Unix",
+					"name": "Timestamp Disclosure - Unix",
+					"riskcode": "1",
+					"confidence": "1",
+					"riskdesc": "Low (Low)",
+					"desc": "<p>A timestamp was disclosed by the application/web server. - Unix</p>",
+					"instances":[ 
+						{
+							"id": "18",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1958107623",
+							"otherinfo": "1958107623, which evaluates to: 2032-01-19 06:47:03."
+						},
+						{
+							"id": "124",
+							"uri": "https://sas.sante.fr/core/*.js",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "2066990968",
+							"otherinfo": "2066990968, which evaluates to: 2035-07-02 12:09:28."
+						},
+						{
+							"id": "137",
+							"uri": "https://sas.sante.fr/profiles/*.jpeg",
+							"nodeName": "https:\/\/sas.sante.fr\/profiles\/*.jpeg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1897874422",
+							"otherinfo": "1897874422, which evaluates to: 2030-02-21 03:20:22."
+						},
+						{
+							"id": "135",
+							"uri": "https://sas.sante.fr/profiles/*.jpg",
+							"nodeName": "https:\/\/sas.sante.fr\/profiles\/*.jpg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1577719384",
+							"otherinfo": "1577719384, which evaluates to: 2019-12-30 15:23:04."
+						},
+						{
+							"id": "132",
+							"uri": "https://sas.sante.fr/profiles/*.js",
+							"nodeName": "https:\/\/sas.sante.fr\/profiles\/*.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1779107046",
+							"otherinfo": "1779107046, which evaluates to: 2026-05-18 12:24:06."
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
+					"otherinfo": "<p>1958107623, which evaluates to: 2032-01-19 06:47:03.</p>",
+					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
+					"cweid": "497",
+					"wascid": "13",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10021",
+					"alertRef": "10021",
+					"alert": "X-Content-Type-Options Header Missing",
+					"name": "X-Content-Type-Options Header Missing",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
+					"instances":[ 
+						{
+							"id": "192",
+							"uri": "https://sas.sante.fr/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&cb=577951733&ns=8",
+							"nodeName": "https:\/\/sas.sante.fr\/_Incapsula_Resource (SWJIYLWA,cb,ns)",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						}
+					],
+					"count": "1",
+					"systemic": true,
+					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
+					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "334"
 				},
 				{
 					"pluginid": "10094",
@@ -379,53 +1343,283 @@
 					"desc": "<p>Base64 encoded data was disclosed by the application/web server. Note: in the interests of performance not all base64 strings in the response were analyzed individually, the entire response should be looked at by the analyst/security team/developer(s).</p>",
 					"instances":[ 
 						{
-							"id": "47",
+							"id": "127",
 							"uri": "https://sas.sante.fr",
 							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "TCYHEbIm3dqcYPle4WMCg3l3nqHAtw2UKSyTXQ07pcx6kLlkv9N4DA0ajRvaY_JTId3eOiRZNw5-92Dirpe-UR-lCsOspisEzFY6Ya2nTU7AomolEjUvISJF0Y1w-BLC2PcG97SDljdsf7QoVl45DlvNS7dGajyQ28iu9mDWGi0BeDyQHZTpg_u3POagWOEYiZgH_cDOdL04U93BANq2KgOLeLlIFQLNIKxbCkBFtCBZZfSJkvXJH2Ppyeg4hbalYGCECAy7E-JCyUcyHo9pa4s8K_cSIGBGSCarC6lP2RUkSTf1xbgtKNrI7gxo6YMW",
-							"otherinfo": "L&\\x0007\\x0011\uFFFD&\uFFFD\u069C`\uFFFD^\uFFFDc\\x0002\uFFFDyw\uFFFD\uFFFD\uFFFD\uFFFD\r\uFFFD),\uFFFD]\r;\uFFFD\uFFFDz\uFFFD\uFFFDd\uFFFD\uFFFDx\\x000c\r\\x001a\uFFFD\\x001b\uFFFDc\uFFFDS!\uFFFD\uFFFD:$Y7\\x000e~\uFFFD`\u2B97\uFFFDQ\\x001f\uFFFD\n\u00EC\uFFFD+\\x0004\uFFFDV:a\uFFFD\uFFFDMN\uFFFD\uFFFDj%\\x00125/!\"E\u044Dp\uFFFD\\x0012\uFFFD\uFFFD\uFFFD\\x0006\uFFFD\uFFFD\uFFFD\uFFFD7l\uFFFD(V^9\\x000e[\uFFFDK\uFFFDFj<\uFFFD\uFFFD\u022E\uFFFD`\uFFFD\\x001a-\\x0001x<\uFFFD\\x001d\uFFFD\uFFFD\uFFFD\uFFFD<\uFFFDX\uFFFD\\x0018\uFFFD\uFFFD\\x0007\uFFFD\uFFFD\uFFFDt\uFFFD8S\uFFFD\uFFFD\\x0000\u06B6*\\x0003\uFFFDx\uFFFDH\\x0015\\x0002\uFFFD \uFFFD[\n@E\uFFFD Ye\uFFFD\uFFFD\uFFFD\\x001fc\uFFFD\uFFFD\uFFFD8\uFFFD\uFFFD\uFFFD``\uFFFD\\x0008\\x000c\uFFFD\\x0013\uFFFDB\uFFFDG2\\x001e\uFFFDik\uFFFD<+\uFFFD\\x0012 `FH&\uFFFD\\x000b\uFFFDO\uFFFD\\x0015$I7\uFFFD\u0178-(\uFFFD\uFFFD\uFFFD\\x000ch\uFFFD\\x0016"
+							"evidence": "OgUuQnzwQwiurE7sg5pt3Yo5tmkAAAAAQUIPAAAAAAAIwG0cQZ9Hv1qoFq0TbphC",
+							"otherinfo": ":\\x0005.B|\uFFFDC\\x0008\uFFFD\uFFFDN\uC0DAm\u074A9\uFFFDi\\x0000\\x0000\\x0000\\x0000AB\\x000f\\x0000\\x0000\\x0000\\x0000\\x0000\\x0008\uFFFDm\\x001cA\uFFFDG\uFFFDZ\uFFFD\\x0016\uFFFD\\x0013n\uFFFDB"
 						},
 						{
-							"id": "46",
+							"id": "24",
 							"uri": "https://sas.sante.fr",
 							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "TCYHEbIm3dqcYPle4WMCg3l3nqHAtw2UKSyTXQ07pcyr-bH1VBqH_SR1OCndZVM8AfAMDune1B_nGLhp2GnkzbJXtCXXN8NI5doXx12UGha9Y3i3DJXBVgbThtSDutmC_W1KKKH5pOUIgND1wnNgTA",
-							"otherinfo": "L&\\x0007\\x0011\uFFFD&\uFFFD\u069C`\uFFFD^\uFFFDc\\x0002\uFFFDyw\uFFFD\uFFFD\uFFFD\uFFFD\r\uFFFD),\uFFFD]\r;\uFFFD\u032B\uFFFD\uFFFD\uFFFDT\\x001a\uFFFD\uFFFD$u8)\uFFFDeS<\\x0001\uFFFD\\x000c\\x000e\uFFFD\uFFFD\uFFFD\\x001f\uFFFD\\x0018\uFFFDi\uFFFDi\uFFFD\u0372W\uFFFD%\uFFFD7\uFFFDH\uFFFD\uFFFD\\x0017\uFFFD]\uFFFD\\x001a\\x0016\uFFFDcx\uFFFD\\x000c\uFFFD\uFFFDV\\x0006\u04C6\u0503\uFFFD\u0642\uFFFDmJ(\uFFFD\uFFFD\uFFFD\uFFFD\\x0008\uFFFD\uFFFD\uFFFD\uFFFDs`L"
+							"evidence": "UbUYB8HHRCOZA8gKF1apnIo5tmkAAAAAQUIPAAAAAAD+UEe9Hv7jStl/PZGxOEOY",
+							"otherinfo": "Q\uFFFD\\x0018\\x0007\uFFFD\uFFFDD#\uFFFD\\x0003\uFFFD\n\\x0017V\uFFFD\uFFFD\uFFFD9\uFFFDi\\x0000\\x0000\\x0000\\x0000AB\\x000f\\x0000\\x0000\\x0000\\x0000\\x0000\uFFFDPG\uFFFD\\x001e\uFFFD\uFFFDJ\uFFFD=\uFFFD\uFFFD8C\uFFFD"
 						},
 						{
-							"id": "26",
+							"id": "158",
+							"uri": "https://sas.sante.fr/README.md",
+							"nodeName": "https:\/\/sas.sante.fr\/README.md",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/sites/default/files/css/css_bSakQLnPGl6EBeISxL9eUmWLgY_1ikLHaVPP07YNlgA",
+							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\uFFFD\uFFFD\uFFFD\\x0002\uFFFD<iz\\x0010\\x0017\uFFFDK\\x0012\uFFFDyI\uFFFD.\\x0006?\uFFFD)\\x000b\\x001d\uFFFDO?N\uFFFD6X\\x0000"
+						},
+						{
+							"id": "159",
+							"uri": "https://sas.sante.fr/composer/Plugin/Scaffold/README.md",
+							"nodeName": "https:\/\/sas.sante.fr\/composer\/Plugin\/Scaffold\/README.md",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/sites/default/files/css/css_bSakQLnPGl6EBeISxL9eUmWLgY_1ikLHaVPP07YNlgA",
+							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\uFFFD\uFFFD\uFFFD\\x0002\uFFFD<iz\\x0010\\x0017\uFFFDK\\x0012\uFFFDyI\uFFFD.\\x0006?\uFFFD)\\x000b\\x001d\uFFFDO?N\uFFFD6X\\x0000"
+						},
+						{
+							"id": "162",
+							"uri": "https://sas.sante.fr/core/",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/sites/default/files/css/css_bSakQLnPGl6EBeISxL9eUmWLgY_1ikLHaVPP07YNlgA",
+							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\uFFFD\uFFFD\uFFFD\\x0002\uFFFD<iz\\x0010\\x0017\uFFFDK\\x0012\uFFFDyI\uFFFD.\\x0006?\uFFFD)\\x000b\\x001d\uFFFDO?N\uFFFD6X\\x0000"
+						},
+						{
+							"id": "134",
+							"uri": "https://sas.sante.fr/core/*.css$",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css$",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/sites/default/files/css/css_bSakQLnPGl6EBeISxL9eUmWLgY_1ikLHaVPP07YNlgA",
+							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\uFFFD\uFFFD\uFFFD\\x0002\uFFFD<iz\\x0010\\x0017\uFFFDK\\x0012\uFFFDyI\uFFFD.\\x0006?\uFFFD)\\x000b\\x001d\uFFFDO?N\uFFFD6X\\x0000"
+						},
+						{
+							"id": "136",
+							"uri": "https://sas.sante.fr/core/*.js$",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.js$",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/sites/default/files/css/css_bSakQLnPGl6EBeISxL9eUmWLgY_1ikLHaVPP07YNlgA",
+							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\uFFFD\uFFFD\uFFFD\\x0002\uFFFD<iz\\x0010\\x0017\uFFFDK\\x0012\uFFFDyI\uFFFD.\\x0006?\uFFFD)\\x000b\\x001d\uFFFDO?N\uFFFD6X\\x0000"
+						},
+						{
+							"id": "160",
+							"uri": "https://sas.sante.fr/profiles/",
+							"nodeName": "https:\/\/sas.sante.fr\/profiles\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/sites/default/files/css/css_bSakQLnPGl6EBeISxL9eUmWLgY_1ikLHaVPP07YNlgA",
+							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\uFFFD\uFFFD\uFFFD\\x0002\uFFFD<iz\\x0010\\x0017\uFFFDK\\x0012\uFFFDyI\uFFFD.\\x0006?\uFFFD)\\x000b\\x001d\uFFFDO?N\uFFFD6X\\x0000"
+						},
+						{
+							"id": "144",
+							"uri": "https://sas.sante.fr/profiles/*.css$",
+							"nodeName": "https:\/\/sas.sante.fr\/profiles\/*.css$",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/sites/default/files/css/css_bSakQLnPGl6EBeISxL9eUmWLgY_1ikLHaVPP07YNlgA",
+							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\uFFFD\uFFFD\uFFFD\\x0002\uFFFD<iz\\x0010\\x0017\uFFFDK\\x0012\uFFFDyI\uFFFD.\\x0006?\uFFFD)\\x000b\\x001d\uFFFDO?N\uFFFD6X\\x0000"
+						},
+						{
+							"id": "155",
+							"uri": "https://sas.sante.fr/profiles/*.js$",
+							"nodeName": "https:\/\/sas.sante.fr\/profiles\/*.js$",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/sites/default/files/css/css_bSakQLnPGl6EBeISxL9eUmWLgY_1ikLHaVPP07YNlgA",
+							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\uFFFD\uFFFD\uFFFD\\x0002\uFFFD<iz\\x0010\\x0017\uFFFDK\\x0012\uFFFDyI\uFFFD.\\x0006?\uFFFD)\\x000b\\x001d\uFFFDO?N\uFFFD6X\\x0000"
+						},
+						{
+							"id": "68",
 							"uri": "https://sas.sante.fr/robots.txt",
 							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "IKfDAs58MUiIkKDiskN2M2j7ufvKCcxzPFHbQkAAQDLrWkwXmqcqWSDzzWT2I1WMRR1fumxQ6Gv-lewqNDC_mm4v_5YwHpMw7uxsmsbgXQ1UQi75laWQLqO6fNZOfBzxpvn-6NmI0RzB09DRGbdRFA",
-							"otherinfo": " \uFFFD\uFFFD\\x0002\uFFFD|1H\uFFFD\uFFFD\uFFFD\uFFFDCv3h\uFFFD\uFFFD\uFFFD\uFFFD\t\uFFFDs<Q\uFFFDB@\\x0000@2\uFFFDZL\\x0017\uFFFD\uFFFD*Y \uFFFD\uFFFDd\uFFFD#U\uFFFDE\\x001d_\uFFFDlP\uFFFDk\uFFFD\uFFFD\uFFFD*40\uFFFD\uFFFDn/\uFFFD\uFFFD0\\x001e\uFFFD0\uFFFD\uFFFDl\uFFFD\uFFFD\uFFFD]\rTB.\uFFFD\uFFFD\uFFFD\uFFFD.\uFFFD\uFFFD|\uFFFDN|\\x001c\uFFFD\uFFFD\uFFFD\uFFFD\u0648\uFFFD\\x001c\uFFFD\uFFFD\uFFFD\uFFFD\\x0019\uFFFDQ\\x0014"
+							"evidence": "NOoEKRDeTCGPL5Rt+c8GBYo5tmkAAAAAQUIPAAAAAAAb6BDFSimQbFHpIX+83oho",
+							"otherinfo": "4\uFFFD\\x0004)\\x0010\uFFFDL!\uFFFD/\uFFFDm\uFFFD\uFFFD\\x0006\\x0005\uFFFD9\uFFFDi\\x0000\\x0000\\x0000\\x0000AB\\x000f\\x0000\\x0000\\x0000\\x0000\\x0000\\x001b\uFFFD\\x0010\uFFFDJ)\uFFFDlQ\uFFFD!\uFFFD\u0788h"
 						},
 						{
-							"id": "27",
+							"id": "86",
 							"uri": "https://sas.sante.fr/sitemap.xml",
 							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "qipR00tahs_YE-6dLayddxTmry9N_7NJvy3CDdq60gsw16KeXNrL6NMOoM8cHQkw4gGm60JJu2yw02NZk0whbpm95E5OKWg5ehBbq0YzqFrQoPu_1-Yw_0LnVtGvw-Yyc7k38yVGB4_mp9LaspGedg",
-							"otherinfo": "\uFFFD*Q\uFFFDKZ\uFFFD\uFFFD\uFFFD\\x0013\uFFFD-\uFFFD\uFFFDw\\x0014\uFFFD/M\uFFFD\uFFFDI\uFFFD-\uFFFD\r\u06BA\uFFFD\\x000b0\u05E2\uFFFD\\\uFFFD\uFFFD\uFFFD\uFFFD\\x000e\uFFFD\uFFFD\\x001c\\x001d\t0\uFFFD\\x0001\uFFFD\uFFFDBI\uFFFDl\uFFFD\uFFFDcY\uFFFDL!n\uFFFD\uFFFD\uFFFDNN)h9z\\x0010[\uFFFDF3\uFFFDZ\u0420\uFFFD\uFFFD\uFFFD\uFFFD0\uFFFDB\uFFFDV\u046F\uFFFD\uFFFD2s\uFFFD7\uFFFD%F\\x0007\uFFFD\uFFFD\uFFFD\u06B2\uFFFD\uFFFDv"
+							"evidence": "bfggMh7N79NziLhK5qxTbk2wax1_w1JKq9JVAcAz1RI",
+							"otherinfo": "m\uFFFD 2\\x001e\uFFFD\uFFFD\uFFFDs\uFFFD\uFFFDJ\uFFFDSnM\uFFFDk\\x001d\uFFFDRJ\uFFFD\uFFFDU\\x0001\uFFFD3\uFFFD\\x0012"
 						}
 					],
-					"count": "4",
+					"count": "12",
 					"systemic": false,
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>L&\\x0007\\x0011\uFFFD&\uFFFD\u069C`\uFFFD^\uFFFDc\\x0002\uFFFDyw\uFFFD\uFFFD\uFFFD\uFFFD\r\uFFFD),\uFFFD]\r;\uFFFD\uFFFDz\uFFFD\uFFFDd\uFFFD\uFFFDx\\x000c\r\\x001a\uFFFD\\x001b\uFFFDc\uFFFDS!\uFFFD\uFFFD:$Y7\\x000e~\uFFFD`\u2B97\uFFFDQ\\x001f\uFFFD</p><p>\u00EC\uFFFD+\\x0004\uFFFDV:a\uFFFD\uFFFDMN\uFFFD\uFFFDj%\\x00125/!\"E\u044Dp\uFFFD\\x0012\uFFFD\uFFFD\uFFFD\\x0006\uFFFD\uFFFD\uFFFD\uFFFD7l\uFFFD(V^9\\x000e[\uFFFDK\uFFFDFj<\uFFFD\uFFFD\u022E\uFFFD`\uFFFD\\x001a-\\x0001x<\uFFFD\\x001d\uFFFD\uFFFD\uFFFD\uFFFD<\uFFFDX\uFFFD\\x0018\uFFFD\uFFFD\\x0007\uFFFD\uFFFD\uFFFDt\uFFFD8S\uFFFD\uFFFD\\x0000\u06B6*\\x0003\uFFFDx\uFFFDH\\x0015\\x0002\uFFFD \uFFFD[</p><p>@E\uFFFD Ye\uFFFD\uFFFD\uFFFD\\x001fc\uFFFD\uFFFD\uFFFD8\uFFFD\uFFFD\uFFFD``\uFFFD\\x0008\\x000c\uFFFD\\x0013\uFFFDB\uFFFDG2\\x001e\uFFFDik\uFFFD<+\uFFFD\\x0012 `FH&\uFFFD\\x000b\uFFFDO\uFFFD\\x0015$I7\uFFFD\u0178-(\uFFFD\uFFFD\uFFFD\\x000ch\uFFFD\\x0016</p>",
+					"otherinfo": "<p>:\\x0005.B|\uFFFDC\\x0008\uFFFD\uFFFDN\uC0DAm\u074A9\uFFFDi\\x0000\\x0000\\x0000\\x0000AB\\x000f\\x0000\\x0000\\x0000\\x0000\\x0000\\x0008\uFFFDm\\x001cA\uFFFDG\uFFFDZ\uFFFD\\x0016\uFFFD\\x0013n\uFFFDB</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "319",
 					"wascid": "13",
+					"sourceid": "63"
+				},
+				{
+					"pluginid": "10027",
+					"alertRef": "10027",
+					"alert": "Information Disclosure - Suspicious Comments",
+					"name": "Information Disclosure - Suspicious Comments",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The response appears to contain suspicious comments which may help an attacker.</p>",
+					"instances":[ 
+						{
+							"id": "243",
+							"uri": "https://sas.sante.fr/modules/custom/sante_vuejs/vue-core/dist/js/chunk-vendors.js?tboy1u",
+							"nodeName": "https:\/\/sas.sante.fr\/modules\/custom\/sante_vuejs\/vue-core\/dist\/js\/chunk-vendors.js (tboy1u)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": " OTHERWISE, ARISING FROM,\n * OUT OF OR IN CO",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected 2 times, the first in likely comment: \"/**!\n * @fileOverview Kickass library to create and place poppers near their reference elements.\n * @version 1.15.0\n * @license\n\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "190",
+							"uri": "https://sas.sante.fr/sites/default/files/js/js_3B8FCHIYCi7WjcNsasGmmP4lKobJKi_nvKpa8o7vN2w.js?delta=5&include=eJxtjkEOwjAMBD9E6ydFbuIEt06MXAPi95SkQhw47WrWIzlulNjVAsaollgbfNucTZtTS5cdjwycDSuFqA9OIIRZyM_JDePGrUBxLCd73GndYUhTR9MNC401GxTRBWXa_SWHeeAd6C5kjK0fTs4u1HlWdbJe_1hXwjTWEOsNPqlGK9cuB1eVBQ1-eufjv6vW868nLVmtwplzYhQtb86ncCw&language=fr&scope=footer&theme=sas",
+							"nodeName": "https:\/\/sas.sante.fr\/sites\/default\/files\/js\/js_3B8FCHIYCi7WjcNsasGmmP4lKobJKi_nvKpa8o7vN2w.js (delta,include,language,scope,theme)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "@license GPL-2.0-or-later https://www.drupal.",
+							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected in likely comment: \"/* @license GPL-2.0-or-later https://www.drupal.org/licensing/faq */\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "223",
+							"uri": "https://sas.sante.fr/sites/default/files/js/js_6-5dgzQG8dYl1WPQwbMh0JRM5BLg4Nmz7RUTOI0kTxA.js?delta=7&include=eJxljmsSgzAIhC9k5EgOJiRFMTgk2unt66u2M_21O9_Cgh8pcFXr0Hu1wJrhdm00zZVyaApu2nE0nKjzunIAIYxC9YqqqvRocOmHGvqRc4JUMV1sXWgocFa5A7kZE51pNPAqgnP5giTao7hSX7JV3fhBGGg_VIAWIWPMR5GrXIUO_rdZOj_NsKsaDTwdY_fvP755Uh_VJri0DYyi6Q2C6HVi&language=fr&scope=footer&theme=sas",
+							"nodeName": "https:\/\/sas.sante.fr\/sites\/default\/files\/js\/js_6-5dgzQG8dYl1WPQwbMh0JRM5BLg4Nmz7RUTOI0kTxA.js (delta,include,language,scope,theme)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "@license GPL-2.0-or-later https://www.drupal.",
+							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected 2 times, the first in likely comment: \"/* @license GPL-2.0-or-later https://www.drupal.org/licensing/faq */\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "212",
+							"uri": "https://sas.sante.fr/sites/default/files/js/js_9xL1EkC-fLD47she_JtLzE5FQHQRHHKKyIsPEFu3XN8.js?delta=9&include=eJxtjkEOwjAMBD9E6ydFbuIEt06MXAPi95SkQhw47WrWIzlulNjVAsaollgbfNucTZtTS5cdjwycDSuFqA9OIIRZyM_JDePGrUBxLCd73GndYUhTR9MNC401GxTRBWXa_SWHeeAd6C5kjK0fTs4u1HlWdbJe_1hXwjTWEOsNPqlGK9cuB1eVBQ1-eufjv6vW868nLVmtwplzYhQtb86ncCw&language=fr&scope=footer&theme=sas",
+							"nodeName": "https:\/\/sas.sante.fr\/sites\/default\/files\/js\/js_9xL1EkC-fLD47she_JtLzE5FQHQRHHKKyIsPEFu3XN8.js (delta,include,language,scope,theme)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "@license GPL-2.0-or-later https://www.drupal.",
+							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected 2 times, the first in likely comment: \"/* @license GPL-2.0-or-later https://www.drupal.org/licensing/faq */\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "226",
+							"uri": "https://sas.sante.fr/sites/default/files/js/js_iWgOeg7-M6TD6WMjT6rzaNZKMQ4KvxAtB64NAlGtRRQ.js?delta=2&include=eJxljmsSgzAIhC9k5EgOJiRFMTgk2unt66u2M_21O9_Cgh8pcFXr0Hu1wJrhdm00zZVyaApu2nE0nKjzunIAIYxC9YqqqvRocOmHGvqRc4JUMV1sXWgocFa5A7kZE51pNPAqgnP5giTao7hSX7JV3fhBGGg_VIAWIWPMR5GrXIUO_rdZOj_NsKsaDTwdY_fvP755Uh_VJri0DYyi6Q2C6HVi&language=fr&scope=footer&theme=sas",
+							"nodeName": "https:\/\/sas.sante.fr\/sites\/default\/files\/js\/js_iWgOeg7-M6TD6WMjT6rzaNZKMQ4KvxAtB64NAlGtRRQ.js (delta,include,language,scope,theme)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "@license GPL-2.0-or-later https://www.drupal.",
+							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected in likely comment: \"/* @license GPL-2.0-or-later https://www.drupal.org/licensing/faq */\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "221",
+							"uri": "https://sas.sante.fr/sites/default/files/js/js_lXAhnBNsIvzpaiK5WRjFvj8iWmXmbCdjxICp5IIIbpc.js?delta=2&include=eJxtjkEOwjAMBD9E6ydFbuIEt06MXAPi95SkQhw47WrWIzlulNjVAsaollgbfNucTZtTS5cdjwycDSuFqA9OIIRZyM_JDePGrUBxLCd73GndYUhTR9MNC401GxTRBWXa_SWHeeAd6C5kjK0fTs4u1HlWdbJe_1hXwjTWEOsNPqlGK9cuB1eVBQ1-eufjv6vW868nLVmtwplzYhQtb86ncCw&language=fr&scope=footer&theme=sas",
+							"nodeName": "https:\/\/sas.sante.fr\/sites\/default\/files\/js\/js_lXAhnBNsIvzpaiK5WRjFvj8iWmXmbCdjxICp5IIIbpc.js (delta,include,language,scope,theme)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "@license GPL-2.0-or-later https://www.drupal.",
+							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected in likely comment: \"/* @license GPL-2.0-or-later https://www.drupal.org/licensing/faq */\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "211",
+							"uri": "https://sas.sante.fr/sites/default/files/js/js_nUw3-b61P6YNRHFYsxCJqJuJxvax_Jjk2c27Fyj4D-0.js?delta=0&include=eJxtjkEOwjAMBD9E6ydFbuIEt06MXAPi95SkQhw47WrWIzlulNjVAsaollgbfNucTZtTS5cdjwycDSuFqA9OIIRZyM_JDePGrUBxLCd73GndYUhTR9MNC401GxTRBWXa_SWHeeAd6C5kjK0fTs4u1HlWdbJe_1hXwjTWEOsNPqlGK9cuB1eVBQ1-eufjv6vW868nLVmtwplzYhQtb86ncCw&language=fr&scope=footer&theme=sas",
+							"nodeName": "https:\/\/sas.sante.fr\/sites\/default\/files\/js\/js_nUw3-b61P6YNRHFYsxCJqJuJxvax_Jjk2c27Fyj4D-0.js (delta,include,language,scope,theme)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "@license GPL-2.0-or-later https://git.drupalc",
+							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected 3 times, the first in likely comment: \"/* @license GPL-2.0-or-later https://git.drupalcode.org/project/once/-/raw/v1.0.1/LICENSE.md */\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "199",
+							"uri": "https://sas.sante.fr/sites/default/files/js/js_w5dM4RSUnne0cC4iZIW1ym6QMM0TuLn6NcX0hWf8x7s.js?delta=7&include=eJxtjkEOwjAMBD9E6ydFbuIEt06MXAPi95SkQhw47WrWIzlulNjVAsaollgbfNucTZtTS5cdjwycDSuFqA9OIIRZyM_JDePGrUBxLCd73GndYUhTR9MNC401GxTRBWXa_SWHeeAd6C5kjK0fTs4u1HlWdbJe_1hXwjTWEOsNPqlGK9cuB1eVBQ1-eufjv6vW868nLVmtwplzYhQtb86ncCw&language=fr&scope=footer&theme=sas",
+							"nodeName": "https:\/\/sas.sante.fr\/sites\/default\/files\/js\/js_w5dM4RSUnne0cC4iZIW1ym6QMM0TuLn6NcX0hWf8x7s.js (delta,include,language,scope,theme)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "@license GPL-2.0-or-later https://www.drupal.",
+							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected in likely comment: \"/* @license GPL-2.0-or-later https://www.drupal.org/licensing/faq */\", see evidence field for the suspicious comment/snippet."
+						}
+					],
+					"count": "8",
+					"systemic": false,
+					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bFROM\\b and was detected 2 times, the first in likely comment: \"/**!</p><p> * @fileOverview Kickass library to create and place poppers near their reference elements.</p><p> * @version 1.15.0</p><p> * @license</p><p>\", see evidence field for the suspicious comment/snippet.</p>",
+					"reference": "",
+					"cweid": "615",
+					"wascid": "13",
+					"sourceid": "389"
+				},
+				{
+					"pluginid": "90033",
+					"alertRef": "90033",
+					"alert": "Loosely Scoped Cookie",
+					"name": "Loosely Scoped Cookie",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>Cookies can be scoped by domain or path. This check is only concerned with domain scope.The domain scope applied to a cookie determines which domains can access it. For example, a cookie can be scoped strictly to a subdomain e.g. www.nottrusted.com, or loosely scoped to a parent domain e.g. nottrusted.com. In the latter case, any subdomain of nottrusted.com can access the cookie. Loosely scoped cookies are common in mega-applications like google.com and live.com. Cookies set from a subdomain like app.foo.bar are transmitted only to that domain by the browser. However, cookies scoped to a parent-level domain may be transmitted to the parent, or any subdomain of the parent.</p>",
+					"instances":[ 
+						{
+							"id": "9",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "The origin domain used for comparison was:\nsas.sante.fr\nvisid_incap_3307491=UbUYB8HHRCOZA8gKF1apnIo5tmkAAAAAQUIPAAAAAAD+UEe9Hv7jStl/PZGxOEOY\nincap_ses_1840_3307491=b4dGCZrP405wPwHS5f6IGYo5tmkAAAAAN3mR/nmMToU44kEZ5o81Yg==\n"
+						},
+						{
+							"id": "38",
+							"uri": "https://sas.sante.fr/robots.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "The origin domain used for comparison was:\nsas.sante.fr\nvisid_incap_3307491=NOoEKRDeTCGPL5Rt+c8GBYo5tmkAAAAAQUIPAAAAAAAb6BDFSimQbFHpIX+83oho\nincap_ses_1840_3307491=57dmEvHhznhZQAHS5f6IGYo5tmkAAAAAeB3muvgOMrou8Vjj4PwG+w==\n"
+						},
+						{
+							"id": "60",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "The origin domain used for comparison was:\nsas.sante.fr\nvisid_incap_3307491=1MEvm1AiRgmhIE8RvhhQd4o5tmkAAAAAQUIPAAAAAAD5pSVmz3DkV97i/WkMsJVA\nincap_ses_1840_3307491=cNZnXj/kzj4kQQHS5f6IGYo5tmkAAAAAPvlBmN5jrOCzaM4I/t1pIQ==\n"
+						}
+					],
+					"count": "3",
+					"systemic": true,
+					"solution": "<p>Always scope cookies to a FQDN (Fully Qualified Domain Name).</p>",
+					"otherinfo": "<p>The origin domain used for comparison was:</p><p>sas.sante.fr</p><p>visid_incap_3307491=UbUYB8HHRCOZA8gKF1apnIo5tmkAAAAAQUIPAAAAAAD+UEe9Hv7jStl/PZGxOEOY</p><p>incap_ses_1840_3307491=b4dGCZrP405wPwHS5f6IGYo5tmkAAAAAN3mR/nmMToU44kEZ5o81Yg==</p><p></p>",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc6265#section-4.1</p><p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p><p>https://code.google.com/archive/p/browsersec/wikis/Part2.wiki</p>",
+					"cweid": "565",
+					"wascid": "15",
 					"sourceid": "1"
 				},
 				{
@@ -439,44 +1633,64 @@
 					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
 					"instances":[ 
 						{
-							"id": "10",
+							"id": "15",
 							"uri": "https://sas.sante.fr",
 							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<noscript><div class=\"challengejs-container\"><div class=\"container\"><div class=\"challengejs-body\"><div class=\"challengejs-card\"><img src=\"/.well-known/baleen/challengejs/assets/logo.svg\"><div class=\"challengejs-message-1\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur.</div><div class=\"separator\"></div><div class=\"challengejs-message-2\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur. Pour vous permettre de naviguer correctement sur notre site, il est n\u00E9cessaire qu'il soit activ\u00E9.</div><div class=\"challengejs-message-3\"><div class=\"how\"><span>Comment activer le JavaScript ?</span></div><div class=\"drop\"><div class=\"how-to chrome\"><div>Chrome</div><a href=\"https://support.google.com/chrome\">https://support.google.com/chrome</a></div><div class=\"how-to firefox\"><div>Mozilla Firefox</div><a href=\"https://support.mozilla.org/fr/home\">https://support.mozilla.org/fr/home</a></div><div class=\"how-to safari\"><div>Safari</div><a href=\"https://www.apple.com/support/safari/\">https://www.apple.com/support/safari/</a></div><div class=\"how-to opera\"><div>Opera</div><a href=\"https://support.google.com/adsense/answer/12654?hl=fr\">https://support.google.com/adsense/answer/12654?hl=fr</a></div><div class=\"how-to explorer\"><div>Internet Explorer</div><a href=\"https://support.microsoft.com/product/internet-explorer\">https://support.microsoft.com/product/internet-explorer</a></div></div></div></div></div></div></div></noscript>",
-							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
+							"evidence": "<a id=\"main-content\" tabindex=\"-1\"></a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "8",
-							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"id": "51",
+							"uri": "https://sas.sante.fr/core/*.css",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<noscript><div class=\"challengejs-container\"><div class=\"container\"><div class=\"challengejs-body\"><div class=\"challengejs-card\"><img src=\"/.well-known/baleen/challengejs/assets/logo.svg\"><div class=\"challengejs-message-1\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur.</div><div class=\"separator\"></div><div class=\"challengejs-message-2\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur. Pour vous permettre de naviguer correctement sur notre site, il est n\u00E9cessaire qu'il soit activ\u00E9.</div><div class=\"challengejs-message-3\"><div class=\"how\"><span>Comment activer le JavaScript ?</span></div><div class=\"drop\"><div class=\"how-to chrome\"><div>Chrome</div><a href=\"https://support.google.com/chrome\">https://support.google.com/chrome</a></div><div class=\"how-to firefox\"><div>Mozilla Firefox</div><a href=\"https://support.mozilla.org/fr/home\">https://support.mozilla.org/fr/home</a></div><div class=\"how-to safari\"><div>Safari</div><a href=\"https://www.apple.com/support/safari/\">https://www.apple.com/support/safari/</a></div><div class=\"how-to opera\"><div>Opera</div><a href=\"https://support.google.com/adsense/answer/12654?hl=fr\">https://support.google.com/adsense/answer/12654?hl=fr</a></div><div class=\"how-to explorer\"><div>Internet Explorer</div><a href=\"https://support.microsoft.com/product/internet-explorer\">https://support.microsoft.com/product/internet-explorer</a></div></div></div></div></div></div></div></noscript>",
-							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
+							"evidence": "<script type=\"text/javascript\" src=\"/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=3&cb=701299985\" async></script>",
+							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "9",
-							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"id": "89",
+							"uri": "https://sas.sante.fr/core/*.gif",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.gif",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<noscript><div class=\"challengejs-container\"><div class=\"container\"><div class=\"challengejs-body\"><div class=\"challengejs-card\"><img src=\"/.well-known/baleen/challengejs/assets/logo.svg\"><div class=\"challengejs-message-1\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur.</div><div class=\"separator\"></div><div class=\"challengejs-message-2\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur. Pour vous permettre de naviguer correctement sur notre site, il est n\u00E9cessaire qu'il soit activ\u00E9.</div><div class=\"challengejs-message-3\"><div class=\"how\"><span>Comment activer le JavaScript ?</span></div><div class=\"drop\"><div class=\"how-to chrome\"><div>Chrome</div><a href=\"https://support.google.com/chrome\">https://support.google.com/chrome</a></div><div class=\"how-to firefox\"><div>Mozilla Firefox</div><a href=\"https://support.mozilla.org/fr/home\">https://support.mozilla.org/fr/home</a></div><div class=\"how-to safari\"><div>Safari</div><a href=\"https://www.apple.com/support/safari/\">https://www.apple.com/support/safari/</a></div><div class=\"how-to opera\"><div>Opera</div><a href=\"https://support.google.com/adsense/answer/12654?hl=fr\">https://support.google.com/adsense/answer/12654?hl=fr</a></div><div class=\"how-to explorer\"><div>Internet Explorer</div><a href=\"https://support.microsoft.com/product/internet-explorer\">https://support.microsoft.com/product/internet-explorer</a></div></div></div></div></div></div></div></noscript>",
-							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
+							"evidence": "<script type=\"text/javascript\" src=\"/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=5&cb=1063656594\" async></script>",
+							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
+						},
+						{
+							"id": "82",
+							"uri": "https://sas.sante.fr/core/*.jpeg",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.jpeg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script type=\"text/javascript\" src=\"/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=2&cb=234094217\" async></script>",
+							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
+						},
+						{
+							"id": "93",
+							"uri": "https://sas.sante.fr/core/*.png",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.png",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script type=\"text/javascript\" src=\"/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=3&cb=1113822341\" async></script>",
+							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						}
 					],
-					"count": "3",
+					"count": "5",
 					"systemic": true,
 					"solution": "<p>This is an informational alert and so no changes are required.</p>",
-					"otherinfo": "<p>A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not.</p>",
+					"otherinfo": "<p>Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</p>",
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10015",
@@ -489,43 +1703,153 @@
 					"desc": "<p>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</p>",
 					"instances":[ 
 						{
-							"id": "6",
+							"id": "1",
 							"uri": "https://sas.sante.fr",
 							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
-							"evidence": "no-cache",
+							"evidence": "public, max-age=3600",
 							"otherinfo": ""
 						},
 						{
-							"id": "4",
+							"id": "181",
+							"uri": "https://sas.sante.fr/formation",
+							"nodeName": "https:\/\/sas.sante.fr\/formation",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "must-revalidate, no-cache, private",
+							"otherinfo": ""
+						},
+						{
+							"id": "33",
 							"uri": "https://sas.sante.fr/robots.txt",
 							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
-							"evidence": "no-cache",
+							"evidence": "public, max-age=315360000",
 							"otherinfo": ""
 						},
 						{
-							"id": "1",
-							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"id": "177",
+							"uri": "https://sas.sante.fr/sas/faq",
+							"nodeName": "https:\/\/sas.sante.fr\/sas\/faq",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
-							"evidence": "no-cache",
+							"evidence": "must-revalidate, no-cache, private",
+							"otherinfo": ""
+						},
+						{
+							"id": "185",
+							"uri": "https://sas.sante.fr/sas/faq/contact",
+							"nodeName": "https:\/\/sas.sante.fr\/sas\/faq\/contact",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "must-revalidate, no-cache, private",
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "5",
 					"systemic": true,
 					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10050",
+					"alertRef": "10050-1",
+					"alert": "Retrieved from Cache",
+					"name": "Retrieved from Cache",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The content was retrieved from a shared cache. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
+					"instances":[ 
+						{
+							"id": "16",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "HIT",
+							"otherinfo": ""
+						},
+						{
+							"id": "56",
+							"uri": "https://sas.sante.fr/robots.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "HIT",
+							"otherinfo": ""
+						},
+						{
+							"id": "52",
+							"uri": "https://sas.sante.fr/core/*.css",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"id": "90",
+							"uri": "https://sas.sante.fr/core/*.gif",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.gif",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"id": "84",
+							"uri": "https://sas.sante.fr/core/*.jpeg",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.jpeg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"id": "94",
+							"uri": "https://sas.sante.fr/core/*.png",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.png",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"id": "78",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
+						}
+					],
+					"count": "7",
+					"systemic": true,
+					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.rfc-editor.org/rfc/rfc9110.html</p>",
+					"cweid": "525",
+					"wascid": "-1",
 					"sourceid": "1"
 				},
 				{
@@ -539,7 +1863,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"id": "50",
+							"id": "27",
 							"uri": "https://sas.sante.fr",
 							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
@@ -549,9 +1873,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "32",
-							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"id": "62",
+							"uri": "https://sas.sante.fr/core/*.css",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -559,9 +1883,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "34",
-							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"id": "73",
+							"uri": "https://sas.sante.fr/robots.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -589,7 +1913,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"id": "49",
+							"id": "26",
 							"uri": "https://sas.sante.fr",
 							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
@@ -599,9 +1923,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "30",
-							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"id": "59",
+							"uri": "https://sas.sante.fr/core/*.css",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -609,9 +1933,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "31",
-							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"id": "72",
+							"uri": "https://sas.sante.fr/robots.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -639,7 +1963,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"id": "48",
+							"id": "25",
 							"uri": "https://sas.sante.fr",
 							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
@@ -649,9 +1973,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "29",
-							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"id": "58",
+							"uri": "https://sas.sante.fr/core/*.css",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -659,9 +1983,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "28",
-							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"id": "71",
+							"uri": "https://sas.sante.fr/robots.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -689,7 +2013,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"id": "52",
+							"id": "28",
 							"uri": "https://sas.sante.fr",
 							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
@@ -699,9 +2023,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "33",
-							"uri": "https://sas.sante.fr/robots.txt",
-							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"id": "64",
+							"uri": "https://sas.sante.fr/core/*.css",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -709,9 +2033,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "35",
-							"uri": "https://sas.sante.fr/sitemap.xml",
-							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"id": "75",
+							"uri": "https://sas.sante.fr/robots.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -729,6 +2053,66 @@
 					"sourceid": "1"
 				},
 				{
+					"pluginid": "10112",
+					"alertRef": "10112",
+					"alert": "Session Management Response Identified",
+					"name": "Session Management Response Identified",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to \"Auto-Detect\" then this rule will change the session management to use the tokens identified.</p>",
+					"instances":[ 
+						{
+							"id": "0",
+							"uri": "https://sas.sante.fr",
+							"nodeName": "https:\/\/sas.sante.fr",
+							"method": "GET",
+							"param": "visid_incap_3307491",
+							"attack": "",
+							"evidence": "visid_incap_3307491",
+							"otherinfo": "cookie:visid_incap_3307491\ncookie:incap_ses_1840_3307491"
+						},
+						{
+							"id": "166",
+							"uri": "https://sas.sante.fr/filter/tips",
+							"nodeName": "https:\/\/sas.sante.fr\/filter\/tips",
+							"method": "GET",
+							"param": "SSESS83bf5b1173c8e747c60c2667c5bffd26",
+							"attack": "",
+							"evidence": "SSESS83bf5b1173c8e747c60c2667c5bffd26",
+							"otherinfo": "cookie:SSESS83bf5b1173c8e747c60c2667c5bffd26"
+						},
+						{
+							"id": "29",
+							"uri": "https://sas.sante.fr/robots.txt",
+							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
+							"method": "GET",
+							"param": "visid_incap_3307491",
+							"attack": "",
+							"evidence": "visid_incap_3307491",
+							"otherinfo": "cookie:visid_incap_3307491\ncookie:incap_ses_1840_3307491"
+						},
+						{
+							"id": "30",
+							"uri": "https://sas.sante.fr/sitemap.xml",
+							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "visid_incap_3307491",
+							"attack": "",
+							"evidence": "visid_incap_3307491",
+							"otherinfo": "cookie:visid_incap_3307491\ncookie:incap_ses_1840_3307491"
+						}
+					],
+					"count": "4",
+					"systemic": false,
+					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
+					"otherinfo": "<p>cookie:visid_incap_3307491</p><p>cookie:incap_ses_1840_3307491</p>",
+					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id/</p>",
+					"cweid": "-1",
+					"wascid": "-1",
+					"sourceid": "1"
+				},
+				{
 					"pluginid": "10049",
 					"alertRef": "10049-3",
 					"alert": "Storable and Cacheable Content",
@@ -739,84 +2123,104 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
 					"instances":[ 
 						{
-							"id": "57",
-							"uri": "https://sas.sante.fr/.well-known/baleen/challengejs/assets/logo.svg",
-							"nodeName": "https:\/\/sas.sante.fr\/.well-known\/baleen\/challengejs\/assets\/logo.svg",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
-							"id": "56",
-							"uri": "https://sas.sante.fr/.well-known/baleen/challengejs/assets/style.css",
-							"nodeName": "https:\/\/sas.sante.fr\/.well-known\/baleen\/challengejs\/assets\/style.css",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						}
-					],
-					"count": "2",
-					"systemic": true,
-					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
-					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
-					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
-					"cweid": "524",
-					"wascid": "13",
-					"sourceid": "16"
-				},
-				{
-					"pluginid": "10049",
-					"alertRef": "10049-2",
-					"alert": "Storable but Non-Cacheable Content",
-					"name": "Storable but Non-Cacheable Content",
-					"riskcode": "0",
-					"confidence": "2",
-					"riskdesc": "Informational (Medium)",
-					"desc": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
-					"instances":[ 
-						{
-							"id": "36",
+							"id": "19",
 							"uri": "https://sas.sante.fr",
 							"nodeName": "https:\/\/sas.sante.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "no-cache",
+							"evidence": "max-age=3600",
 							"otherinfo": ""
 						},
 						{
-							"id": "16",
+							"id": "55",
+							"uri": "https://sas.sante.fr/core/*.css",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=3600",
+							"otherinfo": ""
+						},
+						{
+							"id": "87",
+							"uri": "https://sas.sante.fr/core/*.jpeg",
+							"nodeName": "https:\/\/sas.sante.fr\/core\/*.jpeg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=3600",
+							"otherinfo": ""
+						},
+						{
+							"id": "61",
 							"uri": "https://sas.sante.fr/robots.txt",
 							"nodeName": "https:\/\/sas.sante.fr\/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "no-cache",
+							"evidence": "max-age=315360000",
 							"otherinfo": ""
 						},
 						{
-							"id": "17",
+							"id": "83",
 							"uri": "https://sas.sante.fr/sitemap.xml",
 							"nodeName": "https:\/\/sas.sante.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "no-cache",
+							"evidence": "max-age=315360000",
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "5",
 					"systemic": true,
-					"solution": "",
+					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
 					"sourceid": "1"
+				},
+				{
+					"pluginid": "10031",
+					"alertRef": "10031",
+					"alert": "User Controllable HTML Element Attribute (Potential XSS)",
+					"name": "User Controllable HTML Element Attribute (Potential XSS)",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
+					"instances":[ 
+						{
+							"id": "237",
+							"uri": "https://sas.sante.fr/en-cas-durgence-conseils-et-numeros-utiles",
+							"nodeName": "https:\/\/sas.sante.fr\/en-cas-durgence-conseils-et-numeros-utiles ()(filtresDyn,form_build_id,form_id)",
+							"method": "POST",
+							"param": "filtresDyn",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://sas.sante.fr/en-cas-durgence-conseils-et-numeros-utiles\n\nappears to include user input in:\na(n) [option] tag [value] attribute\n\nThe user input found was:\nfiltresDyn=itm_field_add_offre_label_type_id:223557\n\nThe user-controlled value was:\nitm_field_add_offre_label_type_id:223557"
+						},
+						{
+							"id": "238",
+							"uri": "https://sas.sante.fr/en-cas-durgence-conseils-et-numeros-utiles",
+							"nodeName": "https:\/\/sas.sante.fr\/en-cas-durgence-conseils-et-numeros-utiles ()(filtresDyn,form_build_id,form_id)",
+							"method": "POST",
+							"param": "form_id",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://sas.sante.fr/en-cas-durgence-conseils-et-numeros-utiles\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nform_id=sante_iframe_dynamic_filter_form\n\nThe user-controlled value was:\nsante_iframe_dynamic_filter_form"
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
+					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://sas.sante.fr/en-cas-durgence-conseils-et-numeros-utiles</p><p></p><p>appears to include user input in:</p><p>a(n) [option] tag [value] attribute</p><p></p><p>The user input found was:</p><p>filtresDyn=itm_field_add_offre_label_type_id:223557</p><p></p><p>The user-controlled value was:</p><p>itm_field_add_offre_label_type_id:223557</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
+					"cweid": "20",
+					"wascid": "20",
+					"sourceid": "490"
 				}
 			]
 		}
