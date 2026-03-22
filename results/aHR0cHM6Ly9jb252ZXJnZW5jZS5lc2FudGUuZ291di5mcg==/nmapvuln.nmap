@@ -1,11 +1,12 @@
-# Nmap 7.92 scan initiated Sun Mar 15 02:31:08 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln convergence.esante.gouv.fr
+# Nmap 7.92 scan initiated Sun Mar 22 02:16:29 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln convergence.esante.gouv.fr
 Nmap scan report for convergence.esante.gouv.fr (80.78.2.184)
-Host is up (0.11s latency).
-Not shown: 987 filtered tcp ports (no-response)
-PORT      STATE  SERVICE       VERSION
-113/tcp   closed ident
-146/tcp   closed iso-tp0
-443/tcp   open   ssl/http      Apache httpd 2.4.62 ((Red Hat Enterprise Linux) OpenSSL/3.5.1)
+Host is up (0.100s latency).
+Not shown: 936 filtered tcp ports (no-response), 63 closed tcp ports (reset)
+PORT    STATE SERVICE  VERSION
+443/tcp open  ssl/http Apache httpd 2.4.62 ((Red Hat Enterprise Linux) OpenSSL/3.5.1)
+| http-server-header: 
+|   Apache/2.4.62 (Red Hat Enterprise Linux) OpenSSL/3.5.1
+|_  gunicorn
 | vulners: 
 |   cpe:/a:apache:http_server:2.4.62: 
 |     	PACKETSTORM:213257	9.1	https://vulners.com/packetstorm/PACKETSTORM:213257	*EXPLOIT*
@@ -34,19 +35,6 @@ PORT      STATE  SERVICE       VERSION
 |     	CNVD-2025-30833	6.5	https://vulners.com/cnvd/CNVD-2025-30833
 |     	CVE-2025-66200	5.4	https://vulners.com/cve/CVE-2025-66200
 |_    	CNVD-2025-30835	5.4	https://vulners.com/cnvd/CNVD-2025-30835
-| http-server-header: 
-|   Apache/2.4.62 (Red Hat Enterprise Linux) OpenSSL/3.5.1
-|_  gunicorn
-444/tcp   closed snpp
-543/tcp   closed klogin
-1061/tcp  closed kiosk
-1084/tcp  closed ansoft-lm-2
-1839/tcp  closed netopia-vo1
-6009/tcp  closed X11:9
-7911/tcp  closed unknown
-8100/tcp  closed xprint-server
-16012/tcp closed unknown
-20222/tcp closed ipulse-ics
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun Mar 15 02:38:59 2026 -- 1 IP address (1 host up) scanned in 470.88 seconds
+# Nmap done at Sun Mar 22 02:17:16 2026 -- 1 IP address (1 host up) scanned in 47.68 seconds
