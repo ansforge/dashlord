@@ -1,6 +1,6 @@
-# Nmap 7.92 scan initiated Sun Mar 22 04:22:17 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln sante.fr
+# Nmap 7.92 scan initiated Sun Mar 29 04:44:52 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln sante.fr
 Nmap scan report for sante.fr (51.68.85.251)
-Host is up (0.090s latency).
+Host is up (0.15s latency).
 Not shown: 995 filtered tcp ports (no-response)
 PORT     STATE  SERVICE   VERSION
 80/tcp   open   http
@@ -26,9 +26,9 @@ PORT     STATE  SERVICE   VERSION
 |_    connection: close
 443/tcp  open   ssl/https
 | fingerprint-strings: 
-|   FourOhFourRequest, HTTPOptions: 
+|   FourOhFourRequest: 
 |     HTTP/1.1 400 Bad Request
-|     date: Sun, 22 Mar 2026 04:22:38 GMT
+|     date: Sun, 29 Mar 2026 04:45:17 GMT
 |     content-type: text/html
 |     content-length: 150
 |     age: 0
@@ -48,7 +48,27 @@ PORT     STATE  SERVICE   VERSION
 |     </html>
 |   GetRequest: 
 |     HTTP/1.1 400 Bad Request
-|     date: Sun, 22 Mar 2026 04:22:37 GMT
+|     date: Sun, 29 Mar 2026 04:45:15 GMT
+|     content-type: text/html
+|     content-length: 150
+|     age: 0
+|     x-cache: MISS
+|     x-cache-hits: 0
+|     cache-tag: 
+|     vary: 
+|     x-xss-protection: 1; mode=block
+|     x-content-type-options: nosniff
+|     connection: close
+|     <html>
+|     <head><title>400 Bad Request</title></head>
+|     <body>
+|     <center><h1>400 Bad Request</h1></center>
+|     <hr><center>nginx</center>
+|     </body>
+|     </html>
+|   HTTPOptions: 
+|     HTTP/1.1 400 Bad Request
+|     date: Sun, 29 Mar 2026 04:45:16 GMT
 |     content-type: text/html
 |     content-length: 150
 |     age: 0
@@ -85,7 +105,7 @@ PORT     STATE  SERVICE   VERSION
 1029/tcp closed ms-lsa
 2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port80-TCP:V=7.92%I=7%D=3/22%Time=69BF6E87%P=x86_64-alpine-linux-musl%r
+SF-Port80-TCP:V=7.92%I=7%D=3/29%Time=69C8AE55%P=x86_64-alpine-linux-musl%r
 SF:(GetRequest,5D,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\ncontent-len
 SF:gth:\x200\r\nlocation:\x20https:///\r\nconnection:\x20close\r\n\r\n")%r
 SF:(HTTPOptions,5D,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\ncontent-le
@@ -118,24 +138,24 @@ SF:nCache-Control:\x20no-cache\r\nConnection:\x20close\r\nContent-Type:\x2
 SF:0text/html\r\n\r\n<html><body><h1>400\x20Bad\x20request</h1>\nYour\x20b
 SF:rowser\x20sent\x20an\x20invalid\x20request\.\n</body></html>\n");
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port443-TCP:V=7.92%T=SSL%I=7%D=3/22%Time=69BF6E8E%P=x86_64-alpine-linux
+SF-Port443-TCP:V=7.92%T=SSL%I=7%D=3/29%Time=69C8AE5B%P=x86_64-alpine-linux
 SF:-musl%r(GetRequest,197,"HTTP/1\.1\x20400\x20Bad\x20Request\r\ndate:\x20
-SF:Sun,\x2022\x20Mar\x202026\x2004:22:37\x20GMT\r\ncontent-type:\x20text/h
+SF:Sun,\x2029\x20Mar\x202026\x2004:45:15\x20GMT\r\ncontent-type:\x20text/h
 SF:tml\r\ncontent-length:\x20150\r\nage:\x200\r\nx-cache:\x20MISS\r\nx-cac
 SF:he-hits:\x200\r\ncache-tag:\x20\r\nvary:\x20\r\nx-xss-protection:\x201;
 SF:\x20mode=block\r\nx-content-type-options:\x20nosniff\r\nconnection:\x20
 SF:close\r\n\r\n<html>\r\n<head><title>400\x20Bad\x20Request</title></head
 SF:>\r\n<body>\r\n<center><h1>400\x20Bad\x20Request</h1></center>\r\n<hr><
 SF:center>nginx</center>\r\n</body>\r\n</html>\r\n")%r(HTTPOptions,197,"HT
-SF:TP/1\.1\x20400\x20Bad\x20Request\r\ndate:\x20Sun,\x2022\x20Mar\x202026\
-SF:x2004:22:38\x20GMT\r\ncontent-type:\x20text/html\r\ncontent-length:\x20
+SF:TP/1\.1\x20400\x20Bad\x20Request\r\ndate:\x20Sun,\x2029\x20Mar\x202026\
+SF:x2004:45:16\x20GMT\r\ncontent-type:\x20text/html\r\ncontent-length:\x20
 SF:150\r\nage:\x200\r\nx-cache:\x20MISS\r\nx-cache-hits:\x200\r\ncache-tag
 SF::\x20\r\nvary:\x20\r\nx-xss-protection:\x201;\x20mode=block\r\nx-conten
 SF:t-type-options:\x20nosniff\r\nconnection:\x20close\r\n\r\n<html>\r\n<he
 SF:ad><title>400\x20Bad\x20Request</title></head>\r\n<body>\r\n<center><h1
 SF:>400\x20Bad\x20Request</h1></center>\r\n<hr><center>nginx</center>\r\n<
 SF:/body>\r\n</html>\r\n")%r(FourOhFourRequest,197,"HTTP/1\.1\x20400\x20Ba
-SF:d\x20Request\r\ndate:\x20Sun,\x2022\x20Mar\x202026\x2004:22:38\x20GMT\r
+SF:d\x20Request\r\ndate:\x20Sun,\x2029\x20Mar\x202026\x2004:45:17\x20GMT\r
 SF:\ncontent-type:\x20text/html\r\ncontent-length:\x20150\r\nage:\x200\r\n
 SF:x-cache:\x20MISS\r\nx-cache-hits:\x200\r\ncache-tag:\x20\r\nvary:\x20\r
 SF:\nx-xss-protection:\x201;\x20mode=block\r\nx-content-type-options:\x20n
@@ -151,4 +171,4 @@ SF:rotection:\x201;\x20mode=block\r\nx-content-type-options:\x20nosniff\r\
 SF:nconnection:\x20close\r\n\r\n");
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun Mar 22 04:22:54 2026 -- 1 IP address (1 host up) scanned in 36.84 seconds
+# Nmap done at Sun Mar 29 04:45:39 2026 -- 1 IP address (1 host up) scanned in 47.25 seconds
