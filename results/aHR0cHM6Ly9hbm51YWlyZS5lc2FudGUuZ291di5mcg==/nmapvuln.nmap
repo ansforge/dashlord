@@ -1,10 +1,9 @@
-# Nmap 7.92 scan initiated Sun Mar 29 02:31:55 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln annuaire.esante.gouv.fr
+# Nmap 7.92 scan initiated Sun Apr  5 02:34:06 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln annuaire.esante.gouv.fr
 Nmap scan report for annuaire.esante.gouv.fr (80.78.2.219)
 Host is up (0.10s latency).
-Not shown: 998 filtered tcp ports (no-response)
-PORT    STATE  SERVICE  VERSION
-113/tcp closed ident
-443/tcp open   ssl/http Apache httpd 2.4.62 ((Red Hat Enterprise Linux) OpenSSL/3.5.1)
+Not shown: 931 filtered tcp ports (no-response), 68 closed tcp ports (reset)
+PORT    STATE SERVICE  VERSION
+443/tcp open  ssl/http Apache httpd 2.4.62 ((Red Hat Enterprise Linux) OpenSSL/3.5.1)
 | vulners: 
 |   cpe:/a:apache:http_server:2.4.62: 
 |     	PACKETSTORM:213257	9.1	https://vulners.com/packetstorm/PACKETSTORM:213257	*EXPLOIT*
@@ -33,10 +32,10 @@ PORT    STATE  SERVICE  VERSION
 |     	CNVD-2025-30833	6.5	https://vulners.com/cnvd/CNVD-2025-30833
 |     	CVE-2025-66200	5.4	https://vulners.com/cve/CVE-2025-66200
 |_    	CNVD-2025-30835	5.4	https://vulners.com/cnvd/CNVD-2025-30835
+|_http-trane-info: Problem with XML parsing of /evox/about
 | http-server-header: 
 |   Apache/2.4.62 (Red Hat Enterprise Linux) OpenSSL/3.5.1
 |_  nginx/1.29.4
-|_http-trane-info: Problem with XML parsing of /evox/about
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun Mar 29 02:41:09 2026 -- 1 IP address (1 host up) scanned in 554.28 seconds
+# Nmap done at Sun Apr  5 02:34:55 2026 -- 1 IP address (1 host up) scanned in 49.12 seconds
