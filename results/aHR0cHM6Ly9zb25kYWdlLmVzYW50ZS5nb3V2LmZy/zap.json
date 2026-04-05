@@ -1,8 +1,8 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.17.0",
-	"@generated": "Sun, 29 Mar 2026 05:08:11",
-	"created": "2026-03-29T05:08:11.313362919Z",
+	"@generated": "Sun, 5 Apr 2026 05:06:32",
+	"created": "2026-04-05T05:06:32.490381705Z",
 	"insights":[
 		{
 			"level": "Info",
@@ -98,7 +98,7 @@
 			"site": "https://sondage.esante.gouv.fr",
 			"key": "insight.response.slow",
 			"description": "Percentage of slow responses",
-			"statistic": "90"
+			"statistic": "100"
 		}
 	],
 	"site":[ 
@@ -119,7 +119,7 @@
 					"desc": "<p>No Anti-CSRF tokens were found in a HTML submission form.</p><p>A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent in order to perform an action as the victim. The underlying cause is application functionality using predictable URL/form actions in a repeatable way. The nature of the attack is that CSRF exploits the trust that a web site has for a user. By contrast, cross-site scripting (XSS) exploits the trust that a user has for a web site. Like XSS, CSRF attacks are not necessarily cross-site, but they can be. Cross-site request forgery is also known as CSRF, XSRF, one-click attack, session riding, confused deputy, and sea surf.</p><p></p><p>CSRF attacks are effective in a number of situations, including:</p><p>    * The victim has an active session on the target site.</p><p>    * The victim is authenticated via HTTP auth on the target site.</p><p>    * The victim is on the same local network as the target site.</p><p></p><p>CSRF has primarily been used to perform an action against a target site using the victim's privileges, but recent techniques have been discovered to disclose information by gaining access to the response. The risk of information disclosure is dramatically increased when the target site is vulnerable to XSS, because XSS can be used as a platform for CSRF, allowing the attack to operate within the bounds of the same-origin policy.</p>",
 					"instances":[ 
 						{
-							"id": "185",
+							"id": "169",
 							"uri": "https://sondage.esante.gouv.fr/index.php/215367",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 ()(LEMpostKey,YII_CSRF_TOKEN,fieldnames,lastgroupname,loadall,sid,thisstep)",
 							"method": "POST",
@@ -136,7 +136,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "166"
+					"sourceid": "163"
 				},
 				{
 					"pluginid": "10038",
@@ -149,7 +149,7 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "16",
+							"id": "26",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -159,9 +159,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "97",
-							"uri": "https://sondage.esante.gouv.fr/",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/",
+							"id": "107",
+							"uri": "https://sondage.esante.gouv.fr/index.php/215367?lang=fr",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 (lang)",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -169,7 +169,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "110",
+							"id": "102",
 							"uri": "https://sondage.esante.gouv.fr/index.php/781528?lang=fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/781528 (lang)",
 							"method": "GET",
@@ -179,7 +179,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "1",
+							"id": "4",
+							"uri": "https://sondage.esante.gouv.fr/robots.txt",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "5",
 							"uri": "https://sondage.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -189,7 +199,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "5",
 					"systemic": true,
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
@@ -209,7 +219,7 @@
 					"desc": "<p>The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.</p>",
 					"instances":[ 
 						{
-							"id": "4",
+							"id": "24",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -219,7 +229,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "76",
+							"id": "105",
 							"uri": "https://sondage.esante.gouv.fr/",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/",
 							"method": "GET",
@@ -229,7 +239,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "170",
+							"id": "157",
 							"uri": "https://sondage.esante.gouv.fr/?lang=en&move=changelang",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/ (lang,move)",
 							"method": "GET",
@@ -239,7 +249,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "183",
+							"id": "167",
 							"uri": "https://sondage.esante.gouv.fr/index.php/215367",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 ()(LEMpostKey,YII_CSRF_TOKEN,fieldnames,lastgroupname,loadall,sid,thisstep)",
 							"method": "POST",
@@ -256,7 +266,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options</p>",
 					"cweid": "1021",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10054",
@@ -269,7 +279,7 @@
 					"desc": "<p>A cookie has been set without the SameSite attribute, which means that the cookie can be sent as a result of a 'cross-site' request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks.</p>",
 					"instances":[ 
 						{
-							"id": "17",
+							"id": "27",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -279,7 +289,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "116",
+							"id": "109",
 							"uri": "https://sondage.esante.gouv.fr/index.php/215367?lang=fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 (lang)",
 							"method": "GET",
@@ -289,7 +299,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "111",
+							"id": "103",
 							"uri": "https://sondage.esante.gouv.fr/index.php/781528?lang=fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/781528 (lang)",
 							"method": "GET",
@@ -319,7 +329,7 @@
 					"desc": "<p>Cross-Origin-Embedder-Policy header is a response header that prevents a document from loading any cross-origin resources that don't explicitly grant the document permission (using CORP or CORS).</p>",
 					"instances":[ 
 						{
-							"id": "31",
+							"id": "12",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -329,7 +339,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "108",
+							"id": "84",
 							"uri": "https://sondage.esante.gouv.fr/",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/",
 							"method": "GET",
@@ -359,7 +369,7 @@
 					"desc": "<p>Cross-Origin-Opener-Policy header is a response header that allows a site to control if others included documents share the same browsing context. Sharing the same browsing context with untrusted documents might lead to data leak.</p>",
 					"instances":[ 
 						{
-							"id": "32",
+							"id": "13",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -369,7 +379,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "109",
+							"id": "85",
 							"uri": "https://sondage.esante.gouv.fr/",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/",
 							"method": "GET",
@@ -399,7 +409,7 @@
 					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
 					"instances":[ 
 						{
-							"id": "30",
+							"id": "11",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -409,7 +419,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "68",
+							"id": "62",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/8239f041/css/font-awesome.min.css",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/8239f041\/css\/font-awesome.min.css",
 							"method": "GET",
@@ -419,7 +429,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "57",
+							"id": "63",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/9fb91180/build/embeddables.min.css",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/9fb91180\/build\/embeddables.min.css",
 							"method": "GET",
@@ -429,9 +439,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "71",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/e2d25bf4/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/e2d25bf4\/awesome-bootstrap-checkbox\/awesome-bootstrap-checkbox.css",
+							"id": "57",
+							"uri": "https://sondage.esante.gouv.fr/tmp/assets/bc5a8079/survey.css",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/bc5a8079\/survey.css",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
 							"attack": "",
@@ -439,9 +449,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "81",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/e2d25bf4/template-core.css",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/e2d25bf4\/template-core.css",
+							"id": "61",
+							"uri": "https://sondage.esante.gouv.fr/tmp/assets/e2d25bf4/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/e2d25bf4\/awesome-bootstrap-checkbox\/awesome-bootstrap-checkbox.css",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
 							"attack": "",
@@ -469,7 +479,7 @@
 					"desc": "<p>The full path of files which might be sensitive has been exposed to the client.</p>",
 					"instances":[ 
 						{
-							"id": "208",
+							"id": "185",
 							"uri": "https://sondage.esante.gouv.fr/index.php/215367",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367",
 							"method": "POST",
@@ -479,7 +489,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "175",
+							"id": "156",
 							"uri": "https://sondage.esante.gouv.fr/index.php/781528",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/781528 ()(LEMpostKey,YII_CSRF_TOKEN,fieldnames,lastgroupname,loadall,sid,thisstep)",
 							"method": "POST",
@@ -489,7 +499,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "164",
+							"id": "148",
 							"uri": "https://sondage.esante.gouv.fr/index.php/781528",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/781528 ()(LEMpostKey,YII_CSRF_TOKEN,fieldnames,lastgroupname,move,sid,thisstep)",
 							"method": "POST",
@@ -506,7 +516,7 @@
 					"reference": "<p>https://owasp.org/www-community/attacks/Full_Path_Disclosure</p>",
 					"cweid": "209",
 					"wascid": "13",
-					"sourceid": "176"
+					"sourceid": "175"
 				},
 				{
 					"pluginid": "10009",
@@ -519,7 +529,7 @@
 					"desc": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
 					"instances":[ 
 						{
-							"id": "3",
+							"id": "6",
 							"uri": "https://sondage.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -529,7 +539,7 @@
 							"otherinfo": "There is a chance that the highlight in the finding is on a value in the headers, versus the actual matched string in the response body."
 						},
 						{
-							"id": "2",
+							"id": "7",
 							"uri": "https://sondage.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -546,7 +556,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10063",
@@ -559,7 +569,7 @@
 					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
 					"instances":[ 
 						{
-							"id": "29",
+							"id": "10",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -569,7 +579,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "106",
+							"id": "79",
 							"uri": "https://sondage.esante.gouv.fr/",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/",
 							"method": "GET",
@@ -579,7 +589,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "122",
+							"id": "98",
 							"uri": "https://sondage.esante.gouv.fr/index.php/781528?lang=fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/781528 (lang)",
 							"method": "GET",
@@ -589,7 +599,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "11",
+							"id": "3",
 							"uri": "https://sondage.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -599,7 +609,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "112",
+							"id": "2",
 							"uri": "https://sondage.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -629,7 +639,7 @@
 					"desc": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
 					"instances":[ 
 						{
-							"id": "25",
+							"id": "32",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -639,7 +649,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "6",
+							"id": "14",
 							"uri": "https://sondage.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -649,7 +659,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "7",
+							"id": "16",
 							"uri": "https://sondage.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -659,7 +669,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "50",
+							"id": "64",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/9fb91180/build/embeddables.min.css",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/9fb91180\/build\/embeddables.min.css",
 							"method": "GET",
@@ -669,7 +679,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "18",
+							"id": "66",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/bc5a8079/survey.css",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/bc5a8079\/survey.css",
 							"method": "GET",
@@ -686,7 +696,7 @@
 					"reference": "<p>https://httpd.apache.org/docs/current/mod/core.html#servertokens</p><p>https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff648552(v=pandp.10)</p><p>https://www.troyhunt.com/shhh-dont-let-your-response-headers/</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10035",
@@ -699,7 +709,7 @@
 					"desc": "<p>HTTP Strict Transport Security (HSTS) is a web security policy mechanism whereby a web server declares that complying user agents (such as a web browser) are to interact with it using only secure HTTPS connections (i.e. HTTP layered over TLS/SSL). HSTS is an IETF standards track protocol and is specified in RFC 6797.</p>",
 					"instances":[ 
 						{
-							"id": "26",
+							"id": "33",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -709,7 +719,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "8",
+							"id": "17",
 							"uri": "https://sondage.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -719,7 +729,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "9",
+							"id": "18",
 							"uri": "https://sondage.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -729,7 +739,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "52",
+							"id": "65",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/9fb91180/build/embeddables.min.css",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/9fb91180\/build\/embeddables.min.css",
 							"method": "GET",
@@ -739,7 +749,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "19",
+							"id": "67",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/bc5a8079/survey.css",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/bc5a8079\/survey.css",
 							"method": "GET",
@@ -756,7 +766,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10096",
@@ -769,17 +779,27 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server. - Unix</p>",
 					"instances":[ 
 						{
-							"id": "210",
-							"uri": "https://sondage.esante.gouv.fr/index.php/215367",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367",
+							"id": "118",
+							"uri": "https://sondage.esante.gouv.fr/index.php/215367?lang=fr",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 (lang)",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1774760851",
-							"otherinfo": "1774760851, which evaluates to: 2026-03-29 05:07:31."
+							"evidence": "1922913105",
+							"otherinfo": "1922913105, which evaluates to: 2030-12-07 22:31:45."
 						},
 						{
-							"id": "160",
+							"id": "110",
+							"uri": "https://sondage.esante.gouv.fr/index.php/781528?lang=fr",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/781528 (lang)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "2032861432",
+							"otherinfo": "2032861432, which evaluates to: 2034-06-02 11:43:52."
+						},
+						{
+							"id": "182",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/5cfd8fae/em_javascript.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/5cfd8fae\/em_javascript.js",
 							"method": "GET",
@@ -789,44 +809,34 @@
 							"otherinfo": "2000000000, which evaluates to: 2033-05-18 03:33:20."
 						},
 						{
-							"id": "209",
+							"id": "194",
 							"uri": "https://sondage.esante.gouv.fr/index.php/215367",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 ()(215367X434X7288,215367X434X7295,215367X434X7296,LEMpostKey,YII_CSRF_TOKEN,confirm-clearall,fieldnames,lastgroup,move,relevance7288,relevance7295,relevance7296,relevanceG0,sid,start_time,thisstep)",
 							"method": "POST",
 							"param": "",
 							"attack": "",
-							"evidence": "1774760851",
-							"otherinfo": "1774760851, which evaluates to: 2026-03-29 05:07:31."
+							"evidence": "1775365550",
+							"otherinfo": "1775365550, which evaluates to: 2026-04-05 05:05:50."
 						},
 						{
-							"id": "194",
+							"id": "183",
 							"uri": "https://sondage.esante.gouv.fr/index.php/215367",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 ()(LEMpostKey,YII_CSRF_TOKEN,fieldnames,lastgroupname,move,sid,thisstep)",
 							"method": "POST",
 							"param": "",
 							"attack": "",
-							"evidence": "1478155786",
-							"otherinfo": "1478155786, which evaluates to: 2016-11-03 06:49:46."
-						},
-						{
-							"id": "193",
-							"uri": "https://sondage.esante.gouv.fr/index.php/215367",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 ()(LEMpostKey,YII_CSRF_TOKEN,fieldnames,lastgroupname,move,sid,thisstep)",
-							"method": "POST",
-							"param": "",
-							"attack": "",
-							"evidence": "1774760850",
-							"otherinfo": "1774760850, which evaluates to: 2026-03-29 05:07:30."
+							"evidence": "1775365549",
+							"otherinfo": "1775365549, which evaluates to: 2026-04-05 05:05:49."
 						}
 					],
 					"count": "5",
 					"systemic": true,
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
-					"otherinfo": "<p>1774760851, which evaluates to: 2026-03-29 05:07:31.</p>",
+					"otherinfo": "<p>1922913105, which evaluates to: 2030-12-07 22:31:45.</p>",
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "182"
+					"sourceid": "77"
 				},
 				{
 					"pluginid": "10021",
@@ -839,7 +849,7 @@
 					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
 					"instances":[ 
 						{
-							"id": "27",
+							"id": "34",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -849,9 +859,9 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "64",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/8239f041/css/font-awesome.min.css",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/8239f041\/css\/font-awesome.min.css",
+							"id": "88",
+							"uri": "https://sondage.esante.gouv.fr/tmp/assets/34820caf/noto.css",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/34820caf\/noto.css",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -859,7 +869,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "55",
+							"id": "68",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/9fb91180/build/embeddables.min.css",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/9fb91180\/build\/embeddables.min.css",
 							"method": "GET",
@@ -869,7 +879,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "20",
+							"id": "71",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/bc5a8079/survey.css",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/bc5a8079\/survey.css",
 							"method": "GET",
@@ -879,7 +889,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "69",
+							"id": "72",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/e2d25bf4/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/e2d25bf4\/awesome-bootstrap-checkbox\/awesome-bootstrap-checkbox.css",
 							"method": "GET",
@@ -896,7 +906,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10111",
@@ -909,7 +919,7 @@
 					"desc": "<p>The given request has been identified as an authentication request. The 'Other Info' field contains a set of key=value lines which identify any relevant fields. If the request is in a context which has an Authentication Method set to \"Auto-Detect\" then this rule will change the authentication to match the request identified.</p>",
 					"instances":[ 
 						{
-							"id": "217",
+							"id": "203",
 							"uri": "https://sondage.esante.gouv.fr/index.php/215367",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 ()(YII_CSRF_TOKEN,saveemail,savename,savepass,savepass2,savesubmit,thisstep)",
 							"method": "POST",
@@ -939,7 +949,7 @@
 					"desc": "<p>Base64 encoded data was disclosed by the application/web server. Note: in the interests of performance not all base64 strings in the response were analyzed individually, the entire response should be looked at by the analyst/security team/developer(s).</p>",
 					"instances":[ 
 						{
-							"id": "42",
+							"id": "36",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -949,7 +959,7 @@
 							"otherinfo": "\uFFFD\u0669\uFFFD\uFFFD,z\uFFFD?\u05ED\uFFFDu\uFFFD?r\uFFFD?\uFFFD\uFFFD\uFFFDnW\uFFFD:s(n)^"
 						},
 						{
-							"id": "113",
+							"id": "120",
 							"uri": "https://sondage.esante.gouv.fr/",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/",
 							"method": "GET",
@@ -959,7 +969,7 @@
 							"otherinfo": "\uFFFD\u0669\uFFFD\uFFFD,z\uFFFD?\u05ED\uFFFDu\uFFFD?r\uFFFD?\uFFFD\uFFFD\uFFFDnW\uFFFD:s(n)^"
 						},
 						{
-							"id": "191",
+							"id": "165",
 							"uri": "https://sondage.esante.gouv.fr/?lang=en&move=changelang",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/ (lang,move)",
 							"method": "GET",
@@ -969,27 +979,27 @@
 							"otherinfo": "\uFFFD\u0669\uFFFD\uFFFD,z\uFFFD?\u05ED\uFFFDu\uFFFD?r\uFFFD?\uFFFD\uFFFD\uFFFDnW\uFFFD:s(n)^"
 						},
 						{
-							"id": "130",
+							"id": "122",
 							"uri": "https://sondage.esante.gouv.fr/index.php/215367?lang=fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 (lang)",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "SmNWS01YWVZteUh1c1o2V3J-Wkc4T0x5SDRiaFB1MlOXQIOHUTKesBP_r5AmKRVLXlxoB6tEWqmGWcuA_Vc--w",
-							"otherinfo": "JcVKMXYVmyHusZ6Wr~ZG8OLyH4bhPu2S\uFFFD@\uFFFD\uFFFDQ2\uFFFD\uFFFD\\x0013\uFFFD\uFFFD\uFFFD&)\\x0015K^\\h\\x0007\uFFFDDZ\uFFFD\uFFFDY\u02C0\uFFFDW>\uFFFD"
+							"evidence": "T2plSkNyTzN6Q0N-N0Z5cEh3dXlKX2tfZ1pUU3A3U1C6U3IHgI2jk9y_uAcs6qaTTg_Gg0Ax9ZJrU1no8WUWng",
+							"otherinfo": "OjeJCrO3zCC~7FypHwuyJ_k_gZTSp7SP\uFFFDSr\\x0007\uFFFD\uFFFD\uFFFD\uFFFD\u073F\uFFFD\\x0007,\uA993N\\x000f\u0183@1\uFFFD\uFFFDkSY\uFFFD\uFFFDe\\x0016\uFFFD"
 						},
 						{
-							"id": "124",
+							"id": "114",
 							"uri": "https://sondage.esante.gouv.fr/index.php/781528?lang=fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/781528 (lang)",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "UUh2WWxRdjFwc0NSVzY5UE9PQnV4TUZ-bkNCVDVhTHNOEam-hg1t5OxxJh2L2DLodSSsdrObMZ_OP2Qls9YKwg",
-							"otherinfo": "QHvYlQv1psCRW69POOBuxMF~nCBT5aLsN\\x0011\uFFFD\uFFFD\uFFFD\rm\uFFFD\uFFFDq&\\x001d\uFFFD\uFFFD2\uFFFDu$\uFFFDv\uFFFD\uFFFD1\uFFFD\uFFFD?d%\uFFFD\uFFFD\n\uFFFD"
+							"evidence": "UXZJeUVrOTlJM2tNMEMwaWZOQUlNRnJPZ09HMFRZczMP--2gJkeBNQFsFXc-5Hf9poDmJDpxu370gPbqCDhzFQ",
+							"otherinfo": "QvIyEk99I3kM0C0ifNAIMFrOgOG0TYs3\\x000f\uFFFD\uFFFD&G\uFFFD5\\x0001l\\x0015w>\uFFFDw\uFFFD\uFFFD\uFFFD\uFFFD$:q\uFFFD~\uFFFD\uFFFD\uFFFD\\x00088s\\x0015"
 						},
 						{
-							"id": "177",
+							"id": "166",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/35fca73a/gnius_logo%20(1).jpg",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/35fca73a\/gnius_logo (1).jpg",
 							"method": "GET",
@@ -999,17 +1009,7 @@
 							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\\x0000\\x0010JFIF\\x0000\\x0001\\x0002\\x0001\\x0000\uFFFD\\x0000\uFFFD\\x0000\\x0000\uFFFD\uFFFD\\x0000,Photoshop 3.0\\x00008BIM\\x0003\uFFFD\\x0000\\x0000\\x0000\\x0000\\x0000\\x0010\\x0000\uFFFD\\x0000\\x0000\\x0000\\x0001\\x0000"
 						},
 						{
-							"id": "165",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/5cfd8fae/em_javascript.js",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/5cfd8fae\/em_javascript.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "nsf/0/87256B280015193F87256CFB006C45F7",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD;\u06DE\uFFFD\uFFFD\uFFFD4\u05DD}\uFFFD_;\u06DE\uFFFD\\x0014\\x001d4\uFFFD.9\\x0017"
-						},
-						{
-							"id": "153",
+							"id": "144",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/b3ab2170/build/lslog.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/b3ab2170\/build\/lslog.js",
 							"method": "GET",
@@ -1019,7 +1019,7 @@
 							"otherinfo": "r\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\u898B\\x001a\uFFFD\u4C99\uFFFD%\uFFFD\u05ECr\uFFFD\uFFFD\uFFFD*'"
 						},
 						{
-							"id": "189",
+							"id": "173",
 							"uri": "https://sondage.esante.gouv.fr/index.php/215367",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 ()(LEMpostKey,YII_CSRF_TOKEN,fieldnames,lastgroupname,loadall,sid,thisstep)",
 							"method": "POST",
@@ -1029,7 +1029,7 @@
 							"otherinfo": "\uFFFD\u0669\uFFFD\uFFFD,z\uFFFD?\u05ED\uFFFDu\uFFFD?r\uFFFD?\uFFFD\uFFFD\uFFFDnW\uFFFD:s(n)^"
 						},
 						{
-							"id": "174",
+							"id": "155",
 							"uri": "https://sondage.esante.gouv.fr/index.php/781528",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/781528 ()(LEMpostKey,YII_CSRF_TOKEN,fieldnames,lastgroupname,loadall,sid,thisstep)",
 							"method": "POST",
@@ -1039,7 +1039,7 @@
 							"otherinfo": "\uFFFD\u0669\uFFFD\uFFFD,z\uFFFD?\u05ED\uFFFDu\uFFFD?r\uFFFD?\uFFFD\uFFFD\uFFFDnW\uFFFD:s(n)^"
 						},
 						{
-							"id": "163",
+							"id": "147",
 							"uri": "https://sondage.esante.gouv.fr/index.php/781528",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/781528 ()(LEMpostKey,YII_CSRF_TOKEN,fieldnames,lastgroupname,move,sid,thisstep)",
 							"method": "POST",
@@ -1049,14 +1049,14 @@
 							"otherinfo": "\uFFFD\u0669\uFFFD\uFFFD,z\uFFFD?\u05ED\uFFFDu\uFFFD?r\uFFFD?\uFFFD\uFFFD\uFFFDnW\uFFFD:s(n)^"
 						}
 					],
-					"count": "11",
+					"count": "10",
 					"systemic": false,
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
 					"otherinfo": "<p>\uFFFD\u0669\uFFFD\uFFFD,z\uFFFD?\u05ED\uFFFDu\uFFFD?r\uFFFD?\uFFFD\uFFFD\uFFFDnW\uFFFD:s(n)^</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "319",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10027",
@@ -1069,27 +1069,7 @@
 					"desc": "<p>The response appears to contain suspicious comments which may help an attacker.</p>",
 					"instances":[ 
 						{
-							"id": "146",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/1627ddc/scripts/ajaxify.js",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/1627ddc\/scripts\/ajaxify.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "// If the user try to submit the f",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in likely comment: \"// If the user try to submit the form\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"id": "145",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/1627ddc/scripts/ajaxify.js",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/1627ddc\/scripts\/ajaxify.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "U/GPL License v2 or later, see LICENSE.php\n  ",
-							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected in likely comment: \"/*\n    LimeSurvey\n\n    Copyright (C) 2007-2017 The LimeSurvey Project Team / Louis Gac\n    All rights reserved.\n\n    License: GN\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"id": "141",
+							"id": "130",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/1627ddc/scripts/theme.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/1627ddc\/scripts\/theme.js",
 							"method": "GET",
@@ -1099,7 +1079,7 @@
 							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected in likely comment: \"/*\n    LimeSurvey\n    Copyright (C) 2007-2016 The LimeSurvey Project Team / Carsten Schmitz\n    All rights reserved.\n    License\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "142",
+							"id": "131",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/1627ddc/scripts/theme.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/1627ddc\/scripts\/theme.js",
 							"method": "GET",
@@ -1109,7 +1089,7 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in likely comment: \"// Scroll to first error - After user close modal -\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "143",
+							"id": "132",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/1627ddc/scripts/theme.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/1627ddc\/scripts\/theme.js",
 							"method": "GET",
@@ -1119,7 +1099,77 @@
 							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in likely comment: \"/* The limesurvey form exist in document, move select and button inside and click */\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "155",
+							"id": "135",
+							"uri": "https://sondage.esante.gouv.fr/tmp/assets/4309a6a2/pjax.js",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/4309a6a2\/pjax.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "   if (this.options.debug) {",
+							"otherinfo": "The following pattern was used: \\bDEBUG\\b and was detected in likely comment: \"//   if (this.options.debug) {\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "138",
+							"uri": "https://sondage.esante.gouv.fr/tmp/assets/4309a6a2/pjax.js",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/4309a6a2\/pjax.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": " Borrowed wholesale from https://github.com/",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"// Borrowed wholesale from https://github.com/defunkt/jquery-pjax\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "134",
+							"uri": "https://sondage.esante.gouv.fr/tmp/assets/4309a6a2/pjax.js",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/4309a6a2\/pjax.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": " now useless (avoid bug since there is over",
+							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected 3 times, the first in likely comment: \"// assume the height is now useless (avoid bug since there is overflow hidden on the parent)\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "139",
+							"uri": "https://sondage.esante.gouv.fr/tmp/assets/4309a6a2/pjax.js",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/4309a6a2\/pjax.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "// @todo implement history c",
+							"otherinfo": "The following pattern was used: \\bTODO\\b and was detected in likely comment: \"// @todo implement history cache here, based on uid\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "137",
+							"uri": "https://sondage.esante.gouv.fr/tmp/assets/4309a6a2/pjax.js",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/4309a6a2\/pjax.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "// user have href that can ",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 4 times, the first in likely comment: \"// user have href that can be dynamically updated\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "133",
+							"uri": "https://sondage.esante.gouv.fr/tmp/assets/4309a6a2/pjax.js",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/4309a6a2\/pjax.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "so we can unbind it later",
+							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected in likely comment: \"// Store the event handler so we can unbind it later\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "136",
+							"uri": "https://sondage.esante.gouv.fr/tmp/assets/4309a6a2/pjax.js",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/4309a6a2\/pjax.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "tamp as part of the query string if cache bus",
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in likely comment: \"// Add a timestamp as part of the query string if cache busting is enabled\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "175",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/5cfd8fae/em_javascript.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/5cfd8fae\/em_javascript.js",
 							"method": "GET",
@@ -1129,7 +1179,7 @@
 							"otherinfo": "The following pattern was used: \\bBUGS\\b and was detected 2 times, the first in likely comment: \"/**\n * max like php in LimeSurvey, start by https://github.com/kvz/locutus/blob/master/src/php/math/max.js\n * @see https://bugs.\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "156",
+							"id": "176",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/5cfd8fae/em_javascript.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/5cfd8fae\/em_javascript.js",
 							"method": "GET",
@@ -1139,7 +1189,7 @@
 							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected 2 times, the first in likely comment: \"/* select/dropdown item */\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "157",
+							"id": "177",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/5cfd8fae/em_javascript.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/5cfd8fae\/em_javascript.js",
 							"method": "GET",
@@ -1149,7 +1199,7 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 4 times, the first in likely comment: \"// interfering with the user's typing. We will use window.correctNumberField to track one timer\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "154",
+							"id": "174",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/5cfd8fae/em_javascript.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/5cfd8fae\/em_javascript.js",
 							"method": "GET",
@@ -1159,7 +1209,7 @@
 							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected 3 times, the first in likely comment: \"// Equation question don't test visibility of group ( child of bug #08315).\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "158",
+							"id": "178",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/5cfd8fae/em_javascript.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/5cfd8fae\/em_javascript.js",
 							"method": "GET",
@@ -1169,7 +1219,7 @@
 							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected 16 times, the first in likely comment: \"/*\n * This file is part of LimeSurvey\n * Copyright (C) 2007-2018 The LimeSurvey Project Team / Carsten Schmitz\n * All rights res\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "159",
+							"id": "179",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/5cfd8fae/em_javascript.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/5cfd8fae\/em_javascript.js",
 							"method": "GET",
@@ -1179,7 +1229,7 @@
 							"otherinfo": "The following pattern was used: \\bTODO\\b and was detected 7 times, the first in likely comment: \"/**\n * checkconditions : javascript function attach to some element\n * Launch ExprMgr_process_relevance_and_tailoring with good \", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "150",
+							"id": "141",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/b3ab2170/build/lslog.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/b3ab2170\/build\/lslog.js",
 							"method": "GET",
@@ -1189,7 +1239,7 @@
 							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected 7 times, the first in likely comment: \"// Nashorn ~ JDK8 bug\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "151",
+							"id": "142",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/b3ab2170/build/lslog.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/b3ab2170\/build\/lslog.js",
 							"method": "GET",
@@ -1199,7 +1249,7 @@
 							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected 5 times, the first in likely comment: \"// getting tag from ES6+ `Object.prototype.toString`\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "149",
+							"id": "140",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/b3ab2170/build/lslog.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/b3ab2170\/build\/lslog.js",
 							"method": "GET",
@@ -1209,7 +1259,7 @@
 							"otherinfo": "The following pattern was used: \\bBUGS\\b and was detected 2 times, the first in likely comment: \"// https://bugs.chromium.org/p/v8/issues/detail?id=3443\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "152",
+							"id": "143",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/b3ab2170/build/lslog.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/b3ab2170\/build\/lslog.js",
 							"method": "GET",
@@ -1219,57 +1269,7 @@
 							"otherinfo": "The following pattern was used: \\bWHERE\\b and was detected in likely comment: \"// inline `ArraySpeciesCreate` for usage native `Array#slice` where it's possible\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "139",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/bc5a8079/survey.js",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/bc5a8079\/survey.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "/* @todo : attach only to th",
-							"otherinfo": "The following pattern was used: \\bTODO\\b and was detected 3 times, the first in likely comment: \"/* @todo : attach only to this. Use http://stackoverflow.com/a/6411507/2239406 solution for now. \n        Don't want to stop pro\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"id": "136",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/bc5a8079/survey.js",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/bc5a8079\/survey.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "// Remind user can put language ch",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in likely comment: \"// Remind user can put language changer everywhere, not only in home page, but for example in clear all page etc \u2026 in form or no\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"id": "134",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/bc5a8079/survey.js",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/bc5a8079\/survey.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "l-3.0.txt GPL-v3-or-Later\n */",
-							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected in likely comment: \"/**\n * @file Javascript core function for public survey\n * @description loaded before template javascript : allow template to us\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"id": "137",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/bc5a8079/survey.js",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/bc5a8079\/survey.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "t in document, move select and button inside a",
-							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected 3 times, the first in likely comment: \"/* The limesurvey form exist in document, move select and button inside and click */\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"id": "135",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/bc5a8079/survey.js",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/bc5a8079\/survey.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "with chrome , chrom bug : onclick are an in",
-							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected in likely comment: \"/* didn't work with chrome , chrom bug : onclick are an intrinsic event see https://www.w3.org/TR/html401/interact/forms.html#h-\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"id": "132",
+							"id": "128",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/e2d25bf4/template-core.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/e2d25bf4\/template-core.js",
 							"method": "GET",
@@ -1279,7 +1279,7 @@
 							"otherinfo": "The following pattern was used: \\bBUGS\\b and was detected 2 times, the first in likely comment: \"/**\n         * Hide/show question if all subquestions is hidden\n         * @see core/package/limesurvey/survey.js:triggerEmRelev\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "133",
+							"id": "129",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/e2d25bf4/template-core.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/e2d25bf4\/template-core.js",
 							"method": "GET",
@@ -1289,7 +1289,7 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 2 times, the first in likely comment: \"/* If user choose hide-tip : leave it */\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "131",
+							"id": "127",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/e2d25bf4/template-core.js",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/e2d25bf4\/template-core.js",
 							"method": "GET",
@@ -1302,11 +1302,11 @@
 					"count": "23",
 					"systemic": false,
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
-					"otherinfo": "<p>The following pattern was used: \\bUSER\\b and was detected in likely comment: \"// If the user try to submit the form\", see evidence field for the suspicious comment/snippet.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bLATER\\b and was detected in likely comment: \"/*</p><p>    LimeSurvey</p><p>    Copyright (C) 2007-2016 The LimeSurvey Project Team / Carsten Schmitz</p><p>    All rights reserved.</p><p>    License\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "615",
 					"wascid": "13",
-					"sourceid": "117"
+					"sourceid": "114"
 				},
 				{
 					"pluginid": "10109",
@@ -1319,7 +1319,7 @@
 					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
 					"instances":[ 
 						{
-							"id": "23",
+							"id": "30",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -1329,7 +1329,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "99",
+							"id": "116",
 							"uri": "https://sondage.esante.gouv.fr/",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/",
 							"method": "GET",
@@ -1339,7 +1339,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "125",
+							"id": "117",
 							"uri": "https://sondage.esante.gouv.fr/index.php/215367?lang=fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 (lang)",
 							"method": "GET",
@@ -1349,7 +1349,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "119",
+							"id": "108",
 							"uri": "https://sondage.esante.gouv.fr/index.php/781528?lang=fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/781528 (lang)",
 							"method": "GET",
@@ -1359,7 +1359,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "162",
+							"id": "146",
 							"uri": "https://sondage.esante.gouv.fr/index.php/781528",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/781528 ()(LEMpostKey,YII_CSRF_TOKEN,fieldnames,lastgroupname,move,sid,thisstep)",
 							"method": "POST",
@@ -1376,7 +1376,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10049",
@@ -1389,7 +1389,7 @@
 					"desc": "<p>The response contents are not storable by caching components such as proxy servers. If the response does not contain sensitive, personal or user-specific information, it may benefit from being stored and cached, to improve performance.</p>",
 					"instances":[ 
 						{
-							"id": "28",
+							"id": "8",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -1399,7 +1399,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "105",
+							"id": "76",
 							"uri": "https://sondage.esante.gouv.fr/",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/",
 							"method": "GET",
@@ -1429,7 +1429,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"id": "45",
+							"id": "40",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -1439,7 +1439,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "14",
+							"id": "51",
 							"uri": "https://sondage.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -1449,19 +1449,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "60",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/9fb91180/build/embeddables.min.css",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/9fb91180\/build\/embeddables.min.css",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "74",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/e2d25bf4/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/e2d25bf4\/awesome-bootstrap-checkbox\/awesome-bootstrap-checkbox.css",
+							"id": "53",
+							"uri": "https://sondage.esante.gouv.fr/sitemap.xml",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1469,14 +1459,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"systemic": true,
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "90005",
@@ -1489,7 +1479,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"id": "44",
+							"id": "39",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -1499,7 +1489,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "13",
+							"id": "50",
 							"uri": "https://sondage.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -1509,19 +1499,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "59",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/9fb91180/build/embeddables.min.css",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/9fb91180\/build\/embeddables.min.css",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "73",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/e2d25bf4/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/e2d25bf4\/awesome-bootstrap-checkbox\/awesome-bootstrap-checkbox.css",
+							"id": "52",
+							"uri": "https://sondage.esante.gouv.fr/sitemap.xml",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1529,14 +1509,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"systemic": true,
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "90005",
@@ -1549,7 +1529,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"id": "43",
+							"id": "38",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -1559,7 +1539,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "12",
+							"id": "48",
 							"uri": "https://sondage.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -1569,19 +1549,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "58",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/9fb91180/build/embeddables.min.css",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/9fb91180\/build\/embeddables.min.css",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "72",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/e2d25bf4/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/e2d25bf4\/awesome-bootstrap-checkbox\/awesome-bootstrap-checkbox.css",
+							"id": "49",
+							"uri": "https://sondage.esante.gouv.fr/sitemap.xml",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1589,14 +1559,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"systemic": true,
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "90005",
@@ -1609,7 +1579,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"id": "46",
+							"id": "41",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -1619,7 +1589,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "15",
+							"id": "55",
 							"uri": "https://sondage.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -1629,19 +1599,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "61",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/9fb91180/build/embeddables.min.css",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/9fb91180\/build\/embeddables.min.css",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "75",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/e2d25bf4/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/e2d25bf4\/awesome-bootstrap-checkbox\/awesome-bootstrap-checkbox.css",
+							"id": "54",
+							"uri": "https://sondage.esante.gouv.fr/sitemap.xml",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1649,14 +1609,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"systemic": true,
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10112",
@@ -1669,7 +1629,7 @@
 					"desc": "<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to \"Auto-Detect\" then this rule will change the session management to use the tokens identified.</p>",
 					"instances":[ 
 						{
-							"id": "41",
+							"id": "22",
 							"uri": "https://sondage.esante.gouv.fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr",
 							"method": "GET",
@@ -1679,7 +1639,7 @@
 							"otherinfo": "cookie:LS-VMTIPBHXPMHGODAL"
 						},
 						{
-							"id": "129",
+							"id": "104",
 							"uri": "https://sondage.esante.gouv.fr/index.php/215367?lang=fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 (lang)",
 							"method": "GET",
@@ -1689,7 +1649,7 @@
 							"otherinfo": "cookie:YII_CSRF_TOKEN\ncookie:LS-VMTIPBHXPMHGODAL"
 						},
 						{
-							"id": "123",
+							"id": "100",
 							"uri": "https://sondage.esante.gouv.fr/index.php/781528?lang=fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/781528 (lang)",
 							"method": "GET",
@@ -1719,9 +1679,9 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
 					"instances":[ 
 						{
-							"id": "10",
-							"uri": "https://sondage.esante.gouv.fr/robots.txt",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/robots.txt",
+							"id": "0",
+							"uri": "https://sondage.esante.gouv.fr/sitemap.xml",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1729,7 +1689,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "67",
+							"id": "58",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/8239f041/css/font-awesome.min.css",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/8239f041\/css\/font-awesome.min.css",
 							"method": "GET",
@@ -1740,8 +1700,8 @@
 						},
 						{
 							"id": "56",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/9fb91180/build/embeddables.min.css",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/9fb91180\/build\/embeddables.min.css",
+							"uri": "https://sondage.esante.gouv.fr/tmp/assets/bc5a8079/survey.css",
+							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/bc5a8079\/survey.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1749,7 +1709,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "70",
+							"id": "59",
 							"uri": "https://sondage.esante.gouv.fr/tmp/assets/e2d25bf4/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/e2d25bf4\/awesome-bootstrap-checkbox\/awesome-bootstrap-checkbox.css",
 							"method": "GET",
@@ -1757,19 +1717,9 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
-							"id": "80",
-							"uri": "https://sondage.esante.gouv.fr/tmp/assets/e2d25bf4/template-core.css",
-							"nodeName": "https:\/\/sondage.esante.gouv.fr\/tmp\/assets\/e2d25bf4\/template-core.css",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						}
 					],
-					"count": "5",
+					"count": "4",
 					"systemic": true,
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
 					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
@@ -1789,7 +1739,7 @@
 					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
 					"instances":[ 
 						{
-							"id": "178",
+							"id": "160",
 							"uri": "https://sondage.esante.gouv.fr/?lang=en&move=changelang",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/ (lang,move)",
 							"method": "GET",
@@ -1799,7 +1749,7 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://sondage.esante.gouv.fr/?lang=en&move=changelang\n\nappears to include user input in:\na(n) [html] tag [lang] attribute\n\nThe user input found was:\nlang=en\n\nThe user-controlled value was:\nen"
 						},
 						{
-							"id": "182",
+							"id": "164",
 							"uri": "https://sondage.esante.gouv.fr/?lang=en&move=changelang",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/ (lang,move)",
 							"method": "GET",
@@ -1809,7 +1759,7 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://sondage.esante.gouv.fr/?lang=en&move=changelang\n\nappears to include user input in:\na(n) [button] tag [value] attribute\n\nThe user input found was:\nmove=changelang\n\nThe user-controlled value was:\nchangelang"
 						},
 						{
-							"id": "126",
+							"id": "119",
 							"uri": "https://sondage.esante.gouv.fr/index.php/215367?lang=fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 (lang)",
 							"method": "GET",
@@ -1819,7 +1769,7 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://sondage.esante.gouv.fr/index.php/215367?lang=fr\n\nappears to include user input in:\na(n) [html] tag [lang] attribute\n\nThe user input found was:\nlang=fr\n\nThe user-controlled value was:\nfr"
 						},
 						{
-							"id": "120",
+							"id": "111",
 							"uri": "https://sondage.esante.gouv.fr/index.php/781528?lang=fr",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/781528 (lang)",
 							"method": "GET",
@@ -1829,7 +1779,7 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://sondage.esante.gouv.fr/index.php/781528?lang=fr\n\nappears to include user input in:\na(n) [html] tag [lang] attribute\n\nThe user input found was:\nlang=fr\n\nThe user-controlled value was:\nfr"
 						},
 						{
-							"id": "188",
+							"id": "172",
 							"uri": "https://sondage.esante.gouv.fr/index.php/215367",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 ()(LEMpostKey,YII_CSRF_TOKEN,fieldnames,lastgroupname,loadall,sid,thisstep)",
 							"method": "POST",
@@ -1839,17 +1789,17 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://sondage.esante.gouv.fr/index.php/215367\n\nappears to include user input in:\na(n) [button] tag [name] attribute\n\nThe user input found was:\nloadall=loadall\n\nThe user-controlled value was:\nloadall"
 						},
 						{
-							"id": "187",
+							"id": "171",
 							"uri": "https://sondage.esante.gouv.fr/index.php/215367",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 ()(LEMpostKey,YII_CSRF_TOKEN,fieldnames,lastgroupname,loadall,sid,thisstep)",
 							"method": "POST",
 							"param": "YII_CSRF_TOKEN",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://sondage.esante.gouv.fr/index.php/215367\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nYII_CSRF_TOKEN=SmNWS01YWVZteUh1c1o2V3J-Wkc4T0x5SDRiaFB1MlOXQIOHUTKesBP_r5AmKRVLXlxoB6tEWqmGWcuA_Vc--w==\n\nThe user-controlled value was:\nsmnws01ywvzteuh1c1o2v3j-wkc4t0x5sdriafb1mloxqiohutkesbp_r5amkrvlxlxob6tewqmgwcua_vc--w=="
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://sondage.esante.gouv.fr/index.php/215367\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nYII_CSRF_TOKEN=T2plSkNyTzN6Q0N-N0Z5cEh3dXlKX2tfZ1pUU3A3U1C6U3IHgI2jk9y_uAcs6qaTTg_Gg0Ax9ZJrU1no8WUWng==\n\nThe user-controlled value was:\nt2plsknytzn6q0n-n0z5ceh3dxlkx2tfz1puu3a3u1c6u3ihgi2jk9y_uacs6qattg_gg0ax9zjru1no8wuwng=="
 						},
 						{
-							"id": "198",
+							"id": "188",
 							"uri": "https://sondage.esante.gouv.fr/index.php/215367",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 ()(LEMpostKey,YII_CSRF_TOKEN,fieldnames,lastgroupname,move,sid,thisstep)",
 							"method": "POST",
@@ -1859,7 +1809,7 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://sondage.esante.gouv.fr/index.php/215367\n\nappears to include user input in:\na(n) [button] tag [id] attribute\n\nThe user input found was:\nmove=default\n\nThe user-controlled value was:\ndefaultbtn"
 						},
 						{
-							"id": "196",
+							"id": "186",
 							"uri": "https://sondage.esante.gouv.fr/index.php/215367",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 ()(LEMpostKey,YII_CSRF_TOKEN,fieldnames,lastgroupname,move,sid,thisstep)",
 							"method": "POST",
@@ -1869,14 +1819,14 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://sondage.esante.gouv.fr/index.php/215367\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nsid=215367\n\nThe user-controlled value was:\n215367x434x7288|215367x434x7296|215367x434x7295"
 						},
 						{
-							"id": "195",
+							"id": "184",
 							"uri": "https://sondage.esante.gouv.fr/index.php/215367",
 							"nodeName": "https:\/\/sondage.esante.gouv.fr\/index.php\/215367 ()(LEMpostKey,YII_CSRF_TOKEN,fieldnames,lastgroupname,move,sid,thisstep)",
 							"method": "POST",
 							"param": "YII_CSRF_TOKEN",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://sondage.esante.gouv.fr/index.php/215367\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nYII_CSRF_TOKEN=SmNWS01YWVZteUh1c1o2V3J-Wkc4T0x5SDRiaFB1MlOXQIOHUTKesBP_r5AmKRVLXlxoB6tEWqmGWcuA_Vc--w==\n\nThe user-controlled value was:\nsmnws01ywvzteuh1c1o2v3j-wkc4t0x5sdriafb1mloxqiohutkesbp_r5amkrvlxlxob6tewqmgwcua_vc--w=="
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://sondage.esante.gouv.fr/index.php/215367\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nYII_CSRF_TOKEN=T2plSkNyTzN6Q0N-N0Z5cEh3dXlKX2tfZ1pUU3A3U1C6U3IHgI2jk9y_uAcs6qaTTg_Gg0Ax9ZJrU1no8WUWng==\n\nThe user-controlled value was:\nt2plsknytzn6q0n-n0z5ceh3dxlkx2tfz1puu3a3u1c6u3ihgi2jk9y_uacs6qattg_gg0ax9zjru1no8wuwng=="
 						}
 					],
 					"count": "9",
@@ -1886,7 +1836,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "156"
+					"sourceid": "154"
 				}
 			]
 		}
