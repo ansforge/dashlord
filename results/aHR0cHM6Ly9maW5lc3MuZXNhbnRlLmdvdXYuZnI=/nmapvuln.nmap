@@ -1,13 +1,15 @@
-# Nmap 7.92 scan initiated Sun Apr  5 03:07:48 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln finess.esante.gouv.fr
+# Nmap 7.95 scan initiated Sun Apr 12 03:13:41 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln finess.esante.gouv.fr
 Nmap scan report for finess.esante.gouv.fr (80.78.2.234)
-Host is up (0.10s latency).
-Not shown: 951 filtered tcp ports (no-response), 48 closed tcp ports (reset)
-PORT    STATE SERVICE   VERSION
-443/tcp open  ssl/https
+Host is up (0.086s latency).
+Not shown: 997 filtered tcp ports (no-response)
+PORT    STATE  SERVICE   VERSION
+80/tcp  closed http
+113/tcp closed ident
+443/tcp open   ssl/https
 | fingerprint-strings: 
 |   FourOhFourRequest: 
 |     HTTP/1.1 400 Bad Request
-|     Date: Sun, 05 Apr 2026 03:08:22 GMT
+|     Date: Sun, 12 Apr 2026 03:19:33 GMT
 |     Strict-Transport-Security: max-age=3600; includeSubDomains; preload
 |     Content-Length: 226
 |     Connection: close
@@ -22,7 +24,7 @@ PORT    STATE SERVICE   VERSION
 |     </body></html>
 |   GetRequest, HTTPOptions: 
 |     HTTP/1.1 400 Bad Request
-|     Date: Sun, 05 Apr 2026 03:08:21 GMT
+|     Date: Sun, 12 Apr 2026 03:19:32 GMT
 |     Strict-Transport-Security: max-age=3600; includeSubDomains; preload
 |     Content-Length: 226
 |     Connection: close
@@ -37,7 +39,7 @@ PORT    STATE SERVICE   VERSION
 |     </body></html>
 |   RTSPRequest: 
 |     HTTP/1.1 400 Bad Request
-|     Date: Sun, 05 Apr 2026 03:08:32 GMT
+|     Date: Sun, 12 Apr 2026 03:19:43 GMT
 |     Strict-Transport-Security: max-age=3600; includeSubDomains; preload
 |     Content-Length: 226
 |     Connection: close
@@ -51,41 +53,41 @@ PORT    STATE SERVICE   VERSION
 |     </p>
 |_    </body></html>
 1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
-SF-Port443-TCP:V=7.92%T=SSL%I=7%D=4/5%Time=69D1D225%P=x86_64-alpine-linux-
-SF:musl%r(GetRequest,1BD,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nDate:\x20S
-SF:un,\x2005\x20Apr\x202026\x2003:08:21\x20GMT\r\nStrict-Transport-Securit
-SF:y:\x20max-age=3600;\x20includeSubDomains;\x20preload\r\nContent-Length:
-SF:\x20226\r\nConnection:\x20close\r\nContent-Type:\x20text/html;\x20chars
-SF:et=iso-8859-1\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-//IETF//DTD\x20H
-SF:TML\x202\.0//EN\">\n<html><head>\n<title>400\x20Bad\x20Request</title>\
-SF:n</head><body>\n<h1>Bad\x20Request</h1>\n<p>Your\x20browser\x20sent\x20
-SF:a\x20request\x20that\x20this\x20server\x20could\x20not\x20understand\.<
-SF:br\x20/>\n</p>\n</body></html>\n")%r(HTTPOptions,1BD,"HTTP/1\.1\x20400\
-SF:x20Bad\x20Request\r\nDate:\x20Sun,\x2005\x20Apr\x202026\x2003:08:21\x20
-SF:GMT\r\nStrict-Transport-Security:\x20max-age=3600;\x20includeSubDomains
-SF:;\x20preload\r\nContent-Length:\x20226\r\nConnection:\x20close\r\nConte
-SF:nt-Type:\x20text/html;\x20charset=iso-8859-1\r\n\r\n<!DOCTYPE\x20HTML\x
-SF:20PUBLIC\x20\"-//IETF//DTD\x20HTML\x202\.0//EN\">\n<html><head>\n<title
-SF:>400\x20Bad\x20Request</title>\n</head><body>\n<h1>Bad\x20Request</h1>\
-SF:n<p>Your\x20browser\x20sent\x20a\x20request\x20that\x20this\x20server\x
-SF:20could\x20not\x20understand\.<br\x20/>\n</p>\n</body></html>\n")%r(Fou
-SF:rOhFourRequest,1BD,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nDate:\x20Sun,
-SF:\x2005\x20Apr\x202026\x2003:08:22\x20GMT\r\nStrict-Transport-Security:\
-SF:x20max-age=3600;\x20includeSubDomains;\x20preload\r\nContent-Length:\x2
-SF:0226\r\nConnection:\x20close\r\nContent-Type:\x20text/html;\x20charset=
-SF:iso-8859-1\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-//IETF//DTD\x20HTML
-SF:\x202\.0//EN\">\n<html><head>\n<title>400\x20Bad\x20Request</title>\n</
-SF:head><body>\n<h1>Bad\x20Request</h1>\n<p>Your\x20browser\x20sent\x20a\x
-SF:20request\x20that\x20this\x20server\x20could\x20not\x20understand\.<br\
-SF:x20/>\n</p>\n</body></html>\n")%r(RTSPRequest,1BD,"HTTP/1\.1\x20400\x20
-SF:Bad\x20Request\r\nDate:\x20Sun,\x2005\x20Apr\x202026\x2003:08:32\x20GMT
-SF:\r\nStrict-Transport-Security:\x20max-age=3600;\x20includeSubDomains;\x
-SF:20preload\r\nContent-Length:\x20226\r\nConnection:\x20close\r\nContent-
-SF:Type:\x20text/html;\x20charset=iso-8859-1\r\n\r\n<!DOCTYPE\x20HTML\x20P
-SF:UBLIC\x20\"-//IETF//DTD\x20HTML\x202\.0//EN\">\n<html><head>\n<title>40
-SF:0\x20Bad\x20Request</title>\n</head><body>\n<h1>Bad\x20Request</h1>\n<p
-SF:>Your\x20browser\x20sent\x20a\x20request\x20that\x20this\x20server\x20c
-SF:ould\x20not\x20understand\.<br\x20/>\n</p>\n</body></html>\n");
+SF-Port443-TCP:V=7.95%T=SSL%I=7%D=4/12%Time=69DB0F44%P=x86_64-alpine-linux
+SF:-musl%r(GetRequest,1BD,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nDate:\x20
+SF:Sun,\x2012\x20Apr\x202026\x2003:19:32\x20GMT\r\nStrict-Transport-Securi
+SF:ty:\x20max-age=3600;\x20includeSubDomains;\x20preload\r\nContent-Length
+SF::\x20226\r\nConnection:\x20close\r\nContent-Type:\x20text/html;\x20char
+SF:set=iso-8859-1\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-//IETF//DTD\x20
+SF:HTML\x202\.0//EN\">\n<html><head>\n<title>400\x20Bad\x20Request</title>
+SF:\n</head><body>\n<h1>Bad\x20Request</h1>\n<p>Your\x20browser\x20sent\x2
+SF:0a\x20request\x20that\x20this\x20server\x20could\x20not\x20understand\.
+SF:<br\x20/>\n</p>\n</body></html>\n")%r(HTTPOptions,1BD,"HTTP/1\.1\x20400
+SF:\x20Bad\x20Request\r\nDate:\x20Sun,\x2012\x20Apr\x202026\x2003:19:32\x2
+SF:0GMT\r\nStrict-Transport-Security:\x20max-age=3600;\x20includeSubDomain
+SF:s;\x20preload\r\nContent-Length:\x20226\r\nConnection:\x20close\r\nCont
+SF:ent-Type:\x20text/html;\x20charset=iso-8859-1\r\n\r\n<!DOCTYPE\x20HTML\
+SF:x20PUBLIC\x20\"-//IETF//DTD\x20HTML\x202\.0//EN\">\n<html><head>\n<titl
+SF:e>400\x20Bad\x20Request</title>\n</head><body>\n<h1>Bad\x20Request</h1>
+SF:\n<p>Your\x20browser\x20sent\x20a\x20request\x20that\x20this\x20server\
+SF:x20could\x20not\x20understand\.<br\x20/>\n</p>\n</body></html>\n")%r(Fo
+SF:urOhFourRequest,1BD,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nDate:\x20Sun
+SF:,\x2012\x20Apr\x202026\x2003:19:33\x20GMT\r\nStrict-Transport-Security:
+SF:\x20max-age=3600;\x20includeSubDomains;\x20preload\r\nContent-Length:\x
+SF:20226\r\nConnection:\x20close\r\nContent-Type:\x20text/html;\x20charset
+SF:=iso-8859-1\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-//IETF//DTD\x20HTM
+SF:L\x202\.0//EN\">\n<html><head>\n<title>400\x20Bad\x20Request</title>\n<
+SF:/head><body>\n<h1>Bad\x20Request</h1>\n<p>Your\x20browser\x20sent\x20a\
+SF:x20request\x20that\x20this\x20server\x20could\x20not\x20understand\.<br
+SF:\x20/>\n</p>\n</body></html>\n")%r(RTSPRequest,1BD,"HTTP/1\.1\x20400\x2
+SF:0Bad\x20Request\r\nDate:\x20Sun,\x2012\x20Apr\x202026\x2003:19:43\x20GM
+SF:T\r\nStrict-Transport-Security:\x20max-age=3600;\x20includeSubDomains;\
+SF:x20preload\r\nContent-Length:\x20226\r\nConnection:\x20close\r\nContent
+SF:-Type:\x20text/html;\x20charset=iso-8859-1\r\n\r\n<!DOCTYPE\x20HTML\x20
+SF:PUBLIC\x20\"-//IETF//DTD\x20HTML\x202\.0//EN\">\n<html><head>\n<title>4
+SF:00\x20Bad\x20Request</title>\n</head><body>\n<h1>Bad\x20Request</h1>\n<
+SF:p>Your\x20browser\x20sent\x20a\x20request\x20that\x20this\x20server\x20
+SF:could\x20not\x20understand\.<br\x20/>\n</p>\n</body></html>\n");
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun Apr  5 03:10:57 2026 -- 1 IP address (1 host up) scanned in 189.55 seconds
+# Nmap done at Sun Apr 12 03:22:07 2026 -- 1 IP address (1 host up) scanned in 506.23 seconds
