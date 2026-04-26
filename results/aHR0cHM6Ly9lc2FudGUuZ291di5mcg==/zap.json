@@ -1,8 +1,8 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.17.0",
-	"@generated": "Sun, 19 Apr 2026 03:26:16",
-	"created": "2026-04-19T03:26:16.684339122Z",
+	"@generated": "Sun, 26 Apr 2026 03:30:02",
+	"created": "2026-04-26T03:30:02.854494703Z",
 	"insights":[
 		{
 			"level": "Low",
@@ -18,7 +18,7 @@
 			"site": "https://esante.gouv.fr",
 			"key": "insight.code.2xx",
 			"description": "Percentage of responses with status code 2xx",
-			"statistic": "80"
+			"statistic": "78"
 		},
 		{
 			"level": "Info",
@@ -34,7 +34,7 @@
 			"site": "https://esante.gouv.fr",
 			"key": "insight.code.4xx",
 			"description": "Percentage of responses with status code 4xx",
-			"statistic": "11"
+			"statistic": "13"
 		},
 		{
 			"level": "Info",
@@ -42,6 +42,14 @@
 			"site": "https://esante.gouv.fr",
 			"key": "insight.endpoint.ctype.application/javascript",
 			"description": "Percentage of endpoints with content type application/javascript",
+			"statistic": "1"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://esante.gouv.fr",
+			"key": "insight.endpoint.ctype.application/pdf",
+			"description": "Percentage of endpoints with content type application/pdf",
 			"statistic": "1"
 		},
 		{
@@ -58,7 +66,7 @@
 			"site": "https://esante.gouv.fr",
 			"key": "insight.endpoint.ctype.image/jpeg",
 			"description": "Percentage of endpoints with content type image/jpeg",
-			"statistic": "11"
+			"statistic": "6"
 		},
 		{
 			"level": "Info",
@@ -66,7 +74,7 @@
 			"site": "https://esante.gouv.fr",
 			"key": "insight.endpoint.ctype.image/png",
 			"description": "Percentage of endpoints with content type image/png",
-			"statistic": "18"
+			"statistic": "16"
 		},
 		{
 			"level": "Info",
@@ -74,7 +82,7 @@
 			"site": "https://esante.gouv.fr",
 			"key": "insight.endpoint.ctype.text/css",
 			"description": "Percentage of endpoints with content type text/css",
-			"statistic": "2"
+			"statistic": "3"
 		},
 		{
 			"level": "Info",
@@ -82,7 +90,7 @@
 			"site": "https://esante.gouv.fr",
 			"key": "insight.endpoint.ctype.text/html",
 			"description": "Percentage of endpoints with content type text/html",
-			"statistic": "62"
+			"statistic": "65"
 		},
 		{
 			"level": "Info",
@@ -130,7 +138,7 @@
 			"site": "https://esante.gouv.fr",
 			"key": "insight.endpoint.total",
 			"description": "Count of total endpoints",
-			"statistic": "335"
+			"statistic": "273"
 		},
 		{
 			"level": "Info",
@@ -138,7 +146,7 @@
 			"site": "https://esante.gouv.fr",
 			"key": "insight.response.slow",
 			"description": "Percentage of slow responses",
-			"statistic": "78"
+			"statistic": "85"
 		}
 	],
 	"site":[ 
@@ -159,7 +167,17 @@
 					"desc": "<p>No Anti-CSRF tokens were found in a HTML submission form.</p><p>A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent in order to perform an action as the victim. The underlying cause is application functionality using predictable URL/form actions in a repeatable way. The nature of the attack is that CSRF exploits the trust that a web site has for a user. By contrast, cross-site scripting (XSS) exploits the trust that a user has for a web site. Like XSS, CSRF attacks are not necessarily cross-site, but they can be. Cross-site request forgery is also known as CSRF, XSRF, one-click attack, session riding, confused deputy, and sea surf.</p><p></p><p>CSRF attacks are effective in a number of situations, including:</p><p>    * The victim has an active session on the target site.</p><p>    * The victim is authenticated via HTTP auth on the target site.</p><p>    * The victim is on the same local network as the target site.</p><p></p><p>CSRF has primarily been used to perform an action against a target site using the victim's privileges, but recent techniques have been discovered to disclose information by gaining access to the response. The risk of information disclosure is dramatically increased when the target site is vulnerable to XSS, because XSS can be used as a platform for CSRF, allowing the attack to operate within the bounds of the same-origin policy.</p>",
 					"instances":[ 
 						{
-							"id": "188",
+							"id": "189",
+							"uri": "https://esante.gouv.fr/ens",
+							"nodeName": "https:\/\/esante.gouv.fr\/ens",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"openid-connect-login-form\" data-drupal-selector=\"openid-connect-login-form\" action=\"/ens\" method=\"post\" id=\"openid-connect-login-form\" accept-charset=\"UTF-8\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"edit-openid-connect-client-fii-login\" \"form_build_id\" \"form_id\" ]."
+						},
+						{
+							"id": "192",
 							"uri": "https://esante.gouv.fr/essms",
 							"nodeName": "https:\/\/esante.gouv.fr\/essms",
 							"method": "GET",
@@ -169,7 +187,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 3: \"edit-submit--4\" \"form_build_id\" \"form_id\" ]."
 						},
 						{
-							"id": "187",
+							"id": "191",
 							"uri": "https://esante.gouv.fr/essms",
 							"nodeName": "https:\/\/esante.gouv.fr\/essms",
 							"method": "GET",
@@ -177,16 +195,6 @@
 							"attack": "",
 							"evidence": "<form class=\"node-page-faq-14305-vote-field-vote-api__vote-vote-votingapi-useful-form vote-form\" id=\"vote-form--3\" data-drupal-selector=\"node-page-faq-14305-vote-field-vote-api-vote-vote-votingapi-useful-form\" action=\"/essms\" method=\"post\" accept-charset=\"UTF-8\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 2: \"edit-submit--6\" \"form_build_id\" \"form_id\" ]."
-						},
-						{
-							"id": "189",
-							"uri": "https://esante.gouv.fr/essms",
-							"nodeName": "https:\/\/esante.gouv.fr\/essms",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form class=\"node-page-faq-14357-vote-field-vote-api__vote-vote-votingapi-useful-form vote-form\" id=\"vote-form\" data-drupal-selector=\"node-page-faq-14357-vote-field-vote-api-vote-vote-votingapi-useful-form\" action=\"/essms\" method=\"post\" accept-charset=\"UTF-8\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 4: \"edit-submit--2\" \"form_build_id\" \"form_id\" ]."
 						},
 						{
 							"id": "171",
@@ -199,7 +207,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"edit-openid-connect-client-fii-login\" \"form_build_id\" \"form_id\" ]."
 						},
 						{
-							"id": "172",
+							"id": "173",
 							"uri": "https://esante.gouv.fr/user/password",
 							"nodeName": "https:\/\/esante.gouv.fr\/user\/password",
 							"method": "GET",
@@ -212,11 +220,11 @@
 					"count": "5",
 					"systemic": true,
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
-					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 3: \"edit-submit--4\" \"form_build_id\" \"form_id\" ].</p>",
+					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"edit-openid-connect-client-fii-login\" \"form_build_id\" \"form_id\" ].</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "347"
+					"sourceid": "322"
 				},
 				{
 					"pluginid": "10055",
@@ -229,7 +237,7 @@
 					"desc": "<p>The Content Security Policy fails to define one of the directives that has no fallback. Missing/excluding them is the same as allowing anything.</p>",
 					"instances":[ 
 						{
-							"id": "21",
+							"id": "42",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -239,9 +247,9 @@
 							"otherinfo": "The directive(s): frame-ancestors, form-action is/are among the directives that do not fallback to default-src."
 						},
 						{
-							"id": "43",
-							"uri": "https://esante.gouv.fr/core/*.css",
-							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.css",
+							"id": "6",
+							"uri": "https://esante.gouv.fr/core/*.gif",
+							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.gif",
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
@@ -249,9 +257,9 @@
 							"otherinfo": "The directive(s): frame-ancestors, form-action is/are among the directives that do not fallback to default-src."
 						},
 						{
-							"id": "8",
-							"uri": "https://esante.gouv.fr/core/*.gif",
-							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.gif",
+							"id": "35",
+							"uri": "https://esante.gouv.fr/core/*.jpg",
+							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.jpg",
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
@@ -279,7 +287,7 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "24",
+							"id": "45",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -289,9 +297,9 @@
 							"otherinfo": "script-src includes unsafe-eval."
 						},
 						{
-							"id": "46",
-							"uri": "https://esante.gouv.fr/core/*.css",
-							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.css",
+							"id": "14",
+							"uri": "https://esante.gouv.fr/core/*.gif",
+							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.gif",
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
@@ -299,9 +307,9 @@
 							"otherinfo": "script-src includes unsafe-eval."
 						},
 						{
-							"id": "17",
-							"uri": "https://esante.gouv.fr/core/*.gif",
-							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.gif",
+							"id": "38",
+							"uri": "https://esante.gouv.fr/core/*.jpg",
+							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.jpg",
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
@@ -329,7 +337,7 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "22",
+							"id": "43",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -339,9 +347,9 @@
 							"otherinfo": "script-src includes unsafe-inline."
 						},
 						{
-							"id": "44",
-							"uri": "https://esante.gouv.fr/core/*.css",
-							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.css",
+							"id": "8",
+							"uri": "https://esante.gouv.fr/core/*.gif",
+							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.gif",
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
@@ -349,9 +357,9 @@
 							"otherinfo": "script-src includes unsafe-inline."
 						},
 						{
-							"id": "13",
-							"uri": "https://esante.gouv.fr/core/*.gif",
-							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.gif",
+							"id": "36",
+							"uri": "https://esante.gouv.fr/core/*.jpg",
+							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.jpg",
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
@@ -379,7 +387,7 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "23",
+							"id": "44",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -389,9 +397,9 @@
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
-							"id": "45",
-							"uri": "https://esante.gouv.fr/core/*.css",
-							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.css",
+							"id": "11",
+							"uri": "https://esante.gouv.fr/core/*.gif",
+							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.gif",
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
@@ -399,9 +407,9 @@
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
-							"id": "14",
-							"uri": "https://esante.gouv.fr/core/*.gif",
-							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.gif",
+							"id": "37",
+							"uri": "https://esante.gouv.fr/core/*.jpg",
+							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.jpg",
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
@@ -429,8 +437,8 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "225",
-							"uri": "https://esante.gouv.fr/_Incapsula_Resource?CWUDNSAI=23&cinfo=03000000&cip=52.165.58.32&edet=15&incident_id=175000190294385974-141794810530825446&mth=GET&rpinfo=0&xinfo=38-29049175-0%200NNN%20RT%281776569104850%2044%29%20q%280%20-1%20-1%20-1%29%20r%280%20-1%29%20B15%283%2c306018%2c0%29%20U24",
+							"id": "222",
+							"uri": "https://esante.gouv.fr/_Incapsula_Resource?CWUDNSAI=23&cinfo=03000000&cip=52.159.244.176&edet=15&incident_id=189000190643884205-1234121486302512374&mth=GET&rpinfo=0&xinfo=54-276237989-0%200NNN%20RT%281777174137383%2024%29%20q%280%20-1%20-1%20-1%29%20r%280%20-1%29%20B15%283%2c306018%2c0%29%20U24",
 							"nodeName": "https:\/\/esante.gouv.fr\/_Incapsula_Resource (CWUDNSAI,cinfo,cip,edet,incident_id,mth,rpinfo,xinfo)",
 							"method": "GET",
 							"param": "",
@@ -439,7 +447,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "111",
+							"id": "110",
 							"uri": "https://esante.gouv.fr/core/",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/",
 							"method": "GET",
@@ -449,7 +457,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "131",
+							"id": "115",
 							"uri": "https://esante.gouv.fr/profiles/",
 							"nodeName": "https:\/\/esante.gouv.fr\/profiles\/",
 							"method": "GET",
@@ -459,7 +467,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "132",
+							"id": "130",
 							"uri": "https://esante.gouv.fr/web.config",
 							"nodeName": "https:\/\/esante.gouv.fr\/web.config",
 							"method": "GET",
@@ -476,7 +484,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1224"
+					"sourceid": "1253"
 				},
 				{
 					"pluginid": "10020",
@@ -489,8 +497,8 @@
 					"desc": "<p>The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.</p>",
 					"instances":[ 
 						{
-							"id": "224",
-							"uri": "https://esante.gouv.fr/_Incapsula_Resource?CWUDNSAI=23&cinfo=03000000&cip=52.165.58.32&edet=15&incident_id=175000190294385974-141794810530825446&mth=GET&rpinfo=0&xinfo=38-29049175-0%200NNN%20RT%281776569104850%2044%29%20q%280%20-1%20-1%20-1%29%20r%280%20-1%29%20B15%283%2c306018%2c0%29%20U24",
+							"id": "221",
+							"uri": "https://esante.gouv.fr/_Incapsula_Resource?CWUDNSAI=23&cinfo=03000000&cip=52.159.244.176&edet=15&incident_id=189000190643884205-1234121486302512374&mth=GET&rpinfo=0&xinfo=54-276237989-0%200NNN%20RT%281777174137383%2024%29%20q%280%20-1%20-1%20-1%29%20r%280%20-1%29%20B15%283%2c306018%2c0%29%20U24",
 							"nodeName": "https:\/\/esante.gouv.fr\/_Incapsula_Resource (CWUDNSAI,cinfo,cip,edet,incident_id,mth,rpinfo,xinfo)",
 							"method": "GET",
 							"param": "x-frame-options",
@@ -506,7 +514,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options</p>",
 					"cweid": "1021",
 					"wascid": "15",
-					"sourceid": "1224"
+					"sourceid": "1253"
 				},
 				{
 					"pluginid": "90003",
@@ -519,7 +527,7 @@
 					"desc": "<p>The integrity attribute is missing on a script or link tag served by an external server. The integrity tag prevents an attacker who have gained access to this server from injecting a malicious content.</p>",
 					"instances":[ 
 						{
-							"id": "32",
+							"id": "61",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -529,7 +537,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "120",
+							"id": "109",
 							"uri": "https://esante.gouv.fr/core/*.css$",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.css$",
 							"method": "GET",
@@ -539,7 +547,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "117",
+							"id": "121",
 							"uri": "https://esante.gouv.fr/core/*.js$",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.js$",
 							"method": "GET",
@@ -549,7 +557,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "127",
+							"id": "122",
 							"uri": "https://esante.gouv.fr/core/*.svg",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.svg",
 							"method": "GET",
@@ -559,7 +567,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "122",
+							"id": "129",
 							"uri": "https://esante.gouv.fr/profiles/*.js$",
 							"nodeName": "https:\/\/esante.gouv.fr\/profiles\/*.js$",
 							"method": "GET",
@@ -576,7 +584,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "65"
 				},
 				{
 					"pluginid": "10044",
@@ -589,7 +597,7 @@
 					"desc": "<p>The server has responded with a redirect that seems to provide a large response. This may indicate that although the server sent a redirect it also responded with body content (which may include sensitive details, PII, etc.).</p>",
 					"instances":[ 
 						{
-							"id": "178",
+							"id": "180",
 							"uri": "https://esante.gouv.fr/accueil",
 							"nodeName": "https:\/\/esante.gouv.fr\/accueil",
 							"method": "GET",
@@ -599,7 +607,7 @@
 							"otherinfo": "Location header URI length: 23 [https://esante.gouv.fr/].\nPredicted response size: 323.\nResponse Body Length: 338."
 						},
 						{
-							"id": "231",
+							"id": "228",
 							"uri": "https://esante.gouv.fr/cgu-portail-industriels",
 							"nodeName": "https:\/\/esante.gouv.fr\/cgu-portail-industriels",
 							"method": "GET",
@@ -619,7 +627,7 @@
 							"otherinfo": "Location header URI length: 34 [https://esante.gouv.fr/filter/tips].\nPredicted response size: 334.\nResponse Body Length: 382."
 						},
 						{
-							"id": "177",
+							"id": "179",
 							"uri": "https://esante.gouv.fr/index.php/media/oembed",
 							"nodeName": "https:\/\/esante.gouv.fr\/index.php\/media\/oembed",
 							"method": "GET",
@@ -629,7 +637,7 @@
 							"otherinfo": "Location header URI length: 35 [https://esante.gouv.fr/media/oembed].\nPredicted response size: 335.\nResponse Body Length: 386."
 						},
 						{
-							"id": "176",
+							"id": "168",
 							"uri": "https://esante.gouv.fr/index.php/user/login",
 							"nodeName": "https:\/\/esante.gouv.fr\/index.php\/user\/login",
 							"method": "GET",
@@ -639,7 +647,7 @@
 							"otherinfo": "Location header URI length: 59 [https://isconnect.esante.gouv.fr/enrollement/account/login/].\nPredicted response size: 359.\nResponse Body Length: 482."
 						},
 						{
-							"id": "174",
+							"id": "169",
 							"uri": "https://esante.gouv.fr/index.php/user/logout",
 							"nodeName": "https:\/\/esante.gouv.fr\/index.php\/user\/logout",
 							"method": "GET",
@@ -649,7 +657,7 @@
 							"otherinfo": "Location header URI length: 33 [https://esante.gouv.fr/index.php/].\nPredicted response size: 333.\nResponse Body Length: 378."
 						},
 						{
-							"id": "169",
+							"id": "178",
 							"uri": "https://esante.gouv.fr/index.php/user/password",
 							"nodeName": "https:\/\/esante.gouv.fr\/index.php\/user\/password",
 							"method": "GET",
@@ -659,7 +667,7 @@
 							"otherinfo": "Location header URI length: 36 [https://esante.gouv.fr/user/password].\nPredicted response size: 336.\nResponse Body Length: 390."
 						},
 						{
-							"id": "173",
+							"id": "167",
 							"uri": "https://esante.gouv.fr/index.php/user/register",
 							"nodeName": "https:\/\/esante.gouv.fr\/index.php\/user\/register",
 							"method": "GET",
@@ -669,7 +677,7 @@
 							"otherinfo": "Location header URI length: 55 [https://isconnect.esante.gouv.fr/enrollement/user/start].\nPredicted response size: 355.\nResponse Body Length: 466."
 						},
 						{
-							"id": "203",
+							"id": "200",
 							"uri": "https://esante.gouv.fr/nousrejoindre",
 							"nodeName": "https:\/\/esante.gouv.fr\/nousrejoindre",
 							"method": "GET",
@@ -679,7 +687,7 @@
 							"otherinfo": "Location header URI length: 45 [https://esante.gouv.fr/lagence/nous-rejoindre].\nPredicted response size: 345.\nResponse Body Length: 426."
 						},
 						{
-							"id": "163",
+							"id": "152",
 							"uri": "https://esante.gouv.fr/user/login",
 							"nodeName": "https:\/\/esante.gouv.fr\/user\/login",
 							"method": "GET",
@@ -689,7 +697,7 @@
 							"otherinfo": "Location header URI length: 59 [https://isconnect.esante.gouv.fr/enrollement/account/login/].\nPredicted response size: 359.\nResponse Body Length: 482."
 						},
 						{
-							"id": "164",
+							"id": "153",
 							"uri": "https://esante.gouv.fr/user/logout",
 							"nodeName": "https:\/\/esante.gouv.fr\/user\/logout",
 							"method": "GET",
@@ -699,7 +707,7 @@
 							"otherinfo": "Location header URI length: 23 [https://esante.gouv.fr/].\nPredicted response size: 323.\nResponse Body Length: 338."
 						},
 						{
-							"id": "143",
+							"id": "146",
 							"uri": "https://esante.gouv.fr/user/register",
 							"nodeName": "https:\/\/esante.gouv.fr\/user\/register",
 							"method": "GET",
@@ -716,7 +724,7 @@
 					"reference": "",
 					"cweid": "201",
 					"wascid": "13",
-					"sourceid": "304"
+					"sourceid": "306"
 				},
 				{
 					"pluginid": "10010",
@@ -729,23 +737,13 @@
 					"desc": "<p>A cookie has been set without the HttpOnly flag, which means that the cookie can be accessed by JavaScript. If a malicious script can be run on this page then the cookie will be accessible and can be transmitted to another site. If this is a session cookie then session hijacking may be possible.</p>",
 					"instances":[ 
 						{
-							"id": "25",
+							"id": "46",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
-							"param": "incap_ses_175_3314458",
+							"param": "incap_ses_189_3314458",
 							"attack": "",
-							"evidence": "Set-Cookie: incap_ses_175_3314458",
-							"otherinfo": ""
-						},
-						{
-							"id": "244",
-							"uri": "https://esante.gouv.fr/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&cb=1027044145&ns=50",
-							"nodeName": "https:\/\/esante.gouv.fr\/_Incapsula_Resource (SWJIYLWA,cb,ns)",
-							"method": "GET",
-							"param": "incap_ses_608_3314458",
-							"attack": "",
-							"evidence": "Set-Cookie: incap_ses_608_3314458",
+							"evidence": "Set-Cookie: incap_ses_189_3314458",
 							"otherinfo": ""
 						},
 						{
@@ -753,9 +751,9 @@
 							"uri": "https://esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/esante.gouv.fr\/robots.txt",
 							"method": "GET",
-							"param": "incap_ses_175_3314458",
+							"param": "incap_ses_189_3314458",
 							"attack": "",
-							"evidence": "Set-Cookie: incap_ses_175_3314458",
+							"evidence": "Set-Cookie: incap_ses_189_3314458",
 							"otherinfo": ""
 						},
 						{
@@ -763,23 +761,23 @@
 							"uri": "https://esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
-							"param": "incap_ses_175_3314458",
+							"param": "incap_ses_189_3314458",
 							"attack": "",
-							"evidence": "Set-Cookie: incap_ses_175_3314458",
+							"evidence": "Set-Cookie: incap_ses_189_3314458",
 							"otherinfo": ""
 						},
 						{
-							"id": "241",
-							"uri": "https://esante.gouv.fr/webinaires/hopen2-focus-sur-le-dispositif-appel-projets",
-							"nodeName": "https:\/\/esante.gouv.fr\/webinaires\/hopen2-focus-sur-le-dispositif-appel-projets",
+							"id": "237",
+							"uri": "https://esante.gouv.fr/sites/default/files/styles/585_x_330/public/2022-01/CI_SIS_967x500px.jpg?itok=AZttExlx",
+							"nodeName": "https:\/\/esante.gouv.fr\/sites\/default\/files\/styles\/585_x_330\/public\/2022-01\/CI_SIS_967x500px.jpg (itok)",
 							"method": "GET",
-							"param": "incap_ses_608_3314458",
+							"param": "incap_ses_576_3314458",
 							"attack": "",
-							"evidence": "Set-Cookie: incap_ses_608_3314458",
+							"evidence": "Set-Cookie: incap_ses_576_3314458",
 							"otherinfo": ""
 						}
 					],
-					"count": "5",
+					"count": "4",
 					"systemic": true,
 					"solution": "<p>Ensure that the HttpOnly flag is set for all cookies.</p>",
 					"otherinfo": "",
@@ -799,7 +797,7 @@
 					"desc": "<p>A cookie has been set without the secure flag, which means that the cookie can be accessed via unencrypted connections.</p>",
 					"instances":[ 
 						{
-							"id": "28",
+							"id": "49",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -809,17 +807,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "12",
+							"id": "17",
 							"uri": "https://esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/esante.gouv.fr\/robots.txt",
 							"method": "GET",
-							"param": "incap_ses_175_3314458",
+							"param": "incap_ses_189_3314458",
 							"attack": "",
-							"evidence": "Set-Cookie: incap_ses_175_3314458",
+							"evidence": "Set-Cookie: incap_ses_189_3314458",
 							"otherinfo": ""
 						},
 						{
-							"id": "11",
+							"id": "15",
 							"uri": "https://esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -833,13 +831,13 @@
 							"uri": "https://esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
-							"param": "incap_ses_175_3314458",
+							"param": "incap_ses_189_3314458",
 							"attack": "",
-							"evidence": "Set-Cookie: incap_ses_175_3314458",
+							"evidence": "Set-Cookie: incap_ses_189_3314458",
 							"otherinfo": ""
 						},
 						{
-							"id": "15",
+							"id": "13",
 							"uri": "https://esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -869,7 +867,7 @@
 					"desc": "<p>A cookie has been set without the SameSite attribute, which means that the cookie can be sent as a result of a 'cross-site' request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks.</p>",
 					"instances":[ 
 						{
-							"id": "26",
+							"id": "47",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -879,17 +877,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "9",
+							"id": "10",
 							"uri": "https://esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/esante.gouv.fr\/robots.txt",
 							"method": "GET",
-							"param": "incap_ses_175_3314458",
+							"param": "incap_ses_189_3314458",
 							"attack": "",
-							"evidence": "Set-Cookie: incap_ses_175_3314458",
+							"evidence": "Set-Cookie: incap_ses_189_3314458",
 							"otherinfo": ""
 						},
 						{
-							"id": "6",
+							"id": "7",
 							"uri": "https://esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -899,17 +897,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "10",
+							"id": "12",
 							"uri": "https://esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
-							"param": "incap_ses_175_3314458",
+							"param": "incap_ses_189_3314458",
 							"attack": "",
-							"evidence": "Set-Cookie: incap_ses_175_3314458",
+							"evidence": "Set-Cookie: incap_ses_189_3314458",
 							"otherinfo": ""
 						},
 						{
-							"id": "7",
+							"id": "9",
 							"uri": "https://esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -939,7 +937,7 @@
 					"desc": "<p>The page includes one or more script files from a third-party domain.</p>",
 					"instances":[ 
 						{
-							"id": "30",
+							"id": "51",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -949,7 +947,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "107",
+							"id": "106",
 							"uri": "https://esante.gouv.fr/core/*.css$",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.css$",
 							"method": "GET",
@@ -959,7 +957,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "103",
+							"id": "112",
 							"uri": "https://esante.gouv.fr/core/*.js$",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.js$",
 							"method": "GET",
@@ -969,7 +967,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "113",
+							"id": "114",
 							"uri": "https://esante.gouv.fr/core/*.svg",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.svg",
 							"method": "GET",
@@ -979,7 +977,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "116",
+							"id": "119",
 							"uri": "https://esante.gouv.fr/profiles/*.js$",
 							"nodeName": "https:\/\/esante.gouv.fr\/profiles\/*.js$",
 							"method": "GET",
@@ -1009,7 +1007,7 @@
 					"desc": "<p>Cross-Origin-Embedder-Policy header is a response header that prevents a document from loading any cross-origin resources that don't explicitly grant the document permission (using CORP or CORS).</p>",
 					"instances":[ 
 						{
-							"id": "41",
+							"id": "73",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -1019,7 +1017,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "161",
+							"id": "164",
 							"uri": "https://esante.gouv.fr/filter/tips",
 							"nodeName": "https:\/\/esante.gouv.fr\/filter\/tips",
 							"method": "GET",
@@ -1029,7 +1027,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "83",
+							"id": "33",
 							"uri": "https://esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -1046,7 +1044,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy</p>",
 					"cweid": "693",
 					"wascid": "14",
-					"sourceid": "1"
+					"sourceid": "65"
 				},
 				{
 					"pluginid": "90004",
@@ -1059,7 +1057,7 @@
 					"desc": "<p>Cross-Origin-Opener-Policy header is a response header that allows a site to control if others included documents share the same browsing context. Sharing the same browsing context with untrusted documents might lead to data leak.</p>",
 					"instances":[ 
 						{
-							"id": "42",
+							"id": "74",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -1069,7 +1067,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "162",
+							"id": "165",
 							"uri": "https://esante.gouv.fr/filter/tips",
 							"nodeName": "https:\/\/esante.gouv.fr\/filter\/tips",
 							"method": "GET",
@@ -1079,7 +1077,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "84",
+							"id": "34",
 							"uri": "https://esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -1096,7 +1094,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Opener-Policy</p>",
 					"cweid": "693",
 					"wascid": "14",
-					"sourceid": "1"
+					"sourceid": "65"
 				},
 				{
 					"pluginid": "90004",
@@ -1109,7 +1107,7 @@
 					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
 					"instances":[ 
 						{
-							"id": "40",
+							"id": "72",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -1119,7 +1117,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "115",
+							"id": "118",
 							"uri": "https://esante.gouv.fr/README.md",
 							"nodeName": "https:\/\/esante.gouv.fr\/README.md",
 							"method": "GET",
@@ -1129,7 +1127,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "160",
+							"id": "163",
 							"uri": "https://esante.gouv.fr/filter/tips",
 							"nodeName": "https:\/\/esante.gouv.fr\/filter\/tips",
 							"method": "GET",
@@ -1139,7 +1137,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "79",
+							"id": "104",
 							"uri": "https://esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -1149,7 +1147,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "82",
+							"id": "32",
 							"uri": "https://esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -1166,7 +1164,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy</p>",
 					"cweid": "693",
 					"wascid": "14",
-					"sourceid": "1"
+					"sourceid": "65"
 				},
 				{
 					"pluginid": "10110",
@@ -1179,7 +1177,7 @@
 					"desc": "<p>A dangerous JS function seems to be in use that would leave the site vulnerable.</p>",
 					"instances":[ 
 						{
-							"id": "239",
+							"id": "231",
 							"uri": "https://esante.gouv.fr/sites/default/files/js/js_bB4ObBVCukBi5O1Wt5ZcBG8jfHal5jt-BSwuqIqqk1I.js?delta=2&include=eJx1jVFuxDAIRC_kxEeyiD2bdUTAAixtb980H9W20n6A5j2QhloLfeoJrwZIpr-c_nF2RJkjkXi-ZtlZN-IbN9XwMBrL9dpH-G3r9NDzJxYS0SkVJyRy6z6YvpZ3mTZEwApeQx2tPDpf6HmHwK6WD2cHo0Yh5iIqSFUNudkcxGvrxLqvdNArOcjqs9DohWZo1XMwAvmDT0H18Hzv32wBmrWHqawPWw__BlmIfls&language=fr&scope=footer&theme=ans",
 							"nodeName": "https:\/\/esante.gouv.fr\/sites\/default\/files\/js\/js_bB4ObBVCukBi5O1Wt5ZcBG8jfHal5jt-BSwuqIqqk1I.js (delta,include,language,scope,theme)",
 							"method": "GET",
@@ -1189,7 +1187,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "230",
+							"id": "227",
 							"uri": "https://esante.gouv.fr/sites/default/files/js/js_m5cDfV_Nx4bIVKWO19hRsruBdaaqP5wnVO0meYpBXb0.js?delta=2&include=eJx1jdEKwyAMRX_I1k-SVG9biyZiImx_v64PYxv0IeGek8CllEx2qdDYAfb0y-6PvcLCaI5Y_TnTVmShcuEiYmqd2nS-5mZ62TjUpL5jIGYZHFHB5lPWVug5fUu3wAw94NFEkcKay4nqNzD62XJzVhREC1RKYGE4BfW4B2o50DCJUluBwd94ZxQP9df-5G6gEbN14Xnt86EvEql1Xw&language=fr&scope=footer&theme=ans",
 							"nodeName": "https:\/\/esante.gouv.fr\/sites\/default\/files\/js\/js_m5cDfV_Nx4bIVKWO19hRsruBdaaqP5wnVO0meYpBXb0.js (delta,include,language,scope,theme)",
 							"method": "GET",
@@ -1197,26 +1195,16 @@
 							"attack": "",
 							"evidence": "eval(",
 							"otherinfo": ""
-						},
-						{
-							"id": "249",
-							"uri": "https://esante.gouv.fr/sites/default/files/js/js_tjHJXatz2FgHz5YzUZej7yhYuPJHuPvLJsSN2hnja8o.js?delta=2&include=eJx1jVFuwzAMQy-UxEcyFJtJHTiSJ8lbe_u5KTBsA_ohgY8UIcrZ5SYnLCnAgf7y9I-DwWNvE7GFMfNeZaV64Sri5kptHqeluV1u6uZyPmUkZumccII95GKt0mP-bU4r3KER9yaGHLdSB1rYwdDx5U1sqEgeqdbIwpiSKELW3qguuVCVfaGD7i-_8OjwSI6PDn0sm-g5GUjTLVIrkbpLkrNVOMIbf3JKh4Vr_2h1UE_FVXjZdBnJp3jh_Vn-KnmHW-iGrddveR2Sgg&language=fr&scope=footer&theme=ans",
-							"nodeName": "https:\/\/esante.gouv.fr\/sites\/default\/files\/js\/js_tjHJXatz2FgHz5YzUZej7yhYuPJHuPvLJsSN2hnja8o.js (delta,include,language,scope,theme)",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "eval(",
-							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"systemic": false,
 					"solution": "<p>See the references for security advice on the use of these functions.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://v17.angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "1242"
+					"sourceid": "1264"
 				},
 				{
 					"pluginid": "110009",
@@ -1229,7 +1217,7 @@
 					"desc": "<p>The full path of files which might be sensitive has been exposed to the client.</p>",
 					"instances":[ 
 						{
-							"id": "168",
+							"id": "161",
 							"uri": "https://esante.gouv.fr/admin/",
 							"nodeName": "https:\/\/esante.gouv.fr\/admin\/",
 							"method": "GET",
@@ -1239,7 +1227,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "155",
+							"id": "157",
 							"uri": "https://esante.gouv.fr/comment/reply/",
 							"nodeName": "https:\/\/esante.gouv.fr\/comment\/reply\/",
 							"method": "GET",
@@ -1249,7 +1237,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "149",
+							"id": "151",
 							"uri": "https://esante.gouv.fr/composer/Plugin/ProjectMessage/README.md",
 							"nodeName": "https:\/\/esante.gouv.fr\/composer\/Plugin\/ProjectMessage\/README.md",
 							"method": "GET",
@@ -1259,7 +1247,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "153",
+							"id": "148",
 							"uri": "https://esante.gouv.fr/composer/Plugin/Scaffold/README.md",
 							"nodeName": "https:\/\/esante.gouv.fr\/composer\/Plugin\/Scaffold\/README.md",
 							"method": "GET",
@@ -1269,7 +1257,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "126",
+							"id": "113",
 							"uri": "https://esante.gouv.fr/core/*.css$",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.css$",
 							"method": "GET",
@@ -1279,7 +1267,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "121",
+							"id": "126",
 							"uri": "https://esante.gouv.fr/core/*.js$",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.js$",
 							"method": "GET",
@@ -1289,7 +1277,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "129",
+							"id": "124",
 							"uri": "https://esante.gouv.fr/core/*.svg",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.svg",
 							"method": "GET",
@@ -1299,7 +1287,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "165",
+							"id": "175",
 							"uri": "https://esante.gouv.fr/node/add/",
 							"nodeName": "https:\/\/esante.gouv.fr\/node\/add\/",
 							"method": "GET",
@@ -1309,7 +1297,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "140",
+							"id": "136",
 							"uri": "https://esante.gouv.fr/profiles/*.css$",
 							"nodeName": "https:\/\/esante.gouv.fr\/profiles\/*.css$",
 							"method": "GET",
@@ -1319,7 +1307,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "125",
+							"id": "134",
 							"uri": "https://esante.gouv.fr/profiles/*.js$",
 							"nodeName": "https:\/\/esante.gouv.fr\/profiles\/*.js$",
 							"method": "GET",
@@ -1329,7 +1317,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "142",
+							"id": "144",
 							"uri": "https://esante.gouv.fr/profiles/*.svg",
 							"nodeName": "https:\/\/esante.gouv.fr\/profiles\/*.svg",
 							"method": "GET",
@@ -1339,7 +1327,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "167",
+							"id": "162",
 							"uri": "https://esante.gouv.fr/search/",
 							"nodeName": "https:\/\/esante.gouv.fr\/search\/",
 							"method": "GET",
@@ -1356,7 +1344,7 @@
 					"reference": "<p>https://owasp.org/www-community/attacks/Full_Path_Disclosure</p>",
 					"cweid": "209",
 					"wascid": "13",
-					"sourceid": "234"
+					"sourceid": "240"
 				},
 				{
 					"pluginid": "10063",
@@ -1369,7 +1357,7 @@
 					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
 					"instances":[ 
 						{
-							"id": "39",
+							"id": "71",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -1379,7 +1367,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "53",
+							"id": "85",
 							"uri": "https://esante.gouv.fr/core/*.css",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.css",
 							"method": "GET",
@@ -1389,7 +1377,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "78",
+							"id": "31",
 							"uri": "https://esante.gouv.fr/core/*.gif",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.gif",
 							"method": "GET",
@@ -1399,7 +1387,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "91",
+							"id": "90",
 							"uri": "https://esante.gouv.fr/core/*.jpeg",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.jpeg",
 							"method": "GET",
@@ -1409,7 +1397,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "94",
+							"id": "81",
 							"uri": "https://esante.gouv.fr/core/*.png",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.png",
 							"method": "GET",
@@ -1426,7 +1414,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "65"
 				},
 				{
 					"pluginid": "10035",
@@ -1440,7 +1428,7 @@
 					"instances":[ 
 						{
 							"id": "181",
-							"uri": "https://esante.gouv.fr/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&cb=448264232&ns=4",
+							"uri": "https://esante.gouv.fr/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&cb=1249131344&ns=6",
 							"nodeName": "https:\/\/esante.gouv.fr\/_Incapsula_Resource (SWJIYLWA,cb,ns)",
 							"method": "GET",
 							"param": "",
@@ -1449,7 +1437,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "133",
+							"id": "131",
 							"uri": "https://esante.gouv.fr/web.config",
 							"nodeName": "https:\/\/esante.gouv.fr\/web.config",
 							"method": "GET",
@@ -1466,7 +1454,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "300"
+					"sourceid": "295"
 				},
 				{
 					"pluginid": "10096",
@@ -1479,64 +1467,64 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server. - Unix</p>",
 					"instances":[ 
 						{
-							"id": "64",
-							"uri": "https://esante.gouv.fr",
-							"nodeName": "https:\/\/esante.gouv.fr",
+							"id": "127",
+							"uri": "https://esante.gouv.fr/composer/Plugin/VendorHardening/README.txt",
+							"nodeName": "https:\/\/esante.gouv.fr\/composer\/Plugin\/VendorHardening\/README.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1578807979",
-							"otherinfo": "1578807979, which evaluates to: 2020-01-12 05:46:19."
+							"evidence": "1523429070",
+							"otherinfo": "1523429070, which evaluates to: 2018-04-11 06:44:30."
+						},
+						{
+							"id": "128",
+							"uri": "https://esante.gouv.fr/composer/Template/README.txt",
+							"nodeName": "https:\/\/esante.gouv.fr\/composer\/Template\/README.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "2042230078",
+							"otherinfo": "2042230078, which evaluates to: 2034-09-18 22:07:58."
+						},
+						{
+							"id": "83",
+							"uri": "https://esante.gouv.fr/core/*.css",
+							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1948645877",
+							"otherinfo": "1948645877, which evaluates to: 2031-10-01 18:31:17."
 						},
 						{
 							"id": "88",
-							"uri": "https://esante.gouv.fr/core/*.jpeg",
-							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.jpeg",
+							"uri": "https://esante.gouv.fr/core/*.js",
+							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1987801078",
-							"otherinfo": "1987801078, which evaluates to: 2032-12-27 22:57:58."
+							"evidence": "1687411120",
+							"otherinfo": "1687411120, which evaluates to: 2023-06-22 05:18:40."
 						},
 						{
-							"id": "118",
-							"uri": "https://esante.gouv.fr/core/*.js$",
-							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.js$",
+							"id": "116",
+							"uri": "https://esante.gouv.fr/profiles/",
+							"nodeName": "https:\/\/esante.gouv.fr\/profiles\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1711263961",
-							"otherinfo": "1711263961, which evaluates to: 2024-03-24 07:06:01."
-						},
-						{
-							"id": "89",
-							"uri": "https://esante.gouv.fr/core/*.png",
-							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.png",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "2076541758",
-							"otherinfo": "2076541758, which evaluates to: 2035-10-21 01:09:18."
-						},
-						{
-							"id": "104",
-							"uri": "https://esante.gouv.fr/profiles/*.gif",
-							"nodeName": "https:\/\/esante.gouv.fr\/profiles\/*.gif",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "1562973408",
-							"otherinfo": "1562973408, which evaluates to: 2019-07-12 23:16:48."
+							"evidence": "1670107436",
+							"otherinfo": "1670107436, which evaluates to: 2022-12-03 22:43:56."
 						}
 					],
 					"count": "5",
 					"systemic": true,
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
-					"otherinfo": "<p>1578807979, which evaluates to: 2020-01-12 05:46:19.</p>",
+					"otherinfo": "<p>1523429070, which evaluates to: 2018-04-11 06:44:30.</p>",
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "65"
+					"sourceid": "185"
 				},
 				{
 					"pluginid": "10021",
@@ -1550,7 +1538,7 @@
 					"instances":[ 
 						{
 							"id": "182",
-							"uri": "https://esante.gouv.fr/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&cb=448264232&ns=4",
+							"uri": "https://esante.gouv.fr/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&cb=1249131344&ns=6",
 							"nodeName": "https:\/\/esante.gouv.fr\/_Incapsula_Resource (SWJIYLWA,cb,ns)",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -1566,7 +1554,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "300"
+					"sourceid": "295"
 				},
 				{
 					"pluginid": "10094",
@@ -1579,37 +1567,27 @@
 					"desc": "<p>Base64 encoded data was disclosed by the application/web server. Note: in the interests of performance not all base64 strings in the response were analyzed individually, the entire response should be looked at by the analyst/security team/developer(s).</p>",
 					"instances":[ 
 						{
-							"id": "33",
+							"id": "69",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "DAuSxW43SIuJ5gzVA0XOOQ1L5GkAAAAAQUIPAAAAAAC+f7heuTVVpcYfOXbgr1a2",
-							"otherinfo": "\\x000c\\x000b\uFFFD\uFFFDn7H\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\\x0003E\uFFFD9\rK\uFFFDi\\x0000\\x0000\\x0000\\x0000AB\\x000f\\x0000\\x0000\\x0000\\x0000\\x0000\uFFFD\uFFFD^\uFFFD5U\uFFFD\uFFFD\\x001f9v\uFFFDV\uFFFD"
+							"evidence": "HWp07uUfRkeBJVYEir3O+XaG7WkAAAAAQUIPAAAAAAAX9f6oOtvR9kzk1fizpt/d",
+							"otherinfo": "\\x001djt\uFFFD\uFFFD\\x001fFG\uFFFD%V\\x0004\uFFFD\uFFFD\uFFFD\uFFFDv\uFFFD\uFFFDi\\x0000\\x0000\\x0000\\x0000AB\\x000f\\x0000\\x0000\\x0000\\x0000\\x0000\\x0017\uFFFD\uFFFD\uFFFD:\uFFFD\uFFFD\uFFFDL\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
-							"id": "65",
+							"id": "63",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "cYvO427BRqKv4R/flWzfSQ5L5GkAAAAAQUIPAAAAAAANj72nCAkeg3ZMqEkbwxDI",
-							"otherinfo": "q\uFFFD\uFFFD\uFFFDn\uFFFDF\uFFFD\uFFFD\uFFFD\\x001f\u07D5l\uFFFDI\\x000eK\uFFFDi\\x0000\\x0000\\x0000\\x0000AB\\x000f\\x0000\\x0000\\x0000\\x0000\\x0000\r\uFFFD\uFFFD\uFFFD\\x0008\t\\x001e\uFFFDvL\uFFFDI\\x001b\uFFFD\\x0010\uFFFD"
+							"evidence": "e1eUEVwpS+aFqGIQPFhehXeG7WkAAAAAQUIPAAAAAAAuPOcYSz0g6mcM8WUDwZxd",
+							"otherinfo": "{W\uFFFD\\x0011\\)K\u6168b\\x0010<X^\uFFFDw\uFFFD\uFFFDi\\x0000\\x0000\\x0000\\x0000AB\\x000f\\x0000\\x0000\\x0000\\x0000\\x0000.<\uFFFD\\x0018K= \uFFFDg\\x000c\uFFFDe\\x0003\uFFFD\uFFFD]"
 						},
 						{
-							"id": "154",
-							"uri": "https://esante.gouv.fr/comment/reply/",
-							"nodeName": "https:\/\/esante.gouv.fr\/comment\/reply\/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "/sites/default/files/css/css_LFIF4JtwxjNHn5Jh9nOmf_JTesEEPImWApgRwxCQAzI",
-							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\uFFFDH\\x0017\uFFFDm\uFFFD\\x0018\uFFFD\\x001e~I\uFFFD\uFFFD\u0399\uFFFD\uFFFDM\uFFFD\\x0004\\x0010\uFFFD&X\n`G\\x000cB@\\x000c\uFFFD"
-						},
-						{
-							"id": "148",
+							"id": "150",
 							"uri": "https://esante.gouv.fr/composer/Plugin/ProjectMessage/README.md",
 							"nodeName": "https:\/\/esante.gouv.fr\/composer\/Plugin\/ProjectMessage\/README.md",
 							"method": "GET",
@@ -1619,7 +1597,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\uFFFDH\\x0017\uFFFDm\uFFFD\\x0018\uFFFD\\x001e~I\uFFFD\uFFFD\u0399\uFFFD\uFFFDM\uFFFD\\x0004\\x0010\uFFFD&X\n`G\\x000cB@\\x000c\uFFFD"
 						},
 						{
-							"id": "152",
+							"id": "147",
 							"uri": "https://esante.gouv.fr/composer/Plugin/Scaffold/README.md",
 							"nodeName": "https:\/\/esante.gouv.fr\/composer\/Plugin\/Scaffold\/README.md",
 							"method": "GET",
@@ -1629,7 +1607,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\uFFFDH\\x0017\uFFFDm\uFFFD\\x0018\uFFFD\\x001e~I\uFFFD\uFFFD\u0399\uFFFD\uFFFDM\uFFFD\\x0004\\x0010\uFFFD&X\n`G\\x000cB@\\x000c\uFFFD"
 						},
 						{
-							"id": "124",
+							"id": "111",
 							"uri": "https://esante.gouv.fr/core/*.css$",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.css$",
 							"method": "GET",
@@ -1639,7 +1617,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\uFFFDH\\x0017\uFFFDm\uFFFD\\x0018\uFFFD\\x001e~I\uFFFD\uFFFD\u0399\uFFFD\uFFFDM\uFFFD\\x0004\\x0010\uFFFD&X\n`G\\x000cB@\\x000c\uFFFD"
 						},
 						{
-							"id": "119",
+							"id": "125",
 							"uri": "https://esante.gouv.fr/core/*.js$",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.js$",
 							"method": "GET",
@@ -1649,7 +1627,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\uFFFDH\\x0017\uFFFDm\uFFFD\\x0018\uFFFD\\x001e~I\uFFFD\uFFFD\u0399\uFFFD\uFFFDM\uFFFD\\x0004\\x0010\uFFFD&X\n`G\\x000cB@\\x000c\uFFFD"
 						},
 						{
-							"id": "128",
+							"id": "123",
 							"uri": "https://esante.gouv.fr/core/*.svg",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.svg",
 							"method": "GET",
@@ -1659,7 +1637,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\uFFFDH\\x0017\uFFFDm\uFFFD\\x0018\uFFFD\\x001e~I\uFFFD\uFFFD\u0399\uFFFD\uFFFDM\uFFFD\\x0004\\x0010\uFFFD&X\n`G\\x000cB@\\x000c\uFFFD"
 						},
 						{
-							"id": "138",
+							"id": "135",
 							"uri": "https://esante.gouv.fr/profiles/*.css$",
 							"nodeName": "https:\/\/esante.gouv.fr\/profiles\/*.css$",
 							"method": "GET",
@@ -1669,7 +1647,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\uFFFDH\\x0017\uFFFDm\uFFFD\\x0018\uFFFD\\x001e~I\uFFFD\uFFFD\u0399\uFFFD\uFFFDM\uFFFD\\x0004\\x0010\uFFFD&X\n`G\\x000cB@\\x000c\uFFFD"
 						},
 						{
-							"id": "123",
+							"id": "133",
 							"uri": "https://esante.gouv.fr/profiles/*.js$",
 							"nodeName": "https:\/\/esante.gouv.fr\/profiles\/*.js$",
 							"method": "GET",
@@ -1679,7 +1657,7 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\uFFFDH\\x0017\uFFFDm\uFFFD\\x0018\uFFFD\\x001e~I\uFFFD\uFFFD\u0399\uFFFD\uFFFDM\uFFFD\\x0004\\x0010\uFFFD&X\n`G\\x000cB@\\x000c\uFFFD"
 						},
 						{
-							"id": "141",
+							"id": "143",
 							"uri": "https://esante.gouv.fr/profiles/*.svg",
 							"nodeName": "https:\/\/esante.gouv.fr\/profiles\/*.svg",
 							"method": "GET",
@@ -1689,30 +1667,30 @@
 							"otherinfo": "\uFFFD\u022Dz\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\u07CAW\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD,\uFFFD\uFFFDH\\x0017\uFFFDm\uFFFD\\x0018\uFFFD\\x001e~I\uFFFD\uFFFD\u0399\uFFFD\uFFFDM\uFFFD\\x0004\\x0010\uFFFD&X\n`G\\x000cB@\\x000c\uFFFD"
 						},
 						{
-							"id": "75",
+							"id": "102",
 							"uri": "https://esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/esante.gouv.fr\/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Eh8nPD8aTWa8CE/wZHdjMQ1L5GkAAAAAQUIPAAAAAAC/FL2xtGyHlxR3HDr2ymtc",
-							"otherinfo": "\\x0012\\x001f'<?\\x001aMf\uFFFD\\x0008O\uFFFDdwc1\rK\uFFFDi\\x0000\\x0000\\x0000\\x0000AB\\x000f\\x0000\\x0000\\x0000\\x0000\\x0000\uFFFD\\x0014\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFD\\x0014w\\x001c:\uFFFD\uFFFDk\\"
+							"evidence": "xhV3pu6iQmubkwiUBr+G8XeG7WkAAAAAQUIPAAAAAABU2/029JQParik8IsaD+Dz",
+							"otherinfo": "\uFFFD\\x0015w\uFFFD\uFFFDBk\uFFFD\uFFFD\\x0008\uFFFD\\x0006\uFFFD\uFFFD\uFFFDw\uFFFD\uFFFDi\\x0000\\x0000\\x0000\\x0000AB\\x000f\\x0000\\x0000\\x0000\\x0000\\x0000T\uFFFD\uFFFD6\uFFFD\uFFFD\\x000fj\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\\x000f\uFFFD\uFFFD"
 						},
 						{
-							"id": "80",
+							"id": "19",
 							"uri": "https://esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "23tv9byyRW+xGOToskBPsQ5L5GkAAAAAQUIPAAAAAAD9RjtZwe6u+YkerDE3czTv",
-							"otherinfo": "\uFFFD{o\uFFFD\uFFFD\uFFFDEo\uFFFD\\x0018\uFFFD\uFFFD@O\uFFFD\\x000eK\uFFFDi\\x0000\\x0000\\x0000\\x0000AB\\x000f\\x0000\\x0000\\x0000\\x0000\\x0000\uFFFDF;Y\uFFFD\uFFFD\uFFFD\uFFFD\\x001e\uFFFD17s4\uFFFD"
+							"evidence": "0KlBZI5uQjmaB70HsFRbB3eG7WkAAAAAQUIPAAAAAADtF7fa7BUyyJcNOJWVudMF",
+							"otherinfo": "\u0429Ad\uFFFDnB9\uFFFD\\x0007\uFFFD\\x0007\uFFFDT[\\x0007w\uFFFD\uFFFDi\\x0000\\x0000\\x0000\\x0000AB\\x000f\\x0000\\x0000\\x0000\\x0000\\x0000\uFFFD\\x0017\uFFFD\uFFFD\uFFFD\\x00152\u0217\r8\uFFFD\uFFFD\uFFFD\uFFFD\\x0005"
 						}
 					],
-					"count": "13",
+					"count": "12",
 					"systemic": false,
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\\x000c\\x000b\uFFFD\uFFFDn7H\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\\x0003E\uFFFD9\rK\uFFFDi\\x0000\\x0000\\x0000\\x0000AB\\x000f\\x0000\\x0000\\x0000\\x0000\\x0000\uFFFD\uFFFD^\uFFFD5U\uFFFD\uFFFD\\x001f9v\uFFFDV\uFFFD</p>",
+					"otherinfo": "<p>\\x001djt\uFFFD\uFFFD\\x001fFG\uFFFD%V\\x0004\uFFFD\uFFFD\uFFFD\uFFFDv\uFFFD\uFFFDi\\x0000\\x0000\\x0000\\x0000AB\\x000f\\x0000\\x0000\\x0000\\x0000\\x0000\\x0017\uFFFD\uFFFD\uFFFD:\uFFFD\uFFFD\uFFFDL\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "319",
 					"wascid": "13",
@@ -1729,7 +1707,7 @@
 					"desc": "<p>The response appears to contain suspicious comments which may help an attacker.</p>",
 					"instances":[ 
 						{
-							"id": "228",
+							"id": "225",
 							"uri": "https://esante.gouv.fr/sites/default/files/js/js_Iv6TtOBqaBsoCfyNGaQJ9GdSNAyOUnG9O4wgWQY2_as.js?delta=0&include=eJx1jVFuxDAIRC_kxEeyiD2bdUTAAixtb980H9W20n6A5j2QhloLfeoJrwZIpr-c_nF2RJkjkXi-ZtlZN-IbN9XwMBrL9dpH-G3r9NDzJxYS0SkVJyRy6z6YvpZ3mTZEwApeQx2tPDpf6HmHwK6WD2cHo0Yh5iIqSFUNudkcxGvrxLqvdNArOcjqs9DohWZo1XMwAvmDT0H18Hzv32wBmrWHqawPWw__BlmIfls&language=fr&scope=footer&theme=ans",
 							"nodeName": "https:\/\/esante.gouv.fr\/sites\/default\/files\/js\/js_Iv6TtOBqaBsoCfyNGaQJ9GdSNAyOUnG9O4wgWQY2_as.js (delta,include,language,scope,theme)",
 							"method": "GET",
@@ -1739,7 +1717,7 @@
 							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected 3 times, the first in likely comment: \"/* @license GPL-2.0-or-later https://git.drupalcode.org/project/once/-/raw/v1.0.1/LICENSE.md */\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "223",
+							"id": "220",
 							"uri": "https://esante.gouv.fr/sites/default/files/js/js_NgxHukdhC7C-xtf50RC3FoS1Y5jFE2m2aUBExjHDbfM.js?delta=0&include=eJx1jdEKwyAMRX_I1k-SVG9biyZiImx_v64PYxv0IeGek8CllEx2qdDYAfb0y-6PvcLCaI5Y_TnTVmShcuEiYmqd2nS-5mZ62TjUpL5jIGYZHFHB5lPWVug5fUu3wAw94NFEkcKay4nqNzD62XJzVhREC1RKYGE4BfW4B2o50DCJUluBwd94ZxQP9df-5G6gEbN14Xnt86EvEql1Xw&language=fr&scope=footer&theme=ans",
 							"nodeName": "https:\/\/esante.gouv.fr\/sites\/default\/files\/js\/js_NgxHukdhC7C-xtf50RC3FoS1Y5jFE2m2aUBExjHDbfM.js (delta,include,language,scope,theme)",
 							"method": "GET",
@@ -1749,7 +1727,7 @@
 							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected 3 times, the first in likely comment: \"/* @license GPL-2.0-or-later https://git.drupalcode.org/project/once/-/raw/v1.0.1/LICENSE.md */\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "238",
+							"id": "229",
 							"uri": "https://esante.gouv.fr/sites/default/files/js/js_bB4ObBVCukBi5O1Wt5ZcBG8jfHal5jt-BSwuqIqqk1I.js?delta=2&include=eJx1jVFuxDAIRC_kxEeyiD2bdUTAAixtb980H9W20n6A5j2QhloLfeoJrwZIpr-c_nF2RJkjkXi-ZtlZN-IbN9XwMBrL9dpH-G3r9NDzJxYS0SkVJyRy6z6YvpZ3mTZEwApeQx2tPDpf6HmHwK6WD2cHo0Yh5iIqSFUNudkcxGvrxLqvdNArOcjqs9DohWZo1XMwAvmDT0H18Hzv32wBmrWHqawPWw__BlmIfls&language=fr&scope=footer&theme=ans",
 							"nodeName": "https:\/\/esante.gouv.fr\/sites\/default\/files\/js\/js_bB4ObBVCukBi5O1Wt5ZcBG8jfHal5jt-BSwuqIqqk1I.js (delta,include,language,scope,theme)",
 							"method": "GET",
@@ -1759,7 +1737,7 @@
 							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected 4 times, the first in likely comment: \"/* @license GPL-2.0-or-later https://www.drupal.org/licensing/faq */\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "229",
+							"id": "226",
 							"uri": "https://esante.gouv.fr/sites/default/files/js/js_m5cDfV_Nx4bIVKWO19hRsruBdaaqP5wnVO0meYpBXb0.js?delta=2&include=eJx1jdEKwyAMRX_I1k-SVG9biyZiImx_v64PYxv0IeGek8CllEx2qdDYAfb0y-6PvcLCaI5Y_TnTVmShcuEiYmqd2nS-5mZ62TjUpL5jIGYZHFHB5lPWVug5fUu3wAw94NFEkcKay4nqNzD62XJzVhREC1RKYGE4BfW4B2o50DCJUluBwd94ZxQP9df-5G6gEbN14Xnt86EvEql1Xw&language=fr&scope=footer&theme=ans",
 							"nodeName": "https:\/\/esante.gouv.fr\/sites\/default\/files\/js\/js_m5cDfV_Nx4bIVKWO19hRsruBdaaqP5wnVO0meYpBXb0.js (delta,include,language,scope,theme)",
 							"method": "GET",
@@ -1767,26 +1745,16 @@
 							"attack": "",
 							"evidence": "@license GPL-2.0-or-later https://www.drupal.",
 							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected 4 times, the first in likely comment: \"/* @license GPL-2.0-or-later https://www.drupal.org/licensing/faq */\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"id": "248",
-							"uri": "https://esante.gouv.fr/sites/default/files/js/js_tjHJXatz2FgHz5YzUZej7yhYuPJHuPvLJsSN2hnja8o.js?delta=2&include=eJx1jVFuwzAMQy-UxEcyFJtJHTiSJ8lbe_u5KTBsA_ohgY8UIcrZ5SYnLCnAgf7y9I-DwWNvE7GFMfNeZaV64Sri5kptHqeluV1u6uZyPmUkZumccII95GKt0mP-bU4r3KER9yaGHLdSB1rYwdDx5U1sqEgeqdbIwpiSKELW3qguuVCVfaGD7i-_8OjwSI6PDn0sm-g5GUjTLVIrkbpLkrNVOMIbf3JKh4Vr_2h1UE_FVXjZdBnJp3jh_Vn-KnmHW-iGrddveR2Sgg&language=fr&scope=footer&theme=ans",
-							"nodeName": "https:\/\/esante.gouv.fr\/sites\/default\/files\/js\/js_tjHJXatz2FgHz5YzUZej7yhYuPJHuPvLJsSN2hnja8o.js (delta,include,language,scope,theme)",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "@license GPL-2.0-or-later https://www.drupal.",
-							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected 6 times, the first in likely comment: \"/* @license GPL-2.0-or-later https://www.drupal.org/licensing/faq */\", see evidence field for the suspicious comment/snippet."
 						}
 					],
-					"count": "5",
+					"count": "4",
 					"systemic": false,
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
 					"otherinfo": "<p>The following pattern was used: \\bLATER\\b and was detected 3 times, the first in likely comment: \"/* @license GPL-2.0-or-later https://git.drupalcode.org/project/once/-/raw/v1.0.1/LICENSE.md */\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "615",
 					"wascid": "13",
-					"sourceid": "1218"
+					"sourceid": "1249"
 				},
 				{
 					"pluginid": "10109",
@@ -1799,7 +1767,7 @@
 					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
 					"instances":[ 
 						{
-							"id": "31",
+							"id": "59",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -1809,13 +1777,13 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"id": "47",
+							"id": "82",
 							"uri": "https://esante.gouv.fr/core/*.css",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script type=\"text/javascript\" src=\"/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=3&cb=262840511\" async></script>",
+							"evidence": "<script type=\"text/javascript\" src=\"/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=5&cb=1948645877\" async></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
@@ -1825,27 +1793,27 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script type=\"text/javascript\" src=\"/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=4&cb=448264232\" async></script>",
+							"evidence": "<script type=\"text/javascript\" src=\"/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=2&cb=1299410278\" async></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "86",
-							"uri": "https://esante.gouv.fr/core/*.jpeg",
-							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.jpeg",
+							"id": "39",
+							"uri": "https://esante.gouv.fr/core/*.jpg",
+							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.jpg",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script type=\"text/javascript\" src=\"/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1987801078\" async></script>",
+							"evidence": "<script type=\"text/javascript\" src=\"/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=6&cb=1249131344\" async></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "85",
+							"id": "79",
 							"uri": "https://esante.gouv.fr/core/*.png",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script type=\"text/javascript\" src=\"/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=2&cb=2076541758\" async></script>",
+							"evidence": "<script type=\"text/javascript\" src=\"/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1368973961\" async></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						}
 					],
@@ -1869,7 +1837,7 @@
 					"desc": "<p>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</p>",
 					"instances":[ 
 						{
-							"id": "20",
+							"id": "41",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -1879,7 +1847,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "114",
+							"id": "117",
 							"uri": "https://esante.gouv.fr/README.md",
 							"nodeName": "https:\/\/esante.gouv.fr\/README.md",
 							"method": "GET",
@@ -1889,7 +1857,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "156",
+							"id": "159",
 							"uri": "https://esante.gouv.fr/filter/tips",
 							"nodeName": "https:\/\/esante.gouv.fr\/filter\/tips",
 							"method": "GET",
@@ -1939,7 +1907,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"id": "36",
+							"id": "66",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -1949,9 +1917,19 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "50",
-							"uri": "https://esante.gouv.fr/core/*.css",
-							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.css",
+							"id": "23",
+							"uri": "https://esante.gouv.fr/core/*.gif",
+							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.gif",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "27",
+							"uri": "https://esante.gouv.fr/sitemap.xml",
+							"nodeName": "https:\/\/esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1959,14 +1937,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"systemic": true,
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "65"
 				},
 				{
 					"pluginid": "90005",
@@ -1979,7 +1957,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"id": "35",
+							"id": "65",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -1989,9 +1967,19 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "49",
-							"uri": "https://esante.gouv.fr/core/*.css",
-							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.css",
+							"id": "21",
+							"uri": "https://esante.gouv.fr/core/*.gif",
+							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.gif",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "26",
+							"uri": "https://esante.gouv.fr/sitemap.xml",
+							"nodeName": "https:\/\/esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1999,14 +1987,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"systemic": true,
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "65"
 				},
 				{
 					"pluginid": "90005",
@@ -2019,7 +2007,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"id": "34",
+							"id": "64",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -2029,9 +2017,19 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "48",
-							"uri": "https://esante.gouv.fr/core/*.css",
-							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.css",
+							"id": "20",
+							"uri": "https://esante.gouv.fr/core/*.gif",
+							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.gif",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "24",
+							"uri": "https://esante.gouv.fr/sitemap.xml",
+							"nodeName": "https:\/\/esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -2039,14 +2037,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"systemic": true,
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "65"
 				},
 				{
 					"pluginid": "90005",
@@ -2059,7 +2057,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"id": "37",
+							"id": "67",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -2069,9 +2067,19 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "51",
-							"uri": "https://esante.gouv.fr/core/*.css",
-							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.css",
+							"id": "25",
+							"uri": "https://esante.gouv.fr/core/*.gif",
+							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.gif",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "28",
+							"uri": "https://esante.gouv.fr/sitemap.xml",
+							"nodeName": "https:\/\/esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -2079,14 +2087,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"systemic": true,
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "65"
 				},
 				{
 					"pluginid": "10112",
@@ -2099,37 +2107,27 @@
 					"desc": "<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to \"Auto-Detect\" then this rule will change the session management to use the tokens identified.</p>",
 					"instances":[ 
 						{
-							"id": "19",
+							"id": "22",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
-							"param": "incap_ses_175_3314458",
+							"param": "visid_incap_3314458",
 							"attack": "",
-							"evidence": "incap_ses_175_3314458",
-							"otherinfo": "cookie:incap_ses_175_3314458\ncookie:visid_incap_3314458"
+							"evidence": "visid_incap_3314458",
+							"otherinfo": "cookie:visid_incap_3314458\ncookie:incap_ses_189_3314458"
 						},
 						{
-							"id": "1",
-							"uri": "https://esante.gouv.fr/sitemap.xml",
-							"nodeName": "https:\/\/esante.gouv.fr\/sitemap.xml",
+							"id": "0",
+							"uri": "https://esante.gouv.fr/robots.txt",
+							"nodeName": "https:\/\/esante.gouv.fr\/robots.txt",
 							"method": "GET",
-							"param": "incap_ses_175_3314458",
+							"param": "visid_incap_3314458",
 							"attack": "",
-							"evidence": "incap_ses_175_3314458",
-							"otherinfo": "cookie:incap_ses_175_3314458\ncookie:visid_incap_3314458"
+							"evidence": "visid_incap_3314458",
+							"otherinfo": "cookie:visid_incap_3314458\ncookie:incap_ses_189_3314458"
 						},
 						{
-							"id": "240",
-							"uri": "https://esante.gouv.fr/webinaires/hopen2-focus-sur-le-dispositif-appel-projets",
-							"nodeName": "https:\/\/esante.gouv.fr\/webinaires\/hopen2-focus-sur-le-dispositif-appel-projets",
-							"method": "GET",
-							"param": "incap_ses_608_3314458",
-							"attack": "",
-							"evidence": "incap_ses_608_3314458",
-							"otherinfo": "cookie:incap_ses_608_3314458"
-						},
-						{
-							"id": "232",
+							"id": "230",
 							"uri": "https://esante.gouv.fr/user/password",
 							"nodeName": "https:\/\/esante.gouv.fr\/user\/password ()(fii,form_build_id,form_id)",
 							"method": "POST",
@@ -2137,12 +2135,22 @@
 							"attack": "",
 							"evidence": "SSESS4e8d59eee2c237b59f7bda233d4ec670",
 							"otherinfo": "cookie:SSESS4e8d59eee2c237b59f7bda233d4ec670"
+						},
+						{
+							"id": "240",
+							"uri": "https://esante.gouv.fr/sites/default/files/styles/585_x_330/public/2022-01/CI_SIS_967x500px.jpg?itok=AZttExlx",
+							"nodeName": "https:\/\/esante.gouv.fr\/sites\/default\/files\/styles\/585_x_330\/public\/2022-01\/CI_SIS_967x500px.jpg (itok)",
+							"method": "GET",
+							"param": "incap_ses_576_3314458",
+							"attack": "",
+							"evidence": "incap_ses_576_3314458",
+							"otherinfo": "cookie:incap_ses_576_3314458"
 						}
 					],
 					"count": "4",
 					"systemic": false,
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
-					"otherinfo": "<p>cookie:incap_ses_175_3314458</p><p>cookie:visid_incap_3314458</p>",
+					"otherinfo": "<p>cookie:visid_incap_3314458</p><p>cookie:incap_ses_189_3314458</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id/</p>",
 					"cweid": "-1",
 					"wascid": "-1",
@@ -2159,7 +2167,7 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
 					"instances":[ 
 						{
-							"id": "38",
+							"id": "68",
 							"uri": "https://esante.gouv.fr",
 							"nodeName": "https:\/\/esante.gouv.fr",
 							"method": "GET",
@@ -2169,7 +2177,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "52",
+							"id": "84",
 							"uri": "https://esante.gouv.fr/core/*.css",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.css",
 							"method": "GET",
@@ -2179,7 +2187,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "76",
+							"id": "29",
 							"uri": "https://esante.gouv.fr/core/*.gif",
 							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.gif",
 							"method": "GET",
@@ -2189,17 +2197,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "77",
-							"uri": "https://esante.gouv.fr/robots.txt",
-							"nodeName": "https:\/\/esante.gouv.fr\/robots.txt",
+							"id": "80",
+							"uri": "https://esante.gouv.fr/core/*.png",
+							"nodeName": "https:\/\/esante.gouv.fr\/core\/*.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "max-age=31536000",
+							"evidence": "max-age=10800",
 							"otherinfo": ""
 						},
 						{
-							"id": "81",
+							"id": "30",
 							"uri": "https://esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -2216,7 +2224,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "65"
 				},
 				{
 					"pluginid": "10031",
@@ -2229,7 +2237,7 @@
 					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
 					"instances":[ 
 						{
-							"id": "226",
+							"id": "223",
 							"uri": "https://esante.gouv.fr/recherche?keywords=ZAP",
 							"nodeName": "https:\/\/esante.gouv.fr\/recherche (keywords)",
 							"method": "GET",
@@ -2239,7 +2247,7 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://esante.gouv.fr/recherche?keywords=ZAP\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nkeywords=ZAP\n\nThe user-controlled value was:\nzap"
 						},
 						{
-							"id": "234",
+							"id": "233",
 							"uri": "https://esante.gouv.fr/user/password",
 							"nodeName": "https:\/\/esante.gouv.fr\/user\/password ()(form_build_id,form_id,honeypot_time,name,op,url)",
 							"method": "POST",
@@ -2249,17 +2257,17 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://esante.gouv.fr/user/password\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nform_id=user_pass\n\nThe user-controlled value was:\nuser_pass"
 						},
 						{
-							"id": "235",
+							"id": "234",
 							"uri": "https://esante.gouv.fr/user/password",
 							"nodeName": "https:\/\/esante.gouv.fr\/user\/password ()(form_build_id,form_id,honeypot_time,name,op,url)",
 							"method": "POST",
 							"param": "honeypot_time",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://esante.gouv.fr/user/password\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nhoneypot_time=AGo6PLh0oh5erfOmQ-jKl1P66ZpKqomaiLkGlF_LJYs\n\nThe user-controlled value was:\nago6plh0oh5erfomq-jkl1p66zpkqomailkglf_ljys"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://esante.gouv.fr/user/password\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nhoneypot_time=8OZiH9e-FzGJgXBVGS1JlzLrD0F1H92TQtwD0pqTw7Y\n\nThe user-controlled value was:\n8ozih9e-fzgjgxbvgs1jlzlrd0f1h92tqtwd0pqtw7y"
 						},
 						{
-							"id": "233",
+							"id": "232",
 							"uri": "https://esante.gouv.fr/user/password",
 							"nodeName": "https:\/\/esante.gouv.fr\/user\/password ()(form_build_id,form_id,honeypot_time,name,op,url)",
 							"method": "POST",
@@ -2269,7 +2277,7 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://esante.gouv.fr/user/password\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nname=ZAP\n\nThe user-controlled value was:\nzap"
 						},
 						{
-							"id": "236",
+							"id": "235",
 							"uri": "https://esante.gouv.fr/user/password",
 							"nodeName": "https:\/\/esante.gouv.fr\/user\/password ()(form_build_id,form_id,honeypot_time,name,op,url)",
 							"method": "POST",
@@ -2279,7 +2287,7 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://esante.gouv.fr/user/password\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\nop=Valider\n\nThe user-controlled value was:\nvalider"
 						},
 						{
-							"id": "237",
+							"id": "236",
 							"uri": "https://esante.gouv.fr/user/password",
 							"nodeName": "https:\/\/esante.gouv.fr\/user\/password ()(form_build_id,form_id,honeypot_time,name,op,url)",
 							"method": "POST",
@@ -2296,7 +2304,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "1243"
+					"sourceid": "1267"
 				}
 			]
 		}
