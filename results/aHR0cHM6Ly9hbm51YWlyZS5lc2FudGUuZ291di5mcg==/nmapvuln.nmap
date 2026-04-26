@@ -1,11 +1,15 @@
-# Nmap 7.95 scan initiated Sun Apr 19 02:45:02 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln annuaire.esante.gouv.fr
+# Nmap 7.95 scan initiated Sun Apr 26 02:48:07 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln annuaire.esante.gouv.fr
 Nmap scan report for annuaire.esante.gouv.fr (80.78.2.219)
-Host is up (0.13s latency).
-Not shown: 998 filtered tcp ports (no-response)
-PORT    STATE  SERVICE  VERSION
-113/tcp closed ident
-443/tcp open   ssl/http Apache httpd 2.4.62 ((Red Hat Enterprise Linux) OpenSSL/3.5.1)
-|_http-trane-info: Problem with XML parsing of /evox/about
+Host is up (0.15s latency).
+Not shown: 977 filtered tcp ports (no-response)
+PORT      STATE  SERVICE        VERSION
+113/tcp   closed ident
+259/tcp   closed esro-gen
+301/tcp   closed unknown
+443/tcp   open   ssl/http       Apache httpd 2.4.62 ((Red Hat Enterprise Linux) OpenSSL/3.5.1)
+| http-server-header: 
+|   Apache/2.4.62 (Red Hat Enterprise Linux) OpenSSL/3.5.1
+|_  nginx/1.29.4
 | vulners: 
 |   cpe:/a:apache:http_server:2.4.62: 
 |     	PACKETSTORM:213257	9.1	https://vulners.com/packetstorm/PACKETSTORM:213257	*EXPLOIT*
@@ -34,9 +38,26 @@ PORT    STATE  SERVICE  VERSION
 |     	CNVD-2025-30833	6.5	https://vulners.com/cnvd/CNVD-2025-30833
 |     	CVE-2025-66200	5.4	https://vulners.com/cve/CVE-2025-66200
 |_    	CNVD-2025-30835	5.4	https://vulners.com/cnvd/CNVD-2025-30835
-| http-server-header: 
-|   Apache/2.4.62 (Red Hat Enterprise Linux) OpenSSL/3.5.1
-|_  nginx/1.29.4
+|_http-trane-info: Problem with XML parsing of /evox/about
+981/tcp   closed unknown
+1068/tcp  closed instl_bootc
+1085/tcp  closed webobjects
+1100/tcp  closed mctp
+1169/tcp  closed tripwire
+1187/tcp  closed alias
+1352/tcp  closed lotusnotes
+1461/tcp  closed ibm_wrless_lan
+2366/tcp  closed qip-login
+2557/tcp  closed nicetec-mgmt
+2638/tcp  closed sybase
+2809/tcp  closed corbaloc
+7004/tcp  closed afs3-kaserver
+9500/tcp  closed ismserver
+9968/tcp  closed unknown
+24800/tcp closed unknown
+25735/tcp closed unknown
+27353/tcp closed unknown
+52673/tcp closed unknown
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun Apr 19 02:45:32 2026 -- 1 IP address (1 host up) scanned in 30.06 seconds
+# Nmap done at Sun Apr 26 02:48:42 2026 -- 1 IP address (1 host up) scanned in 35.16 seconds
