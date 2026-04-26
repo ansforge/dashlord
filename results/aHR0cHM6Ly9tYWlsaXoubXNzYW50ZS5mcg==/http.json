@@ -1,1 +1,196 @@
-{"error":"The site seems to be down."}
+{
+  "scan": {
+    "algorithmVersion": 4,
+    "grade": "B",
+    "error": null,
+    "score": 70,
+    "statusCode": 200,
+    "testsFailed": 2,
+    "testsPassed": 8,
+    "testsQuantity": 10,
+    "responseHeaders": {
+      "date": "Sun, 26 Apr 2026 04:06:36 GMT",
+      "server": "Apache",
+      "strict-transport-security": "max-age=63072000; includeSubDomains",
+      "x-xss-protection": "1; mode = block, 1",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "SAMEORIGIN",
+      "content-type": "text/html;charset=UTF-8",
+      "access-control-allow-origin": "https://mssante.fr",
+      "set-cookie": [
+        "PAUTSESSIONID=CCF19ED09E39E13FA8CB5E0653C8C997.PAUT_1; Domain=.mssante.fr; Path=/; Secure; HttpOnly; SameSite=Lax",
+        "COOKIE_SUPPORT=true; Expires=Thu, 08-Dec-2072 06:48:45 GMT; Path=/; HttpOnly; SameSite=Lax",
+        "GUEST_LANGUAGE_ID=en_US; Expires=Thu, 08-Dec-2072 06:48:45 GMT; Path=/; HttpOnly; SameSite=Lax;HttpOnly;Secure",
+        "GUEST_LANGUAGE_ID=en_US; Expires=Thu, 08-Dec-2072 06:48:45 GMT; Path=/; HttpOnly; SameSite=Lax;HttpOnly;Secure",
+        "COOKIE_SUPPORT=true; Expires=Thu, 08-Dec-2072 06:48:45 GMT; Path=/; HttpOnly; SameSite=Lax",
+        "ROUTEID=.PAUT_1; HttpOnly; Secure; path=/; DOMAIN=.mssante.fr",
+        "cookiesession1=678A3E60861E8E1B747B795A22456F41;Expires=Mon, 26 Apr 2027 04:06:36 GMT;Path=/;HttpOnly"
+      ],
+      "ssl_session_id": "(null)",
+      "gipcardid": "0E17E7481379AD55B0E65E7AC4BEAA22",
+      "connection": "close",
+      "content-security-policy": "default-src 'self' https://*.mssante.fr; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.mssante.fr; object-src 'self' https://*.mssante.fr; style-src 'self' 'unsafe-inline' https://*.mssante.fr;",
+      "content-length": "79443"
+    }
+  },
+  "tests": {
+    "content-security-policy": {
+      "expectation": "csp-implemented-with-no-unsafe",
+      "pass": false,
+      "result": "csp-implemented-with-unsafe-inline",
+      "scoreModifier": -20,
+      "data": {
+        "default-src": [
+          "'self'",
+          "https://*.mssante.fr"
+        ],
+        "script-src": [
+          "'self'",
+          "'unsafe-eval'",
+          "'unsafe-inline'",
+          "https://*.mssante.fr"
+        ],
+        "object-src": [
+          "'self'",
+          "https://*.mssante.fr"
+        ],
+        "style-src": [
+          "'self'",
+          "'unsafe-inline'",
+          "https://*.mssante.fr"
+        ]
+      },
+      "http": true,
+      "meta": false,
+      "policy": {
+        "antiClickjacking": false,
+        "defaultNone": false,
+        "insecureBaseUri": true,
+        "insecureFormAction": true,
+        "insecureSchemeActive": false,
+        "insecureSchemePassive": false,
+        "strictDynamic": false,
+        "unsafeEval": true,
+        "unsafeInline": true,
+        "unsafeInlineStyle": true,
+        "unsafeObjects": false
+      },
+      "numPolicies": 1
+    },
+    "cookies": {
+      "expectation": "cookies-secure-with-httponly-sessions",
+      "pass": false,
+      "result": "cookies-session-without-secure-flag-but-protected-by-hsts",
+      "scoreModifier": -10,
+      "data": {
+        "PAUTSESSIONID": {
+          "domain": "mssante.fr",
+          "httponly": true,
+          "path": "/",
+          "port": null,
+          "samesite": "lax",
+          "secure": true
+        },
+        "COOKIE_SUPPORT": {
+          "domain": "mailiz.mssante.fr",
+          "expires": "2072-12-08T06:48:45.000Z",
+          "httponly": true,
+          "path": "/",
+          "port": null,
+          "samesite": "lax"
+        },
+        "GUEST_LANGUAGE_ID": {
+          "domain": "mailiz.mssante.fr",
+          "expires": "2072-12-08T06:48:45.000Z",
+          "httponly": true,
+          "path": "/",
+          "port": null,
+          "samesite": "lax",
+          "secure": true
+        },
+        "ROUTEID": {
+          "domain": "mssante.fr",
+          "httponly": true,
+          "path": "/",
+          "port": null,
+          "secure": true
+        },
+        "cookiesession1": {
+          "domain": "mailiz.mssante.fr",
+          "expires": "2027-04-26T04:06:36.000Z",
+          "httponly": true,
+          "path": "/",
+          "port": null
+        }
+      },
+      "sameSite": false
+    },
+    "cross-origin-resource-sharing": {
+      "expectation": "cross-origin-resource-sharing-not-implemented",
+      "pass": true,
+      "result": "cross-origin-resource-sharing-implemented-with-restricted-access",
+      "scoreModifier": 0,
+      "data": "https://mssante.fr"
+    },
+    "redirection": {
+      "expectation": "redirection-to-https",
+      "pass": true,
+      "result": "redirection-not-needed-no-http",
+      "scoreModifier": 0,
+      "destination": null,
+      "redirects": true,
+      "route": [],
+      "statusCode": null
+    },
+    "referrer-policy": {
+      "expectation": "referrer-policy-private",
+      "pass": true,
+      "result": "referrer-policy-not-implemented",
+      "scoreModifier": 0,
+      "data": null,
+      "http": false,
+      "meta": false
+    },
+    "strict-transport-security": {
+      "expectation": "hsts-implemented-max-age-at-least-six-months",
+      "pass": true,
+      "result": "hsts-implemented-max-age-at-least-six-months",
+      "scoreModifier": 0,
+      "data": "max-age=63072000; includeSubDomains",
+      "includeSubDomains": true,
+      "maxAge": 63072000,
+      "preload": false,
+      "preloaded": false
+    },
+    "subresource-integrity": {
+      "expectation": "sri-implemented-and-external-scripts-loaded-securely",
+      "pass": true,
+      "result": "sri-not-implemented-but-all-scripts-loaded-from-secure-origin",
+      "scoreModifier": 0,
+      "data": {}
+    },
+    "x-content-type-options": {
+      "expectation": "x-content-type-options-nosniff",
+      "pass": true,
+      "result": "x-content-type-options-nosniff",
+      "scoreModifier": 0,
+      "data": "nosniff"
+    },
+    "x-frame-options": {
+      "expectation": "x-frame-options-sameorigin-or-deny",
+      "pass": true,
+      "result": "x-frame-options-sameorigin-or-deny",
+      "scoreModifier": 0,
+      "data": "SAMEORIGIN"
+    },
+    "cross-origin-resource-policy": {
+      "expectation": "corp-implemented-with-same-site",
+      "pass": true,
+      "result": "corp-not-implemented",
+      "scoreModifier": 0,
+      "data": null,
+      "http": false,
+      "meta": false
+    }
+  }
+}
