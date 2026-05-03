@@ -1,15 +1,15 @@
 {
   "scan": {
     "algorithmVersion": 4,
-    "grade": "B",
+    "grade": "B-",
     "error": null,
-    "score": 70,
+    "score": 65,
     "statusCode": 200,
-    "testsFailed": 2,
-    "testsPassed": 8,
+    "testsFailed": 3,
+    "testsPassed": 7,
     "testsQuantity": 10,
     "responseHeaders": {
-      "date": "Sun, 26 Apr 2026 04:40:39 GMT",
+      "date": "Sun, 03 May 2026 04:48:36 GMT",
       "server": "Apache",
       "strict-transport-security": "max-age=63072000; includeSubDomains",
       "x-xss-protection": "1; mode = block, 1",
@@ -18,13 +18,13 @@
       "content-type": "text/html;charset=UTF-8",
       "access-control-allow-origin": "https://mssante.fr",
       "set-cookie": [
-        "PAUTSESSIONID=65BC31F8F558E0EED3237A6D85F22764.PAUT_2; Domain=.mssante.fr; Path=/; Secure; HttpOnly; SameSite=Lax",
-        "COOKIE_SUPPORT=true; Expires=Thu, 08-Dec-2072 07:22:47 GMT; Path=/; HttpOnly; SameSite=Lax",
-        "GUEST_LANGUAGE_ID=en_US; Expires=Thu, 08-Dec-2072 07:22:47 GMT; Path=/; HttpOnly; SameSite=Lax;HttpOnly;Secure",
-        "GUEST_LANGUAGE_ID=en_US; Expires=Thu, 08-Dec-2072 07:22:47 GMT; Path=/; HttpOnly; SameSite=Lax;HttpOnly;Secure",
-        "COOKIE_SUPPORT=true; Expires=Thu, 08-Dec-2072 07:22:47 GMT; Path=/; HttpOnly; SameSite=Lax",
+        "PAUTSESSIONID=B25A372B046991CD76AEC72EFC502CCE.PAUT_2; Domain=.mssante.fr; Path=/; Secure; HttpOnly; SameSite=Lax",
+        "COOKIE_SUPPORT=true; Expires=Thu, 15-Dec-2072 07:30:44 GMT; Path=/; HttpOnly; SameSite=Lax",
+        "GUEST_LANGUAGE_ID=en_US; Expires=Thu, 15-Dec-2072 07:30:44 GMT; Path=/; HttpOnly; SameSite=Lax;HttpOnly;Secure",
+        "GUEST_LANGUAGE_ID=en_US; Expires=Thu, 15-Dec-2072 07:30:44 GMT; Path=/; HttpOnly; SameSite=Lax;HttpOnly;Secure",
+        "COOKIE_SUPPORT=true; Expires=Thu, 15-Dec-2072 07:30:44 GMT; Path=/; HttpOnly; SameSite=Lax",
         "ROUTEID=.PAUT_2; HttpOnly; Secure; path=/; DOMAIN=.mssante.fr",
-        "cookiesession1=678A3E545ED8BF3D8F5B1EC3704A49AE;Expires=Mon, 26 Apr 2027 04:40:39 GMT;Path=/;HttpOnly"
+        "cookiesession1=678A3E2A026F239E8A916752F45E1423;Expires=Mon, 03 May 2027 04:48:36 GMT;Path=/;HttpOnly"
       ],
       "ssl_session_id": "(null)",
       "gipcardid": "0E17E7481379AD55B0E65E7AC4BEAA22",
@@ -93,7 +93,7 @@
         },
         "COOKIE_SUPPORT": {
           "domain": "mssante.fr",
-          "expires": "2072-12-08T07:22:47.000Z",
+          "expires": "2072-12-15T07:30:44.000Z",
           "httponly": true,
           "path": "/",
           "port": null,
@@ -101,7 +101,7 @@
         },
         "GUEST_LANGUAGE_ID": {
           "domain": "mssante.fr",
-          "expires": "2072-12-08T07:22:47.000Z",
+          "expires": "2072-12-15T07:30:44.000Z",
           "httponly": true,
           "path": "/",
           "port": null,
@@ -117,7 +117,7 @@
         },
         "cookiesession1": {
           "domain": "mssante.fr",
-          "expires": "2027-04-26T04:40:39.000Z",
+          "expires": "2027-05-03T04:48:36.000Z",
           "httponly": true,
           "path": "/",
           "port": null
@@ -134,13 +134,16 @@
     },
     "redirection": {
       "expectation": "redirection-to-https",
-      "pass": true,
-      "result": "redirection-not-needed-no-http",
-      "scoreModifier": 0,
-      "destination": null,
+      "pass": false,
+      "result": "redirection-off-host-from-http",
+      "scoreModifier": -5,
+      "destination": "https://www.mssante.fr/",
       "redirects": true,
-      "route": [],
-      "statusCode": null
+      "route": [
+        "http://mssante.fr/",
+        "https://www.mssante.fr/"
+      ],
+      "statusCode": 421
     },
     "referrer-policy": {
       "expectation": "referrer-policy-private",
