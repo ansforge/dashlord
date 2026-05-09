@@ -216,9 +216,9 @@ limitations under the License.
     --report-text-color: var(--color-gray-100);
     --snippet-color: var(--color-cyan-500);
     --topbar-background-color: var(--color-gray);
-  	--toplevel-warning-background-color: #544B40;
-  	--toplevel-warning-message-text-color: var(--color-orange-700);
-	--toplevel-warning-text-color: var(--color-gray-100);
+    --toplevel-warning-background-color: #544B40;
+    --toplevel-warning-message-text-color: var(--color-orange-700);
+    --toplevel-warning-text-color: var(--color-gray-100);
 
     /* SVGs */
     --plugin-icon-url: var(--plugin-icon-url-dark);
@@ -3734,6 +3734,7 @@ class DetailsRenderer {
       displayedHost = parsed.file === '/' || parsed.hostname === '' ? '' : `(${parsed.hostname})`;
       title = url;
     } catch (e) {
+      console.warn('Could not parse URL:', e); // eslint-disable-line no-console
       displayedPath = url;
     }
 
@@ -3763,7 +3764,9 @@ class DetailsRenderer {
     let url;
     try {
       url = new URL(details.url);
-    } catch (_) {}
+    } catch (_) {
+      console.warn('Could not parse URL:', _); // eslint-disable-line no-console
+    }
 
     if (!url || !allowedProtocols.includes(url.protocol)) {
       // Fall back to just the link text if invalid or protocol not allowed.
@@ -7534,6 +7537,7 @@ class I18n {
     try {
       formatter = new Intl.DateTimeFormat(this._numberDateLocale, options);
     } catch (err) {
+      console.warn('Could not format date, falling back to UTC:', err); // eslint-disable-line no-console
       options.timeZone = 'UTC';
       formatter = new Intl.DateTimeFormat(this._numberDateLocale, options);
     }
