@@ -1,8 +1,8 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.17.0",
-	"@generated": "Sun, 10 May 2026 05:35:35",
-	"created": "2026-05-10T05:35:35.551366366Z",
+	"@generated": "Sun, 17 May 2026 06:01:20",
+	"created": "2026-05-17T06:01:20.016346969Z",
 	"insights":[
 		{
 			"level": "Low",
@@ -18,7 +18,7 @@
 			"site": "",
 			"key": "insight.log.warn",
 			"description": "ZAP warnings logged - see the zap.log file for details",
-			"statistic": "2"
+			"statistic": "5"
 		},
 		{
 			"level": "Low",
@@ -26,7 +26,7 @@
 			"site": "https://smt.esante.gouv.fr",
 			"key": "insight.response.slow",
 			"description": "Percentage of slow responses",
-			"statistic": "70"
+			"statistic": "83"
 		},
 		{
 			"level": "Info",
@@ -34,7 +34,7 @@
 			"site": "https://smt.esante.gouv.fr",
 			"key": "insight.code.2xx",
 			"description": "Percentage of responses with status code 2xx",
-			"statistic": "89"
+			"statistic": "91"
 		},
 		{
 			"level": "Info",
@@ -42,7 +42,7 @@
 			"site": "https://smt.esante.gouv.fr",
 			"key": "insight.code.3xx",
 			"description": "Percentage of responses with status code 3xx",
-			"statistic": "6"
+			"statistic": "4"
 		},
 		{
 			"level": "Info",
@@ -58,7 +58,7 @@
 			"site": "https://smt.esante.gouv.fr",
 			"key": "insight.endpoint.ctype.application/json",
 			"description": "Percentage of endpoints with content type application/json",
-			"statistic": "14"
+			"statistic": "13"
 		},
 		{
 			"level": "Info",
@@ -90,7 +90,23 @@
 			"site": "https://smt.esante.gouv.fr",
 			"key": "insight.endpoint.ctype.image/png",
 			"description": "Percentage of endpoints with content type image/png",
-			"statistic": "38"
+			"statistic": "37"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://smt.esante.gouv.fr",
+			"key": "insight.endpoint.ctype.image/svg+xml",
+			"description": "Percentage of endpoints with content type image/svg+xml",
+			"statistic": "1"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "https://smt.esante.gouv.fr",
+			"key": "insight.endpoint.ctype.image/vnd.microsoft.icon",
+			"description": "Percentage of endpoints with content type image/vnd.microsoft.icon",
+			"statistic": "1"
 		},
 		{
 			"level": "Info",
@@ -106,7 +122,7 @@
 			"site": "https://smt.esante.gouv.fr",
 			"key": "insight.endpoint.ctype.text/html",
 			"description": "Percentage of endpoints with content type text/html",
-			"statistic": "26"
+			"statistic": "27"
 		},
 		{
 			"level": "Info",
@@ -122,7 +138,7 @@
 			"site": "https://smt.esante.gouv.fr",
 			"key": "insight.endpoint.ctype.text/plain",
 			"description": "Percentage of endpoints with content type text/plain",
-			"statistic": "2"
+			"statistic": "1"
 		},
 		{
 			"level": "Info",
@@ -146,7 +162,7 @@
 			"site": "https://smt.esante.gouv.fr",
 			"key": "insight.endpoint.total",
 			"description": "Count of total endpoints",
-			"statistic": "841"
+			"statistic": "865"
 		}
 	],
 	"site":[ 
@@ -156,6 +172,36 @@
 			"@port": "443",
 			"@ssl": "true",
 			"alerts": [ 
+				{
+					"pluginid": "10062",
+					"alertRef": "10062",
+					"alert": "PII Disclosure",
+					"name": "PII Disclosure",
+					"riskcode": "3",
+					"confidence": "3",
+					"riskdesc": "High (High)",
+					"desc": "<p>The response contains Personally Identifiable Information, such as CC number, SSN and similar sensitive data.</p>",
+					"instances":[ 
+						{
+							"id": "197",
+							"uri": "https://smt.esante.gouv.fr/tag/smt/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/tag\/smt\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "57707950046930",
+							"otherinfo": "Credit Card Type detected: Maestro\nBank Identification Number: 577079\nBrand: MAESTRO\nCategory: \nIssuer: "
+						}
+					],
+					"count": "1",
+					"systemic": false,
+					"solution": "<p>Check the response for the potential presence of personally identifiable information (PII), ensure nothing sensitive is leaked by the application.</p>",
+					"otherinfo": "<p>Credit Card Type detected: Maestro</p><p>Bank Identification Number: 577079</p><p>Brand: MAESTRO</p><p>Category: </p><p>Issuer: </p>",
+					"reference": "",
+					"cweid": "359",
+					"wascid": "13",
+					"sourceid": "1240"
+				},
 				{
 					"pluginid": "10003",
 					"alertRef": "10003",
@@ -167,7 +213,7 @@
 					"desc": "<p>The identified library appears to be vulnerable.</p>",
 					"instances":[ 
 						{
-							"id": "208",
+							"id": "183",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/app-vuejs/ans-public-sub-header/dist/js/chunk-vendors.js?ver=version%2013.0.5",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/app-vuejs\/ans-public-sub-header\/dist\/js\/chunk-vendors.js (ver)",
 							"method": "GET",
@@ -177,7 +223,7 @@
 							"otherinfo": "The identified library moment.js, version 2.24.0 is vulnerable.\nCVE-2022-31129\nCVE-2022-24785\nhttps://github.com/moment/moment/security/advisories/GHSA-wc69-rhjr-hc9g\nhttps://security.snyk.io/vuln/SNYK-JS-MOMENT-2944238\nhttps://github.com/moment/moment/security/advisories/GHSA-8hfj-j24r-96c4\n"
 						},
 						{
-							"id": "315",
+							"id": "326",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/assets_dist/dev/swagger-ui/swagger-ui-bundle.js?ver=1.0.0",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/assets_dist\/dev\/swagger-ui\/swagger-ui-bundle.js (ver)",
 							"method": "GET",
@@ -185,16 +231,26 @@
 							"attack": "",
 							"evidence": "var o=\"dompurify\"+(n?\"#\"+n:\"\");try{return e.createPolicy(o,{createHTML:function(e){return e}})}catch(e){return console.warn(\"TrustedTypes policy \"+o+\" could not be created.\"),null}};function W(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:z(),t=function(e){return W(e)};if(t.version=\"2.2.2\"",
 							"otherinfo": "The identified library DOMPurify, version 2.2.2 is vulnerable.\nCVE-2024-47875\nCVE-2025-26791\nCVE-2026-41239\nCVE-2024-48910\nCVE-2024-45801\nCVE-2026-41240\nhttps://github.com/cure53/DOMPurify/commit/d18ffcb554e0001748865da03ac75dd7829f0f02\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-cj63-jhhr-wcxv\nhttps://github.com/cure53/DOMPurify/commit/6ea80cd8b47640c20f2f230c7920b1f4ce4fdf7a\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-39q2-94rc-95cp\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-h7mw-gpvr-xq4m\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-cjmm-f4jc-qw8r\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-p3vf-v8qc-cwcr\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-45801\nhttps://github.com/advisories/GHSA-vhxf-7vqr-mrjg\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-mmhx-hmjr-r674\nhttps://github.com/cure53/DOMPurify/commit/d1dd0374caef2b4c56c3bd09fe1988c3479166dc\nhttps://github.com/advisories/GHSA-mmhx-hmjr-r674\nhttps://github.com/cure53/DOMPurify/commit/26e1d69ca7f769f5c558619d644d90dd8bf26ebc\nhttps://nvd.nist.gov/vuln/detail/CVE-2025-26791\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-gx9m-whjm-85jf\nhttps://github.com/cure53/DOMPurify/blob/0ef5e537a514f904b6aa1d7ad9e749e365d7185f/test/test-suite.js#L2098\nhttps://ensy.zip/posts/dompurify-323-bypass\nhttps://nsysean.github.io/posts/dompurify-323-bypass\nhttps://github.com/cure53/DOMPurify/commit/1e520262bf4c66b5efda49e2316d6d1246ca7b21\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-48910\nhttps://github.com/advisories/GHSA-gx9m-whjm-85jf\nhttps://github.com/cure53/DOMPurify/releases\nhttps://github.com/cure53/DOMPurify/releases/tag/3.2.4\nhttps://github.com/cure53/DOMPurify/releases/tag/3.3.2\nhttps://github.com/cure53/DOMPurify/releases/tag/3.4.0\nhttps://github.com/advisories/GHSA-p3vf-v8qc-cwcr\nhttps://github.com/cure53/DOMPurify/commit/0ef5e537a514f904b6aa1d7ad9e749e365d7185f\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-h8r8-wccr-v5f2\nhttps://github.com/cure53/DOMPurify\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-47875\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-crv5-9vww-q3g8\n"
+						},
+						{
+							"id": "343",
+							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/sparnatural/yasgui.min.js",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/sparnatural\/yasgui.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "var r=\"dompurify\"+(n?\"#\"+n:\"\");try{return e.createPolicy(r,{createHTML:function(e){return e}})}catch(e){return console.warn(\"TrustedTypes policy \"+r+\" could not be created.\"),null}};return function e(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:W(),n=function(t){return e(t)};if(n.version=\"2.0.12\"",
+							"otherinfo": "The identified library DOMPurify, version 2.0.12 is vulnerable.\nCVE-2024-47875\nCVE-2025-26791\nCVE-2026-41239\nCVE-2024-48910\nCVE-2024-45801\nCVE-2026-41240\nCVE-2020-26870\nhttps://github.com/cure53/DOMPurify/commit/d18ffcb554e0001748865da03ac75dd7829f0f02\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-cj63-jhhr-wcxv\nhttps://github.com/cure53/DOMPurify/commit/6ea80cd8b47640c20f2f230c7920b1f4ce4fdf7a\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-39q2-94rc-95cp\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-h7mw-gpvr-xq4m\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-cjmm-f4jc-qw8r\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-p3vf-v8qc-cwcr\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-45801\nhttps://github.com/advisories/GHSA-vhxf-7vqr-mrjg\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-mmhx-hmjr-r674\nhttps://github.com/cure53/DOMPurify/commit/d1dd0374caef2b4c56c3bd09fe1988c3479166dc\nhttps://github.com/advisories/GHSA-mmhx-hmjr-r674\nhttps://github.com/cure53/DOMPurify/commit/26e1d69ca7f769f5c558619d644d90dd8bf26ebc\nhttps://nvd.nist.gov/vuln/detail/CVE-2025-26791\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-gx9m-whjm-85jf\nhttps://github.com/cure53/DOMPurify/blob/0ef5e537a514f904b6aa1d7ad9e749e365d7185f/test/test-suite.js#L2098\nhttps://ensy.zip/posts/dompurify-323-bypass\nhttps://nsysean.github.io/posts/dompurify-323-bypass\nhttps://github.com/cure53/DOMPurify/commit/1e520262bf4c66b5efda49e2316d6d1246ca7b21\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-48910\nhttps://github.com/advisories/GHSA-gx9m-whjm-85jf\nhttps://github.com/cure53/DOMPurify/releases\nhttps://github.com/cure53/DOMPurify/releases/tag/3.2.4\nhttps://github.com/cure53/DOMPurify/releases/tag/3.3.2\nhttps://github.com/cure53/DOMPurify/releases/tag/3.4.0\nhttps://github.com/advisories/GHSA-p3vf-v8qc-cwcr\nhttps://github.com/cure53/DOMPurify/commit/0ef5e537a514f904b6aa1d7ad9e749e365d7185f\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-h8r8-wccr-v5f2\nhttps://github.com/cure53/DOMPurify\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-47875\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-crv5-9vww-q3g8\n"
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"systemic": false,
 					"solution": "<p>Upgrade to the latest version of the affected library.</p>",
 					"otherinfo": "<p>The identified library moment.js, version 2.24.0 is vulnerable.</p><p>CVE-2022-31129</p><p>CVE-2022-24785</p><p>https://github.com/moment/moment/security/advisories/GHSA-wc69-rhjr-hc9g</p><p>https://security.snyk.io/vuln/SNYK-JS-MOMENT-2944238</p><p>https://github.com/moment/moment/security/advisories/GHSA-8hfj-j24r-96c4</p><p></p>",
 					"reference": "<p>https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/</p>",
 					"cweid": "1395",
 					"wascid": "-1",
-					"sourceid": "1774"
+					"sourceid": "876"
 				},
 				{
 					"pluginid": "10202",
@@ -207,53 +263,53 @@
 					"desc": "<p>No Anti-CSRF tokens were found in a HTML submission form.</p><p>A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent in order to perform an action as the victim. The underlying cause is application functionality using predictable URL/form actions in a repeatable way. The nature of the attack is that CSRF exploits the trust that a web site has for a user. By contrast, cross-site scripting (XSS) exploits the trust that a user has for a web site. Like XSS, CSRF attacks are not necessarily cross-site, but they can be. Cross-site request forgery is also known as CSRF, XSRF, one-click attack, session riding, confused deputy, and sea surf.</p><p></p><p>CSRF attacks are effective in a number of situations, including:</p><p>    * The victim has an active session on the target site.</p><p>    * The victim is authenticated via HTTP auth on the target site.</p><p>    * The victim is on the same local network as the target site.</p><p></p><p>CSRF has primarily been used to perform an action against a target site using the victim's privileges, but recent techniques have been discovered to disclose information by gaining access to the response. The risk of information disclosure is dramatically increased when the target site is vulnerable to XSS, because XSS can be used as a platform for CSRF, allowing the attack to operate within the bounds of the same-origin policy.</p>",
 					"instances":[ 
 						{
-							"id": "159",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=d17cb93d92001595b71b7c0c12ba2c19",
+							"id": "149",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=ad739e3b1b543a2701494e0b675e9ff8",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/protocol\/openid-connect\/auth (client_id,redirect_uri,response_type,scope,state)",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=Q_fjfeGFVlBTNy0k2V9gjk8OnowUdW19ZDgEIe20GZw&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=XelgWyVS8xQ\" method=\"post\" style=\"height: 100%;display: flex; flex-direction: column;\">",
+							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=4HWOXU_gSCmC-pRL0lN9LYdPUyqO4MNqUqVdFdZ01zM&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=CymtBbWa960\" method=\"post\" style=\"height: 100%;display: flex; flex-direction: column;\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"id-hidden-input\" \"kc-login\" \"password\" \"username\" ]."
 						},
 						{
-							"id": "181",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=bfc8ed4b57eae3f5d807b7d77a949bd1",
+							"id": "141",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5dfb49ef1c113d6999d10adb90260de4",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/protocol\/openid-connect\/auth (client_id,redirect_uri,response_type,scope,state)",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=eOvVU9_EdX6Ixypb5QPk-vaBJwBFjq7DMi4jdC2ZobA&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=cNL-1TBuPv0\" method=\"post\" style=\"height: 100%;display: flex; flex-direction: column;\">",
+							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=CT1mIQmun2wmSoAUXhCBrpiQH6BCEtoaP-GGVhMr6Tw&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=Ti16C2edUoI\" method=\"post\" style=\"height: 100%;display: flex; flex-direction: column;\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"id-hidden-input\" \"kc-login\" \"password\" \"username\" ]."
 						},
 						{
-							"id": "176",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=de7497454d50e618a03289deb5db8abc",
+							"id": "157",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=c176aaa6924a44cd2ba9f6bdfac5b178",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/protocol\/openid-connect\/auth (client_id,redirect_uri,response_type,scope,state)",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=ogVNpmufVobmFv4KCXmeOiFk44H2B-bmVg5d5PgvKHg&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=m_F7OKGOUcQ\" method=\"post\" style=\"height: 100%;display: flex; flex-direction: column;\">",
+							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=I8FPCXyQY6I1IO9bf18P86mRmtp1UXonljxQR6PNeWI&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=b7ZA8ZHvJ2s\" method=\"post\" style=\"height: 100%;display: flex; flex-direction: column;\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"id-hidden-input\" \"kc-login\" \"password\" \"username\" ]."
 						},
 						{
-							"id": "218",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=e1e05041821f02d7bf88292fbdbfd88e",
+							"id": "224",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=d4aceec1454700ae96e35b5dc7f3f53f",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/protocol\/openid-connect\/auth (client_id,redirect_uri,response_type,scope,state)",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=piPZQ-6pgnZygiTe-AfSamu-V2iIPolmO4YnZrF1Eas&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=nyv35-fAtqw\" method=\"post\" style=\"height: 100%;display: flex; flex-direction: column;\">",
+							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=L3PCbl2QXAW4ftKqJpuVUKVxRqYYnwBTWWnU9SvUnL8&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=NmAS1lJNGI4\" method=\"post\" style=\"height: 100%;display: flex; flex-direction: column;\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"id-hidden-input\" \"kc-login\" \"password\" \"username\" ]."
 						},
 						{
-							"id": "168",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=97eeae6dff9d117c6fc2b3c5ace4d3a3",
+							"id": "219",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=d5277b456f9bbfbd8bfd3df023041e3c",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/protocol\/openid-connect\/auth (client_id,redirect_uri,response_type,scope,state)",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=qzHePow3mYd8dd8erV7iO95i4OZbmxXVG4wiJ4rdMxg&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=3YMhIeA8b5o\" method=\"post\" style=\"height: 100%;display: flex; flex-direction: column;\">",
+							"evidence": "<form id=\"kc-form-login\" onsubmit=\"login.disabled = true; return true;\" action=\"https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?session_code=yyIoKYX-wbjaAsKIM1Qoj3aTbd25izz04oZXOJi-nZY&amp;execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&amp;client_id=ans_wordpress&amp;tab_id=1V6gCjAEAqg\" method=\"post\" style=\"height: 100%;display: flex; flex-direction: column;\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"id-hidden-input\" \"kc-login\" \"password\" \"username\" ]."
 						}
 					],
@@ -264,7 +320,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1070"
+					"sourceid": "718"
 				},
 				{
 					"pluginid": "10055",
@@ -277,8 +333,8 @@
 					"desc": "<p>The Content Security Policy fails to define one of the directives that has no fallback. Missing/excluding them is the same as allowing anything.</p>",
 					"instances":[ 
 						{
-							"id": "152",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=d17cb93d92001595b71b7c0c12ba2c19",
+							"id": "134",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5dfb49ef1c113d6999d10adb90260de4",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/protocol\/openid-connect\/auth (client_id,redirect_uri,response_type,scope,state)",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -294,7 +350,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1070"
+					"sourceid": "451"
 				},
 				{
 					"pluginid": "10055",
@@ -307,8 +363,8 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "153",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=d17cb93d92001595b71b7c0c12ba2c19",
+							"id": "135",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5dfb49ef1c113d6999d10adb90260de4",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/protocol\/openid-connect\/auth (client_id,redirect_uri,response_type,scope,state)",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -324,7 +380,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1070"
+					"sourceid": "451"
 				},
 				{
 					"pluginid": "10055",
@@ -337,8 +393,8 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "154",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=d17cb93d92001595b71b7c0c12ba2c19",
+							"id": "136",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5dfb49ef1c113d6999d10adb90260de4",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/protocol\/openid-connect\/auth (client_id,redirect_uri,response_type,scope,state)",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -354,7 +410,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1070"
+					"sourceid": "451"
 				},
 				{
 					"pluginid": "10055",
@@ -367,8 +423,8 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "155",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=d17cb93d92001595b71b7c0c12ba2c19",
+							"id": "137",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5dfb49ef1c113d6999d10adb90260de4",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/protocol\/openid-connect\/auth (client_id,redirect_uri,response_type,scope,state)",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -384,7 +440,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1070"
+					"sourceid": "451"
 				},
 				{
 					"pluginid": "10038",
@@ -397,7 +453,7 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "7",
+							"id": "4",
 							"uri": "https://smt.esante.gouv.fr",
 							"nodeName": "https:\/\/smt.esante.gouv.fr",
 							"method": "GET",
@@ -407,9 +463,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "99",
-							"uri": "https://smt.esante.gouv.fr/author/anh-pham/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/anh-pham\/",
+							"id": "73",
+							"uri": "https://smt.esante.gouv.fr/actualites/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/actualites\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -417,9 +473,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "74",
-							"uri": "https://smt.esante.gouv.fr/author/mael-le-gallesante-gouv-fr/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/mael-le-gallesante-gouv-fr\/",
+							"id": "97",
+							"uri": "https://smt.esante.gouv.fr/bienvenue/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/bienvenue\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -427,9 +483,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "102",
-							"uri": "https://smt.esante.gouv.fr/author/melissa-maryesante-gouv-fr/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/melissa-maryesante-gouv-fr\/",
+							"id": "70",
+							"uri": "https://smt.esante.gouv.fr/nos-unites-de-production-semantiques/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/nos-unites-de-production-semantiques\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -437,9 +493,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "71",
-							"uri": "https://smt.esante.gouv.fr/author/nicolas-moine-ext/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/nicolas-moine-ext\/",
+							"id": "105",
+							"uri": "https://smt.esante.gouv.fr/regard-dexperts/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/regard-dexperts\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -467,7 +523,7 @@
 					"desc": "<p>The integrity attribute is missing on a script or link tag served by an external server. The integrity tag prevents an attacker who have gained access to this server from injecting a malicious content.</p>",
 					"instances":[ 
 						{
-							"id": "36",
+							"id": "7",
 							"uri": "https://smt.esante.gouv.fr",
 							"nodeName": "https:\/\/smt.esante.gouv.fr",
 							"method": "GET",
@@ -477,9 +533,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "103",
-							"uri": "https://smt.esante.gouv.fr/author/anh-pham/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/anh-pham\/",
+							"id": "92",
+							"uri": "https://smt.esante.gouv.fr/actualites/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/actualites\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -487,9 +543,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "93",
-							"uri": "https://smt.esante.gouv.fr/author/mael-le-gallesante-gouv-fr/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/mael-le-gallesante-gouv-fr\/",
+							"id": "101",
+							"uri": "https://smt.esante.gouv.fr/bienvenue/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/bienvenue\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -497,9 +553,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "107",
-							"uri": "https://smt.esante.gouv.fr/author/melissa-maryesante-gouv-fr/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/melissa-maryesante-gouv-fr\/",
+							"id": "77",
+							"uri": "https://smt.esante.gouv.fr/nos-unites-de-production-semantiques/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/nos-unites-de-production-semantiques\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -507,9 +563,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "84",
-							"uri": "https://smt.esante.gouv.fr/author/nicolas-moine-ext/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/nicolas-moine-ext\/",
+							"id": "109",
+							"uri": "https://smt.esante.gouv.fr/regard-dexperts/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/regard-dexperts\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -537,7 +593,7 @@
 					"desc": "<p>The identified library appears to be vulnerable.</p>",
 					"instances":[ 
 						{
-							"id": "214",
+							"id": "174",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/assets_dist/dev/vendors/jquery-ui/jquery-ui.min.js",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/assets_dist\/dev\/vendors\/jquery-ui\/jquery-ui.min.js",
 							"method": "GET",
@@ -554,37 +610,7 @@
 					"reference": "<p>https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/</p>",
 					"cweid": "1395",
 					"wascid": "-1",
-					"sourceid": "1775"
-				},
-				{
-					"pluginid": "90022",
-					"alertRef": "90022",
-					"alert": "Application Error Disclosure",
-					"name": "Application Error Disclosure",
-					"riskcode": "1",
-					"confidence": "2",
-					"riskdesc": "Low (Medium)",
-					"desc": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
-					"instances":[ 
-						{
-							"id": "339",
-							"uri": "https://smt.esante.gouv.fr/wp-json/ans/terminologies/document?amp;fileName=GuideUtilisateur-recherche-LNC.pdf&terminologyId=terminologie-jeu-de-valeurs-circuit-de-la-biologie",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-json\/ans\/terminologies\/document (amp;fileName,terminologyId)",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "HTTP/1.1 500 Internal Server Error",
-							"otherinfo": ""
-						}
-					],
-					"count": "1",
-					"systemic": false,
-					"solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
-					"otherinfo": "",
-					"reference": "",
-					"cweid": "550",
-					"wascid": "13",
-					"sourceid": "3872"
+					"sourceid": "861"
 				},
 				{
 					"pluginid": "10054",
@@ -597,8 +623,8 @@
 					"desc": "<p>A cookie has been set with its SameSite attribute set to \"none\", which means that the cookie can be sent as a result of a 'cross-site' request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks.</p>",
 					"instances":[ 
 						{
-							"id": "156",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=d17cb93d92001595b71b7c0c12ba2c19",
+							"id": "138",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5dfb49ef1c113d6999d10adb90260de4",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/protocol\/openid-connect\/auth (client_id,redirect_uri,response_type,scope,state)",
 							"method": "GET",
 							"param": "AUTH_SESSION_ID",
@@ -614,7 +640,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cookie-same-site</p>",
 					"cweid": "1275",
 					"wascid": "13",
-					"sourceid": "1070"
+					"sourceid": "451"
 				},
 				{
 					"pluginid": "10054",
@@ -627,8 +653,8 @@
 					"desc": "<p>A cookie has been set without the SameSite attribute, which means that the cookie can be sent as a result of a 'cross-site' request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks.</p>",
 					"instances":[ 
 						{
-							"id": "157",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=d17cb93d92001595b71b7c0c12ba2c19",
+							"id": "139",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5dfb49ef1c113d6999d10adb90260de4",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/protocol\/openid-connect\/auth (client_id,redirect_uri,response_type,scope,state)",
 							"method": "GET",
 							"param": "AUTH_SESSION_ID_LEGACY",
@@ -637,8 +663,8 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "158",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=d17cb93d92001595b71b7c0c12ba2c19",
+							"id": "140",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5dfb49ef1c113d6999d10adb90260de4",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/protocol\/openid-connect\/auth (client_id,redirect_uri,response_type,scope,state)",
 							"method": "GET",
 							"param": "KC_RESTART",
@@ -654,7 +680,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cookie-same-site</p>",
 					"cweid": "1275",
 					"wascid": "13",
-					"sourceid": "1070"
+					"sourceid": "451"
 				},
 				{
 					"pluginid": "10017",
@@ -667,7 +693,7 @@
 					"desc": "<p>The page includes one or more script files from a third-party domain.</p>",
 					"instances":[ 
 						{
-							"id": "178",
+							"id": "198",
 							"uri": "https://smt.esante.gouv.fr/fiche-risad-technique/",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/fiche-risad-technique\/",
 							"method": "GET",
@@ -677,7 +703,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "161",
+							"id": "199",
 							"uri": "https://smt.esante.gouv.fr/fiche-ruim-detail/",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/fiche-ruim-detail\/",
 							"method": "GET",
@@ -694,7 +720,7 @@
 					"reference": "",
 					"cweid": "829",
 					"wascid": "15",
-					"sourceid": "1313"
+					"sourceid": "1418"
 				},
 				{
 					"pluginid": "90004",
@@ -707,7 +733,7 @@
 					"desc": "<p>Cross-Origin-Embedder-Policy header is a response header that prevents a document from loading any cross-origin resources that don't explicitly grant the document permission (using CORP or CORS).</p>",
 					"instances":[ 
 						{
-							"id": "42",
+							"id": "12",
 							"uri": "https://smt.esante.gouv.fr",
 							"nodeName": "https:\/\/smt.esante.gouv.fr",
 							"method": "GET",
@@ -715,9 +741,19 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"id": "84",
+							"uri": "https://smt.esante.gouv.fr/nos-unites-de-production-semantiques/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/nos-unites-de-production-semantiques\/",
+							"method": "GET",
+							"param": "Cross-Origin-Embedder-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
-					"count": "1",
+					"count": "2",
 					"systemic": false,
 					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Embedder-Policy header appropriately, and that it sets the Cross-Origin-Embedder-Policy header to 'require-corp' for documents.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Embedder-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-embedder-policy).</p>",
 					"otherinfo": "",
@@ -737,7 +773,7 @@
 					"desc": "<p>Cross-Origin-Opener-Policy header is a response header that allows a site to control if others included documents share the same browsing context. Sharing the same browsing context with untrusted documents might lead to data leak.</p>",
 					"instances":[ 
 						{
-							"id": "43",
+							"id": "13",
 							"uri": "https://smt.esante.gouv.fr",
 							"nodeName": "https:\/\/smt.esante.gouv.fr",
 							"method": "GET",
@@ -745,9 +781,19 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"id": "85",
+							"uri": "https://smt.esante.gouv.fr/nos-unites-de-production-semantiques/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/nos-unites-de-production-semantiques\/",
+							"method": "GET",
+							"param": "Cross-Origin-Opener-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
-					"count": "1",
+					"count": "2",
 					"systemic": false,
 					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Opener-Policy header appropriately, and that it sets the Cross-Origin-Opener-Policy header to 'same-origin' for documents.</p><p>'same-origin-allow-popups' is considered as less secured and should be avoided.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Opener-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-opener-policy).</p>",
 					"otherinfo": "",
@@ -767,7 +813,7 @@
 					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
 					"instances":[ 
 						{
-							"id": "41",
+							"id": "11",
 							"uri": "https://smt.esante.gouv.fr",
 							"nodeName": "https:\/\/smt.esante.gouv.fr",
 							"method": "GET",
@@ -777,7 +823,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "33",
+							"id": "48",
 							"uri": "https://smt.esante.gouv.fr/author-sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/author-sitemap.xml",
 							"method": "GET",
@@ -787,7 +833,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "52",
+							"id": "42",
 							"uri": "https://smt.esante.gouv.fr/category-sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/category-sitemap.xml",
 							"method": "GET",
@@ -797,7 +843,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "26",
+							"id": "17",
 							"uri": "https://smt.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -807,7 +853,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "27",
+							"id": "36",
 							"uri": "https://smt.esante.gouv.fr/sitemap_index.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/sitemap_index.xml",
 							"method": "GET",
@@ -827,6 +873,36 @@
 					"sourceid": "1"
 				},
 				{
+					"pluginid": "10110",
+					"alertRef": "10110",
+					"alert": "Dangerous JS Functions",
+					"name": "Dangerous JS Functions",
+					"riskcode": "1",
+					"confidence": "1",
+					"riskdesc": "Low (Low)",
+					"desc": "<p>A dangerous JS function seems to be in use that would leave the site vulnerable.</p>",
+					"instances":[ 
+						{
+							"id": "344",
+							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/sparnatural/yasgui.min.js",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/sparnatural\/yasgui.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval(",
+							"otherinfo": ""
+						}
+					],
+					"count": "1",
+					"systemic": false,
+					"solution": "<p>See the references for security advice on the use of these functions.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://v17.angular.io/guide/security</p>",
+					"cweid": "749",
+					"wascid": "-1",
+					"sourceid": "4098"
+				},
+				{
 					"pluginid": "110009",
 					"alertRef": "110009",
 					"alert": "Full Path Disclosure",
@@ -837,7 +913,7 @@
 					"desc": "<p>The full path of files which might be sensitive has been exposed to the client.</p>",
 					"instances":[ 
 						{
-							"id": "200",
+							"id": "173",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/humans.txt",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/humans.txt",
 							"method": "GET",
@@ -847,7 +923,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "190",
+							"id": "215",
 							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2021/07/adicap_q1-1024x550.png",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2021\/07\/adicap_q1-1024x550.png",
 							"method": "GET",
@@ -857,7 +933,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "197",
+							"id": "213",
 							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2021/07/adicap_q2-edited.png",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2021\/07\/adicap_q2-edited.png",
 							"method": "GET",
@@ -867,7 +943,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "195",
+							"id": "207",
 							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2021/07/all_smt_graphes-1-1024x257.png",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2021\/07\/all_smt_graphes-1-1024x257.png",
 							"method": "GET",
@@ -877,7 +953,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "199",
+							"id": "211",
 							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2021/07/arbo_cim10-1-1024x634.png",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2021\/07\/arbo_cim10-1-1024x634.png",
 							"method": "GET",
@@ -887,7 +963,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "192",
+							"id": "209",
 							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2021/07/cisp_q3_syn-1024x368.png",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2021\/07\/cisp_q3_syn-1024x368.png",
 							"method": "GET",
@@ -897,7 +973,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "184",
+							"id": "201",
 							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2024/04/image-3.png",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2024\/04\/image-3.png",
 							"method": "GET",
@@ -907,7 +983,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "186",
+							"id": "203",
 							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2024/04/image-4.png",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2024\/04\/image-4.png",
 							"method": "GET",
@@ -917,7 +993,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "188",
+							"id": "205",
 							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2024/04/image-5.png",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2024\/04\/image-5.png",
 							"method": "GET",
@@ -927,7 +1003,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "139",
+							"id": "194",
 							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2024/06/Arborescence-taxonomie-ontologie-768x421-1.png",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2024\/06\/Arborescence-taxonomie-ontologie-768x421-1.png",
 							"method": "GET",
@@ -937,7 +1013,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "140",
+							"id": "192",
 							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2024/06/image-6-1024x426.png",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2024\/06\/image-6-1024x426.png",
 							"method": "GET",
@@ -947,7 +1023,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "143",
+							"id": "196",
 							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2024/06/tableau-termino-1.png",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2024\/06\/tableau-termino-1.png",
 							"method": "GET",
@@ -964,7 +1040,7 @@
 					"reference": "<p>https://owasp.org/www-community/attacks/Full_Path_Disclosure</p>",
 					"cweid": "209",
 					"wascid": "13",
-					"sourceid": "1530"
+					"sourceid": "796"
 				},
 				{
 					"pluginid": "10009",
@@ -977,7 +1053,7 @@
 					"desc": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
 					"instances":[ 
 						{
-							"id": "193",
+							"id": "159",
 							"uri": "https://smt.esante.gouv.fr/xmlrpc.php",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/xmlrpc.php",
 							"method": "GET",
@@ -987,7 +1063,7 @@
 							"otherinfo": "There is a chance that the highlight in the finding is on a value in the headers, versus the actual matched string in the response body."
 						},
 						{
-							"id": "202",
+							"id": "169",
 							"uri": "https://smt.esante.gouv.fr/xmlrpc.php?rsd",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/xmlrpc.php (rsd)",
 							"method": "GET",
@@ -1004,7 +1080,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "1507"
+					"sourceid": "778"
 				},
 				{
 					"pluginid": "10063",
@@ -1017,7 +1093,7 @@
 					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
 					"instances":[ 
 						{
-							"id": "40",
+							"id": "10",
 							"uri": "https://smt.esante.gouv.fr",
 							"nodeName": "https:\/\/smt.esante.gouv.fr",
 							"method": "GET",
@@ -1027,9 +1103,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "105",
-							"uri": "https://smt.esante.gouv.fr/author/anh-pham/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/anh-pham\/",
+							"id": "95",
+							"uri": "https://smt.esante.gouv.fr/actualites/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/actualites\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1037,9 +1113,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "97",
-							"uri": "https://smt.esante.gouv.fr/author/mael-le-gallesante-gouv-fr/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/mael-le-gallesante-gouv-fr\/",
+							"id": "104",
+							"uri": "https://smt.esante.gouv.fr/bienvenue/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/bienvenue\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1047,9 +1123,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "108",
-							"uri": "https://smt.esante.gouv.fr/author/melissa-maryesante-gouv-fr/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/melissa-maryesante-gouv-fr\/",
+							"id": "82",
+							"uri": "https://smt.esante.gouv.fr/nos-unites-de-production-semantiques/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/nos-unites-de-production-semantiques\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1057,9 +1133,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "90",
-							"uri": "https://smt.esante.gouv.fr/author/nicolas-moine-ext/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/nicolas-moine-ext\/",
+							"id": "111",
+							"uri": "https://smt.esante.gouv.fr/regard-dexperts/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/regard-dexperts\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1087,7 +1163,7 @@
 					"desc": "<p>A private IP (such as 10.x.x.x, 172.x.x.x, 192.168.x.x) or an Amazon EC2 private hostname (for example, ip-10-0-56-78) has been found in the HTTP response body. This information might be helpful for further attacks targeting internal systems.</p>",
 					"instances":[ 
 						{
-							"id": "209",
+							"id": "190",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/app-vuejs/ans-public-search-result/dist/js/app.js?ver=version%2013.0.5",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/app-vuejs\/ans-public-search-result\/dist\/js\/app.js (ver)",
 							"method": "GET",
@@ -1097,7 +1173,7 @@
 							"otherinfo": "10.0.3.120\n10.0.3.120\n"
 						},
 						{
-							"id": "316",
+							"id": "327",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/assets_dist/dev/swagger-ui/swagger-ui-bundle.js?ver=1.0.0",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/assets_dist\/dev\/swagger-ui\/swagger-ui-bundle.js (ver)",
 							"method": "GET",
@@ -1114,7 +1190,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc1918</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "1772"
+					"sourceid": "910"
 				},
 				{
 					"pluginid": "10037",
@@ -1127,7 +1203,7 @@
 					"desc": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
 					"instances":[ 
 						{
-							"id": "183",
+							"id": "200",
 							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2024/04/image-3.png",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2024\/04\/image-3.png",
 							"method": "GET",
@@ -1137,7 +1213,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "185",
+							"id": "202",
 							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2024/04/image-4.png",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2024\/04\/image-4.png",
 							"method": "GET",
@@ -1147,7 +1223,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "138",
+							"id": "193",
 							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2024/06/Arborescence-taxonomie-ontologie-768x421-1.png",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2024\/06\/Arborescence-taxonomie-ontologie-768x421-1.png",
 							"method": "GET",
@@ -1157,7 +1233,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "137",
+							"id": "191",
 							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2024/06/image-6-1024x426.png",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2024\/06\/image-6-1024x426.png",
 							"method": "GET",
@@ -1167,7 +1243,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "142",
+							"id": "195",
 							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2024/06/tableau-termino-1.png",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2024\/06\/tableau-termino-1.png",
 							"method": "GET",
@@ -1184,7 +1260,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/shhh-dont-let-your-response-headers/</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "1417"
+					"sourceid": "1508"
 				},
 				{
 					"pluginid": "10036",
@@ -1197,9 +1273,9 @@
 					"desc": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
 					"instances":[ 
 						{
-							"id": "136",
-							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2024/06/Arborescence-taxonomie-ontologie-768x421-1.png",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2024\/06\/Arborescence-taxonomie-ontologie-768x421-1.png",
+							"id": "164",
+							"uri": "https://smt.esante.gouv.fr/wp-content/plugins/cookie-law-info/legacy/public/css/cookie-law-info-public.css?ver=3.3.5",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/plugins\/cookie-law-info\/legacy\/public\/css\/cookie-law-info-public.css (ver)",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1207,9 +1283,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "135",
-							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2024/06/image-6-1024x426.png",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2024\/06\/image-6-1024x426.png",
+							"id": "162",
+							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/assets_dist/dev/vendors/owlcarousel/assets/owl.carousel.min.css",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/assets_dist\/dev\/vendors\/owlcarousel\/assets\/owl.carousel.min.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1217,9 +1293,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "141",
-							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2024/06/tableau-termino-1.png",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2024\/06\/tableau-termino-1.png",
+							"id": "163",
+							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/assets_dist/dev/vendors/owlcarousel/assets/owl.theme.default.min.css",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/assets_dist\/dev\/vendors\/owlcarousel\/assets\/owl.theme.default.min.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1227,9 +1303,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "134",
-							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2024/12/1.png",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2024\/12\/1.png",
+							"id": "160",
+							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/favicon.ico",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/favicon.ico",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1237,9 +1313,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "133",
-							"uri": "https://smt.esante.gouv.fr/wp-content/uploads/2024/12/image-3.png",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/uploads\/2024\/12\/image-3.png",
+							"id": "161",
+							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/style.css",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/style.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1254,7 +1330,7 @@
 					"reference": "<p>https://httpd.apache.org/docs/current/mod/core.html#servertokens</p><p>https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff648552(v=pandp.10)</p><p>https://www.troyhunt.com/shhh-dont-let-your-response-headers/</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "695"
+					"sourceid": "805"
 				},
 				{
 					"pluginid": "10035",
@@ -1267,7 +1343,7 @@
 					"desc": "<p>HTTP Strict Transport Security (HSTS) is a web security policy mechanism whereby a web server declares that complying user agents (such as a web browser) are to interact with it using only secure HTTPS connections (i.e. HTTP layered over TLS/SSL). HSTS is an IETF standards track protocol and is specified in RFC 6797.</p>",
 					"instances":[ 
 						{
-							"id": "35",
+							"id": "6",
 							"uri": "https://smt.esante.gouv.fr",
 							"nodeName": "https:\/\/smt.esante.gouv.fr",
 							"method": "GET",
@@ -1277,7 +1353,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "29",
+							"id": "45",
 							"uri": "https://smt.esante.gouv.fr/author-sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/author-sitemap.xml",
 							"method": "GET",
@@ -1287,7 +1363,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "46",
+							"id": "39",
 							"uri": "https://smt.esante.gouv.fr/category-sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/category-sitemap.xml",
 							"method": "GET",
@@ -1297,7 +1373,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "2",
+							"id": "1",
 							"uri": "https://smt.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -1307,7 +1383,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "4",
+							"id": "33",
 							"uri": "https://smt.esante.gouv.fr/sitemap_index.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/sitemap_index.xml",
 							"method": "GET",
@@ -1337,7 +1413,7 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server. - Unix</p>",
 					"instances":[ 
 						{
-							"id": "263",
+							"id": "274",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/assets_dist/dev/swagger-ui/swagger-ui-standalone-preset.js?ver=1.0.0",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/assets_dist\/dev\/swagger-ui\/swagger-ui-standalone-preset.js (ver)",
 							"method": "GET",
@@ -1347,7 +1423,7 @@
 							"otherinfo": "1508970993, which evaluates to: 2017-10-25 22:36:33."
 						},
 						{
-							"id": "265",
+							"id": "276",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/assets_dist/dev/swagger-ui/swagger-ui-standalone-preset.js?ver=1.0.0",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/assets_dist\/dev\/swagger-ui\/swagger-ui-standalone-preset.js (ver)",
 							"method": "GET",
@@ -1357,7 +1433,7 @@
 							"otherinfo": "1555081692, which evaluates to: 2019-04-12 15:08:12."
 						},
 						{
-							"id": "262",
+							"id": "273",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/assets_dist/dev/swagger-ui/swagger-ui-standalone-preset.js?ver=1.0.0",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/assets_dist\/dev\/swagger-ui\/swagger-ui-standalone-preset.js (ver)",
 							"method": "GET",
@@ -1367,7 +1443,7 @@
 							"otherinfo": "1899447441, which evaluates to: 2030-03-11 08:17:21."
 						},
 						{
-							"id": "264",
+							"id": "275",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/assets_dist/dev/swagger-ui/swagger-ui-standalone-preset.js?ver=1.0.0",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/assets_dist\/dev\/swagger-ui\/swagger-ui-standalone-preset.js (ver)",
 							"method": "GET",
@@ -1377,7 +1453,7 @@
 							"otherinfo": "1925078388, which evaluates to: 2031-01-01 23:59:48."
 						},
 						{
-							"id": "266",
+							"id": "277",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/assets_dist/dev/swagger-ui/swagger-ui-standalone-preset.js?ver=1.0.0",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/assets_dist\/dev\/swagger-ui\/swagger-ui-standalone-preset.js (ver)",
 							"method": "GET",
@@ -1394,7 +1470,7 @@
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "2601"
+					"sourceid": "3259"
 				},
 				{
 					"pluginid": "10003",
@@ -1407,7 +1483,7 @@
 					"desc": "<p>The identified library appears to be vulnerable.</p>",
 					"instances":[ 
 						{
-							"id": "207",
+							"id": "175",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/app-vuejs/ans-public-api-key/dist/js/chunk-vendors.js?ver=version%2013.0.5",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/app-vuejs\/ans-public-api-key\/dist\/js\/chunk-vendors.js (ver)",
 							"method": "GET",
@@ -1417,7 +1493,7 @@
 							"otherinfo": "The identified library vue, version 2.7.14 is vulnerable.\nCVE-2024-9506\nhttps://github.com/vuejs/core\nhttps://github.com/advisories/GHSA-5j4c-8p2g-v4jx\nhttps://www.herodevs.com/vulnerability-directory/cve-2024-9506\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-9506\n"
 						},
 						{
-							"id": "246",
+							"id": "188",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/app-vuejs/ans-public-search-result/dist/js/chunk-vendors.js?ver=version%2013.0.5",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/app-vuejs\/ans-public-search-result\/dist\/js\/chunk-vendors.js (ver)",
 							"method": "GET",
@@ -1434,7 +1510,7 @@
 					"reference": "<p>https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/</p>",
 					"cweid": "1395",
 					"wascid": "-1",
-					"sourceid": "1761"
+					"sourceid": "871"
 				},
 				{
 					"pluginid": "10021",
@@ -1447,7 +1523,7 @@
 					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
 					"instances":[ 
 						{
-							"id": "37",
+							"id": "8",
 							"uri": "https://smt.esante.gouv.fr",
 							"nodeName": "https:\/\/smt.esante.gouv.fr",
 							"method": "GET",
@@ -1457,7 +1533,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "30",
+							"id": "46",
 							"uri": "https://smt.esante.gouv.fr/author-sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/author-sitemap.xml",
 							"method": "GET",
@@ -1467,7 +1543,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "48",
+							"id": "40",
 							"uri": "https://smt.esante.gouv.fr/category-sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/category-sitemap.xml",
 							"method": "GET",
@@ -1477,7 +1553,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "3",
+							"id": "2",
 							"uri": "https://smt.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -1487,7 +1563,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "5",
+							"id": "34",
 							"uri": "https://smt.esante.gouv.fr/sitemap_index.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/sitemap_index.xml",
 							"method": "GET",
@@ -1517,24 +1593,34 @@
 					"desc": "<p>The given request has been identified as an authentication request. The 'Other Info' field contains a set of key=value lines which identify any relevant fields. If the request is in a context which has an Authentication Method set to \"Auto-Detect\" then this rule will change the authentication to match the request identified.</p>",
 					"instances":[ 
 						{
-							"id": "318",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=Q_fjfeGFVlBTNy0k2V9gjk8OnowUdW19ZDgEIe20GZw&tab_id=XelgWyVS8xQ",
+							"id": "265",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=CT1mIQmun2wmSoAUXhCBrpiQH6BCEtoaP-GGVhMr6Tw&tab_id=Ti16C2edUoI",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/login-actions\/authenticate (client_id,execution,session_code,tab_id)(credentialId,login,password,username)",
 							"method": "POST",
 							"param": "login",
 							"attack": "",
 							"evidence": "password",
-							"otherinfo": "userParam=login\nuserValue=Connexion\npasswordParam=password\nreferer=https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=d17cb93d92001595b71b7c0c12ba2c19"
+							"otherinfo": "userParam=login\nuserValue=Connexion\npasswordParam=password\nreferer=https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5dfb49ef1c113d6999d10adb90260de4"
+						},
+						{
+							"id": "341",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/registration?client_id=ans_wordpress&execution=39a022e1-a32b-48e1-8321-1122e67ff128&session_code=KnnEs32iHzXX6onN2mYelXGaT19RKroezCqOn2BH1OE&tab_id=ueQMrzqxlg8",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/login-actions\/registration (client_id,execution,session_code,tab_id)(email,firstName,lastName,password,password-confirm,termsAccepted,user.attributes.societe)",
+							"method": "POST",
+							"param": "email",
+							"attack": "",
+							"evidence": "password",
+							"otherinfo": "userParam=email\nuserValue=zaproxy@example.com\npasswordParam=password\nreferer=https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/registrations?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=1e52a7a141db8c6c4100464deccc285e"
 						}
 					],
-					"count": "1",
+					"count": "2",
 					"systemic": false,
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
-					"otherinfo": "<p>userParam=login</p><p>userValue=Connexion</p><p>passwordParam=password</p><p>referer=https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=d17cb93d92001595b71b7c0c12ba2c19</p>",
+					"otherinfo": "<p>userParam=login</p><p>userValue=Connexion</p><p>passwordParam=password</p><p>referer=https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5dfb49ef1c113d6999d10adb90260de4</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "2973"
+					"sourceid": "2060"
 				},
 				{
 					"pluginid": "10094",
@@ -1547,134 +1633,134 @@
 					"desc": "<p>Base64 encoded data was disclosed by the application/web server. Note: in the interests of performance not all base64 strings in the response were analyzed individually, the entire response should be looked at by the analyst/security team/developer(s).</p>",
 					"instances":[ 
 						{
-							"id": "38",
+							"id": "102",
 							"uri": "https://smt.esante.gouv.fr",
 							"nodeName": "https:\/\/smt.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "QOTBvuaPv95ayhiCDq8x48dT_RxJB7L3DTDI3wIcjKYZemRMV0yZbQ==",
-							"otherinfo": "@\uFFFD\uFFFD\uFFFD\u63FF\uFFFDZ\uFFFD\\x0018\uFFFD\\x000e\uFFFD1\uFFFD\uFFFDS\uFFFD\\x001cI\\x0007\uFFFD\uFFFD\r0\uFFFD\uFFFD\\x0002\\x001c\uFFFD\uFFFD\\x0019zdLWL\uFFFDm"
+							"evidence": "gbc6rRoPlPRXLL391hvygzCe0keCsqOigScl4JYrBOdIU52sz5MOpA==",
+							"otherinfo": "\uFFFD\uFFFD:\uFFFD\\x001a\\x000f\uFFFD\uFFFDW,\uFFFD\uFFFD\uFFFD\\x001b\uFFFD0\uFFFD\uFFFDG\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD'%\uFFFD\uFFFD+\\x0004\uFFFDHS\uFFFD\uFFFD\u03D3\\x000e\uFFFD"
 						},
 						{
-							"id": "79",
+							"id": "27",
 							"uri": "https://smt.esante.gouv.fr",
 							"nodeName": "https:\/\/smt.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "S8VcEOzEqp_lZLj2OsjaqGRB9o7mGthRwDB7Jrbx-v3Lgfr8yaySzA==",
-							"otherinfo": "K\uFFFD\\\\x0010\uFFFD\u012A\uFFFD\uFFFDd\uFFFD\uFFFD:\uFFFD\u06A8dA\uFFFD\uFFFD\uFFFD\\x001a\uFFFDQ\uFFFD0{&\uFFFD\uFFFD\uFFFD\uFFFD\u02C1\uFFFD\uFFFD\u026C\uFFFD\uFFFD"
+							"evidence": "yS_ETXsCgHAHSP4e6EA938QNbP0QyzeotaGiZ61ZecN8T5j7MPndQQ==",
+							"otherinfo": "\uFFFD/\uFFFDM{\\x0002\uFFFDp\\x0007H\uFFFD\\x001e\uFFFD@=\uFFFD\uFFFD\rl\uFFFD\\x0010\uFFFD7\uFFFD\uFFFD\uFFFD\uFFFDg\uFFFDYy\uFFFD|O\uFFFD\uFFFD0\uFFFD\uFFFDA"
 						},
 						{
-							"id": "31",
+							"id": "98",
+							"uri": "https://smt.esante.gouv.fr/actualites/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/actualites\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "3phe_HpJQfpfpHqg0FIS4EZPs-iMvGSOivUf6h2teLwtrOcOInihIA==",
+							"otherinfo": "\u0798^\uFFFDzIA\uFFFD_\uFFFDz\uFFFD\uFFFDR\\x0012\uFFFDFO\uFFFD\u833Cd\uFFFD\uFFFD\uFFFD\\x001f\uFFFD\\x001d\uFFFDx\uFFFD-\uFFFD\uFFFD\\x000e\"x\uFFFD "
+						},
+						{
+							"id": "50",
 							"uri": "https://smt.esante.gouv.fr/author-sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/author-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "jpjMv1in-1M25Af-VejeuX1MFeiu0ulpFjx6USXraZyH3ocPH4B9eg==",
-							"otherinfo": "\uFFFD\uFFFD\u033FX\uFFFD\uFFFDS6\uFFFD\\x0007\uFFFDU\uFFFD\u07B9}L\\x0015\uFFFD\uFFFD\uFFFDi\\x0016<zQ%\uFFFDi\uFFFD\uFFFD\u0787\\x000f\\x001f\uFFFD}z"
+							"evidence": "ms4Ke8l4X_ocE3XnG5jyb6NZUqLMGMR7HxHpEOYP8sqxtasc0IwJMg==",
+							"otherinfo": "\uFFFD\uFFFD\n{\uFFFDx_\uFFFD\\x001c\\x0013u\uFFFD\\x001b\uFFFD\uFFFDo\uFFFDYR\uFFFD\uFFFD\\x0018\uFFFD{\\x001f\\x0011\uFFFD\\x0010\uFFFD\\x000f\uFFFD\u02B1\uFFFD\uFFFD\\x001c\u040C\t2"
 						},
 						{
-							"id": "95",
-							"uri": "https://smt.esante.gouv.fr/author/mael-le-gallesante-gouv-fr/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/mael-le-gallesante-gouv-fr\/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "k0o2Kno6Idr_LTgS3NzKFAb5UK1HY0WcLyNNT9rWfAcFDfqjssWdng==",
-							"otherinfo": "\uFFFDJ6*z:!\uFFFD\uFFFD-8\\x0012\uFFFD\uFFFD\uFFFD\\x0014\\x0006\uFFFDP\uFFFDGcE\uFFFD/#MO\uFFFD\uFFFD|\\x0007\\x0005\r\uFFFD\uFFFD\uFFFD\u015D\uFFFD"
-						},
-						{
-							"id": "88",
-							"uri": "https://smt.esante.gouv.fr/author/nicolas-moine-ext/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/nicolas-moine-ext\/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "0lB6OFTuJZtxxH6ugMlc3JVbx0mddm-mNi7EIc9dBY5ylkg3lpsKXg==",
-							"otherinfo": "\uFFFDPz8T\uFFFD%\uFFFDq\uFFFD~\uFFFD\uFFFD\uFFFD\\\u0715[\uFFFDI\uFFFDvo\uFFFD6.\uFFFD!\uFFFD]\\x0005\uFFFDr\uFFFDH7\uFFFD\uFFFD\n^"
-						},
-						{
-							"id": "49",
+							"id": "44",
 							"uri": "https://smt.esante.gouv.fr/category-sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/category-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "wqhvSvppXMTfVStr-M48zP9a2HAK8MP46mBJH_KBrWNwdPofmQjdgg==",
-							"otherinfo": "\u00A8oJ\uFFFDi\\\uFFFD\uFFFDU+k\uFFFD\uFFFD<\uFFFD\uFFFDZ\uFFFDp\n\uFFFD\uFFFD\uFFFD\uFFFD`I\\x001f\uFFFDcpt\uFFFD\\x001f\uFFFD\\x0008\u0742"
+							"evidence": "gPyFdx_lXg6vp_-SgK1eObjrzHzBNtE_u2FO5Uw4Pffy7805ynOa7Q==",
+							"otherinfo": "\uFFFD\uFFFD\uFFFDw\\x001f\uFFFD^\\x000e\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD^9\uFFFD\uFFFD\uFFFD|\uFFFD6\uFFFD?\uFFFDaN\uFFFDL8=\uFFFD\uFFFD\uFFFD\uFFFD9\uFFFDs\uFFFD\uFFFD"
 						},
 						{
-							"id": "65",
+							"id": "90",
+							"uri": "https://smt.esante.gouv.fr/nos-unites-de-production-semantiques/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/nos-unites-de-production-semantiques\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "qzmMzTSGfCfxpkaT4eCwFFttxE6EXVZE13Wd6tcoKmaSk_C6Gh-xLg==",
+							"otherinfo": "\uFFFD9\uFFFD\uFFFD4\uFFFD|'\uFFFDF\uFFFD\uFFFD\uFFFD\\x0014[m\uFFFDN\uFFFD]VD\uFFFDu\uFFFD\uFFFD\uFFFD(*f\uFFFD\uFFFD\uFFFD\\x001a\\x001f\uFFFD."
+						},
+						{
+							"id": "71",
 							"uri": "https://smt.esante.gouv.fr/page-sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/page-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "-C5pUvD4HzCivDBjBdXfheGAut6R1zb_NHNYo_mmzQUJwuJ_6L6luA==",
-							"otherinfo": "\uFFFD.iR\uFFFD\uFFFD\\x001f0\uFFFD\uFFFD0c\\x0005\uFFFD\u07C5\u103A\u0791\uFFFD6\uFFFD4sX\uFFFD\uFFFD\uFFFD\uFFFD\\x0005\t\uFFFD\uFFFD\u8FA5\uFFFD"
+							"evidence": "CAFzEnTSqAqUfGPce5HvEl1w9aNZjiygUth09AHgePYHsrIkpnZFEw==",
+							"otherinfo": "\\x0008\\x0001s\\x0012t\u04A8\n\uFFFD|c\uFFFD{\uFFFD\uFFFD\\x0012]p\uFFFD\uFFFDY\uFFFD,\uFFFDR\uFFFDt\uFFFD\\x0001\uFFFDx\uFFFD\\x0007\uFFFD\uFFFD$\uFFFDvE\\x0013"
 						},
 						{
-							"id": "60",
+							"id": "61",
 							"uri": "https://smt.esante.gouv.fr/post-sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/post-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "lv-FynQOsHT2yPRVk-gQ8b9fL8ps3m5jP0iWiB_RCUwIYzPTPrqKmQ==",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFDt\\x000e\uFFFDt\uFFFD\uFFFD\uFFFDU\uFFFD\uFFFD\\x0010\uFFFD_/\uFFFDl\uFFFDnc?H\uFFFD\uFFFD\\x001f\uFFFD\tL\\x0008c3\uFFFD>\uFFFD\uFFFD\uFFFD"
+							"evidence": "gtVq_fd1ba_gK00EuB084WSRVP_kVmZLMB7L2IsT2vZqRbztfIXafA==",
+							"otherinfo": "\uFFFD\uFFFDj\uFFFD\uFFFDum\uFFFD\uFFFD+M\\x0004\uFFFD\\x001d<\uFFFDd\uFFFDT\uFFFD\uFFFDVfK0\\x001e\uFFFD\u060B\\x0013\uFFFD\uFFFDjE\uFFFD\uFFFD|\uFFFD\uFFFD|"
 						},
 						{
-							"id": "53",
+							"id": "60",
 							"uri": "https://smt.esante.gouv.fr/post_tag-sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/post_tag-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "5j69_AAqrAC5vW53_luBIvOuvk9k4nMmI8-BlItXP87D8pWtG0-j_g==",
-							"otherinfo": "\uFFFD>\uFFFD\uFFFD\\x0000*\uFFFD\\x0000\uFFFD\uFFFDnw\uFFFD[\uFFFD\"\uFFFDOd\uFFFDs&#\u03C1\uFFFD\uFFFDW?\uFFFD\uFFFD\uFFFD\\x001bO\uFFFD\uFFFD"
+							"evidence": "aunps26aFs8_-2qqTfmGbQgkWNAFgIJ9-AW88a4531E7IA6_sbU6yg==",
+							"otherinfo": "j\uFFFD\uFFFDn\uFFFD\\x0016\uFFFD?\uFFFDj\uFFFDM\uFFFD\uFFFDm\\x0008$X\uFFFD\\x0005\uFFFD\uFFFD}\uFFFD\\x0005\uFFFD\uFFFD9\uFFFDQ; \\x000e\uFFFD\uFFFD\uFFFD:\uFFFD"
 						},
 						{
-							"id": "9",
+							"id": "20",
 							"uri": "https://smt.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "aRQdwPpj1zJZeciIZbgquBxgeNP08XQhrW5LTWJnEnHupkakd3Kdcg==",
-							"otherinfo": "i\\x0014\\x001d\uFFFD\uFFFDc\uFFFD2Yy\u0208e\uFFFD*\uFFFD\\x001c`x\uFFFD\uFFFD\uFFFDt!\uFFFDnKMbg\\x0012q\uFFFDF\uFFFDwr\uFFFDr"
+							"evidence": "yJatwXNpubL0_ca3FIFlw6BMm48tKfo_HOz2XhTOWB3W9wqX3uwZXw==",
+							"otherinfo": "\u0216\uFFFD\uFFFDsi\uFFFD\uFFFD\uFFFD\uFFFD\u01B7\\x0014\uFFFDe\u00E0L\uFFFD\uFFFD-)\uFFFD?\\x001c\uFFFD\uFFFD^\\x0014\uFFFDX\\x001d\uFFFD\uFFFD\n\uFFFD\uFFFD\uFFFD\\x0019_"
 						},
 						{
-							"id": "8",
+							"id": "15",
 							"uri": "https://smt.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "6rBG8niApycZwFS48aDkZg12Bj1vNKGTzOm5pmtUsFon8VJ9NrOlMA==",
-							"otherinfo": "\uFFFDF\uFFFDx\uFFFD\uFFFD'\\x0019\uFFFDT\uFFFD\uFFFD\uFFFDf\rv\\x0006=o4\uFFFD\uFFFD\uFFFD\u9E66kT\uFFFDZ'\uFFFDR}6\uFFFD\uFFFD0"
+							"evidence": "7YD-TtNFbXYFGsTw06HbZw1hZoY5w9hjZQnDoCUsg-1mBTQK8QxO1Q==",
+							"otherinfo": "\uFFFD\uFFFDN\uFFFDEmv\\x0005\\x001a\uFFFD\uFFFD\u04E1\uFFFDg\raf\uFFFD9\uFFFD\uFFFDce\t\u00E0%,\uFFFD\uFFFDf\\x00054\n\uFFFD\\x000cN\uFFFD"
 						},
 						{
-							"id": "14",
+							"id": "37",
 							"uri": "https://smt.esante.gouv.fr/sitemap_index.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/sitemap_index.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "TrIGSt_Gsn4Qnb4tlWAVqsnuw-cS6X0pPB7-lrlAsC4rt8xUXwprSg==",
-							"otherinfo": "N\uFFFD\\x0006J\uFFFD\u01B2~\\x0010\uFFFD\uFFFD-\uFFFD`\\x0015\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0012\uFFFD})<\\x001e\uFFFD\uFFFD\uFFFD@\uFFFD.+\uFFFD\uFFFDT_\nkJ"
+							"evidence": "RXxqNeSAVKGacC1kwGzH0pSVLXIxHplg0eyk6KVCdKq7VaLsHWUBPA==",
+							"otherinfo": "E|j5\uFFFDT\uFFFD\uFFFDp-d\uFFFDl\uFFFD\u0494\uFFFD-r1\\x001e\uFFFD`\uFFFD\uFFFD\uFFFDBt\uFFFD\uFFFDU\uFFFD\uFFFD\\x001de\\x0001<"
 						}
 					],
 					"count": "12",
 					"systemic": false,
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>@\uFFFD\uFFFD\uFFFD\u63FF\uFFFDZ\uFFFD\\x0018\uFFFD\\x000e\uFFFD1\uFFFD\uFFFDS\uFFFD\\x001cI\\x0007\uFFFD\uFFFD\r0\uFFFD\uFFFD\\x0002\\x001c\uFFFD\uFFFD\\x0019zdLWL\uFFFDm</p>",
+					"otherinfo": "<p>\uFFFD\uFFFD:\uFFFD\\x001a\\x000f\uFFFD\uFFFDW,\uFFFD\uFFFD\uFFFD\\x001b\uFFFD0\uFFFD\uFFFDG\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD'%\uFFFD\uFFFD+\\x0004\uFFFDHS\uFFFD\uFFFD\u03D3\\x000e\uFFFD</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "319",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "16"
 				},
 				{
 					"pluginid": "90011",
@@ -1687,8 +1773,8 @@
 					"desc": "<p>This check identifies responses where the HTTP Content-Type header declares a charset different from the charset defined by the body of the HTML or XML. When there's a charset mismatch between the HTTP header and content body Web browsers can be forced into an undesirable content-sniffing mode to determine the content's correct character set.</p><p></p><p>An attacker could manipulate content on the page to be interpreted in an encoding of their choice. For example, if an attacker can control content at the beginning of the page, they could inject script using UTF-7 encoded text and manipulate some browsers into interpreting that text.</p>",
 					"instances":[ 
 						{
-							"id": "250",
-							"uri": "https://smt.esante.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fsmt.esante.gouv.fr%2Fnews%2Fncit-une-ressource-semantique-medicale-de-reference-rejoint-lecosysteme-smt%2F",
+							"id": "221",
+							"uri": "https://smt.esante.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fsmt.esante.gouv.fr%2Fnos-unites-de-production-semantiques%2F",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-json\/oembed\/1.0\/embed (format,url)",
 							"method": "GET",
 							"param": "",
@@ -1704,7 +1790,7 @@
 					"reference": "<p>https://code.google.com/archive/p/browsersec/wikis/Part2.wiki#Character_set_handling_and_detection</p>",
 					"cweid": "436",
 					"wascid": "15",
-					"sourceid": "2032"
+					"sourceid": "1775"
 				},
 				{
 					"pluginid": "10024",
@@ -1717,8 +1803,8 @@
 					"desc": "<p>The request appeared to contain sensitive information leaked in the URL. This can violate PCI and most organizational compliance policies. You can configure the list of strings for this check to add or remove values specific to your environment.</p>",
 					"instances":[ 
 						{
-							"id": "317",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/broker/ISC/login?client_id=ans_wordpress&session_code=Q_fjfeGFVlBTNy0k2V9gjk8OnowUdW19ZDgEIe20GZw&tab_id=XelgWyVS8xQ",
+							"id": "263",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/broker/ISC/login?client_id=ans_wordpress&session_code=CT1mIQmun2wmSoAUXhCBrpiQH6BCEtoaP-GGVhMr6Tw&tab_id=Ti16C2edUoI",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/broker\/ISC\/login (client_id,session_code,tab_id)",
 							"method": "GET",
 							"param": "session_code",
@@ -1727,8 +1813,8 @@
 							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: session\nsession_code"
 						},
 						{
-							"id": "319",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=Q_fjfeGFVlBTNy0k2V9gjk8OnowUdW19ZDgEIe20GZw&tab_id=XelgWyVS8xQ",
+							"id": "266",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/login-actions/authenticate?client_id=ans_wordpress&execution=2d5ba996-fd60-48bf-85e0-23f88f1ab66d&session_code=CT1mIQmun2wmSoAUXhCBrpiQH6BCEtoaP-GGVhMr6Tw&tab_id=Ti16C2edUoI",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/login-actions\/authenticate (client_id,execution,session_code,tab_id)(credentialId,login,password,username)",
 							"method": "POST",
 							"param": "session_code",
@@ -1744,7 +1830,7 @@
 					"reference": "",
 					"cweid": "598",
 					"wascid": "13",
-					"sourceid": "2928"
+					"sourceid": "1988"
 				},
 				{
 					"pluginid": "10027",
@@ -1757,7 +1843,7 @@
 					"desc": "<p>The response appears to contain suspicious comments which may help an attacker.</p>",
 					"instances":[ 
 						{
-							"id": "205",
+							"id": "181",
 							"uri": "https://smt.esante.gouv.fr/wp-content/plugins/wp-popups-lite/src/assets/js/wppopups.js?ver=2.2.0.3",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/plugins\/wp-popups-lite\/src\/assets\/js\/wppopups.js (ver)",
 							"method": "GET",
@@ -1767,7 +1853,7 @@
 							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected 6 times, the first in likely comment: \"/**\n    * Return setting from popup\n     * @param popup\n     * @param key\n     * @returns {*}\n     */\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "204",
+							"id": "180",
 							"uri": "https://smt.esante.gouv.fr/wp-content/plugins/wp-popups-lite/src/assets/js/wppopups.js?ver=2.2.0.3",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/plugins\/wp-popups-lite\/src\/assets\/js\/wppopups.js (ver)",
 							"method": "GET",
@@ -1777,7 +1863,7 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 4 times, the first in likely comment: \"/**\n    * Bind TRigger after user scrolled X pixels\n     * @param value\n     * @param $popup\n     */\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "206",
+							"id": "182",
 							"uri": "https://smt.esante.gouv.fr/wp-content/plugins/wp-popups-lite/src/assets/js/wppopups.js?ver=2.2.0.3",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/plugins\/wp-popups-lite\/src\/assets\/js\/wppopups.js (ver)",
 							"method": "GET",
@@ -1787,7 +1873,7 @@
 							"otherinfo": "The following pattern was used: \\bTODO\\b and was detected 3 times, the first in likely comment: \"// remove listen event if box shouldn't be hidden again. TODO: add auto hide in trigger settings\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "203",
+							"id": "179",
 							"uri": "https://smt.esante.gouv.fr/wp-content/plugins/wp-popups-lite/src/assets/js/wppopups.js?ver=2.2.0.3",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/plugins\/wp-popups-lite\/src\/assets\/js\/wppopups.js (ver)",
 							"method": "GET",
@@ -1797,7 +1883,7 @@
 							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected 2 times, the first in likely comment: \"// Save popup for later\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "215",
+							"id": "189",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/app-vuejs/ans-public-api-key/dist/js/chunk-vendors.js?ver=version%2013.0.5",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/app-vuejs\/ans-public-api-key\/dist\/js\/chunk-vendors.js (ver)",
 							"method": "GET",
@@ -1807,7 +1893,7 @@
 							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"/*!\n * The buffer module from node.js, for the browser.\n *\n * @author   Feross Aboukhadijeh <http://feross.org>\n * @license  MIT\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "212",
+							"id": "186",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/assets_dist/dev/app.js?ver=1.0.0",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/assets_dist\/dev\/app.js (ver)",
 							"method": "GET",
@@ -1817,7 +1903,7 @@
 							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected 3 times, the first in likely comment: \"// Adapted from convert-source-map (MIT)\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "213",
+							"id": "187",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/assets_dist/dev/app.js?ver=1.0.0",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/assets_dist\/dev\/app.js (ver)",
 							"method": "GET",
@@ -1827,7 +1913,7 @@
 							"otherinfo": "The following pattern was used: \\bTODO\\b and was detected in likely comment: \"//TODO: should we add protocol?\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "210",
+							"id": "184",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/assets_dist/dev/app.js?ver=1.0.0",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/assets_dist\/dev\/app.js (ver)",
 							"method": "GET",
@@ -1837,7 +1923,7 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in likely comment: \"// this implementation is not 100% perfect for weird media query combinations\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "211",
+							"id": "185",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/assets_dist/dev/app.js?ver=1.0.0",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/assets_dist\/dev\/app.js (ver)",
 							"method": "GET",
@@ -1847,7 +1933,7 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 3 times, the first in likely comment: \"// Converting to local datetime and write it by taking into account the user's navigator language\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "237",
+							"id": "177",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/assets_dist/dev/vendors/bootstrap/js/bootstrap.js?ver=4.5.0",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/assets_dist\/dev\/vendors\/bootstrap\/js\/bootstrap.js (ver)",
 							"method": "GET",
@@ -1857,7 +1943,7 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in likely comment: \"// would stop cycling until user tapped out of it;\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "238",
+							"id": "178",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/assets_dist/dev/vendors/bootstrap/js/bootstrap.js?ver=4.5.0",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/assets_dist\/dev\/vendors\/bootstrap\/js\/bootstrap.js (ver)",
 							"method": "GET",
@@ -1867,7 +1953,7 @@
 							"otherinfo": "The following pattern was used: \\bTODO\\b and was detected 3 times, the first in likely comment: \"// TODO: Remove in v5\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "236",
+							"id": "176",
 							"uri": "https://smt.esante.gouv.fr/wp-content/themes/ans/assets_dist/dev/vendors/bootstrap/js/bootstrap.js?ver=4.5.0",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/wp-content\/themes\/ans\/assets_dist\/dev\/vendors\/bootstrap\/js\/bootstrap.js (ver)",
 							"method": "GET",
@@ -1884,7 +1970,7 @@
 					"reference": "",
 					"cweid": "615",
 					"wascid": "13",
-					"sourceid": "1758"
+					"sourceid": "873"
 				},
 				{
 					"pluginid": "10109",
@@ -1897,7 +1983,7 @@
 					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
 					"instances":[ 
 						{
-							"id": "34",
+							"id": "5",
 							"uri": "https://smt.esante.gouv.fr",
 							"nodeName": "https:\/\/smt.esante.gouv.fr",
 							"method": "GET",
@@ -1907,9 +1993,9 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "100",
-							"uri": "https://smt.esante.gouv.fr/author/anh-pham/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/anh-pham\/",
+							"id": "89",
+							"uri": "https://smt.esante.gouv.fr/actualites/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/actualites\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1917,9 +2003,9 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "91",
-							"uri": "https://smt.esante.gouv.fr/author/mael-le-gallesante-gouv-fr/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/mael-le-gallesante-gouv-fr\/",
+							"id": "99",
+							"uri": "https://smt.esante.gouv.fr/bienvenue/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/bienvenue\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1927,9 +2013,9 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "106",
-							"uri": "https://smt.esante.gouv.fr/author/melissa-maryesante-gouv-fr/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/melissa-maryesante-gouv-fr\/",
+							"id": "74",
+							"uri": "https://smt.esante.gouv.fr/nos-unites-de-production-semantiques/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/nos-unites-de-production-semantiques\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1937,9 +2023,9 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "77",
-							"uri": "https://smt.esante.gouv.fr/author/nicolas-moine-ext/",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author\/nicolas-moine-ext\/",
+							"id": "107",
+							"uri": "https://smt.esante.gouv.fr/regard-dexperts/",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/regard-dexperts\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1967,7 +2053,7 @@
 					"desc": "<p>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</p>",
 					"instances":[ 
 						{
-							"id": "6",
+							"id": "3",
 							"uri": "https://smt.esante.gouv.fr",
 							"nodeName": "https:\/\/smt.esante.gouv.fr",
 							"method": "GET",
@@ -1977,7 +2063,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "28",
+							"id": "43",
 							"uri": "https://smt.esante.gouv.fr/author-sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/author-sitemap.xml",
 							"method": "GET",
@@ -1987,7 +2073,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "44",
+							"id": "38",
 							"uri": "https://smt.esante.gouv.fr/category-sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/category-sitemap.xml",
 							"method": "GET",
@@ -2007,7 +2093,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "1",
+							"id": "32",
 							"uri": "https://smt.esante.gouv.fr/sitemap_index.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/sitemap_index.xml",
 							"method": "GET",
@@ -2037,7 +2123,17 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"id": "17",
+							"id": "30",
+							"uri": "https://smt.esante.gouv.fr",
+							"nodeName": "https:\/\/smt.esante.gouv.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "24",
 							"uri": "https://smt.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -2047,19 +2143,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "12",
+							"id": "22",
 							"uri": "https://smt.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "22",
-							"uri": "https://smt.esante.gouv.fr/sitemap_index.xml",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/sitemap_index.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -2074,7 +2160,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -2087,7 +2173,17 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"id": "16",
+							"id": "29",
+							"uri": "https://smt.esante.gouv.fr",
+							"nodeName": "https:\/\/smt.esante.gouv.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "23",
 							"uri": "https://smt.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -2097,19 +2193,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "11",
+							"id": "19",
 							"uri": "https://smt.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "20",
-							"uri": "https://smt.esante.gouv.fr/sitemap_index.xml",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/sitemap_index.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -2124,7 +2210,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -2137,7 +2223,17 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"id": "15",
+							"id": "28",
+							"uri": "https://smt.esante.gouv.fr",
+							"nodeName": "https:\/\/smt.esante.gouv.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "21",
 							"uri": "https://smt.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -2147,19 +2243,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "10",
+							"id": "18",
 							"uri": "https://smt.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "18",
-							"uri": "https://smt.esante.gouv.fr/sitemap_index.xml",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/sitemap_index.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -2174,7 +2260,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -2187,7 +2273,17 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"id": "21",
+							"id": "31",
+							"uri": "https://smt.esante.gouv.fr",
+							"nodeName": "https:\/\/smt.esante.gouv.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "26",
 							"uri": "https://smt.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -2197,19 +2293,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "13",
+							"id": "25",
 							"uri": "https://smt.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "23",
-							"uri": "https://smt.esante.gouv.fr/sitemap_index.xml",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/sitemap_index.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -2224,7 +2310,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10112",
@@ -2237,8 +2323,8 @@
 					"desc": "<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to \"Auto-Detect\" then this rule will change the session management to use the tokens identified.</p>",
 					"instances":[ 
 						{
-							"id": "151",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=d17cb93d92001595b71b7c0c12ba2c19",
+							"id": "133",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5dfb49ef1c113d6999d10adb90260de4",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/protocol\/openid-connect\/auth (client_id,redirect_uri,response_type,scope,state)",
 							"method": "GET",
 							"param": "AUTH_SESSION_ID_LEGACY",
@@ -2247,8 +2333,8 @@
 							"otherinfo": "cookie:AUTH_SESSION_ID_LEGACY\ncookie:KC_RESTART\ncookie:AUTH_SESSION_ID"
 						},
 						{
-							"id": "162",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=97eeae6dff9d117c6fc2b3c5ace4d3a3",
+							"id": "143",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=ad739e3b1b543a2701494e0b675e9ff8",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/protocol\/openid-connect\/auth (client_id,redirect_uri,response_type,scope,state)",
 							"method": "GET",
 							"param": "KC_RESTART",
@@ -2264,7 +2350,7 @@
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id/</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1070"
+					"sourceid": "451"
 				},
 				{
 					"pluginid": "10049",
@@ -2277,7 +2363,7 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
 					"instances":[ 
 						{
-							"id": "39",
+							"id": "9",
 							"uri": "https://smt.esante.gouv.fr",
 							"nodeName": "https:\/\/smt.esante.gouv.fr",
 							"method": "GET",
@@ -2287,9 +2373,9 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "32",
-							"uri": "https://smt.esante.gouv.fr/author-sitemap.xml",
-							"nodeName": "https:\/\/smt.esante.gouv.fr\/author-sitemap.xml",
+							"id": "41",
+							"uri": "https://smt.esante.gouv.fr/category-sitemap.xml",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/category-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2297,7 +2383,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "24",
+							"id": "16",
 							"uri": "https://smt.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -2307,7 +2393,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "19",
+							"id": "14",
 							"uri": "https://smt.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -2317,7 +2403,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "25",
+							"id": "35",
 							"uri": "https://smt.esante.gouv.fr/sitemap_index.xml",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/sitemap_index.xml",
 							"method": "GET",
@@ -2347,24 +2433,34 @@
 					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
 					"instances":[ 
 						{
-							"id": "160",
-							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=d17cb93d92001595b71b7c0c12ba2c19",
+							"id": "142",
+							"uri": "https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5dfb49ef1c113d6999d10adb90260de4",
 							"nodeName": "https:\/\/smt.esante.gouv.fr\/ans\/sso\/auth\/realms\/ANS\/protocol\/openid-connect\/auth (client_id,redirect_uri,response_type,scope,state)",
 							"method": "GET",
 							"param": "redirect_uri",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=d17cb93d92001595b71b7c0c12ba2c19\n\nappears to include user input in:\na(n) [a] tag [href] attribute\n\nThe user input found was:\nredirect_uri=https://smt.esante.gouv.fr/wp-admin/admin-ajax.php?action=openid-connect-authorize\n\nThe user-controlled value was:\nhttps://smt.esante.gouv.fr"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5dfb49ef1c113d6999d10adb90260de4\n\nappears to include user input in:\na(n) [a] tag [href] attribute\n\nThe user input found was:\nredirect_uri=https://smt.esante.gouv.fr/wp-admin/admin-ajax.php?action=openid-connect-authorize\n\nThe user-controlled value was:\nhttps://smt.esante.gouv.fr"
+						},
+						{
+							"id": "240",
+							"uri": "https://smt.esante.gouv.fr/explorer-les-concepts/?lang=fr",
+							"nodeName": "https:\/\/smt.esante.gouv.fr\/explorer-les-concepts\/ (lang)",
+							"method": "GET",
+							"param": "lang",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://smt.esante.gouv.fr/explorer-les-concepts/?lang=fr\n\nappears to include user input in:\na(n) [html] tag [lang] attribute\n\nThe user input found was:\nlang=fr\n\nThe user-controlled value was:\nfr-fr"
 						}
 					],
-					"count": "1",
+					"count": "2",
 					"systemic": false,
 					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
-					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=d17cb93d92001595b71b7c0c12ba2c19</p><p></p><p>appears to include user input in:</p><p>a(n) [a] tag [href] attribute</p><p></p><p>The user input found was:</p><p>redirect_uri=https://smt.esante.gouv.fr/wp-admin/admin-ajax.php?action=openid-connect-authorize</p><p></p><p>The user-controlled value was:</p><p>https://smt.esante.gouv.fr</p>",
+					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://smt.esante.gouv.fr/ans/sso/auth/realms/ANS/protocol/openid-connect/auth?client_id=ans_wordpress&redirect_uri=https%3A%2F%2Fsmt.esante.gouv.fr%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize&response_type=code&scope=openid&state=5dfb49ef1c113d6999d10adb90260de4</p><p></p><p>appears to include user input in:</p><p>a(n) [a] tag [href] attribute</p><p></p><p>The user input found was:</p><p>redirect_uri=https://smt.esante.gouv.fr/wp-admin/admin-ajax.php?action=openid-connect-authorize</p><p></p><p>The user-controlled value was:</p><p>https://smt.esante.gouv.fr</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "1070"
+					"sourceid": "451"
 				}
 			]
 		}
