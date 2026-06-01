@@ -1,8 +1,8 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.17.0",
-	"@generated": "Sun, 24 May 2026 04:12:51",
-	"created": "2026-05-24T04:12:51.646194607Z",
+	"@generated": "Mon, 1 Jun 2026 03:29:14",
+	"created": "2026-06-01T03:29:14.529593097Z",
 	"insights":[
 		{
 			"level": "Info",
@@ -90,7 +90,7 @@
 			"site": "https://finess.esante.gouv.fr",
 			"key": "insight.response.slow",
 			"description": "Percentage of slow responses",
-			"statistic": "93"
+			"statistic": "64"
 		}
 	],
 	"site":[ 
@@ -111,7 +111,7 @@
 					"desc": "<p>The identified library appears to be vulnerable.</p>",
 					"instances":[ 
 						{
-							"id": "132",
+							"id": "130",
 							"uri": "https://finess.esante.gouv.fr/fininter/js/prototype-1.3.1.js",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/js\/prototype-1.3.1.js",
 							"method": "GET",
@@ -128,7 +128,7 @@
 					"reference": "<p>https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/</p>",
 					"cweid": "1395",
 					"wascid": "-1",
-					"sourceid": "113"
+					"sourceid": "110"
 				},
 				{
 					"pluginid": "10202",
@@ -141,7 +141,7 @@
 					"desc": "<p>No Anti-CSRF tokens were found in a HTML submission form.</p><p>A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent in order to perform an action as the victim. The underlying cause is application functionality using predictable URL/form actions in a repeatable way. The nature of the attack is that CSRF exploits the trust that a web site has for a user. By contrast, cross-site scripting (XSS) exploits the trust that a user has for a web site. Like XSS, CSRF attacks are not necessarily cross-site, but they can be. Cross-site request forgery is also known as CSRF, XSRF, one-click attack, session riding, confused deputy, and sea surf.</p><p></p><p>CSRF attacks are effective in a number of situations, including:</p><p>    * The victim has an active session on the target site.</p><p>    * The victim is authenticated via HTTP auth on the target site.</p><p>    * The victim is on the same local network as the target site.</p><p></p><p>CSRF has primarily been used to perform an action against a target site using the victim's privileges, but recent techniques have been discovered to disclose information by gaining access to the response. The risk of information disclosure is dramatically increased when the target site is vulnerable to XSS, because XSS can be used as a platform for CSRF, allowing the attack to operate within the bounds of the same-origin policy.</p>",
 					"instances":[ 
 						{
-							"id": "133",
+							"id": "129",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/contact.jsp",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/contact.jsp",
 							"method": "GET",
@@ -151,7 +151,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"email\" \"envoyer\" \"nom\" \"prenom\" \"sujet\" \"telephone\" ]."
 						},
 						{
-							"id": "131",
+							"id": "126",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/recherche.jsp?mode=avancee",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/recherche.jsp (mode)",
 							"method": "GET",
@@ -161,7 +161,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"idtest\" ]."
 						},
 						{
-							"id": "52",
+							"id": "53",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/recherche.jsp?mode=simple",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/recherche.jsp (mode)",
 							"method": "GET",
@@ -171,17 +171,17 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"idtest\" ]."
 						},
 						{
-							"id": "134",
-							"uri": "https://finess.esante.gouv.fr/fininter/jsp/rechercheSimple.jsp?coche=ok",
-							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/rechercheSimple.jsp (coche)",
-							"method": "GET",
+							"id": "131",
+							"uri": "https://finess.esante.gouv.fr/fininter/jsp/rechercheAvancee.jsp?coche=ok",
+							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/rechercheAvancee.jsp (coche)(idtest)",
+							"method": "POST",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"actionRechercheSimpleForm\" method=\"post\" action=\"/fininter/jsp/actionRechercheSimple.do\">",
+							"evidence": "<form id=\"actionRechercheAvancee\" method=\"post\" action=\"/fininter/jsp/actionRechercheAvancee.do\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"chercher\" \"nofiness\" \"reset\" \"rs\" \"siren\" \"siret\" ]."
 						},
 						{
-							"id": "126",
+							"id": "128",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/rechercheSimple.jsp?coche=ok",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/rechercheSimple.jsp (coche)(idtest)",
 							"method": "POST",
@@ -198,7 +198,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "115"
+					"sourceid": "105"
 				},
 				{
 					"pluginid": "10038",
@@ -231,7 +231,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "49",
+							"id": "50",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/definitions.do",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/definitions.do",
 							"method": "GET",
@@ -241,7 +241,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "45",
+							"id": "42",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/index.jsp",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/index.jsp",
 							"method": "GET",
@@ -281,7 +281,7 @@
 					"desc": "<p>A cookie has been set without the HttpOnly flag, which means that the cookie can be accessed by JavaScript. If a malicious script can be run on this page then the cookie will be accessible and can be transmitted to another site. If this is a session cookie then session hijacking may be possible.</p>",
 					"instances":[ 
 						{
-							"id": "7",
+							"id": "6",
 							"uri": "https://finess.esante.gouv.fr",
 							"nodeName": "https:\/\/finess.esante.gouv.fr",
 							"method": "GET",
@@ -291,7 +291,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "6",
+							"id": "7",
 							"uri": "https://finess.esante.gouv.fr/fininter/",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/",
 							"method": "GET",
@@ -341,7 +341,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "47",
+							"id": "45",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/index.jsp",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/index.jsp",
 							"method": "GET",
@@ -371,7 +371,7 @@
 					"desc": "<p>A cookie has been set without the SameSite attribute, which means that the cookie can be sent as a result of a 'cross-site' request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks.</p>",
 					"instances":[ 
 						{
-							"id": "8",
+							"id": "9",
 							"uri": "https://finess.esante.gouv.fr",
 							"nodeName": "https:\/\/finess.esante.gouv.fr",
 							"method": "GET",
@@ -381,7 +381,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "9",
+							"id": "8",
 							"uri": "https://finess.esante.gouv.fr/fininter/",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/",
 							"method": "GET",
@@ -391,7 +391,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "46",
+							"id": "43",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/index.jsp",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/index.jsp",
 							"method": "GET",
@@ -421,7 +421,7 @@
 					"desc": "<p>Cross-Origin-Embedder-Policy header is a response header that prevents a document from loading any cross-origin resources that don't explicitly grant the document permission (using CORP or CORS).</p>",
 					"instances":[ 
 						{
-							"id": "29",
+							"id": "32",
 							"uri": "https://finess.esante.gouv.fr",
 							"nodeName": "https:\/\/finess.esante.gouv.fr",
 							"method": "GET",
@@ -431,19 +431,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "28",
+							"id": "29",
 							"uri": "https://finess.esante.gouv.fr/fininter/",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/",
-							"method": "GET",
-							"param": "Cross-Origin-Embedder-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "74",
-							"uri": "https://finess.esante.gouv.fr/fininter/jsp/definitions.do",
-							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/definitions.do",
 							"method": "GET",
 							"param": "Cross-Origin-Embedder-Policy",
 							"attack": "",
@@ -461,9 +451,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "63",
-							"uri": "https://finess.esante.gouv.fr/fininter/jsp/recherche.jsp?mode=simple",
-							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/recherche.jsp (mode)",
+							"id": "62",
+							"uri": "https://finess.esante.gouv.fr/fininter/jsp/plansite.jsp",
+							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/plansite.jsp",
 							"method": "GET",
 							"param": "Cross-Origin-Embedder-Policy",
 							"attack": "",
@@ -471,7 +461,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "5",
+					"count": "4",
 					"systemic": false,
 					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Embedder-Policy header appropriately, and that it sets the Cross-Origin-Embedder-Policy header to 'require-corp' for documents.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Embedder-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-embedder-policy).</p>",
 					"otherinfo": "",
@@ -491,7 +481,7 @@
 					"desc": "<p>Cross-Origin-Opener-Policy header is a response header that allows a site to control if others included documents share the same browsing context. Sharing the same browsing context with untrusted documents might lead to data leak.</p>",
 					"instances":[ 
 						{
-							"id": "31",
+							"id": "37",
 							"uri": "https://finess.esante.gouv.fr",
 							"nodeName": "https:\/\/finess.esante.gouv.fr",
 							"method": "GET",
@@ -501,7 +491,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "30",
+							"id": "34",
 							"uri": "https://finess.esante.gouv.fr/fininter/",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/",
 							"method": "GET",
@@ -511,17 +501,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "75",
-							"uri": "https://finess.esante.gouv.fr/fininter/jsp/definitions.do",
-							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/definitions.do",
-							"method": "GET",
-							"param": "Cross-Origin-Opener-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "72",
+							"id": "71",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/index.jsp",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/index.jsp",
 							"method": "GET",
@@ -531,9 +511,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "65",
-							"uri": "https://finess.esante.gouv.fr/fininter/jsp/recherche.jsp?mode=simple",
-							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/recherche.jsp (mode)",
+							"id": "63",
+							"uri": "https://finess.esante.gouv.fr/fininter/jsp/plansite.jsp",
+							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/plansite.jsp",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
 							"attack": "",
@@ -541,7 +521,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "5",
+					"count": "4",
 					"systemic": false,
 					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Opener-Policy header appropriately, and that it sets the Cross-Origin-Opener-Policy header to 'same-origin' for documents.</p><p>'same-origin-allow-popups' is considered as less secured and should be avoided.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Opener-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-opener-policy).</p>",
 					"otherinfo": "",
@@ -561,7 +541,7 @@
 					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
 					"instances":[ 
 						{
-							"id": "26",
+							"id": "27",
 							"uri": "https://finess.esante.gouv.fr",
 							"nodeName": "https:\/\/finess.esante.gouv.fr",
 							"method": "GET",
@@ -571,7 +551,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "27",
+							"id": "25",
 							"uri": "https://finess.esante.gouv.fr/fininter/",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/",
 							"method": "GET",
@@ -581,7 +561,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "44",
+							"id": "47",
 							"uri": "https://finess.esante.gouv.fr/fininter/css/styleB.css",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/css\/styleB.css",
 							"method": "GET",
@@ -602,8 +582,8 @@
 						},
 						{
 							"id": "61",
-							"uri": "https://finess.esante.gouv.fr/fininter/jsp/recherche.jsp?mode=simple",
-							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/recherche.jsp (mode)",
+							"uri": "https://finess.esante.gouv.fr/fininter/jsp/plansite.jsp",
+							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/plansite.jsp",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
 							"attack": "",
@@ -612,7 +592,7 @@
 						}
 					],
 					"count": "5",
-					"systemic": true,
+					"systemic": false,
 					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy</p>",
@@ -631,7 +611,7 @@
 					"desc": "<p>A dangerous JS function seems to be in use that would leave the site vulnerable.</p>",
 					"instances":[ 
 						{
-							"id": "148",
+							"id": "143",
 							"uri": "https://finess.esante.gouv.fr/fininter/js/ajaxtags-1.1.5.js",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/js\/ajaxtags-1.1.5.js",
 							"method": "GET",
@@ -641,7 +621,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "142",
+							"id": "139",
 							"uri": "https://finess.esante.gouv.fr/fininter/js/prototype-1.3.1.js",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/js\/prototype-1.3.1.js",
 							"method": "GET",
@@ -658,7 +638,7 @@
 					"reference": "<p>https://v17.angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "114"
+					"sourceid": "111"
 				},
 				{
 					"pluginid": "10063",
@@ -671,7 +651,7 @@
 					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
 					"instances":[ 
 						{
-							"id": "21",
+							"id": "26",
 							"uri": "https://finess.esante.gouv.fr",
 							"nodeName": "https:\/\/finess.esante.gouv.fr",
 							"method": "GET",
@@ -711,9 +691,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "59",
-							"uri": "https://finess.esante.gouv.fr/fininter/jsp/recherche.jsp?mode=simple",
-							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/recherche.jsp (mode)",
+							"id": "60",
+							"uri": "https://finess.esante.gouv.fr/fininter/jsp/plansite.jsp",
+							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/plansite.jsp",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -751,7 +731,7 @@
 							"otherinfo": "\uFFFD\uFFFD?M\\x001f\uFFFD\u0665\uFFFD\uFFFD\uFFFD\\x000f\uFFFDa\uFFFDiu\uFFFD\uFFFDk\uFFFD\uFFFD"
 						},
 						{
-							"id": "82",
+							"id": "76",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/definitions.do",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/definitions.do",
 							"method": "GET",
@@ -761,7 +741,7 @@
 							"otherinfo": "\uFFFD\uFFFD?M\\x001f\uFFFD\u0665\uFFFD\uFFFD\uFFFD\\x000f\uFFFDa\uFFFDiu\uFFFD\uFFFDk\uFFFD\uFFFD"
 						},
 						{
-							"id": "110",
+							"id": "105",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/definitions.do?codeDefinition=1",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/definitions.do (codeDefinition)",
 							"method": "GET",
@@ -771,7 +751,7 @@
 							"otherinfo": "\uFFFD\uFFFD?M\\x001f\uFFFD\u0665\uFFFD\uFFFD\uFFFD\\x000f\uFFFDa\uFFFDiu\uFFFD\uFFFDk\uFFFD\uFFFD"
 						},
 						{
-							"id": "81",
+							"id": "75",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/index.jsp",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/index.jsp",
 							"method": "GET",
@@ -781,7 +761,7 @@
 							"otherinfo": "\uFFFD\uFFFD?M\\x001f\uFFFD\u0665\uFFFD\uFFFD\uFFFD\\x000f\uFFFDa\uFFFDiu\uFFFD\uFFFDk\uFFFD\uFFFD"
 						},
 						{
-							"id": "77",
+							"id": "97",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/infos.jsp",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/infos.jsp",
 							"method": "GET",
@@ -791,7 +771,7 @@
 							"otherinfo": "\uFFFD\uFFFD?M\\x001f\uFFFD\u0665\uFFFD\uFFFD\uFFFD\\x000f\uFFFDa\uFFFDiu\uFFFD\uFFFDk\uFFFD\uFFFD"
 						},
 						{
-							"id": "101",
+							"id": "96",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/liens.jsp",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/liens.jsp",
 							"method": "GET",
@@ -801,7 +781,7 @@
 							"otherinfo": "\uFFFD\uFFFD?M\\x001f\uFFFD\u0665\uFFFD\uFFFD\uFFFD\\x000f\uFFFDa\uFFFDiu\uFFFD\uFFFDk\uFFFD\uFFFD"
 						},
 						{
-							"id": "87",
+							"id": "95",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/nomenclatures.do",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/nomenclatures.do",
 							"method": "GET",
@@ -811,7 +791,7 @@
 							"otherinfo": "\uFFFD\uFFFD?M\\x001f\uFFFD\u0665\uFFFD\uFFFD\uFFFD\\x000f\uFFFDa\uFFFDiu\uFFFD\uFFFDk\uFFFD\uFFFD"
 						},
 						{
-							"id": "100",
+							"id": "73",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/plansite.jsp",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/plansite.jsp",
 							"method": "GET",
@@ -821,7 +801,7 @@
 							"otherinfo": "\uFFFD\uFFFD?M\\x001f\uFFFD\u0665\uFFFD\uFFFD\uFFFD\\x000f\uFFFDa\uFFFDiu\uFFFD\uFFFDk\uFFFD\uFFFD"
 						},
 						{
-							"id": "76",
+							"id": "74",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/recherche.jsp?mode=simple",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/recherche.jsp (mode)",
 							"method": "GET",
@@ -838,7 +818,7 @@
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "319",
 					"wascid": "13",
-					"sourceid": "64"
+					"sourceid": "54"
 				},
 				{
 					"pluginid": "10027",
@@ -851,7 +831,7 @@
 					"desc": "<p>The response appears to contain suspicious comments which may help an attacker.</p>",
 					"instances":[ 
 						{
-							"id": "146",
+							"id": "141",
 							"uri": "https://finess.esante.gouv.fr/fininter/js/ajaxtags-1.1.5.js",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/js\/ajaxtags-1.1.5.js",
 							"method": "GET",
@@ -861,7 +841,7 @@
 							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected 4 times, the first in likely comment: \"/* Example File From \"_JavaScript and DHTML Cookbook\"\r\n   Published by O'Reilly & Associates\r\n   Copyright 2003 Danny Goodman\r\n \", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "145",
+							"id": "140",
 							"uri": "https://finess.esante.gouv.fr/fininter/js/ajaxtags-1.1.5.js",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/js\/ajaxtags-1.1.5.js",
 							"method": "GET",
@@ -871,7 +851,7 @@
 							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in likely comment: \"/* SELECT TAG\r\n */\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "147",
+							"id": "142",
 							"uri": "https://finess.esante.gouv.fr/fininter/js/ajaxtags-1.1.5.js",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/js\/ajaxtags-1.1.5.js",
 							"method": "GET",
@@ -881,7 +861,7 @@
 							"otherinfo": "The following pattern was used: \\bWHERE\\b and was detected in likely comment: \"//parameters required, so use zeros where appropriate\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "120",
+							"id": "113",
 							"uri": "https://finess.esante.gouv.fr/fininter/js/menu.js",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/js\/menu.js",
 							"method": "GET",
@@ -891,7 +871,7 @@
 							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected in likely comment: \"/**\r\n * *****************************************************************************\r\n *\r\n * @revDate 2011/03/10\r\n * @revAuthor\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "140",
+							"id": "137",
 							"uri": "https://finess.esante.gouv.fr/fininter/js/prototype-1.3.1.js",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/js\/prototype-1.3.1.js",
 							"method": "GET",
@@ -901,7 +881,7 @@
 							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected in likely comment: \"/* Force \"Connection: close\" for Mozilla browsers to work around\r\n       * a bug where XMLHttpReqeuest sends an incorrect Conten\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "141",
+							"id": "138",
 							"uri": "https://finess.esante.gouv.fr/fininter/js/prototype-1.3.1.js",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/js\/prototype-1.3.1.js",
 							"method": "GET",
@@ -911,7 +891,7 @@
 							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected 3 times, the first in likely comment: \"/*  Prototype JavaScript framework, version 1.3.1\r\n *  (c) 2005 Sam Stephenson <sam@conio.net>\r\n *\r\n *  THIS FILE IS AUTOMATICAL\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "144",
+							"id": "145",
 							"uri": "https://finess.esante.gouv.fr/fininter/js/script.js",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/js\/script.js",
 							"method": "GET",
@@ -921,7 +901,7 @@
 							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected 4 times, the first in likely comment: \"/* Parcours de toutes les valeurs \u00E0 supprimer (dans le select multiple) */\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "143",
+							"id": "144",
 							"uri": "https://finess.esante.gouv.fr/fininter/js/script.js",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/js\/script.js",
 							"method": "GET",
@@ -938,7 +918,7 @@
 					"reference": "",
 					"cweid": "615",
 					"wascid": "13",
-					"sourceid": "114"
+					"sourceid": "111"
 				},
 				{
 					"pluginid": "10109",
@@ -961,7 +941,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "53",
+							"id": "52",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/index.jsp",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/index.jsp",
 							"method": "GET",
@@ -971,9 +951,9 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "62",
-							"uri": "https://finess.esante.gouv.fr/fininter/jsp/infos.jsp",
-							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/infos.jsp",
+							"id": "85",
+							"uri": "https://finess.esante.gouv.fr/fininter/jsp/liens.jsp",
+							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/liens.jsp",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -981,9 +961,9 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "80",
-							"uri": "https://finess.esante.gouv.fr/fininter/jsp/nomenclatures.do",
-							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/nomenclatures.do",
+							"id": "56",
+							"uri": "https://finess.esante.gouv.fr/fininter/jsp/plansite.jsp",
+							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/plansite.jsp",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -991,7 +971,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "55",
+							"id": "58",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/recherche.jsp?mode=simple",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/recherche.jsp (mode)",
 							"method": "GET",
@@ -1021,7 +1001,7 @@
 					"desc": "<p>The response contents are not storable by caching components such as proxy servers. If the response does not contain sensitive, personal or user-specific information, it may benefit from being stored and cached, to improve performance.</p>",
 					"instances":[ 
 						{
-							"id": "13",
+							"id": "12",
 							"uri": "https://finess.esante.gouv.fr",
 							"nodeName": "https:\/\/finess.esante.gouv.fr",
 							"method": "GET",
@@ -1031,7 +1011,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "12",
+							"id": "28",
 							"uri": "https://finess.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -1041,7 +1021,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "35",
+							"id": "13",
 							"uri": "https://finess.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -1091,7 +1071,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "48",
+							"id": "49",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/definitions.do",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/definitions.do",
 							"method": "GET",
@@ -1101,7 +1081,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "43",
+							"id": "41",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/index.jsp",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/index.jsp",
 							"method": "GET",
@@ -1111,7 +1091,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "50",
+							"id": "48",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/recherche.jsp?mode=simple",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/recherche.jsp (mode)",
 							"method": "GET",
@@ -1151,7 +1131,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "40",
+							"id": "39",
 							"uri": "https://finess.esante.gouv.fr/fininter/",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/",
 							"method": "GET",
@@ -1161,7 +1141,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "17",
+							"id": "38",
 							"uri": "https://finess.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -1169,9 +1149,19 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"id": "17",
+							"uri": "https://finess.esante.gouv.fr/sitemap.xml",
+							"nodeName": "https:\/\/finess.esante.gouv.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"systemic": false,
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
@@ -1191,7 +1181,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"id": "18",
+							"id": "19",
 							"uri": "https://finess.esante.gouv.fr",
 							"nodeName": "https:\/\/finess.esante.gouv.fr",
 							"method": "GET",
@@ -1201,7 +1191,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "38",
+							"id": "36",
 							"uri": "https://finess.esante.gouv.fr/fininter/",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/",
 							"method": "GET",
@@ -1211,7 +1201,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "15",
+							"id": "31",
 							"uri": "https://finess.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -1219,9 +1209,19 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"id": "16",
+							"uri": "https://finess.esante.gouv.fr/sitemap.xml",
+							"nodeName": "https:\/\/finess.esante.gouv.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"systemic": false,
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
@@ -1241,7 +1241,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"id": "16",
+							"id": "14",
 							"uri": "https://finess.esante.gouv.fr",
 							"nodeName": "https:\/\/finess.esante.gouv.fr",
 							"method": "GET",
@@ -1251,7 +1251,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "34",
+							"id": "35",
 							"uri": "https://finess.esante.gouv.fr/fininter/",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/",
 							"method": "GET",
@@ -1261,7 +1261,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "14",
+							"id": "30",
 							"uri": "https://finess.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -1269,9 +1269,19 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"id": "15",
+							"uri": "https://finess.esante.gouv.fr/sitemap.xml",
+							"nodeName": "https:\/\/finess.esante.gouv.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"systemic": false,
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
@@ -1291,7 +1301,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"id": "25",
+							"id": "21",
 							"uri": "https://finess.esante.gouv.fr",
 							"nodeName": "https:\/\/finess.esante.gouv.fr",
 							"method": "GET",
@@ -1301,7 +1311,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "41",
+							"id": "44",
 							"uri": "https://finess.esante.gouv.fr/fininter/",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/",
 							"method": "GET",
@@ -1311,7 +1321,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "23",
+							"id": "40",
 							"uri": "https://finess.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/robots.txt",
 							"method": "GET",
@@ -1319,9 +1329,19 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"id": "18",
+							"uri": "https://finess.esante.gouv.fr/sitemap.xml",
+							"nodeName": "https:\/\/finess.esante.gouv.fr\/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"systemic": false,
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
@@ -1341,9 +1361,9 @@
 					"desc": "<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to \"Auto-Detect\" then this rule will change the session management to use the tokens identified.</p>",
 					"instances":[ 
 						{
-							"id": "0",
-							"uri": "https://finess.esante.gouv.fr",
-							"nodeName": "https:\/\/finess.esante.gouv.fr",
+							"id": "1",
+							"uri": "https://finess.esante.gouv.fr/fininter/",
+							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/",
 							"method": "GET",
 							"param": "BWROUTEID",
 							"attack": "",
@@ -1368,7 +1388,7 @@
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id/</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10049",
@@ -1381,7 +1401,7 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
 					"instances":[ 
 						{
-							"id": "19",
+							"id": "23",
 							"uri": "https://finess.esante.gouv.fr",
 							"nodeName": "https:\/\/finess.esante.gouv.fr",
 							"method": "GET",
@@ -1401,7 +1421,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "42",
+							"id": "46",
 							"uri": "https://finess.esante.gouv.fr/fininter/css/styleB.css",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/css\/styleB.css",
 							"method": "GET",
@@ -1421,9 +1441,9 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "58",
-							"uri": "https://finess.esante.gouv.fr/fininter/jsp/recherche.jsp?mode=simple",
-							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/recherche.jsp (mode)",
+							"id": "59",
+							"uri": "https://finess.esante.gouv.fr/fininter/jsp/plansite.jsp",
+							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/plansite.jsp",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1451,7 +1471,7 @@
 					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
 					"instances":[ 
 						{
-							"id": "116",
+							"id": "114",
 							"uri": "https://finess.esante.gouv.fr/fininter/jsp/definitions.do?codeDefinition=10",
 							"nodeName": "https:\/\/finess.esante.gouv.fr\/fininter\/jsp\/definitions.do (codeDefinition)",
 							"method": "GET",
@@ -1468,7 +1488,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "83"
+					"sourceid": "84"
 				}
 			]
 		}
