@@ -1,28 +1,17 @@
-# Nmap 7.95 scan initiated Mon Jun  1 03:30:54 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln finess.esante.gouv.fr
+# Nmap 7.95 scan initiated Wed Jul  1 03:21:28 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln finess.esante.gouv.fr
 Nmap scan report for finess.esante.gouv.fr (80.78.2.234)
-Host is up (0.099s latency).
-Not shown: 951 filtered tcp ports (no-response), 48 closed tcp ports (reset)
-PORT    STATE SERVICE   VERSION
-443/tcp open  ssl/https
+Host is up (0.083s latency).
+Not shown: 977 filtered tcp ports (no-response)
+PORT      STATE  SERVICE        VERSION
+80/tcp    closed http
+113/tcp   closed ident
+254/tcp   closed unknown
+366/tcp   closed odmr
+443/tcp   open   ssl/https
 | fingerprint-strings: 
-|   FourOhFourRequest: 
+|   FourOhFourRequest, GetRequest, HTTPOptions: 
 |     HTTP/1.1 400 Bad Request
-|     Date: Mon, 01 Jun 2026 03:31:28 GMT
-|     Strict-Transport-Security: max-age=3600; includeSubDomains; preload
-|     Content-Length: 226
-|     Connection: close
-|     Content-Type: text/html; charset=iso-8859-1
-|     <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-|     <html><head>
-|     <title>400 Bad Request</title>
-|     </head><body>
-|     <h1>Bad Request</h1>
-|     <p>Your browser sent a request that this server could not understand.<br />
-|     </p>
-|     </body></html>
-|   GetRequest, HTTPOptions: 
-|     HTTP/1.1 400 Bad Request
-|     Date: Mon, 01 Jun 2026 03:31:27 GMT
+|     Date: Wed, 01 Jul 2026 03:22:17 GMT
 |     Strict-Transport-Security: max-age=3600; includeSubDomains; preload
 |     Content-Length: 226
 |     Connection: close
@@ -37,7 +26,7 @@ PORT    STATE SERVICE   VERSION
 |     </body></html>
 |   RTSPRequest: 
 |     HTTP/1.1 400 Bad Request
-|     Date: Mon, 01 Jun 2026 03:31:39 GMT
+|     Date: Wed, 01 Jul 2026 03:22:28 GMT
 |     Strict-Transport-Security: max-age=3600; includeSubDomains; preload
 |     Content-Length: 226
 |     Connection: close
@@ -50,10 +39,28 @@ PORT    STATE SERVICE   VERSION
 |     <p>Your browser sent a request that this server could not understand.<br />
 |     </p>
 |_    </body></html>
+783/tcp   closed spamassassin
+1070/tcp  closed gmrupdateserv
+1218/tcp  closed aeroflight-ads
+1972/tcp  closed intersys-cache
+1998/tcp  closed x25-svc-port
+2048/tcp  closed dls-monitor
+2525/tcp  closed ms-v-worlds
+2607/tcp  closed connection
+3404/tcp  closed unknown
+3690/tcp  closed svn
+3766/tcp  closed sitewatch-s
+4900/tcp  closed hfcs
+5101/tcp  closed admdog
+5925/tcp  closed unknown
+6543/tcp  closed mythtv
+7001/tcp  closed afs3-callback
+30951/tcp closed unknown
+32785/tcp closed unknown
 1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
-SF-Port443-TCP:V=7.95%T=SSL%I=7%D=6/1%Time=6A1CFD0F%P=x86_64-alpine-linux-
-SF:musl%r(GetRequest,1BD,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nDate:\x20M
-SF:on,\x2001\x20Jun\x202026\x2003:31:27\x20GMT\r\nStrict-Transport-Securit
+SF-Port443-TCP:V=7.95%T=SSL%I=7%D=7/1%Time=6A4487E9%P=x86_64-alpine-linux-
+SF:musl%r(GetRequest,1BD,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nDate:\x20W
+SF:ed,\x2001\x20Jul\x202026\x2003:22:17\x20GMT\r\nStrict-Transport-Securit
 SF:y:\x20max-age=3600;\x20includeSubDomains;\x20preload\r\nContent-Length:
 SF:\x20226\r\nConnection:\x20close\r\nContent-Type:\x20text/html;\x20chars
 SF:et=iso-8859-1\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-//IETF//DTD\x20H
@@ -61,7 +68,7 @@ SF:TML\x202\.0//EN\">\n<html><head>\n<title>400\x20Bad\x20Request</title>\
 SF:n</head><body>\n<h1>Bad\x20Request</h1>\n<p>Your\x20browser\x20sent\x20
 SF:a\x20request\x20that\x20this\x20server\x20could\x20not\x20understand\.<
 SF:br\x20/>\n</p>\n</body></html>\n")%r(HTTPOptions,1BD,"HTTP/1\.1\x20400\
-SF:x20Bad\x20Request\r\nDate:\x20Mon,\x2001\x20Jun\x202026\x2003:31:27\x20
+SF:x20Bad\x20Request\r\nDate:\x20Wed,\x2001\x20Jul\x202026\x2003:22:17\x20
 SF:GMT\r\nStrict-Transport-Security:\x20max-age=3600;\x20includeSubDomains
 SF:;\x20preload\r\nContent-Length:\x20226\r\nConnection:\x20close\r\nConte
 SF:nt-Type:\x20text/html;\x20charset=iso-8859-1\r\n\r\n<!DOCTYPE\x20HTML\x
@@ -69,8 +76,8 @@ SF:20PUBLIC\x20\"-//IETF//DTD\x20HTML\x202\.0//EN\">\n<html><head>\n<title
 SF:>400\x20Bad\x20Request</title>\n</head><body>\n<h1>Bad\x20Request</h1>\
 SF:n<p>Your\x20browser\x20sent\x20a\x20request\x20that\x20this\x20server\x
 SF:20could\x20not\x20understand\.<br\x20/>\n</p>\n</body></html>\n")%r(Fou
-SF:rOhFourRequest,1BD,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nDate:\x20Mon,
-SF:\x2001\x20Jun\x202026\x2003:31:28\x20GMT\r\nStrict-Transport-Security:\
+SF:rOhFourRequest,1BD,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nDate:\x20Wed,
+SF:\x2001\x20Jul\x202026\x2003:22:17\x20GMT\r\nStrict-Transport-Security:\
 SF:x20max-age=3600;\x20includeSubDomains;\x20preload\r\nContent-Length:\x2
 SF:0226\r\nConnection:\x20close\r\nContent-Type:\x20text/html;\x20charset=
 SF:iso-8859-1\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-//IETF//DTD\x20HTML
@@ -78,7 +85,7 @@ SF:\x202\.0//EN\">\n<html><head>\n<title>400\x20Bad\x20Request</title>\n</
 SF:head><body>\n<h1>Bad\x20Request</h1>\n<p>Your\x20browser\x20sent\x20a\x
 SF:20request\x20that\x20this\x20server\x20could\x20not\x20understand\.<br\
 SF:x20/>\n</p>\n</body></html>\n")%r(RTSPRequest,1BD,"HTTP/1\.1\x20400\x20
-SF:Bad\x20Request\r\nDate:\x20Mon,\x2001\x20Jun\x202026\x2003:31:39\x20GMT
+SF:Bad\x20Request\r\nDate:\x20Wed,\x2001\x20Jul\x202026\x2003:22:28\x20GMT
 SF:\r\nStrict-Transport-Security:\x20max-age=3600;\x20includeSubDomains;\x
 SF:20preload\r\nContent-Length:\x20226\r\nConnection:\x20close\r\nContent-
 SF:Type:\x20text/html;\x20charset=iso-8859-1\r\n\r\n<!DOCTYPE\x20HTML\x20P
@@ -88,4 +95,4 @@ SF:>Your\x20browser\x20sent\x20a\x20request\x20that\x20this\x20server\x20c
 SF:ould\x20not\x20understand\.<br\x20/>\n</p>\n</body></html>\n");
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Mon Jun  1 03:34:03 2026 -- 1 IP address (1 host up) scanned in 189.17 seconds
+# Nmap done at Wed Jul  1 03:24:51 2026 -- 1 IP address (1 host up) scanned in 203.42 seconds
