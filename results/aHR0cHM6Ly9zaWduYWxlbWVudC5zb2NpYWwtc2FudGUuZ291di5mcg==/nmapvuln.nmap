@@ -1,24 +1,31 @@
-# Nmap 7.95 scan initiated Wed Jul  1 05:17:06 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln signalement.social-sante.gouv.fr
+# Nmap 7.95 scan initiated Sat Aug  1 04:40:28 2026 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln signalement.social-sante.gouv.fr
 Nmap scan report for signalement.social-sante.gouv.fr (51.178.236.12)
-Host is up (0.11s latency).
+Host is up (0.15s latency).
 rDNS record for 51.178.236.12: ip12.ip-51-178-236.eu
 Not shown: 998 filtered tcp ports (no-response)
 PORT    STATE  SERVICE   VERSION
 113/tcp closed ident
 443/tcp open   ssl/https
 | fingerprint-strings: 
-|   GetRequest, HTTPOptions: 
+|   GetRequest: 
 |     HTTP/1.1 503 Service Unavailable
-|     Date: Wed Jul 1 05:17:28 2026 GMT
-|     Content-Length: 33164
+|     Date: Sat Aug 1 04:40:52 2026 GMT
+|     Content-Length: 33161
+|     Connection: close
+|     Content-Type: text/html
+|     <!DOCTYPE html><html lang="fr" dir="ltr"> <head> <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Service indisponible</title> <style> @media (max-width: 750px) { header { flex-direction: column; } header h1 { display: none !important; } #wrapper { text-align: center; } } </style> </head> <body> <div id="wrapper" style="max-width: 1200px; margin: 0 auto; padding: 1rem; font-family: system-ui, sans-serif;"> <header style="display: flex; align-items: center; gap: 3rem;"> <img width="200" src=data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAeAB4AAD/4QCORXhpZgAATU0AKgAAAAgAAgESAAMAAAABAAEAAIdpAAQAAAABAAAAJgAAAAAABJADAAIAAAAUAAAAXJAEAAIAAAAUAAAAcJKRAAIAAAADM
+|   HTTPOptions: 
+|     HTTP/1.1 503 Service Unavailable
+|     Date: Sat Aug 1 04:40:53 2026 GMT
+|     Content-Length: 33161
 |     Connection: close
 |     Content-Type: text/html
 |_    <!DOCTYPE html><html lang="fr" dir="ltr"> <head> <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Service indisponible</title> <style> @media (max-width: 750px) { header { flex-direction: column; } header h1 { display: none !important; } #wrapper { text-align: center; } } </style> </head> <body> <div id="wrapper" style="max-width: 1200px; margin: 0 auto; padding: 1rem; font-family: system-ui, sans-serif;"> <header style="display: flex; align-items: center; gap: 3rem;"> <img width="200" src=data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAeAB4AAD/4QCORXhpZgAATU0AKgAAAAgAAgESAAMAAAABAAEAAIdpAAQAAAABAAAAJgAAAAAABJADAAIAAAAUAAAAXJAEAAIAAAAUAAAAcJKRAAIAAAADM
 1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
-SF-Port443-TCP:V=7.95%T=SSL%I=7%D=7/1%Time=6A44A2E8%P=x86_64-alpine-linux-
+SF-Port443-TCP:V=7.95%T=SSL%I=7%D=8/1%Time=6A6D78D4%P=x86_64-alpine-linux-
 SF:musl%r(GetRequest,2F70,"HTTP/1\.1\x20503\x20Service\x20Unavailable\r\nD
-SF:ate:\x20Wed\x20Jul\x20\x201\x2005:17:28\x202026\x20GMT\r\nContent-Lengt
-SF:h:\x2033164\r\nConnection:\x20close\r\nContent-Type:\x20text/html\r\n\r
+SF:ate:\x20Sat\x20Aug\x20\x201\x2004:40:52\x202026\x20GMT\r\nContent-Lengt
+SF:h:\x2033161\r\nConnection:\x20close\r\nContent-Type:\x20text/html\r\n\r
 SF:\n<!DOCTYPE\x20html><html\x20lang=\"fr\"\x20dir=\"ltr\">\x20<head>\x20<
 SF:meta\x20charset=\"UTF-8\">\x20<meta\x20http-equiv=\"X-UA-Compatible\"\x
 SF:20content=\"IE=edge\">\x20<meta\x20name=\"viewport\"\x20content=\"width
@@ -33,8 +40,8 @@ SF:20style=\"display:\x20flex;\x20align-items:\x20center;\x20gap:\x203rem;
 SF:\">\x20<img\x20width=\"200\"\x20src=data:image/jpeg;base64,/9j/4AAQSkZJ
 SF:RgABAQEAeAB4AAD/4QCORXhpZgAATU0AKgAAAAgAAgESAAMAAAABAAEAAIdpAAQAAAABAAA
 SF:AJgAAAAAABJADAAIAAAAUAAAAXJAEAAIAAAAUAAAAcJKRAAIAAAADM")%r(HTTPOptions,
-SF:2F70,"HTTP/1\.1\x20503\x20Service\x20Unavailable\r\nDate:\x20Wed\x20Jul
-SF:\x20\x201\x2005:17:28\x202026\x20GMT\r\nContent-Length:\x2033164\r\nCon
+SF:2F70,"HTTP/1\.1\x20503\x20Service\x20Unavailable\r\nDate:\x20Sat\x20Aug
+SF:\x20\x201\x2004:40:53\x202026\x20GMT\r\nContent-Length:\x2033161\r\nCon
 SF:nection:\x20close\r\nContent-Type:\x20text/html\r\n\r\n<!DOCTYPE\x20htm
 SF:l><html\x20lang=\"fr\"\x20dir=\"ltr\">\x20<head>\x20<meta\x20charset=\"
 SF:UTF-8\">\x20<meta\x20http-equiv=\"X-UA-Compatible\"\x20content=\"IE=edg
@@ -52,4 +59,4 @@ SF:CORXhpZgAATU0AKgAAAAgAAgESAAMAAAABAAEAAIdpAAQAAAABAAAAJgAAAAAABJADAAIAA
 SF:AAUAAAAXJAEAAIAAAAUAAAAcJKRAAIAAAADM");
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Wed Jul  1 05:18:06 2026 -- 1 IP address (1 host up) scanned in 60.14 seconds
+# Nmap done at Sat Aug  1 04:41:36 2026 -- 1 IP address (1 host up) scanned in 67.45 seconds
