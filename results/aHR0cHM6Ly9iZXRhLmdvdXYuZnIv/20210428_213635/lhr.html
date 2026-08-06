@@ -216,9 +216,9 @@ limitations under the License.
     --report-text-color: var(--color-gray-100);
     --snippet-color: var(--color-cyan-500);
     --topbar-background-color: var(--color-gray);
-  	--toplevel-warning-background-color: #544B40;
-  	--toplevel-warning-message-text-color: var(--color-orange-700);
-	--toplevel-warning-text-color: var(--color-gray-100);
+    --toplevel-warning-background-color: #544B40;
+    --toplevel-warning-message-text-color: var(--color-orange-700);
+    --toplevel-warning-text-color: var(--color-gray-100);
 
     /* SVGs */
     --plugin-icon-url: var(--plugin-icon-url-dark);
@@ -2585,10 +2585,10 @@ const RATINGS = {
 // 25 most used tld plus one domains (aka public suffixes) from http archive.
 // @see https://github.com/GoogleChrome/lighthouse/pull/5065#discussion_r191926212
 // The canonical list is https://publicsuffix.org/learn/ but we're only using subset to conserve bytes
-const listOfTlds = [
+const listOfTlds = new Set([
   'com', 'co', 'gov', 'edu', 'ac', 'org', 'go', 'gob', 'or', 'net', 'in', 'ne', 'nic', 'gouv',
   'web', 'spb', 'blog', 'jus', 'kiev', 'mil', 'wi', 'qc', 'ca', 'bel', 'on',
-];
+]);
 
 class Util {
   static get PASS_THRESHOLD() {
@@ -2610,7 +2610,7 @@ class Util {
    */
   static prepareReportResult(result) {
     // If any mutations happen to the report within the renderers, we want the original object untouched
-    const clone = /** @type {LH.ReportResult} */ (JSON.parse(JSON.stringify(result)));
+    const clone = /** @type {LH.ReportResult} */ (structuredClone(result));
 
     // If LHR is older (≤3.0.3), it has no locale setting. Set default.
     if (!clone.configSettings.locale) {
@@ -2796,8 +2796,8 @@ class Util {
     // Closure optional properties aren't optional in tsc, so fallback needs undefined  values.
     options = options || {numPathParts: undefined, preserveQuery: undefined,
       preserveHost: undefined};
-    const numPathParts = options.numPathParts !== undefined ? options.numPathParts : 2;
-    const preserveQuery = options.preserveQuery !== undefined ? options.preserveQuery : true;
+    const numPathParts = options.numPathParts === undefined ? 2 : options.numPathParts;
+    const preserveQuery = options.preserveQuery === undefined ? true : options.preserveQuery;
     const preserveHost = options.preserveHost || false;
 
     let name;
@@ -2892,7 +2892,7 @@ class Util {
   static getTld(hostname) {
     const tlds = hostname.split('.').slice(-2);
 
-    if (!listOfTlds.includes(tlds[0])) {
+    if (!listOfTlds.has(tlds[0])) {
       return `.${tlds[tlds.length - 1]}`;
     }
 
@@ -3512,7 +3512,7 @@ Copyright © 2019 Javan Makhmali
     });
   }
   function polyfillToggleEvent() {
-    if (window.MutationObserver) {
+    if (globalThis.MutationObserver) {
       new MutationObserver(function(mutations) {
         forEach.call(mutations, function(mutation) {
           var target = mutation.target, attributeName = mutation.attributeName;
@@ -3538,7 +3538,7 @@ Copyright © 2019 Javan Makhmali
   }
   function polyfillAccessibility() {
     setAccessibilityAttributes(document);
-    if (window.MutationObserver) {
+    if (globalThis.MutationObserver) {
       new MutationObserver(function(mutations) {
         forEach.call(mutations, function(mutation) {
           forEach.call(mutation.addedNodes, setAccessibilityAttributes);
