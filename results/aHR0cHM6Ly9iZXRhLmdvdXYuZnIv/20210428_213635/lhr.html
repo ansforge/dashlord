@@ -216,9 +216,9 @@ limitations under the License.
     --report-text-color: var(--color-gray-100);
     --snippet-color: var(--color-cyan-500);
     --topbar-background-color: var(--color-gray);
-  	--toplevel-warning-background-color: #544B40;
-  	--toplevel-warning-message-text-color: var(--color-orange-700);
-	--toplevel-warning-text-color: var(--color-gray-100);
+    --toplevel-warning-background-color: #544B40;
+    --toplevel-warning-message-text-color: var(--color-orange-700);
+    --toplevel-warning-text-color: var(--color-gray-100);
 
     /* SVGs */
     --plugin-icon-url: var(--plugin-icon-url-dark);
@@ -2824,7 +2824,7 @@ class Util {
     // Always elide hexadecimal hash
     name = name.replace(/([a-f0-9]{7})[a-f0-9]{13}[a-f0-9]*/g, `$1${ELLIPSIS}`);
     // Also elide other hash-like mixed-case strings
-    name = name.replace(/([a-zA-Z0-9-_]{9})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9-_]{10,}/g,
+    name = name.replace(/([a-zA-Z\d-_]{9})(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d-_]{10,}/g,
       `$1${ELLIPSIS}`);
     // Also elide long number sequences
     name = name.replace(/(\d{3})\d{6,}/g, `$1${ELLIPSIS}`);
@@ -3733,7 +3733,8 @@ class DetailsRenderer {
       displayedPath = parsed.file === '/' ? parsed.origin : parsed.file;
       displayedHost = parsed.file === '/' || parsed.hostname === '' ? '' : `(${parsed.hostname})`;
       title = url;
-    } catch (e) {
+    } catch (e) { // eslint-disable-line no-unused-vars
+      /* URL parsing may fail for non-standard URLs; fallback to raw string */
       displayedPath = url;
     }
 
@@ -3763,7 +3764,7 @@ class DetailsRenderer {
     let url;
     try {
       url = new URL(details.url);
-    } catch (_) {}
+    } catch (_) { /* Invalid URL; falls through to text rendering below */ }
 
     if (!url || !allowedProtocols.includes(url.protocol)) {
       // Fall back to just the link text if invalid or protocol not allowed.
@@ -7534,6 +7535,7 @@ class I18n {
     try {
       formatter = new Intl.DateTimeFormat(this._numberDateLocale, options);
     } catch (err) {
+      console.warn('Could not format date, falling back to UTC:', err);
       options.timeZone = 'UTC';
       formatter = new Intl.DateTimeFormat(this._numberDateLocale, options);
     }
