@@ -33,47 +33,9 @@
       "extracted-results": [
         "l3w6ft9.ng.impervadns.net."
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 7296\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;sas.sante.fr.\tIN\t CNAME\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 7296\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;sas.sante.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nsas.sante.fr.\t360\tIN\tCNAME\tl3w6ft9.ng.impervadns.net.\n",
-      "timestamp": "2026-05-24T05:59:25.930120672Z",
-      "matcher-status": true
-    },
-    {
-      "template": "dns/caa-fingerprint.yaml",
-      "template-url": "https://templates.nuclei.sh/public/caa-fingerprint",
-      "template-id": "caa-fingerprint",
-      "template-path": "/home/runner/nuclei-templates/dns/caa-fingerprint.yaml",
-      "info": {
-        "name": "CAA Record",
-        "author": [
-          "pdteam"
-        ],
-        "tags": [
-          "dns",
-          "caa",
-          "discovery"
-        ],
-        "description": "A CAA record was discovered. A CAA record is used to specify which certificate authorities (CAs) are allowed to issue certificates for a domain.",
-        "reference": [
-          "https://support.dnsimple.com/articles/caa-record/#whats-a-caa-record"
-        ],
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-200"
-          ]
-        }
-      },
-      "type": "dns",
-      "host": "sas.sante.fr.",
-      "matched-at": "sas.sante.fr",
-      "request": ";; opcode: QUERY, status: NOERROR, id: 14692\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;sas.sante.fr.\tIN\t CAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 14692\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;sas.sante.fr.\tIN\t CAA\n\n;; ANSWER SECTION:\nsas.sante.fr.\t360\tIN\tCNAME\tl3w6ft9.ng.impervadns.net.\n\n;; AUTHORITY SECTION:\nimpervadns.net.\t900\tIN\tSOA\tns1.impervadns.net. hostmaster.incapsula.com. 3001 86400 7200 3600000 600\n",
-      "timestamp": "2026-05-24T05:59:26.012244669Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 47054\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;sas.sante.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 47054\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;sas.sante.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nsas.sante.fr.\t360\tIN\tCNAME\tl3w6ft9.ng.impervadns.net.\n",
+      "timestamp": "2026-08-26T17:05:01.70336251Z",
       "matcher-status": true
     },
     {
@@ -114,12 +76,12 @@
       "host": "https://sas.sante.fr",
       "matched-at": "https://sas.sante.fr/",
       "extracted-results": [
-        "visid_incap_3307491=2a4dhhrfRUqMOGyJGyPw6cSTEmoAAAAAQUIPAAAAAADAsPb5269x/oCLXinObaH6; expires=Sun, 23 May 2027 07:00:37 GMT; HttpOnly; path=/; Domain=.sante.fr incap_ses_1845_3307491=Ps5zdSKQQRsaKAN4f8KaGcSTEmoAAAAAOSa4RpC0SPoCjI7ZsALoUg==; path=/; Domain=.sante.fr"
+        "visid_incap_3307491=ieMGF8GYTp+Qauzew0Xv2sQcj2oAAAAAQUIPAAAAAACl2QJPLJsuDfcqmg0RGrmU; expires=Thu, 26 Aug 2027 07:16:02 GMT; HttpOnly; path=/; Domain=.sante.fr incap_ses_1017_3307491=6VPwDkL2jQZoNAKWKhwdDsQcj2oAAAAAyE4wPPyiAoFELxmNIqRaJA==; path=/; Domain=.sante.fr"
       ],
       "request": "GET / HTTP/1.1\r\nHost: sas.sante.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 302 Found\r\nConnection: close\r\nContent-Length: 122\r\nCache-Control: no-cache, no-store\r\nContent-Type: text/html\r\nLocation: https://sas.sante.fr/\r\nSet-Cookie: visid_incap_3307491=2a4dhhrfRUqMOGyJGyPw6cSTEmoAAAAAQUIPAAAAAADAsPb5269x/oCLXinObaH6; expires=Sun, 23 May 2027 07:00:37 GMT; HttpOnly; path=/; Domain=.sante.fr\r\nSet-Cookie: incap_ses_1845_3307491=Ps5zdSKQQRsaKAN4f8KaGcSTEmoAAAAAOSa4RpC0SPoCjI7ZsALoUg==; path=/; Domain=.sante.fr\r\nX-Iinfo: 53-13955615-0 0NNN RT(1779602373006 9) q(0 -1 -1 -1) r(0 -1) B13(3,30037,0) U24\r\n\r\n\r\n<HTML><HEAD><TITLE>Loading</TITLE></HEAD><BODY bgcolor=\"#ffffff\"><H3 style=\"color: #ffffff\">Loading</H3></BODY></HTML>\r\n",
+      "response": "HTTP/1.1 302 Found\r\nConnection: close\r\nContent-Length: 122\r\nCache-Control: no-cache, no-store\r\nContent-Type: text/html\r\nLocation: https://sas.sante.fr/\r\nSet-Cookie: visid_incap_3307491=ieMGF8GYTp+Qauzew0Xv2sQcj2oAAAAAQUIPAAAAAACl2QJPLJsuDfcqmg0RGrmU; expires=Thu, 26 Aug 2027 07:16:02 GMT; HttpOnly; path=/; Domain=.sante.fr\r\nSet-Cookie: incap_ses_1017_3307491=6VPwDkL2jQZoNAKWKhwdDsQcj2oAAAAAyE4wPPyiAoFELxmNIqRaJA==; path=/; Domain=.sante.fr\r\nX-Iinfo: 26-3108329-0 0NNN RT(1787763908673 10) q(0 -1 -1 -1) r(0 -1) B13(3,30037,0) U24\r\n\r\n\r\n<HTML><HEAD><TITLE>Loading</TITLE></HEAD><BODY bgcolor=\"#ffffff\"><H3 style=\"color: #ffffff\">Loading</H3></BODY></HTML>\r\n",
       "ip": "45.60.122.134",
-      "timestamp": "2026-05-24T05:59:33.029043582Z",
+      "timestamp": "2026-08-26T17:05:08.695287801Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sas.sante.fr'",
       "matcher-status": true
     },
@@ -149,9 +111,9 @@
       "host": "https://sas.sante.fr",
       "matched-at": "https://sas.sante.fr/",
       "request": "GET / HTTP/1.1\r\nHost: sas.sante.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 302 Found\r\nConnection: close\r\nContent-Length: 122\r\nCache-Control: no-cache, no-store\r\nContent-Type: text/html\r\nLocation: https://sas.sante.fr/\r\nSet-Cookie: visid_incap_3307491=2a4dhhrfRUqMOGyJGyPw6cSTEmoAAAAAQUIPAAAAAADAsPb5269x/oCLXinObaH6; expires=Sun, 23 May 2027 07:00:37 GMT; HttpOnly; path=/; Domain=.sante.fr\r\nSet-Cookie: incap_ses_1845_3307491=Ps5zdSKQQRsaKAN4f8KaGcSTEmoAAAAAOSa4RpC0SPoCjI7ZsALoUg==; path=/; Domain=.sante.fr\r\nX-Iinfo: 53-13955615-0 0NNN RT(1779602373006 9) q(0 -1 -1 -1) r(0 -1) B13(3,30037,0) U24\r\n\r\n\r\n<HTML><HEAD><TITLE>Loading</TITLE></HEAD><BODY bgcolor=\"#ffffff\"><H3 style=\"color: #ffffff\">Loading</H3></BODY></HTML>\r\n",
+      "response": "HTTP/1.1 302 Found\r\nConnection: close\r\nContent-Length: 122\r\nCache-Control: no-cache, no-store\r\nContent-Type: text/html\r\nLocation: https://sas.sante.fr/\r\nSet-Cookie: visid_incap_3307491=ieMGF8GYTp+Qauzew0Xv2sQcj2oAAAAAQUIPAAAAAACl2QJPLJsuDfcqmg0RGrmU; expires=Thu, 26 Aug 2027 07:16:02 GMT; HttpOnly; path=/; Domain=.sante.fr\r\nSet-Cookie: incap_ses_1017_3307491=6VPwDkL2jQZoNAKWKhwdDsQcj2oAAAAAyE4wPPyiAoFELxmNIqRaJA==; path=/; Domain=.sante.fr\r\nX-Iinfo: 26-3108329-0 0NNN RT(1787763908673 10) q(0 -1 -1 -1) r(0 -1) B13(3,30037,0) U24\r\n\r\n\r\n<HTML><HEAD><TITLE>Loading</TITLE></HEAD><BODY bgcolor=\"#ffffff\"><H3 style=\"color: #ffffff\">Loading</H3></BODY></HTML>\r\n",
       "ip": "45.60.122.134",
-      "timestamp": "2026-05-24T05:59:33.069334341Z",
+      "timestamp": "2026-08-26T17:05:08.730565331Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sas.sante.fr'",
       "matcher-status": true
     },
@@ -193,12 +155,12 @@
       "host": "https://sas.sante.fr",
       "matched-at": "https://sas.sante.fr/",
       "extracted-results": [
-        "visid_incap_3307491=vu3mvQ8OQNGxfjpfl7hpD8STEmoAAAAAQUIPAAAAAAAwJemFEoaexPZVgOtIQ6C9; expires=Sun, 23 May 2027 07:00:42 GMT; HttpOnly; path=/; Domain=.sante.fr incap_ses_1845_3307491=O8JucneUF2b0JwN4f8KaGcSTEmoAAAAA49rtCeZEoTvXpAX05w4nZw==; path=/; Domain=.sante.fr"
+        "visid_incap_3307491=lMrc8lV0TAS3BAncQEhmkMQcj2oAAAAAQUIPAAAAAAA6EkE4uNWek8f761E4HLcN; expires=Thu, 26 Aug 2027 07:16:02 GMT; HttpOnly; path=/; Domain=.sante.fr incap_ses_1017_3307491=ZROBWdBbBScLNAKWKhwdDsQcj2oAAAAAiCE6VqShNFpraoZt3eJLug==; path=/; Domain=.sante.fr"
       ],
       "request": "GET / HTTP/1.1\r\nHost: sas.sante.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 302 Found\r\nConnection: close\r\nContent-Length: 122\r\nCache-Control: no-cache, no-store\r\nContent-Type: text/html\r\nLocation: https://sas.sante.fr/\r\nSet-Cookie: visid_incap_3307491=vu3mvQ8OQNGxfjpfl7hpD8STEmoAAAAAQUIPAAAAAAAwJemFEoaexPZVgOtIQ6C9; expires=Sun, 23 May 2027 07:00:42 GMT; HttpOnly; path=/; Domain=.sante.fr\r\nSet-Cookie: incap_ses_1845_3307491=O8JucneUF2b0JwN4f8KaGcSTEmoAAAAA49rtCeZEoTvXpAX05w4nZw==; path=/; Domain=.sante.fr\r\nX-Iinfo: 47-9567413-0 0NNN RT(1779602372983 10) q(0 -1 -1 -1) r(0 -1) B13(3,30037,0) U24\r\n\r\n",
+      "response": "HTTP/1.1 302 Found\r\nConnection: close\r\nContent-Length: 122\r\nCache-Control: no-cache, no-store\r\nContent-Type: text/html\r\nLocation: https://sas.sante.fr/\r\nSet-Cookie: visid_incap_3307491=lMrc8lV0TAS3BAncQEhmkMQcj2oAAAAAQUIPAAAAAAA6EkE4uNWek8f761E4HLcN; expires=Thu, 26 Aug 2027 07:16:02 GMT; HttpOnly; path=/; Domain=.sante.fr\r\nSet-Cookie: incap_ses_1017_3307491=ZROBWdBbBScLNAKWKhwdDsQcj2oAAAAAiCE6VqShNFpraoZt3eJLug==; path=/; Domain=.sante.fr\r\nX-Iinfo: 33-3906308-0 0NNN RT(1787763908650 17) q(0 -1 -1 -1) r(0 -1) B13(3,30037,0) U24\r\n\r\n",
       "ip": "45.60.122.134",
-      "timestamp": "2026-05-24T05:59:33.614606224Z",
+      "timestamp": "2026-08-26T17:05:09.215088135Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sas.sante.fr'",
       "matcher-status": true
     },
@@ -240,12 +202,12 @@
       "host": "https://sas.sante.fr",
       "matched-at": "https://sas.sante.fr",
       "extracted-results": [
-        "visid_incap_3307491=Z8Bk+cf0Sd69AgQgHjcZlcSTEmoAAAAAQUIPAAAAAADIoFSfqnqvo/sFuLsSjTmC; expires=Sun, 23 May 2027 07:00:39 GMT; HttpOnly; path=/; Domain=.sante.fr incap_ses_1845_3307491=Li40Tgyh8TTRJwN4f8KaGcSTEmoAAAAA2fQpeloqe9edwC07djYV0A==; path=/; Domain=.sante.fr"
+        "visid_incap_3307491=X1KPeIrRTtCFC3LzV++p4sQcj2oAAAAAQUIPAAAAAADcK57Qx4ENHAWa1jmuVVEz; expires=Thu, 26 Aug 2027 07:15:58 GMT; HttpOnly; path=/; Domain=.sante.fr incap_ses_1017_3307491=IUhCbph45XqQMwKWKhwdDsQcj2oAAAAAjY2TDA4bH3UBu7FSg8S8GA==; path=/; Domain=.sante.fr"
       ],
       "request": "GET / HTTP/1.1\r\nHost: sas.sante.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 302 Found\r\nConnection: close\r\nContent-Length: 122\r\nCache-Control: no-cache, no-store\r\nContent-Type: text/html\r\nLocation: https://sas.sante.fr/\r\nSet-Cookie: visid_incap_3307491=Z8Bk+cf0Sd69AgQgHjcZlcSTEmoAAAAAQUIPAAAAAADIoFSfqnqvo/sFuLsSjTmC; expires=Sun, 23 May 2027 07:00:39 GMT; HttpOnly; path=/; Domain=.sante.fr\r\nSet-Cookie: incap_ses_1845_3307491=Li40Tgyh8TTRJwN4f8KaGcSTEmoAAAAA2fQpeloqe9edwC07djYV0A==; path=/; Domain=.sante.fr\r\nX-Iinfo: 55-14694883-0 0NNN RT(1779602372950 21) q(0 -1 -1 -1) r(0 -1) B13(3,30037,0) U24\r\n\r\n",
+      "response": "HTTP/1.1 302 Found\r\nConnection: close\r\nContent-Length: 122\r\nCache-Control: no-cache, no-store\r\nContent-Type: text/html\r\nLocation: https://sas.sante.fr/\r\nSet-Cookie: visid_incap_3307491=X1KPeIrRTtCFC3LzV++p4sQcj2oAAAAAQUIPAAAAAADcK57Qx4ENHAWa1jmuVVEz; expires=Thu, 26 Aug 2027 07:15:58 GMT; HttpOnly; path=/; Domain=.sante.fr\r\nSet-Cookie: incap_ses_1017_3307491=IUhCbph45XqQMwKWKhwdDsQcj2oAAAAAjY2TDA4bH3UBu7FSg8S8GA==; path=/; Domain=.sante.fr\r\nX-Iinfo: 29-3182630-0 0NNN RT(1787763908640 6) q(0 -1 -1 -1) r(0 -1) B13(3,30037,0) U24\r\n\r\n",
       "ip": "45.60.122.134",
-      "timestamp": "2026-05-24T05:59:34.313659449Z",
+      "timestamp": "2026-08-26T17:05:09.746161904Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sas.sante.fr'",
       "matcher-status": true
     },
@@ -275,9 +237,9 @@
       "host": "https://sas.sante.fr",
       "matched-at": "https://sas.sante.fr",
       "request": "GET / HTTP/1.1\r\nHost: sas.sante.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 302 Found\r\nConnection: close\r\nContent-Length: 122\r\nCache-Control: no-cache, no-store\r\nContent-Type: text/html\r\nLocation: https://sas.sante.fr/\r\nSet-Cookie: visid_incap_3307491=Z8Bk+cf0Sd69AgQgHjcZlcSTEmoAAAAAQUIPAAAAAADIoFSfqnqvo/sFuLsSjTmC; expires=Sun, 23 May 2027 07:00:39 GMT; HttpOnly; path=/; Domain=.sante.fr\r\nSet-Cookie: incap_ses_1845_3307491=Li40Tgyh8TTRJwN4f8KaGcSTEmoAAAAA2fQpeloqe9edwC07djYV0A==; path=/; Domain=.sante.fr\r\nX-Iinfo: 55-14694883-0 0NNN RT(1779602372950 21) q(0 -1 -1 -1) r(0 -1) B13(3,30037,0) U24\r\n\r\n",
+      "response": "HTTP/1.1 302 Found\r\nConnection: close\r\nContent-Length: 122\r\nCache-Control: no-cache, no-store\r\nContent-Type: text/html\r\nLocation: https://sas.sante.fr/\r\nSet-Cookie: visid_incap_3307491=X1KPeIrRTtCFC3LzV++p4sQcj2oAAAAAQUIPAAAAAADcK57Qx4ENHAWa1jmuVVEz; expires=Thu, 26 Aug 2027 07:15:58 GMT; HttpOnly; path=/; Domain=.sante.fr\r\nSet-Cookie: incap_ses_1017_3307491=IUhCbph45XqQMwKWKhwdDsQcj2oAAAAAjY2TDA4bH3UBu7FSg8S8GA==; path=/; Domain=.sante.fr\r\nX-Iinfo: 29-3182630-0 0NNN RT(1787763908640 6) q(0 -1 -1 -1) r(0 -1) B13(3,30037,0) U24\r\n\r\n",
       "ip": "45.60.122.134",
-      "timestamp": "2026-05-24T05:59:34.339861745Z",
+      "timestamp": "2026-08-26T17:05:09.769798849Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sas.sante.fr'",
       "matcher-status": true
     },
@@ -290,7 +252,8 @@
         "name": "WAF Detection",
         "author": [
           "dwisiswant0",
-          "lu4nx"
+          "lu4nx",
+          "s4e-io"
         ],
         "tags": [
           "waf",
@@ -318,9 +281,9 @@
       "host": "https://sas.sante.fr",
       "matched-at": "https://sas.sante.fr/",
       "request": "POST / HTTP/1.1\r\nHost: sas.sante.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
-      "response": "HTTP/1.1 302 Found\r\nConnection: close\r\nContent-Length: 122\r\nCache-Control: no-cache, no-store\r\nContent-Type: text/html\r\nLocation: https://sas.sante.fr/\r\nSet-Cookie: visid_incap_3307491=YhekNWesQ9KV5jCc/gia3QiVEmoAAAAAQUIPAAAAAACPVX1yLIaK2EAsgUY2oU2b; expires=Sun, 23 May 2027 07:00:37 GMT; HttpOnly; path=/; Domain=.sante.fr\r\nSet-Cookie: incap_ses_1845_3307491=aH+ZaTu78Gm2nAd4f8KaGQiVEmoAAAAA2mkuk2brItWksHhcIP0wSw==; path=/; Domain=.sante.fr\r\nX-Iinfo: 60-16594073-0 0NNN RT(1779602696561 9) q(0 -1 -1 -1) r(0 -1) B13(3,30037,0) U24\r\n\r\n\r\n<HTML><HEAD><TITLE>Loading</TITLE></HEAD><BODY bgcolor=\"#ffffff\"><H3 style=\"color: #ffffff\">Loading</H3></BODY></HTML>\r\n",
+      "response": "HTTP/1.1 302 Found\r\nConnection: close\r\nContent-Length: 122\r\nCache-Control: no-cache, no-store\r\nContent-Type: text/html\r\nLocation: https://sas.sante.fr/\r\nSet-Cookie: visid_incap_3307491=2+R5HhVvTZOyoQP6blqP4AIej2oAAAAAQUIPAAAAAADUjLqmqTVjsTXV39CCfF22; expires=Thu, 26 Aug 2027 07:16:00 GMT; HttpOnly; path=/; Domain=.sante.fr\r\nSet-Cookie: incap_ses_1017_3307491=eRcWcrIWqwaOPhWWKhwdDgIej2oAAAAAHTApq2IgWMnEq0ZSz9aT7Q==; path=/; Domain=.sante.fr\r\nX-Iinfo: 16-721946-0 0NNN RT(1787764226349 5) q(0 -1 -1 -1) r(0 -1) B13(3,30037,0) U24\r\n\r\n\r\n<HTML><HEAD><TITLE>Loading</TITLE></HEAD><BODY bgcolor=\"#ffffff\"><H3 style=\"color: #ffffff\">Loading</H3></BODY></HTML>\r\n",
       "ip": "45.60.122.134",
-      "timestamp": "2026-05-24T06:04:56.586101923Z",
+      "timestamp": "2026-08-26T17:10:26.358485991Z",
       "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: sas.sante.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sas.sante.fr/'",
       "matcher-status": true
     },
@@ -349,10 +312,10 @@
       "host": "sas.sante.fr",
       "matched-at": "sas.sante.fr:443",
       "extracted-results": [
-        "DHIMYOTIS"
+        "DigiCert Ireland Limited"
       ],
       "ip": "45.60.122.134",
-      "timestamp": "2026-05-24T06:07:12.553442896Z",
+      "timestamp": "2026-08-26T17:13:22.484425203Z",
       "matcher-status": true
     },
     {
@@ -380,14 +343,16 @@
       "host": "sas.sante.fr",
       "matched-at": "sas.sante.fr:443",
       "extracted-results": [
-        "lelab.sante.fr",
-        "sas.sante.fr",
+        "xn--sant-epa.fr",
         "www.sante.fr",
         "sante.fr",
-        "seconnecter.sante.fr"
+        "sas.sante.fr",
+        "sas.xn--sant-epa.fr",
+        "seconnecter.sante.fr",
+        "www.xn--sant-epa.fr"
       ],
       "ip": "45.60.122.134",
-      "timestamp": "2026-05-24T06:07:12.553623603Z",
+      "timestamp": "2026-08-26T17:13:22.484570912Z",
       "matcher-status": true
     },
     {
@@ -419,7 +384,7 @@
         "tls12"
       ],
       "ip": "45.60.122.134",
-      "timestamp": "2026-05-24T06:07:12.56044665Z",
+      "timestamp": "2026-08-26T17:13:24.072516768Z",
       "matcher-status": true
     },
     {
@@ -451,7 +416,7 @@
         "tls13"
       ],
       "ip": "45.60.122.134",
-      "timestamp": "2026-05-24T06:07:13.314326392Z",
+      "timestamp": "2026-08-26T17:13:24.364853425Z",
       "matcher-status": true
     }
   ]
