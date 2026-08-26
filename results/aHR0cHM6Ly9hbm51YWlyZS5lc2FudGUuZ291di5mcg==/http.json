@@ -1,21 +1,18 @@
 {
   "scan": {
     "algorithmVersion": 4,
-    "grade": "A+",
+    "grade": "C",
     "error": null,
-    "score": 110,
+    "score": 55,
     "statusCode": 200,
-    "testsFailed": 0,
-    "testsPassed": 10,
+    "testsFailed": 3,
+    "testsPassed": 7,
     "testsQuantity": 10,
     "responseHeaders": {
-      "date": "Sat, 01 Aug 2026 02:05:54 GMT",
-      "content-security-policy": "default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-c18a9619950c6783c3be51426d613db6'; script-src 'self' 'nonce-c18a9619950c6783c3be51426d613db6'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';",
+      "content-security-policy": "default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-dff7cb067c898fa67e898d3619a7fa7e'; script-src 'self' 'nonce-dff7cb067c898fa67e898d3619a7fa7e'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';",
       "content-type": "text/html",
-      "strict-transport-security": "max-age=31536000",
-      "referrer-policy": "strict-origin-when-cross-origin",
-      "x-content-type-options": "nosniff",
-      "x-frame-options": "DENY",
+      "date": "Wed, 26 Aug 2026 14:28:59 GMT",
+      "server": "nginx/1.29.8",
       "connection": "close",
       "transfer-encoding": "chunked"
     }
@@ -32,12 +29,12 @@
           "https://use.typekit.net"
         ],
         "style-src": [
-          "'nonce-c18a9619950c6783c3be51426d613db6'",
+          "'nonce-dff7cb067c898fa67e898d3619a7fa7e'",
           "'self'",
           "https://p.typekit.net"
         ],
         "script-src": [
-          "'nonce-c18a9619950c6783c3be51426d613db6'",
+          "'nonce-dff7cb067c898fa67e898d3619a7fa7e'",
           "'self'"
         ],
         "img-src": [
@@ -89,30 +86,33 @@
     "redirection": {
       "expectation": "redirection-to-https",
       "pass": true,
-      "result": "redirection-not-needed-no-http",
+      "result": "redirection-to-https",
       "scoreModifier": 0,
-      "destination": null,
+      "destination": "https://annuaire.esante.gouv.fr/",
       "redirects": true,
-      "route": [],
-      "statusCode": null
+      "route": [
+        "http://annuaire.esante.gouv.fr/",
+        "https://annuaire.esante.gouv.fr/"
+      ],
+      "statusCode": 200
     },
     "referrer-policy": {
       "expectation": "referrer-policy-private",
       "pass": true,
-      "result": "referrer-policy-private",
-      "scoreModifier": 5,
-      "data": "strict-origin-when-cross-origin",
-      "http": true,
+      "result": "referrer-policy-not-implemented",
+      "scoreModifier": 0,
+      "data": null,
+      "http": false,
       "meta": false
     },
     "strict-transport-security": {
       "expectation": "hsts-implemented-max-age-at-least-six-months",
-      "pass": true,
-      "result": "hsts-implemented-max-age-at-least-six-months",
-      "scoreModifier": 0,
-      "data": "max-age=31536000",
+      "pass": false,
+      "result": "hsts-not-implemented",
+      "scoreModifier": -20,
+      "data": null,
       "includeSubDomains": false,
-      "maxAge": 31536000,
+      "maxAge": null,
       "preload": false,
       "preloaded": false
     },
@@ -125,17 +125,17 @@
     },
     "x-content-type-options": {
       "expectation": "x-content-type-options-nosniff",
-      "pass": true,
-      "result": "x-content-type-options-nosniff",
-      "scoreModifier": 0,
-      "data": "nosniff"
+      "pass": false,
+      "result": "x-content-type-options-not-implemented",
+      "scoreModifier": -5,
+      "data": null
     },
     "x-frame-options": {
       "expectation": "x-frame-options-sameorigin-or-deny",
-      "pass": true,
-      "result": "x-frame-options-sameorigin-or-deny",
-      "scoreModifier": 0,
-      "data": "DENY"
+      "pass": false,
+      "result": "x-frame-options-not-implemented",
+      "scoreModifier": -20,
+      "data": null
     },
     "cross-origin-resource-policy": {
       "expectation": "corp-implemented-with-same-site",
