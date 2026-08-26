@@ -1,17 +1,9 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.17.0",
-	"@generated": "Sat, 1 Aug 2026 03:32:32",
-	"created": "2026-08-01T03:32:32.195476842Z",
+	"@generated": "Wed, 26 Aug 2026 15:59:13",
+	"created": "2026-08-26T15:59:13.833095600Z",
 	"insights":[
-		{
-			"level": "Low",
-			"reason": "Warning",
-			"site": "",
-			"key": "insight.log.error",
-			"description": "ZAP errors logged - see the zap.log file for details",
-			"statistic": "1"
-		},
 		{
 			"level": "Low",
 			"reason": "Warning",
@@ -21,12 +13,20 @@
 			"statistic": "16"
 		},
 		{
+			"level": "Low",
+			"reason": "Exceeded High",
+			"site": "https://interop.esante.gouv.fr",
+			"key": "insight.response.slow",
+			"description": "Percentage of slow responses",
+			"statistic": "99"
+		},
+		{
 			"level": "Info",
 			"reason": "Informational",
 			"site": "https://interop.esante.gouv.fr",
 			"key": "insight.code.2xx",
 			"description": "Percentage of responses with status code 2xx",
-			"statistic": "88"
+			"statistic": "91"
 		},
 		{
 			"level": "Info",
@@ -34,15 +34,23 @@
 			"site": "https://interop.esante.gouv.fr",
 			"key": "insight.code.3xx",
 			"description": "Percentage of responses with status code 3xx",
-			"statistic": "2"
+			"statistic": "1"
+		},
+		{
+			"level": "Info",
+			"reason": "Exceeded Low",
+			"site": "https://interop.esante.gouv.fr",
+			"key": "insight.code.4xx",
+			"description": "Percentage of responses with status code 4xx",
+			"statistic": "6"
 		},
 		{
 			"level": "Info",
 			"reason": "Informational",
 			"site": "https://interop.esante.gouv.fr",
-			"key": "insight.code.4xx",
-			"description": "Percentage of responses with status code 4xx",
-			"statistic": "8"
+			"key": "insight.endpoint.ctype.application/fhir+json",
+			"description": "Percentage of endpoints with content type application/fhir+json",
+			"statistic": "3"
 		},
 		{
 			"level": "Info",
@@ -50,7 +58,7 @@
 			"site": "https://interop.esante.gouv.fr",
 			"key": "insight.endpoint.ctype.application/javascript",
 			"description": "Percentage of endpoints with content type application/javascript",
-			"statistic": "4"
+			"statistic": "3"
 		},
 		{
 			"level": "Info",
@@ -74,7 +82,7 @@
 			"site": "https://interop.esante.gouv.fr",
 			"key": "insight.endpoint.ctype.image/png",
 			"description": "Percentage of endpoints with content type image/png",
-			"statistic": "50"
+			"statistic": "45"
 		},
 		{
 			"level": "Info",
@@ -82,7 +90,7 @@
 			"site": "https://interop.esante.gouv.fr",
 			"key": "insight.endpoint.ctype.text/css",
 			"description": "Percentage of endpoints with content type text/css",
-			"statistic": "2"
+			"statistic": "1"
 		},
 		{
 			"level": "Info",
@@ -90,7 +98,7 @@
 			"site": "https://interop.esante.gouv.fr",
 			"key": "insight.endpoint.ctype.text/html",
 			"description": "Percentage of endpoints with content type text/html",
-			"statistic": "36"
+			"statistic": "42"
 		},
 		{
 			"level": "Info",
@@ -98,7 +106,7 @@
 			"site": "https://interop.esante.gouv.fr",
 			"key": "insight.endpoint.ctype.text/javascript",
 			"description": "Percentage of endpoints with content type text/javascript",
-			"statistic": "1"
+			"statistic": "2"
 		},
 		{
 			"level": "Info",
@@ -106,7 +114,7 @@
 			"site": "https://interop.esante.gouv.fr",
 			"key": "insight.endpoint.ctype.text/plain",
 			"description": "Percentage of endpoints with content type text/plain",
-			"statistic": "5"
+			"statistic": "3"
 		},
 		{
 			"level": "Info",
@@ -130,15 +138,7 @@
 			"site": "https://interop.esante.gouv.fr",
 			"key": "insight.endpoint.total",
 			"description": "Count of total endpoints",
-			"statistic": "961"
-		},
-		{
-			"level": "Info",
-			"reason": "Informational",
-			"site": "https://interop.esante.gouv.fr",
-			"key": "insight.response.slow",
-			"description": "Percentage of slow responses",
-			"statistic": "98"
+			"statistic": "1068"
 		}
 	],
 	"site":[ 
@@ -159,34 +159,24 @@
 					"desc": "<p>The identified library appears to be vulnerable.</p>",
 					"instances":[ 
 						{
-							"id": "330",
-							"uri": "https://interop.esante.gouv.fr/GazelleFhirValidator/javax.faces.resource/moment.js.seam?ln=jscript",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/GazelleFhirValidator\/javax.faces.resource\/moment.js.seam (ln)",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "//! moment.js\n//! version : 2.10.6",
-							"otherinfo": "The identified library moment.js, version 2.10.6 is vulnerable.\nCVE-2017-18214\nCVE-2022-24785\nCVE-2016-4055\nhttps://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-18214\nhttps://security.snyk.io/vuln/npm:moment:20170905\nhttps://security.snyk.io/vuln/npm:moment:20161019\nhttps://github.com/moment/moment/security/advisories/GHSA-8hfj-j24r-96c4\nhttps://github.com/moment/moment/issues/2936\nhttps://github.com/moment/moment/issues/4163\n"
-						},
-						{
-							"id": "254",
+							"id": "256",
 							"uri": "https://interop.esante.gouv.fr/api/swagger-ui-bundle.js",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/api\/swagger-ui-bundle.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "var o=\"dompurify\"+(n?\"#\"+n:\"\");try{return e.createPolicy(o,{createHTML:function(e){return e}})}catch(e){return console.warn(\"TrustedTypes policy \"+o+\" could not be created.\"),null}};function Y(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:J(),t=function(e){return Y(e)};if(t.version=\"2.2.9\"",
-							"otherinfo": "The identified library DOMPurify, version 2.2.9 is vulnerable.\nCVE-2024-47875\nCVE-2025-26791\nCVE-2026-41239\nCVE-2024-48910\nCVE-2024-45801\nCVE-2026-41240\nCVE-2026-49978\nCVE-2026-49458\nCVE-2026-49459\nhttps://github.com/cure53/DOMPurify/commit/d18ffcb554e0001748865da03ac75dd7829f0f02\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-cj63-jhhr-wcxv\nhttps://github.com/cure53/DOMPurify/commit/6ea80cd8b47640c20f2f230c7920b1f4ce4fdf7a\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-39q2-94rc-95cp\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-r47g-fvhr-h676\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-h7mw-gpvr-xq4m\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-cjmm-f4jc-qw8r\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-cmwh-pvxp-8882\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-p3vf-v8qc-cwcr\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-45801\nhttps://github.com/advisories/GHSA-vhxf-7vqr-mrjg\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-mmhx-hmjr-r674\nhttps://github.com/cure53/DOMPurify/commit/d1dd0374caef2b4c56c3bd09fe1988c3479166dc\nhttps://github.com/advisories/GHSA-mmhx-hmjr-r674\nhttps://github.com/cure53/DOMPurify/commit/26e1d69ca7f769f5c558619d644d90dd8bf26ebc\nhttps://nvd.nist.gov/vuln/detail/CVE-2025-26791\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-gx9m-whjm-85jf\nhttps://github.com/cure53/DOMPurify/blob/0ef5e537a514f904b6aa1d7ad9e749e365d7185f/test/test-suite.js#L2098\nhttps://ensy.zip/posts/dompurify-323-bypass\nhttps://nsysean.github.io/posts/dompurify-323-bypass\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-rp9w-3fw7-7cwq\nhttps://github.com/cure53/DOMPurify/commit/1e520262bf4c66b5efda49e2316d6d1246ca7b21\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-48910\nhttps://github.com/advisories/GHSA-gx9m-whjm-85jf\nhttps://github.com/cure53/DOMPurify/releases/tag/3.2.4\nhttps://github.com/cure53/DOMPurify/releases/tag/3.3.2\nhttps://github.com/cure53/DOMPurify/releases/tag/3.4.0\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-vxr8-fq34-vvx9\nhttps://github.com/advisories/GHSA-p3vf-v8qc-cwcr\nhttps://github.com/cure53/DOMPurify/commit/0ef5e537a514f904b6aa1d7ad9e749e365d7185f\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-x4vx-rjvf-j5p4\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-hpcv-96wg-7vj8\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-h8r8-wccr-v5f2\nhttps://github.com/cure53/DOMPurify\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-47875\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-crv5-9vww-q3g8\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-76mc-f452-cxcm\n"
+							"otherinfo": "The identified library DOMPurify, version 2.2.9 is vulnerable.\nCVE-2025-26791\nCVE-2026-66010\nCVE-2024-47875\nCVE-2026-41239\nCVE-2026-65899\nCVE-2026-65898\nCVE-2026-65912\nCVE-2026-65901\nCVE-2024-48910\nCVE-2026-65914\nCVE-2026-65903\nCVE-2026-65913\nCVE-2026-65902\nCVE-2024-45801\nCVE-2026-41240\nCVE-2026-49978\nCVE-2026-49458\nCVE-2026-49459\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-c2j3-45gr-mqc4\nhttps://github.com/cure53/DOMPurify/commit/d18ffcb554e0001748865da03ac75dd7829f0f02\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-cj63-jhhr-wcxv\nhttps://github.com/cure53/DOMPurify/commit/6ea80cd8b47640c20f2f230c7920b1f4ce4fdf7a\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-39q2-94rc-95cp\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-r47g-fvhr-h676\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-h7mw-gpvr-xq4m\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-cjmm-f4jc-qw8r\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-cmwh-pvxp-8882\nhttps://github.com/cure53/DOMPurify/pull/1537\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-p3vf-v8qc-cwcr\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-45801\nhttps://github.com/advisories/GHSA-vhxf-7vqr-mrjg\nhttps://github.com/cure53/DOMPurify/pull/1557\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-mmhx-hmjr-r674\nhttps://github.com/cure53/DOMPurify/commit/d1dd0374caef2b4c56c3bd09fe1988c3479166dc\nhttps://github.com/advisories/GHSA-mmhx-hmjr-r674\nhttps://github.com/cure53/DOMPurify/commit/26e1d69ca7f769f5c558619d644d90dd8bf26ebc\nhttps://nvd.nist.gov/vuln/detail/CVE-2025-26791\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-gx9m-whjm-85jf\nhttps://github.com/cure53/DOMPurify/blob/0ef5e537a514f904b6aa1d7ad9e749e365d7185f/test/test-suite.js#L2098\nhttps://ensy.zip/posts/dompurify-323-bypass\nhttps://nsysean.github.io/posts/dompurify-323-bypass\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-rp9w-3fw7-7cwq\nhttps://github.com/cure53/DOMPurify/commit/1e520262bf4c66b5efda49e2316d6d1246ca7b21\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-48910\nhttps://github.com/advisories/GHSA-gx9m-whjm-85jf\nhttps://github.com/cure53/DOMPurify/releases/tag/3.2.4\nhttps://github.com/cure53/DOMPurify/releases/tag/3.3.2\nhttps://github.com/cure53/DOMPurify/releases/tag/3.4.0\nhttps://github.com/cure53/DOMPurify/commit/3067f7746769\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-vxr8-fq34-vvx9\nhttps://github.com/advisories/GHSA-p3vf-v8qc-cwcr\nhttps://github.com/cure53/DOMPurify/commit/0ef5e537a514f904b6aa1d7ad9e749e365d7185f\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-x4vx-rjvf-j5p4\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-hpcv-96wg-7vj8\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-h8r8-wccr-v5f2\nhttps://github.com/cure53/DOMPurify\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-55q2-fjhq-7xh7\nhttps://github.com/cure53/DOMPurify/releases/tag/3.4.12\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-47875\nhttps://github.com/cure53/DOMPurify/releases/tag/3.4.13\nhttps://github.com/cure53/DOMPurify/commit/a9ca1e537422319a557a9a2aa61f003b23b4a197\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-crv5-9vww-q3g8\nhttps://github.com/cure53/DOMPurify/security/advisories/GHSA-76mc-f452-cxcm\n"
 						}
 					],
-					"count": "2",
+					"count": "1",
 					"systemic": false,
 					"solution": "<p>Upgrade to the latest version of the affected library.</p>",
-					"otherinfo": "<p>The identified library moment.js, version 2.10.6 is vulnerable.</p><p>CVE-2017-18214</p><p>CVE-2022-24785</p><p>CVE-2016-4055</p><p>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-18214</p><p>https://security.snyk.io/vuln/npm:moment:20170905</p><p>https://security.snyk.io/vuln/npm:moment:20161019</p><p>https://github.com/moment/moment/security/advisories/GHSA-8hfj-j24r-96c4</p><p>https://github.com/moment/moment/issues/2936</p><p>https://github.com/moment/moment/issues/4163</p><p></p>",
-					"reference": "<p>https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/</p>",
+					"otherinfo": "<p>The identified library DOMPurify, version 2.2.9 is vulnerable.</p><p>CVE-2025-26791</p><p>CVE-2026-66010</p><p>CVE-2024-47875</p><p>CVE-2026-41239</p><p>CVE-2026-65899</p><p>CVE-2026-65898</p><p>CVE-2026-65912</p><p>CVE-2026-65901</p><p>CVE-2024-48910</p><p>CVE-2026-65914</p><p>CVE-2026-65903</p><p>CVE-2026-65913</p><p>CVE-2026-65902</p><p>CVE-2024-45801</p><p>CVE-2026-41240</p><p>CVE-2026-49978</p><p>CVE-2026-49458</p><p>CVE-2026-49459</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-c2j3-45gr-mqc4</p><p>https://github.com/cure53/DOMPurify/commit/d18ffcb554e0001748865da03ac75dd7829f0f02</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-cj63-jhhr-wcxv</p><p>https://github.com/cure53/DOMPurify/commit/6ea80cd8b47640c20f2f230c7920b1f4ce4fdf7a</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-39q2-94rc-95cp</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-r47g-fvhr-h676</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-h7mw-gpvr-xq4m</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-cjmm-f4jc-qw8r</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-cmwh-pvxp-8882</p><p>https://github.com/cure53/DOMPurify/pull/1537</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-p3vf-v8qc-cwcr</p><p>https://nvd.nist.gov/vuln/detail/CVE-2024-45801</p><p>https://github.com/advisories/GHSA-vhxf-7vqr-mrjg</p><p>https://github.com/cure53/DOMPurify/pull/1557</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-mmhx-hmjr-r674</p><p>https://github.com/cure53/DOMPurify/commit/d1dd0374caef2b4c56c3bd09fe1988c3479166dc</p><p>https://github.com/advisories/GHSA-mmhx-hmjr-r674</p><p>https://github.com/cure53/DOMPurify/commit/26e1d69ca7f769f5c558619d644d90dd8bf26ebc</p><p>https://nvd.nist.gov/vuln/detail/CVE-2025-26791</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-gx9m-whjm-85jf</p><p>https://github.com/cure53/DOMPurify/blob/0ef5e537a514f904b6aa1d7ad9e749e365d7185f/test/test-suite.js#L2098</p><p>https://ensy.zip/posts/dompurify-323-bypass</p><p>https://nsysean.github.io/posts/dompurify-323-bypass</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-rp9w-3fw7-7cwq</p><p>https://github.com/cure53/DOMPurify/commit/1e520262bf4c66b5efda49e2316d6d1246ca7b21</p><p>https://nvd.nist.gov/vuln/detail/CVE-2024-48910</p><p>https://github.com/advisories/GHSA-gx9m-whjm-85jf</p><p>https://github.com/cure53/DOMPurify/releases/tag/3.2.4</p><p>https://github.com/cure53/DOMPurify/releases/tag/3.3.2</p><p>https://github.com/cure53/DOMPurify/releases/tag/3.4.0</p><p>https://github.com/cure53/DOMPurify/commit/3067f7746769</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-vxr8-fq34-vvx9</p><p>https://github.com/advisories/GHSA-p3vf-v8qc-cwcr</p><p>https://github.com/cure53/DOMPurify/commit/0ef5e537a514f904b6aa1d7ad9e749e365d7185f</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-x4vx-rjvf-j5p4</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-hpcv-96wg-7vj8</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-h8r8-wccr-v5f2</p><p>https://github.com/cure53/DOMPurify</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-55q2-fjhq-7xh7</p><p>https://github.com/cure53/DOMPurify/releases/tag/3.4.12</p><p>https://nvd.nist.gov/vuln/detail/CVE-2024-47875</p><p>https://github.com/cure53/DOMPurify/releases/tag/3.4.13</p><p>https://github.com/cure53/DOMPurify/commit/a9ca1e537422319a557a9a2aa61f003b23b4a197</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-crv5-9vww-q3g8</p><p>https://github.com/cure53/DOMPurify/security/advisories/GHSA-76mc-f452-cxcm</p><p></p>",
+					"reference": "<p>https://owasp.org/Top10/2021/A06_2021-Vulnerable_and_Outdated_Components/</p>",
 					"cweid": "1395",
 					"wascid": "-1",
-					"sourceid": "2104"
+					"sourceid": "1983"
 				},
 				{
 					"pluginid": "10202",
@@ -199,7 +189,7 @@
 					"desc": "<p>No Anti-CSRF tokens were found in a HTML submission form.</p><p>A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent in order to perform an action as the victim. The underlying cause is application functionality using predictable URL/form actions in a repeatable way. The nature of the attack is that CSRF exploits the trust that a web site has for a user. By contrast, cross-site scripting (XSS) exploits the trust that a user has for a web site. Like XSS, CSRF attacks are not necessarily cross-site, but they can be. Cross-site request forgery is also known as CSRF, XSRF, one-click attack, session riding, confused deputy, and sea surf.</p><p></p><p>CSRF attacks are effective in a number of situations, including:</p><p>    * The victim has an active session on the target site.</p><p>    * The victim is authenticated via HTTP auth on the target site.</p><p>    * The victim is on the same local network as the target site.</p><p></p><p>CSRF has primarily been used to perform an action against a target site using the victim's privileges, but recent techniques have been discovered to disclose information by gaining access to the response. The risk of information disclosure is dramatically increased when the target site is vulnerable to XSS, because XSS can be used as a platform for CSRF, allowing the attack to operate within the bounds of the same-origin policy.</p>",
 					"instances":[ 
 						{
-							"id": "93",
+							"id": "62",
 							"uri": "https://interop.esante.gouv.fr/datamatrixins/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/datamatrixins\/",
 							"method": "GET",
@@ -209,7 +199,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"j_idt22\" \"javax.faces.ViewState\" ]."
 						},
 						{
-							"id": "94",
+							"id": "63",
 							"uri": "https://interop.esante.gouv.fr/datamatrixins/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/datamatrixins\/",
 							"method": "GET",
@@ -219,7 +209,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 2: \"globalForm\" ]."
 						},
 						{
-							"id": "183",
+							"id": "154",
 							"uri": "https://interop.esante.gouv.fr/datamatrixins/?files%5B%5D=test_file.txt",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/datamatrixins\/ (files[])",
 							"method": "GET",
@@ -229,7 +219,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"j_idt22\" \"javax.faces.ViewState\" ]."
 						},
 						{
-							"id": "184",
+							"id": "155",
 							"uri": "https://interop.esante.gouv.fr/datamatrixins/?files%5B%5D=test_file.txt",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/datamatrixins\/ (files[])",
 							"method": "GET",
@@ -239,14 +229,14 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 2: \"globalForm\" ]."
 						},
 						{
-							"id": "226",
-							"uri": "https://interop.esante.gouv.fr/evs/home.seam",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/evs\/home.seam",
+							"id": "222",
+							"uri": "https://interop.esante.gouv.fr/hl7v2-simulators/index.xhtml?jfwid=0cf77",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/hl7v2-simulators\/index.xhtml (jfwid)",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form id=\"globalForm\" name=\"globalForm\" method=\"post\" action=\"/evs/home.seam\" enctype=\"application/x-www-form-urlencoded\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"globalForm\" \"javax.faces.ViewState\" ]."
+							"evidence": "<form id=\"j_id_z\" name=\"j_id_z\" method=\"post\" action=\"/hl7v2-simulators/index.xhtml;jsessionid=d5NJ8kT5kGM6T3Fdjapu3MjY3uuhLLUDGV4L3uyS?jfwid=0cf77\" enctype=\"application/x-www-form-urlencoded\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"j_id__v_0:jakarta.faces.ClientWindow:1\" \"j_id__v_0:jakarta.faces.ViewState:1\" \"j_id_z_SUBMIT\" ]."
 						}
 					],
 					"count": "5",
@@ -256,7 +246,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "156"
+					"sourceid": "88"
 				},
 				{
 					"pluginid": "90022",
@@ -277,16 +267,26 @@
 							"attack": "",
 							"evidence": "Internal Server Error",
 							"otherinfo": ""
+						},
+						{
+							"id": "160",
+							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/Gazelle-Webservice-Tester/release-note.html",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/Gazelle-Webservice-Tester\/release-note.html",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "JDBC Driver",
+							"otherinfo": ""
 						}
 					],
-					"count": "1",
+					"count": "2",
 					"systemic": false,
 					"solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
 					"otherinfo": "",
 					"reference": "",
 					"cweid": "550",
 					"wascid": "13",
-					"sourceid": "624"
+					"sourceid": "701"
 				},
 				{
 					"pluginid": "10038",
@@ -299,7 +299,7 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "38",
+							"id": "7",
 							"uri": "https://interop.esante.gouv.fr",
 							"nodeName": "https:\/\/interop.esante.gouv.fr",
 							"method": "GET",
@@ -309,9 +309,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "59",
-							"uri": "https://interop.esante.gouv.fr/",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/",
+							"id": "60",
+							"uri": "https://interop.esante.gouv.fr/datamatrixins/",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/datamatrixins\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -319,17 +319,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "62",
-							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "85",
+							"id": "42",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/gazelle-webservice-tester/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/gazelle-webservice-tester\/user.html",
 							"method": "GET",
@@ -339,7 +329,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "24",
+							"id": "45",
+							"uri": "https://interop.esante.gouv.fr/rsp-generator-ui",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/rsp-generator-ui",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "0",
 							"uri": "https://interop.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -356,7 +356,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "9"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10098",
@@ -369,7 +369,7 @@
 					"desc": "<p>Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server.</p>",
 					"instances":[ 
 						{
-							"id": "191",
+							"id": "200",
 							"uri": "https://interop.esante.gouv.fr/PatientManager/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/PatientManager\/",
 							"method": "GET",
@@ -379,7 +379,7 @@
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						},
 						{
-							"id": "207",
+							"id": "202",
 							"uri": "https://interop.esante.gouv.fr/PatientManager/rest/automaton/RunAutomaton?graphmlID=GRAPHID&systemundertest=SUT_NAME",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/PatientManager\/rest\/automaton\/RunAutomaton (graphmlID,systemundertest)",
 							"method": "GET",
@@ -389,7 +389,7 @@
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						},
 						{
-							"id": "209",
+							"id": "204",
 							"uri": "https://interop.esante.gouv.fr/PatientManager/rest/automaton/RunAutomatonWithExistingPatient?graphmlID=GRAPHID&patientID=PATIENT_ID_IN_DB&systemundertest=SUT_NAME",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/PatientManager\/rest\/automaton\/RunAutomatonWithExistingPatient (graphmlID,patientID,systemundertest)",
 							"method": "GET",
@@ -399,9 +399,9 @@
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						},
 						{
-							"id": "202",
-							"uri": "https://interop.esante.gouv.fr/PatientManager/rest/automaton/listGraphs",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/PatientManager\/rest\/automaton\/listGraphs",
+							"id": "206",
+							"uri": "https://interop.esante.gouv.fr/PatientManager/rest/automaton/StatusExecution?executionID=ID_RETURNS_IN_RUNAUTOMATON",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/PatientManager\/rest\/automaton\/StatusExecution (executionID)",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -409,9 +409,9 @@
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						},
 						{
-							"id": "211",
-							"uri": "https://interop.esante.gouv.fr/PatientManager/rest/hl7Messages",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/PatientManager\/rest\/hl7Messages",
+							"id": "195",
+							"uri": "https://interop.esante.gouv.fr/PatientManager/rest/automaton/listGraphs",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/PatientManager\/rest\/automaton\/listGraphs",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -426,7 +426,7 @@
 					"reference": "<p>https://vulncat.fortify.com/en/detail?category=HTML5&subcategory=Overly%20Permissive%20CORS%20Policy</p>",
 					"cweid": "264",
 					"wascid": "14",
-					"sourceid": "1116"
+					"sourceid": "1231"
 				},
 				{
 					"pluginid": "10020",
@@ -439,9 +439,9 @@
 					"desc": "<p>The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.</p>",
 					"instances":[ 
 						{
-							"id": "232",
-							"uri": "https://interop.esante.gouv.fr/opt/EVSClient_prod/reports",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/opt\/EVSClient_prod\/reports",
+							"id": "240",
+							"uri": "https://interop.esante.gouv.fr/Configure",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/Configure",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -449,9 +449,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "238",
-							"uri": "https://interop.esante.gouv.fr/opt/evs",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/opt\/evs",
+							"id": "244",
+							"uri": "https://interop.esante.gouv.fr/opt/evs/preferences.properties.",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/opt\/evs\/preferences.properties.",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -459,9 +459,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "233",
-							"uri": "https://interop.esante.gouv.fr/opt/pixelmed/",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/opt\/pixelmed\/",
+							"id": "242",
+							"uri": "https://interop.esante.gouv.fr/opt/gazelle/cas",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/opt\/gazelle\/cas",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -469,9 +469,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "236",
-							"uri": "https://interop.esante.gouv.fr/opt/pixelmed/bin/pixelmedValidator.sh,",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/opt\/pixelmed\/bin\/pixelmedValidator.sh,",
+							"id": "241",
+							"uri": "https://interop.esante.gouv.fr/usr/local/bin",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/usr\/local\/bin",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -479,9 +479,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "234",
-							"uri": "https://interop.esante.gouv.fr/tm/home.seam",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/tm\/home.seam",
+							"id": "245",
+							"uri": "https://interop.esante.gouv.fr/usr/local/bin/dcdump",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/usr\/local\/bin\/dcdump",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -496,7 +496,77 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options</p>",
 					"cweid": "1021",
 					"wascid": "15",
-					"sourceid": "1470"
+					"sourceid": "1551"
+				},
+				{
+					"pluginid": "3",
+					"alertRef": "3-2",
+					"alert": "Session ID in URL Rewrite",
+					"name": "Session ID in URL Rewrite",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medium (High)",
+					"desc": "<p>URL rewrite is used to track user session ID. The session ID may be disclosed via cross-site referer header. In addition, the session ID might be stored in browser history or server logs.</p>",
+					"instances":[ 
+						{
+							"id": "314",
+							"uri": "https://interop.esante.gouv.fr/ANS_SIMULATEUR_HL7V2_MODE%20OPERATOIRE_UTILISATEUR.pdf;jsessionid=d5NJ8kT5kGM6T3Fdjapu3MjY3uuhLLUDGV4L3uyS?i=3&jfwid=0cf77",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/ANS_SIMULATEUR_HL7V2_MODE OPERATOIRE_UTILISATEUR.pdf;jsessionid=d5NJ8kT5kGM6T3Fdjapu3MjY3uuhLLUDGV4L3uyS (i,jfwid)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "jsessionid=d5NJ8kT5kGM6T3Fdjapu3MjY3uuhLLUDGV4L3uyS",
+							"otherinfo": ""
+						},
+						{
+							"id": "312",
+							"uri": "https://interop.esante.gouv.fr/hl7v2-simulators/hl7creator.xhtml;jsessionid=d5NJ8kT5kGM6T3Fdjapu3MjY3uuhLLUDGV4L3uyS?i=0&jfwid=0cf77",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/hl7v2-simulators\/hl7creator.xhtml;jsessionid=d5NJ8kT5kGM6T3Fdjapu3MjY3uuhLLUDGV4L3uyS (i,jfwid)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "jsessionid=d5NJ8kT5kGM6T3Fdjapu3MjY3uuhLLUDGV4L3uyS",
+							"otherinfo": ""
+						},
+						{
+							"id": "313",
+							"uri": "https://interop.esante.gouv.fr/hl7v2-simulators/hl7manager.xhtml;jsessionid=d5NJ8kT5kGM6T3Fdjapu3MjY3uuhLLUDGV4L3uyS?i=1&jfwid=0cf77",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/hl7v2-simulators\/hl7manager.xhtml;jsessionid=d5NJ8kT5kGM6T3Fdjapu3MjY3uuhLLUDGV4L3uyS (i,jfwid)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "jsessionid=d5NJ8kT5kGM6T3Fdjapu3MjY3uuhLLUDGV4L3uyS",
+							"otherinfo": ""
+						},
+						{
+							"id": "311",
+							"uri": "https://interop.esante.gouv.fr/hl7v2-simulators/index.xhtml;jsessionid=d5NJ8kT5kGM6T3Fdjapu3MjY3uuhLLUDGV4L3uyS?jfwid=0cf77",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/hl7v2-simulators\/index.xhtml;jsessionid=d5NJ8kT5kGM6T3Fdjapu3MjY3uuhLLUDGV4L3uyS (jfwid)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "jsessionid=d5NJ8kT5kGM6T3Fdjapu3MjY3uuhLLUDGV4L3uyS",
+							"otherinfo": ""
+						},
+						{
+							"id": "315",
+							"uri": "https://interop.esante.gouv.fr/hl7v2-simulators/jakarta.faces.resource/theme.css.xhtml;jsessionid=d5NJ8kT5kGM6T3Fdjapu3MjY3uuhLLUDGV4L3uyS?e=13.0.0-RC1&ln=primefaces-saga&v=13.0.0-RC1",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/hl7v2-simulators\/jakarta.faces.resource\/theme.css.xhtml;jsessionid=d5NJ8kT5kGM6T3Fdjapu3MjY3uuhLLUDGV4L3uyS (e,ln,v)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "jsessionid=d5NJ8kT5kGM6T3Fdjapu3MjY3uuhLLUDGV4L3uyS",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>For secure content, put session ID in a cookie. To be even more secure consider using a combination of cookie and URL rewrite.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://seclists.org/webappsec/2002/q4/111</p>",
+					"cweid": "598",
+					"wascid": "13",
+					"sourceid": "2061"
 				},
 				{
 					"pluginid": "10099",
@@ -509,7 +579,7 @@
 					"desc": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
 					"instances":[ 
 						{
-							"id": "157",
+							"id": "156",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/CDA-Generator/release-note.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/CDA-Generator\/release-note.html",
 							"method": "GET",
@@ -519,7 +589,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "154",
+							"id": "157",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/installation.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/installation.html",
 							"method": "GET",
@@ -529,7 +599,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "148",
+							"id": "146",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/Patient-Manager/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/Patient-Manager\/user.html",
 							"method": "GET",
@@ -539,7 +609,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "160",
+							"id": "168",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/Proxy/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/Proxy\/user.html",
 							"method": "GET",
@@ -549,7 +619,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "115",
+							"id": "136",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/SVS-Simulator/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/SVS-Simulator\/user.html",
 							"method": "GET",
@@ -559,7 +629,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "162",
+							"id": "169",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/Test-Management/admin.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/Test-Management\/admin.html",
 							"method": "GET",
@@ -569,7 +639,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "107",
+							"id": "123",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/Test-Management/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/Test-Management\/user.html",
 							"method": "GET",
@@ -579,7 +649,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "165",
+							"id": "170",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/XDStar-Client/admin.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/XDStar-Client\/admin.html",
 							"method": "GET",
@@ -589,7 +659,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "163",
+							"id": "175",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/XDStar-Client/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/XDStar-Client\/user.html",
 							"method": "GET",
@@ -606,7 +676,7 @@
 					"reference": "<p>https://nhimg.org/twitter-breach</p>",
 					"cweid": "540",
 					"wascid": "13",
-					"sourceid": "597"
+					"sourceid": "592"
 				},
 				{
 					"pluginid": "90003",
@@ -619,7 +689,7 @@
 					"desc": "<p>The integrity attribute is missing on a script or link tag served by an external server. The integrity tag prevents an attacker who have gained access to this server from injecting a malicious content.</p>",
 					"instances":[ 
 						{
-							"id": "72",
+							"id": "71",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
 							"method": "GET",
@@ -629,7 +699,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "75",
+							"id": "74",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
 							"method": "GET",
@@ -639,7 +709,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "76",
+							"id": "75",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
 							"method": "GET",
@@ -649,7 +719,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "73",
+							"id": "72",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
 							"method": "GET",
@@ -659,7 +729,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "74",
+							"id": "73",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
 							"method": "GET",
@@ -676,7 +746,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "58"
+					"sourceid": "93"
 				},
 				{
 					"pluginid": "10003",
@@ -689,27 +759,27 @@
 					"desc": "<p>The identified library appears to be vulnerable.</p>",
 					"instances":[ 
 						{
-							"id": "329",
-							"uri": "https://interop.esante.gouv.fr/GazelleFhirValidator/javax.faces.resource/jquery_1_11_2.min.js.seam?ln=jscript",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/GazelleFhirValidator\/javax.faces.resource\/jquery_1_11_2.min.js.seam (ln)",
+							"id": "352",
+							"uri": "https://interop.esante.gouv.fr/AssertionManagerGui/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/jquery.js",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/AssertionManagerGui\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/jquery.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/*! jQuery v1.11.2",
-							"otherinfo": "The identified library jquery, version 1.11.2 is vulnerable.\nCVE-2020-11023\nCVE-2015-9251\nCVE-2019-11358\nhttps://github.com/jquery/jquery/issues/2432\nhttp://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/\nhttp://research.insecurelabs.org/jquery/test/\nhttps://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\nhttps://nvd.nist.gov/vuln/detail/CVE-2019-11358\nhttps://github.com/advisories/GHSA-rmxg-73gg-4p98\nhttps://nvd.nist.gov/vuln/detail/CVE-2015-9251\nhttps://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b\nhttps://bugs.jquery.com/ticket/11974\nhttps://github.com/jquery/jquery.com/issues/162\nhttps://blog.jquery.com/2020/04/10/jquery-3-5-0-released/\n"
+							"evidence": "* jQuery JavaScript Library v1.8.3",
+							"otherinfo": "The identified library jquery, version 1.8.3 is vulnerable.\nCVE-2020-11023\nCVE-2015-9251\nCVE-2019-11358\nCVE-2020-7656\nCVE-2012-6708\nhttps://nvd.nist.gov/vuln/detail/CVE-2012-6708\nhttps://github.com/jquery/jquery/issues/2432\nhttp://research.insecurelabs.org/jquery/test/\nhttps://nvd.nist.gov/vuln/detail/CVE-2019-11358\nhttps://github.com/advisories/GHSA-rmxg-73gg-4p98\nhttps://bugs.jquery.com/ticket/11974\nhttps://github.com/jquery/jquery.com/issues/162\nhttps://nvd.nist.gov/vuln/detail/CVE-2020-7656\nhttp://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/\nhttp://bugs.jquery.com/ticket/11290\nhttps://research.insecurelabs.org/jquery/test/\nhttps://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\nhttps://nvd.nist.gov/vuln/detail/CVE-2015-9251\nhttps://github.com/advisories/GHSA-q4m3-2j7h-f7xw\nhttps://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b\nhttps://blog.jquery.com/2020/04/10/jquery-3-5-0-released/\n"
 						},
 						{
-							"id": "335",
-							"uri": "https://interop.esante.gouv.fr/GazelleFhirValidator/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.5.9.Final/PackedCompressed/org.richfaces/jquery.js",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/GazelleFhirValidator\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.5.9.Final\/PackedCompressed\/org.richfaces\/jquery.js",
+							"id": "345",
+							"uri": "https://interop.esante.gouv.fr/GazelleHL7Validator/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/jquery.js",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/GazelleHL7Validator\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/jquery.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "* jQuery JavaScript Library v1.11.3",
-							"otherinfo": "The identified library jquery, version 1.11.3 is vulnerable.\nCVE-2020-11023\nCVE-2015-9251\nCVE-2019-11358\nhttps://github.com/jquery/jquery/issues/2432\nhttp://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/\nhttp://research.insecurelabs.org/jquery/test/\nhttps://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\nhttps://nvd.nist.gov/vuln/detail/CVE-2019-11358\nhttps://github.com/advisories/GHSA-rmxg-73gg-4p98\nhttps://nvd.nist.gov/vuln/detail/CVE-2015-9251\nhttps://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b\nhttps://bugs.jquery.com/ticket/11974\nhttps://github.com/jquery/jquery.com/issues/162\nhttps://blog.jquery.com/2020/04/10/jquery-3-5-0-released/\n"
+							"evidence": "* jQuery JavaScript Library v1.8.3",
+							"otherinfo": "The identified library jquery, version 1.8.3 is vulnerable.\nCVE-2020-11023\nCVE-2015-9251\nCVE-2019-11358\nCVE-2020-7656\nCVE-2012-6708\nhttps://nvd.nist.gov/vuln/detail/CVE-2012-6708\nhttps://github.com/jquery/jquery/issues/2432\nhttp://research.insecurelabs.org/jquery/test/\nhttps://nvd.nist.gov/vuln/detail/CVE-2019-11358\nhttps://github.com/advisories/GHSA-rmxg-73gg-4p98\nhttps://bugs.jquery.com/ticket/11974\nhttps://github.com/jquery/jquery.com/issues/162\nhttps://nvd.nist.gov/vuln/detail/CVE-2020-7656\nhttp://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/\nhttp://bugs.jquery.com/ticket/11290\nhttps://research.insecurelabs.org/jquery/test/\nhttps://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\nhttps://nvd.nist.gov/vuln/detail/CVE-2015-9251\nhttps://github.com/advisories/GHSA-q4m3-2j7h-f7xw\nhttps://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b\nhttps://blog.jquery.com/2020/04/10/jquery-3-5-0-released/\n"
 						},
 						{
-							"id": "324",
+							"id": "339",
 							"uri": "https://interop.esante.gouv.fr/SVSSimulator/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/jquery.js",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/SVSSimulator\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/jquery.js",
 							"method": "GET",
@@ -719,7 +789,7 @@
 							"otherinfo": "The identified library jquery, version 1.8.3 is vulnerable.\nCVE-2020-11023\nCVE-2015-9251\nCVE-2019-11358\nCVE-2020-7656\nCVE-2012-6708\nhttps://nvd.nist.gov/vuln/detail/CVE-2012-6708\nhttps://github.com/jquery/jquery/issues/2432\nhttp://research.insecurelabs.org/jquery/test/\nhttps://nvd.nist.gov/vuln/detail/CVE-2019-11358\nhttps://github.com/advisories/GHSA-rmxg-73gg-4p98\nhttps://bugs.jquery.com/ticket/11974\nhttps://github.com/jquery/jquery.com/issues/162\nhttps://nvd.nist.gov/vuln/detail/CVE-2020-7656\nhttp://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/\nhttp://bugs.jquery.com/ticket/11290\nhttps://research.insecurelabs.org/jquery/test/\nhttps://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\nhttps://nvd.nist.gov/vuln/detail/CVE-2015-9251\nhttps://github.com/advisories/GHSA-q4m3-2j7h-f7xw\nhttps://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b\nhttps://blog.jquery.com/2020/04/10/jquery-3-5-0-released/\n"
 						},
 						{
-							"id": "342",
+							"id": "353",
 							"uri": "https://interop.esante.gouv.fr/SchematronValidator/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/jquery.js",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/SchematronValidator\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/jquery.js",
 							"method": "GET",
@@ -729,7 +799,7 @@
 							"otherinfo": "The identified library jquery, version 1.8.3 is vulnerable.\nCVE-2020-11023\nCVE-2015-9251\nCVE-2019-11358\nCVE-2020-7656\nCVE-2012-6708\nhttps://nvd.nist.gov/vuln/detail/CVE-2012-6708\nhttps://github.com/jquery/jquery/issues/2432\nhttp://research.insecurelabs.org/jquery/test/\nhttps://nvd.nist.gov/vuln/detail/CVE-2019-11358\nhttps://github.com/advisories/GHSA-rmxg-73gg-4p98\nhttps://bugs.jquery.com/ticket/11974\nhttps://github.com/jquery/jquery.com/issues/162\nhttps://nvd.nist.gov/vuln/detail/CVE-2020-7656\nhttp://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/\nhttp://bugs.jquery.com/ticket/11290\nhttps://research.insecurelabs.org/jquery/test/\nhttps://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\nhttps://nvd.nist.gov/vuln/detail/CVE-2015-9251\nhttps://github.com/advisories/GHSA-q4m3-2j7h-f7xw\nhttps://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b\nhttps://blog.jquery.com/2020/04/10/jquery-3-5-0-released/\n"
 						},
 						{
-							"id": "315",
+							"id": "332",
 							"uri": "https://interop.esante.gouv.fr/evs/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/jquery.js",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/evs\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/jquery.js",
 							"method": "GET",
@@ -739,7 +809,7 @@
 							"otherinfo": "The identified library jquery, version 1.8.3 is vulnerable.\nCVE-2020-11023\nCVE-2015-9251\nCVE-2019-11358\nCVE-2020-7656\nCVE-2012-6708\nhttps://nvd.nist.gov/vuln/detail/CVE-2012-6708\nhttps://github.com/jquery/jquery/issues/2432\nhttp://research.insecurelabs.org/jquery/test/\nhttps://nvd.nist.gov/vuln/detail/CVE-2019-11358\nhttps://github.com/advisories/GHSA-rmxg-73gg-4p98\nhttps://bugs.jquery.com/ticket/11974\nhttps://github.com/jquery/jquery.com/issues/162\nhttps://nvd.nist.gov/vuln/detail/CVE-2020-7656\nhttp://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/\nhttp://bugs.jquery.com/ticket/11290\nhttps://research.insecurelabs.org/jquery/test/\nhttps://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\nhttps://nvd.nist.gov/vuln/detail/CVE-2015-9251\nhttps://github.com/advisories/GHSA-q4m3-2j7h-f7xw\nhttps://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b\nhttps://blog.jquery.com/2020/04/10/jquery-3-5-0-released/\n"
 						},
 						{
-							"id": "176",
+							"id": "180",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/static/js/bootstrap.min.js",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/static\/js\/bootstrap.min.js",
 							"method": "GET",
@@ -747,16 +817,46 @@
 							"attack": "",
 							"evidence": "* Bootstrap v3.3.6",
 							"otherinfo": "The identified library bootstrap, version 3.3.6 is vulnerable.\nCVE-2019-8331\nCVE-2018-14040\nCVE-2018-20677\nCVE-2018-20676\nCVE-2018-14042\nCVE-2016-10735\nCVE-2024-6485\nhttps://github.com/twbs/bootstrap/issues/28236\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-6485\nhttps://www.herodevs.com/vulnerability-directory/cve-2024-6485\nhttps://github.com/twbs/bootstrap/issues/20184\nhttps://github.com/advisories/GHSA-vxmc-5x29-h64v\nhttps://github.com/advisories/GHSA-ph58-4vrj-w6hr\nhttps://github.com/twbs/bootstrap\nhttps://github.com/twbs/bootstrap/issues/20631\nhttps://github.com/advisories/GHSA-4p24-vmcr-4gqj\nhttps://github.com/advisories/GHSA-9v3m-8fp8-mj99\nhttps://nvd.nist.gov/vuln/detail/CVE-2018-20676\n"
+						},
+						{
+							"id": "323",
+							"uri": "https://interop.esante.gouv.fr/gazelle-webservice-tester/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/jquery.js",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-webservice-tester\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/jquery.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "* jQuery JavaScript Library v1.8.3",
+							"otherinfo": "The identified library jquery, version 1.8.3 is vulnerable.\nCVE-2020-11023\nCVE-2015-9251\nCVE-2019-11358\nCVE-2020-7656\nCVE-2012-6708\nhttps://nvd.nist.gov/vuln/detail/CVE-2012-6708\nhttps://github.com/jquery/jquery/issues/2432\nhttp://research.insecurelabs.org/jquery/test/\nhttps://nvd.nist.gov/vuln/detail/CVE-2019-11358\nhttps://github.com/advisories/GHSA-rmxg-73gg-4p98\nhttps://bugs.jquery.com/ticket/11974\nhttps://github.com/jquery/jquery.com/issues/162\nhttps://nvd.nist.gov/vuln/detail/CVE-2020-7656\nhttp://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/\nhttp://bugs.jquery.com/ticket/11290\nhttps://research.insecurelabs.org/jquery/test/\nhttps://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\nhttps://nvd.nist.gov/vuln/detail/CVE-2015-9251\nhttps://github.com/advisories/GHSA-q4m3-2j7h-f7xw\nhttps://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b\nhttps://blog.jquery.com/2020/04/10/jquery-3-5-0-released/\n"
+						},
+						{
+							"id": "328",
+							"uri": "https://interop.esante.gouv.fr/tm/javax.faces.resource/gazelle-tm-deferred-3.1.2.min.js.seam?ln=jscript",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/tm\/javax.faces.resource\/gazelle-tm-deferred-3.1.2.min.js.seam (ln)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "{jquery:\"1.11.2\"",
+							"otherinfo": "The identified library jquery, version 1.11.2 is vulnerable.\nCVE-2020-11023\nCVE-2015-9251\nCVE-2019-11358\nhttps://github.com/jquery/jquery/issues/2432\nhttp://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/\nhttp://research.insecurelabs.org/jquery/test/\nhttps://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\nhttps://nvd.nist.gov/vuln/detail/CVE-2019-11358\nhttps://github.com/advisories/GHSA-rmxg-73gg-4p98\nhttps://nvd.nist.gov/vuln/detail/CVE-2015-9251\nhttps://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b\nhttps://bugs.jquery.com/ticket/11974\nhttps://github.com/jquery/jquery.com/issues/162\nhttps://blog.jquery.com/2020/04/10/jquery-3-5-0-released/\n"
+						},
+						{
+							"id": "329",
+							"uri": "https://interop.esante.gouv.fr/tm/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/jquery.js",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/tm\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/jquery.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "* jQuery JavaScript Library v1.8.3",
+							"otherinfo": "The identified library jquery, version 1.8.3 is vulnerable.\nCVE-2020-11023\nCVE-2015-9251\nCVE-2019-11358\nCVE-2020-7656\nCVE-2012-6708\nhttps://nvd.nist.gov/vuln/detail/CVE-2012-6708\nhttps://github.com/jquery/jquery/issues/2432\nhttp://research.insecurelabs.org/jquery/test/\nhttps://nvd.nist.gov/vuln/detail/CVE-2019-11358\nhttps://github.com/advisories/GHSA-rmxg-73gg-4p98\nhttps://bugs.jquery.com/ticket/11974\nhttps://github.com/jquery/jquery.com/issues/162\nhttps://nvd.nist.gov/vuln/detail/CVE-2020-7656\nhttp://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/\nhttp://bugs.jquery.com/ticket/11290\nhttps://research.insecurelabs.org/jquery/test/\nhttps://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\nhttps://nvd.nist.gov/vuln/detail/CVE-2015-9251\nhttps://github.com/advisories/GHSA-q4m3-2j7h-f7xw\nhttps://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b\nhttps://blog.jquery.com/2020/04/10/jquery-3-5-0-released/\n"
 						}
 					],
-					"count": "6",
+					"count": "9",
 					"systemic": false,
 					"solution": "<p>Upgrade to the latest version of the affected library.</p>",
-					"otherinfo": "<p>The identified library jquery, version 1.11.2 is vulnerable.</p><p>CVE-2020-11023</p><p>CVE-2015-9251</p><p>CVE-2019-11358</p><p>https://github.com/jquery/jquery/issues/2432</p><p>http://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/</p><p>http://research.insecurelabs.org/jquery/test/</p><p>https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/</p><p>https://nvd.nist.gov/vuln/detail/CVE-2019-11358</p><p>https://github.com/advisories/GHSA-rmxg-73gg-4p98</p><p>https://nvd.nist.gov/vuln/detail/CVE-2015-9251</p><p>https://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b</p><p>https://bugs.jquery.com/ticket/11974</p><p>https://github.com/jquery/jquery.com/issues/162</p><p>https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/</p><p></p>",
-					"reference": "<p>https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/</p>",
+					"otherinfo": "<p>The identified library jquery, version 1.8.3 is vulnerable.</p><p>CVE-2020-11023</p><p>CVE-2015-9251</p><p>CVE-2019-11358</p><p>CVE-2020-7656</p><p>CVE-2012-6708</p><p>https://nvd.nist.gov/vuln/detail/CVE-2012-6708</p><p>https://github.com/jquery/jquery/issues/2432</p><p>http://research.insecurelabs.org/jquery/test/</p><p>https://nvd.nist.gov/vuln/detail/CVE-2019-11358</p><p>https://github.com/advisories/GHSA-rmxg-73gg-4p98</p><p>https://bugs.jquery.com/ticket/11974</p><p>https://github.com/jquery/jquery.com/issues/162</p><p>https://nvd.nist.gov/vuln/detail/CVE-2020-7656</p><p>http://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/</p><p>http://bugs.jquery.com/ticket/11290</p><p>https://research.insecurelabs.org/jquery/test/</p><p>https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/</p><p>https://nvd.nist.gov/vuln/detail/CVE-2015-9251</p><p>https://github.com/advisories/GHSA-q4m3-2j7h-f7xw</p><p>https://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b</p><p>https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/</p><p></p>",
+					"reference": "<p>https://owasp.org/Top10/2021/A06_2021-Vulnerable_and_Outdated_Components/</p>",
 					"cweid": "1395",
 					"wascid": "-1",
-					"sourceid": "2102"
+					"sourceid": "2365"
 				},
 				{
 					"pluginid": "90022",
@@ -769,17 +869,7 @@
 					"desc": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
 					"instances":[ 
 						{
-							"id": "246",
-							"uri": "https://interop.esante.gouv.fr/FhirValidator-ejb/ModelBasedValidationWSService/ModelBasedValidationWS?wsdl.",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/FhirValidator-ejb\/ModelBasedValidationWSService\/ModelBasedValidationWS (wsdl.)",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "HTTP/1.1 500 Internal Server Error",
-							"otherinfo": ""
-						},
-						{
-							"id": "205",
+							"id": "197",
 							"uri": "https://interop.esante.gouv.fr/gazelle/_next/image?q=75&url=https%3A%2F%2Fans-prod-1.kereval.cloud%2Flogo%2Fans_logo.png&w=256",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle\/_next\/image (q,url,w)",
 							"method": "GET",
@@ -789,14 +879,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "1",
 					"systemic": false,
 					"solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
 					"otherinfo": "",
 					"reference": "",
 					"cweid": "550",
 					"wascid": "13",
-					"sourceid": "1506"
+					"sourceid": "1188"
 				},
 				{
 					"pluginid": "10055",
@@ -809,7 +899,7 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "247",
+							"id": "253",
 							"uri": "https://interop.esante.gouv.fr/SVSSimulator/home.seam",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/SVSSimulator\/home.seam",
 							"method": "GET",
@@ -817,26 +907,16 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": "The header X-Content-Security-Policy was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
-						},
-						{
-							"id": "319",
-							"uri": "https://interop.esante.gouv.fr/SVSSimulator/sut/sutConfiguration.seam",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/SVSSimulator\/sut\/sutConfiguration.seam",
-							"method": "GET",
-							"param": "X-Content-Security-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "The header X-Content-Security-Policy was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
 						}
 					],
-					"count": "2",
+					"count": "1",
 					"systemic": false,
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>The header X-Content-Security-Policy was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses.</p>",
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1834"
+					"sourceid": "1899"
 				},
 				{
 					"pluginid": "10055",
@@ -849,7 +929,7 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "248",
+							"id": "254",
 							"uri": "https://interop.esante.gouv.fr/SVSSimulator/home.seam",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/SVSSimulator\/home.seam",
 							"method": "GET",
@@ -857,26 +937,16 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": "The header X-WebKit-CSP was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
-						},
-						{
-							"id": "320",
-							"uri": "https://interop.esante.gouv.fr/SVSSimulator/sut/sutConfiguration.seam",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/SVSSimulator\/sut\/sutConfiguration.seam",
-							"method": "GET",
-							"param": "X-WebKit-CSP",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "The header X-WebKit-CSP was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
 						}
 					],
-					"count": "2",
+					"count": "1",
 					"systemic": false,
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>The header X-WebKit-CSP was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses.</p>",
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1834"
+					"sourceid": "1899"
 				},
 				{
 					"pluginid": "10054",
@@ -889,7 +959,7 @@
 					"desc": "<p>A cookie has been set without the SameSite attribute, which means that the cookie can be sent as a result of a 'cross-site' request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks.</p>",
 					"instances":[ 
 						{
-							"id": "100",
+							"id": "92",
 							"uri": "https://interop.esante.gouv.fr/evs/xml/validator.seam?standard=64",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/evs\/xml\/validator.seam (standard)",
 							"method": "GET",
@@ -899,7 +969,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "98",
+							"id": "89",
 							"uri": "https://interop.esante.gouv.fr/evs/xml/validator.seam?standard=64",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/evs\/xml\/validator.seam (standard)",
 							"method": "GET",
@@ -909,7 +979,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "182",
+							"id": "151",
 							"uri": "https://interop.esante.gouv.fr/gazelle-webservice-tester/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-webservice-tester\/",
 							"method": "GET",
@@ -919,17 +989,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "181",
+							"id": "153",
 							"uri": "https://interop.esante.gouv.fr/hl7v2-simulators/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/hl7v2-simulators\/",
 							"method": "GET",
-							"param": "pf.initialredirect-4c8ca",
+							"param": "pf.initialredirect-0cf77",
 							"attack": "",
-							"evidence": "Set-Cookie: pf.initialredirect-4c8ca",
+							"evidence": "Set-Cookie: pf.initialredirect-0cf77",
 							"otherinfo": ""
 						},
 						{
-							"id": "156",
+							"id": "148",
 							"uri": "https://interop.esante.gouv.fr/tm/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/tm\/",
 							"method": "GET",
@@ -946,7 +1016,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cookie-same-site</p>",
 					"cweid": "1275",
 					"wascid": "13",
-					"sourceid": "186"
+					"sourceid": "185"
 				},
 				{
 					"pluginid": "10017",
@@ -959,7 +1029,7 @@
 					"desc": "<p>The page includes one or more script files from a third-party domain.</p>",
 					"instances":[ 
 						{
-							"id": "92",
+							"id": "61",
 							"uri": "https://interop.esante.gouv.fr/datamatrixins/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/datamatrixins\/",
 							"method": "GET",
@@ -969,7 +1039,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "66",
+							"id": "68",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
 							"method": "GET",
@@ -979,7 +1049,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "67",
+							"id": "69",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
 							"method": "GET",
@@ -989,7 +1059,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "64",
+							"id": "66",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
 							"method": "GET",
@@ -999,7 +1069,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "65",
+							"id": "67",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
 							"method": "GET",
@@ -1016,7 +1086,7 @@
 					"reference": "",
 					"cweid": "829",
 					"wascid": "15",
-					"sourceid": "156"
+					"sourceid": "88"
 				},
 				{
 					"pluginid": "90004",
@@ -1029,7 +1099,7 @@
 					"desc": "<p>Cross-Origin-Embedder-Policy header is a response header that prevents a document from loading any cross-origin resources that don't explicitly grant the document permission (using CORP or CORS).</p>",
 					"instances":[ 
 						{
-							"id": "18",
+							"id": "24",
 							"uri": "https://interop.esante.gouv.fr",
 							"nodeName": "https:\/\/interop.esante.gouv.fr",
 							"method": "GET",
@@ -1039,9 +1109,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "50",
-							"uri": "https://interop.esante.gouv.fr/",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/",
+							"id": "80",
+							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
 							"method": "GET",
 							"param": "Cross-Origin-Embedder-Policy",
 							"attack": "",
@@ -1049,9 +1119,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "55",
-							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
+							"id": "56",
+							"uri": "https://interop.esante.gouv.fr/rsp-generator-ui",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/rsp-generator-ui",
 							"method": "GET",
 							"param": "Cross-Origin-Embedder-Policy",
 							"attack": "",
@@ -1066,7 +1136,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy</p>",
 					"cweid": "693",
 					"wascid": "14",
-					"sourceid": "9"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90004",
@@ -1079,7 +1149,7 @@
 					"desc": "<p>Cross-Origin-Opener-Policy header is a response header that allows a site to control if others included documents share the same browsing context. Sharing the same browsing context with untrusted documents might lead to data leak.</p>",
 					"instances":[ 
 						{
-							"id": "20",
+							"id": "25",
 							"uri": "https://interop.esante.gouv.fr",
 							"nodeName": "https:\/\/interop.esante.gouv.fr",
 							"method": "GET",
@@ -1089,9 +1159,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "51",
-							"uri": "https://interop.esante.gouv.fr/",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/",
+							"id": "81",
+							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
 							"attack": "",
@@ -1099,9 +1169,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "56",
-							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
+							"id": "57",
+							"uri": "https://interop.esante.gouv.fr/rsp-generator-ui",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/rsp-generator-ui",
 							"method": "GET",
 							"param": "Cross-Origin-Opener-Policy",
 							"attack": "",
@@ -1116,7 +1186,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Opener-Policy</p>",
 					"cweid": "693",
 					"wascid": "14",
-					"sourceid": "9"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90004",
@@ -1129,7 +1199,7 @@
 					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
 					"instances":[ 
 						{
-							"id": "17",
+							"id": "22",
 							"uri": "https://interop.esante.gouv.fr",
 							"nodeName": "https:\/\/interop.esante.gouv.fr",
 							"method": "GET",
@@ -1139,17 +1209,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "49",
-							"uri": "https://interop.esante.gouv.fr/",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/",
-							"method": "GET",
-							"param": "Cross-Origin-Resource-Policy",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "54",
+							"id": "79",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
 							"method": "GET",
@@ -1159,9 +1219,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "3",
-							"uri": "https://interop.esante.gouv.fr/robots.txt",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/robots.txt",
+							"id": "55",
+							"uri": "https://interop.esante.gouv.fr/rsp-generator-ui",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/rsp-generator-ui",
 							"method": "GET",
 							"param": "Cross-Origin-Resource-Policy",
 							"attack": "",
@@ -1169,14 +1229,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"systemic": false,
 					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy</p>",
 					"cweid": "693",
 					"wascid": "14",
-					"sourceid": "9"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10110",
@@ -1189,9 +1249,9 @@
 					"desc": "<p>A dangerous JS function seems to be in use that would leave the site vulnerable.</p>",
 					"instances":[ 
 						{
-							"id": "337",
-							"uri": "https://interop.esante.gouv.fr/GazelleFhirValidator/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.5.9.Final/PackedCompressed/packed/packed.js",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/GazelleFhirValidator\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.5.9.Final\/PackedCompressed\/packed\/packed.js",
+							"id": "351",
+							"uri": "https://interop.esante.gouv.fr/AssertionManagerGui/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/packed/packed.js",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/AssertionManagerGui\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/packed\/packed.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1199,7 +1259,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "328",
+							"id": "350",
+							"uri": "https://interop.esante.gouv.fr/GazelleHL7Validator/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/packed/packed.js",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/GazelleHL7Validator\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/packed\/packed.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval(",
+							"otherinfo": ""
+						},
+						{
+							"id": "343",
 							"uri": "https://interop.esante.gouv.fr/SVSSimulator/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/packed/packed.js",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/SVSSimulator\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/packed\/packed.js",
 							"method": "GET",
@@ -1209,7 +1279,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "347",
+							"id": "354",
 							"uri": "https://interop.esante.gouv.fr/SchematronValidator/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/packed/packed.js",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/SchematronValidator\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/packed\/packed.js",
 							"method": "GET",
@@ -1219,7 +1289,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "313",
+							"id": "337",
 							"uri": "https://interop.esante.gouv.fr/evs/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/packed/packed.js",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/evs\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/packed\/packed.js",
 							"method": "GET",
@@ -1227,16 +1297,36 @@
 							"attack": "",
 							"evidence": "eval(",
 							"otherinfo": ""
+						},
+						{
+							"id": "326",
+							"uri": "https://interop.esante.gouv.fr/gazelle-webservice-tester/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/packed/packed.js",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-webservice-tester\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/packed\/packed.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval(",
+							"otherinfo": ""
+						},
+						{
+							"id": "335",
+							"uri": "https://interop.esante.gouv.fr/tm/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/packed/packed.js",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/tm\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/packed\/packed.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval(",
+							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "7",
 					"systemic": false,
 					"solution": "<p>See the references for security advice on the use of these functions.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://v17.angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "2118"
+					"sourceid": "2363"
 				},
 				{
 					"pluginid": "10009",
@@ -1249,7 +1339,7 @@
 					"desc": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
 					"instances":[ 
 						{
-							"id": "230",
+							"id": "238",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/pixelmed_and_dicom3tools.md",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/pixelmed_and_dicom3tools.md",
 							"method": "GET",
@@ -1259,17 +1349,7 @@
 							"otherinfo": "There is a chance that the highlight in the finding is on a value in the headers, versus the actual matched string in the response body."
 						},
 						{
-							"id": "229",
-							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/Gazelle-SSO",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/Gazelle-SSO",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Apache/2.4.65",
-							"otherinfo": "There is a chance that the highlight in the finding is on a value in the headers, versus the actual matched string in the response body."
-						},
-						{
-							"id": "204",
+							"id": "199",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/Gazelle-STS/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/Gazelle-STS\/user.html",
 							"method": "GET",
@@ -1279,7 +1359,7 @@
 							"otherinfo": "There is a chance that the highlight in the finding is on a value in the headers, versus the actual matched string in the response body."
 						},
 						{
-							"id": "201",
+							"id": "194",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/Patient-Manager/iti30-init",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/Patient-Manager\/iti30-init",
 							"method": "GET",
@@ -1289,9 +1369,19 @@
 							"otherinfo": "There is a chance that the highlight in the finding is on a value in the headers, versus the actual matched string in the response body."
 						},
 						{
-							"id": "86",
+							"id": "43",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/gazelle-webservice-tester/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/gazelle-webservice-tester\/user.html",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.65",
+							"otherinfo": "There is a chance that the highlight in the finding is on a value in the headers, versus the actual matched string in the response body."
+						},
+						{
+							"id": "231",
+							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/index-default.html",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/index-default.html",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1306,7 +1396,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "1430"
+					"sourceid": "1537"
 				},
 				{
 					"pluginid": "10023",
@@ -1336,7 +1426,7 @@
 					"reference": "",
 					"cweid": "1295",
 					"wascid": "13",
-					"sourceid": "624"
+					"sourceid": "701"
 				},
 				{
 					"pluginid": "10063",
@@ -1349,7 +1439,7 @@
 					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
 					"instances":[ 
 						{
-							"id": "10",
+							"id": "20",
 							"uri": "https://interop.esante.gouv.fr",
 							"nodeName": "https:\/\/interop.esante.gouv.fr",
 							"method": "GET",
@@ -1359,17 +1449,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "48",
-							"uri": "https://interop.esante.gouv.fr/",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "53",
+							"id": "78",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
 							"method": "GET",
@@ -1379,7 +1459,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "79",
+							"id": "47",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/gazelle-webservice-tester/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/gazelle-webservice-tester\/user.html",
 							"method": "GET",
@@ -1389,7 +1469,17 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "2",
+							"id": "54",
+							"uri": "https://interop.esante.gouv.fr/rsp-generator-ui",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/rsp-generator-ui",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "4",
 							"uri": "https://interop.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -1419,7 +1509,7 @@
 					"desc": "<p>A private IP (such as 10.x.x.x, 172.x.x.x, 192.168.x.x) or an Amazon EC2 private hostname (for example, ip-10-0-56-78) has been found in the HTTP response body. This information might be helpful for further attacks targeting internal systems.</p>",
 					"instances":[ 
 						{
-							"id": "161",
+							"id": "167",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/Proxy/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/Proxy\/user.html",
 							"method": "GET",
@@ -1429,7 +1519,7 @@
 							"otherinfo": "192.168.1.100\n"
 						},
 						{
-							"id": "164",
+							"id": "166",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/Test-Management/admin.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/Test-Management\/admin.html",
 							"method": "GET",
@@ -1446,7 +1536,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc1918</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "701"
+					"sourceid": "842"
 				},
 				{
 					"pluginid": "10037",
@@ -1459,39 +1549,9 @@
 					"desc": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
 					"instances":[ 
 						{
-							"id": "326",
-							"uri": "https://interop.esante.gouv.fr/GazelleFhirValidator/favicon.ico",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/GazelleFhirValidator\/favicon.ico",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "X-Powered-By: Undertow/1",
-							"otherinfo": ""
-						},
-						{
-							"id": "327",
-							"uri": "https://interop.esante.gouv.fr/GazelleFhirValidator/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.5.9.Final/PackedCompressed/gazelleBlueSky/packed/packed.css",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/GazelleFhirValidator\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.5.9.Final\/PackedCompressed\/gazelleBlueSky\/packed\/packed.css",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "X-Powered-By: Undertow/1",
-							"otherinfo": ""
-						},
-						{
-							"id": "325",
-							"uri": "https://interop.esante.gouv.fr/SVSSimulator/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/jquery.js",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/SVSSimulator\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/jquery.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "X-Powered-By: JSF/2.0",
-							"otherinfo": ""
-						},
-						{
-							"id": "323",
-							"uri": "https://interop.esante.gouv.fr/SVSSimulator/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/plain/packed/packed.css",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/SVSSimulator\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/plain\/packed\/packed.css",
+							"id": "331",
+							"uri": "https://interop.esante.gouv.fr/evs/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/plain/packed/packed.css",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/evs\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/plain\/packed\/packed.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1499,9 +1559,39 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "318",
-							"uri": "https://interop.esante.gouv.fr/evs/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/plain/packed/packed.css",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/evs\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/plain\/packed\/packed.css",
+							"id": "324",
+							"uri": "https://interop.esante.gouv.fr/gazelle-webservice-tester/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/plain/packed/packed.css",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-webservice-tester\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/plain\/packed\/packed.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: Next.js",
+							"otherinfo": ""
+						},
+						{
+							"id": "330",
+							"uri": "https://interop.esante.gouv.fr/tm/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/jquery.js",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/tm\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/jquery.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: JSF/2.0",
+							"otherinfo": ""
+						},
+						{
+							"id": "334",
+							"uri": "https://interop.esante.gouv.fr/tm/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/packed/packed.js",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/tm\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/packed\/packed.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: JSF/2.0",
+							"otherinfo": ""
+						},
+						{
+							"id": "327",
+							"uri": "https://interop.esante.gouv.fr/tm/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/plain/packed/packed.css",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/tm\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/plain\/packed\/packed.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1516,7 +1606,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/shhh-dont-let-your-response-headers/</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "2064"
+					"sourceid": "2186"
 				},
 				{
 					"pluginid": "10036",
@@ -1529,7 +1619,7 @@
 					"desc": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
 					"instances":[ 
 						{
-							"id": "169",
+							"id": "172",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/static/css/gzl-table.css",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/static\/css\/gzl-table.css",
 							"method": "GET",
@@ -1539,7 +1629,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "168",
+							"id": "174",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/static/css/highlight/magula.css",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/static\/css\/highlight\/magula.css",
 							"method": "GET",
@@ -1549,7 +1639,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "167",
+							"id": "173",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/static/css/sidebar-menu.css",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/static\/css\/sidebar-menu.css",
 							"method": "GET",
@@ -1559,7 +1649,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "166",
+							"id": "171",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/static/img/favicon.ico",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/static\/img\/favicon.ico",
 							"method": "GET",
@@ -1569,7 +1659,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "170",
+							"id": "176",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/static/js/applicationColor.js",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/static\/js\/applicationColor.js",
 							"method": "GET",
@@ -1586,7 +1676,7 @@
 					"reference": "<p>https://httpd.apache.org/docs/current/mod/core.html#servertokens</p><p>https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff648552(v=pandp.10)</p><p>https://www.troyhunt.com/shhh-dont-let-your-response-headers/</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "913"
+					"sourceid": "949"
 				},
 				{
 					"pluginid": "10035",
@@ -1599,7 +1689,7 @@
 					"desc": "<p>HTTP Strict Transport Security (HSTS) is a web security policy mechanism whereby a web server declares that complying user agents (such as a web browser) are to interact with it using only secure HTTPS connections (i.e. HTTP layered over TLS/SSL). HSTS is an IETF standards track protocol and is specified in RFC 6797.</p>",
 					"instances":[ 
 						{
-							"id": "192",
+							"id": "201",
 							"uri": "https://interop.esante.gouv.fr/PatientManager/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/PatientManager\/",
 							"method": "GET",
@@ -1609,7 +1699,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "208",
+							"id": "203",
 							"uri": "https://interop.esante.gouv.fr/PatientManager/rest/automaton/RunAutomaton?graphmlID=GRAPHID&systemundertest=SUT_NAME",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/PatientManager\/rest\/automaton\/RunAutomaton (graphmlID,systemundertest)",
 							"method": "GET",
@@ -1619,7 +1709,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "210",
+							"id": "205",
 							"uri": "https://interop.esante.gouv.fr/PatientManager/rest/automaton/RunAutomatonWithExistingPatient?graphmlID=GRAPHID&patientID=PATIENT_ID_IN_DB&systemundertest=SUT_NAME",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/PatientManager\/rest\/automaton\/RunAutomatonWithExistingPatient (graphmlID,patientID,systemundertest)",
 							"method": "GET",
@@ -1629,9 +1719,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "203",
-							"uri": "https://interop.esante.gouv.fr/PatientManager/rest/automaton/listGraphs",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/PatientManager\/rest\/automaton\/listGraphs",
+							"id": "207",
+							"uri": "https://interop.esante.gouv.fr/PatientManager/rest/automaton/StatusExecution?executionID=ID_RETURNS_IN_RUNAUTOMATON",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/PatientManager\/rest\/automaton\/StatusExecution (executionID)",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1639,9 +1729,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "212",
-							"uri": "https://interop.esante.gouv.fr/PatientManager/rest/hl7Messages",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/PatientManager\/rest\/hl7Messages",
+							"id": "196",
+							"uri": "https://interop.esante.gouv.fr/PatientManager/rest/automaton/listGraphs",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/PatientManager\/rest\/automaton\/listGraphs",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1656,7 +1746,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "1116"
+					"sourceid": "1231"
 				},
 				{
 					"pluginid": "10096",
@@ -1669,7 +1759,7 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server. - Unix</p>",
 					"instances":[ 
 						{
-							"id": "256",
+							"id": "258",
 							"uri": "https://interop.esante.gouv.fr/api/swagger-ui-standalone-preset.js",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/api\/swagger-ui-standalone-preset.js",
 							"method": "GET",
@@ -1679,7 +1769,7 @@
 							"otherinfo": "1508970993, which evaluates to: 2017-10-25 22:36:33."
 						},
 						{
-							"id": "258",
+							"id": "260",
 							"uri": "https://interop.esante.gouv.fr/api/swagger-ui-standalone-preset.js",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/api\/swagger-ui-standalone-preset.js",
 							"method": "GET",
@@ -1689,7 +1779,7 @@
 							"otherinfo": "1555081692, which evaluates to: 2019-04-12 15:08:12."
 						},
 						{
-							"id": "255",
+							"id": "257",
 							"uri": "https://interop.esante.gouv.fr/api/swagger-ui-standalone-preset.js",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/api\/swagger-ui-standalone-preset.js",
 							"method": "GET",
@@ -1699,7 +1789,7 @@
 							"otherinfo": "1899447441, which evaluates to: 2030-03-11 08:17:21."
 						},
 						{
-							"id": "257",
+							"id": "259",
 							"uri": "https://interop.esante.gouv.fr/api/swagger-ui-standalone-preset.js",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/api\/swagger-ui-standalone-preset.js",
 							"method": "GET",
@@ -1709,7 +1799,7 @@
 							"otherinfo": "1925078388, which evaluates to: 2031-01-01 23:59:48."
 						},
 						{
-							"id": "196",
+							"id": "161",
 							"uri": "https://interop.esante.gouv.fr/rsp-generator-ui/_next/static/chunks/c1eb7a12-2288b9c1dd79a24d.js",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/rsp-generator-ui\/_next\/static\/chunks\/c1eb7a12-2288b9c1dd79a24d.js",
 							"method": "GET",
@@ -1726,7 +1816,7 @@
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "1878"
+					"sourceid": "1974"
 				},
 				{
 					"pluginid": "10021",
@@ -1739,7 +1829,7 @@
 					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
 					"instances":[ 
 						{
-							"id": "43",
+							"id": "16",
 							"uri": "https://interop.esante.gouv.fr",
 							"nodeName": "https:\/\/interop.esante.gouv.fr",
 							"method": "GET",
@@ -1749,17 +1839,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "68",
-							"uri": "https://interop.esante.gouv.fr/",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"id": "96",
+							"id": "85",
 							"uri": "https://interop.esante.gouv.fr/datamatrixins/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/datamatrixins\/",
 							"method": "GET",
@@ -1769,7 +1849,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "77",
+							"id": "76",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
 							"method": "GET",
@@ -1779,9 +1859,19 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"id": "26",
+							"id": "2",
 							"uri": "https://interop.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/robots.txt",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "51",
+							"uri": "https://interop.esante.gouv.fr/rsp-generator-ui",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/rsp-generator-ui",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1796,7 +1886,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10094",
@@ -1809,134 +1899,134 @@
 					"desc": "<p>Base64 encoded data was disclosed by the application/web server. Note: in the interests of performance not all base64 strings in the response were analyzed individually, the entire response should be looked at by the analyst/security team/developer(s).</p>",
 					"instances":[ 
 						{
-							"id": "29",
+							"id": "28",
 							"uri": "https://interop.esante.gouv.fr",
 							"nodeName": "https:\/\/interop.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "WFRfr9r2gFp5gsbFPTveHAO7ZINyYZUnbdEtSLmfoFrF2BLgAZNspg==",
-							"otherinfo": "XT_\uFFFD\uFFFD\uFFFD\uFFFDZy\uFFFD\uFFFD\uFFFD=;\uFFFD\\x001c\\x0003\uFFFDd\uFFFDra\uFFFD'm\uFFFD-H\uFFFD\uFFFD\uFFFDZ\uFFFD\uFFFD\\x0012\uFFFD\\x0001\uFFFDl\uFFFD"
+							"evidence": "5qYsCtEx4D1o5KCnS2TbiPu01gFwABwSFT3TY6Cmqqykdv6lV8Phxg==",
+							"otherinfo": "\uFFFD,\n\uFFFD1\uFFFD=h\u4827Kd\u06C8\uFFFD\uFFFD\uFFFD\\x0001p\\x0000\\x001c\\x0012\\x0015=\uFFFDc\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDv\uFFFD\uFFFDW\uFFFD\uFFFD\uFFFD"
 						},
 						{
-							"id": "27",
+							"id": "33",
 							"uri": "https://interop.esante.gouv.fr",
 							"nodeName": "https:\/\/interop.esante.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "kw3DxrfoaPf1mtmeKRh8EX_Wy11bYMvh376fC5L-DW84p8_NDwxJBw==",
-							"otherinfo": "\uFFFD\r\uFFFD\u01B7\uFFFDh\uFFFD\uFFFD\uFFFD\u065E)\\x0018|\\x0011\uFFFD\uFFFD][`\uFFFD\uFFFD\u07FE\uFFFD\\x000b\uFFFD\uFFFD\ro8\uFFFD\uFFFD\uFFFD\\x000f\\x000cI\\x0007"
+							"evidence": "RpEX2ZLEgahfWM_BOnbGhpro3FnzbrRlP3KTGq_1RAXeMn5hGkoKnA==",
+							"otherinfo": "F\uFFFD\\x0017\u0652\u0101\uFFFD_X\uFFFD\uFFFD:v\u0186\uFFFD\uFFFD\uFFFDY\uFFFDn\uFFFDe?r\uFFFD\\x001a\uFFFD\uFFFDD\\x0005\uFFFD2~a\\x001aJ\n\uFFFD"
 						},
 						{
-							"id": "57",
-							"uri": "https://interop.esante.gouv.fr/",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/",
+							"id": "91",
+							"uri": "https://interop.esante.gouv.fr/api",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/api",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "tUrgvZEWlPM5H3fqcuqFZN-0PKe9ykWXfrac_NZBvs5NpmjQQO-D2g==",
-							"otherinfo": "\uFFFDJ\u0F51\\x0016\uFFFD\uFFFD9\\x001fw\uFFFDr\uFFFDd\u07F4<\uFFFD\uFFFD\uFFFDE\uFFFD~\uFFFD\uFFFD\uFFFD\uFFFDA\uFFFD\uFFFDM\uFFFDh\uFFFD@\uFFFD\uFFFD"
+							"evidence": "VfD-KtoHknwk22zJCHZaS5jLg6tAd2Q7UCjUoAKtfD5IaHYoTGEjJA==",
+							"otherinfo": "U\uFFFD\uFFFD*\uFFFD\\x0007\uFFFD|$\uFFFDl\uFFFD\\x0008vZK\uFFFD\u02C3\uFFFD@wd;P(\u0520\\x0002\uFFFD|>Hhv(La#$"
 						},
 						{
-							"id": "89",
+							"id": "88",
 							"uri": "https://interop.esante.gouv.fr/datamatrixins/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/datamatrixins\/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "U4VvmmGbvgtFluuSKypP3TtVjMXs91jgTDnqZBXciHSqqmQ1MVWfYg==",
-							"otherinfo": "S\uFFFDo\uFFFDa\uFFFD\uFFFD\\x000bE\uFFFD\uFFFD+*O\uFFFD;U\uFFFD\uFFFD\uFFFD\uFFFDX\uFFFDL9\uFFFDd\\x0015\u0708t\uFFFD\uFFFDd51U\uFFFDb"
+							"evidence": "_1sz9nW8UDPz3m5JV7wUfpYPYknkwcgSe_Z9PLE83mbu9gjANkrLrg==",
+							"otherinfo": "\uFFFD[3\uFFFDu\uFFFDP3\uFFFD\uFFFDnIW\uFFFD\\x0014~\uFFFD\\x000fbI\uFFFD\uFFFD\uFFFD\\x0012{\uFFFD}<\uFFFD<\uFFFDf\uFFFD\uFFFD\\x0008\uFFFD6J\u02EE"
 						},
 						{
-							"id": "46",
+							"id": "39",
 							"uri": "https://interop.esante.gouv.fr/evs",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/evs",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "3rkAI1PIl1dyQeHyzCVAicA44clHZ7vvP6Zvbm8O5cl0hHvIf7_Ytw==",
-							"otherinfo": "\u07B9\\x0000#S\u0217WrA\uFFFD\uFFFD\uFFFD%@\uFFFD\uFFFD8\uFFFD\uFFFDGg\uFFFD\uFFFD?\uFFFDono\\x000e\uFFFD\uFFFDt\uFFFD{\uFFFD\uFFFD\u0637"
+							"evidence": "GfVPEFeN-s9E-DyRCkdPriPH0mHwhRIxAZxW9w0jU1YA-bxYk62BpQ==",
+							"otherinfo": "\\x0019\uFFFDO\\x0010W\uFFFD\uFFFD\uFFFDD\uFFFD<\uFFFD\nGO\uFFFD#\uFFFD\uFFFDa\uFFFD\uFFFD\\x00121\\x0001\uFFFDV\uFFFD\r#SV\\x0000\uFFFD\uFFFDX\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
-							"id": "60",
-							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
+							"id": "94",
+							"uri": "https://interop.esante.gouv.fr/evs/xml/validator.seam?standard=64",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/evs\/xml\/validator.seam (standard)",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "_0ktF-2PDE5iSvmzGk18xCqyZ1aVAe2AwdtQRoj_FjT3lDnYkR8kOw==",
-							"otherinfo": "\uFFFDI-\\x0017\uFFFD\\x000cNbJ\uFFFD\uFFFD\\x001aM|\uFFFD*\uFFFDgV\uFFFD\\x0001\uFFFD\uFFFD\uFFFDPF\uFFFD\uFFFD\\x00164\uFFFD\uFFFD9\u0611\\x001f$;"
+							"evidence": "8gW20ppehar1kYn06P2QEQcgXEM7Dk0B4HIW13awaYYK5vNqKzhjfA==",
+							"otherinfo": "\uFFFD\\x0005\uFFFD\u049A^\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0011\\x0007 \\C;\\x000eM\\x0001\uFFFDr\\x0016\uFFFDv\uFFFDi\uFFFD\n\uFFFD\uFFFDj+8c|"
 						},
 						{
-							"id": "82",
+							"id": "48",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/gazelle-webservice-tester/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/gazelle-webservice-tester\/user.html",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "8l3_gk-uZYOcESYWpxCZS5YKC6e1DcZXBFp08haDXsXpLAsABrRVbg==",
-							"otherinfo": "\uFFFD]\uFFFD\uFFFDO\uFFFDe\uFFFD\uFFFD\\x0011&\\x0016\uFFFD\\x0010\uFFFDK\uFFFD\n\\x000b\uFFFD\uFFFD\r\uFFFDW\\x0004Zt\uFFFD\\x0016\uFFFD^\uFFFD\uFFFD,\\x000b\\x0000\\x0006\uFFFDUn"
+							"evidence": "ZydXtyrawdlveAqei1y9e1nHQmunVyOU7pJFtQ2lZqtwSheSi8DdkQ==",
+							"otherinfo": "g'W\uFFFD*\uFFFD\uFFFD\uFFFDox\n\uFFFD\uFFFD\\\uFFFD{Y\uFFFDBk\uFFFDW#\uFFFD\uFFFDE\uFFFD\r\uFFFDf\uFFFDpJ\\x0017\uFFFD\uFFFD\uFFFD\u0751"
 						},
 						{
-							"id": "81",
+							"id": "41",
 							"uri": "https://interop.esante.gouv.fr/gazelle-webservice-tester",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-webservice-tester",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "07iq_-FGFbtiok65Yns9aR1oZJh2WkUyOzAuy_3ntCOBPE53jlWR5A==",
-							"otherinfo": "\u04F8\uFFFD\uFFFD\uFFFDF\\x0015\uFFFDb\uFFFDN\uFFFDb{=i\\x001dhd\uFFFDvZE2;0.\uFFFD\uFFFD\uFFFD#\uFFFD<Nw\uFFFDU\uFFFD\uFFFD"
+							"evidence": "spyEqmBB4SJrqVDF0WyBMz_LFuJ3VIV_LDfNrrKEAWuWqPOsh-9XjA==",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD`A\uFFFD\"k\uFFFDP\uFFFD\uFFFDl\uFFFD3?\uFFFD\\x0016\uFFFDwT\uFFFD,7\u036E\uFFFD\uFFFD\\x0001k\uFFFD\uFFFD\uFFFD\uFFFDW\uFFFD"
 						},
 						{
-							"id": "84",
+							"id": "53",
 							"uri": "https://interop.esante.gouv.fr/hl7v2-simulators",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/hl7v2-simulators",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "nsGJ32qh006O-zSt1zoCG40kL4kSGuUmaZabzjv5TWWbi8lcmyspRw==",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFDj\uFFFD\uFFFDN\uFFFD\uFFFD4\uFFFD\uFFFD:\\x0002\\x001b\uFFFD$/\uFFFD\\x0012\\x001a\uFFFD&i\uFFFD\uFFFD\uFFFD;\uFFFDMe\uFFFD\uFFFD\uFFFD\\\uFFFD+)G"
+							"evidence": "5NT9ZT9mgaMA-u0z-n57ph5UEWEAnCCwzV0HMf-VuzBEHXz18RsQow==",
+							"otherinfo": "\uFFFD\uFFFD\uFFFDe?f\uFFFD\uFFFD\\x0000\uFFFD\uFFFD3\uFFFD~{\uFFFD\\x001eT\\x0011a\\x0000\uFFFD \uFFFD\uFFFD]\\x00071\uFFFD\uFFFD\uFFFD0D\\x001d|\uFFFD\uFFFD\\x001b\\x0010\uFFFD"
 						},
 						{
-							"id": "9",
+							"id": "83",
 							"uri": "https://interop.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "TGttejm91BpvJ2TTmQadQXfB0PLYY2BshyEE8yCMIGFBWjzUwNmbGA==",
-							"otherinfo": "Lkmz9\uFFFD\uFFFD\\x001ao'd\u04D9\\x0006\uFFFDAw\uFFFD\uFFFD\uFFFD\uFFFDc`l\uFFFD!\\x0004\uFFFD \uFFFD aAZ<\uFFFD\uFFFD\u065B\\x0018"
+							"evidence": "U7VUdbxi9uPTQv8FZcSAbztOeJZM-vDro4FuTRst1Ix34ba3X4kpRw==",
+							"otherinfo": "S\uFFFDTu\uFFFDb\uFFFD\uFFFD\uFFFDB\uFFFD\\x0005e\u0100o;Nx\uFFFDL\uFFFD\uFFFD\uB8C1nM\\x001b-\u050Cw\u1DB7_\uFFFD)G"
 						},
 						{
-							"id": "5",
+							"id": "58",
+							"uri": "https://interop.esante.gouv.fr/rsp-generator-ui",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/rsp-generator-ui",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "heYMW10a5ZsbjflHqLgzx0wYnw0wqLi1kxOOX0UNXYGoPpVlHsSGow==",
+							"otherinfo": "\uFFFD\uFFFD\\x000c[]\\x001a\uFFFD\\x001b\uFFFD\uFFFDG\uFFFD\uFFFD3\uFFFDL\\x0018\uFFFD\r0\uFFFD\uFFFD\uFFFD\uFFFD\\x0013\uFFFD_E\r]\uFFFD\uFFFD>\uFFFDe\\x001e\u0106\uFFFD"
+						},
+						{
+							"id": "9",
 							"uri": "https://interop.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "W1QYPKOwGRrCVqd83lJON1cx6FHi8GfsSnMvp3xxSP_I6rK6Yc0DmQ==",
-							"otherinfo": "[T\\x0018<\uFFFD\uFFFD\\x0019\\x001a\uFFFDV\uFFFD|\uFFFDRN7W1\uFFFDQ\uFFFD\uFFFDg\uFFFDJs/\uFFFD|qH\uFFFD\uFFFD\uACBAa\uFFFD\\x0003\uFFFD"
-						},
-						{
-							"id": "70",
-							"uri": "https://interop.esante.gouv.fr/tm",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/tm",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "ygcEexD94PqHu8FR3aOrOU5SgTODH0PAalf-b2D4v6EjCCsE9y6yGQ==",
-							"otherinfo": "\uFFFD\\x0007\\x0004{\\x0010\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDQ\u0763\uFFFD9NR\uFFFD3\uFFFD\\x001fC\uFFFDjW\uFFFDo`\uFFFD\uFFFD\uFFFD#\\x0008+\\x0004\uFFFD.\uFFFD\\x0019"
+							"evidence": "FGsMq5ikFlHLsDW9Tey-9AQVcdvVCbBMcY5pl-jeHYxYLWMTxqCBGw==",
+							"otherinfo": "\\x0014k\\x000c\uFFFD\uFFFD\uFFFD\\x0016Q\u02F05\uFFFDM\uFFFD\uFFFD\\x0004\\x0015q\uFFFD\uFFFD\t\uFFFDLq\uFFFDi\uFFFD\uFFFD\uFFFD\\x001d\uFFFDX-c\\x0013\u01A0\uFFFD\\x001b"
 						}
 					],
 					"count": "12",
 					"systemic": false,
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>XT_\uFFFD\uFFFD\uFFFD\uFFFDZy\uFFFD\uFFFD\uFFFD=;\uFFFD\\x001c\\x0003\uFFFDd\uFFFDra\uFFFD'm\uFFFD-H\uFFFD\uFFFD\uFFFDZ\uFFFD\uFFFD\\x0012\uFFFD\\x0001\uFFFDl\uFFFD</p>",
+					"otherinfo": "<p>\uFFFD,</p><p>\uFFFD1\uFFFD=h\u4827Kd\u06C8\uFFFD\uFFFD\uFFFD\\x0001p\\x0000\\x001c\\x0012\\x0015=\uFFFDc\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDv\uFFFD\uFFFDW\uFFFD\uFFFD\uFFFD</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "319",
 					"wascid": "13",
-					"sourceid": "9"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10019",
@@ -1949,7 +2039,7 @@
 					"desc": "<p>The Content-Type header was either missing or empty.</p>",
 					"instances":[ 
 						{
-							"id": "195",
+							"id": "191",
 							"uri": "https://interop.esante.gouv.fr/gazelle",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle",
 							"method": "GET",
@@ -1959,7 +2049,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "206",
+							"id": "198",
 							"uri": "https://interop.esante.gouv.fr/gazelle/_next/image?q=75&url=https%3A%2F%2Fans-prod-1.kereval.cloud%2Flogo%2Fans_logo.png&w=256",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle\/_next\/image (q,url,w)",
 							"method": "GET",
@@ -1976,7 +2066,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p>",
 					"cweid": "345",
 					"wascid": "12",
-					"sourceid": "1164"
+					"sourceid": "1124"
 				},
 				{
 					"pluginid": "10029",
@@ -1989,24 +2079,24 @@
 					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where cookie parameters might be controlled. This is called a cookie poisoning attack, and becomes exploitable when an attacker can manipulate the cookie in various ways. In some cases this will not be exploitable, however, allowing URL parameters to set cookie values is generally considered a bug.</p>",
 					"instances":[ 
 						{
-							"id": "355",
+							"id": "361",
 							"uri": "https://interop.esante.gouv.fr/SchematronValidator/schematrons/manageSchematrons.seam",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/SchematronValidator\/schematrons\/manageSchematrons.seam ()(globalForm,globalForm:j_idt319,globalForm:pfc:j_idt112,globalForm:schematronListTable:j_idt207,globalForm:schematronListTable:j_idt216,globalForm:schematronListTable:j_idt225,globalForm:schematronListTable:j_idt243,globalForm:schematronListTable:j_idt308,javax.faces.ViewState)",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/SchematronValidator\/schematrons\/manageSchematrons.seam ()(globalForm,globalForm:j_idt320,globalForm:pfc:j_idt112,globalForm:schematronListTable:j_idt207,globalForm:schematronListTable:j_idt216,globalForm:schematronListTable:j_idt225,globalForm:schematronListTable:j_idt243,globalForm:schematronListTable:j_idt308,javax.faces.ViewState)",
 							"method": "POST",
 							"param": "globalForm:schematronListTable:j_idt308",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "An attacker may be able to poison cookie values through POST parameters. To test if this is a more serious issue, you should try resending that request as a GET, with the POST parameter included as a query string parameter. For example: https://nottrusted.com/page?value=maliciousInput.\n\nThis was identified at:\n\nhttps://interop.esante.gouv.fr/SchematronValidator/schematrons/manageSchematrons.seam\n\nUser-input was found in the following cookie:\nNUMBER_OF_ITEMS_PER_PAGE=20; Expires=Tue, 29-Jul-2036 03:28:05 GMT; Path=/;HttpOnly;Secure;HttpOnly;Secure;HttpOnly;Secure\n\nThe user input was:\nglobalForm:schematronListTable:j_idt308=20"
+							"otherinfo": "An attacker may be able to poison cookie values through POST parameters. To test if this is a more serious issue, you should try resending that request as a GET, with the POST parameter included as a query string parameter. For example: https://nottrusted.com/page?value=maliciousInput.\n\nThis was identified at:\n\nhttps://interop.esante.gouv.fr/SchematronValidator/schematrons/manageSchematrons.seam\n\nUser-input was found in the following cookie:\nNUMBER_OF_ITEMS_PER_PAGE=20; Expires=Sat, 23-Aug-2036 15:53:04 GMT; Path=/;HttpOnly;Secure;HttpOnly;Secure;HttpOnly;Secure\n\nThe user input was:\nglobalForm:schematronListTable:j_idt308=20"
 						}
 					],
 					"count": "1",
 					"systemic": false,
 					"solution": "<p>Do not allow user input to control cookie names and values. If some query string parameters must be set in cookie values, be sure to filter out semicolon's that can serve as name/value pair delimiters.</p>",
-					"otherinfo": "<p>An attacker may be able to poison cookie values through POST parameters. To test if this is a more serious issue, you should try resending that request as a GET, with the POST parameter included as a query string parameter. For example: https://nottrusted.com/page?value=maliciousInput.</p><p></p><p>This was identified at:</p><p></p><p>https://interop.esante.gouv.fr/SchematronValidator/schematrons/manageSchematrons.seam</p><p></p><p>User-input was found in the following cookie:</p><p>NUMBER_OF_ITEMS_PER_PAGE=20; Expires=Tue, 29-Jul-2036 03:28:05 GMT; Path=/;HttpOnly;Secure;HttpOnly;Secure;HttpOnly;Secure</p><p></p><p>The user input was:</p><p>globalForm:schematronListTable:j_idt308=20</p>",
+					"otherinfo": "<p>An attacker may be able to poison cookie values through POST parameters. To test if this is a more serious issue, you should try resending that request as a GET, with the POST parameter included as a query string parameter. For example: https://nottrusted.com/page?value=maliciousInput.</p><p></p><p>This was identified at:</p><p></p><p>https://interop.esante.gouv.fr/SchematronValidator/schematrons/manageSchematrons.seam</p><p></p><p>User-input was found in the following cookie:</p><p>NUMBER_OF_ITEMS_PER_PAGE=20; Expires=Sat, 23-Aug-2036 15:53:04 GMT; Path=/;HttpOnly;Secure;HttpOnly;Secure;HttpOnly;Secure</p><p></p><p>The user input was:</p><p>globalForm:schematronListTable:j_idt308=20</p>",
 					"reference": "<p>https://en.wikipedia.org/wiki/HTTP_cookie</p><p>https://cwe.mitre.org/data/definitions/565.html</p>",
 					"cweid": "565",
 					"wascid": "20",
-					"sourceid": "2222"
+					"sourceid": "2460"
 				},
 				{
 					"pluginid": "10027",
@@ -2019,7 +2109,7 @@
 					"desc": "<p>The response appears to contain suspicious comments which may help an attacker.</p>",
 					"instances":[ 
 						{
-							"id": "41",
+							"id": "14",
 							"uri": "https://interop.esante.gouv.fr",
 							"nodeName": "https:\/\/interop.esante.gouv.fr",
 							"method": "GET",
@@ -2029,7 +2119,7 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 5 times, the first in likely comment: \"<!-- En commentaire le temps du d\u00E9comissionnement complet\n<tr>\n  <td><a href=\"/EVSClient\" target=\"_blank\">Archives des validatio\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "63",
+							"id": "147",
 							"uri": "https://interop.esante.gouv.fr/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/",
 							"method": "GET",
@@ -2039,27 +2129,27 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 5 times, the first in likely comment: \"<!-- En commentaire le temps du d\u00E9comissionnement complet\n<tr>\n  <td><a href=\"/EVSClient\" target=\"_blank\">Archives des validatio\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "332",
-							"uri": "https://interop.esante.gouv.fr/GazelleFhirValidator/javax.faces.resource/daterangepicker.js.seam?ln=jscript",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/GazelleFhirValidator\/javax.faces.resource\/daterangepicker.js.seam (ln)",
+							"id": "309",
+							"uri": "https://interop.esante.gouv.fr/AssertionManagerGui/home.seam",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/AssertionManagerGui\/home.seam",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "custom options from user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 2 times, the first in likely comment: \"//custom options from user\", see evidence field for the suspicious comment/snippet."
+							"evidence": "<!-- Login menu from cas-client-ui-v7 --",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"<!-- Login menu from cas-client-ui-v7 -->\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "331",
-							"uri": "https://interop.esante.gouv.fr/GazelleFhirValidator/javax.faces.resource/daterangepicker.js.seam?ln=jscript",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/GazelleFhirValidator\/javax.faces.resource\/daterangepicker.js.seam (ln)",
+							"id": "348",
+							"uri": "https://interop.esante.gouv.fr/GazelleHL7Validator/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/packed/packed.js",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/GazelleHL7Validator\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/packed\/packed.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ute/second from the select boxes to the clicke",
-							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in likely comment: \"// * if the time picker is enabled, apply the hour/minute/second from the select boxes to the clicked dates\", see evidence field for the suspicious comment/snippet."
+							"evidence": "ank.de) for a scope bug fix.\n * Thanks to: ",
+							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected in likely comment: \"/* Copyright (c) 2010 Brandon Aaron (http://brandonaaron.net)\n * Licensed under the MIT License (LICENSE.txt).\n *\n * Thanks to: \", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "253",
+							"id": "255",
 							"uri": "https://interop.esante.gouv.fr/SVSSimulator/home.seam",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/SVSSimulator\/home.seam",
 							"method": "GET",
@@ -2069,7 +2159,7 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in likely comment: \"<!-- Modal to inform user that his session has expired with a possiblity to re log in with CAS   -->\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "333",
+							"id": "341",
 							"uri": "https://interop.esante.gouv.fr/SVSSimulator/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/packed/packed.js",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/SVSSimulator\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/packed\/packed.js",
 							"method": "GET",
@@ -2079,17 +2169,7 @@
 							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected in likely comment: \"/* Copyright (c) 2010 Brandon Aaron (http://brandonaaron.net)\n * Licensed under the MIT License (LICENSE.txt).\n *\n * Thanks to: \", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "322",
-							"uri": "https://interop.esante.gouv.fr/SVSSimulator/sut/sutConfiguration.seam",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/SVSSimulator\/sut\/sutConfiguration.seam",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "!-- Modal to inform user that his session ha",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 2 times, the first in likely comment: \"<!-- Modal to inform user that his session has expired with a possiblity to re log in with CAS   -->\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"id": "312",
+							"id": "310",
 							"uri": "https://interop.esante.gouv.fr/SchematronValidator/home.seam",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/SchematronValidator\/home.seam",
 							"method": "GET",
@@ -2099,17 +2179,7 @@
 							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"<!-- Fragment from cas-client-ui-v7    -->\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "338",
-							"uri": "https://interop.esante.gouv.fr/SchematronValidator/schematrons/manageSchematrons.seam",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/SchematronValidator\/schematrons\/manageSchematrons.seam",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<!-- Fragment from cas-client-ui-v7   ",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"<!-- Fragment from cas-client-ui-v7    -->\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"id": "314",
+							"id": "336",
 							"uri": "https://interop.esante.gouv.fr/evs/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/packed/packed.js",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/evs\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/packed\/packed.js",
 							"method": "GET",
@@ -2119,14 +2189,34 @@
 							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected in likely comment: \"/* Copyright (c) 2010 Brandon Aaron (http://brandonaaron.net)\n * Licensed under the MIT License (LICENSE.txt).\n *\n * Thanks to: \", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"id": "344",
-							"uri": "https://interop.esante.gouv.fr/SchematronValidator/home.seam",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/SchematronValidator\/home.seam ()(javax.faces.ViewState,locale,locale:j_idt121)",
-							"method": "POST",
+							"id": "229",
+							"uri": "https://interop.esante.gouv.fr/gazelle-webservice-tester/home.seam",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-webservice-tester\/home.seam",
+							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<!-- Fragment from cas-client-ui-v7   ",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"<!-- Fragment from cas-client-ui-v7    -->\", see evidence field for the suspicious comment/snippet."
+							"evidence": "!-- Modal to inform user that his session ha",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in likely comment: \"<!-- Modal to inform user that his session has expired with a possiblity to re log in with CAS   -->\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "325",
+							"uri": "https://interop.esante.gouv.fr/gazelle-webservice-tester/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/packed/packed.js",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-webservice-tester\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/packed\/packed.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "ank.de) for a scope bug fix.\n * Thanks to: ",
+							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected in likely comment: \"/* Copyright (c) 2010 Brandon Aaron (http://brandonaaron.net)\n * Licensed under the MIT License (LICENSE.txt).\n *\n * Thanks to: \", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "333",
+							"uri": "https://interop.esante.gouv.fr/tm/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.3.5.Final/PackedCompressed/packed/packed.js",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/tm\/org.richfaces.resources\/javax.faces.resource\/org.richfaces.staticResource\/4.3.5.Final\/PackedCompressed\/packed\/packed.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "ank.de) for a scope bug fix.\n * Thanks to: ",
+							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected in likely comment: \"/* Copyright (c) 2010 Brandon Aaron (http://brandonaaron.net)\n * Licensed under the MIT License (LICENSE.txt).\n *\n * Thanks to: \", see evidence field for the suspicious comment/snippet."
 						}
 					],
 					"count": "11",
@@ -2136,7 +2226,7 @@
 					"reference": "",
 					"cweid": "615",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10109",
@@ -2149,7 +2239,7 @@
 					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Client Spider may well be more effective than the standard one.</p>",
 					"instances":[ 
 						{
-							"id": "118",
+							"id": "101",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/Datamatrix/release-note.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/Datamatrix\/release-note.html",
 							"method": "GET",
@@ -2159,7 +2249,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "71",
+							"id": "70",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
 							"method": "GET",
@@ -2179,7 +2269,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "142",
+							"id": "115",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/Test-Management/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/Test-Management\/user.html",
 							"method": "GET",
@@ -2189,7 +2279,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "105",
+							"id": "49",
 							"uri": "https://interop.esante.gouv.fr/rsp-generator-ui",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/rsp-generator-ui",
 							"method": "GET",
@@ -2206,7 +2296,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "244"
+					"sourceid": "243"
 				},
 				{
 					"pluginid": "10049",
@@ -2219,7 +2309,7 @@
 					"desc": "<p>The response contents are not storable by caching components such as proxy servers. If the response does not contain sensitive, personal or user-specific information, it may benefit from being stored and cached, to improve performance.</p>",
 					"instances":[ 
 						{
-							"id": "45",
+							"id": "38",
 							"uri": "https://interop.esante.gouv.fr/evs",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/evs",
 							"method": "GET",
@@ -2229,7 +2319,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "80",
+							"id": "40",
 							"uri": "https://interop.esante.gouv.fr/gazelle-webservice-tester",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-webservice-tester",
 							"method": "GET",
@@ -2239,7 +2329,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "83",
+							"id": "50",
 							"uri": "https://interop.esante.gouv.fr/hl7v2-simulators",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/hl7v2-simulators",
 							"method": "GET",
@@ -2247,26 +2337,16 @@
 							"attack": "",
 							"evidence": "302",
 							"otherinfo": ""
-						},
-						{
-							"id": "69",
-							"uri": "https://interop.esante.gouv.fr/tm",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/tm",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "302",
-							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"systemic": false,
 					"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).</p>",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "56"
+					"sourceid": "57"
 				},
 				{
 					"pluginid": "10015",
@@ -2279,7 +2359,7 @@
 					"desc": "<p>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</p>",
 					"instances":[ 
 						{
-							"id": "37",
+							"id": "6",
 							"uri": "https://interop.esante.gouv.fr",
 							"nodeName": "https:\/\/interop.esante.gouv.fr",
 							"method": "GET",
@@ -2289,17 +2369,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "58",
-							"uri": "https://interop.esante.gouv.fr/",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "90",
+							"id": "59",
 							"uri": "https://interop.esante.gouv.fr/datamatrixins/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/datamatrixins\/",
 							"method": "GET",
@@ -2309,7 +2379,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "61",
+							"id": "64",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
 							"method": "GET",
@@ -2319,13 +2389,23 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "25",
+							"id": "1",
 							"uri": "https://interop.esante.gouv.fr/robots.txt",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/robots.txt",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
 							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "44",
+							"uri": "https://interop.esante.gouv.fr/rsp-generator-ui",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/rsp-generator-ui",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "s-maxage=31536000, stale-while-revalidate",
 							"otherinfo": ""
 						}
 					],
@@ -2336,7 +2416,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "9"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -2349,7 +2429,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"id": "33",
+							"id": "31",
 							"uri": "https://interop.esante.gouv.fr",
 							"nodeName": "https:\/\/interop.esante.gouv.fr",
 							"method": "GET",
@@ -2359,17 +2439,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "19",
-							"uri": "https://interop.esante.gouv.fr/robots.txt",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "13",
+							"id": "12",
 							"uri": "https://interop.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -2379,14 +2449,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"systemic": false,
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "9"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -2399,7 +2469,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"id": "32",
+							"id": "30",
 							"uri": "https://interop.esante.gouv.fr",
 							"nodeName": "https:\/\/interop.esante.gouv.fr",
 							"method": "GET",
@@ -2409,17 +2479,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "15",
-							"uri": "https://interop.esante.gouv.fr/robots.txt",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "8",
+							"id": "11",
 							"uri": "https://interop.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -2429,14 +2489,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"systemic": false,
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "9"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -2449,7 +2509,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"id": "28",
+							"id": "29",
 							"uri": "https://interop.esante.gouv.fr",
 							"nodeName": "https:\/\/interop.esante.gouv.fr",
 							"method": "GET",
@@ -2459,17 +2519,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "11",
-							"uri": "https://interop.esante.gouv.fr/robots.txt",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "7",
+							"id": "10",
 							"uri": "https://interop.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -2479,14 +2529,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"systemic": false,
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -2499,7 +2549,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"id": "36",
+							"id": "32",
 							"uri": "https://interop.esante.gouv.fr",
 							"nodeName": "https:\/\/interop.esante.gouv.fr",
 							"method": "GET",
@@ -2509,17 +2559,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "23",
-							"uri": "https://interop.esante.gouv.fr/robots.txt",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"id": "16",
+							"id": "13",
 							"uri": "https://interop.esante.gouv.fr/sitemap.xml",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
@@ -2529,14 +2569,14 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"systemic": false,
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10112",
@@ -2559,7 +2599,7 @@
 							"otherinfo": "cookie:JSESSIONID"
 						},
 						{
-							"id": "185",
+							"id": "188",
 							"uri": "https://interop.esante.gouv.fr/DDS/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/DDS\/",
 							"method": "GET",
@@ -2569,17 +2609,7 @@
 							"otherinfo": "cookie:JSESSIONID"
 						},
 						{
-							"id": "307",
-							"uri": "https://interop.esante.gouv.fr/GazelleFhirValidator/home.seam",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/GazelleFhirValidator\/home.seam",
-							"method": "GET",
-							"param": "JSESSIONID",
-							"attack": "",
-							"evidence": "JSESSIONID",
-							"otherinfo": "cookie:JSESSIONID"
-						},
-						{
-							"id": "187",
+							"id": "190",
 							"uri": "https://interop.esante.gouv.fr/GazelleHL7Validator/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/GazelleHL7Validator\/",
 							"method": "GET",
@@ -2589,7 +2619,7 @@
 							"otherinfo": "cookie:JSESSIONID"
 						},
 						{
-							"id": "189",
+							"id": "186",
 							"uri": "https://interop.esante.gouv.fr/SVSSimulator/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/SVSSimulator\/",
 							"method": "GET",
@@ -2599,7 +2629,7 @@
 							"otherinfo": "cookie:JSESSIONID"
 						},
 						{
-							"id": "223",
+							"id": "219",
 							"uri": "https://interop.esante.gouv.fr/SchematronValidator/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/SchematronValidator\/",
 							"method": "GET",
@@ -2609,7 +2639,7 @@
 							"otherinfo": "cookie:JSESSIONID"
 						},
 						{
-							"id": "97",
+							"id": "93",
 							"uri": "https://interop.esante.gouv.fr/evs/xml/validator.seam?standard=64",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/evs\/xml\/validator.seam (standard)",
 							"method": "GET",
@@ -2619,7 +2649,7 @@
 							"otherinfo": "cookie:JSESSIONID\ncookie:BROWSER_ID"
 						},
 						{
-							"id": "180",
+							"id": "152",
 							"uri": "https://interop.esante.gouv.fr/gazelle-webservice-tester/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-webservice-tester\/",
 							"method": "GET",
@@ -2629,7 +2659,17 @@
 							"otherinfo": "cookie:JSESSIONID"
 						},
 						{
-							"id": "155",
+							"id": "230",
+							"uri": "https://interop.esante.gouv.fr/hl7v2-simulators/index.xhtml?jfwid=0cf77",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/hl7v2-simulators\/index.xhtml (jfwid)",
+							"method": "GET",
+							"param": "JSESSIONID",
+							"attack": "",
+							"evidence": "JSESSIONID",
+							"otherinfo": "cookie:JSESSIONID"
+						},
+						{
+							"id": "149",
 							"uri": "https://interop.esante.gouv.fr/tm/",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/tm\/",
 							"method": "GET",
@@ -2646,7 +2686,7 @@
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id/</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1160"
+					"sourceid": "1170"
 				},
 				{
 					"pluginid": "10049",
@@ -2659,7 +2699,7 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
 					"instances":[ 
 						{
-							"id": "4",
+							"id": "18",
 							"uri": "https://interop.esante.gouv.fr",
 							"nodeName": "https:\/\/interop.esante.gouv.fr",
 							"method": "GET",
@@ -2669,17 +2709,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "47",
-							"uri": "https://interop.esante.gouv.fr/",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
-							"id": "52",
+							"id": "77",
 							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/EVS-Client/user.html",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/EVS-Client\/user.html",
 							"method": "GET",
@@ -2689,9 +2719,29 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "0",
-							"uri": "https://interop.esante.gouv.fr/robots.txt",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/robots.txt",
+							"id": "46",
+							"uri": "https://interop.esante.gouv.fr/gazelle-documentation/gazelle-webservice-tester/user.html",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/gazelle-documentation\/gazelle-webservice-tester\/user.html",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"id": "52",
+							"uri": "https://interop.esante.gouv.fr/rsp-generator-ui",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/rsp-generator-ui",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "s-maxage=31536000",
+							"otherinfo": ""
+						},
+						{
+							"id": "3",
+							"uri": "https://interop.esante.gouv.fr/sitemap.xml",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2699,14 +2749,14 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						}
 					],
-					"count": "4",
+					"count": "5",
 					"systemic": true,
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
 					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "9"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10031",
@@ -2719,27 +2769,17 @@
 					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
 					"instances":[ 
 						{
-							"id": "345",
-							"uri": "https://interop.esante.gouv.fr/SchematronValidator/home.seam",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/SchematronValidator\/home.seam ()(javax.faces.ViewState,locale,locale:j_idt121)",
-							"method": "POST",
-							"param": "locale",
+							"id": "227",
+							"uri": "https://interop.esante.gouv.fr/hl7v2-simulators/index.xhtml?jfwid=0cf77",
+							"nodeName": "https:\/\/interop.esante.gouv.fr\/hl7v2-simulators\/index.xhtml (jfwid)",
+							"method": "GET",
+							"param": "jfwid",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://interop.esante.gouv.fr/SchematronValidator/home.seam\n\nappears to include user input in:\na(n) [option] tag [value] attribute\n\nThe user input found was:\nlocale=en\n\nThe user-controlled value was:\nen"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://interop.esante.gouv.fr/hl7v2-simulators/index.xhtml?jfwid=0cf77\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\njfwid=0cf77\n\nThe user-controlled value was:\n0cf77"
 						},
 						{
-							"id": "346",
-							"uri": "https://interop.esante.gouv.fr/SchematronValidator/home.seam",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/SchematronValidator\/home.seam ()(javax.faces.ViewState,locale,locale:j_idt121)",
-							"method": "POST",
-							"param": "locale:j_idt121",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://interop.esante.gouv.fr/SchematronValidator/home.seam\n\nappears to include user input in:\na(n) [option] tag [value] attribute\n\nThe user input found was:\nlocale:j_idt121=en\n\nThe user-controlled value was:\nen"
-						},
-						{
-							"id": "349",
+							"id": "355",
 							"uri": "https://interop.esante.gouv.fr/SchematronValidator/schematrons/manageSchematrons.seam",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/SchematronValidator\/schematrons\/manageSchematrons.seam ()(j_idt26,javax.faces.ViewState)",
 							"method": "POST",
@@ -2747,36 +2787,16 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://interop.esante.gouv.fr/SchematronValidator/schematrons/manageSchematrons.seam\n\nappears to include user input in:\na(n) [form] tag [id] attribute\n\nThe user input found was:\nj_idt26=j_idt26\n\nThe user-controlled value was:\nj_idt26"
-						},
-						{
-							"id": "316",
-							"uri": "https://interop.esante.gouv.fr/evs/home.seam",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/evs\/home.seam ()(javax.faces.ViewState,locale,locale:j_idt1999)",
-							"method": "POST",
-							"param": "locale",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://interop.esante.gouv.fr/evs/home.seam\n\nappears to include user input in:\na(n) [option] tag [value] attribute\n\nThe user input found was:\nlocale=en\n\nThe user-controlled value was:\nen"
-						},
-						{
-							"id": "317",
-							"uri": "https://interop.esante.gouv.fr/evs/home.seam",
-							"nodeName": "https:\/\/interop.esante.gouv.fr\/evs\/home.seam ()(javax.faces.ViewState,locale,locale:j_idt1999)",
-							"method": "POST",
-							"param": "locale:j_idt1999",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://interop.esante.gouv.fr/evs/home.seam\n\nappears to include user input in:\na(n) [option] tag [value] attribute\n\nThe user input found was:\nlocale:j_idt1999=en\n\nThe user-controlled value was:\nen"
 						}
 					],
-					"count": "5",
+					"count": "2",
 					"systemic": false,
 					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
-					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://interop.esante.gouv.fr/SchematronValidator/home.seam</p><p></p><p>appears to include user input in:</p><p>a(n) [option] tag [value] attribute</p><p></p><p>The user input found was:</p><p>locale=en</p><p></p><p>The user-controlled value was:</p><p>en</p>",
+					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://interop.esante.gouv.fr/hl7v2-simulators/index.xhtml?jfwid=0cf77</p><p></p><p>appears to include user input in:</p><p>a(n) [input] tag [value] attribute</p><p></p><p>The user input found was:</p><p>jfwid=0cf77</p><p></p><p>The user-controlled value was:</p><p>0cf77</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "2169"
+					"sourceid": "1380"
 				},
 				{
 					"pluginid": "90030",
@@ -2789,7 +2809,7 @@
 					"desc": "<p>A WSDL File has been detected.</p>",
 					"instances":[ 
 						{
-							"id": "225",
+							"id": "220",
 							"uri": "https://interop.esante.gouv.fr/FhirValidator-ejb/ModelBasedValidationWSService/ModelBasedValidationWS?wsdl",
 							"nodeName": "https:\/\/interop.esante.gouv.fr\/FhirValidator-ejb\/ModelBasedValidationWSService\/ModelBasedValidationWS (wsdl)",
 							"method": "GET",
@@ -2806,7 +2826,7 @@
 					"reference": "",
 					"cweid": "651",
 					"wascid": "13",
-					"sourceid": "1373"
+					"sourceid": "1367"
 				}
 			]
 		}
