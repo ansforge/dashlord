@@ -1,0 +1,608 @@
+[
+  [
+    {
+      "template": "http/technologies/waf-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/waf-detect",
+      "template-id": "waf-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/waf-detect.yaml",
+      "info": {
+        "name": "WAF Detection",
+        "author": [
+          "dwisiswant0",
+          "lu4nx",
+          "s4e-io"
+        ],
+        "tags": [
+          "waf",
+          "tech",
+          "misc",
+          "discovery"
+        ],
+        "description": "A web application firewall was detected.",
+        "reference": [
+          "https://github.com/Ekultek/WhatWaf"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "matcher-name": "nginxgeneric",
+      "type": "http",
+      "host": "ecoscore.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ecoscore.esante.gouv.fr",
+      "matched-at": "https://ecoscore.esante.gouv.fr",
+      "request": "POST / HTTP/1.1\r\nHost: ecoscore.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
+      "response": "HTTP/1.1 404 Not Found\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nContent-Security-Policy: default-src 'none'\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nCross-Origin-Resource-Policy: same-origin\r\nDate: Thu, 01 Oct 2026 03:37:25 GMT\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nServer: nginx\r\nStrict-Transport-Security: max-age=31536000; includeSubDomains\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 0\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot POST /</pre>\n</body>\n</html>\n",
+      "ip": "141.95.159.50",
+      "timestamp": "2026-10-01T03:37:25.156708087Z",
+      "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: ecoscore.esante.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ecoscore.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "ecoscore.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ecoscore.esante.gouv.fr",
+      "matched-at": "https://ecoscore.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ecoscore.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: private, no-cache, no-store, max-age=0, must-revalidate\r\nConnection: keep-alive\r\nContent-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://*.greenspector.com https://cdn.jsdelivr.net;style-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://cdn.jsdelivr.net;img-src 'self' data: https:;connect-src 'self' https://*.greenspector.com https://tarteaucitron.io https://*.tarteaucitron.io wss://client.relay.crisp.chat https://client.crisp.chat https://cdn.jsdelivr.net;worker-src 'self' blob:;font-src 'self' https://client.crisp.chat;frame-src 'self' https://demo.arcade.software;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nCross-Origin-Resource-Policy: same-origin\r\nDate: Thu, 01 Oct 2026 03:38:40 GMT\r\nEtag: \"pv3rkz999r3pv\"\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nServer: nginx\r\nStrict-Transport-Security: max-age=31536000; includeSubDomains\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Powered-By: Next.js\r\nX-Xss-Protection: 0\r\n\r\n<!DOCTYPE html><html lang=\"fr\"><head><meta charSet=\"utf-8\" data-next-head=\"\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" data-next-head=\"\"/><title data-next-head=\"\">Ecoscore des applications de santé</title><link rel=\"dns-prefetch\" href=\"//cdntag.tarteaucitron.io\"/><link rel=\"preconnect\" href=\"https://cdntag.tarteaucitron.io\" crossorigin=\"\"/><link rel=\"shortcut icon\" href=\"/images/ans/favicon.svg\"/><meta name=\"theme-color\" content=\"#ffffff\"/><meta name=\"robots\" content=\"index,follow\"/><meta name=\"Language\" content=\"fr\"/><meta name=\"description\" content=\"Le service de calcul de l&#x27;empreinte environnementale proposé par le Ministère de la santé, à destination des éditeurs d’applications web et mobiles est nécessaire au référencement dans Mon Espace Santé.\"/><meta property=\"og:locale\" content=\"fr_FR\"/><meta property=\"og:type\" content=\"website\"/><meta property=\"og:title\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:type\" content=\"website\"/><meta property=\"og:url\" content=\"https://ecoscore.esante.gouv.fr\"/><meta property=\"og:image\" content=\"/images/ans/Accueil.png\"/><meta property=\"og:image:alt\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:site_name\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:description\" content=\"Le service de calcul de l&#x27;empreinte environnementale proposé par le Ministère de la santé, à destination des éditeurs d’applications web et mobiles est nécessaire au référencement dans Mon Espace Santé.\"/><link rel=\"preload\" href=\"/_next/static/css/c3d201426cc671eb.css\" as=\"style\"/><script src=\"https://cdntag.tarteaucitron.io/load.js?domain=ecoscore.esante.gouv.fr&amp;uuid=a85db0cc515763819ebbb55899eb39ae34324380\"></script><script type=\"text/javascript\">(function () {\n  if (typeof tarteaucitron === \"undefined\") return;\n  tarteaucitron.job = tarteaucitron.job || [];\n  if (\"b6f254cd-a204-446c-b4d8-b6e65593cbd0\") {\n    window.CRISP_RUNTIME_CONFIG = { locale: \"fr\" };\n    window.CRISP_COOKIE_DOMAIN = window.location.hostname;\n    tarteaucitron.user.crispID = \"b6f254cd-a204-446c-b4d8-b6e65593cbd0\";\n    tarteaucitron.job.push(\"crisp\");\n  }\n  if (\"https://ans-matomo.greenspector.com\" && \"2\") {\n    tarteaucitron.user.matomoId = \"2\";\n    tarteaucitron.user.matomoHost = \"https://ans-matomo.greenspector.com/\";\n    tarteaucitron.job.push(\"matomo\");\n  }\n})();</script><link rel=\"stylesheet\" href=\"/_next/static/css/c3d201426cc671eb.css\" data-n-g=\"\"/><noscript data-n-css=\"\"></noscript><script defer=\"\" noModule=\"\" src=\"/_next/static/chunks/polyfills-42372ed130431b0a.js\"></script><script src=\"/_next/static/chunks/webpack-4432b95c8631e7ba.js\" defer=\"\"></script><script src=\"/_next/static/chunks/framework-613a00c86597ee26.js\" defer=\"\"></script><script src=\"/_next/static/chunks/main-803f4d2e9bd3f3a8.js\" defer=\"\"></script><script src=\"/_next/static/chunks/pages/_app-543429374c0907ef.js\" defer=\"\"></script><script src=\"/_next/static/chunks/7317-97fce57fda283d6b.js\" defer=\"\"></script><script src=\"/_next/static/chunks/3191-b7f5db533a9e6832.js\" defer=\"\"></script><script src=\"/_next/static/chunks/5714-c686003c87897526.js\" defer=\"\"></script><script src=\"/_next/static/chunks/pages/index-6ee5e222ba0d4fd7.js\" defer=\"\"></script><script src=\"/_next/static/sfhfR2lSco37NrK6Knw_v/_buildManifest.js\" defer=\"\"></script><script src=\"/_next/static/sfhfR2lSco37NrK6Knw_v/_ssgManifest.js\" defer=\"\"></script></head><body><div id=\"__next\"><div id=\"root\"><style data-emotion=\"css-global 3sy88v\">html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;box-sizing:border-box;-webkit-text-size-adjust:100%;}*,*::before,*::after{box-sizing:inherit;}strong,b{font-weight:700;}body{margin:0;color:#2d3748;font-family:futura-pt,Arial;font-weight:400;font-size:1rem;line-height:1.5;background-color:#F8F9FB;}@media print{body{background-color:#fff;}}body::backdrop{background-color:#F8F9FB;}</style></div></div><script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{},\"initialState\":{\"user\":null,\"teamSlug\":null,\"currentUrl\":\"/\",\"applications\":{},\"steps\":[{\"step\":1,\"name\":\"Etape 1\",\"description\":\"Initialisation\",\"page\":\"/onboarding/question-forms\",\"iconPath\":\"/images/steps/Etape2.svg\"},{\"step\":2,\"name\":\"Etape 2\",\"description\":\"Définir le scénario utilisateur\",\"iconPath\":\"/images/steps/Etape4.svg\",\"page\":\"/processus/etape2\"},{\"step\":3,\"name\":\"Etape 3\",\"iconPath\":\"/images/steps/Etape5.svg\",\"description\":\"Implémenter le scénario\",\"page\":\"/processus/etape3\"},{\"step\":4,\"name\":\"Etape 4\",\"description\":\"Mesure finale\",\"iconPath\":\"/images/steps/Etape8.svg\",\"page\":\"/processus/etape4\"}],\"defaultProcessusMode\":\"mes\"}},\"page\":\"/\",\"query\":{},\"buildId\":\"sfhfR2lSco37NrK6Knw_v\",\"isFallback\":false,\"isExperimentalCompile\":false,\"appGip\":true,\"scriptLoader\":[]}</script></body></html>",
+      "ip": "141.95.159.50",
+      "timestamp": "2026-10-01T03:38:40.587222346Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ecoscore.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "ecoscore.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ecoscore.esante.gouv.fr",
+      "matched-at": "https://ecoscore.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ecoscore.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: private, no-cache, no-store, max-age=0, must-revalidate\r\nConnection: keep-alive\r\nContent-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://*.greenspector.com https://cdn.jsdelivr.net;style-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://cdn.jsdelivr.net;img-src 'self' data: https:;connect-src 'self' https://*.greenspector.com https://tarteaucitron.io https://*.tarteaucitron.io wss://client.relay.crisp.chat https://client.crisp.chat https://cdn.jsdelivr.net;worker-src 'self' blob:;font-src 'self' https://client.crisp.chat;frame-src 'self' https://demo.arcade.software;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nCross-Origin-Resource-Policy: same-origin\r\nDate: Thu, 01 Oct 2026 03:38:40 GMT\r\nEtag: \"pv3rkz999r3pv\"\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nServer: nginx\r\nStrict-Transport-Security: max-age=31536000; includeSubDomains\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Powered-By: Next.js\r\nX-Xss-Protection: 0\r\n\r\n<!DOCTYPE html><html lang=\"fr\"><head><meta charSet=\"utf-8\" data-next-head=\"\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" data-next-head=\"\"/><title data-next-head=\"\">Ecoscore des applications de santé</title><link rel=\"dns-prefetch\" href=\"//cdntag.tarteaucitron.io\"/><link rel=\"preconnect\" href=\"https://cdntag.tarteaucitron.io\" crossorigin=\"\"/><link rel=\"shortcut icon\" href=\"/images/ans/favicon.svg\"/><meta name=\"theme-color\" content=\"#ffffff\"/><meta name=\"robots\" content=\"index,follow\"/><meta name=\"Language\" content=\"fr\"/><meta name=\"description\" content=\"Le service de calcul de l&#x27;empreinte environnementale proposé par le Ministère de la santé, à destination des éditeurs d’applications web et mobiles est nécessaire au référencement dans Mon Espace Santé.\"/><meta property=\"og:locale\" content=\"fr_FR\"/><meta property=\"og:type\" content=\"website\"/><meta property=\"og:title\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:type\" content=\"website\"/><meta property=\"og:url\" content=\"https://ecoscore.esante.gouv.fr\"/><meta property=\"og:image\" content=\"/images/ans/Accueil.png\"/><meta property=\"og:image:alt\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:site_name\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:description\" content=\"Le service de calcul de l&#x27;empreinte environnementale proposé par le Ministère de la santé, à destination des éditeurs d’applications web et mobiles est nécessaire au référencement dans Mon Espace Santé.\"/><link rel=\"preload\" href=\"/_next/static/css/c3d201426cc671eb.css\" as=\"style\"/><script src=\"https://cdntag.tarteaucitron.io/load.js?domain=ecoscore.esante.gouv.fr&amp;uuid=a85db0cc515763819ebbb55899eb39ae34324380\"></script><script type=\"text/javascript\">(function () {\n  if (typeof tarteaucitron === \"undefined\") return;\n  tarteaucitron.job = tarteaucitron.job || [];\n  if (\"b6f254cd-a204-446c-b4d8-b6e65593cbd0\") {\n    window.CRISP_RUNTIME_CONFIG = { locale: \"fr\" };\n    window.CRISP_COOKIE_DOMAIN = window.location.hostname;\n    tarteaucitron.user.crispID = \"b6f254cd-a204-446c-b4d8-b6e65593cbd0\";\n    tarteaucitron.job.push(\"crisp\");\n  }\n  if (\"https://ans-matomo.greenspector.com\" && \"2\") {\n    tarteaucitron.user.matomoId = \"2\";\n    tarteaucitron.user.matomoHost = \"https://ans-matomo.greenspector.com/\";\n    tarteaucitron.job.push(\"matomo\");\n  }\n})();</script><link rel=\"stylesheet\" href=\"/_next/static/css/c3d201426cc671eb.css\" data-n-g=\"\"/><noscript data-n-css=\"\"></noscript><script defer=\"\" noModule=\"\" src=\"/_next/static/chunks/polyfills-42372ed130431b0a.js\"></script><script src=\"/_next/static/chunks/webpack-4432b95c8631e7ba.js\" defer=\"\"></script><script src=\"/_next/static/chunks/framework-613a00c86597ee26.js\" defer=\"\"></script><script src=\"/_next/static/chunks/main-803f4d2e9bd3f3a8.js\" defer=\"\"></script><script src=\"/_next/static/chunks/pages/_app-543429374c0907ef.js\" defer=\"\"></script><script src=\"/_next/static/chunks/7317-97fce57fda283d6b.js\" defer=\"\"></script><script src=\"/_next/static/chunks/3191-b7f5db533a9e6832.js\" defer=\"\"></script><script src=\"/_next/static/chunks/5714-c686003c87897526.js\" defer=\"\"></script><script src=\"/_next/static/chunks/pages/index-6ee5e222ba0d4fd7.js\" defer=\"\"></script><script src=\"/_next/static/sfhfR2lSco37NrK6Knw_v/_buildManifest.js\" defer=\"\"></script><script src=\"/_next/static/sfhfR2lSco37NrK6Knw_v/_ssgManifest.js\" defer=\"\"></script></head><body><div id=\"__next\"><div id=\"root\"><style data-emotion=\"css-global 3sy88v\">html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;box-sizing:border-box;-webkit-text-size-adjust:100%;}*,*::before,*::after{box-sizing:inherit;}strong,b{font-weight:700;}body{margin:0;color:#2d3748;font-family:futura-pt,Arial;font-weight:400;font-size:1rem;line-height:1.5;background-color:#F8F9FB;}@media print{body{background-color:#fff;}}body::backdrop{background-color:#F8F9FB;}</style></div></div><script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{},\"initialState\":{\"user\":null,\"teamSlug\":null,\"currentUrl\":\"/\",\"applications\":{},\"steps\":[{\"step\":1,\"name\":\"Etape 1\",\"description\":\"Initialisation\",\"page\":\"/onboarding/question-forms\",\"iconPath\":\"/images/steps/Etape2.svg\"},{\"step\":2,\"name\":\"Etape 2\",\"description\":\"Définir le scénario utilisateur\",\"iconPath\":\"/images/steps/Etape4.svg\",\"page\":\"/processus/etape2\"},{\"step\":3,\"name\":\"Etape 3\",\"iconPath\":\"/images/steps/Etape5.svg\",\"description\":\"Implémenter le scénario\",\"page\":\"/processus/etape3\"},{\"step\":4,\"name\":\"Etape 4\",\"description\":\"Mesure finale\",\"iconPath\":\"/images/steps/Etape8.svg\",\"page\":\"/processus/etape4\"}],\"defaultProcessusMode\":\"mes\"}},\"page\":\"/\",\"query\":{},\"buildId\":\"sfhfR2lSco37NrK6Knw_v\",\"isFallback\":false,\"isExperimentalCompile\":false,\"appGip\":true,\"scriptLoader\":[]}</script></body></html>",
+      "ip": "141.95.159.50",
+      "timestamp": "2026-10-01T03:38:40.58800218Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ecoscore.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/tech-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tech-detect",
+      "template-id": "tech-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/tech-detect.yaml",
+      "info": {
+        "name": "Wappalyzer Technology Detection",
+        "author": [
+          "hakluke",
+          "righettod",
+          "matejsmycka"
+        ],
+        "tags": [
+          "tech",
+          "discovery"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "nginx",
+      "type": "http",
+      "host": "ecoscore.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ecoscore.esante.gouv.fr",
+      "matched-at": "https://ecoscore.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ecoscore.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: private, no-cache, no-store, max-age=0, must-revalidate\r\nConnection: keep-alive\r\nContent-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://*.greenspector.com https://cdn.jsdelivr.net;style-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://cdn.jsdelivr.net;img-src 'self' data: https:;connect-src 'self' https://*.greenspector.com https://tarteaucitron.io https://*.tarteaucitron.io wss://client.relay.crisp.chat https://client.crisp.chat https://cdn.jsdelivr.net;worker-src 'self' blob:;font-src 'self' https://client.crisp.chat;frame-src 'self' https://demo.arcade.software;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nCross-Origin-Resource-Policy: same-origin\r\nDate: Thu, 01 Oct 2026 03:38:43 GMT\r\nEtag: \"pv3rkz999r3pv\"\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nServer: nginx\r\nStrict-Transport-Security: max-age=31536000; includeSubDomains\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Powered-By: Next.js\r\nX-Xss-Protection: 0\r\n\r\n<!DOCTYPE html><html lang=\"fr\"><head><meta charSet=\"utf-8\" data-next-head=\"\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" data-next-head=\"\"/><title data-next-head=\"\">Ecoscore des applications de santé</title><link rel=\"dns-prefetch\" href=\"//cdntag.tarteaucitron.io\"/><link rel=\"preconnect\" href=\"https://cdntag.tarteaucitron.io\" crossorigin=\"\"/><link rel=\"shortcut icon\" href=\"/images/ans/favicon.svg\"/><meta name=\"theme-color\" content=\"#ffffff\"/><meta name=\"robots\" content=\"index,follow\"/><meta name=\"Language\" content=\"fr\"/><meta name=\"description\" content=\"Le service de calcul de l&#x27;empreinte environnementale proposé par le Ministère de la santé, à destination des éditeurs d’applications web et mobiles est nécessaire au référencement dans Mon Espace Santé.\"/><meta property=\"og:locale\" content=\"fr_FR\"/><meta property=\"og:type\" content=\"website\"/><meta property=\"og:title\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:type\" content=\"website\"/><meta property=\"og:url\" content=\"https://ecoscore.esante.gouv.fr\"/><meta property=\"og:image\" content=\"/images/ans/Accueil.png\"/><meta property=\"og:image:alt\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:site_name\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:description\" content=\"Le service de calcul de l&#x27;empreinte environnementale proposé par le Ministère de la santé, à destination des éditeurs d’applications web et mobiles est nécessaire au référencement dans Mon Espace Santé.\"/><link rel=\"preload\" href=\"/_next/static/css/c3d201426cc671eb.css\" as=\"style\"/><script src=\"https://cdntag.tarteaucitron.io/load.js?domain=ecoscore.esante.gouv.fr&amp;uuid=a85db0cc515763819ebbb55899eb39ae34324380\"></script><script type=\"text/javascript\">(function () {\n  if (typeof tarteaucitron === \"undefined\") return;\n  tarteaucitron.job = tarteaucitron.job || [];\n  if (\"b6f254cd-a204-446c-b4d8-b6e65593cbd0\") {\n    window.CRISP_RUNTIME_CONFIG = { locale: \"fr\" };\n    window.CRISP_COOKIE_DOMAIN = window.location.hostname;\n    tarteaucitron.user.crispID = \"b6f254cd-a204-446c-b4d8-b6e65593cbd0\";\n    tarteaucitron.job.push(\"crisp\");\n  }\n  if (\"https://ans-matomo.greenspector.com\" && \"2\") {\n    tarteaucitron.user.matomoId = \"2\";\n    tarteaucitron.user.matomoHost = \"https://ans-matomo.greenspector.com/\";\n    tarteaucitron.job.push(\"matomo\");\n  }\n})();</script><link rel=\"stylesheet\" href=\"/_next/static/css/c3d201426cc671eb.css\" data-n-g=\"\"/><noscript data-n-css=\"\"></noscript><script defer=\"\" noModule=\"\" src=\"/_next/static/chunks/polyfills-42372ed130431b0a.js\"></script><script src=\"/_next/static/chunks/webpack-4432b95c8631e7ba.js\" defer=\"\"></script><script src=\"/_next/static/chunks/framework-613a00c86597ee26.js\" defer=\"\"></script><script src=\"/_next/static/chunks/main-803f4d2e9bd3f3a8.js\" defer=\"\"></script><script src=\"/_next/static/chunks/pages/_app-543429374c0907ef.js\" defer=\"\"></script><script src=\"/_next/static/chunks/7317-97fce57fda283d6b.js\" defer=\"\"></script><script src=\"/_next/static/chunks/3191-b7f5db533a9e6832.js\" defer=\"\"></script><script src=\"/_next/static/chunks/5714-c686003c87897526.js\" defer=\"\"></script><script src=\"/_next/static/chunks/pages/index-6ee5e222ba0d4fd7.js\" defer=\"\"></script><script src=\"/_next/static/sfhfR2lSco37NrK6Knw_v/_buildManifest.js\" defer=\"\"></script><script src=\"/_next/static/sfhfR2lSco37NrK6Knw_v/_ssgManifest.js\" defer=\"\"></script></head><body><div id=\"__next\"><div id=\"root\"><style data-emotion=\"css-global 3sy88v\">html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;box-sizing:border-box;-webkit-text-size-adjust:100%;}*,*::before,*::after{box-sizing:inherit;}strong,b{font-weight:700;}body{margin:0;color:#2d3748;font-family:futura-pt,Arial;font-weight:400;font-size:1rem;line-height:1.5;background-color:#F8F9FB;}@media print{body{background-color:#fff;}}body::backdrop{background-color:#F8F9FB;}</style></div></div><script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{},\"initialState\":{\"user\":null,\"teamSlug\":null,\"currentUrl\":\"/\",\"applications\":{},\"steps\":[{\"step\":1,\"name\":\"Etape 1\",\"description\":\"Initialisation\",\"page\":\"/onboarding/question-forms\",\"iconPath\":\"/images/steps/Etape2.svg\"},{\"step\":2,\"name\":\"Etape 2\",\"description\":\"Définir le scénario utilisateur\",\"iconPath\":\"/images/steps/Etape4.svg\",\"page\":\"/processus/etape2\"},{\"step\":3,\"name\":\"Etape 3\",\"iconPath\":\"/images/steps/Etape5.svg\",\"description\":\"Implémenter le scénario\",\"page\":\"/processus/etape3\"},{\"step\":4,\"name\":\"Etape 4\",\"description\":\"Mesure finale\",\"iconPath\":\"/images/steps/Etape8.svg\",\"page\":\"/processus/etape4\"}],\"defaultProcessusMode\":\"mes\"}},\"page\":\"/\",\"query\":{},\"buildId\":\"sfhfR2lSco37NrK6Knw_v\",\"isFallback\":false,\"isExperimentalCompile\":false,\"appGip\":true,\"scriptLoader\":[]}</script></body></html>",
+      "ip": "141.95.159.50",
+      "timestamp": "2026-10-01T03:38:43.384625676Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ecoscore.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/tech-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tech-detect",
+      "template-id": "tech-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/tech-detect.yaml",
+      "info": {
+        "name": "Wappalyzer Technology Detection",
+        "author": [
+          "hakluke",
+          "righettod",
+          "matejsmycka"
+        ],
+        "tags": [
+          "tech",
+          "discovery"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "next.js",
+      "type": "http",
+      "host": "ecoscore.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ecoscore.esante.gouv.fr",
+      "matched-at": "https://ecoscore.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ecoscore.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: private, no-cache, no-store, max-age=0, must-revalidate\r\nConnection: keep-alive\r\nContent-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://*.greenspector.com https://cdn.jsdelivr.net;style-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://cdn.jsdelivr.net;img-src 'self' data: https:;connect-src 'self' https://*.greenspector.com https://tarteaucitron.io https://*.tarteaucitron.io wss://client.relay.crisp.chat https://client.crisp.chat https://cdn.jsdelivr.net;worker-src 'self' blob:;font-src 'self' https://client.crisp.chat;frame-src 'self' https://demo.arcade.software;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nCross-Origin-Resource-Policy: same-origin\r\nDate: Thu, 01 Oct 2026 03:38:43 GMT\r\nEtag: \"pv3rkz999r3pv\"\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nServer: nginx\r\nStrict-Transport-Security: max-age=31536000; includeSubDomains\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Powered-By: Next.js\r\nX-Xss-Protection: 0\r\n\r\n<!DOCTYPE html><html lang=\"fr\"><head><meta charSet=\"utf-8\" data-next-head=\"\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" data-next-head=\"\"/><title data-next-head=\"\">Ecoscore des applications de santé</title><link rel=\"dns-prefetch\" href=\"//cdntag.tarteaucitron.io\"/><link rel=\"preconnect\" href=\"https://cdntag.tarteaucitron.io\" crossorigin=\"\"/><link rel=\"shortcut icon\" href=\"/images/ans/favicon.svg\"/><meta name=\"theme-color\" content=\"#ffffff\"/><meta name=\"robots\" content=\"index,follow\"/><meta name=\"Language\" content=\"fr\"/><meta name=\"description\" content=\"Le service de calcul de l&#x27;empreinte environnementale proposé par le Ministère de la santé, à destination des éditeurs d’applications web et mobiles est nécessaire au référencement dans Mon Espace Santé.\"/><meta property=\"og:locale\" content=\"fr_FR\"/><meta property=\"og:type\" content=\"website\"/><meta property=\"og:title\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:type\" content=\"website\"/><meta property=\"og:url\" content=\"https://ecoscore.esante.gouv.fr\"/><meta property=\"og:image\" content=\"/images/ans/Accueil.png\"/><meta property=\"og:image:alt\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:site_name\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:description\" content=\"Le service de calcul de l&#x27;empreinte environnementale proposé par le Ministère de la santé, à destination des éditeurs d’applications web et mobiles est nécessaire au référencement dans Mon Espace Santé.\"/><link rel=\"preload\" href=\"/_next/static/css/c3d201426cc671eb.css\" as=\"style\"/><script src=\"https://cdntag.tarteaucitron.io/load.js?domain=ecoscore.esante.gouv.fr&amp;uuid=a85db0cc515763819ebbb55899eb39ae34324380\"></script><script type=\"text/javascript\">(function () {\n  if (typeof tarteaucitron === \"undefined\") return;\n  tarteaucitron.job = tarteaucitron.job || [];\n  if (\"b6f254cd-a204-446c-b4d8-b6e65593cbd0\") {\n    window.CRISP_RUNTIME_CONFIG = { locale: \"fr\" };\n    window.CRISP_COOKIE_DOMAIN = window.location.hostname;\n    tarteaucitron.user.crispID = \"b6f254cd-a204-446c-b4d8-b6e65593cbd0\";\n    tarteaucitron.job.push(\"crisp\");\n  }\n  if (\"https://ans-matomo.greenspector.com\" && \"2\") {\n    tarteaucitron.user.matomoId = \"2\";\n    tarteaucitron.user.matomoHost = \"https://ans-matomo.greenspector.com/\";\n    tarteaucitron.job.push(\"matomo\");\n  }\n})();</script><link rel=\"stylesheet\" href=\"/_next/static/css/c3d201426cc671eb.css\" data-n-g=\"\"/><noscript data-n-css=\"\"></noscript><script defer=\"\" noModule=\"\" src=\"/_next/static/chunks/polyfills-42372ed130431b0a.js\"></script><script src=\"/_next/static/chunks/webpack-4432b95c8631e7ba.js\" defer=\"\"></script><script src=\"/_next/static/chunks/framework-613a00c86597ee26.js\" defer=\"\"></script><script src=\"/_next/static/chunks/main-803f4d2e9bd3f3a8.js\" defer=\"\"></script><script src=\"/_next/static/chunks/pages/_app-543429374c0907ef.js\" defer=\"\"></script><script src=\"/_next/static/chunks/7317-97fce57fda283d6b.js\" defer=\"\"></script><script src=\"/_next/static/chunks/3191-b7f5db533a9e6832.js\" defer=\"\"></script><script src=\"/_next/static/chunks/5714-c686003c87897526.js\" defer=\"\"></script><script src=\"/_next/static/chunks/pages/index-6ee5e222ba0d4fd7.js\" defer=\"\"></script><script src=\"/_next/static/sfhfR2lSco37NrK6Knw_v/_buildManifest.js\" defer=\"\"></script><script src=\"/_next/static/sfhfR2lSco37NrK6Knw_v/_ssgManifest.js\" defer=\"\"></script></head><body><div id=\"__next\"><div id=\"root\"><style data-emotion=\"css-global 3sy88v\">html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;box-sizing:border-box;-webkit-text-size-adjust:100%;}*,*::before,*::after{box-sizing:inherit;}strong,b{font-weight:700;}body{margin:0;color:#2d3748;font-family:futura-pt,Arial;font-weight:400;font-size:1rem;line-height:1.5;background-color:#F8F9FB;}@media print{body{background-color:#fff;}}body::backdrop{background-color:#F8F9FB;}</style></div></div><script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{},\"initialState\":{\"user\":null,\"teamSlug\":null,\"currentUrl\":\"/\",\"applications\":{},\"steps\":[{\"step\":1,\"name\":\"Etape 1\",\"description\":\"Initialisation\",\"page\":\"/onboarding/question-forms\",\"iconPath\":\"/images/steps/Etape2.svg\"},{\"step\":2,\"name\":\"Etape 2\",\"description\":\"Définir le scénario utilisateur\",\"iconPath\":\"/images/steps/Etape4.svg\",\"page\":\"/processus/etape2\"},{\"step\":3,\"name\":\"Etape 3\",\"iconPath\":\"/images/steps/Etape5.svg\",\"description\":\"Implémenter le scénario\",\"page\":\"/processus/etape3\"},{\"step\":4,\"name\":\"Etape 4\",\"description\":\"Mesure finale\",\"iconPath\":\"/images/steps/Etape8.svg\",\"page\":\"/processus/etape4\"}],\"defaultProcessusMode\":\"mes\"}},\"page\":\"/\",\"query\":{},\"buildId\":\"sfhfR2lSco37NrK6Knw_v\",\"isFallback\":false,\"isExperimentalCompile\":false,\"appGip\":true,\"scriptLoader\":[]}</script></body></html>",
+      "ip": "141.95.159.50",
+      "timestamp": "2026-10-01T03:38:43.385313942Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ecoscore.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "ecoscore.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "ecoscore.esante.gouv.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "141.95.159.50",
+      "timestamp": "2026-10-01T03:38:46.393997262Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "ecoscore.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "ecoscore.esante.gouv.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
+      "ip": "141.95.159.50",
+      "timestamp": "2026-10-01T03:38:46.670914005Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/csp-script-src-wildcard.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/csp-script-src-wildcard",
+      "template-id": "csp-script-src-wildcard",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/csp-script-src-wildcard.yaml",
+      "info": {
+        "name": "Content-Security-Policy \"script-src\" Wildcard Detected",
+        "author": [
+          "pussycat0x"
+        ],
+        "tags": [
+          "csp",
+          "misconfig",
+          "headers",
+          "vuln"
+        ],
+        "description": "Detected a wildcard (*) within the script-src directive of the Content-Security-Policy. This allowed scripts to load from any origin, weakening the CSP and increasing XSS risk.\n",
+        "reference": [
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "verified": true
+        }
+      },
+      "type": "http",
+      "host": "ecoscore.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ecoscore.esante.gouv.fr",
+      "matched-at": "https://ecoscore.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ecoscore.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: private, no-cache, no-store, max-age=0, must-revalidate\r\nConnection: keep-alive\r\nContent-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://*.greenspector.com https://cdn.jsdelivr.net;style-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://cdn.jsdelivr.net;img-src 'self' data: https:;connect-src 'self' https://*.greenspector.com https://tarteaucitron.io https://*.tarteaucitron.io wss://client.relay.crisp.chat https://client.crisp.chat https://cdn.jsdelivr.net;worker-src 'self' blob:;font-src 'self' https://client.crisp.chat;frame-src 'self' https://demo.arcade.software;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nCross-Origin-Resource-Policy: same-origin\r\nDate: Thu, 01 Oct 2026 03:38:48 GMT\r\nEtag: \"pv3rkz999r3pv\"\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nServer: nginx\r\nStrict-Transport-Security: max-age=31536000; includeSubDomains\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Powered-By: Next.js\r\nX-Xss-Protection: 0\r\n\r\n<!DOCTYPE html><html lang=\"fr\"><head><meta charSet=\"utf-8\" data-next-head=\"\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" data-next-head=\"\"/><title data-next-head=\"\">Ecoscore des applications de santé</title><link rel=\"dns-prefetch\" href=\"//cdntag.tarteaucitron.io\"/><link rel=\"preconnect\" href=\"https://cdntag.tarteaucitron.io\" crossorigin=\"\"/><link rel=\"shortcut icon\" href=\"/images/ans/favicon.svg\"/><meta name=\"theme-color\" content=\"#ffffff\"/><meta name=\"robots\" content=\"index,follow\"/><meta name=\"Language\" content=\"fr\"/><meta name=\"description\" content=\"Le service de calcul de l&#x27;empreinte environnementale proposé par le Ministère de la santé, à destination des éditeurs d’applications web et mobiles est nécessaire au référencement dans Mon Espace Santé.\"/><meta property=\"og:locale\" content=\"fr_FR\"/><meta property=\"og:type\" content=\"website\"/><meta property=\"og:title\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:type\" content=\"website\"/><meta property=\"og:url\" content=\"https://ecoscore.esante.gouv.fr\"/><meta property=\"og:image\" content=\"/images/ans/Accueil.png\"/><meta property=\"og:image:alt\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:site_name\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:description\" content=\"Le service de calcul de l&#x27;empreinte environnementale proposé par le Ministère de la santé, à destination des éditeurs d’applications web et mobiles est nécessaire au référencement dans Mon Espace Santé.\"/><link rel=\"preload\" href=\"/_next/static/css/c3d201426cc671eb.css\" as=\"style\"/><script src=\"https://cdntag.tarteaucitron.io/load.js?domain=ecoscore.esante.gouv.fr&amp;uuid=a85db0cc515763819ebbb55899eb39ae34324380\"></script><script type=\"text/javascript\">(function () {\n  if (typeof tarteaucitron === \"undefined\") return;\n  tarteaucitron.job = tarteaucitron.job || [];\n  if (\"b6f254cd-a204-446c-b4d8-b6e65593cbd0\") {\n    window.CRISP_RUNTIME_CONFIG = { locale: \"fr\" };\n    window.CRISP_COOKIE_DOMAIN = window.location.hostname;\n    tarteaucitron.user.crispID = \"b6f254cd-a204-446c-b4d8-b6e65593cbd0\";\n    tarteaucitron.job.push(\"crisp\");\n  }\n  if (\"https://ans-matomo.greenspector.com\" && \"2\") {\n    tarteaucitron.user.matomoId = \"2\";\n    tarteaucitron.user.matomoHost = \"https://ans-matomo.greenspector.com/\";\n    tarteaucitron.job.push(\"matomo\");\n  }\n})();</script><link rel=\"stylesheet\" href=\"/_next/static/css/c3d201426cc671eb.css\" data-n-g=\"\"/><noscript data-n-css=\"\"></noscript><script defer=\"\" noModule=\"\" src=\"/_next/static/chunks/polyfills-42372ed130431b0a.js\"></script><script src=\"/_next/static/chunks/webpack-4432b95c8631e7ba.js\" defer=\"\"></script><script src=\"/_next/static/chunks/framework-613a00c86597ee26.js\" defer=\"\"></script><script src=\"/_next/static/chunks/main-803f4d2e9bd3f3a8.js\" defer=\"\"></script><script src=\"/_next/static/chunks/pages/_app-543429374c0907ef.js\" defer=\"\"></script><script src=\"/_next/static/chunks/7317-97fce57fda283d6b.js\" defer=\"\"></script><script src=\"/_next/static/chunks/3191-b7f5db533a9e6832.js\" defer=\"\"></script><script src=\"/_next/static/chunks/5714-c686003c87897526.js\" defer=\"\"></script><script src=\"/_next/static/chunks/pages/index-6ee5e222ba0d4fd7.js\" defer=\"\"></script><script src=\"/_next/static/sfhfR2lSco37NrK6Knw_v/_buildManifest.js\" defer=\"\"></script><script src=\"/_next/static/sfhfR2lSco37NrK6Knw_v/_ssgManifest.js\" defer=\"\"></script></head><body><div id=\"__next\"><div id=\"root\"><style data-emotion=\"css-global 3sy88v\">html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;box-sizing:border-box;-webkit-text-size-adjust:100%;}*,*::before,*::after{box-sizing:inherit;}strong,b{font-weight:700;}body{margin:0;color:#2d3748;font-family:futura-pt,Arial;font-weight:400;font-size:1rem;line-height:1.5;background-color:#F8F9FB;}@media print{body{background-color:#fff;}}body::backdrop{background-color:#F8F9FB;}</style></div></div><script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{},\"initialState\":{\"user\":null,\"teamSlug\":null,\"currentUrl\":\"/\",\"applications\":{},\"steps\":[{\"step\":1,\"name\":\"Etape 1\",\"description\":\"Initialisation\",\"page\":\"/onboarding/question-forms\",\"iconPath\":\"/images/steps/Etape2.svg\"},{\"step\":2,\"name\":\"Etape 2\",\"description\":\"Définir le scénario utilisateur\",\"iconPath\":\"/images/steps/Etape4.svg\",\"page\":\"/processus/etape2\"},{\"step\":3,\"name\":\"Etape 3\",\"iconPath\":\"/images/steps/Etape5.svg\",\"description\":\"Implémenter le scénario\",\"page\":\"/processus/etape3\"},{\"step\":4,\"name\":\"Etape 4\",\"description\":\"Mesure finale\",\"iconPath\":\"/images/steps/Etape8.svg\",\"page\":\"/processus/etape4\"}],\"defaultProcessusMode\":\"mes\"}},\"page\":\"/\",\"query\":{},\"buildId\":\"sfhfR2lSco37NrK6Knw_v\",\"isFallback\":false,\"isExperimentalCompile\":false,\"appGip\":true,\"scriptLoader\":[]}</script></body></html>",
+      "ip": "141.95.159.50",
+      "timestamp": "2026-10-01T03:38:48.225658588Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ecoscore.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/weak-csp-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/weak-csp-detect",
+      "template-id": "weak-csp-detect",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/weak-csp-detect.yaml",
+      "info": {
+        "name": "Weak Content Security Policy - Detect",
+        "author": [
+          "pussycat0x",
+          "celbahraoui"
+        ],
+        "tags": [
+          "csp",
+          "misconfig",
+          "headers",
+          "vuln"
+        ],
+        "description": "Detected misconfigured CSP directives containing unsafe and overly permissive keywords that weakened resource loading restrictions. This configuration allowed high-risk script behaviors, resulting in reduced protection against XSS attacks.\n",
+        "reference": [
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors",
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src",
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/object-src",
+          "https://content-security-policy.com/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "verified": true
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "unsafe-script-src",
+      "type": "http",
+      "host": "ecoscore.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ecoscore.esante.gouv.fr",
+      "matched-at": "https://ecoscore.esante.gouv.fr",
+      "extracted-results": [
+        "default-src 'self';script-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://*.greenspector.com https://cdn.jsdelivr.net;style-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://cdn.jsdelivr.net;img-src 'self' data: https:;connect-src 'self' https://*.greenspector.com https://tarteaucitron.io https://*.tarteaucitron.io wss://client.relay.crisp.chat https://client.crisp.chat https://cdn.jsdelivr.net;worker-src 'self' blob:;font-src 'self' https://client.crisp.chat;frame-src 'self' https://demo.arcade.software;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: ecoscore.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: private, no-cache, no-store, max-age=0, must-revalidate\r\nConnection: keep-alive\r\nContent-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://*.greenspector.com https://cdn.jsdelivr.net;style-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://cdn.jsdelivr.net;img-src 'self' data: https:;connect-src 'self' https://*.greenspector.com https://tarteaucitron.io https://*.tarteaucitron.io wss://client.relay.crisp.chat https://client.crisp.chat https://cdn.jsdelivr.net;worker-src 'self' blob:;font-src 'self' https://client.crisp.chat;frame-src 'self' https://demo.arcade.software;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nCross-Origin-Resource-Policy: same-origin\r\nDate: Thu, 01 Oct 2026 03:38:48 GMT\r\nEtag: \"pv3rkz999r3pv\"\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nServer: nginx\r\nStrict-Transport-Security: max-age=31536000; includeSubDomains\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Powered-By: Next.js\r\nX-Xss-Protection: 0\r\n\r\n<!DOCTYPE html><html lang=\"fr\"><head><meta charSet=\"utf-8\" data-next-head=\"\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" data-next-head=\"\"/><title data-next-head=\"\">Ecoscore des applications de santé</title><link rel=\"dns-prefetch\" href=\"//cdntag.tarteaucitron.io\"/><link rel=\"preconnect\" href=\"https://cdntag.tarteaucitron.io\" crossorigin=\"\"/><link rel=\"shortcut icon\" href=\"/images/ans/favicon.svg\"/><meta name=\"theme-color\" content=\"#ffffff\"/><meta name=\"robots\" content=\"index,follow\"/><meta name=\"Language\" content=\"fr\"/><meta name=\"description\" content=\"Le service de calcul de l&#x27;empreinte environnementale proposé par le Ministère de la santé, à destination des éditeurs d’applications web et mobiles est nécessaire au référencement dans Mon Espace Santé.\"/><meta property=\"og:locale\" content=\"fr_FR\"/><meta property=\"og:type\" content=\"website\"/><meta property=\"og:title\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:type\" content=\"website\"/><meta property=\"og:url\" content=\"https://ecoscore.esante.gouv.fr\"/><meta property=\"og:image\" content=\"/images/ans/Accueil.png\"/><meta property=\"og:image:alt\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:site_name\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:description\" content=\"Le service de calcul de l&#x27;empreinte environnementale proposé par le Ministère de la santé, à destination des éditeurs d’applications web et mobiles est nécessaire au référencement dans Mon Espace Santé.\"/><link rel=\"preload\" href=\"/_next/static/css/c3d201426cc671eb.css\" as=\"style\"/><script src=\"https://cdntag.tarteaucitron.io/load.js?domain=ecoscore.esante.gouv.fr&amp;uuid=a85db0cc515763819ebbb55899eb39ae34324380\"></script><script type=\"text/javascript\">(function () {\n  if (typeof tarteaucitron === \"undefined\") return;\n  tarteaucitron.job = tarteaucitron.job || [];\n  if (\"b6f254cd-a204-446c-b4d8-b6e65593cbd0\") {\n    window.CRISP_RUNTIME_CONFIG = { locale: \"fr\" };\n    window.CRISP_COOKIE_DOMAIN = window.location.hostname;\n    tarteaucitron.user.crispID = \"b6f254cd-a204-446c-b4d8-b6e65593cbd0\";\n    tarteaucitron.job.push(\"crisp\");\n  }\n  if (\"https://ans-matomo.greenspector.com\" && \"2\") {\n    tarteaucitron.user.matomoId = \"2\";\n    tarteaucitron.user.matomoHost = \"https://ans-matomo.greenspector.com/\";\n    tarteaucitron.job.push(\"matomo\");\n  }\n})();</script><link rel=\"stylesheet\" href=\"/_next/static/css/c3d201426cc671eb.css\" data-n-g=\"\"/><noscript data-n-css=\"\"></noscript><script defer=\"\" noModule=\"\" src=\"/_next/static/chunks/polyfills-42372ed130431b0a.js\"></script><script src=\"/_next/static/chunks/webpack-4432b95c8631e7ba.js\" defer=\"\"></script><script src=\"/_next/static/chunks/framework-613a00c86597ee26.js\" defer=\"\"></script><script src=\"/_next/static/chunks/main-803f4d2e9bd3f3a8.js\" defer=\"\"></script><script src=\"/_next/static/chunks/pages/_app-543429374c0907ef.js\" defer=\"\"></script><script src=\"/_next/static/chunks/7317-97fce57fda283d6b.js\" defer=\"\"></script><script src=\"/_next/static/chunks/3191-b7f5db533a9e6832.js\" defer=\"\"></script><script src=\"/_next/static/chunks/5714-c686003c87897526.js\" defer=\"\"></script><script src=\"/_next/static/chunks/pages/index-6ee5e222ba0d4fd7.js\" defer=\"\"></script><script src=\"/_next/static/sfhfR2lSco37NrK6Knw_v/_buildManifest.js\" defer=\"\"></script><script src=\"/_next/static/sfhfR2lSco37NrK6Knw_v/_ssgManifest.js\" defer=\"\"></script></head><body><div id=\"__next\"><div id=\"root\"><style data-emotion=\"css-global 3sy88v\">html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;box-sizing:border-box;-webkit-text-size-adjust:100%;}*,*::before,*::after{box-sizing:inherit;}strong,b{font-weight:700;}body{margin:0;color:#2d3748;font-family:futura-pt,Arial;font-weight:400;font-size:1rem;line-height:1.5;background-color:#F8F9FB;}@media print{body{background-color:#fff;}}body::backdrop{background-color:#F8F9FB;}</style></div></div><script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{},\"initialState\":{\"user\":null,\"teamSlug\":null,\"currentUrl\":\"/\",\"applications\":{},\"steps\":[{\"step\":1,\"name\":\"Etape 1\",\"description\":\"Initialisation\",\"page\":\"/onboarding/question-forms\",\"iconPath\":\"/images/steps/Etape2.svg\"},{\"step\":2,\"name\":\"Etape 2\",\"description\":\"Définir le scénario utilisateur\",\"iconPath\":\"/images/steps/Etape4.svg\",\"page\":\"/processus/etape2\"},{\"step\":3,\"name\":\"Etape 3\",\"iconPath\":\"/images/steps/Etape5.svg\",\"description\":\"Implémenter le scénario\",\"page\":\"/processus/etape3\"},{\"step\":4,\"name\":\"Etape 4\",\"description\":\"Mesure finale\",\"iconPath\":\"/images/steps/Etape8.svg\",\"page\":\"/processus/etape4\"}],\"defaultProcessusMode\":\"mes\"}},\"page\":\"/\",\"query\":{},\"buildId\":\"sfhfR2lSco37NrK6Knw_v\",\"isFallback\":false,\"isExperimentalCompile\":false,\"appGip\":true,\"scriptLoader\":[]}</script></body></html>",
+      "ip": "141.95.159.50",
+      "timestamp": "2026-10-01T03:38:48.229245473Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ecoscore.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/miscellaneous/robots-txt-endpoint.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/robots-txt-endpoint",
+      "template-id": "robots-txt-endpoint",
+      "template-path": "/home/runner/nuclei-templates/http/miscellaneous/robots-txt-endpoint.yaml",
+      "info": {
+        "name": "robots.txt endpoint prober",
+        "author": [
+          "caspergn",
+          "pdteam",
+          "thezakman"
+        ],
+        "tags": [
+          "miscellaneous",
+          "misc",
+          "generic",
+          "discovery"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "verified": true
+        }
+      },
+      "type": "http",
+      "host": "ecoscore.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ecoscore.esante.gouv.fr",
+      "matched-at": "https://ecoscore.esante.gouv.fr/robots.txt",
+      "request": "GET /robots.txt HTTP/1.1\r\nHost: ecoscore.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: public, max-age=0\r\nConnection: keep-alive\r\nContent-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://*.greenspector.com https://cdn.jsdelivr.net;style-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://cdn.jsdelivr.net;img-src 'self' data: https:;connect-src 'self' https://*.greenspector.com https://tarteaucitron.io https://*.tarteaucitron.io wss://client.relay.crisp.chat https://client.crisp.chat https://cdn.jsdelivr.net;worker-src 'self' blob:;font-src 'self' https://client.crisp.chat;frame-src 'self' https://demo.arcade.software;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests\r\nContent-Type: text/plain; charset=UTF-8\r\nCross-Origin-Opener-Policy: same-origin\r\nCross-Origin-Resource-Policy: same-origin\r\nDate: Thu, 01 Oct 2026 03:38:51 GMT\r\nEtag: W/\"35-1a0ed3ca610\"\r\nLast-Modified: Tue, 29 Sep 2026 12:56:10 GMT\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nServer: nginx\r\nStrict-Transport-Security: max-age=31536000; includeSubDomains\r\nStrict-Transport-Security: max-age=31536000\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 0\r\n\r\nUser-agent: *\nDisallow: /\nDisallow: /*\nDisallow: /*/\n",
+      "ip": "141.95.159.50",
+      "timestamp": "2026-10-01T03:38:51.914445961Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ecoscore.esante.gouv.fr/robots.txt'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/miscellaneous/robots-txt.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/robots-txt",
+      "template-id": "robots-txt",
+      "template-path": "/home/runner/nuclei-templates/http/miscellaneous/robots-txt.yaml",
+      "info": {
+        "name": "robots.txt file",
+        "author": [
+          "caspergn",
+          "thezakman"
+        ],
+        "tags": [
+          "miscellaneous",
+          "misc",
+          "generic",
+          "vuln"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 2
+        }
+      },
+      "type": "http",
+      "host": "ecoscore.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ecoscore.esante.gouv.fr",
+      "matched-at": "https://ecoscore.esante.gouv.fr/robots.txt",
+      "request": "GET /robots.txt HTTP/1.1\r\nHost: ecoscore.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: public, max-age=0\r\nConnection: keep-alive\r\nContent-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://*.greenspector.com https://cdn.jsdelivr.net;style-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://cdn.jsdelivr.net;img-src 'self' data: https:;connect-src 'self' https://*.greenspector.com https://tarteaucitron.io https://*.tarteaucitron.io wss://client.relay.crisp.chat https://client.crisp.chat https://cdn.jsdelivr.net;worker-src 'self' blob:;font-src 'self' https://client.crisp.chat;frame-src 'self' https://demo.arcade.software;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests\r\nContent-Type: text/plain; charset=UTF-8\r\nCross-Origin-Opener-Policy: same-origin\r\nCross-Origin-Resource-Policy: same-origin\r\nDate: Thu, 01 Oct 2026 03:39:05 GMT\r\nEtag: W/\"35-1a0ed3ca610\"\r\nLast-Modified: Tue, 29 Sep 2026 12:56:10 GMT\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nServer: nginx\r\nStrict-Transport-Security: max-age=31536000; includeSubDomains\r\nStrict-Transport-Security: max-age=31536000\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 0\r\n\r\nUser-agent: *\nDisallow: /\nDisallow: /*\nDisallow: /*/\n",
+      "ip": "141.95.159.50",
+      "timestamp": "2026-10-01T03:39:05.705697558Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ecoscore.esante.gouv.fr/robots.txt'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/missing-sri.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/missing-sri",
+      "template-id": "missing-sri",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/missing-sri.yaml",
+      "info": {
+        "name": "Missing Subresource Integrity",
+        "author": [
+          "lucky0x0d",
+          "pulsesecurity.co.nz",
+          "sullo amarsct"
+        ],
+        "tags": [
+          "compliance",
+          "js",
+          "css",
+          "sri",
+          "misconfig",
+          "vuln"
+        ],
+        "description": "Checks if external script and stylesheet tags in the HTML response are missing the Subresource Integrity (SRI) attribute.\n",
+        "reference": [
+          "https://cheatsheetseries.owasp.org/cheatsheets/Third_Party_Javascript_Management_Cheat_Sheet.html#subresource-integrity",
+          "https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-353"
+          ]
+        }
+      },
+      "type": "http",
+      "host": "ecoscore.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ecoscore.esante.gouv.fr",
+      "matched-at": "https://ecoscore.esante.gouv.fr/",
+      "extracted-results": [
+        "https://cdntag.tarteaucitron.io/load.js?domain=ecoscore.esante.gouv.fr&uuid=a85db0cc515763819ebbb55899eb39ae34324380"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: ecoscore.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: private, no-cache, no-store, max-age=0, must-revalidate\r\nConnection: keep-alive\r\nContent-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://*.greenspector.com https://cdn.jsdelivr.net;style-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://cdn.jsdelivr.net;img-src 'self' data: https:;connect-src 'self' https://*.greenspector.com https://tarteaucitron.io https://*.tarteaucitron.io wss://client.relay.crisp.chat https://client.crisp.chat https://cdn.jsdelivr.net;worker-src 'self' blob:;font-src 'self' https://client.crisp.chat;frame-src 'self' https://demo.arcade.software;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nCross-Origin-Resource-Policy: same-origin\r\nDate: Thu, 01 Oct 2026 03:39:12 GMT\r\nEtag: \"pv3rkz999r3pv\"\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nServer: nginx\r\nStrict-Transport-Security: max-age=31536000; includeSubDomains\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Powered-By: Next.js\r\nX-Xss-Protection: 0\r\n\r\n<!DOCTYPE html><html lang=\"fr\"><head><meta charSet=\"utf-8\" data-next-head=\"\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" data-next-head=\"\"/><title data-next-head=\"\">Ecoscore des applications de santé</title><link rel=\"dns-prefetch\" href=\"//cdntag.tarteaucitron.io\"/><link rel=\"preconnect\" href=\"https://cdntag.tarteaucitron.io\" crossorigin=\"\"/><link rel=\"shortcut icon\" href=\"/images/ans/favicon.svg\"/><meta name=\"theme-color\" content=\"#ffffff\"/><meta name=\"robots\" content=\"index,follow\"/><meta name=\"Language\" content=\"fr\"/><meta name=\"description\" content=\"Le service de calcul de l&#x27;empreinte environnementale proposé par le Ministère de la santé, à destination des éditeurs d’applications web et mobiles est nécessaire au référencement dans Mon Espace Santé.\"/><meta property=\"og:locale\" content=\"fr_FR\"/><meta property=\"og:type\" content=\"website\"/><meta property=\"og:title\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:type\" content=\"website\"/><meta property=\"og:url\" content=\"https://ecoscore.esante.gouv.fr\"/><meta property=\"og:image\" content=\"/images/ans/Accueil.png\"/><meta property=\"og:image:alt\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:site_name\" content=\"Ecoscore des applications de santé\"/><meta property=\"og:description\" content=\"Le service de calcul de l&#x27;empreinte environnementale proposé par le Ministère de la santé, à destination des éditeurs d’applications web et mobiles est nécessaire au référencement dans Mon Espace Santé.\"/><link rel=\"preload\" href=\"/_next/static/css/c3d201426cc671eb.css\" as=\"style\"/><script src=\"https://cdntag.tarteaucitron.io/load.js?domain=ecoscore.esante.gouv.fr&amp;uuid=a85db0cc515763819ebbb55899eb39ae34324380\"></script><script type=\"text/javascript\">(function () {\n  if (typeof tarteaucitron === \"undefined\") return;\n  tarteaucitron.job = tarteaucitron.job || [];\n  if (\"b6f254cd-a204-446c-b4d8-b6e65593cbd0\") {\n    window.CRISP_RUNTIME_CONFIG = { locale: \"fr\" };\n    window.CRISP_COOKIE_DOMAIN = window.location.hostname;\n    tarteaucitron.user.crispID = \"b6f254cd-a204-446c-b4d8-b6e65593cbd0\";\n    tarteaucitron.job.push(\"crisp\");\n  }\n  if (\"https://ans-matomo.greenspector.com\" && \"2\") {\n    tarteaucitron.user.matomoId = \"2\";\n    tarteaucitron.user.matomoHost = \"https://ans-matomo.greenspector.com/\";\n    tarteaucitron.job.push(\"matomo\");\n  }\n})();</script><link rel=\"stylesheet\" href=\"/_next/static/css/c3d201426cc671eb.css\" data-n-g=\"\"/><noscript data-n-css=\"\"></noscript><script defer=\"\" noModule=\"\" src=\"/_next/static/chunks/polyfills-42372ed130431b0a.js\"></script><script src=\"/_next/static/chunks/webpack-4432b95c8631e7ba.js\" defer=\"\"></script><script src=\"/_next/static/chunks/framework-613a00c86597ee26.js\" defer=\"\"></script><script src=\"/_next/static/chunks/main-803f4d2e9bd3f3a8.js\" defer=\"\"></script><script src=\"/_next/static/chunks/pages/_app-543429374c0907ef.js\" defer=\"\"></script><script src=\"/_next/static/chunks/7317-97fce57fda283d6b.js\" defer=\"\"></script><script src=\"/_next/static/chunks/3191-b7f5db533a9e6832.js\" defer=\"\"></script><script src=\"/_next/static/chunks/5714-c686003c87897526.js\" defer=\"\"></script><script src=\"/_next/static/chunks/pages/index-6ee5e222ba0d4fd7.js\" defer=\"\"></script><script src=\"/_next/static/sfhfR2lSco37NrK6Knw_v/_buildManifest.js\" defer=\"\"></script><script src=\"/_next/static/sfhfR2lSco37NrK6Knw_v/_ssgManifest.js\" defer=\"\"></script></head><body><div id=\"__next\"><div id=\"root\"><style data-emotion=\"css-global 3sy88v\">html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;box-sizing:border-box;-webkit-text-size-adjust:100%;}*,*::before,*::after{box-sizing:inherit;}strong,b{font-weight:700;}body{margin:0;color:#2d3748;font-family:futura-pt,Arial;font-weight:400;font-size:1rem;line-height:1.5;background-color:#F8F9FB;}@media print{body{background-color:#fff;}}body::backdrop{background-color:#F8F9FB;}</style></div></div><script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{},\"initialState\":{\"user\":null,\"teamSlug\":null,\"currentUrl\":\"/\",\"applications\":{},\"steps\":[{\"step\":1,\"name\":\"Etape 1\",\"description\":\"Initialisation\",\"page\":\"/onboarding/question-forms\",\"iconPath\":\"/images/steps/Etape2.svg\"},{\"step\":2,\"name\":\"Etape 2\",\"description\":\"Définir le scénario utilisateur\",\"iconPath\":\"/images/steps/Etape4.svg\",\"page\":\"/processus/etape2\"},{\"step\":3,\"name\":\"Etape 3\",\"iconPath\":\"/images/steps/Etape5.svg\",\"description\":\"Implémenter le scénario\",\"page\":\"/processus/etape3\"},{\"step\":4,\"name\":\"Etape 4\",\"description\":\"Mesure finale\",\"iconPath\":\"/images/steps/Etape8.svg\",\"page\":\"/processus/etape4\"}],\"defaultProcessusMode\":\"mes\"}},\"page\":\"/\",\"query\":{},\"buildId\":\"sfhfR2lSco37NrK6Knw_v\",\"isFallback\":false,\"isExperimentalCompile\":false,\"appGip\":true,\"scriptLoader\":[]}</script></body></html>",
+      "ip": "141.95.159.50",
+      "timestamp": "2026-10-01T03:39:12.666493796Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ecoscore.esante.gouv.fr/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/miscellaneous/options-method.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/options-method",
+      "template-id": "options-method",
+      "template-path": "/home/runner/nuclei-templates/http/miscellaneous/options-method.yaml",
+      "info": {
+        "name": "Allowed Options Method",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "miscellaneous",
+          "misc",
+          "generic",
+          "vuln"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "http",
+      "host": "ecoscore.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ecoscore.esante.gouv.fr",
+      "matched-at": "https://ecoscore.esante.gouv.fr",
+      "extracted-results": [
+        "GET,HEAD"
+      ],
+      "request": "OPTIONS / HTTP/1.1\r\nHost: ecoscore.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 8\r\nAllow: GET,HEAD\r\nConnection: keep-alive\r\nContent-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://*.greenspector.com https://cdn.jsdelivr.net;style-src 'self' 'unsafe-inline' https://tarteaucitron.io https://*.tarteaucitron.io https://client.crisp.chat https://cdn.jsdelivr.net;img-src 'self' data: https:;connect-src 'self' https://*.greenspector.com https://tarteaucitron.io https://*.tarteaucitron.io wss://client.relay.crisp.chat https://client.crisp.chat https://cdn.jsdelivr.net;worker-src 'self' blob:;font-src 'self' https://client.crisp.chat;frame-src 'self' https://demo.arcade.software;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nCross-Origin-Resource-Policy: same-origin\r\nDate: Thu, 01 Oct 2026 03:39:21 GMT\r\nEtag: W/\"8-ZRAf8oNBS3Bjb/SU2GYZCmbtmXg\"\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nServer: nginx\r\nStrict-Transport-Security: max-age=31536000; includeSubDomains\r\nStrict-Transport-Security: max-age=31536000\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 0\r\n\r\nGET,HEAD",
+      "ip": "141.95.159.50",
+      "timestamp": "2026-10-01T03:39:21.541347932Z",
+      "curl-command": "curl -X 'OPTIONS' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ecoscore.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "info": {
+        "name": "Detect SSL Certificate Issuer",
+        "author": [
+          "lingtren"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "ecoscore.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "ecoscore.esante.gouv.fr:443",
+      "extracted-results": [
+        "DigiCert Inc"
+      ],
+      "ip": "141.95.159.50",
+      "timestamp": "2026-10-01T03:39:31.023753407Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "vuln"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "ecoscore.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "ecoscore.esante.gouv.fr:443",
+      "extracted-results": [
+        "ecoscore.esante.gouv.fr"
+      ],
+      "ip": "141.95.159.50",
+      "timestamp": "2026-10-01T03:39:31.023896388Z",
+      "matcher-status": true
+    }
+  ]
+]
