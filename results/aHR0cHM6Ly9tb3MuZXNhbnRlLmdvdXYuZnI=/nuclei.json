@@ -1,0 +1,848 @@
+[
+  [
+    {
+      "template": "http/misconfiguration/apache/apache-mod-negotiation-listing.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/apache-mod-negotiation-listing",
+      "template-id": "apache-mod-negotiation-listing",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/apache/apache-mod-negotiation-listing.yaml",
+      "info": {
+        "name": "Apache mod_negotiation - Pseudo Directory Listing",
+        "author": [
+          "0x_akoko"
+        ],
+        "tags": [
+          "apache",
+          "misconfig",
+          "exposure",
+          "mod-negotiation",
+          "vuln"
+        ],
+        "description": "Detected Apache server with mod_negotiation and MultiViews enabled, exposing a pseudo directory listing when invalid Accept headers are sent to extensionless filenames.\n",
+        "reference": [
+          "https://www.acunetix.com/vulnerabilities/web/apache-mod_negotiation-filename-bruteforcing/",
+          "https://cwe.mitre.org/data/definitions/538.html"
+        ],
+        "severity": "low",
+        "metadata": {
+          "max-request": 5,
+          "verified": true
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-538"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+          "cvss-score": 5.3
+        }
+      },
+      "extractor-name": "exposed_files",
+      "type": "http",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://mos.esante.gouv.fr",
+      "path": "/index",
+      "matched-at": "https://mos.esante.gouv.fr/index",
+      "extracted-results": [
+        "index.html"
+      ],
+      "request": "GET /index HTTP/1.1\r\nHost: mos.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: fake/fake\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 406 Not Acceptable\r\nContent-Length: 382\r\nAlternates: {\"index.html\" 1 {type text/html} {length 351}}\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Thu, 01 Oct 2026 04:38:25 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000; preload\r\nTcn: list\r\nVary: negotiate\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>406 Not Acceptable</title>\n</head><body>\n<h1>Not Acceptable</h1>\n<p>An appropriate representation of the requested resource could not be found on this server.</p>\nAvailable variants:\n<ul>\n<li><a href=\"index.html\">index.html</a> , type text/html</li>\n</ul>\n</body></html>\n",
+      "meta": {
+        "path": "/index"
+      },
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:38:25.117966575Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: fake/fake' -H 'Host: mos.esante.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mos.esante.gouv.fr/index'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/waf-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/waf-detect",
+      "template-id": "waf-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/waf-detect.yaml",
+      "info": {
+        "name": "WAF Detection",
+        "author": [
+          "dwisiswant0",
+          "lu4nx",
+          "s4e-io"
+        ],
+        "tags": [
+          "waf",
+          "tech",
+          "misc",
+          "discovery"
+        ],
+        "description": "A web application firewall was detected.",
+        "reference": [
+          "https://github.com/Ekultek/WhatWaf"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "matcher-name": "apachegeneric",
+      "type": "http",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://mos.esante.gouv.fr",
+      "matched-at": "https://mos.esante.gouv.fr",
+      "request": "POST / HTTP/1.1\r\nHost: mos.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 04:38:34 GMT\r\nEtag: \"15f-65c8d7ac2e100-gzip\"\r\nLast-Modified: Mon, 28 Sep 2026 16:23:00 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000; preload\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n  <head>\n    <meta content=\"text/html; charset=UTF-8\" http-equiv=\"content-type\"/>\n  </head>\n  <body>\n    <div>\n      <meta content=\"0;URL=0.html\" http-equiv=\"Refresh\"/>\n    </div>\n  </body>\n</html>",
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:38:34.118862143Z",
+      "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: mos.esante.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mos.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "mos.esante.gouv.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:40:10.046442283Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "mos.esante.gouv.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:40:10.388358024Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/xss-deprecated-header.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/xss-deprecated-header",
+      "template-id": "xss-deprecated-header",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/xss-deprecated-header.yaml",
+      "info": {
+        "name": "XSS-Protection Header - Cross-Site Scripting",
+        "author": [
+          "joshlarsen"
+        ],
+        "tags": [
+          "xss",
+          "misconfig",
+          "generic",
+          "vuln"
+        ],
+        "description": "Setting the XSS-Protection header is deprecated. Setting the header to anything other than `0` can actually introduce an XSS vulnerability.",
+        "reference": [
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection",
+          "https://owasp.org/www-project-secure-headers/#x-xss-protection"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-79"
+          ],
+          "cvss-metrics": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "type": "http",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://mos.esante.gouv.fr",
+      "matched-at": "https://mos.esante.gouv.fr",
+      "extracted-results": [
+        "1; mode=block"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: mos.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 04:40:11 GMT\r\nEtag: \"15f-65c8d7ac2e100-gzip\"\r\nLast-Modified: Mon, 28 Sep 2026 16:23:00 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000; preload\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n  <head>\n    <meta content=\"text/html; charset=UTF-8\" http-equiv=\"content-type\"/>\n  </head>\n  <body>\n    <div>\n      <meta content=\"0;URL=0.html\" http-equiv=\"Refresh\"/>\n    </div>\n  </body>\n</html>",
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:40:11.500017087Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mos.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/apache/apache-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/apache-detect",
+      "template-id": "apache-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/apache/apache-detect.yaml",
+      "info": {
+        "name": "Apache Detection",
+        "author": [
+          "philippedelteil"
+        ],
+        "tags": [
+          "tech",
+          "apache",
+          "discovery"
+        ],
+        "description": "Some Apache servers have the version on the response header. The OpenSSL version can be also obtained",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "http",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://mos.esante.gouv.fr",
+      "matched-at": "https://mos.esante.gouv.fr",
+      "extracted-results": [
+        "Apache"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: mos.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 04:40:11 GMT\r\nEtag: \"15f-65c8d7ac2e100-gzip\"\r\nLast-Modified: Mon, 28 Sep 2026 16:23:00 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000; preload\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n  <head>\n    <meta content=\"text/html; charset=UTF-8\" http-equiv=\"content-type\"/>\n  </head>\n  <body>\n    <div>\n      <meta content=\"0;URL=0.html\" http-equiv=\"Refresh\"/>\n    </div>\n  </body>\n</html>",
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:40:11.500917015Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mos.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://mos.esante.gouv.fr",
+      "matched-at": "https://mos.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: mos.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 04:40:31 GMT\r\nEtag: \"15f-65c8d7ac2e100-gzip\"\r\nLast-Modified: Mon, 28 Sep 2026 16:23:00 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000; preload\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n  <head>\n    <meta content=\"text/html; charset=UTF-8\" http-equiv=\"content-type\"/>\n  </head>\n  <body>\n    <div>\n      <meta content=\"0;URL=0.html\" http-equiv=\"Refresh\"/>\n    </div>\n  </body>\n</html>",
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:40:31.534955154Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mos.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://mos.esante.gouv.fr",
+      "matched-at": "https://mos.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: mos.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 04:40:31 GMT\r\nEtag: \"15f-65c8d7ac2e100-gzip\"\r\nLast-Modified: Mon, 28 Sep 2026 16:23:00 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000; preload\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n  <head>\n    <meta content=\"text/html; charset=UTF-8\" http-equiv=\"content-type\"/>\n  </head>\n  <body>\n    <div>\n      <meta content=\"0;URL=0.html\" http-equiv=\"Refresh\"/>\n    </div>\n  </body>\n</html>",
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:40:31.535148767Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mos.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://mos.esante.gouv.fr",
+      "matched-at": "https://mos.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: mos.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 04:40:31 GMT\r\nEtag: \"15f-65c8d7ac2e100-gzip\"\r\nLast-Modified: Mon, 28 Sep 2026 16:23:00 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000; preload\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n  <head>\n    <meta content=\"text/html; charset=UTF-8\" http-equiv=\"content-type\"/>\n  </head>\n  <body>\n    <div>\n      <meta content=\"0;URL=0.html\" http-equiv=\"Refresh\"/>\n    </div>\n  </body>\n</html>",
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:40:31.535274176Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mos.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://mos.esante.gouv.fr",
+      "matched-at": "https://mos.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: mos.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 04:40:31 GMT\r\nEtag: \"15f-65c8d7ac2e100-gzip\"\r\nLast-Modified: Mon, 28 Sep 2026 16:23:00 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000; preload\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n  <head>\n    <meta content=\"text/html; charset=UTF-8\" http-equiv=\"content-type\"/>\n  </head>\n  <body>\n    <div>\n      <meta content=\"0;URL=0.html\" http-equiv=\"Refresh\"/>\n    </div>\n  </body>\n</html>",
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:40:31.5354026Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mos.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://mos.esante.gouv.fr",
+      "matched-at": "https://mos.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: mos.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 04:40:31 GMT\r\nEtag: \"15f-65c8d7ac2e100-gzip\"\r\nLast-Modified: Mon, 28 Sep 2026 16:23:00 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000; preload\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n  <head>\n    <meta content=\"text/html; charset=UTF-8\" http-equiv=\"content-type\"/>\n  </head>\n  <body>\n    <div>\n      <meta content=\"0;URL=0.html\" http-equiv=\"Refresh\"/>\n    </div>\n  </body>\n</html>",
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:40:31.535516902Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mos.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://mos.esante.gouv.fr",
+      "matched-at": "https://mos.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: mos.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 04:40:31 GMT\r\nEtag: \"15f-65c8d7ac2e100-gzip\"\r\nLast-Modified: Mon, 28 Sep 2026 16:23:00 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000; preload\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n  <head>\n    <meta content=\"text/html; charset=UTF-8\" http-equiv=\"content-type\"/>\n  </head>\n  <body>\n    <div>\n      <meta content=\"0;URL=0.html\" http-equiv=\"Refresh\"/>\n    </div>\n  </body>\n</html>",
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:40:31.535637544Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mos.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://mos.esante.gouv.fr",
+      "matched-at": "https://mos.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: mos.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 04:40:31 GMT\r\nEtag: \"15f-65c8d7ac2e100-gzip\"\r\nLast-Modified: Mon, 28 Sep 2026 16:23:00 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000; preload\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n  <head>\n    <meta content=\"text/html; charset=UTF-8\" http-equiv=\"content-type\"/>\n  </head>\n  <body>\n    <div>\n      <meta content=\"0;URL=0.html\" http-equiv=\"Refresh\"/>\n    </div>\n  </body>\n</html>",
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:40:31.535751186Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mos.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/haproxy-status.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/haproxy-status",
+      "template-id": "haproxy-status",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/haproxy-status.yaml",
+      "info": {
+        "name": "HAProxy Statistics Page - Detect",
+        "author": [
+          "dhiyaneshdk"
+        ],
+        "tags": [
+          "logs",
+          "haproxy",
+          "edb",
+          "misconfig",
+          "vuln"
+        ],
+        "description": "HAProxy statistics page was detected.",
+        "reference": [
+          "https://www.exploit-db.com/ghdb/4191"
+        ],
+        "severity": "medium",
+        "metadata": {
+          "max-request": 2
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+          "cvss-score": 5.3
+        }
+      },
+      "type": "http",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://mos.esante.gouv.fr",
+      "matched-at": "https://mos.esante.gouv.fr/haproxy?stats",
+      "request": "GET /haproxy?stats HTTP/1.1\r\nHost: mos.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nRefresh: 5\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n\"http://www.w3.org/TR/html4/loose.dtd\">\n<html><head><title>Statistics Report for HAProxy</title>\n<link rel=\"icon\" href=\"data:,\">\n<meta http-equiv=\"content-type\" content=\"text/html; charset=iso-8859-1\">\n<style type=\"text/css\"><!--\nbody { font-family: arial, helvetica, sans-serif; font-size: 12px; font-weight: normal; color: black; background: white;}\nth,td { font-size: 10px;}\nh1 { font-size: x-large; margin-bottom: 0.5em;}\nh2 { font-family: helvetica, arial; font-size: x-large; font-weight: bold; font-style: italic; color: #6020a0; margin-top: 0em; margin-bottom: 0em;}\nh3 { font-family: helvetica, arial; font-size: 16px; font-weight: bold; color: #b00040; background: #e8e8d0; margin-top: 0em; margin-bottom: 0em;}\nli { margin-top: 0.25em; margin-right: 2em;}\n.hr {margin-top: 0.25em; border-color: black; border-bottom-style: solid;}\n.titre\t{background: #20D0D0;color: #000000; font-weight: bold; text-align: center;}\n.total\t{background: #20D0D0;color: #ffff80;}\n.frontend\t{background: #e8e8d0;}\n.socket\t{background: #d0d0d0;}\n.backend\t{background: #e8e8d0;}\n.active_down\t\t{background: #ff9090;}\n.active_going_up\t\t{background: #ffd020;}\n.active_going_down\t{background: #ffffa0;}\n.active_up\t\t{background: #c0ffc0;}\n.active_nolb\t\t{background: #20a0ff;}\n.active_draining\t\t{background: #20a0FF;}\n.active_no_check\t\t{background: #e0e0e0;}\n.backup_down\t\t{background: #ff9090;}\n.backup_going_up\t\t{background: #ff80ff;}\n.backup_going_down\t{background: #c060ff;}\n.backup_up\t\t{background: #b0d0ff;}\n.backup_nolb\t\t{background: #90b0e0;}\n.backup_draining\t\t{background: #cc9900;}\n.backup_no_check\t\t{background: #e0e0e0;}\n.maintain\t{background: #c07820;}\n.rls      {letter-spacing: 0.2em; margin-right: 1px;}\n\na.px:link {color: #ffff40; text-decoration: none;}a.px:visited {color: #ffff40; text-decoration: none;}a.px:hover {color: #ffffff; text-decoration: none;}a.lfsb:link {color: #000000; text-decoration: none;}a.lfsb:visited {color: #000000; text-decoration: none;}a.lfsb:hover {color: #505050; text-decoration: none;}\ntable.tbl { border-collapse: collapse; border-style: none;}\ntable.tbl td { text-align: right; border-width: 1px 1px 1px 1px; border-style: solid solid solid solid; padding: 2px 3px; border-color: gray; white-space: nowrap;}\ntable.tbl td.ac { text-align: center;}\ntable.tbl th { border-width: 1px; border-style: solid solid solid solid; border-color: gray;}\ntable.tbl th.pxname { background: #b00040; color: #ffff40; font-weight: bold; border-style: solid solid none solid; padding: 2px 3px; white-space: nowrap;}\ntable.tbl th.empty { border-style: none; empty-cells: hide; background: white;}\ntable.tbl th.desc { background: white; border-style: solid solid none solid; text-align: left; padding: 2px 3px;}\n\ntable.lgd { border-collapse: collapse; border-width: 1px; border-style: none none none solid; border-color: black;}\ntable.lgd td { border-width: 1px; border-style: solid solid solid solid; border-color: gray; padding: 2px;}\ntable.lgd td.noborder { border-style: none; padding: 2px; white-space: nowrap;}\ntable.det { border-collapse: collapse; border-style: none; }\ntable.det th { text-align: left; border-width: 0px; padding: 0px 1px 0px 0px; font-style:normal;font-size:11px;font-weight:bold;font-family: sans-serif;}\ntable.det td { text-align: right; border-width: 0px; padding: 0px 0px 0px 4px; white-space: nowrap; font-style:normal;font-size:11px;font-weight:normal;}\nu {text-decoration:none; border-bottom: 1px dotted black;}\ndiv.tips {\n display:block;\n visibility:hidden;\n z-index:2147483647;\n position:absolute;\n padding:2px 4px 3px;\n background:#f0f060; color:#000000;\n border:1px solid #7040c0;\n white-space:nowrap;\n font-style:normal;font-size:11px;font-weight:normal;\n -moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;\n -moz-box-shadow:gray 2px 2px 3px;-webkit-box-shadow:gray 2px 2px 3px;box-shadow:gray 2px 2px 3px;\n}\nu:hover div.tips {visibility:visible;}\n@media (prefers-color-scheme: dark) {\n body { font-family: arial, helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #e8e6e3; background: #131516;}\n h1 { color: #a265e0!important; }\n h2 { color: #a265e0; }\n h3 { color: #ff5190; background-color: #3e3e1f; }\n a { color: #3391ff; }\n input { background-color: #2f3437; }\n .hr { border-color: #8c8273; }\n .titre { background-color: #1aa6a6; color: #e8e6e3; }\n .frontend {background: #2f3437;}\n .socket\t{background: #2a2d2f;}\n .backend {background: #2f3437;}\n .active_down {background: #760000;}\n .active_going_up {background: #b99200;}\n .active_going_down {background: #6c6c00;}\n .active_up {background: #165900;}\n .active_nolb {background: #006ab9;}\n .active_draining {background: #006ab9;}\n .active_no_check {background: #2a2d2f;}\n .backup_down {background: #760000;}\n .backup_going_up {background: #7f007f;}\n .backup_going_down {background: #580092;}\n .backup_up {background: #2e3234;}\n .backup_nolb {background: #1e3c6a;}\n .backup_draining {background: #a37a00;}\n .backup_no_check {background: #2a2d2f;}\n .maintain {background: #9a601a;}\n a.px:link {color: #d8d83b; text-decoration: none;}\n a.px:visited {color: #d8d83b; text-decoration: none;}\n a.px:hover {color: #ffffff; text-decoration: none;}\n a.lfsb:link {color: #e8e6e3; text-decoration: none;}\n a.lfsb:visited {color: #e8e6e3; text-decoration: none;}\n a.lfsb:hover {color: #b5afa6; text-decoration: none;}\n table.tbl th.empty { background-color: #181a1b; }\n table.tbl th.desc { background: #181a1b; }\n table.tbl th.pxname { background-color: #8d0033; color: #ffff46; }\n table.tbl th { border-color: #808080; }\n table.tbl td { border-color: #808080; }\n u {text-decoration:none; border-bottom: 1px dotted #e8e6e3;}\n div.tips {\n  background:#8e8e0d;\n  color:#e8e6e3;\n  border-color: #4e2c86;\n  -moz-box-shadow: #60686c 2px 2px 3px;\n  -webkit-box-shadow: #60686c 2px 2px 3px;\n  box-shadow: #60686c 2px 2px 3px;\n }\n}\n-->\n</style></head>\n<body><h1><a href=\"http://www.haproxy.org/\" style=\"text-decoration: none;\">HAProxy</a></h1>\n<h2>Statistics Report for pid 2040</h2>\n<hr width=\"100%\" class=\"hr\">\n<h3>&gt; General process information</h3>\n<table border=0><tr><td align=\"left\" nowrap width=\"1%\">\n<p><b>pid = </b> 2040 (process #1, nbproc = 1, nbthread = 8)<br>\n<b>uptime = </b> 35d 18h33m36s<br>\n<b>system limits:</b> memmax = unlimited; ulimit-n = 20068<br>\n<b>maxsock = </b> 20068; <b>maxconn = </b> 10000; <b>maxpipes = </b> 0<br>\ncurrent conns = 190; current pipes = 0/0; conn rate = 20/sec; bit rate = 9.741 Mbps<br>\nRunning tasks: 0/242; idle = 98 %<br>\n</td><td align=\"center\" nowrap>\n<table class=\"lgd\"><tr>\n<td class=\"active_up\">&nbsp;</td><td class=\"noborder\">active UP </td><td class=\"backup_up\">&nbsp;</td><td class=\"noborder\">backup UP </td></tr><tr>\n<td class=\"active_going_down\"></td><td class=\"noborder\">active UP, going down </td><td class=\"backup_going_down\"></td><td class=\"noborder\">backup UP, going down </td></tr><tr>\n<td class=\"active_going_up\"></td><td class=\"noborder\">active DOWN, going up </td><td class=\"backup_going_up\"></td><td class=\"noborder\">backup DOWN, going up </td></tr><tr>\n<td class=\"active_down\"></td><td class=\"noborder\">active or backup DOWN &nbsp;</td><td class=\"active_no_check\"></td><td class=\"noborder\">not checked </td></tr><tr>\n<td class=\"maintain\"></td><td class=\"noborder\" colspan=\"3\">active or backup DOWN for maintenance (MAINT) &nbsp;</td></tr><tr>\n<td class=\"active_draining\"></td><td class=\"noborder\" colspan=\"3\">active or backup SOFT STOPPED for maintenance &nbsp;</td></tr></table>\nNote: \"NOLB\"/\"DRAIN\" = UP with load-balancing disabled.</td><td align=\"left\" valign=\"top\" nowrap width=\"1%\"><b>Display option:</b><ul style=\"margin-top: 0.25em;\"><li><form method=\"GET\">Scope : <input value=\"\" name=\"scope\" size=\"8\" maxlength=\"20\" tabindex=\"1\"/></form>\n<li><a href=\"/haproxy?stats;up\">Hide 'DOWN' servers</a><br>\n<li><a href=\"/haproxy?stats;norefresh\">Disable refresh</a><br>\n<li><a href=\"/haproxy?stats\">Refresh now</a><br>\n<li><a href=\"/haproxy?stats;csv;norefresh\">CSV export</a><br>\n<li><a href=\"/haproxy?stats;json;norefresh\">JSON export</a> (<a href=\"/haproxy?stats;json-schema\">schema</a>)<br>\n</ul></td><td align=\"left\" valign=\"top\" nowrap width=\"1%\"><b>External resources:</b><ul style=\"margin-top: 0.25em;\">\n<li><a href=\"http://www.haproxy.org/\">Primary site</a><br>\n<li><a href=\"http://www.haproxy.org/#down\">Updates (v2.6)</a><br>\n<li><a href=\"http://www.haproxy.org/#docs\">Online manual</a><br>\n</ul></td></tr></table>\n<table class=\"tbl\" width=\"100%\">\n<tr class=\"titre\"><th class=\"pxname\" width=\"10%\"><a name=\"frontend_asip\"></a><u><a class=px href=\"#frontend_asip\">frontend_asip</a><div class=tips>cap: frontend, mode: http, id: 3</div></u></th><th class=\"empty\" width=\"90%\"></th></tr>\n</table>\n<table class=\"tbl\" width=\"100%\">\n<tr class=\"titre\"><th rowspan=2></th><th colspan=3>Queue</th><th colspan=3>Session rate</th><th colspan=6>Sessions</th><th colspan=2>Bytes</th><th colspan=2>Denied</th><th colspan=3>Errors</th><th colspan=2>Warnings</th><th colspan=9>Server</th></tr>\n<tr class=\"titre\"><th>Cur</th><th>Max</th><th>Limit</th><th>Cur</th><th>Max</th><th>Limit</th><th>Cur</th><th>Max</th><th>Limit</th><th>Total</th><th>LbTot</th><th>Last</th><th>In</th><th>Out</th><th>Req</th><th>Resp</th><th>Req</th><th>Conn</th><th>Resp</th><th>Retr</th><th>Redis</th><th>Status</th><th>LastChk</th><th>Wght</th><th>Act</th><th>Bck</th><th>Chk</th><th>Dwn</th><th>Dwntme</th><th>Thrtle</th>\n</tr><tr class=\"frontend\"><td class=ac><a name=\"frontend_asip/Frontend\"></a><a class=lfsb href=\"#frontend_asip/Frontend\">Frontend</a></td><td colspan=3></td><td><u>24<div class=tips><table class=det><tr><th>Current connection rate:</th><td>20/s</td></tr><tr><th>Current session rate:</th><td>24/s</td></tr><tr><th>Current request rate:</th><td>91/s</td></tr></table></div></u></td><td><u>562<div class=tips><table class=det><tr><th>Max connection rate:</th><td>527/s</td></tr><tr><th>Max session rate:</th><td>562/s</td></tr><tr><th>Max request rate:</th><td>555/s</td></tr></table></div></u></td><td>-</td><td>190</td><td><span class=\"rls\">1</span>441</td><td><span class=\"rls\">5</span>000</td><td><u>1<span class=\"rls\">4</span>06<span class=\"rls\">1</span>930<div class=tips><table class=det><tr><th>Cum. connections:</th><td>1<span class=\"rls\">4</span>26<span class=\"rls\">3</span>741</td></tr><tr><th>Cum. sessions:</th><td>1<span class=\"rls\">4</span>06<span class=\"rls\">1</span>930</td></tr><tr><th>Cum. HTTP requests:</th><td>2<span class=\"rls\">4</span>68<span class=\"rls\">4</span>576</td></tr><tr><th>- HTTP 1xx responses:</th><td>0</td></tr><tr><th>- HTTP 2xx responses:</th><td>1<span class=\"rls\">5</span>73<span class=\"rls\">2</span>876</td></tr><tr><th>&nbsp;&nbsp;Compressed 2xx:</th><td>0</td><td>(0%)</td></tr><tr><th>- HTTP 3xx responses:</th><td><span class=\"rls\">5</span>13<span class=\"rls\">6</span>038</td></tr><tr><th>- HTTP 4xx responses:</th><td><span class=\"rls\">3</span>72<span class=\"rls\">4</span>925</td></tr><tr><th>- HTTP 5xx responses:</th><td>8<span class=\"rls\">9</span>973</td></tr><tr><th>- other responses:</th><td>759</td></tr><tr><th>Intercepted requests:</th><td><span class=\"rls\">2</span>26<span class=\"rls\">8</span>415</td></tr><tr><th>Cache lookups:</th><td>0</td></tr><tr><th>Cache hits:</th><td>0</td><td>(0%)</td></tr><tr><th>Failed hdr rewrites:</th><td>0</td></tr><tr><th>Internal errors:</th><td>0</td></tr></table></div></u></td><td></td><td></td><td>1<span class=\"rls\">6</span>29<span class=\"rls\">3</span>53<span class=\"rls\">4</span>416</td><td><span class=\"rls\">1</span>06<span class=\"rls\">5</span>67<span class=\"rls\">5</span>21<span class=\"rls\">6</span>414<div class=tips><table class=det><tr><th>Response bytes in:</th><td><span class=\"rls\">1</span>06<span class=\"rls\">5</span>67<span class=\"rls\">5</span>21<span class=\"rls\">6</span>414</td></tr><tr><th>Compression in:</th><td>0</td></tr><tr><th>Compression out:</th><td>0</td><td>(0%)</td></tr><tr><th>Compression bypass:</th><td>0</td></tr><tr><th>Total bytes saved:</th><td>0</td><td>(0%)</td></tr></table></div></td><td>14<span class=\"rls\">4</span>296</td><td>0</td><td><span class=\"rls\">3</span>07<span class=\"rls\">8</span>332</td><td></td><td></td><td></td><td></td><td class=ac>OPEN</td><td class=ac colspan=8></td></tr></table><p>\n</body></html>\n",
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:40:32.42509428Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mos.esante.gouv.fr/haproxy?stats'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/miscellaneous/options-method.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/options-method",
+      "template-id": "options-method",
+      "template-path": "/home/runner/nuclei-templates/http/miscellaneous/options-method.yaml",
+      "info": {
+        "name": "Allowed Options Method",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "miscellaneous",
+          "misc",
+          "generic",
+          "vuln"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "http",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://mos.esante.gouv.fr",
+      "matched-at": "https://mos.esante.gouv.fr",
+      "extracted-results": [
+        "GET,POST,OPTIONS,HEAD"
+      ],
+      "request": "OPTIONS / HTTP/1.1\r\nHost: mos.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAllow: GET,POST,OPTIONS,HEAD\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 04:40:47 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000; preload\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\nContent-Length: 0\r\n\r\n",
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:40:47.201767373Z",
+      "curl-command": "curl -X 'OPTIONS' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mos.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/dns-saas-service-detection.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/dns-saas-service-detection",
+      "template-id": "dns-saas-service-detection",
+      "template-path": "/home/runner/nuclei-templates/dns/dns-saas-service-detection.yaml",
+      "info": {
+        "name": "DNS SaaS Service Detection",
+        "author": [
+          "noah @thesubtlety",
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "service",
+          "discovery"
+        ],
+        "description": "A CNAME DNS record was discovered",
+        "reference": [
+          "https://ns1.com/resources/cname",
+          "https://www.theregister.com/2021/02/24/dns_cname_tracking/",
+          "https://www.ionos.com/digitalguide/hosting/technical-matters/cname-record/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "dns",
+      "host": "mos.esante.gouv.fr",
+      "matched-at": "mos.esante.gouv.fr",
+      "extracted-results": [
+        "prod-mos.ans.kleegroup.ovh"
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 54562\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;mos.esante.gouv.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 54562\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;mos.esante.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nmos.esante.gouv.fr.\t10800\tIN\tCNAME\tprod-mos.ans.kleegroup.ovh.\n",
+      "timestamp": "2026-10-01T04:40:47.8020373Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "info": {
+        "name": "Detect SSL Certificate Issuer",
+        "author": [
+          "lingtren"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "mos.esante.gouv.fr:443",
+      "extracted-results": [
+        "DigiCert Inc"
+      ],
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:40:48.16403027Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "vuln"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "mos.esante.gouv.fr:443",
+      "extracted-results": [
+        "*.esante.gouv.fr",
+        "esante.gouv.fr"
+      ],
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:40:48.164147337Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/wildcard-tls.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/wildcard-tls",
+      "template-id": "wildcard-tls",
+      "template-path": "/home/runner/nuclei-templates/ssl/wildcard-tls.yaml",
+      "info": {
+        "name": "Wildcard TLS Certificate",
+        "author": [
+          "lucky0x0d"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "wildcard",
+          "vuln"
+        ],
+        "description": "Checks a sites certificate to see if there are wildcard CN or SAN entries.\n",
+        "reference": [
+          "https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html#carefully-consider-the-use-of-wildcard-certificates"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "mos.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "mos.esante.gouv.fr:443",
+      "extracted-results": [
+        "CN: *.esante.gouv.fr",
+        " SAN: [*.esante.gouv.fr esante.gouv.fr]"
+      ],
+      "ip": "79.137.26.13",
+      "timestamp": "2026-10-01T04:40:48.164190973Z",
+      "matcher-status": true
+    }
+  ]
+]
