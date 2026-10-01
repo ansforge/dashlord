@@ -1,0 +1,51 @@
+[
+  [
+    {
+      "template": "http/technologies/waf-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/waf-detect",
+      "template-id": "waf-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/waf-detect.yaml",
+      "info": {
+        "name": "WAF Detection",
+        "author": [
+          "dwisiswant0",
+          "lu4nx",
+          "s4e-io"
+        ],
+        "tags": [
+          "waf",
+          "tech",
+          "misc",
+          "discovery"
+        ],
+        "description": "A web application firewall was detected.",
+        "reference": [
+          "https://github.com/Ekultek/WhatWaf"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "matcher-name": "apachegeneric",
+      "type": "http",
+      "host": "validation-enreg.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://validation-enreg.esante.gouv.fr",
+      "matched-at": "https://validation-enreg.esante.gouv.fr",
+      "request": "POST / HTTP/1.1\r\nHost: validation-enreg.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
+      "response": "HTTP/1.1 302 Found\r\nContent-Length: 273\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Thu, 01 Oct 2026 05:42:08 GMT\r\nLocation: https://validation-enreg.esante.gouv.fr/enreg/login/page_accueil/authentification_AE.html\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nX-Frame-Options: SAMEORIGIN\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>302 Found</title>\n</head><body>\n<h1>Found</h1>\n<p>The document has moved <a href=\"https://validation-enreg.esante.gouv.fr/enreg/login/page_accueil/authentification_AE.html\">here</a>.</p>\n</body></html>\n",
+      "ip": "5.135.49.18",
+      "timestamp": "2026-10-01T05:42:08.217307093Z",
+      "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: validation-enreg.esante.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://validation-enreg.esante.gouv.fr'",
+      "matcher-status": true
+    }
+  ]
+]
