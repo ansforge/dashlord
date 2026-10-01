@@ -1,0 +1,512 @@
+[
+  [
+    {
+      "template": "http/technologies/waf-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/waf-detect",
+      "template-id": "waf-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/waf-detect.yaml",
+      "info": {
+        "name": "WAF Detection",
+        "author": [
+          "dwisiswant0",
+          "lu4nx",
+          "s4e-io"
+        ],
+        "tags": [
+          "waf",
+          "tech",
+          "misc",
+          "discovery"
+        ],
+        "description": "A web application firewall was detected.",
+        "reference": [
+          "https://github.com/Ekultek/WhatWaf"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "matcher-name": "apachegeneric",
+      "type": "http",
+      "host": "tom.eservices.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://tom.eservices.esante.gouv.fr",
+      "matched-at": "https://tom.eservices.esante.gouv.fr",
+      "request": "POST / HTTP/1.1\r\nHost: tom.eservices.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
+      "response": "HTTP/1.1 302 Found\r\nContent-Length: 224\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Thu, 01 Oct 2026 05:39:05 GMT\r\nLocation: https://tom.eservices.esante.gouv.fr/tom\r\nServer: Apache\r\nX-Frame-Options: SAMEORIGIN\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>302 Found</title>\n</head><body>\n<h1>Found</h1>\n<p>The document has moved <a href=\"https://tom.eservices.esante.gouv.fr/tom\">here</a>.</p>\n</body></html>\n",
+      "ip": "5.135.49.44",
+      "timestamp": "2026-10-01T05:39:05.379036594Z",
+      "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: tom.eservices.esante.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://tom.eservices.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "tom.eservices.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "tom.eservices.esante.gouv.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "5.135.49.44",
+      "timestamp": "2026-10-01T05:40:25.116546786Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "strict-transport-security",
+      "type": "http",
+      "host": "tom.eservices.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://tom.eservices.esante.gouv.fr",
+      "matched-at": "https://tom.eservices.esante.gouv.fr/tom/pageAccueil/index.html",
+      "request": "GET / HTTP/1.1\r\nHost: tom.eservices.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 4126\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=ISO-8859-1\r\nDate: Thu, 01 Oct 2026 05:40:37 GMT\r\nLast-Modified: Mon, 06 Jul 2026 10:16:32 GMT\r\nServer: Apache\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<title>ANS : TOM - Service de Gestion</title>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\" />\r\n<style type=\"text/css\">\r\n@import url(/tom/resources/style/style.css);\r\n</style>\r\n<!-- Mantis 17417 -->\r\n<!-- Mantis 17027 -->\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/javascript.js\" ></script>\r\n\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/jquery-1.11.2.min.js\"></script>\r\n\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/zoom.js\"></script>\r\n</head>\r\n\r\n<body id=\"header\">\r\n\t<!-- DEBUT HAUT DE PAGE -->\r\n\t<div id=\"page\">\r\n\t\t<div id=\"haut\">\r\n\t\t\t<img src=\"/tom/resources/images/haut_n.gif\" usemap=\"#Map\" border=\"0\"\r\n\t\t\t\theight=\"126\" width=\"940\" />\r\n\t\t\t\t<map name=\"Map\" id=\"myBtn\">\t\t\t\r\n\t\t\t\t\t<area shape=\"rect\" coords=\"858,86,884,108\" class=\"smallest\" href=\"#\" />\r\n\t\t\t\t\t<area shape=\"rect\" coords=\"895,86,920,108\" class=\"largest\" href=\"#\"/>\r\n\t\t\t\t</map>\t\r\n\t\t</div>\r\n<!-- Mantis 17417 -->\r\n<!-- Mantis 17027 -->\r\n\t\t<div id=\"bloc\"></div>\r\n\t\t<!-- FIN HAUT DE PAGE -->\r\n\t\t<!-- DEBUT CORPS DE PAGE -->\r\n\t\t<div id=\"body\">\r\n\t\t<div id=\"corps1\">\r\n\t\t\t<p class=\"text_accueil\">\r\n\t\t\t<!-- Mantis 18379 -->\r\n\t\t\tBienvenue dans le syst�me de <s>gestion du parc de cartes</s> de votre structure.\r\n\t\t\t<!-- Mantis 18379 --> \r\n\t\t\t</p>\r\n\t\t\t<div id=\"carte_cps_parent\" style=\"float: left; padding-left: 23px;\">\r\n\t\t\t\t<p id=\"me_connecter\">Me connecter</p>\r\n\t\t\t\t<div id=\"carte_cps\">\r\n\t\t\t\t\t<a href=\"/tom/mandataire/ident.do\" id=\"carte_cps_bg\"> <img src=\"/tom/resources/images/cartes_cps_connect_arrow.png\" alt=\"\" /></a>\r\n\t\t\t\t\t<a href=\"/tom/mandataire/ident.do\" id=\"carte_cps_text\">Avec ma carte CPx</a>\r\n\t\t\t\t</div>\r\n\t\t\t\t<p id=\"compatibilite\" style=\"text-indent:0;\">\r\n\t\t\t\t\t<a href=\"/tom/resources/pagesPubliques/testConfig.html\"\r\n\t\t\t\t\t\ttarget=\"_blank\"> Je v&#233;rifie que mon poste<br />est compatible\r\n\t\t\t\t\t</a> \r\n\t\t\t\t\t<a href=\"/tom/resources/pagesPubliques/testConfig.html\"\r\n\t\t\t\t\t\ttarget=\"_blank\"> <img id=\"compatibilite_arrow\" src=\"/tom/resources/images/cartes_cps_compatibilite_arrow.png\" alt=\"\" />\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</p>\r\n\t\t\t\t\t<p id=\"textModifiable\" style=\"text-indent: 0;\">\r\n\t\t\t\t\tet j'acc�de � la documentation d'aide � une bonne utilisation du service TOM.\r\n\t\t\t\t\t</p>\r\n\t\t\t\t</div>\r\n\t\t\t<div id=\"pro_sante_connect_parent\" name=\"O\" style=\"float: right;\" >\r\n\t\t\t\t<div id=\"button\">\r\n\t\t\t\t\t<a href=\"/tom/acces/prosanteconnect\" id=\"button_bg\"> <img src=\"/tom/resources/images/prosanteconnect_button.png\" alt=\"\" /></a>\r\n\t\t\t\t\t<a href=\"/tom/acces/prosanteconnect\" id=\"button_text\" title=\"Non compatible avec Internet Explorer\" > <img src=\"/tom/resources/images/prosanteconnectimg.png\" alt=\"\" style=\"position: absolute; top: -15px; \" /></a>\r\n\t\t\t\t\t<p style=\"position: absolute; top: 70px; color: #FFFFFF; font-weight: bold; font-size: 12px; font-family: Arial, sans-serif;\">Pour vous connecter via e-CPS. Cette connexion offre une possibilit� de se connecter sans carte</p>\r\n\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<div style=\"clear: both\"></div>\r\n\t\t\t\r\n\t\t\t<div class=\"centered_parent\">\r\n\t\t\t\t<div id=\"cps_error\">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t<!-- BAS DE PAGE -->\r\n\t\t<div id=\"bas\">\r\n\t\t\r\n\r\n\r\n\r\n<div id=\"baselementgauche\">\t\r\n\t<img src=\"/tom/resources/images/MIN-Sante-footer.png\" height=\"65\" width=\"85\" />\r\n\t&nbsp;&nbsp;&nbsp; \r\n\t<img src=\"/tom/resources/images/LOGO_ANS_2021_OK_ANS_LOGO.png\" height=\"65\" width=\"75\" />\r\n\t\t\t\t&nbsp;&nbsp;&nbsp; \r\n\t\r\n</div>\t\t\r\n\r\n<div id=\"baselementdroite\">\t\t\t\t\r\n\t\t\r\n\t<br />\r\n\t<br />\r\n\t<br />\r\n\t<br />\r\n\t<a href=\"mailto: monserviceclient.eservices@esante.gouv.fr\" style=\"color:#626262; font-size:10px; font-weight: normal;\">Contact</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href=\"https://esante.gouv.fr/services/mentions-legales-site-e-services-cartes-et-certificats\" target=\"_blank\" style=\"color:#626262; font-size:10px; font-weight: normal;\">Mentions l�gales</a>&nbsp;\r\n</div>\t\t\r\n\t\t</div>\r\n\t\t\r\n\t\t<br />\r\n\t\t</div>\r\n</body>\r\n</html>\r\n",
+      "ip": "5.135.49.44",
+      "timestamp": "2026-10-01T05:40:37.565035612Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://tom.eservices.esante.gouv.fr/tom' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://tom.eservices.esante.gouv.fr/tom/pageAccueil/index.html'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "tom.eservices.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://tom.eservices.esante.gouv.fr",
+      "matched-at": "https://tom.eservices.esante.gouv.fr/tom/pageAccueil/index.html",
+      "request": "GET / HTTP/1.1\r\nHost: tom.eservices.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 4126\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=ISO-8859-1\r\nDate: Thu, 01 Oct 2026 05:40:37 GMT\r\nLast-Modified: Mon, 06 Jul 2026 10:16:32 GMT\r\nServer: Apache\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<title>ANS : TOM - Service de Gestion</title>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\" />\r\n<style type=\"text/css\">\r\n@import url(/tom/resources/style/style.css);\r\n</style>\r\n<!-- Mantis 17417 -->\r\n<!-- Mantis 17027 -->\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/javascript.js\" ></script>\r\n\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/jquery-1.11.2.min.js\"></script>\r\n\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/zoom.js\"></script>\r\n</head>\r\n\r\n<body id=\"header\">\r\n\t<!-- DEBUT HAUT DE PAGE -->\r\n\t<div id=\"page\">\r\n\t\t<div id=\"haut\">\r\n\t\t\t<img src=\"/tom/resources/images/haut_n.gif\" usemap=\"#Map\" border=\"0\"\r\n\t\t\t\theight=\"126\" width=\"940\" />\r\n\t\t\t\t<map name=\"Map\" id=\"myBtn\">\t\t\t\r\n\t\t\t\t\t<area shape=\"rect\" coords=\"858,86,884,108\" class=\"smallest\" href=\"#\" />\r\n\t\t\t\t\t<area shape=\"rect\" coords=\"895,86,920,108\" class=\"largest\" href=\"#\"/>\r\n\t\t\t\t</map>\t\r\n\t\t</div>\r\n<!-- Mantis 17417 -->\r\n<!-- Mantis 17027 -->\r\n\t\t<div id=\"bloc\"></div>\r\n\t\t<!-- FIN HAUT DE PAGE -->\r\n\t\t<!-- DEBUT CORPS DE PAGE -->\r\n\t\t<div id=\"body\">\r\n\t\t<div id=\"corps1\">\r\n\t\t\t<p class=\"text_accueil\">\r\n\t\t\t<!-- Mantis 18379 -->\r\n\t\t\tBienvenue dans le syst�me de <s>gestion du parc de cartes</s> de votre structure.\r\n\t\t\t<!-- Mantis 18379 --> \r\n\t\t\t</p>\r\n\t\t\t<div id=\"carte_cps_parent\" style=\"float: left; padding-left: 23px;\">\r\n\t\t\t\t<p id=\"me_connecter\">Me connecter</p>\r\n\t\t\t\t<div id=\"carte_cps\">\r\n\t\t\t\t\t<a href=\"/tom/mandataire/ident.do\" id=\"carte_cps_bg\"> <img src=\"/tom/resources/images/cartes_cps_connect_arrow.png\" alt=\"\" /></a>\r\n\t\t\t\t\t<a href=\"/tom/mandataire/ident.do\" id=\"carte_cps_text\">Avec ma carte CPx</a>\r\n\t\t\t\t</div>\r\n\t\t\t\t<p id=\"compatibilite\" style=\"text-indent:0;\">\r\n\t\t\t\t\t<a href=\"/tom/resources/pagesPubliques/testConfig.html\"\r\n\t\t\t\t\t\ttarget=\"_blank\"> Je v&#233;rifie que mon poste<br />est compatible\r\n\t\t\t\t\t</a> \r\n\t\t\t\t\t<a href=\"/tom/resources/pagesPubliques/testConfig.html\"\r\n\t\t\t\t\t\ttarget=\"_blank\"> <img id=\"compatibilite_arrow\" src=\"/tom/resources/images/cartes_cps_compatibilite_arrow.png\" alt=\"\" />\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</p>\r\n\t\t\t\t\t<p id=\"textModifiable\" style=\"text-indent: 0;\">\r\n\t\t\t\t\tet j'acc�de � la documentation d'aide � une bonne utilisation du service TOM.\r\n\t\t\t\t\t</p>\r\n\t\t\t\t</div>\r\n\t\t\t<div id=\"pro_sante_connect_parent\" name=\"O\" style=\"float: right;\" >\r\n\t\t\t\t<div id=\"button\">\r\n\t\t\t\t\t<a href=\"/tom/acces/prosanteconnect\" id=\"button_bg\"> <img src=\"/tom/resources/images/prosanteconnect_button.png\" alt=\"\" /></a>\r\n\t\t\t\t\t<a href=\"/tom/acces/prosanteconnect\" id=\"button_text\" title=\"Non compatible avec Internet Explorer\" > <img src=\"/tom/resources/images/prosanteconnectimg.png\" alt=\"\" style=\"position: absolute; top: -15px; \" /></a>\r\n\t\t\t\t\t<p style=\"position: absolute; top: 70px; color: #FFFFFF; font-weight: bold; font-size: 12px; font-family: Arial, sans-serif;\">Pour vous connecter via e-CPS. Cette connexion offre une possibilit� de se connecter sans carte</p>\r\n\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<div style=\"clear: both\"></div>\r\n\t\t\t\r\n\t\t\t<div class=\"centered_parent\">\r\n\t\t\t\t<div id=\"cps_error\">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t<!-- BAS DE PAGE -->\r\n\t\t<div id=\"bas\">\r\n\t\t\r\n\r\n\r\n\r\n<div id=\"baselementgauche\">\t\r\n\t<img src=\"/tom/resources/images/MIN-Sante-footer.png\" height=\"65\" width=\"85\" />\r\n\t&nbsp;&nbsp;&nbsp; \r\n\t<img src=\"/tom/resources/images/LOGO_ANS_2021_OK_ANS_LOGO.png\" height=\"65\" width=\"75\" />\r\n\t\t\t\t&nbsp;&nbsp;&nbsp; \r\n\t\r\n</div>\t\t\r\n\r\n<div id=\"baselementdroite\">\t\t\t\t\r\n\t\t\r\n\t<br />\r\n\t<br />\r\n\t<br />\r\n\t<br />\r\n\t<a href=\"mailto: monserviceclient.eservices@esante.gouv.fr\" style=\"color:#626262; font-size:10px; font-weight: normal;\">Contact</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href=\"https://esante.gouv.fr/services/mentions-legales-site-e-services-cartes-et-certificats\" target=\"_blank\" style=\"color:#626262; font-size:10px; font-weight: normal;\">Mentions l�gales</a>&nbsp;\r\n</div>\t\t\r\n\t\t</div>\r\n\t\t\r\n\t\t<br />\r\n\t\t</div>\r\n</body>\r\n</html>\r\n",
+      "ip": "5.135.49.44",
+      "timestamp": "2026-10-01T05:40:37.565959756Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://tom.eservices.esante.gouv.fr/tom' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://tom.eservices.esante.gouv.fr/tom/pageAccueil/index.html'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "tom.eservices.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://tom.eservices.esante.gouv.fr",
+      "matched-at": "https://tom.eservices.esante.gouv.fr/tom/pageAccueil/index.html",
+      "request": "GET / HTTP/1.1\r\nHost: tom.eservices.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 4126\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=ISO-8859-1\r\nDate: Thu, 01 Oct 2026 05:40:37 GMT\r\nLast-Modified: Mon, 06 Jul 2026 10:16:32 GMT\r\nServer: Apache\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<title>ANS : TOM - Service de Gestion</title>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\" />\r\n<style type=\"text/css\">\r\n@import url(/tom/resources/style/style.css);\r\n</style>\r\n<!-- Mantis 17417 -->\r\n<!-- Mantis 17027 -->\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/javascript.js\" ></script>\r\n\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/jquery-1.11.2.min.js\"></script>\r\n\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/zoom.js\"></script>\r\n</head>\r\n\r\n<body id=\"header\">\r\n\t<!-- DEBUT HAUT DE PAGE -->\r\n\t<div id=\"page\">\r\n\t\t<div id=\"haut\">\r\n\t\t\t<img src=\"/tom/resources/images/haut_n.gif\" usemap=\"#Map\" border=\"0\"\r\n\t\t\t\theight=\"126\" width=\"940\" />\r\n\t\t\t\t<map name=\"Map\" id=\"myBtn\">\t\t\t\r\n\t\t\t\t\t<area shape=\"rect\" coords=\"858,86,884,108\" class=\"smallest\" href=\"#\" />\r\n\t\t\t\t\t<area shape=\"rect\" coords=\"895,86,920,108\" class=\"largest\" href=\"#\"/>\r\n\t\t\t\t</map>\t\r\n\t\t</div>\r\n<!-- Mantis 17417 -->\r\n<!-- Mantis 17027 -->\r\n\t\t<div id=\"bloc\"></div>\r\n\t\t<!-- FIN HAUT DE PAGE -->\r\n\t\t<!-- DEBUT CORPS DE PAGE -->\r\n\t\t<div id=\"body\">\r\n\t\t<div id=\"corps1\">\r\n\t\t\t<p class=\"text_accueil\">\r\n\t\t\t<!-- Mantis 18379 -->\r\n\t\t\tBienvenue dans le syst�me de <s>gestion du parc de cartes</s> de votre structure.\r\n\t\t\t<!-- Mantis 18379 --> \r\n\t\t\t</p>\r\n\t\t\t<div id=\"carte_cps_parent\" style=\"float: left; padding-left: 23px;\">\r\n\t\t\t\t<p id=\"me_connecter\">Me connecter</p>\r\n\t\t\t\t<div id=\"carte_cps\">\r\n\t\t\t\t\t<a href=\"/tom/mandataire/ident.do\" id=\"carte_cps_bg\"> <img src=\"/tom/resources/images/cartes_cps_connect_arrow.png\" alt=\"\" /></a>\r\n\t\t\t\t\t<a href=\"/tom/mandataire/ident.do\" id=\"carte_cps_text\">Avec ma carte CPx</a>\r\n\t\t\t\t</div>\r\n\t\t\t\t<p id=\"compatibilite\" style=\"text-indent:0;\">\r\n\t\t\t\t\t<a href=\"/tom/resources/pagesPubliques/testConfig.html\"\r\n\t\t\t\t\t\ttarget=\"_blank\"> Je v&#233;rifie que mon poste<br />est compatible\r\n\t\t\t\t\t</a> \r\n\t\t\t\t\t<a href=\"/tom/resources/pagesPubliques/testConfig.html\"\r\n\t\t\t\t\t\ttarget=\"_blank\"> <img id=\"compatibilite_arrow\" src=\"/tom/resources/images/cartes_cps_compatibilite_arrow.png\" alt=\"\" />\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</p>\r\n\t\t\t\t\t<p id=\"textModifiable\" style=\"text-indent: 0;\">\r\n\t\t\t\t\tet j'acc�de � la documentation d'aide � une bonne utilisation du service TOM.\r\n\t\t\t\t\t</p>\r\n\t\t\t\t</div>\r\n\t\t\t<div id=\"pro_sante_connect_parent\" name=\"O\" style=\"float: right;\" >\r\n\t\t\t\t<div id=\"button\">\r\n\t\t\t\t\t<a href=\"/tom/acces/prosanteconnect\" id=\"button_bg\"> <img src=\"/tom/resources/images/prosanteconnect_button.png\" alt=\"\" /></a>\r\n\t\t\t\t\t<a href=\"/tom/acces/prosanteconnect\" id=\"button_text\" title=\"Non compatible avec Internet Explorer\" > <img src=\"/tom/resources/images/prosanteconnectimg.png\" alt=\"\" style=\"position: absolute; top: -15px; \" /></a>\r\n\t\t\t\t\t<p style=\"position: absolute; top: 70px; color: #FFFFFF; font-weight: bold; font-size: 12px; font-family: Arial, sans-serif;\">Pour vous connecter via e-CPS. Cette connexion offre une possibilit� de se connecter sans carte</p>\r\n\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<div style=\"clear: both\"></div>\r\n\t\t\t\r\n\t\t\t<div class=\"centered_parent\">\r\n\t\t\t\t<div id=\"cps_error\">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t<!-- BAS DE PAGE -->\r\n\t\t<div id=\"bas\">\r\n\t\t\r\n\r\n\r\n\r\n<div id=\"baselementgauche\">\t\r\n\t<img src=\"/tom/resources/images/MIN-Sante-footer.png\" height=\"65\" width=\"85\" />\r\n\t&nbsp;&nbsp;&nbsp; \r\n\t<img src=\"/tom/resources/images/LOGO_ANS_2021_OK_ANS_LOGO.png\" height=\"65\" width=\"75\" />\r\n\t\t\t\t&nbsp;&nbsp;&nbsp; \r\n\t\r\n</div>\t\t\r\n\r\n<div id=\"baselementdroite\">\t\t\t\t\r\n\t\t\r\n\t<br />\r\n\t<br />\r\n\t<br />\r\n\t<br />\r\n\t<a href=\"mailto: monserviceclient.eservices@esante.gouv.fr\" style=\"color:#626262; font-size:10px; font-weight: normal;\">Contact</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href=\"https://esante.gouv.fr/services/mentions-legales-site-e-services-cartes-et-certificats\" target=\"_blank\" style=\"color:#626262; font-size:10px; font-weight: normal;\">Mentions l�gales</a>&nbsp;\r\n</div>\t\t\r\n\t\t</div>\r\n\t\t\r\n\t\t<br />\r\n\t\t</div>\r\n</body>\r\n</html>\r\n",
+      "ip": "5.135.49.44",
+      "timestamp": "2026-10-01T05:40:37.566812336Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://tom.eservices.esante.gouv.fr/tom' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://tom.eservices.esante.gouv.fr/tom/pageAccueil/index.html'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "tom.eservices.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://tom.eservices.esante.gouv.fr",
+      "matched-at": "https://tom.eservices.esante.gouv.fr/tom/pageAccueil/index.html",
+      "request": "GET / HTTP/1.1\r\nHost: tom.eservices.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 4126\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=ISO-8859-1\r\nDate: Thu, 01 Oct 2026 05:40:37 GMT\r\nLast-Modified: Mon, 06 Jul 2026 10:16:32 GMT\r\nServer: Apache\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<title>ANS : TOM - Service de Gestion</title>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\" />\r\n<style type=\"text/css\">\r\n@import url(/tom/resources/style/style.css);\r\n</style>\r\n<!-- Mantis 17417 -->\r\n<!-- Mantis 17027 -->\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/javascript.js\" ></script>\r\n\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/jquery-1.11.2.min.js\"></script>\r\n\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/zoom.js\"></script>\r\n</head>\r\n\r\n<body id=\"header\">\r\n\t<!-- DEBUT HAUT DE PAGE -->\r\n\t<div id=\"page\">\r\n\t\t<div id=\"haut\">\r\n\t\t\t<img src=\"/tom/resources/images/haut_n.gif\" usemap=\"#Map\" border=\"0\"\r\n\t\t\t\theight=\"126\" width=\"940\" />\r\n\t\t\t\t<map name=\"Map\" id=\"myBtn\">\t\t\t\r\n\t\t\t\t\t<area shape=\"rect\" coords=\"858,86,884,108\" class=\"smallest\" href=\"#\" />\r\n\t\t\t\t\t<area shape=\"rect\" coords=\"895,86,920,108\" class=\"largest\" href=\"#\"/>\r\n\t\t\t\t</map>\t\r\n\t\t</div>\r\n<!-- Mantis 17417 -->\r\n<!-- Mantis 17027 -->\r\n\t\t<div id=\"bloc\"></div>\r\n\t\t<!-- FIN HAUT DE PAGE -->\r\n\t\t<!-- DEBUT CORPS DE PAGE -->\r\n\t\t<div id=\"body\">\r\n\t\t<div id=\"corps1\">\r\n\t\t\t<p class=\"text_accueil\">\r\n\t\t\t<!-- Mantis 18379 -->\r\n\t\t\tBienvenue dans le syst�me de <s>gestion du parc de cartes</s> de votre structure.\r\n\t\t\t<!-- Mantis 18379 --> \r\n\t\t\t</p>\r\n\t\t\t<div id=\"carte_cps_parent\" style=\"float: left; padding-left: 23px;\">\r\n\t\t\t\t<p id=\"me_connecter\">Me connecter</p>\r\n\t\t\t\t<div id=\"carte_cps\">\r\n\t\t\t\t\t<a href=\"/tom/mandataire/ident.do\" id=\"carte_cps_bg\"> <img src=\"/tom/resources/images/cartes_cps_connect_arrow.png\" alt=\"\" /></a>\r\n\t\t\t\t\t<a href=\"/tom/mandataire/ident.do\" id=\"carte_cps_text\">Avec ma carte CPx</a>\r\n\t\t\t\t</div>\r\n\t\t\t\t<p id=\"compatibilite\" style=\"text-indent:0;\">\r\n\t\t\t\t\t<a href=\"/tom/resources/pagesPubliques/testConfig.html\"\r\n\t\t\t\t\t\ttarget=\"_blank\"> Je v&#233;rifie que mon poste<br />est compatible\r\n\t\t\t\t\t</a> \r\n\t\t\t\t\t<a href=\"/tom/resources/pagesPubliques/testConfig.html\"\r\n\t\t\t\t\t\ttarget=\"_blank\"> <img id=\"compatibilite_arrow\" src=\"/tom/resources/images/cartes_cps_compatibilite_arrow.png\" alt=\"\" />\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</p>\r\n\t\t\t\t\t<p id=\"textModifiable\" style=\"text-indent: 0;\">\r\n\t\t\t\t\tet j'acc�de � la documentation d'aide � une bonne utilisation du service TOM.\r\n\t\t\t\t\t</p>\r\n\t\t\t\t</div>\r\n\t\t\t<div id=\"pro_sante_connect_parent\" name=\"O\" style=\"float: right;\" >\r\n\t\t\t\t<div id=\"button\">\r\n\t\t\t\t\t<a href=\"/tom/acces/prosanteconnect\" id=\"button_bg\"> <img src=\"/tom/resources/images/prosanteconnect_button.png\" alt=\"\" /></a>\r\n\t\t\t\t\t<a href=\"/tom/acces/prosanteconnect\" id=\"button_text\" title=\"Non compatible avec Internet Explorer\" > <img src=\"/tom/resources/images/prosanteconnectimg.png\" alt=\"\" style=\"position: absolute; top: -15px; \" /></a>\r\n\t\t\t\t\t<p style=\"position: absolute; top: 70px; color: #FFFFFF; font-weight: bold; font-size: 12px; font-family: Arial, sans-serif;\">Pour vous connecter via e-CPS. Cette connexion offre une possibilit� de se connecter sans carte</p>\r\n\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<div style=\"clear: both\"></div>\r\n\t\t\t\r\n\t\t\t<div class=\"centered_parent\">\r\n\t\t\t\t<div id=\"cps_error\">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t<!-- BAS DE PAGE -->\r\n\t\t<div id=\"bas\">\r\n\t\t\r\n\r\n\r\n\r\n<div id=\"baselementgauche\">\t\r\n\t<img src=\"/tom/resources/images/MIN-Sante-footer.png\" height=\"65\" width=\"85\" />\r\n\t&nbsp;&nbsp;&nbsp; \r\n\t<img src=\"/tom/resources/images/LOGO_ANS_2021_OK_ANS_LOGO.png\" height=\"65\" width=\"75\" />\r\n\t\t\t\t&nbsp;&nbsp;&nbsp; \r\n\t\r\n</div>\t\t\r\n\r\n<div id=\"baselementdroite\">\t\t\t\t\r\n\t\t\r\n\t<br />\r\n\t<br />\r\n\t<br />\r\n\t<br />\r\n\t<a href=\"mailto: monserviceclient.eservices@esante.gouv.fr\" style=\"color:#626262; font-size:10px; font-weight: normal;\">Contact</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href=\"https://esante.gouv.fr/services/mentions-legales-site-e-services-cartes-et-certificats\" target=\"_blank\" style=\"color:#626262; font-size:10px; font-weight: normal;\">Mentions l�gales</a>&nbsp;\r\n</div>\t\t\r\n\t\t</div>\r\n\t\t\r\n\t\t<br />\r\n\t\t</div>\r\n</body>\r\n</html>\r\n",
+      "ip": "5.135.49.44",
+      "timestamp": "2026-10-01T05:40:37.567554892Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://tom.eservices.esante.gouv.fr/tom' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://tom.eservices.esante.gouv.fr/tom/pageAccueil/index.html'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "tom.eservices.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://tom.eservices.esante.gouv.fr",
+      "matched-at": "https://tom.eservices.esante.gouv.fr/tom/pageAccueil/index.html",
+      "request": "GET / HTTP/1.1\r\nHost: tom.eservices.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 4126\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=ISO-8859-1\r\nDate: Thu, 01 Oct 2026 05:40:37 GMT\r\nLast-Modified: Mon, 06 Jul 2026 10:16:32 GMT\r\nServer: Apache\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<title>ANS : TOM - Service de Gestion</title>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\" />\r\n<style type=\"text/css\">\r\n@import url(/tom/resources/style/style.css);\r\n</style>\r\n<!-- Mantis 17417 -->\r\n<!-- Mantis 17027 -->\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/javascript.js\" ></script>\r\n\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/jquery-1.11.2.min.js\"></script>\r\n\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/zoom.js\"></script>\r\n</head>\r\n\r\n<body id=\"header\">\r\n\t<!-- DEBUT HAUT DE PAGE -->\r\n\t<div id=\"page\">\r\n\t\t<div id=\"haut\">\r\n\t\t\t<img src=\"/tom/resources/images/haut_n.gif\" usemap=\"#Map\" border=\"0\"\r\n\t\t\t\theight=\"126\" width=\"940\" />\r\n\t\t\t\t<map name=\"Map\" id=\"myBtn\">\t\t\t\r\n\t\t\t\t\t<area shape=\"rect\" coords=\"858,86,884,108\" class=\"smallest\" href=\"#\" />\r\n\t\t\t\t\t<area shape=\"rect\" coords=\"895,86,920,108\" class=\"largest\" href=\"#\"/>\r\n\t\t\t\t</map>\t\r\n\t\t</div>\r\n<!-- Mantis 17417 -->\r\n<!-- Mantis 17027 -->\r\n\t\t<div id=\"bloc\"></div>\r\n\t\t<!-- FIN HAUT DE PAGE -->\r\n\t\t<!-- DEBUT CORPS DE PAGE -->\r\n\t\t<div id=\"body\">\r\n\t\t<div id=\"corps1\">\r\n\t\t\t<p class=\"text_accueil\">\r\n\t\t\t<!-- Mantis 18379 -->\r\n\t\t\tBienvenue dans le syst�me de <s>gestion du parc de cartes</s> de votre structure.\r\n\t\t\t<!-- Mantis 18379 --> \r\n\t\t\t</p>\r\n\t\t\t<div id=\"carte_cps_parent\" style=\"float: left; padding-left: 23px;\">\r\n\t\t\t\t<p id=\"me_connecter\">Me connecter</p>\r\n\t\t\t\t<div id=\"carte_cps\">\r\n\t\t\t\t\t<a href=\"/tom/mandataire/ident.do\" id=\"carte_cps_bg\"> <img src=\"/tom/resources/images/cartes_cps_connect_arrow.png\" alt=\"\" /></a>\r\n\t\t\t\t\t<a href=\"/tom/mandataire/ident.do\" id=\"carte_cps_text\">Avec ma carte CPx</a>\r\n\t\t\t\t</div>\r\n\t\t\t\t<p id=\"compatibilite\" style=\"text-indent:0;\">\r\n\t\t\t\t\t<a href=\"/tom/resources/pagesPubliques/testConfig.html\"\r\n\t\t\t\t\t\ttarget=\"_blank\"> Je v&#233;rifie que mon poste<br />est compatible\r\n\t\t\t\t\t</a> \r\n\t\t\t\t\t<a href=\"/tom/resources/pagesPubliques/testConfig.html\"\r\n\t\t\t\t\t\ttarget=\"_blank\"> <img id=\"compatibilite_arrow\" src=\"/tom/resources/images/cartes_cps_compatibilite_arrow.png\" alt=\"\" />\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</p>\r\n\t\t\t\t\t<p id=\"textModifiable\" style=\"text-indent: 0;\">\r\n\t\t\t\t\tet j'acc�de � la documentation d'aide � une bonne utilisation du service TOM.\r\n\t\t\t\t\t</p>\r\n\t\t\t\t</div>\r\n\t\t\t<div id=\"pro_sante_connect_parent\" name=\"O\" style=\"float: right;\" >\r\n\t\t\t\t<div id=\"button\">\r\n\t\t\t\t\t<a href=\"/tom/acces/prosanteconnect\" id=\"button_bg\"> <img src=\"/tom/resources/images/prosanteconnect_button.png\" alt=\"\" /></a>\r\n\t\t\t\t\t<a href=\"/tom/acces/prosanteconnect\" id=\"button_text\" title=\"Non compatible avec Internet Explorer\" > <img src=\"/tom/resources/images/prosanteconnectimg.png\" alt=\"\" style=\"position: absolute; top: -15px; \" /></a>\r\n\t\t\t\t\t<p style=\"position: absolute; top: 70px; color: #FFFFFF; font-weight: bold; font-size: 12px; font-family: Arial, sans-serif;\">Pour vous connecter via e-CPS. Cette connexion offre une possibilit� de se connecter sans carte</p>\r\n\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<div style=\"clear: both\"></div>\r\n\t\t\t\r\n\t\t\t<div class=\"centered_parent\">\r\n\t\t\t\t<div id=\"cps_error\">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t<!-- BAS DE PAGE -->\r\n\t\t<div id=\"bas\">\r\n\t\t\r\n\r\n\r\n\r\n<div id=\"baselementgauche\">\t\r\n\t<img src=\"/tom/resources/images/MIN-Sante-footer.png\" height=\"65\" width=\"85\" />\r\n\t&nbsp;&nbsp;&nbsp; \r\n\t<img src=\"/tom/resources/images/LOGO_ANS_2021_OK_ANS_LOGO.png\" height=\"65\" width=\"75\" />\r\n\t\t\t\t&nbsp;&nbsp;&nbsp; \r\n\t\r\n</div>\t\t\r\n\r\n<div id=\"baselementdroite\">\t\t\t\t\r\n\t\t\r\n\t<br />\r\n\t<br />\r\n\t<br />\r\n\t<br />\r\n\t<a href=\"mailto: monserviceclient.eservices@esante.gouv.fr\" style=\"color:#626262; font-size:10px; font-weight: normal;\">Contact</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href=\"https://esante.gouv.fr/services/mentions-legales-site-e-services-cartes-et-certificats\" target=\"_blank\" style=\"color:#626262; font-size:10px; font-weight: normal;\">Mentions l�gales</a>&nbsp;\r\n</div>\t\t\r\n\t\t</div>\r\n\t\t\r\n\t\t<br />\r\n\t\t</div>\r\n</body>\r\n</html>\r\n",
+      "ip": "5.135.49.44",
+      "timestamp": "2026-10-01T05:40:37.568355565Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://tom.eservices.esante.gouv.fr/tom' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://tom.eservices.esante.gouv.fr/tom/pageAccueil/index.html'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "tom.eservices.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://tom.eservices.esante.gouv.fr",
+      "matched-at": "https://tom.eservices.esante.gouv.fr/tom/pageAccueil/index.html",
+      "request": "GET / HTTP/1.1\r\nHost: tom.eservices.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 4126\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=ISO-8859-1\r\nDate: Thu, 01 Oct 2026 05:40:37 GMT\r\nLast-Modified: Mon, 06 Jul 2026 10:16:32 GMT\r\nServer: Apache\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<title>ANS : TOM - Service de Gestion</title>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\" />\r\n<style type=\"text/css\">\r\n@import url(/tom/resources/style/style.css);\r\n</style>\r\n<!-- Mantis 17417 -->\r\n<!-- Mantis 17027 -->\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/javascript.js\" ></script>\r\n\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/jquery-1.11.2.min.js\"></script>\r\n\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/zoom.js\"></script>\r\n</head>\r\n\r\n<body id=\"header\">\r\n\t<!-- DEBUT HAUT DE PAGE -->\r\n\t<div id=\"page\">\r\n\t\t<div id=\"haut\">\r\n\t\t\t<img src=\"/tom/resources/images/haut_n.gif\" usemap=\"#Map\" border=\"0\"\r\n\t\t\t\theight=\"126\" width=\"940\" />\r\n\t\t\t\t<map name=\"Map\" id=\"myBtn\">\t\t\t\r\n\t\t\t\t\t<area shape=\"rect\" coords=\"858,86,884,108\" class=\"smallest\" href=\"#\" />\r\n\t\t\t\t\t<area shape=\"rect\" coords=\"895,86,920,108\" class=\"largest\" href=\"#\"/>\r\n\t\t\t\t</map>\t\r\n\t\t</div>\r\n<!-- Mantis 17417 -->\r\n<!-- Mantis 17027 -->\r\n\t\t<div id=\"bloc\"></div>\r\n\t\t<!-- FIN HAUT DE PAGE -->\r\n\t\t<!-- DEBUT CORPS DE PAGE -->\r\n\t\t<div id=\"body\">\r\n\t\t<div id=\"corps1\">\r\n\t\t\t<p class=\"text_accueil\">\r\n\t\t\t<!-- Mantis 18379 -->\r\n\t\t\tBienvenue dans le syst�me de <s>gestion du parc de cartes</s> de votre structure.\r\n\t\t\t<!-- Mantis 18379 --> \r\n\t\t\t</p>\r\n\t\t\t<div id=\"carte_cps_parent\" style=\"float: left; padding-left: 23px;\">\r\n\t\t\t\t<p id=\"me_connecter\">Me connecter</p>\r\n\t\t\t\t<div id=\"carte_cps\">\r\n\t\t\t\t\t<a href=\"/tom/mandataire/ident.do\" id=\"carte_cps_bg\"> <img src=\"/tom/resources/images/cartes_cps_connect_arrow.png\" alt=\"\" /></a>\r\n\t\t\t\t\t<a href=\"/tom/mandataire/ident.do\" id=\"carte_cps_text\">Avec ma carte CPx</a>\r\n\t\t\t\t</div>\r\n\t\t\t\t<p id=\"compatibilite\" style=\"text-indent:0;\">\r\n\t\t\t\t\t<a href=\"/tom/resources/pagesPubliques/testConfig.html\"\r\n\t\t\t\t\t\ttarget=\"_blank\"> Je v&#233;rifie que mon poste<br />est compatible\r\n\t\t\t\t\t</a> \r\n\t\t\t\t\t<a href=\"/tom/resources/pagesPubliques/testConfig.html\"\r\n\t\t\t\t\t\ttarget=\"_blank\"> <img id=\"compatibilite_arrow\" src=\"/tom/resources/images/cartes_cps_compatibilite_arrow.png\" alt=\"\" />\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</p>\r\n\t\t\t\t\t<p id=\"textModifiable\" style=\"text-indent: 0;\">\r\n\t\t\t\t\tet j'acc�de � la documentation d'aide � une bonne utilisation du service TOM.\r\n\t\t\t\t\t</p>\r\n\t\t\t\t</div>\r\n\t\t\t<div id=\"pro_sante_connect_parent\" name=\"O\" style=\"float: right;\" >\r\n\t\t\t\t<div id=\"button\">\r\n\t\t\t\t\t<a href=\"/tom/acces/prosanteconnect\" id=\"button_bg\"> <img src=\"/tom/resources/images/prosanteconnect_button.png\" alt=\"\" /></a>\r\n\t\t\t\t\t<a href=\"/tom/acces/prosanteconnect\" id=\"button_text\" title=\"Non compatible avec Internet Explorer\" > <img src=\"/tom/resources/images/prosanteconnectimg.png\" alt=\"\" style=\"position: absolute; top: -15px; \" /></a>\r\n\t\t\t\t\t<p style=\"position: absolute; top: 70px; color: #FFFFFF; font-weight: bold; font-size: 12px; font-family: Arial, sans-serif;\">Pour vous connecter via e-CPS. Cette connexion offre une possibilit� de se connecter sans carte</p>\r\n\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<div style=\"clear: both\"></div>\r\n\t\t\t\r\n\t\t\t<div class=\"centered_parent\">\r\n\t\t\t\t<div id=\"cps_error\">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t<!-- BAS DE PAGE -->\r\n\t\t<div id=\"bas\">\r\n\t\t\r\n\r\n\r\n\r\n<div id=\"baselementgauche\">\t\r\n\t<img src=\"/tom/resources/images/MIN-Sante-footer.png\" height=\"65\" width=\"85\" />\r\n\t&nbsp;&nbsp;&nbsp; \r\n\t<img src=\"/tom/resources/images/LOGO_ANS_2021_OK_ANS_LOGO.png\" height=\"65\" width=\"75\" />\r\n\t\t\t\t&nbsp;&nbsp;&nbsp; \r\n\t\r\n</div>\t\t\r\n\r\n<div id=\"baselementdroite\">\t\t\t\t\r\n\t\t\r\n\t<br />\r\n\t<br />\r\n\t<br />\r\n\t<br />\r\n\t<a href=\"mailto: monserviceclient.eservices@esante.gouv.fr\" style=\"color:#626262; font-size:10px; font-weight: normal;\">Contact</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href=\"https://esante.gouv.fr/services/mentions-legales-site-e-services-cartes-et-certificats\" target=\"_blank\" style=\"color:#626262; font-size:10px; font-weight: normal;\">Mentions l�gales</a>&nbsp;\r\n</div>\t\t\r\n\t\t</div>\r\n\t\t\r\n\t\t<br />\r\n\t\t</div>\r\n</body>\r\n</html>\r\n",
+      "ip": "5.135.49.44",
+      "timestamp": "2026-10-01T05:40:37.569236979Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://tom.eservices.esante.gouv.fr/tom' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://tom.eservices.esante.gouv.fr/tom/pageAccueil/index.html'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "tom.eservices.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://tom.eservices.esante.gouv.fr",
+      "matched-at": "https://tom.eservices.esante.gouv.fr/tom/pageAccueil/index.html",
+      "request": "GET / HTTP/1.1\r\nHost: tom.eservices.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 4126\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=ISO-8859-1\r\nDate: Thu, 01 Oct 2026 05:40:37 GMT\r\nLast-Modified: Mon, 06 Jul 2026 10:16:32 GMT\r\nServer: Apache\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<title>ANS : TOM - Service de Gestion</title>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\" />\r\n<style type=\"text/css\">\r\n@import url(/tom/resources/style/style.css);\r\n</style>\r\n<!-- Mantis 17417 -->\r\n<!-- Mantis 17027 -->\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/javascript.js\" ></script>\r\n\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/jquery-1.11.2.min.js\"></script>\r\n\r\n<script type=\"text/javascript\" src=\"/tom/resources/javascript/zoom.js\"></script>\r\n</head>\r\n\r\n<body id=\"header\">\r\n\t<!-- DEBUT HAUT DE PAGE -->\r\n\t<div id=\"page\">\r\n\t\t<div id=\"haut\">\r\n\t\t\t<img src=\"/tom/resources/images/haut_n.gif\" usemap=\"#Map\" border=\"0\"\r\n\t\t\t\theight=\"126\" width=\"940\" />\r\n\t\t\t\t<map name=\"Map\" id=\"myBtn\">\t\t\t\r\n\t\t\t\t\t<area shape=\"rect\" coords=\"858,86,884,108\" class=\"smallest\" href=\"#\" />\r\n\t\t\t\t\t<area shape=\"rect\" coords=\"895,86,920,108\" class=\"largest\" href=\"#\"/>\r\n\t\t\t\t</map>\t\r\n\t\t</div>\r\n<!-- Mantis 17417 -->\r\n<!-- Mantis 17027 -->\r\n\t\t<div id=\"bloc\"></div>\r\n\t\t<!-- FIN HAUT DE PAGE -->\r\n\t\t<!-- DEBUT CORPS DE PAGE -->\r\n\t\t<div id=\"body\">\r\n\t\t<div id=\"corps1\">\r\n\t\t\t<p class=\"text_accueil\">\r\n\t\t\t<!-- Mantis 18379 -->\r\n\t\t\tBienvenue dans le syst�me de <s>gestion du parc de cartes</s> de votre structure.\r\n\t\t\t<!-- Mantis 18379 --> \r\n\t\t\t</p>\r\n\t\t\t<div id=\"carte_cps_parent\" style=\"float: left; padding-left: 23px;\">\r\n\t\t\t\t<p id=\"me_connecter\">Me connecter</p>\r\n\t\t\t\t<div id=\"carte_cps\">\r\n\t\t\t\t\t<a href=\"/tom/mandataire/ident.do\" id=\"carte_cps_bg\"> <img src=\"/tom/resources/images/cartes_cps_connect_arrow.png\" alt=\"\" /></a>\r\n\t\t\t\t\t<a href=\"/tom/mandataire/ident.do\" id=\"carte_cps_text\">Avec ma carte CPx</a>\r\n\t\t\t\t</div>\r\n\t\t\t\t<p id=\"compatibilite\" style=\"text-indent:0;\">\r\n\t\t\t\t\t<a href=\"/tom/resources/pagesPubliques/testConfig.html\"\r\n\t\t\t\t\t\ttarget=\"_blank\"> Je v&#233;rifie que mon poste<br />est compatible\r\n\t\t\t\t\t</a> \r\n\t\t\t\t\t<a href=\"/tom/resources/pagesPubliques/testConfig.html\"\r\n\t\t\t\t\t\ttarget=\"_blank\"> <img id=\"compatibilite_arrow\" src=\"/tom/resources/images/cartes_cps_compatibilite_arrow.png\" alt=\"\" />\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</p>\r\n\t\t\t\t\t<p id=\"textModifiable\" style=\"text-indent: 0;\">\r\n\t\t\t\t\tet j'acc�de � la documentation d'aide � une bonne utilisation du service TOM.\r\n\t\t\t\t\t</p>\r\n\t\t\t\t</div>\r\n\t\t\t<div id=\"pro_sante_connect_parent\" name=\"O\" style=\"float: right;\" >\r\n\t\t\t\t<div id=\"button\">\r\n\t\t\t\t\t<a href=\"/tom/acces/prosanteconnect\" id=\"button_bg\"> <img src=\"/tom/resources/images/prosanteconnect_button.png\" alt=\"\" /></a>\r\n\t\t\t\t\t<a href=\"/tom/acces/prosanteconnect\" id=\"button_text\" title=\"Non compatible avec Internet Explorer\" > <img src=\"/tom/resources/images/prosanteconnectimg.png\" alt=\"\" style=\"position: absolute; top: -15px; \" /></a>\r\n\t\t\t\t\t<p style=\"position: absolute; top: 70px; color: #FFFFFF; font-weight: bold; font-size: 12px; font-family: Arial, sans-serif;\">Pour vous connecter via e-CPS. Cette connexion offre une possibilit� de se connecter sans carte</p>\r\n\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<div style=\"clear: both\"></div>\r\n\t\t\t\r\n\t\t\t<div class=\"centered_parent\">\r\n\t\t\t\t<div id=\"cps_error\">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t\t<br />\r\n\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t<!-- BAS DE PAGE -->\r\n\t\t<div id=\"bas\">\r\n\t\t\r\n\r\n\r\n\r\n<div id=\"baselementgauche\">\t\r\n\t<img src=\"/tom/resources/images/MIN-Sante-footer.png\" height=\"65\" width=\"85\" />\r\n\t&nbsp;&nbsp;&nbsp; \r\n\t<img src=\"/tom/resources/images/LOGO_ANS_2021_OK_ANS_LOGO.png\" height=\"65\" width=\"75\" />\r\n\t\t\t\t&nbsp;&nbsp;&nbsp; \r\n\t\r\n</div>\t\t\r\n\r\n<div id=\"baselementdroite\">\t\t\t\t\r\n\t\t\r\n\t<br />\r\n\t<br />\r\n\t<br />\r\n\t<br />\r\n\t<a href=\"mailto: monserviceclient.eservices@esante.gouv.fr\" style=\"color:#626262; font-size:10px; font-weight: normal;\">Contact</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href=\"https://esante.gouv.fr/services/mentions-legales-site-e-services-cartes-et-certificats\" target=\"_blank\" style=\"color:#626262; font-size:10px; font-weight: normal;\">Mentions l�gales</a>&nbsp;\r\n</div>\t\t\r\n\t\t</div>\r\n\t\t\r\n\t\t<br />\r\n\t\t</div>\r\n</body>\r\n</html>\r\n",
+      "ip": "5.135.49.44",
+      "timestamp": "2026-10-01T05:40:37.570096352Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://tom.eservices.esante.gouv.fr/tom' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://tom.eservices.esante.gouv.fr/tom/pageAccueil/index.html'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "info": {
+        "name": "Detect SSL Certificate Issuer",
+        "author": [
+          "lingtren"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "tom.eservices.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "tom.eservices.esante.gouv.fr:443",
+      "extracted-results": [
+        "Let's Encrypt"
+      ],
+      "ip": "5.135.49.44",
+      "timestamp": "2026-10-01T05:41:03.142322823Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "vuln"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "tom.eservices.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "tom.eservices.esante.gouv.fr:443",
+      "extracted-results": [
+        "tom.eservices.esante.gouv.fr"
+      ],
+      "ip": "5.135.49.44",
+      "timestamp": "2026-10-01T05:41:03.142542673Z",
+      "matcher-status": true
+    }
+  ]
+]
