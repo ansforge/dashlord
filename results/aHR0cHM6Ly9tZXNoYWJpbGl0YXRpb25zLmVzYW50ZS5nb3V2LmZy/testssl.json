@@ -1,5 +1,19 @@
 [
          {
+              "id"           : "engine_problem",
+              "ip"           : "meshabilitations.esante.gouv.fr/",
+              "port"         : "443",
+              "severity"     : "WARN",
+              "finding"      : "No engine or GOST support via engine with your /home/testssl/bin/openssl.Linux.x86_64"
+          }
+,         {
+              "id"           : "cmdline_fast_depreciation",
+              "ip"           : "meshabilitations.esante.gouv.fr/",
+              "port"         : "443",
+              "severity"     : "WARN",
+              "finding"      : "'--fast' can have some undesired side effects thus it is not recommended to use anymore"
+          }
+,         {
               "id"           : "service",
               "ip"           : "meshabilitations.esante.gouv.fr/5.135.49.36",
               "port"         : "443",
@@ -247,8 +261,8 @@
               "id"           : "cert_keySize",
               "ip"           : "meshabilitations.esante.gouv.fr/5.135.49.36",
               "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "RSA 4096 bits (exponent is 65537)"
+              "severity"     : "INFO",
+              "finding"      : "RSA 2048 bits (exponent is 65537)"
           }
 ,         {
               "id"           : "cert_keyUsage",
@@ -269,7 +283,7 @@
               "ip"           : "meshabilitations.esante.gouv.fr/5.135.49.36",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "0E62BE3253390BB2EAB74EC24C7CFB05"
+              "finding"      : "0C680EFCBFCB09C3135EC11679ACBE73"
           }
 ,         {
               "id"           : "cert_serialNumberLen",
@@ -283,21 +297,21 @@
               "ip"           : "meshabilitations.esante.gouv.fr/5.135.49.36",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "A559E2197372A09FED6B0511118133A4097F2999"
+              "finding"      : "C8FA22E4708F2DC796B785B26A15E941B3805AEB"
           }
 ,         {
               "id"           : "cert_fingerprintSHA256",
               "ip"           : "meshabilitations.esante.gouv.fr/5.135.49.36",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "4A2C8EE9667141BF3305DEB7A9D51581FDBC14C62C0D7C7419F217CD9ABB95EB"
+              "finding"      : "DCD5757176E7FDCCA5A9143B7D7989029F6DA0854351E38E09C39EB911366EC7"
           }
 ,         {
               "id"           : "cert",
               "ip"           : "meshabilitations.esante.gouv.fr/5.135.49.36",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "-----BEGIN CERTIFICATE-----\n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\n-----END CERTIFICATE-----"
+              "finding"      : "-----BEGIN CERTIFICATE-----\n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\n-----END CERTIFICATE-----"
           }
 ,         {
               "id"           : "cert_commonName",
@@ -345,22 +359,22 @@
               "id"           : "cert_expirationStatus",
               "ip"           : "meshabilitations.esante.gouv.fr/5.135.49.36",
               "port"         : "443",
-              "severity"     : "MEDIUM",
-              "finding"      : "expires < 60 days (37)"
+              "severity"     : "OK",
+              "finding"      : "180 >= 60 days"
           }
 ,         {
               "id"           : "cert_notBefore",
               "ip"           : "meshabilitations.esante.gouv.fr/5.135.49.36",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "2026-03-24 00:00"
+              "finding"      : "2026-09-23 00:00"
           }
 ,         {
               "id"           : "cert_notAfter",
               "ip"           : "meshabilitations.esante.gouv.fr/5.135.49.36",
               "port"         : "443",
-              "severity"     : "MEDIUM",
-              "finding"      : "2026-10-08 23:59"
+              "severity"     : "OK",
+              "finding"      : "2027-03-30 23:59"
           }
 ,         {
               "id"           : "cert_extlifeSpan",
@@ -507,7 +521,7 @@
               "ip"           : "meshabilitations.esante.gouv.fr/5.135.49.36",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1788236558"
+              "finding"      : "1790828773"
           }
 ,         {
               "id"           : "HSTS_time",
@@ -722,7 +736,7 @@
               "severity"     : "INFO",
               "cve"          : "CVE-2016-0800 CVE-2016-0703",
               "cwe"          : "CWE-310",
-              "finding"      : "Make sure you don't use this certificate elsewhere with SSLv2 enabled services, see https://search.censys.io/search?resource=hosts&virtual_hosts=INCLUDE&q=4A2C8EE9667141BF3305DEB7A9D51581FDBC14C62C0D7C7419F217CD9ABB95EB"
+              "finding"      : "Make sure you don't use this certificate elsewhere with SSLv2 enabled services, see https://search.censys.io/search?resource=hosts&virtual_hosts=INCLUDE&q=DCD5757176E7FDCCA5A9143B7D7989029F6DA0854351E38E09C39EB911366EC7"
           }
 ,         {
               "id"           : "LOGJAM-common_primes",
@@ -731,7 +745,7 @@
               "severity"     : "INFO",
               "cve"          : "CVE-2015-4000",
               "cwe"          : "CWE-310",
-              "finding"      : "RFC3526/Oakley Group 16"
+              "finding"      : "RFC3526/Oakley Group 14"
           }
 ,         {
               "id"           : "LOGJAM",
@@ -1056,14 +1070,14 @@
               "ip"           : "meshabilitations.esante.gouv.fr/5.135.49.36",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "100"
+              "finding"      : "90"
           }
 ,         {
               "id"           : "key_exchange_score_weighted",
               "ip"           : "meshabilitations.esante.gouv.fr/5.135.49.36",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "30"
+              "finding"      : "27"
           }
 ,         {
               "id"           : "cipher_strength_score",
@@ -1084,7 +1098,7 @@
               "ip"           : "meshabilitations.esante.gouv.fr/5.135.49.36",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "84"
+              "finding"      : "81"
           }
 ,         {
               "id"           : "overall_grade",
@@ -1098,6 +1112,6 @@
               "ip"           : "meshabilitations.esante.gouv.fr/5.135.49.36",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "129"
+              "finding"      : "76"
           }
 ]
