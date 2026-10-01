@@ -1,0 +1,740 @@
+[
+  [
+    {
+      "template": "http/technologies/waf-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/waf-detect",
+      "template-id": "waf-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/waf-detect.yaml",
+      "info": {
+        "name": "WAF Detection",
+        "author": [
+          "dwisiswant0",
+          "lu4nx",
+          "s4e-io"
+        ],
+        "tags": [
+          "waf",
+          "tech",
+          "misc",
+          "discovery"
+        ],
+        "description": "A web application firewall was detected.",
+        "reference": [
+          "https://github.com/Ekultek/WhatWaf"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "matcher-name": "apachegeneric",
+      "type": "http",
+      "host": "ma-cps.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ma-cps.esante.gouv.fr",
+      "matched-at": "https://ma-cps.esante.gouv.fr",
+      "request": "POST / HTTP/1.1\r\nHost: ma-cps.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 1854\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Thu, 01 Oct 2026 04:20:27 GMT\r\nLast-Modified: Wed, 22 Jul 2026 09:53:28 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"description\" content=\"\">\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"img/logos/favicon.ico\">\n   \n    <title>ANS - Portail Commande CPS</title>\n    <link rel=\"stylesheet\" href=\"https://use.typekit.net/jjx2ksb.css\">\n    <link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css\">\n    <script src=\"./scripts/elastic-apm-rum.umd.min.js\" crossorigin=\"\"></script>\n    <script>\n        elasticApm.init(\n            {             \n                serviceName: 'MACPS', active: Math.random() < 0.1,\n                serverUrl: 'https://582c2d31a486436796323dafa4973177.apm.francecentral.azure.elastic-cloud.com:443',         \n            }\n        )\n    </script>\n\t\n\t\n<link rel=\"stylesheet\" href=\"styles.7b4bad0611b6738b570e.css\"></head>\n\n<body>\n    <noscript>\n        <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n    </noscript>\n    \n    <app-root></app-root>    \n    \n<script src=\"runtime-es2015.a4dadbc03350107420a4.js\" type=\"module\"></script><script src=\"runtime-es5.a4dadbc03350107420a4.js\" nomodule defer></script><script src=\"polyfills-es5.75d8bdaa4171047d2dc7.js\" nomodule defer></script><script src=\"polyfills-es2015.c3c294aaf81d14183aba.js\" type=\"module\"></script><script src=\"scripts.84960589e89760329259.js\" defer></script><script src=\"main-es2015.c4a84c4e3509a345615b.js\" type=\"module\"></script><script src=\"main-es5.c4a84c4e3509a345615b.js\" nomodule defer></script></body>\n\n</html>",
+      "ip": "5.135.49.42",
+      "timestamp": "2026-10-01T04:20:27.336131074Z",
+      "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: ma-cps.esante.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ma-cps.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "ma-cps.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "ma-cps.esante.gouv.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "5.135.49.42",
+      "timestamp": "2026-10-01T04:21:47.125069186Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "ma-cps.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "ma-cps.esante.gouv.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
+      "ip": "5.135.49.42",
+      "timestamp": "2026-10-01T04:21:47.340973Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "ma-cps.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ma-cps.esante.gouv.fr",
+      "matched-at": "https://ma-cps.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ma-cps.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 1854\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Thu, 01 Oct 2026 04:21:55 GMT\r\nLast-Modified: Wed, 22 Jul 2026 09:53:28 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"description\" content=\"\">\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"img/logos/favicon.ico\">\n   \n    <title>ANS - Portail Commande CPS</title>\n    <link rel=\"stylesheet\" href=\"https://use.typekit.net/jjx2ksb.css\">\n    <link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css\">\n    <script src=\"./scripts/elastic-apm-rum.umd.min.js\" crossorigin=\"\"></script>\n    <script>\n        elasticApm.init(\n            {             \n                serviceName: 'MACPS', active: Math.random() < 0.1,\n                serverUrl: 'https://582c2d31a486436796323dafa4973177.apm.francecentral.azure.elastic-cloud.com:443',         \n            }\n        )\n    </script>\n\t\n\t\n<link rel=\"stylesheet\" href=\"styles.7b4bad0611b6738b570e.css\"></head>\n\n<body>\n    <noscript>\n        <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n    </noscript>\n    \n    <app-root></app-root>    \n    \n<script src=\"runtime-es2015.a4dadbc03350107420a4.js\" type=\"module\"></script><script src=\"runtime-es5.a4dadbc03350107420a4.js\" nomodule defer></script><script src=\"polyfills-es5.75d8bdaa4171047d2dc7.js\" nomodule defer></script><script src=\"polyfills-es2015.c3c294aaf81d14183aba.js\" type=\"module\"></script><script src=\"scripts.84960589e89760329259.js\" defer></script><script src=\"main-es2015.c4a84c4e3509a345615b.js\" type=\"module\"></script><script src=\"main-es5.c4a84c4e3509a345615b.js\" nomodule defer></script></body>\n\n</html>",
+      "ip": "5.135.49.42",
+      "timestamp": "2026-10-01T04:21:55.267786453Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ma-cps.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "ma-cps.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ma-cps.esante.gouv.fr",
+      "matched-at": "https://ma-cps.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ma-cps.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 1854\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Thu, 01 Oct 2026 04:21:55 GMT\r\nLast-Modified: Wed, 22 Jul 2026 09:53:28 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"description\" content=\"\">\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"img/logos/favicon.ico\">\n   \n    <title>ANS - Portail Commande CPS</title>\n    <link rel=\"stylesheet\" href=\"https://use.typekit.net/jjx2ksb.css\">\n    <link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css\">\n    <script src=\"./scripts/elastic-apm-rum.umd.min.js\" crossorigin=\"\"></script>\n    <script>\n        elasticApm.init(\n            {             \n                serviceName: 'MACPS', active: Math.random() < 0.1,\n                serverUrl: 'https://582c2d31a486436796323dafa4973177.apm.francecentral.azure.elastic-cloud.com:443',         \n            }\n        )\n    </script>\n\t\n\t\n<link rel=\"stylesheet\" href=\"styles.7b4bad0611b6738b570e.css\"></head>\n\n<body>\n    <noscript>\n        <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n    </noscript>\n    \n    <app-root></app-root>    \n    \n<script src=\"runtime-es2015.a4dadbc03350107420a4.js\" type=\"module\"></script><script src=\"runtime-es5.a4dadbc03350107420a4.js\" nomodule defer></script><script src=\"polyfills-es5.75d8bdaa4171047d2dc7.js\" nomodule defer></script><script src=\"polyfills-es2015.c3c294aaf81d14183aba.js\" type=\"module\"></script><script src=\"scripts.84960589e89760329259.js\" defer></script><script src=\"main-es2015.c4a84c4e3509a345615b.js\" type=\"module\"></script><script src=\"main-es5.c4a84c4e3509a345615b.js\" nomodule defer></script></body>\n\n</html>",
+      "ip": "5.135.49.42",
+      "timestamp": "2026-10-01T04:21:55.268548024Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ma-cps.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "ma-cps.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ma-cps.esante.gouv.fr",
+      "matched-at": "https://ma-cps.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ma-cps.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 1854\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Thu, 01 Oct 2026 04:21:55 GMT\r\nLast-Modified: Wed, 22 Jul 2026 09:53:28 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"description\" content=\"\">\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"img/logos/favicon.ico\">\n   \n    <title>ANS - Portail Commande CPS</title>\n    <link rel=\"stylesheet\" href=\"https://use.typekit.net/jjx2ksb.css\">\n    <link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css\">\n    <script src=\"./scripts/elastic-apm-rum.umd.min.js\" crossorigin=\"\"></script>\n    <script>\n        elasticApm.init(\n            {             \n                serviceName: 'MACPS', active: Math.random() < 0.1,\n                serverUrl: 'https://582c2d31a486436796323dafa4973177.apm.francecentral.azure.elastic-cloud.com:443',         \n            }\n        )\n    </script>\n\t\n\t\n<link rel=\"stylesheet\" href=\"styles.7b4bad0611b6738b570e.css\"></head>\n\n<body>\n    <noscript>\n        <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n    </noscript>\n    \n    <app-root></app-root>    \n    \n<script src=\"runtime-es2015.a4dadbc03350107420a4.js\" type=\"module\"></script><script src=\"runtime-es5.a4dadbc03350107420a4.js\" nomodule defer></script><script src=\"polyfills-es5.75d8bdaa4171047d2dc7.js\" nomodule defer></script><script src=\"polyfills-es2015.c3c294aaf81d14183aba.js\" type=\"module\"></script><script src=\"scripts.84960589e89760329259.js\" defer></script><script src=\"main-es2015.c4a84c4e3509a345615b.js\" type=\"module\"></script><script src=\"main-es5.c4a84c4e3509a345615b.js\" nomodule defer></script></body>\n\n</html>",
+      "ip": "5.135.49.42",
+      "timestamp": "2026-10-01T04:21:55.269351444Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ma-cps.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "ma-cps.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ma-cps.esante.gouv.fr",
+      "matched-at": "https://ma-cps.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ma-cps.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 1854\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Thu, 01 Oct 2026 04:21:55 GMT\r\nLast-Modified: Wed, 22 Jul 2026 09:53:28 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"description\" content=\"\">\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"img/logos/favicon.ico\">\n   \n    <title>ANS - Portail Commande CPS</title>\n    <link rel=\"stylesheet\" href=\"https://use.typekit.net/jjx2ksb.css\">\n    <link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css\">\n    <script src=\"./scripts/elastic-apm-rum.umd.min.js\" crossorigin=\"\"></script>\n    <script>\n        elasticApm.init(\n            {             \n                serviceName: 'MACPS', active: Math.random() < 0.1,\n                serverUrl: 'https://582c2d31a486436796323dafa4973177.apm.francecentral.azure.elastic-cloud.com:443',         \n            }\n        )\n    </script>\n\t\n\t\n<link rel=\"stylesheet\" href=\"styles.7b4bad0611b6738b570e.css\"></head>\n\n<body>\n    <noscript>\n        <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n    </noscript>\n    \n    <app-root></app-root>    \n    \n<script src=\"runtime-es2015.a4dadbc03350107420a4.js\" type=\"module\"></script><script src=\"runtime-es5.a4dadbc03350107420a4.js\" nomodule defer></script><script src=\"polyfills-es5.75d8bdaa4171047d2dc7.js\" nomodule defer></script><script src=\"polyfills-es2015.c3c294aaf81d14183aba.js\" type=\"module\"></script><script src=\"scripts.84960589e89760329259.js\" defer></script><script src=\"main-es2015.c4a84c4e3509a345615b.js\" type=\"module\"></script><script src=\"main-es5.c4a84c4e3509a345615b.js\" nomodule defer></script></body>\n\n</html>",
+      "ip": "5.135.49.42",
+      "timestamp": "2026-10-01T04:21:55.26987616Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ma-cps.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "ma-cps.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ma-cps.esante.gouv.fr",
+      "matched-at": "https://ma-cps.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ma-cps.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 1854\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Thu, 01 Oct 2026 04:21:55 GMT\r\nLast-Modified: Wed, 22 Jul 2026 09:53:28 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"description\" content=\"\">\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"img/logos/favicon.ico\">\n   \n    <title>ANS - Portail Commande CPS</title>\n    <link rel=\"stylesheet\" href=\"https://use.typekit.net/jjx2ksb.css\">\n    <link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css\">\n    <script src=\"./scripts/elastic-apm-rum.umd.min.js\" crossorigin=\"\"></script>\n    <script>\n        elasticApm.init(\n            {             \n                serviceName: 'MACPS', active: Math.random() < 0.1,\n                serverUrl: 'https://582c2d31a486436796323dafa4973177.apm.francecentral.azure.elastic-cloud.com:443',         \n            }\n        )\n    </script>\n\t\n\t\n<link rel=\"stylesheet\" href=\"styles.7b4bad0611b6738b570e.css\"></head>\n\n<body>\n    <noscript>\n        <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n    </noscript>\n    \n    <app-root></app-root>    \n    \n<script src=\"runtime-es2015.a4dadbc03350107420a4.js\" type=\"module\"></script><script src=\"runtime-es5.a4dadbc03350107420a4.js\" nomodule defer></script><script src=\"polyfills-es5.75d8bdaa4171047d2dc7.js\" nomodule defer></script><script src=\"polyfills-es2015.c3c294aaf81d14183aba.js\" type=\"module\"></script><script src=\"scripts.84960589e89760329259.js\" defer></script><script src=\"main-es2015.c4a84c4e3509a345615b.js\" type=\"module\"></script><script src=\"main-es5.c4a84c4e3509a345615b.js\" nomodule defer></script></body>\n\n</html>",
+      "ip": "5.135.49.42",
+      "timestamp": "2026-10-01T04:21:55.270572979Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ma-cps.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "ma-cps.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ma-cps.esante.gouv.fr",
+      "matched-at": "https://ma-cps.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ma-cps.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 1854\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Thu, 01 Oct 2026 04:21:55 GMT\r\nLast-Modified: Wed, 22 Jul 2026 09:53:28 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"description\" content=\"\">\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"img/logos/favicon.ico\">\n   \n    <title>ANS - Portail Commande CPS</title>\n    <link rel=\"stylesheet\" href=\"https://use.typekit.net/jjx2ksb.css\">\n    <link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css\">\n    <script src=\"./scripts/elastic-apm-rum.umd.min.js\" crossorigin=\"\"></script>\n    <script>\n        elasticApm.init(\n            {             \n                serviceName: 'MACPS', active: Math.random() < 0.1,\n                serverUrl: 'https://582c2d31a486436796323dafa4973177.apm.francecentral.azure.elastic-cloud.com:443',         \n            }\n        )\n    </script>\n\t\n\t\n<link rel=\"stylesheet\" href=\"styles.7b4bad0611b6738b570e.css\"></head>\n\n<body>\n    <noscript>\n        <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n    </noscript>\n    \n    <app-root></app-root>    \n    \n<script src=\"runtime-es2015.a4dadbc03350107420a4.js\" type=\"module\"></script><script src=\"runtime-es5.a4dadbc03350107420a4.js\" nomodule defer></script><script src=\"polyfills-es5.75d8bdaa4171047d2dc7.js\" nomodule defer></script><script src=\"polyfills-es2015.c3c294aaf81d14183aba.js\" type=\"module\"></script><script src=\"scripts.84960589e89760329259.js\" defer></script><script src=\"main-es2015.c4a84c4e3509a345615b.js\" type=\"module\"></script><script src=\"main-es5.c4a84c4e3509a345615b.js\" nomodule defer></script></body>\n\n</html>",
+      "ip": "5.135.49.42",
+      "timestamp": "2026-10-01T04:21:55.271074522Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ma-cps.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/missing-sri.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/missing-sri",
+      "template-id": "missing-sri",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/missing-sri.yaml",
+      "info": {
+        "name": "Missing Subresource Integrity",
+        "author": [
+          "lucky0x0d",
+          "pulsesecurity.co.nz",
+          "sullo amarsct"
+        ],
+        "tags": [
+          "compliance",
+          "js",
+          "css",
+          "sri",
+          "misconfig",
+          "vuln"
+        ],
+        "description": "Checks if external script and stylesheet tags in the HTML response are missing the Subresource Integrity (SRI) attribute.\n",
+        "reference": [
+          "https://cheatsheetseries.owasp.org/cheatsheets/Third_Party_Javascript_Management_Cheat_Sheet.html#subresource-integrity",
+          "https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-353"
+          ]
+        }
+      },
+      "type": "http",
+      "host": "ma-cps.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ma-cps.esante.gouv.fr",
+      "matched-at": "https://ma-cps.esante.gouv.fr/",
+      "extracted-results": [
+        "https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css",
+        "https://use.typekit.net/jjx2ksb.css",
+        "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: ma-cps.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 1854\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Thu, 01 Oct 2026 04:22:04 GMT\r\nLast-Modified: Wed, 22 Jul 2026 09:53:28 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"description\" content=\"\">\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"img/logos/favicon.ico\">\n   \n    <title>ANS - Portail Commande CPS</title>\n    <link rel=\"stylesheet\" href=\"https://use.typekit.net/jjx2ksb.css\">\n    <link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css\">\n    <script src=\"./scripts/elastic-apm-rum.umd.min.js\" crossorigin=\"\"></script>\n    <script>\n        elasticApm.init(\n            {             \n                serviceName: 'MACPS', active: Math.random() < 0.1,\n                serverUrl: 'https://582c2d31a486436796323dafa4973177.apm.francecentral.azure.elastic-cloud.com:443',         \n            }\n        )\n    </script>\n\t\n\t\n<link rel=\"stylesheet\" href=\"styles.7b4bad0611b6738b570e.css\"></head>\n\n<body>\n    <noscript>\n        <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n    </noscript>\n    \n    <app-root></app-root>    \n    \n<script src=\"runtime-es2015.a4dadbc03350107420a4.js\" type=\"module\"></script><script src=\"runtime-es5.a4dadbc03350107420a4.js\" nomodule defer></script><script src=\"polyfills-es5.75d8bdaa4171047d2dc7.js\" nomodule defer></script><script src=\"polyfills-es2015.c3c294aaf81d14183aba.js\" type=\"module\"></script><script src=\"scripts.84960589e89760329259.js\" defer></script><script src=\"main-es2015.c4a84c4e3509a345615b.js\" type=\"module\"></script><script src=\"main-es5.c4a84c4e3509a345615b.js\" nomodule defer></script></body>\n\n</html>",
+      "ip": "5.135.49.42",
+      "timestamp": "2026-10-01T04:22:04.16240125Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ma-cps.esante.gouv.fr/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/miscellaneous/options-method.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/options-method",
+      "template-id": "options-method",
+      "template-path": "/home/runner/nuclei-templates/http/miscellaneous/options-method.yaml",
+      "info": {
+        "name": "Allowed Options Method",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "miscellaneous",
+          "misc",
+          "generic",
+          "vuln"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "http",
+      "host": "ma-cps.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ma-cps.esante.gouv.fr",
+      "matched-at": "https://ma-cps.esante.gouv.fr",
+      "extracted-results": [
+        "POST,OPTIONS,HEAD,GET"
+      ],
+      "request": "OPTIONS / HTTP/1.1\r\nHost: ma-cps.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAllow: POST,OPTIONS,HEAD,GET\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Thu, 01 Oct 2026 04:22:15 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\nContent-Length: 0\r\n\r\n",
+      "ip": "5.135.49.42",
+      "timestamp": "2026-10-01T04:22:15.972841487Z",
+      "curl-command": "curl -X 'OPTIONS' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ma-cps.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/tech-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tech-detect",
+      "template-id": "tech-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/tech-detect.yaml",
+      "info": {
+        "name": "Wappalyzer Technology Detection",
+        "author": [
+          "hakluke",
+          "righettod",
+          "matejsmycka"
+        ],
+        "tags": [
+          "tech",
+          "discovery"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "font-awesome",
+      "type": "http",
+      "host": "ma-cps.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ma-cps.esante.gouv.fr",
+      "matched-at": "https://ma-cps.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ma-cps.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 1854\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Thu, 01 Oct 2026 04:22:16 GMT\r\nLast-Modified: Wed, 22 Jul 2026 09:53:28 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"description\" content=\"\">\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"img/logos/favicon.ico\">\n   \n    <title>ANS - Portail Commande CPS</title>\n    <link rel=\"stylesheet\" href=\"https://use.typekit.net/jjx2ksb.css\">\n    <link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css\">\n    <script src=\"./scripts/elastic-apm-rum.umd.min.js\" crossorigin=\"\"></script>\n    <script>\n        elasticApm.init(\n            {             \n                serviceName: 'MACPS', active: Math.random() < 0.1,\n                serverUrl: 'https://582c2d31a486436796323dafa4973177.apm.francecentral.azure.elastic-cloud.com:443',         \n            }\n        )\n    </script>\n\t\n\t\n<link rel=\"stylesheet\" href=\"styles.7b4bad0611b6738b570e.css\"></head>\n\n<body>\n    <noscript>\n        <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n    </noscript>\n    \n    <app-root></app-root>    \n    \n<script src=\"runtime-es2015.a4dadbc03350107420a4.js\" type=\"module\"></script><script src=\"runtime-es5.a4dadbc03350107420a4.js\" nomodule defer></script><script src=\"polyfills-es5.75d8bdaa4171047d2dc7.js\" nomodule defer></script><script src=\"polyfills-es2015.c3c294aaf81d14183aba.js\" type=\"module\"></script><script src=\"scripts.84960589e89760329259.js\" defer></script><script src=\"main-es2015.c4a84c4e3509a345615b.js\" type=\"module\"></script><script src=\"main-es5.c4a84c4e3509a345615b.js\" nomodule defer></script></body>\n\n</html>",
+      "ip": "5.135.49.42",
+      "timestamp": "2026-10-01T04:22:16.686370912Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ma-cps.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/xss-deprecated-header.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/xss-deprecated-header",
+      "template-id": "xss-deprecated-header",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/xss-deprecated-header.yaml",
+      "info": {
+        "name": "XSS-Protection Header - Cross-Site Scripting",
+        "author": [
+          "joshlarsen"
+        ],
+        "tags": [
+          "xss",
+          "misconfig",
+          "generic",
+          "vuln"
+        ],
+        "description": "Setting the XSS-Protection header is deprecated. Setting the header to anything other than `0` can actually introduce an XSS vulnerability.",
+        "reference": [
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection",
+          "https://owasp.org/www-project-secure-headers/#x-xss-protection"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-79"
+          ],
+          "cvss-metrics": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "type": "http",
+      "host": "ma-cps.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ma-cps.esante.gouv.fr",
+      "matched-at": "https://ma-cps.esante.gouv.fr",
+      "extracted-results": [
+        "1;mode=block"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: ma-cps.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 1854\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Thu, 01 Oct 2026 04:22:22 GMT\r\nLast-Modified: Wed, 22 Jul 2026 09:53:28 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"description\" content=\"\">\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"img/logos/favicon.ico\">\n   \n    <title>ANS - Portail Commande CPS</title>\n    <link rel=\"stylesheet\" href=\"https://use.typekit.net/jjx2ksb.css\">\n    <link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css\">\n    <script src=\"./scripts/elastic-apm-rum.umd.min.js\" crossorigin=\"\"></script>\n    <script>\n        elasticApm.init(\n            {             \n                serviceName: 'MACPS', active: Math.random() < 0.1,\n                serverUrl: 'https://582c2d31a486436796323dafa4973177.apm.francecentral.azure.elastic-cloud.com:443',         \n            }\n        )\n    </script>\n\t\n\t\n<link rel=\"stylesheet\" href=\"styles.7b4bad0611b6738b570e.css\"></head>\n\n<body>\n    <noscript>\n        <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n    </noscript>\n    \n    <app-root></app-root>    \n    \n<script src=\"runtime-es2015.a4dadbc03350107420a4.js\" type=\"module\"></script><script src=\"runtime-es5.a4dadbc03350107420a4.js\" nomodule defer></script><script src=\"polyfills-es5.75d8bdaa4171047d2dc7.js\" nomodule defer></script><script src=\"polyfills-es2015.c3c294aaf81d14183aba.js\" type=\"module\"></script><script src=\"scripts.84960589e89760329259.js\" defer></script><script src=\"main-es2015.c4a84c4e3509a345615b.js\" type=\"module\"></script><script src=\"main-es5.c4a84c4e3509a345615b.js\" nomodule defer></script></body>\n\n</html>",
+      "ip": "5.135.49.42",
+      "timestamp": "2026-10-01T04:22:22.667216092Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ma-cps.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/apache/apache-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/apache-detect",
+      "template-id": "apache-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/apache/apache-detect.yaml",
+      "info": {
+        "name": "Apache Detection",
+        "author": [
+          "philippedelteil"
+        ],
+        "tags": [
+          "tech",
+          "apache",
+          "discovery"
+        ],
+        "description": "Some Apache servers have the version on the response header. The OpenSSL version can be also obtained",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "http",
+      "host": "ma-cps.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ma-cps.esante.gouv.fr",
+      "matched-at": "https://ma-cps.esante.gouv.fr",
+      "extracted-results": [
+        "Apache"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: ma-cps.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 1854\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Thu, 01 Oct 2026 04:22:22 GMT\r\nLast-Modified: Wed, 22 Jul 2026 09:53:28 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: master-only\r\nX-Webkit-Csp: default-src 'self'\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"description\" content=\"\">\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"img/logos/favicon.ico\">\n   \n    <title>ANS - Portail Commande CPS</title>\n    <link rel=\"stylesheet\" href=\"https://use.typekit.net/jjx2ksb.css\">\n    <link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css\">\n    <script src=\"./scripts/elastic-apm-rum.umd.min.js\" crossorigin=\"\"></script>\n    <script>\n        elasticApm.init(\n            {             \n                serviceName: 'MACPS', active: Math.random() < 0.1,\n                serverUrl: 'https://582c2d31a486436796323dafa4973177.apm.francecentral.azure.elastic-cloud.com:443',         \n            }\n        )\n    </script>\n\t\n\t\n<link rel=\"stylesheet\" href=\"styles.7b4bad0611b6738b570e.css\"></head>\n\n<body>\n    <noscript>\n        <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n    </noscript>\n    \n    <app-root></app-root>    \n    \n<script src=\"runtime-es2015.a4dadbc03350107420a4.js\" type=\"module\"></script><script src=\"runtime-es5.a4dadbc03350107420a4.js\" nomodule defer></script><script src=\"polyfills-es5.75d8bdaa4171047d2dc7.js\" nomodule defer></script><script src=\"polyfills-es2015.c3c294aaf81d14183aba.js\" type=\"module\"></script><script src=\"scripts.84960589e89760329259.js\" defer></script><script src=\"main-es2015.c4a84c4e3509a345615b.js\" type=\"module\"></script><script src=\"main-es5.c4a84c4e3509a345615b.js\" nomodule defer></script></body>\n\n</html>",
+      "ip": "5.135.49.42",
+      "timestamp": "2026-10-01T04:22:22.669115521Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ma-cps.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "info": {
+        "name": "Detect SSL Certificate Issuer",
+        "author": [
+          "lingtren"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "ma-cps.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "ma-cps.esante.gouv.fr:443",
+      "extracted-results": [
+        "DigiCert Inc"
+      ],
+      "ip": "5.135.49.42",
+      "timestamp": "2026-10-01T04:22:24.892927765Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "vuln"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "ma-cps.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "ma-cps.esante.gouv.fr:443",
+      "extracted-results": [
+        "ma-cps.esante.gouv.fr"
+      ],
+      "ip": "5.135.49.42",
+      "timestamp": "2026-10-01T04:22:24.89311231Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/untrusted-root-certificate.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/untrusted-root-certificate",
+      "template-id": "untrusted-root-certificate",
+      "template-path": "/home/runner/nuclei-templates/ssl/untrusted-root-certificate.yaml",
+      "info": {
+        "name": "Untrusted Root Certificate - Detect",
+        "author": [
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "untrusted",
+          "vuln"
+        ],
+        "description": "A root certificate is a digital certificate issued by a trusted certificate authority that acts as a basis for other digital certificates. An untrusted root certificate is a certificate that is issued by an authority that is not trusted by the computer, and therefore cannot be used to authenticate websites or other digital certificates.\n",
+        "reference": [
+          "https://www.sslmarket.com/ssl/trusted-and-untrusted-certificate",
+          "https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/ssl-untrusted-root-certificate/"
+        ],
+        "severity": "low",
+        "metadata": {
+          "max-request": 1,
+          "verified": true
+        }
+      },
+      "type": "ssl",
+      "host": "ma-cps.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "ma-cps.esante.gouv.fr:443",
+      "ip": "5.135.49.42",
+      "timestamp": "2026-10-01T04:22:24.893179096Z",
+      "matcher-status": true
+    }
+  ]
+]
