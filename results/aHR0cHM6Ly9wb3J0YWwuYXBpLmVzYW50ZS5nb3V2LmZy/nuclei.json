@@ -1,0 +1,913 @@
+[
+  [
+    {
+      "template": "http/exposures/configs/config-json-exposure-fuzz.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/config-json-exposure-fuzz",
+      "template-id": "config-json-exposure-fuzz",
+      "template-path": "/home/runner/nuclei-templates/http/exposures/configs/config-json-exposure-fuzz.yaml",
+      "info": {
+        "name": "Exposed JSON Configuration Files",
+        "author": [
+          "geeknik"
+        ],
+        "tags": [
+          "config",
+          "exposure",
+          "files",
+          "vuln"
+        ],
+        "description": "Detects exposed JSON configuration files containing sensitive information including API keys, access tokens, AWS credentials, database configurations, base URLs, file paths, and application settings. These files often contain production configurations and credentials that should not be publicly accessible.\n",
+        "severity": "critical",
+        "metadata": {
+          "github-query": "filename:config.json",
+          "max-request": 50
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-552"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+          "cvss-score": 10
+        }
+      },
+      "extractor-name": "base_urls",
+      "type": "http",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://portal.api.esante.gouv.fr",
+      "path": "/assets/config.json",
+      "matched-at": "https://portal.api.esante.gouv.fr/assets/config.json",
+      "extracted-results": [
+        "\"baseURL\": \"https://apimgmt.api.esante.gouv.fr/portal\""
+      ],
+      "request": "GET /assets/config.json HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: frame-ancestors 'self';\r\nContent-Type: application/json\r\nDate: Thu, 01 Oct 2026 04:48:28 GMT\r\nEtag: W/\"69fb405e-d6\"\r\nLast-Modified: Wed, 06 May 2026 13:21:34 GMT\r\nServer: nginx/1.27.5\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n{\n  \"baseURL\": \"https://apimgmt.api.esante.gouv.fr/portal\",\n  \"loaderURL\": \"assets/images/gravitee-loader.gif\",\n  \"pagination\": {\n    \"size\": {\n      \"default\": 10,\n      \"values\": [5, 10, 25, 50, 100]\n    }\n  }\n}\n",
+      "meta": {
+        "path": "/assets/config.json"
+      },
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:48:28.61715235Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr/assets/config.json'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/waf-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/waf-detect",
+      "template-id": "waf-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/waf-detect.yaml",
+      "info": {
+        "name": "WAF Detection",
+        "author": [
+          "dwisiswant0",
+          "lu4nx",
+          "s4e-io"
+        ],
+        "tags": [
+          "waf",
+          "tech",
+          "misc",
+          "discovery"
+        ],
+        "description": "A web application firewall was detected.",
+        "reference": [
+          "https://github.com/Ekultek/WhatWaf"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "matcher-name": "nginxgeneric",
+      "type": "http",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr",
+      "request": "POST / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
+      "response": "HTTP/1.1 405 Method Not Allowed\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: frame-ancestors 'self';\r\nContent-Type: text/html; charset=utf-8\r\nDate: Thu, 01 Oct 2026 04:48:39 GMT\r\nServer: nginx/1.27.5\r\n\r\n<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></center>\r\n<hr><center>nginx/1.27.5</center>\r\n</body>\r\n</html>\r\n",
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:48:39.571547771Z",
+      "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: portal.api.esante.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "portal.api.esante.gouv.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:50:23.63925537Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "portal.api.esante.gouv.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:50:23.829933533Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: frame-ancestors 'self';\r\nContent-Type: text/html; charset=utf-8\r\nDate: Thu, 01 Oct 2026 04:50:26 GMT\r\nServer: nginx/1.27.5\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!--\n\n    Copyright (C) 2015 The Gravitee team (http://gravitee.io)\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n            http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n-->\n<!doctype html>\n<html lang=\"en\" data-beasties-container>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Loading...</title>\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <script src=\"webcomponents/webcomponents-loader.js\"></script>\n    <script src=\"redoc/redoc.standalone.js\"></script>\n  <style>@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:100;src:url(\"./media/ibm-plex-sans-latin-100-normal-5JYGBT2W.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-100-normal-3DVESQ5R.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:200;src:url(\"./media/ibm-plex-sans-latin-200-normal-NQ7GGSKY.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-200-normal-3MJVPXDS.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:300;src:url(\"./media/ibm-plex-sans-latin-300-normal-LWHZPPGB.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-300-normal-SEQH2KC5.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:400;src:url(\"./media/ibm-plex-sans-latin-400-normal-COQVXTP6.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-400-normal-CQ4Y6APF.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:500;src:url(\"./media/ibm-plex-sans-latin-500-normal-JTONHBWS.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-500-normal-AYNPQPGU.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:600;src:url(\"./media/ibm-plex-sans-latin-600-normal-DTNZULF4.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-600-normal-LA7D2FY4.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:700;src:url(\"./media/ibm-plex-sans-latin-700-normal-IXG35DPN.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-700-normal-M4EGDRED.woff\") format(\"woff\")}:root{--gv-theme-color-darker:#383E3F;--gv-theme-color-dark:#28444F;--gv-theme-color:#5A7684;--gv-theme-color-light:#86c3d0;--gv-theme-color-danger:#FF5722;--gv-theme-color-error-dark:#d32f2f;--gv-theme-color-error:#f44336;--gv-theme-color-error-light:#e57373;--gv-theme-color-info-dark:#1976d2;--gv-theme-color-info:#2196f3;--gv-theme-color-info-light:#64b5f6;--gv-theme-color-success-dark:#388e3c;--gv-theme-color-success:#4caf50;--gv-theme-color-success-light:#81c784;--gv-theme-color-warning-dark:#f57c00;--gv-theme-color-warning:#ff9800;--gv-theme-color-warning-light:#ffb74d;--gv-theme-neutral-color-darkest:#000000;--gv-theme-neutral-color-darker:#BFBFBF;--gv-theme-neutral-color-dark:#D9D9D9;--gv-theme-neutral-color:#F5F5F5;--gv-theme-neutral-color-light:#EFEFEF;--gv-theme-neutral-color-lighter:#FAFAFA;--gv-theme-neutral-color-lightest:#FFFFFF;--gv-theme-font-color-dark:#262626;--gv-theme-font-color-light:#FFFFFF;--gv-theme-font-family:\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif;--gv-theme-font-size-xs:10px;--gv-theme-font-size-s:12px;--gv-theme-font-size-m:14px;--gv-theme-font-size-l:16px;--gv-theme-font-size-xl:26px;--gv-theme-font-size-xxl:30px;--gv-theme-homepage-background-height:400px;--gv-theme-skeleton-color:#BFBFBF;--gv-theme-homepage-background-color:#5A7684;--gv-theme-homepage-background-image:none;--gv-theme-logo:url(/images/gravitee-logo-cyan.svg);--gv-theme-optional-logo:url(/images/gravitee-logo-white.svg);--gv-theme-favicon:/images/gravitee-favicon.png}:root{font-family:var(--gv-theme-font-family);font-size:var(--gv-theme-font-size-m);color:var(--gv-theme-font-color-dark);--gv-theme-layout--pb:1rem;--gv-theme-layout--pl:8rem;--gv-theme-layout--pr:8rem;--gv-theme-layout--pt:1rem;--gv-theme-layout-footer-bottom--h:150px;--gv-theme-layout-footer-top--h:338px;--gv-theme-layout-header--h:3.8rem;--gv-theme-page--pb:4rem;--gv-theme-page--pt:4rem}@media screen and (max-width: 1920px){:root{--gv-theme-layout--pr:250px;--gv-theme-layout--pl:250px}}@media screen and (max-width: 1680px){:root{--gv-theme-layout--pr:130px;--gv-theme-layout--pl:130px}}@media screen and (max-width: 1600px){:root{--gv-theme-layout--pr:90px;--gv-theme-layout--pl:90px}}@media screen and (max-width: 1440px){:root{--gv-theme-layout--pr:10px;--gv-theme-layout--pl:10px}}@media screen and (max-width: 1366px){:root{--gv-theme-layout--pr:8px;--gv-theme-layout--pl:8px}}@media only screen and (max-device-width: 1280px){:root{--gv-theme-layout--pr:5px;--gv-theme-layout--pl:5px}}body{margin:0}.loader{position:absolute;top:45%;left:45%;display:flex;margin:0 auto;width:200px;height:200px;border-radius:50%;box-sizing:border-box;border:10px solid var(--gv-theme-font-color-dark);animation:rotation 1s linear infinite;border-bottom-color:transparent}</style><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\"></noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\"></noscript></head>\n  <body>\n    <span id=\"loader\" class=\"loader\"></span>\n    <app-root></app-root>\n  <link rel=\"modulepreload\" href=\"chunk-KN2P33P4.js\"><link rel=\"modulepreload\" href=\"chunk-TTYCJ4Y3.js\"><link rel=\"modulepreload\" href=\"chunk-QLBMUFUG.js\"><link rel=\"modulepreload\" href=\"chunk-J2PGSGMR.js\"><link rel=\"modulepreload\" href=\"chunk-TX4KLTBF.js\"><link rel=\"modulepreload\" href=\"chunk-B5RATLCQ.js\"><link rel=\"modulepreload\" href=\"chunk-FG5OZPFF.js\"><link rel=\"modulepreload\" href=\"chunk-NCX5P6VM.js\"><link rel=\"modulepreload\" href=\"chunk-2JRQFBFW.js\"><link rel=\"modulepreload\" href=\"chunk-3OGORZZE.js\"><script src=\"polyfills-ZBHMLD3T.js\" type=\"module\"></script><script src=\"scripts-LLFA6UFG.js\" defer></script><script src=\"main-F4HDGBO6.js\" type=\"module\"></script></body>\n</html>\n",
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:50:27.01570263Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "strict-transport-security",
+      "type": "http",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: frame-ancestors 'self';\r\nContent-Type: text/html; charset=utf-8\r\nDate: Thu, 01 Oct 2026 04:50:26 GMT\r\nServer: nginx/1.27.5\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!--\n\n    Copyright (C) 2015 The Gravitee team (http://gravitee.io)\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n            http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n-->\n<!doctype html>\n<html lang=\"en\" data-beasties-container>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Loading...</title>\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <script src=\"webcomponents/webcomponents-loader.js\"></script>\n    <script src=\"redoc/redoc.standalone.js\"></script>\n  <style>@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:100;src:url(\"./media/ibm-plex-sans-latin-100-normal-5JYGBT2W.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-100-normal-3DVESQ5R.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:200;src:url(\"./media/ibm-plex-sans-latin-200-normal-NQ7GGSKY.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-200-normal-3MJVPXDS.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:300;src:url(\"./media/ibm-plex-sans-latin-300-normal-LWHZPPGB.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-300-normal-SEQH2KC5.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:400;src:url(\"./media/ibm-plex-sans-latin-400-normal-COQVXTP6.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-400-normal-CQ4Y6APF.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:500;src:url(\"./media/ibm-plex-sans-latin-500-normal-JTONHBWS.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-500-normal-AYNPQPGU.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:600;src:url(\"./media/ibm-plex-sans-latin-600-normal-DTNZULF4.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-600-normal-LA7D2FY4.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:700;src:url(\"./media/ibm-plex-sans-latin-700-normal-IXG35DPN.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-700-normal-M4EGDRED.woff\") format(\"woff\")}:root{--gv-theme-color-darker:#383E3F;--gv-theme-color-dark:#28444F;--gv-theme-color:#5A7684;--gv-theme-color-light:#86c3d0;--gv-theme-color-danger:#FF5722;--gv-theme-color-error-dark:#d32f2f;--gv-theme-color-error:#f44336;--gv-theme-color-error-light:#e57373;--gv-theme-color-info-dark:#1976d2;--gv-theme-color-info:#2196f3;--gv-theme-color-info-light:#64b5f6;--gv-theme-color-success-dark:#388e3c;--gv-theme-color-success:#4caf50;--gv-theme-color-success-light:#81c784;--gv-theme-color-warning-dark:#f57c00;--gv-theme-color-warning:#ff9800;--gv-theme-color-warning-light:#ffb74d;--gv-theme-neutral-color-darkest:#000000;--gv-theme-neutral-color-darker:#BFBFBF;--gv-theme-neutral-color-dark:#D9D9D9;--gv-theme-neutral-color:#F5F5F5;--gv-theme-neutral-color-light:#EFEFEF;--gv-theme-neutral-color-lighter:#FAFAFA;--gv-theme-neutral-color-lightest:#FFFFFF;--gv-theme-font-color-dark:#262626;--gv-theme-font-color-light:#FFFFFF;--gv-theme-font-family:\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif;--gv-theme-font-size-xs:10px;--gv-theme-font-size-s:12px;--gv-theme-font-size-m:14px;--gv-theme-font-size-l:16px;--gv-theme-font-size-xl:26px;--gv-theme-font-size-xxl:30px;--gv-theme-homepage-background-height:400px;--gv-theme-skeleton-color:#BFBFBF;--gv-theme-homepage-background-color:#5A7684;--gv-theme-homepage-background-image:none;--gv-theme-logo:url(/images/gravitee-logo-cyan.svg);--gv-theme-optional-logo:url(/images/gravitee-logo-white.svg);--gv-theme-favicon:/images/gravitee-favicon.png}:root{font-family:var(--gv-theme-font-family);font-size:var(--gv-theme-font-size-m);color:var(--gv-theme-font-color-dark);--gv-theme-layout--pb:1rem;--gv-theme-layout--pl:8rem;--gv-theme-layout--pr:8rem;--gv-theme-layout--pt:1rem;--gv-theme-layout-footer-bottom--h:150px;--gv-theme-layout-footer-top--h:338px;--gv-theme-layout-header--h:3.8rem;--gv-theme-page--pb:4rem;--gv-theme-page--pt:4rem}@media screen and (max-width: 1920px){:root{--gv-theme-layout--pr:250px;--gv-theme-layout--pl:250px}}@media screen and (max-width: 1680px){:root{--gv-theme-layout--pr:130px;--gv-theme-layout--pl:130px}}@media screen and (max-width: 1600px){:root{--gv-theme-layout--pr:90px;--gv-theme-layout--pl:90px}}@media screen and (max-width: 1440px){:root{--gv-theme-layout--pr:10px;--gv-theme-layout--pl:10px}}@media screen and (max-width: 1366px){:root{--gv-theme-layout--pr:8px;--gv-theme-layout--pl:8px}}@media only screen and (max-device-width: 1280px){:root{--gv-theme-layout--pr:5px;--gv-theme-layout--pl:5px}}body{margin:0}.loader{position:absolute;top:45%;left:45%;display:flex;margin:0 auto;width:200px;height:200px;border-radius:50%;box-sizing:border-box;border:10px solid var(--gv-theme-font-color-dark);animation:rotation 1s linear infinite;border-bottom-color:transparent}</style><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\"></noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\"></noscript></head>\n  <body>\n    <span id=\"loader\" class=\"loader\"></span>\n    <app-root></app-root>\n  <link rel=\"modulepreload\" href=\"chunk-KN2P33P4.js\"><link rel=\"modulepreload\" href=\"chunk-TTYCJ4Y3.js\"><link rel=\"modulepreload\" href=\"chunk-QLBMUFUG.js\"><link rel=\"modulepreload\" href=\"chunk-J2PGSGMR.js\"><link rel=\"modulepreload\" href=\"chunk-TX4KLTBF.js\"><link rel=\"modulepreload\" href=\"chunk-B5RATLCQ.js\"><link rel=\"modulepreload\" href=\"chunk-FG5OZPFF.js\"><link rel=\"modulepreload\" href=\"chunk-NCX5P6VM.js\"><link rel=\"modulepreload\" href=\"chunk-2JRQFBFW.js\"><link rel=\"modulepreload\" href=\"chunk-3OGORZZE.js\"><script src=\"polyfills-ZBHMLD3T.js\" type=\"module\"></script><script src=\"scripts-LLFA6UFG.js\" defer></script><script src=\"main-F4HDGBO6.js\" type=\"module\"></script></body>\n</html>\n",
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:50:27.017006584Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: frame-ancestors 'self';\r\nContent-Type: text/html; charset=utf-8\r\nDate: Thu, 01 Oct 2026 04:50:26 GMT\r\nServer: nginx/1.27.5\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!--\n\n    Copyright (C) 2015 The Gravitee team (http://gravitee.io)\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n            http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n-->\n<!doctype html>\n<html lang=\"en\" data-beasties-container>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Loading...</title>\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <script src=\"webcomponents/webcomponents-loader.js\"></script>\n    <script src=\"redoc/redoc.standalone.js\"></script>\n  <style>@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:100;src:url(\"./media/ibm-plex-sans-latin-100-normal-5JYGBT2W.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-100-normal-3DVESQ5R.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:200;src:url(\"./media/ibm-plex-sans-latin-200-normal-NQ7GGSKY.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-200-normal-3MJVPXDS.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:300;src:url(\"./media/ibm-plex-sans-latin-300-normal-LWHZPPGB.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-300-normal-SEQH2KC5.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:400;src:url(\"./media/ibm-plex-sans-latin-400-normal-COQVXTP6.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-400-normal-CQ4Y6APF.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:500;src:url(\"./media/ibm-plex-sans-latin-500-normal-JTONHBWS.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-500-normal-AYNPQPGU.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:600;src:url(\"./media/ibm-plex-sans-latin-600-normal-DTNZULF4.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-600-normal-LA7D2FY4.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:700;src:url(\"./media/ibm-plex-sans-latin-700-normal-IXG35DPN.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-700-normal-M4EGDRED.woff\") format(\"woff\")}:root{--gv-theme-color-darker:#383E3F;--gv-theme-color-dark:#28444F;--gv-theme-color:#5A7684;--gv-theme-color-light:#86c3d0;--gv-theme-color-danger:#FF5722;--gv-theme-color-error-dark:#d32f2f;--gv-theme-color-error:#f44336;--gv-theme-color-error-light:#e57373;--gv-theme-color-info-dark:#1976d2;--gv-theme-color-info:#2196f3;--gv-theme-color-info-light:#64b5f6;--gv-theme-color-success-dark:#388e3c;--gv-theme-color-success:#4caf50;--gv-theme-color-success-light:#81c784;--gv-theme-color-warning-dark:#f57c00;--gv-theme-color-warning:#ff9800;--gv-theme-color-warning-light:#ffb74d;--gv-theme-neutral-color-darkest:#000000;--gv-theme-neutral-color-darker:#BFBFBF;--gv-theme-neutral-color-dark:#D9D9D9;--gv-theme-neutral-color:#F5F5F5;--gv-theme-neutral-color-light:#EFEFEF;--gv-theme-neutral-color-lighter:#FAFAFA;--gv-theme-neutral-color-lightest:#FFFFFF;--gv-theme-font-color-dark:#262626;--gv-theme-font-color-light:#FFFFFF;--gv-theme-font-family:\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif;--gv-theme-font-size-xs:10px;--gv-theme-font-size-s:12px;--gv-theme-font-size-m:14px;--gv-theme-font-size-l:16px;--gv-theme-font-size-xl:26px;--gv-theme-font-size-xxl:30px;--gv-theme-homepage-background-height:400px;--gv-theme-skeleton-color:#BFBFBF;--gv-theme-homepage-background-color:#5A7684;--gv-theme-homepage-background-image:none;--gv-theme-logo:url(/images/gravitee-logo-cyan.svg);--gv-theme-optional-logo:url(/images/gravitee-logo-white.svg);--gv-theme-favicon:/images/gravitee-favicon.png}:root{font-family:var(--gv-theme-font-family);font-size:var(--gv-theme-font-size-m);color:var(--gv-theme-font-color-dark);--gv-theme-layout--pb:1rem;--gv-theme-layout--pl:8rem;--gv-theme-layout--pr:8rem;--gv-theme-layout--pt:1rem;--gv-theme-layout-footer-bottom--h:150px;--gv-theme-layout-footer-top--h:338px;--gv-theme-layout-header--h:3.8rem;--gv-theme-page--pb:4rem;--gv-theme-page--pt:4rem}@media screen and (max-width: 1920px){:root{--gv-theme-layout--pr:250px;--gv-theme-layout--pl:250px}}@media screen and (max-width: 1680px){:root{--gv-theme-layout--pr:130px;--gv-theme-layout--pl:130px}}@media screen and (max-width: 1600px){:root{--gv-theme-layout--pr:90px;--gv-theme-layout--pl:90px}}@media screen and (max-width: 1440px){:root{--gv-theme-layout--pr:10px;--gv-theme-layout--pl:10px}}@media screen and (max-width: 1366px){:root{--gv-theme-layout--pr:8px;--gv-theme-layout--pl:8px}}@media only screen and (max-device-width: 1280px){:root{--gv-theme-layout--pr:5px;--gv-theme-layout--pl:5px}}body{margin:0}.loader{position:absolute;top:45%;left:45%;display:flex;margin:0 auto;width:200px;height:200px;border-radius:50%;box-sizing:border-box;border:10px solid var(--gv-theme-font-color-dark);animation:rotation 1s linear infinite;border-bottom-color:transparent}</style><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\"></noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\"></noscript></head>\n  <body>\n    <span id=\"loader\" class=\"loader\"></span>\n    <app-root></app-root>\n  <link rel=\"modulepreload\" href=\"chunk-KN2P33P4.js\"><link rel=\"modulepreload\" href=\"chunk-TTYCJ4Y3.js\"><link rel=\"modulepreload\" href=\"chunk-QLBMUFUG.js\"><link rel=\"modulepreload\" href=\"chunk-J2PGSGMR.js\"><link rel=\"modulepreload\" href=\"chunk-TX4KLTBF.js\"><link rel=\"modulepreload\" href=\"chunk-B5RATLCQ.js\"><link rel=\"modulepreload\" href=\"chunk-FG5OZPFF.js\"><link rel=\"modulepreload\" href=\"chunk-NCX5P6VM.js\"><link rel=\"modulepreload\" href=\"chunk-2JRQFBFW.js\"><link rel=\"modulepreload\" href=\"chunk-3OGORZZE.js\"><script src=\"polyfills-ZBHMLD3T.js\" type=\"module\"></script><script src=\"scripts-LLFA6UFG.js\" defer></script><script src=\"main-F4HDGBO6.js\" type=\"module\"></script></body>\n</html>\n",
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:50:27.018203748Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: frame-ancestors 'self';\r\nContent-Type: text/html; charset=utf-8\r\nDate: Thu, 01 Oct 2026 04:50:26 GMT\r\nServer: nginx/1.27.5\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!--\n\n    Copyright (C) 2015 The Gravitee team (http://gravitee.io)\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n            http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n-->\n<!doctype html>\n<html lang=\"en\" data-beasties-container>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Loading...</title>\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <script src=\"webcomponents/webcomponents-loader.js\"></script>\n    <script src=\"redoc/redoc.standalone.js\"></script>\n  <style>@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:100;src:url(\"./media/ibm-plex-sans-latin-100-normal-5JYGBT2W.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-100-normal-3DVESQ5R.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:200;src:url(\"./media/ibm-plex-sans-latin-200-normal-NQ7GGSKY.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-200-normal-3MJVPXDS.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:300;src:url(\"./media/ibm-plex-sans-latin-300-normal-LWHZPPGB.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-300-normal-SEQH2KC5.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:400;src:url(\"./media/ibm-plex-sans-latin-400-normal-COQVXTP6.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-400-normal-CQ4Y6APF.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:500;src:url(\"./media/ibm-plex-sans-latin-500-normal-JTONHBWS.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-500-normal-AYNPQPGU.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:600;src:url(\"./media/ibm-plex-sans-latin-600-normal-DTNZULF4.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-600-normal-LA7D2FY4.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:700;src:url(\"./media/ibm-plex-sans-latin-700-normal-IXG35DPN.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-700-normal-M4EGDRED.woff\") format(\"woff\")}:root{--gv-theme-color-darker:#383E3F;--gv-theme-color-dark:#28444F;--gv-theme-color:#5A7684;--gv-theme-color-light:#86c3d0;--gv-theme-color-danger:#FF5722;--gv-theme-color-error-dark:#d32f2f;--gv-theme-color-error:#f44336;--gv-theme-color-error-light:#e57373;--gv-theme-color-info-dark:#1976d2;--gv-theme-color-info:#2196f3;--gv-theme-color-info-light:#64b5f6;--gv-theme-color-success-dark:#388e3c;--gv-theme-color-success:#4caf50;--gv-theme-color-success-light:#81c784;--gv-theme-color-warning-dark:#f57c00;--gv-theme-color-warning:#ff9800;--gv-theme-color-warning-light:#ffb74d;--gv-theme-neutral-color-darkest:#000000;--gv-theme-neutral-color-darker:#BFBFBF;--gv-theme-neutral-color-dark:#D9D9D9;--gv-theme-neutral-color:#F5F5F5;--gv-theme-neutral-color-light:#EFEFEF;--gv-theme-neutral-color-lighter:#FAFAFA;--gv-theme-neutral-color-lightest:#FFFFFF;--gv-theme-font-color-dark:#262626;--gv-theme-font-color-light:#FFFFFF;--gv-theme-font-family:\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif;--gv-theme-font-size-xs:10px;--gv-theme-font-size-s:12px;--gv-theme-font-size-m:14px;--gv-theme-font-size-l:16px;--gv-theme-font-size-xl:26px;--gv-theme-font-size-xxl:30px;--gv-theme-homepage-background-height:400px;--gv-theme-skeleton-color:#BFBFBF;--gv-theme-homepage-background-color:#5A7684;--gv-theme-homepage-background-image:none;--gv-theme-logo:url(/images/gravitee-logo-cyan.svg);--gv-theme-optional-logo:url(/images/gravitee-logo-white.svg);--gv-theme-favicon:/images/gravitee-favicon.png}:root{font-family:var(--gv-theme-font-family);font-size:var(--gv-theme-font-size-m);color:var(--gv-theme-font-color-dark);--gv-theme-layout--pb:1rem;--gv-theme-layout--pl:8rem;--gv-theme-layout--pr:8rem;--gv-theme-layout--pt:1rem;--gv-theme-layout-footer-bottom--h:150px;--gv-theme-layout-footer-top--h:338px;--gv-theme-layout-header--h:3.8rem;--gv-theme-page--pb:4rem;--gv-theme-page--pt:4rem}@media screen and (max-width: 1920px){:root{--gv-theme-layout--pr:250px;--gv-theme-layout--pl:250px}}@media screen and (max-width: 1680px){:root{--gv-theme-layout--pr:130px;--gv-theme-layout--pl:130px}}@media screen and (max-width: 1600px){:root{--gv-theme-layout--pr:90px;--gv-theme-layout--pl:90px}}@media screen and (max-width: 1440px){:root{--gv-theme-layout--pr:10px;--gv-theme-layout--pl:10px}}@media screen and (max-width: 1366px){:root{--gv-theme-layout--pr:8px;--gv-theme-layout--pl:8px}}@media only screen and (max-device-width: 1280px){:root{--gv-theme-layout--pr:5px;--gv-theme-layout--pl:5px}}body{margin:0}.loader{position:absolute;top:45%;left:45%;display:flex;margin:0 auto;width:200px;height:200px;border-radius:50%;box-sizing:border-box;border:10px solid var(--gv-theme-font-color-dark);animation:rotation 1s linear infinite;border-bottom-color:transparent}</style><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\"></noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\"></noscript></head>\n  <body>\n    <span id=\"loader\" class=\"loader\"></span>\n    <app-root></app-root>\n  <link rel=\"modulepreload\" href=\"chunk-KN2P33P4.js\"><link rel=\"modulepreload\" href=\"chunk-TTYCJ4Y3.js\"><link rel=\"modulepreload\" href=\"chunk-QLBMUFUG.js\"><link rel=\"modulepreload\" href=\"chunk-J2PGSGMR.js\"><link rel=\"modulepreload\" href=\"chunk-TX4KLTBF.js\"><link rel=\"modulepreload\" href=\"chunk-B5RATLCQ.js\"><link rel=\"modulepreload\" href=\"chunk-FG5OZPFF.js\"><link rel=\"modulepreload\" href=\"chunk-NCX5P6VM.js\"><link rel=\"modulepreload\" href=\"chunk-2JRQFBFW.js\"><link rel=\"modulepreload\" href=\"chunk-3OGORZZE.js\"><script src=\"polyfills-ZBHMLD3T.js\" type=\"module\"></script><script src=\"scripts-LLFA6UFG.js\" defer></script><script src=\"main-F4HDGBO6.js\" type=\"module\"></script></body>\n</html>\n",
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:50:27.0193887Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: frame-ancestors 'self';\r\nContent-Type: text/html; charset=utf-8\r\nDate: Thu, 01 Oct 2026 04:50:26 GMT\r\nServer: nginx/1.27.5\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!--\n\n    Copyright (C) 2015 The Gravitee team (http://gravitee.io)\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n            http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n-->\n<!doctype html>\n<html lang=\"en\" data-beasties-container>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Loading...</title>\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <script src=\"webcomponents/webcomponents-loader.js\"></script>\n    <script src=\"redoc/redoc.standalone.js\"></script>\n  <style>@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:100;src:url(\"./media/ibm-plex-sans-latin-100-normal-5JYGBT2W.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-100-normal-3DVESQ5R.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:200;src:url(\"./media/ibm-plex-sans-latin-200-normal-NQ7GGSKY.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-200-normal-3MJVPXDS.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:300;src:url(\"./media/ibm-plex-sans-latin-300-normal-LWHZPPGB.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-300-normal-SEQH2KC5.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:400;src:url(\"./media/ibm-plex-sans-latin-400-normal-COQVXTP6.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-400-normal-CQ4Y6APF.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:500;src:url(\"./media/ibm-plex-sans-latin-500-normal-JTONHBWS.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-500-normal-AYNPQPGU.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:600;src:url(\"./media/ibm-plex-sans-latin-600-normal-DTNZULF4.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-600-normal-LA7D2FY4.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:700;src:url(\"./media/ibm-plex-sans-latin-700-normal-IXG35DPN.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-700-normal-M4EGDRED.woff\") format(\"woff\")}:root{--gv-theme-color-darker:#383E3F;--gv-theme-color-dark:#28444F;--gv-theme-color:#5A7684;--gv-theme-color-light:#86c3d0;--gv-theme-color-danger:#FF5722;--gv-theme-color-error-dark:#d32f2f;--gv-theme-color-error:#f44336;--gv-theme-color-error-light:#e57373;--gv-theme-color-info-dark:#1976d2;--gv-theme-color-info:#2196f3;--gv-theme-color-info-light:#64b5f6;--gv-theme-color-success-dark:#388e3c;--gv-theme-color-success:#4caf50;--gv-theme-color-success-light:#81c784;--gv-theme-color-warning-dark:#f57c00;--gv-theme-color-warning:#ff9800;--gv-theme-color-warning-light:#ffb74d;--gv-theme-neutral-color-darkest:#000000;--gv-theme-neutral-color-darker:#BFBFBF;--gv-theme-neutral-color-dark:#D9D9D9;--gv-theme-neutral-color:#F5F5F5;--gv-theme-neutral-color-light:#EFEFEF;--gv-theme-neutral-color-lighter:#FAFAFA;--gv-theme-neutral-color-lightest:#FFFFFF;--gv-theme-font-color-dark:#262626;--gv-theme-font-color-light:#FFFFFF;--gv-theme-font-family:\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif;--gv-theme-font-size-xs:10px;--gv-theme-font-size-s:12px;--gv-theme-font-size-m:14px;--gv-theme-font-size-l:16px;--gv-theme-font-size-xl:26px;--gv-theme-font-size-xxl:30px;--gv-theme-homepage-background-height:400px;--gv-theme-skeleton-color:#BFBFBF;--gv-theme-homepage-background-color:#5A7684;--gv-theme-homepage-background-image:none;--gv-theme-logo:url(/images/gravitee-logo-cyan.svg);--gv-theme-optional-logo:url(/images/gravitee-logo-white.svg);--gv-theme-favicon:/images/gravitee-favicon.png}:root{font-family:var(--gv-theme-font-family);font-size:var(--gv-theme-font-size-m);color:var(--gv-theme-font-color-dark);--gv-theme-layout--pb:1rem;--gv-theme-layout--pl:8rem;--gv-theme-layout--pr:8rem;--gv-theme-layout--pt:1rem;--gv-theme-layout-footer-bottom--h:150px;--gv-theme-layout-footer-top--h:338px;--gv-theme-layout-header--h:3.8rem;--gv-theme-page--pb:4rem;--gv-theme-page--pt:4rem}@media screen and (max-width: 1920px){:root{--gv-theme-layout--pr:250px;--gv-theme-layout--pl:250px}}@media screen and (max-width: 1680px){:root{--gv-theme-layout--pr:130px;--gv-theme-layout--pl:130px}}@media screen and (max-width: 1600px){:root{--gv-theme-layout--pr:90px;--gv-theme-layout--pl:90px}}@media screen and (max-width: 1440px){:root{--gv-theme-layout--pr:10px;--gv-theme-layout--pl:10px}}@media screen and (max-width: 1366px){:root{--gv-theme-layout--pr:8px;--gv-theme-layout--pl:8px}}@media only screen and (max-device-width: 1280px){:root{--gv-theme-layout--pr:5px;--gv-theme-layout--pl:5px}}body{margin:0}.loader{position:absolute;top:45%;left:45%;display:flex;margin:0 auto;width:200px;height:200px;border-radius:50%;box-sizing:border-box;border:10px solid var(--gv-theme-font-color-dark);animation:rotation 1s linear infinite;border-bottom-color:transparent}</style><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\"></noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\"></noscript></head>\n  <body>\n    <span id=\"loader\" class=\"loader\"></span>\n    <app-root></app-root>\n  <link rel=\"modulepreload\" href=\"chunk-KN2P33P4.js\"><link rel=\"modulepreload\" href=\"chunk-TTYCJ4Y3.js\"><link rel=\"modulepreload\" href=\"chunk-QLBMUFUG.js\"><link rel=\"modulepreload\" href=\"chunk-J2PGSGMR.js\"><link rel=\"modulepreload\" href=\"chunk-TX4KLTBF.js\"><link rel=\"modulepreload\" href=\"chunk-B5RATLCQ.js\"><link rel=\"modulepreload\" href=\"chunk-FG5OZPFF.js\"><link rel=\"modulepreload\" href=\"chunk-NCX5P6VM.js\"><link rel=\"modulepreload\" href=\"chunk-2JRQFBFW.js\"><link rel=\"modulepreload\" href=\"chunk-3OGORZZE.js\"><script src=\"polyfills-ZBHMLD3T.js\" type=\"module\"></script><script src=\"scripts-LLFA6UFG.js\" defer></script><script src=\"main-F4HDGBO6.js\" type=\"module\"></script></body>\n</html>\n",
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:50:27.020588769Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: frame-ancestors 'self';\r\nContent-Type: text/html; charset=utf-8\r\nDate: Thu, 01 Oct 2026 04:50:26 GMT\r\nServer: nginx/1.27.5\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!--\n\n    Copyright (C) 2015 The Gravitee team (http://gravitee.io)\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n            http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n-->\n<!doctype html>\n<html lang=\"en\" data-beasties-container>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Loading...</title>\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <script src=\"webcomponents/webcomponents-loader.js\"></script>\n    <script src=\"redoc/redoc.standalone.js\"></script>\n  <style>@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:100;src:url(\"./media/ibm-plex-sans-latin-100-normal-5JYGBT2W.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-100-normal-3DVESQ5R.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:200;src:url(\"./media/ibm-plex-sans-latin-200-normal-NQ7GGSKY.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-200-normal-3MJVPXDS.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:300;src:url(\"./media/ibm-plex-sans-latin-300-normal-LWHZPPGB.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-300-normal-SEQH2KC5.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:400;src:url(\"./media/ibm-plex-sans-latin-400-normal-COQVXTP6.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-400-normal-CQ4Y6APF.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:500;src:url(\"./media/ibm-plex-sans-latin-500-normal-JTONHBWS.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-500-normal-AYNPQPGU.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:600;src:url(\"./media/ibm-plex-sans-latin-600-normal-DTNZULF4.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-600-normal-LA7D2FY4.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:700;src:url(\"./media/ibm-plex-sans-latin-700-normal-IXG35DPN.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-700-normal-M4EGDRED.woff\") format(\"woff\")}:root{--gv-theme-color-darker:#383E3F;--gv-theme-color-dark:#28444F;--gv-theme-color:#5A7684;--gv-theme-color-light:#86c3d0;--gv-theme-color-danger:#FF5722;--gv-theme-color-error-dark:#d32f2f;--gv-theme-color-error:#f44336;--gv-theme-color-error-light:#e57373;--gv-theme-color-info-dark:#1976d2;--gv-theme-color-info:#2196f3;--gv-theme-color-info-light:#64b5f6;--gv-theme-color-success-dark:#388e3c;--gv-theme-color-success:#4caf50;--gv-theme-color-success-light:#81c784;--gv-theme-color-warning-dark:#f57c00;--gv-theme-color-warning:#ff9800;--gv-theme-color-warning-light:#ffb74d;--gv-theme-neutral-color-darkest:#000000;--gv-theme-neutral-color-darker:#BFBFBF;--gv-theme-neutral-color-dark:#D9D9D9;--gv-theme-neutral-color:#F5F5F5;--gv-theme-neutral-color-light:#EFEFEF;--gv-theme-neutral-color-lighter:#FAFAFA;--gv-theme-neutral-color-lightest:#FFFFFF;--gv-theme-font-color-dark:#262626;--gv-theme-font-color-light:#FFFFFF;--gv-theme-font-family:\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif;--gv-theme-font-size-xs:10px;--gv-theme-font-size-s:12px;--gv-theme-font-size-m:14px;--gv-theme-font-size-l:16px;--gv-theme-font-size-xl:26px;--gv-theme-font-size-xxl:30px;--gv-theme-homepage-background-height:400px;--gv-theme-skeleton-color:#BFBFBF;--gv-theme-homepage-background-color:#5A7684;--gv-theme-homepage-background-image:none;--gv-theme-logo:url(/images/gravitee-logo-cyan.svg);--gv-theme-optional-logo:url(/images/gravitee-logo-white.svg);--gv-theme-favicon:/images/gravitee-favicon.png}:root{font-family:var(--gv-theme-font-family);font-size:var(--gv-theme-font-size-m);color:var(--gv-theme-font-color-dark);--gv-theme-layout--pb:1rem;--gv-theme-layout--pl:8rem;--gv-theme-layout--pr:8rem;--gv-theme-layout--pt:1rem;--gv-theme-layout-footer-bottom--h:150px;--gv-theme-layout-footer-top--h:338px;--gv-theme-layout-header--h:3.8rem;--gv-theme-page--pb:4rem;--gv-theme-page--pt:4rem}@media screen and (max-width: 1920px){:root{--gv-theme-layout--pr:250px;--gv-theme-layout--pl:250px}}@media screen and (max-width: 1680px){:root{--gv-theme-layout--pr:130px;--gv-theme-layout--pl:130px}}@media screen and (max-width: 1600px){:root{--gv-theme-layout--pr:90px;--gv-theme-layout--pl:90px}}@media screen and (max-width: 1440px){:root{--gv-theme-layout--pr:10px;--gv-theme-layout--pl:10px}}@media screen and (max-width: 1366px){:root{--gv-theme-layout--pr:8px;--gv-theme-layout--pl:8px}}@media only screen and (max-device-width: 1280px){:root{--gv-theme-layout--pr:5px;--gv-theme-layout--pl:5px}}body{margin:0}.loader{position:absolute;top:45%;left:45%;display:flex;margin:0 auto;width:200px;height:200px;border-radius:50%;box-sizing:border-box;border:10px solid var(--gv-theme-font-color-dark);animation:rotation 1s linear infinite;border-bottom-color:transparent}</style><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\"></noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\"></noscript></head>\n  <body>\n    <span id=\"loader\" class=\"loader\"></span>\n    <app-root></app-root>\n  <link rel=\"modulepreload\" href=\"chunk-KN2P33P4.js\"><link rel=\"modulepreload\" href=\"chunk-TTYCJ4Y3.js\"><link rel=\"modulepreload\" href=\"chunk-QLBMUFUG.js\"><link rel=\"modulepreload\" href=\"chunk-J2PGSGMR.js\"><link rel=\"modulepreload\" href=\"chunk-TX4KLTBF.js\"><link rel=\"modulepreload\" href=\"chunk-B5RATLCQ.js\"><link rel=\"modulepreload\" href=\"chunk-FG5OZPFF.js\"><link rel=\"modulepreload\" href=\"chunk-NCX5P6VM.js\"><link rel=\"modulepreload\" href=\"chunk-2JRQFBFW.js\"><link rel=\"modulepreload\" href=\"chunk-3OGORZZE.js\"><script src=\"polyfills-ZBHMLD3T.js\" type=\"module\"></script><script src=\"scripts-LLFA6UFG.js\" defer></script><script src=\"main-F4HDGBO6.js\" type=\"module\"></script></body>\n</html>\n",
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:50:27.021777087Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: frame-ancestors 'self';\r\nContent-Type: text/html; charset=utf-8\r\nDate: Thu, 01 Oct 2026 04:50:26 GMT\r\nServer: nginx/1.27.5\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!--\n\n    Copyright (C) 2015 The Gravitee team (http://gravitee.io)\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n            http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n-->\n<!doctype html>\n<html lang=\"en\" data-beasties-container>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Loading...</title>\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <script src=\"webcomponents/webcomponents-loader.js\"></script>\n    <script src=\"redoc/redoc.standalone.js\"></script>\n  <style>@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:100;src:url(\"./media/ibm-plex-sans-latin-100-normal-5JYGBT2W.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-100-normal-3DVESQ5R.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:200;src:url(\"./media/ibm-plex-sans-latin-200-normal-NQ7GGSKY.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-200-normal-3MJVPXDS.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:300;src:url(\"./media/ibm-plex-sans-latin-300-normal-LWHZPPGB.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-300-normal-SEQH2KC5.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:400;src:url(\"./media/ibm-plex-sans-latin-400-normal-COQVXTP6.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-400-normal-CQ4Y6APF.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:500;src:url(\"./media/ibm-plex-sans-latin-500-normal-JTONHBWS.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-500-normal-AYNPQPGU.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:600;src:url(\"./media/ibm-plex-sans-latin-600-normal-DTNZULF4.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-600-normal-LA7D2FY4.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:700;src:url(\"./media/ibm-plex-sans-latin-700-normal-IXG35DPN.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-700-normal-M4EGDRED.woff\") format(\"woff\")}:root{--gv-theme-color-darker:#383E3F;--gv-theme-color-dark:#28444F;--gv-theme-color:#5A7684;--gv-theme-color-light:#86c3d0;--gv-theme-color-danger:#FF5722;--gv-theme-color-error-dark:#d32f2f;--gv-theme-color-error:#f44336;--gv-theme-color-error-light:#e57373;--gv-theme-color-info-dark:#1976d2;--gv-theme-color-info:#2196f3;--gv-theme-color-info-light:#64b5f6;--gv-theme-color-success-dark:#388e3c;--gv-theme-color-success:#4caf50;--gv-theme-color-success-light:#81c784;--gv-theme-color-warning-dark:#f57c00;--gv-theme-color-warning:#ff9800;--gv-theme-color-warning-light:#ffb74d;--gv-theme-neutral-color-darkest:#000000;--gv-theme-neutral-color-darker:#BFBFBF;--gv-theme-neutral-color-dark:#D9D9D9;--gv-theme-neutral-color:#F5F5F5;--gv-theme-neutral-color-light:#EFEFEF;--gv-theme-neutral-color-lighter:#FAFAFA;--gv-theme-neutral-color-lightest:#FFFFFF;--gv-theme-font-color-dark:#262626;--gv-theme-font-color-light:#FFFFFF;--gv-theme-font-family:\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif;--gv-theme-font-size-xs:10px;--gv-theme-font-size-s:12px;--gv-theme-font-size-m:14px;--gv-theme-font-size-l:16px;--gv-theme-font-size-xl:26px;--gv-theme-font-size-xxl:30px;--gv-theme-homepage-background-height:400px;--gv-theme-skeleton-color:#BFBFBF;--gv-theme-homepage-background-color:#5A7684;--gv-theme-homepage-background-image:none;--gv-theme-logo:url(/images/gravitee-logo-cyan.svg);--gv-theme-optional-logo:url(/images/gravitee-logo-white.svg);--gv-theme-favicon:/images/gravitee-favicon.png}:root{font-family:var(--gv-theme-font-family);font-size:var(--gv-theme-font-size-m);color:var(--gv-theme-font-color-dark);--gv-theme-layout--pb:1rem;--gv-theme-layout--pl:8rem;--gv-theme-layout--pr:8rem;--gv-theme-layout--pt:1rem;--gv-theme-layout-footer-bottom--h:150px;--gv-theme-layout-footer-top--h:338px;--gv-theme-layout-header--h:3.8rem;--gv-theme-page--pb:4rem;--gv-theme-page--pt:4rem}@media screen and (max-width: 1920px){:root{--gv-theme-layout--pr:250px;--gv-theme-layout--pl:250px}}@media screen and (max-width: 1680px){:root{--gv-theme-layout--pr:130px;--gv-theme-layout--pl:130px}}@media screen and (max-width: 1600px){:root{--gv-theme-layout--pr:90px;--gv-theme-layout--pl:90px}}@media screen and (max-width: 1440px){:root{--gv-theme-layout--pr:10px;--gv-theme-layout--pl:10px}}@media screen and (max-width: 1366px){:root{--gv-theme-layout--pr:8px;--gv-theme-layout--pl:8px}}@media only screen and (max-device-width: 1280px){:root{--gv-theme-layout--pr:5px;--gv-theme-layout--pl:5px}}body{margin:0}.loader{position:absolute;top:45%;left:45%;display:flex;margin:0 auto;width:200px;height:200px;border-radius:50%;box-sizing:border-box;border:10px solid var(--gv-theme-font-color-dark);animation:rotation 1s linear infinite;border-bottom-color:transparent}</style><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\"></noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\"></noscript></head>\n  <body>\n    <span id=\"loader\" class=\"loader\"></span>\n    <app-root></app-root>\n  <link rel=\"modulepreload\" href=\"chunk-KN2P33P4.js\"><link rel=\"modulepreload\" href=\"chunk-TTYCJ4Y3.js\"><link rel=\"modulepreload\" href=\"chunk-QLBMUFUG.js\"><link rel=\"modulepreload\" href=\"chunk-J2PGSGMR.js\"><link rel=\"modulepreload\" href=\"chunk-TX4KLTBF.js\"><link rel=\"modulepreload\" href=\"chunk-B5RATLCQ.js\"><link rel=\"modulepreload\" href=\"chunk-FG5OZPFF.js\"><link rel=\"modulepreload\" href=\"chunk-NCX5P6VM.js\"><link rel=\"modulepreload\" href=\"chunk-2JRQFBFW.js\"><link rel=\"modulepreload\" href=\"chunk-3OGORZZE.js\"><script src=\"polyfills-ZBHMLD3T.js\" type=\"module\"></script><script src=\"scripts-LLFA6UFG.js\" defer></script><script src=\"main-F4HDGBO6.js\" type=\"module\"></script></body>\n</html>\n",
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:50:27.022973009Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/eol/nginx-eol.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/nginx-eol",
+      "template-id": "nginx-eol",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/eol/nginx-eol.yaml",
+      "info": {
+        "name": "Nginx End-of-Life - Detect",
+        "author": [
+          "shivam kamboj"
+        ],
+        "tags": [
+          "tech",
+          "nginx",
+          "eol",
+          "discovery"
+        ],
+        "description": "Detected Nginx versions that have reached End-of-Life (EOL) and no longer receive security updates.\n",
+        "reference": [
+          "https://endoflife.date/nginx",
+          "https://nginx.org/en/download.html"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "product": "nginx",
+          "shodan-query": "Server: nginx/",
+          "vendor": "nginx",
+          "verified": true
+        }
+      },
+      "extractor-name": "version",
+      "type": "http",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr",
+      "extracted-results": [
+        "1.27.5"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: frame-ancestors 'self';\r\nContent-Type: text/html; charset=utf-8\r\nDate: Thu, 01 Oct 2026 04:50:26 GMT\r\nServer: nginx/1.27.5\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!--\n\n    Copyright (C) 2015 The Gravitee team (http://gravitee.io)\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n            http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n-->\n<!doctype html>\n<html lang=\"en\" data-beasties-container>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Loading...</title>\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <script src=\"webcomponents/webcomponents-loader.js\"></script>\n    <script src=\"redoc/redoc.standalone.js\"></script>\n  <style>@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:100;src:url(\"./media/ibm-plex-sans-latin-100-normal-5JYGBT2W.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-100-normal-3DVESQ5R.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:200;src:url(\"./media/ibm-plex-sans-latin-200-normal-NQ7GGSKY.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-200-normal-3MJVPXDS.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:300;src:url(\"./media/ibm-plex-sans-latin-300-normal-LWHZPPGB.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-300-normal-SEQH2KC5.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:400;src:url(\"./media/ibm-plex-sans-latin-400-normal-COQVXTP6.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-400-normal-CQ4Y6APF.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:500;src:url(\"./media/ibm-plex-sans-latin-500-normal-JTONHBWS.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-500-normal-AYNPQPGU.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:600;src:url(\"./media/ibm-plex-sans-latin-600-normal-DTNZULF4.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-600-normal-LA7D2FY4.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:700;src:url(\"./media/ibm-plex-sans-latin-700-normal-IXG35DPN.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-700-normal-M4EGDRED.woff\") format(\"woff\")}:root{--gv-theme-color-darker:#383E3F;--gv-theme-color-dark:#28444F;--gv-theme-color:#5A7684;--gv-theme-color-light:#86c3d0;--gv-theme-color-danger:#FF5722;--gv-theme-color-error-dark:#d32f2f;--gv-theme-color-error:#f44336;--gv-theme-color-error-light:#e57373;--gv-theme-color-info-dark:#1976d2;--gv-theme-color-info:#2196f3;--gv-theme-color-info-light:#64b5f6;--gv-theme-color-success-dark:#388e3c;--gv-theme-color-success:#4caf50;--gv-theme-color-success-light:#81c784;--gv-theme-color-warning-dark:#f57c00;--gv-theme-color-warning:#ff9800;--gv-theme-color-warning-light:#ffb74d;--gv-theme-neutral-color-darkest:#000000;--gv-theme-neutral-color-darker:#BFBFBF;--gv-theme-neutral-color-dark:#D9D9D9;--gv-theme-neutral-color:#F5F5F5;--gv-theme-neutral-color-light:#EFEFEF;--gv-theme-neutral-color-lighter:#FAFAFA;--gv-theme-neutral-color-lightest:#FFFFFF;--gv-theme-font-color-dark:#262626;--gv-theme-font-color-light:#FFFFFF;--gv-theme-font-family:\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif;--gv-theme-font-size-xs:10px;--gv-theme-font-size-s:12px;--gv-theme-font-size-m:14px;--gv-theme-font-size-l:16px;--gv-theme-font-size-xl:26px;--gv-theme-font-size-xxl:30px;--gv-theme-homepage-background-height:400px;--gv-theme-skeleton-color:#BFBFBF;--gv-theme-homepage-background-color:#5A7684;--gv-theme-homepage-background-image:none;--gv-theme-logo:url(/images/gravitee-logo-cyan.svg);--gv-theme-optional-logo:url(/images/gravitee-logo-white.svg);--gv-theme-favicon:/images/gravitee-favicon.png}:root{font-family:var(--gv-theme-font-family);font-size:var(--gv-theme-font-size-m);color:var(--gv-theme-font-color-dark);--gv-theme-layout--pb:1rem;--gv-theme-layout--pl:8rem;--gv-theme-layout--pr:8rem;--gv-theme-layout--pt:1rem;--gv-theme-layout-footer-bottom--h:150px;--gv-theme-layout-footer-top--h:338px;--gv-theme-layout-header--h:3.8rem;--gv-theme-page--pb:4rem;--gv-theme-page--pt:4rem}@media screen and (max-width: 1920px){:root{--gv-theme-layout--pr:250px;--gv-theme-layout--pl:250px}}@media screen and (max-width: 1680px){:root{--gv-theme-layout--pr:130px;--gv-theme-layout--pl:130px}}@media screen and (max-width: 1600px){:root{--gv-theme-layout--pr:90px;--gv-theme-layout--pl:90px}}@media screen and (max-width: 1440px){:root{--gv-theme-layout--pr:10px;--gv-theme-layout--pl:10px}}@media screen and (max-width: 1366px){:root{--gv-theme-layout--pr:8px;--gv-theme-layout--pl:8px}}@media only screen and (max-device-width: 1280px){:root{--gv-theme-layout--pr:5px;--gv-theme-layout--pl:5px}}body{margin:0}.loader{position:absolute;top:45%;left:45%;display:flex;margin:0 auto;width:200px;height:200px;border-radius:50%;box-sizing:border-box;border:10px solid var(--gv-theme-font-color-dark);animation:rotation 1s linear infinite;border-bottom-color:transparent}</style><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\"></noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\"></noscript></head>\n  <body>\n    <span id=\"loader\" class=\"loader\"></span>\n    <app-root></app-root>\n  <link rel=\"modulepreload\" href=\"chunk-KN2P33P4.js\"><link rel=\"modulepreload\" href=\"chunk-TTYCJ4Y3.js\"><link rel=\"modulepreload\" href=\"chunk-QLBMUFUG.js\"><link rel=\"modulepreload\" href=\"chunk-J2PGSGMR.js\"><link rel=\"modulepreload\" href=\"chunk-TX4KLTBF.js\"><link rel=\"modulepreload\" href=\"chunk-B5RATLCQ.js\"><link rel=\"modulepreload\" href=\"chunk-FG5OZPFF.js\"><link rel=\"modulepreload\" href=\"chunk-NCX5P6VM.js\"><link rel=\"modulepreload\" href=\"chunk-2JRQFBFW.js\"><link rel=\"modulepreload\" href=\"chunk-3OGORZZE.js\"><script src=\"polyfills-ZBHMLD3T.js\" type=\"module\"></script><script src=\"scripts-LLFA6UFG.js\" defer></script><script src=\"main-F4HDGBO6.js\" type=\"module\"></script></body>\n</html>\n",
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:50:27.024700487Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/tech-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tech-detect",
+      "template-id": "tech-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/tech-detect.yaml",
+      "info": {
+        "name": "Wappalyzer Technology Detection",
+        "author": [
+          "hakluke",
+          "righettod",
+          "matejsmycka"
+        ],
+        "tags": [
+          "tech",
+          "discovery"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "nginx",
+      "type": "http",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: frame-ancestors 'self';\r\nContent-Type: text/html; charset=utf-8\r\nDate: Thu, 01 Oct 2026 04:50:43 GMT\r\nServer: nginx/1.27.5\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!--\n\n    Copyright (C) 2015 The Gravitee team (http://gravitee.io)\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n            http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n-->\n<!doctype html>\n<html lang=\"en\" data-beasties-container>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Loading...</title>\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <script src=\"webcomponents/webcomponents-loader.js\"></script>\n    <script src=\"redoc/redoc.standalone.js\"></script>\n  <style>@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:100;src:url(\"./media/ibm-plex-sans-latin-100-normal-5JYGBT2W.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-100-normal-3DVESQ5R.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:200;src:url(\"./media/ibm-plex-sans-latin-200-normal-NQ7GGSKY.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-200-normal-3MJVPXDS.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:300;src:url(\"./media/ibm-plex-sans-latin-300-normal-LWHZPPGB.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-300-normal-SEQH2KC5.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:400;src:url(\"./media/ibm-plex-sans-latin-400-normal-COQVXTP6.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-400-normal-CQ4Y6APF.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:500;src:url(\"./media/ibm-plex-sans-latin-500-normal-JTONHBWS.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-500-normal-AYNPQPGU.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:600;src:url(\"./media/ibm-plex-sans-latin-600-normal-DTNZULF4.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-600-normal-LA7D2FY4.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:700;src:url(\"./media/ibm-plex-sans-latin-700-normal-IXG35DPN.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-700-normal-M4EGDRED.woff\") format(\"woff\")}:root{--gv-theme-color-darker:#383E3F;--gv-theme-color-dark:#28444F;--gv-theme-color:#5A7684;--gv-theme-color-light:#86c3d0;--gv-theme-color-danger:#FF5722;--gv-theme-color-error-dark:#d32f2f;--gv-theme-color-error:#f44336;--gv-theme-color-error-light:#e57373;--gv-theme-color-info-dark:#1976d2;--gv-theme-color-info:#2196f3;--gv-theme-color-info-light:#64b5f6;--gv-theme-color-success-dark:#388e3c;--gv-theme-color-success:#4caf50;--gv-theme-color-success-light:#81c784;--gv-theme-color-warning-dark:#f57c00;--gv-theme-color-warning:#ff9800;--gv-theme-color-warning-light:#ffb74d;--gv-theme-neutral-color-darkest:#000000;--gv-theme-neutral-color-darker:#BFBFBF;--gv-theme-neutral-color-dark:#D9D9D9;--gv-theme-neutral-color:#F5F5F5;--gv-theme-neutral-color-light:#EFEFEF;--gv-theme-neutral-color-lighter:#FAFAFA;--gv-theme-neutral-color-lightest:#FFFFFF;--gv-theme-font-color-dark:#262626;--gv-theme-font-color-light:#FFFFFF;--gv-theme-font-family:\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif;--gv-theme-font-size-xs:10px;--gv-theme-font-size-s:12px;--gv-theme-font-size-m:14px;--gv-theme-font-size-l:16px;--gv-theme-font-size-xl:26px;--gv-theme-font-size-xxl:30px;--gv-theme-homepage-background-height:400px;--gv-theme-skeleton-color:#BFBFBF;--gv-theme-homepage-background-color:#5A7684;--gv-theme-homepage-background-image:none;--gv-theme-logo:url(/images/gravitee-logo-cyan.svg);--gv-theme-optional-logo:url(/images/gravitee-logo-white.svg);--gv-theme-favicon:/images/gravitee-favicon.png}:root{font-family:var(--gv-theme-font-family);font-size:var(--gv-theme-font-size-m);color:var(--gv-theme-font-color-dark);--gv-theme-layout--pb:1rem;--gv-theme-layout--pl:8rem;--gv-theme-layout--pr:8rem;--gv-theme-layout--pt:1rem;--gv-theme-layout-footer-bottom--h:150px;--gv-theme-layout-footer-top--h:338px;--gv-theme-layout-header--h:3.8rem;--gv-theme-page--pb:4rem;--gv-theme-page--pt:4rem}@media screen and (max-width: 1920px){:root{--gv-theme-layout--pr:250px;--gv-theme-layout--pl:250px}}@media screen and (max-width: 1680px){:root{--gv-theme-layout--pr:130px;--gv-theme-layout--pl:130px}}@media screen and (max-width: 1600px){:root{--gv-theme-layout--pr:90px;--gv-theme-layout--pl:90px}}@media screen and (max-width: 1440px){:root{--gv-theme-layout--pr:10px;--gv-theme-layout--pl:10px}}@media screen and (max-width: 1366px){:root{--gv-theme-layout--pr:8px;--gv-theme-layout--pl:8px}}@media only screen and (max-device-width: 1280px){:root{--gv-theme-layout--pr:5px;--gv-theme-layout--pl:5px}}body{margin:0}.loader{position:absolute;top:45%;left:45%;display:flex;margin:0 auto;width:200px;height:200px;border-radius:50%;box-sizing:border-box;border:10px solid var(--gv-theme-font-color-dark);animation:rotation 1s linear infinite;border-bottom-color:transparent}</style><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\"></noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\"></noscript></head>\n  <body>\n    <span id=\"loader\" class=\"loader\"></span>\n    <app-root></app-root>\n  <link rel=\"modulepreload\" href=\"chunk-KN2P33P4.js\"><link rel=\"modulepreload\" href=\"chunk-TTYCJ4Y3.js\"><link rel=\"modulepreload\" href=\"chunk-QLBMUFUG.js\"><link rel=\"modulepreload\" href=\"chunk-J2PGSGMR.js\"><link rel=\"modulepreload\" href=\"chunk-TX4KLTBF.js\"><link rel=\"modulepreload\" href=\"chunk-B5RATLCQ.js\"><link rel=\"modulepreload\" href=\"chunk-FG5OZPFF.js\"><link rel=\"modulepreload\" href=\"chunk-NCX5P6VM.js\"><link rel=\"modulepreload\" href=\"chunk-2JRQFBFW.js\"><link rel=\"modulepreload\" href=\"chunk-3OGORZZE.js\"><script src=\"polyfills-ZBHMLD3T.js\" type=\"module\"></script><script src=\"scripts-LLFA6UFG.js\" defer></script><script src=\"main-F4HDGBO6.js\" type=\"module\"></script></body>\n</html>\n",
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:50:43.41560519Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/exposures/apis/redoc-api-docs.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/redoc-api-docs",
+      "template-id": "redoc-api-docs",
+      "template-path": "/home/runner/nuclei-templates/http/exposures/apis/redoc-api-docs.yaml",
+      "info": {
+        "name": "ReDoc API Docs - Detect",
+        "author": [
+          "hamza sahin"
+        ],
+        "tags": [
+          "api",
+          "openapi",
+          "redoc",
+          "exposure",
+          "discovery"
+        ],
+        "description": "ReDoc API documentation interface is available without authentication, potentially exposing information about the API endpoints.\n",
+        "reference": [
+          "https://redocly.com/docs/redoc"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 4,
+          "shodan-query": "html:\"redoc.standalone.js\"",
+          "verified": true
+        }
+      },
+      "type": "http",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr/docs",
+      "request": "GET /docs HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: frame-ancestors 'self';\r\nContent-Type: text/html; charset=utf-8\r\nDate: Thu, 01 Oct 2026 04:50:46 GMT\r\nServer: nginx/1.27.5\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!--\n\n    Copyright (C) 2015 The Gravitee team (http://gravitee.io)\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n            http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n-->\n<!doctype html>\n<html lang=\"en\" data-beasties-container>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Loading...</title>\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <script src=\"webcomponents/webcomponents-loader.js\"></script>\n    <script src=\"redoc/redoc.standalone.js\"></script>\n  <style>@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:100;src:url(\"./media/ibm-plex-sans-latin-100-normal-5JYGBT2W.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-100-normal-3DVESQ5R.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:200;src:url(\"./media/ibm-plex-sans-latin-200-normal-NQ7GGSKY.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-200-normal-3MJVPXDS.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:300;src:url(\"./media/ibm-plex-sans-latin-300-normal-LWHZPPGB.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-300-normal-SEQH2KC5.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:400;src:url(\"./media/ibm-plex-sans-latin-400-normal-COQVXTP6.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-400-normal-CQ4Y6APF.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:500;src:url(\"./media/ibm-plex-sans-latin-500-normal-JTONHBWS.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-500-normal-AYNPQPGU.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:600;src:url(\"./media/ibm-plex-sans-latin-600-normal-DTNZULF4.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-600-normal-LA7D2FY4.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:700;src:url(\"./media/ibm-plex-sans-latin-700-normal-IXG35DPN.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-700-normal-M4EGDRED.woff\") format(\"woff\")}:root{--gv-theme-color-darker:#383E3F;--gv-theme-color-dark:#28444F;--gv-theme-color:#5A7684;--gv-theme-color-light:#86c3d0;--gv-theme-color-danger:#FF5722;--gv-theme-color-error-dark:#d32f2f;--gv-theme-color-error:#f44336;--gv-theme-color-error-light:#e57373;--gv-theme-color-info-dark:#1976d2;--gv-theme-color-info:#2196f3;--gv-theme-color-info-light:#64b5f6;--gv-theme-color-success-dark:#388e3c;--gv-theme-color-success:#4caf50;--gv-theme-color-success-light:#81c784;--gv-theme-color-warning-dark:#f57c00;--gv-theme-color-warning:#ff9800;--gv-theme-color-warning-light:#ffb74d;--gv-theme-neutral-color-darkest:#000000;--gv-theme-neutral-color-darker:#BFBFBF;--gv-theme-neutral-color-dark:#D9D9D9;--gv-theme-neutral-color:#F5F5F5;--gv-theme-neutral-color-light:#EFEFEF;--gv-theme-neutral-color-lighter:#FAFAFA;--gv-theme-neutral-color-lightest:#FFFFFF;--gv-theme-font-color-dark:#262626;--gv-theme-font-color-light:#FFFFFF;--gv-theme-font-family:\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif;--gv-theme-font-size-xs:10px;--gv-theme-font-size-s:12px;--gv-theme-font-size-m:14px;--gv-theme-font-size-l:16px;--gv-theme-font-size-xl:26px;--gv-theme-font-size-xxl:30px;--gv-theme-homepage-background-height:400px;--gv-theme-skeleton-color:#BFBFBF;--gv-theme-homepage-background-color:#5A7684;--gv-theme-homepage-background-image:none;--gv-theme-logo:url(/images/gravitee-logo-cyan.svg);--gv-theme-optional-logo:url(/images/gravitee-logo-white.svg);--gv-theme-favicon:/images/gravitee-favicon.png}:root{font-family:var(--gv-theme-font-family);font-size:var(--gv-theme-font-size-m);color:var(--gv-theme-font-color-dark);--gv-theme-layout--pb:1rem;--gv-theme-layout--pl:8rem;--gv-theme-layout--pr:8rem;--gv-theme-layout--pt:1rem;--gv-theme-layout-footer-bottom--h:150px;--gv-theme-layout-footer-top--h:338px;--gv-theme-layout-header--h:3.8rem;--gv-theme-page--pb:4rem;--gv-theme-page--pt:4rem}@media screen and (max-width: 1920px){:root{--gv-theme-layout--pr:250px;--gv-theme-layout--pl:250px}}@media screen and (max-width: 1680px){:root{--gv-theme-layout--pr:130px;--gv-theme-layout--pl:130px}}@media screen and (max-width: 1600px){:root{--gv-theme-layout--pr:90px;--gv-theme-layout--pl:90px}}@media screen and (max-width: 1440px){:root{--gv-theme-layout--pr:10px;--gv-theme-layout--pl:10px}}@media screen and (max-width: 1366px){:root{--gv-theme-layout--pr:8px;--gv-theme-layout--pl:8px}}@media only screen and (max-device-width: 1280px){:root{--gv-theme-layout--pr:5px;--gv-theme-layout--pl:5px}}body{margin:0}.loader{position:absolute;top:45%;left:45%;display:flex;margin:0 auto;width:200px;height:200px;border-radius:50%;box-sizing:border-box;border:10px solid var(--gv-theme-font-color-dark);animation:rotation 1s linear infinite;border-bottom-color:transparent}</style><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\"></noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\"></noscript></head>\n  <body>\n    <span id=\"loader\" class=\"loader\"></span>\n    <app-root></app-root>\n  <link rel=\"modulepreload\" href=\"chunk-KN2P33P4.js\"><link rel=\"modulepreload\" href=\"chunk-TTYCJ4Y3.js\"><link rel=\"modulepreload\" href=\"chunk-QLBMUFUG.js\"><link rel=\"modulepreload\" href=\"chunk-J2PGSGMR.js\"><link rel=\"modulepreload\" href=\"chunk-TX4KLTBF.js\"><link rel=\"modulepreload\" href=\"chunk-B5RATLCQ.js\"><link rel=\"modulepreload\" href=\"chunk-FG5OZPFF.js\"><link rel=\"modulepreload\" href=\"chunk-NCX5P6VM.js\"><link rel=\"modulepreload\" href=\"chunk-2JRQFBFW.js\"><link rel=\"modulepreload\" href=\"chunk-3OGORZZE.js\"><script src=\"polyfills-ZBHMLD3T.js\" type=\"module\"></script><script src=\"scripts-LLFA6UFG.js\" defer></script><script src=\"main-F4HDGBO6.js\" type=\"module\"></script></body>\n</html>\n",
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:50:47.003935628Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr/docs'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/weak-csp-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/weak-csp-detect",
+      "template-id": "weak-csp-detect",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/weak-csp-detect.yaml",
+      "info": {
+        "name": "Weak Content Security Policy - Detect",
+        "author": [
+          "pussycat0x",
+          "celbahraoui"
+        ],
+        "tags": [
+          "csp",
+          "misconfig",
+          "headers",
+          "vuln"
+        ],
+        "description": "Detected misconfigured CSP directives containing unsafe and overly permissive keywords that weakened resource loading restrictions. This configuration allowed high-risk script behaviors, resulting in reduced protection against XSS attacks.\n",
+        "reference": [
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors",
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src",
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/object-src",
+          "https://content-security-policy.com/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "verified": true
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "missing-script-src",
+      "type": "http",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr",
+      "extracted-results": [
+        "frame-ancestors 'self';"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: frame-ancestors 'self';\r\nContent-Type: text/html; charset=utf-8\r\nDate: Thu, 01 Oct 2026 04:50:47 GMT\r\nServer: nginx/1.27.5\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!--\n\n    Copyright (C) 2015 The Gravitee team (http://gravitee.io)\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n            http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n-->\n<!doctype html>\n<html lang=\"en\" data-beasties-container>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Loading...</title>\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <script src=\"webcomponents/webcomponents-loader.js\"></script>\n    <script src=\"redoc/redoc.standalone.js\"></script>\n  <style>@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:100;src:url(\"./media/ibm-plex-sans-latin-100-normal-5JYGBT2W.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-100-normal-3DVESQ5R.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:200;src:url(\"./media/ibm-plex-sans-latin-200-normal-NQ7GGSKY.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-200-normal-3MJVPXDS.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:300;src:url(\"./media/ibm-plex-sans-latin-300-normal-LWHZPPGB.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-300-normal-SEQH2KC5.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:400;src:url(\"./media/ibm-plex-sans-latin-400-normal-COQVXTP6.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-400-normal-CQ4Y6APF.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:500;src:url(\"./media/ibm-plex-sans-latin-500-normal-JTONHBWS.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-500-normal-AYNPQPGU.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:600;src:url(\"./media/ibm-plex-sans-latin-600-normal-DTNZULF4.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-600-normal-LA7D2FY4.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:700;src:url(\"./media/ibm-plex-sans-latin-700-normal-IXG35DPN.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-700-normal-M4EGDRED.woff\") format(\"woff\")}:root{--gv-theme-color-darker:#383E3F;--gv-theme-color-dark:#28444F;--gv-theme-color:#5A7684;--gv-theme-color-light:#86c3d0;--gv-theme-color-danger:#FF5722;--gv-theme-color-error-dark:#d32f2f;--gv-theme-color-error:#f44336;--gv-theme-color-error-light:#e57373;--gv-theme-color-info-dark:#1976d2;--gv-theme-color-info:#2196f3;--gv-theme-color-info-light:#64b5f6;--gv-theme-color-success-dark:#388e3c;--gv-theme-color-success:#4caf50;--gv-theme-color-success-light:#81c784;--gv-theme-color-warning-dark:#f57c00;--gv-theme-color-warning:#ff9800;--gv-theme-color-warning-light:#ffb74d;--gv-theme-neutral-color-darkest:#000000;--gv-theme-neutral-color-darker:#BFBFBF;--gv-theme-neutral-color-dark:#D9D9D9;--gv-theme-neutral-color:#F5F5F5;--gv-theme-neutral-color-light:#EFEFEF;--gv-theme-neutral-color-lighter:#FAFAFA;--gv-theme-neutral-color-lightest:#FFFFFF;--gv-theme-font-color-dark:#262626;--gv-theme-font-color-light:#FFFFFF;--gv-theme-font-family:\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif;--gv-theme-font-size-xs:10px;--gv-theme-font-size-s:12px;--gv-theme-font-size-m:14px;--gv-theme-font-size-l:16px;--gv-theme-font-size-xl:26px;--gv-theme-font-size-xxl:30px;--gv-theme-homepage-background-height:400px;--gv-theme-skeleton-color:#BFBFBF;--gv-theme-homepage-background-color:#5A7684;--gv-theme-homepage-background-image:none;--gv-theme-logo:url(/images/gravitee-logo-cyan.svg);--gv-theme-optional-logo:url(/images/gravitee-logo-white.svg);--gv-theme-favicon:/images/gravitee-favicon.png}:root{font-family:var(--gv-theme-font-family);font-size:var(--gv-theme-font-size-m);color:var(--gv-theme-font-color-dark);--gv-theme-layout--pb:1rem;--gv-theme-layout--pl:8rem;--gv-theme-layout--pr:8rem;--gv-theme-layout--pt:1rem;--gv-theme-layout-footer-bottom--h:150px;--gv-theme-layout-footer-top--h:338px;--gv-theme-layout-header--h:3.8rem;--gv-theme-page--pb:4rem;--gv-theme-page--pt:4rem}@media screen and (max-width: 1920px){:root{--gv-theme-layout--pr:250px;--gv-theme-layout--pl:250px}}@media screen and (max-width: 1680px){:root{--gv-theme-layout--pr:130px;--gv-theme-layout--pl:130px}}@media screen and (max-width: 1600px){:root{--gv-theme-layout--pr:90px;--gv-theme-layout--pl:90px}}@media screen and (max-width: 1440px){:root{--gv-theme-layout--pr:10px;--gv-theme-layout--pl:10px}}@media screen and (max-width: 1366px){:root{--gv-theme-layout--pr:8px;--gv-theme-layout--pl:8px}}@media only screen and (max-device-width: 1280px){:root{--gv-theme-layout--pr:5px;--gv-theme-layout--pl:5px}}body{margin:0}.loader{position:absolute;top:45%;left:45%;display:flex;margin:0 auto;width:200px;height:200px;border-radius:50%;box-sizing:border-box;border:10px solid var(--gv-theme-font-color-dark);animation:rotation 1s linear infinite;border-bottom-color:transparent}</style><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\"></noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\"></noscript></head>\n  <body>\n    <span id=\"loader\" class=\"loader\"></span>\n    <app-root></app-root>\n  <link rel=\"modulepreload\" href=\"chunk-KN2P33P4.js\"><link rel=\"modulepreload\" href=\"chunk-TTYCJ4Y3.js\"><link rel=\"modulepreload\" href=\"chunk-QLBMUFUG.js\"><link rel=\"modulepreload\" href=\"chunk-J2PGSGMR.js\"><link rel=\"modulepreload\" href=\"chunk-TX4KLTBF.js\"><link rel=\"modulepreload\" href=\"chunk-B5RATLCQ.js\"><link rel=\"modulepreload\" href=\"chunk-FG5OZPFF.js\"><link rel=\"modulepreload\" href=\"chunk-NCX5P6VM.js\"><link rel=\"modulepreload\" href=\"chunk-2JRQFBFW.js\"><link rel=\"modulepreload\" href=\"chunk-3OGORZZE.js\"><script src=\"polyfills-ZBHMLD3T.js\" type=\"module\"></script><script src=\"scripts-LLFA6UFG.js\" defer></script><script src=\"main-F4HDGBO6.js\" type=\"module\"></script></body>\n</html>\n",
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:50:48.064374294Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/weak-csp-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/weak-csp-detect",
+      "template-id": "weak-csp-detect",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/weak-csp-detect.yaml",
+      "info": {
+        "name": "Weak Content Security Policy - Detect",
+        "author": [
+          "pussycat0x",
+          "celbahraoui"
+        ],
+        "tags": [
+          "csp",
+          "misconfig",
+          "headers",
+          "vuln"
+        ],
+        "description": "Detected misconfigured CSP directives containing unsafe and overly permissive keywords that weakened resource loading restrictions. This configuration allowed high-risk script behaviors, resulting in reduced protection against XSS attacks.\n",
+        "reference": [
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors",
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src",
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/object-src",
+          "https://content-security-policy.com/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "verified": true
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "missing-object-src",
+      "type": "http",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr",
+      "extracted-results": [
+        "frame-ancestors 'self';"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: frame-ancestors 'self';\r\nContent-Type: text/html; charset=utf-8\r\nDate: Thu, 01 Oct 2026 04:50:47 GMT\r\nServer: nginx/1.27.5\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!--\n\n    Copyright (C) 2015 The Gravitee team (http://gravitee.io)\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n            http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n-->\n<!doctype html>\n<html lang=\"en\" data-beasties-container>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Loading...</title>\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <script src=\"webcomponents/webcomponents-loader.js\"></script>\n    <script src=\"redoc/redoc.standalone.js\"></script>\n  <style>@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:100;src:url(\"./media/ibm-plex-sans-latin-100-normal-5JYGBT2W.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-100-normal-3DVESQ5R.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:200;src:url(\"./media/ibm-plex-sans-latin-200-normal-NQ7GGSKY.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-200-normal-3MJVPXDS.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:300;src:url(\"./media/ibm-plex-sans-latin-300-normal-LWHZPPGB.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-300-normal-SEQH2KC5.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:400;src:url(\"./media/ibm-plex-sans-latin-400-normal-COQVXTP6.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-400-normal-CQ4Y6APF.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:500;src:url(\"./media/ibm-plex-sans-latin-500-normal-JTONHBWS.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-500-normal-AYNPQPGU.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:600;src:url(\"./media/ibm-plex-sans-latin-600-normal-DTNZULF4.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-600-normal-LA7D2FY4.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:700;src:url(\"./media/ibm-plex-sans-latin-700-normal-IXG35DPN.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-700-normal-M4EGDRED.woff\") format(\"woff\")}:root{--gv-theme-color-darker:#383E3F;--gv-theme-color-dark:#28444F;--gv-theme-color:#5A7684;--gv-theme-color-light:#86c3d0;--gv-theme-color-danger:#FF5722;--gv-theme-color-error-dark:#d32f2f;--gv-theme-color-error:#f44336;--gv-theme-color-error-light:#e57373;--gv-theme-color-info-dark:#1976d2;--gv-theme-color-info:#2196f3;--gv-theme-color-info-light:#64b5f6;--gv-theme-color-success-dark:#388e3c;--gv-theme-color-success:#4caf50;--gv-theme-color-success-light:#81c784;--gv-theme-color-warning-dark:#f57c00;--gv-theme-color-warning:#ff9800;--gv-theme-color-warning-light:#ffb74d;--gv-theme-neutral-color-darkest:#000000;--gv-theme-neutral-color-darker:#BFBFBF;--gv-theme-neutral-color-dark:#D9D9D9;--gv-theme-neutral-color:#F5F5F5;--gv-theme-neutral-color-light:#EFEFEF;--gv-theme-neutral-color-lighter:#FAFAFA;--gv-theme-neutral-color-lightest:#FFFFFF;--gv-theme-font-color-dark:#262626;--gv-theme-font-color-light:#FFFFFF;--gv-theme-font-family:\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif;--gv-theme-font-size-xs:10px;--gv-theme-font-size-s:12px;--gv-theme-font-size-m:14px;--gv-theme-font-size-l:16px;--gv-theme-font-size-xl:26px;--gv-theme-font-size-xxl:30px;--gv-theme-homepage-background-height:400px;--gv-theme-skeleton-color:#BFBFBF;--gv-theme-homepage-background-color:#5A7684;--gv-theme-homepage-background-image:none;--gv-theme-logo:url(/images/gravitee-logo-cyan.svg);--gv-theme-optional-logo:url(/images/gravitee-logo-white.svg);--gv-theme-favicon:/images/gravitee-favicon.png}:root{font-family:var(--gv-theme-font-family);font-size:var(--gv-theme-font-size-m);color:var(--gv-theme-font-color-dark);--gv-theme-layout--pb:1rem;--gv-theme-layout--pl:8rem;--gv-theme-layout--pr:8rem;--gv-theme-layout--pt:1rem;--gv-theme-layout-footer-bottom--h:150px;--gv-theme-layout-footer-top--h:338px;--gv-theme-layout-header--h:3.8rem;--gv-theme-page--pb:4rem;--gv-theme-page--pt:4rem}@media screen and (max-width: 1920px){:root{--gv-theme-layout--pr:250px;--gv-theme-layout--pl:250px}}@media screen and (max-width: 1680px){:root{--gv-theme-layout--pr:130px;--gv-theme-layout--pl:130px}}@media screen and (max-width: 1600px){:root{--gv-theme-layout--pr:90px;--gv-theme-layout--pl:90px}}@media screen and (max-width: 1440px){:root{--gv-theme-layout--pr:10px;--gv-theme-layout--pl:10px}}@media screen and (max-width: 1366px){:root{--gv-theme-layout--pr:8px;--gv-theme-layout--pl:8px}}@media only screen and (max-device-width: 1280px){:root{--gv-theme-layout--pr:5px;--gv-theme-layout--pl:5px}}body{margin:0}.loader{position:absolute;top:45%;left:45%;display:flex;margin:0 auto;width:200px;height:200px;border-radius:50%;box-sizing:border-box;border:10px solid var(--gv-theme-font-color-dark);animation:rotation 1s linear infinite;border-bottom-color:transparent}</style><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\"></noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\"></noscript></head>\n  <body>\n    <span id=\"loader\" class=\"loader\"></span>\n    <app-root></app-root>\n  <link rel=\"modulepreload\" href=\"chunk-KN2P33P4.js\"><link rel=\"modulepreload\" href=\"chunk-TTYCJ4Y3.js\"><link rel=\"modulepreload\" href=\"chunk-QLBMUFUG.js\"><link rel=\"modulepreload\" href=\"chunk-J2PGSGMR.js\"><link rel=\"modulepreload\" href=\"chunk-TX4KLTBF.js\"><link rel=\"modulepreload\" href=\"chunk-B5RATLCQ.js\"><link rel=\"modulepreload\" href=\"chunk-FG5OZPFF.js\"><link rel=\"modulepreload\" href=\"chunk-NCX5P6VM.js\"><link rel=\"modulepreload\" href=\"chunk-2JRQFBFW.js\"><link rel=\"modulepreload\" href=\"chunk-3OGORZZE.js\"><script src=\"polyfills-ZBHMLD3T.js\" type=\"module\"></script><script src=\"scripts-LLFA6UFG.js\" defer></script><script src=\"main-F4HDGBO6.js\" type=\"module\"></script></body>\n</html>\n",
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:50:48.065526316Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/xss-deprecated-header.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/xss-deprecated-header",
+      "template-id": "xss-deprecated-header",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/xss-deprecated-header.yaml",
+      "info": {
+        "name": "XSS-Protection Header - Cross-Site Scripting",
+        "author": [
+          "joshlarsen"
+        ],
+        "tags": [
+          "xss",
+          "misconfig",
+          "generic",
+          "vuln"
+        ],
+        "description": "Setting the XSS-Protection header is deprecated. Setting the header to anything other than `0` can actually introduce an XSS vulnerability.",
+        "reference": [
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection",
+          "https://owasp.org/www-project-secure-headers/#x-xss-protection"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-79"
+          ],
+          "cvss-metrics": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "type": "http",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr",
+      "extracted-results": [
+        "1; mode=block"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: frame-ancestors 'self';\r\nContent-Type: text/html; charset=utf-8\r\nDate: Thu, 01 Oct 2026 04:50:47 GMT\r\nServer: nginx/1.27.5\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!--\n\n    Copyright (C) 2015 The Gravitee team (http://gravitee.io)\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n            http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n-->\n<!doctype html>\n<html lang=\"en\" data-beasties-container>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Loading...</title>\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <script src=\"webcomponents/webcomponents-loader.js\"></script>\n    <script src=\"redoc/redoc.standalone.js\"></script>\n  <style>@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:100;src:url(\"./media/ibm-plex-sans-latin-100-normal-5JYGBT2W.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-100-normal-3DVESQ5R.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:200;src:url(\"./media/ibm-plex-sans-latin-200-normal-NQ7GGSKY.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-200-normal-3MJVPXDS.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:300;src:url(\"./media/ibm-plex-sans-latin-300-normal-LWHZPPGB.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-300-normal-SEQH2KC5.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:400;src:url(\"./media/ibm-plex-sans-latin-400-normal-COQVXTP6.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-400-normal-CQ4Y6APF.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:500;src:url(\"./media/ibm-plex-sans-latin-500-normal-JTONHBWS.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-500-normal-AYNPQPGU.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:600;src:url(\"./media/ibm-plex-sans-latin-600-normal-DTNZULF4.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-600-normal-LA7D2FY4.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:700;src:url(\"./media/ibm-plex-sans-latin-700-normal-IXG35DPN.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-700-normal-M4EGDRED.woff\") format(\"woff\")}:root{--gv-theme-color-darker:#383E3F;--gv-theme-color-dark:#28444F;--gv-theme-color:#5A7684;--gv-theme-color-light:#86c3d0;--gv-theme-color-danger:#FF5722;--gv-theme-color-error-dark:#d32f2f;--gv-theme-color-error:#f44336;--gv-theme-color-error-light:#e57373;--gv-theme-color-info-dark:#1976d2;--gv-theme-color-info:#2196f3;--gv-theme-color-info-light:#64b5f6;--gv-theme-color-success-dark:#388e3c;--gv-theme-color-success:#4caf50;--gv-theme-color-success-light:#81c784;--gv-theme-color-warning-dark:#f57c00;--gv-theme-color-warning:#ff9800;--gv-theme-color-warning-light:#ffb74d;--gv-theme-neutral-color-darkest:#000000;--gv-theme-neutral-color-darker:#BFBFBF;--gv-theme-neutral-color-dark:#D9D9D9;--gv-theme-neutral-color:#F5F5F5;--gv-theme-neutral-color-light:#EFEFEF;--gv-theme-neutral-color-lighter:#FAFAFA;--gv-theme-neutral-color-lightest:#FFFFFF;--gv-theme-font-color-dark:#262626;--gv-theme-font-color-light:#FFFFFF;--gv-theme-font-family:\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif;--gv-theme-font-size-xs:10px;--gv-theme-font-size-s:12px;--gv-theme-font-size-m:14px;--gv-theme-font-size-l:16px;--gv-theme-font-size-xl:26px;--gv-theme-font-size-xxl:30px;--gv-theme-homepage-background-height:400px;--gv-theme-skeleton-color:#BFBFBF;--gv-theme-homepage-background-color:#5A7684;--gv-theme-homepage-background-image:none;--gv-theme-logo:url(/images/gravitee-logo-cyan.svg);--gv-theme-optional-logo:url(/images/gravitee-logo-white.svg);--gv-theme-favicon:/images/gravitee-favicon.png}:root{font-family:var(--gv-theme-font-family);font-size:var(--gv-theme-font-size-m);color:var(--gv-theme-font-color-dark);--gv-theme-layout--pb:1rem;--gv-theme-layout--pl:8rem;--gv-theme-layout--pr:8rem;--gv-theme-layout--pt:1rem;--gv-theme-layout-footer-bottom--h:150px;--gv-theme-layout-footer-top--h:338px;--gv-theme-layout-header--h:3.8rem;--gv-theme-page--pb:4rem;--gv-theme-page--pt:4rem}@media screen and (max-width: 1920px){:root{--gv-theme-layout--pr:250px;--gv-theme-layout--pl:250px}}@media screen and (max-width: 1680px){:root{--gv-theme-layout--pr:130px;--gv-theme-layout--pl:130px}}@media screen and (max-width: 1600px){:root{--gv-theme-layout--pr:90px;--gv-theme-layout--pl:90px}}@media screen and (max-width: 1440px){:root{--gv-theme-layout--pr:10px;--gv-theme-layout--pl:10px}}@media screen and (max-width: 1366px){:root{--gv-theme-layout--pr:8px;--gv-theme-layout--pl:8px}}@media only screen and (max-device-width: 1280px){:root{--gv-theme-layout--pr:5px;--gv-theme-layout--pl:5px}}body{margin:0}.loader{position:absolute;top:45%;left:45%;display:flex;margin:0 auto;width:200px;height:200px;border-radius:50%;box-sizing:border-box;border:10px solid var(--gv-theme-font-color-dark);animation:rotation 1s linear infinite;border-bottom-color:transparent}</style><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\"></noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\"></noscript></head>\n  <body>\n    <span id=\"loader\" class=\"loader\"></span>\n    <app-root></app-root>\n  <link rel=\"modulepreload\" href=\"chunk-KN2P33P4.js\"><link rel=\"modulepreload\" href=\"chunk-TTYCJ4Y3.js\"><link rel=\"modulepreload\" href=\"chunk-QLBMUFUG.js\"><link rel=\"modulepreload\" href=\"chunk-J2PGSGMR.js\"><link rel=\"modulepreload\" href=\"chunk-TX4KLTBF.js\"><link rel=\"modulepreload\" href=\"chunk-B5RATLCQ.js\"><link rel=\"modulepreload\" href=\"chunk-FG5OZPFF.js\"><link rel=\"modulepreload\" href=\"chunk-NCX5P6VM.js\"><link rel=\"modulepreload\" href=\"chunk-2JRQFBFW.js\"><link rel=\"modulepreload\" href=\"chunk-3OGORZZE.js\"><script src=\"polyfills-ZBHMLD3T.js\" type=\"module\"></script><script src=\"scripts-LLFA6UFG.js\" defer></script><script src=\"main-F4HDGBO6.js\" type=\"module\"></script></body>\n</html>\n",
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:50:48.066714205Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/nginx/nginx-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/nginx-version",
+      "template-id": "nginx-version",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/nginx/nginx-version.yaml",
+      "info": {
+        "name": "Nginx version detect",
+        "author": [
+          "philippedelteil",
+          "daffainfo"
+        ],
+        "tags": [
+          "tech",
+          "nginx",
+          "discovery"
+        ],
+        "description": "Some nginx servers have the version on the response header. Useful when you need to find specific CVEs on your targets.",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "http",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://portal.api.esante.gouv.fr",
+      "matched-at": "https://portal.api.esante.gouv.fr",
+      "extracted-results": [
+        "nginx/1.27.5"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: portal.api.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: frame-ancestors 'self';\r\nContent-Type: text/html; charset=utf-8\r\nDate: Thu, 01 Oct 2026 04:50:47 GMT\r\nServer: nginx/1.27.5\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!--\n\n    Copyright (C) 2015 The Gravitee team (http://gravitee.io)\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n            http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n-->\n<!doctype html>\n<html lang=\"en\" data-beasties-container>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Loading...</title>\n    <base href=\"/\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <script src=\"webcomponents/webcomponents-loader.js\"></script>\n    <script src=\"redoc/redoc.standalone.js\"></script>\n  <style>@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:100;src:url(\"./media/ibm-plex-sans-latin-100-normal-5JYGBT2W.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-100-normal-3DVESQ5R.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:200;src:url(\"./media/ibm-plex-sans-latin-200-normal-NQ7GGSKY.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-200-normal-3MJVPXDS.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:300;src:url(\"./media/ibm-plex-sans-latin-300-normal-LWHZPPGB.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-300-normal-SEQH2KC5.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:400;src:url(\"./media/ibm-plex-sans-latin-400-normal-COQVXTP6.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-400-normal-CQ4Y6APF.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:500;src:url(\"./media/ibm-plex-sans-latin-500-normal-JTONHBWS.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-500-normal-AYNPQPGU.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:600;src:url(\"./media/ibm-plex-sans-latin-600-normal-DTNZULF4.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-600-normal-LA7D2FY4.woff\") format(\"woff\")}@font-face{font-family:IBM Plex Sans;font-style:normal;font-display:swap;font-weight:700;src:url(\"./media/ibm-plex-sans-latin-700-normal-IXG35DPN.woff2\") format(\"woff2\"),url(\"./media/ibm-plex-sans-latin-700-normal-M4EGDRED.woff\") format(\"woff\")}:root{--gv-theme-color-darker:#383E3F;--gv-theme-color-dark:#28444F;--gv-theme-color:#5A7684;--gv-theme-color-light:#86c3d0;--gv-theme-color-danger:#FF5722;--gv-theme-color-error-dark:#d32f2f;--gv-theme-color-error:#f44336;--gv-theme-color-error-light:#e57373;--gv-theme-color-info-dark:#1976d2;--gv-theme-color-info:#2196f3;--gv-theme-color-info-light:#64b5f6;--gv-theme-color-success-dark:#388e3c;--gv-theme-color-success:#4caf50;--gv-theme-color-success-light:#81c784;--gv-theme-color-warning-dark:#f57c00;--gv-theme-color-warning:#ff9800;--gv-theme-color-warning-light:#ffb74d;--gv-theme-neutral-color-darkest:#000000;--gv-theme-neutral-color-darker:#BFBFBF;--gv-theme-neutral-color-dark:#D9D9D9;--gv-theme-neutral-color:#F5F5F5;--gv-theme-neutral-color-light:#EFEFEF;--gv-theme-neutral-color-lighter:#FAFAFA;--gv-theme-neutral-color-lightest:#FFFFFF;--gv-theme-font-color-dark:#262626;--gv-theme-font-color-light:#FFFFFF;--gv-theme-font-family:\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif;--gv-theme-font-size-xs:10px;--gv-theme-font-size-s:12px;--gv-theme-font-size-m:14px;--gv-theme-font-size-l:16px;--gv-theme-font-size-xl:26px;--gv-theme-font-size-xxl:30px;--gv-theme-homepage-background-height:400px;--gv-theme-skeleton-color:#BFBFBF;--gv-theme-homepage-background-color:#5A7684;--gv-theme-homepage-background-image:none;--gv-theme-logo:url(/images/gravitee-logo-cyan.svg);--gv-theme-optional-logo:url(/images/gravitee-logo-white.svg);--gv-theme-favicon:/images/gravitee-favicon.png}:root{font-family:var(--gv-theme-font-family);font-size:var(--gv-theme-font-size-m);color:var(--gv-theme-font-color-dark);--gv-theme-layout--pb:1rem;--gv-theme-layout--pl:8rem;--gv-theme-layout--pr:8rem;--gv-theme-layout--pt:1rem;--gv-theme-layout-footer-bottom--h:150px;--gv-theme-layout-footer-top--h:338px;--gv-theme-layout-header--h:3.8rem;--gv-theme-page--pb:4rem;--gv-theme-page--pt:4rem}@media screen and (max-width: 1920px){:root{--gv-theme-layout--pr:250px;--gv-theme-layout--pl:250px}}@media screen and (max-width: 1680px){:root{--gv-theme-layout--pr:130px;--gv-theme-layout--pl:130px}}@media screen and (max-width: 1600px){:root{--gv-theme-layout--pr:90px;--gv-theme-layout--pl:90px}}@media screen and (max-width: 1440px){:root{--gv-theme-layout--pr:10px;--gv-theme-layout--pl:10px}}@media screen and (max-width: 1366px){:root{--gv-theme-layout--pr:8px;--gv-theme-layout--pl:8px}}@media only screen and (max-device-width: 1280px){:root{--gv-theme-layout--pr:5px;--gv-theme-layout--pl:5px}}body{margin:0}.loader{position:absolute;top:45%;left:45%;display:flex;margin:0 auto;width:200px;height:200px;border-radius:50%;box-sizing:border-box;border:10px solid var(--gv-theme-font-color-dark);animation:rotation 1s linear infinite;border-bottom-color:transparent}</style><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"styles-I7NT4OGN.css\"></noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\" media=\"print\" onload=\"this.media='all'\"><noscript><link rel=\"stylesheet\" href=\"swagger-ui-7Q4AM34N.css\"></noscript></head>\n  <body>\n    <span id=\"loader\" class=\"loader\"></span>\n    <app-root></app-root>\n  <link rel=\"modulepreload\" href=\"chunk-KN2P33P4.js\"><link rel=\"modulepreload\" href=\"chunk-TTYCJ4Y3.js\"><link rel=\"modulepreload\" href=\"chunk-QLBMUFUG.js\"><link rel=\"modulepreload\" href=\"chunk-J2PGSGMR.js\"><link rel=\"modulepreload\" href=\"chunk-TX4KLTBF.js\"><link rel=\"modulepreload\" href=\"chunk-B5RATLCQ.js\"><link rel=\"modulepreload\" href=\"chunk-FG5OZPFF.js\"><link rel=\"modulepreload\" href=\"chunk-NCX5P6VM.js\"><link rel=\"modulepreload\" href=\"chunk-2JRQFBFW.js\"><link rel=\"modulepreload\" href=\"chunk-3OGORZZE.js\"><script src=\"polyfills-ZBHMLD3T.js\" type=\"module\"></script><script src=\"scripts-LLFA6UFG.js\" defer></script><script src=\"main-F4HDGBO6.js\" type=\"module\"></script></body>\n</html>\n",
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:50:48.074207033Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://portal.api.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "info": {
+        "name": "Detect SSL Certificate Issuer",
+        "author": [
+          "lingtren"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "portal.api.esante.gouv.fr:443",
+      "extracted-results": [
+        "Let's Encrypt"
+      ],
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:51:01.882144349Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "vuln"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "portal.api.esante.gouv.fr",
+      "port": "443",
+      "matched-at": "portal.api.esante.gouv.fr:443",
+      "extracted-results": [
+        "portal.api.esante.gouv.fr"
+      ],
+      "ip": "146.59.202.59",
+      "timestamp": "2026-10-01T04:51:01.882414366Z",
+      "matcher-status": true
+    }
+  ]
+]
