@@ -41,9 +41,9 @@
       "url": "https://annuaire.esante.gouv.fr",
       "matched-at": "https://annuaire.esante.gouv.fr",
       "request": "POST / HTTP/1.1\r\nHost: annuaire.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
-      "response": "HTTP/1.1 405 Method Not Allowed\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-3ef1f0b3e3686ee9cd693f460ef1b88f'; script-src 'self' 'nonce-3ef1f0b3e3686ee9cd693f460ef1b88f'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 03:26:34 GMT\r\nServer: nginx/1.29.8\r\n\r\n<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></center>\r\n<hr><center>nginx/1.29.8</center>\r\n</body>\r\n</html>\r\n",
+      "response": "HTTP/1.1 405 Method Not Allowed\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-17540425bc5893db327630006244936e'; script-src 'self' 'nonce-17540425bc5893db327630006244936e'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Sun, 01 Nov 2026 03:36:46 GMT\r\nServer: nginx/1.29.8\r\n\r\n<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></center>\r\n<hr><center>nginx/1.29.8</center>\r\n</body>\r\n</html>\r\n",
       "ip": "57.130.55.81",
-      "timestamp": "2026-10-01T03:26:34.974383582Z",
+      "timestamp": "2026-11-01T03:36:46.940271242Z",
       "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: annuaire.esante.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://annuaire.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -77,7 +77,7 @@
         "tls12"
       ],
       "ip": "57.130.55.81",
-      "timestamp": "2026-10-01T03:28:23.65562746Z",
+      "timestamp": "2026-11-01T03:38:37.084834914Z",
       "matcher-status": true
     },
     {
@@ -110,36 +110,28 @@
         "tls13"
       ],
       "ip": "57.130.55.81",
-      "timestamp": "2026-10-01T03:28:23.978768543Z",
+      "timestamp": "2026-11-01T03:38:37.321469963Z",
       "matcher-status": true
     },
     {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "template": "http/technologies/fingerprinthub-web-fingerprints.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/fingerprinthub-web-fingerprints",
+      "template-id": "fingerprinthub-web-fingerprints",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/fingerprinthub-web-fingerprints.yaml",
       "info": {
-        "name": "HTTP Missing Security Headers",
+        "name": "FingerprintHub Technology Fingerprint",
         "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
+          "pdteam",
+          "righettod"
         ],
         "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
+          "tech",
+          "discovery"
         ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "description": "FingerprintHub Technology Fingerprint tests run in nuclei.",
+        "reference": [
+          "https://github.com/0x727/FingerprintHub"
+        ],
         "severity": "info",
         "metadata": {
           "max-request": 1
@@ -147,11 +139,11 @@
         "classification": {
           "cve-id": null,
           "cwe-id": [
-            "cwe-693"
+            "cwe-200"
           ]
         }
       },
-      "matcher-name": "x-frame-options",
+      "matcher-name": "qm-system",
       "type": "http",
       "host": "annuaire.esante.gouv.fr",
       "port": "443",
@@ -159,51 +151,34 @@
       "url": "https://annuaire.esante.gouv.fr",
       "matched-at": "https://annuaire.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: annuaire.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; script-src 'self' 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 03:28:30 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"main.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script></body>\n</html>\n\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-35293a1b72500bfd141fdc880f59cd03'; script-src 'self' 'nonce-35293a1b72500bfd141fdc880f59cd03'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Sun, 01 Nov 2026 03:39:03 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"35293a1b72500bfd141fdc880f59cd03\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"35293a1b72500bfd141fdc880f59cd03\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"35293a1b72500bfd141fdc880f59cd03\"></script><script src=\"main.js\" type=\"module\" nonce=\"35293a1b72500bfd141fdc880f59cd03\"></script></body>\n</html>\n\n",
       "ip": "57.130.55.81",
-      "timestamp": "2026-10-01T03:28:30.598260883Z",
+      "timestamp": "2026-11-01T03:39:04.071067916Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://annuaire.esante.gouv.fr'",
       "matcher-status": true
     },
     {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "template": "http/technologies/tech-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tech-detect",
+      "template-id": "tech-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/tech-detect.yaml",
       "info": {
-        "name": "HTTP Missing Security Headers",
+        "name": "Wappalyzer Technology Detection",
         "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
+          "hakluke",
+          "righettod",
+          "matejsmycka"
         ],
         "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
+          "tech",
+          "discovery"
         ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
         "severity": "info",
         "metadata": {
           "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
         }
       },
-      "matcher-name": "x-permitted-cross-domain-policies",
+      "matcher-name": "nginx",
       "type": "http",
       "host": "annuaire.esante.gouv.fr",
       "port": "443",
@@ -211,9 +186,47 @@
       "url": "https://annuaire.esante.gouv.fr",
       "matched-at": "https://annuaire.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: annuaire.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; script-src 'self' 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 03:28:30 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"main.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script></body>\n</html>\n\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-35293a1b72500bfd141fdc880f59cd03'; script-src 'self' 'nonce-35293a1b72500bfd141fdc880f59cd03'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Sun, 01 Nov 2026 03:39:03 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"35293a1b72500bfd141fdc880f59cd03\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"35293a1b72500bfd141fdc880f59cd03\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"35293a1b72500bfd141fdc880f59cd03\"></script><script src=\"main.js\" type=\"module\" nonce=\"35293a1b72500bfd141fdc880f59cd03\"></script></body>\n</html>\n\n",
       "ip": "57.130.55.81",
-      "timestamp": "2026-10-01T03:28:30.598687258Z",
+      "timestamp": "2026-11-01T03:39:04.076795237Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://annuaire.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/nginx/nginx-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/nginx-version",
+      "template-id": "nginx-version",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/nginx/nginx-version.yaml",
+      "info": {
+        "name": "Nginx version detect",
+        "author": [
+          "philippedelteil",
+          "daffainfo"
+        ],
+        "tags": [
+          "tech",
+          "nginx",
+          "discovery"
+        ],
+        "description": "Some nginx servers have the version on the response header. Useful when you need to find specific CVEs on your targets.",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "http",
+      "host": "annuaire.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://annuaire.esante.gouv.fr",
+      "matched-at": "https://annuaire.esante.gouv.fr",
+      "extracted-results": [
+        "nginx/1.29.8"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: annuaire.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-fae52b5b74ce47a1cba432d20a4b21db'; script-src 'self' 'nonce-fae52b5b74ce47a1cba432d20a4b21db'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Sun, 01 Nov 2026 03:39:06 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"fae52b5b74ce47a1cba432d20a4b21db\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"fae52b5b74ce47a1cba432d20a4b21db\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"fae52b5b74ce47a1cba432d20a4b21db\"></script><script src=\"main.js\" type=\"module\" nonce=\"fae52b5b74ce47a1cba432d20a4b21db\"></script></body>\n</html>\n\n",
+      "ip": "57.130.55.81",
+      "timestamp": "2026-11-01T03:39:06.342930293Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://annuaire.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -263,61 +276,9 @@
       "url": "https://annuaire.esante.gouv.fr",
       "matched-at": "https://annuaire.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: annuaire.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; script-src 'self' 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 03:28:30 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"main.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script></body>\n</html>\n\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-d5338623ba90ea22a34cce5e7528fa00'; script-src 'self' 'nonce-d5338623ba90ea22a34cce5e7528fa00'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Sun, 01 Nov 2026 03:39:13 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"d5338623ba90ea22a34cce5e7528fa00\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"main.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script></body>\n</html>\n\n",
       "ip": "57.130.55.81",
-      "timestamp": "2026-10-01T03:28:30.599054843Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://annuaire.esante.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "cross-origin-opener-policy",
-      "type": "http",
-      "host": "annuaire.esante.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://annuaire.esante.gouv.fr",
-      "matched-at": "https://annuaire.esante.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: annuaire.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; script-src 'self' 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 03:28:30 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"main.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script></body>\n</html>\n\n",
-      "ip": "57.130.55.81",
-      "timestamp": "2026-10-01T03:28:30.599404695Z",
+      "timestamp": "2026-11-01T03:39:13.106877697Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://annuaire.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -367,9 +328,9 @@
       "url": "https://annuaire.esante.gouv.fr",
       "matched-at": "https://annuaire.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: annuaire.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; script-src 'self' 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 03:28:30 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"main.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script></body>\n</html>\n\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-d5338623ba90ea22a34cce5e7528fa00'; script-src 'self' 'nonce-d5338623ba90ea22a34cce5e7528fa00'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Sun, 01 Nov 2026 03:39:13 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"d5338623ba90ea22a34cce5e7528fa00\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"main.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script></body>\n</html>\n\n",
       "ip": "57.130.55.81",
-      "timestamp": "2026-10-01T03:28:30.599744348Z",
+      "timestamp": "2026-11-01T03:39:13.107223475Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://annuaire.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -411,7 +372,7 @@
           ]
         }
       },
-      "matcher-name": "permissions-policy",
+      "matcher-name": "x-frame-options",
       "type": "http",
       "host": "annuaire.esante.gouv.fr",
       "port": "443",
@@ -419,9 +380,9 @@
       "url": "https://annuaire.esante.gouv.fr",
       "matched-at": "https://annuaire.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: annuaire.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; script-src 'self' 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 03:28:30 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"main.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script></body>\n</html>\n\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-d5338623ba90ea22a34cce5e7528fa00'; script-src 'self' 'nonce-d5338623ba90ea22a34cce5e7528fa00'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Sun, 01 Nov 2026 03:39:13 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"d5338623ba90ea22a34cce5e7528fa00\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"main.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script></body>\n</html>\n\n",
       "ip": "57.130.55.81",
-      "timestamp": "2026-10-01T03:28:30.600159362Z",
+      "timestamp": "2026-11-01T03:39:13.107503697Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://annuaire.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -471,9 +432,9 @@
       "url": "https://annuaire.esante.gouv.fr",
       "matched-at": "https://annuaire.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: annuaire.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; script-src 'self' 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 03:28:30 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"main.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script></body>\n</html>\n\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-d5338623ba90ea22a34cce5e7528fa00'; script-src 'self' 'nonce-d5338623ba90ea22a34cce5e7528fa00'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Sun, 01 Nov 2026 03:39:13 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"d5338623ba90ea22a34cce5e7528fa00\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"main.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script></body>\n</html>\n\n",
       "ip": "57.130.55.81",
-      "timestamp": "2026-10-01T03:28:30.600744072Z",
+      "timestamp": "2026-11-01T03:39:13.107815441Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://annuaire.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -523,9 +484,61 @@
       "url": "https://annuaire.esante.gouv.fr",
       "matched-at": "https://annuaire.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: annuaire.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; script-src 'self' 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 03:28:30 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"main.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script></body>\n</html>\n\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-d5338623ba90ea22a34cce5e7528fa00'; script-src 'self' 'nonce-d5338623ba90ea22a34cce5e7528fa00'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Sun, 01 Nov 2026 03:39:13 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"d5338623ba90ea22a34cce5e7528fa00\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"main.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script></body>\n</html>\n\n",
       "ip": "57.130.55.81",
-      "timestamp": "2026-10-01T03:28:30.601196155Z",
+      "timestamp": "2026-11-01T03:39:13.108229258Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://annuaire.esante.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "annuaire.esante.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://annuaire.esante.gouv.fr",
+      "matched-at": "https://annuaire.esante.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: annuaire.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-d5338623ba90ea22a34cce5e7528fa00'; script-src 'self' 'nonce-d5338623ba90ea22a34cce5e7528fa00'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Sun, 01 Nov 2026 03:39:13 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"d5338623ba90ea22a34cce5e7528fa00\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"main.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script></body>\n</html>\n\n",
+      "ip": "57.130.55.81",
+      "timestamp": "2026-11-01T03:39:13.108620035Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://annuaire.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -575,31 +588,39 @@
       "url": "https://annuaire.esante.gouv.fr",
       "matched-at": "https://annuaire.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: annuaire.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; script-src 'self' 'nonce-6274d0bb41fce6cd16c4ea46c0d19d41'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 03:28:30 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script><script src=\"main.js\" type=\"module\" nonce=\"6274d0bb41fce6cd16c4ea46c0d19d41\"></script></body>\n</html>\n\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-d5338623ba90ea22a34cce5e7528fa00'; script-src 'self' 'nonce-d5338623ba90ea22a34cce5e7528fa00'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Sun, 01 Nov 2026 03:39:13 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"d5338623ba90ea22a34cce5e7528fa00\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"main.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script></body>\n</html>\n\n",
       "ip": "57.130.55.81",
-      "timestamp": "2026-10-01T03:28:30.601562738Z",
+      "timestamp": "2026-11-01T03:39:13.10908987Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://annuaire.esante.gouv.fr'",
       "matcher-status": true
     },
     {
-      "template": "http/technologies/fingerprinthub-web-fingerprints.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/fingerprinthub-web-fingerprints",
-      "template-id": "fingerprinthub-web-fingerprints",
-      "template-path": "/home/runner/nuclei-templates/http/technologies/fingerprinthub-web-fingerprints.yaml",
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
       "info": {
-        "name": "FingerprintHub Technology Fingerprint",
+        "name": "HTTP Missing Security Headers",
         "author": [
-          "pdteam",
-          "righettod"
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
         ],
         "tags": [
-          "tech",
-          "discovery"
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
         ],
-        "description": "FingerprintHub Technology Fingerprint tests run in nuclei.",
-        "reference": [
-          "https://github.com/0x727/FingerprintHub"
-        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
         "severity": "info",
         "metadata": {
           "max-request": 1
@@ -607,11 +628,11 @@
         "classification": {
           "cve-id": null,
           "cwe-id": [
-            "cwe-200"
+            "cwe-693"
           ]
         }
       },
-      "matcher-name": "qm-system",
+      "matcher-name": "permissions-policy",
       "type": "http",
       "host": "annuaire.esante.gouv.fr",
       "port": "443",
@@ -619,34 +640,51 @@
       "url": "https://annuaire.esante.gouv.fr",
       "matched-at": "https://annuaire.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: annuaire.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-b41f3eebe0ddbd36fc7cd3a8e2b8e8b6'; script-src 'self' 'nonce-b41f3eebe0ddbd36fc7cd3a8e2b8e8b6'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 03:28:39 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"b41f3eebe0ddbd36fc7cd3a8e2b8e8b6\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"b41f3eebe0ddbd36fc7cd3a8e2b8e8b6\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"b41f3eebe0ddbd36fc7cd3a8e2b8e8b6\"></script><script src=\"main.js\" type=\"module\" nonce=\"b41f3eebe0ddbd36fc7cd3a8e2b8e8b6\"></script></body>\n</html>\n\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-d5338623ba90ea22a34cce5e7528fa00'; script-src 'self' 'nonce-d5338623ba90ea22a34cce5e7528fa00'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Sun, 01 Nov 2026 03:39:13 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"d5338623ba90ea22a34cce5e7528fa00\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"main.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script></body>\n</html>\n\n",
       "ip": "57.130.55.81",
-      "timestamp": "2026-10-01T03:28:40.123481062Z",
+      "timestamp": "2026-11-01T03:39:13.109481973Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://annuaire.esante.gouv.fr'",
       "matcher-status": true
     },
     {
-      "template": "http/technologies/tech-detect.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/tech-detect",
-      "template-id": "tech-detect",
-      "template-path": "/home/runner/nuclei-templates/http/technologies/tech-detect.yaml",
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
       "info": {
-        "name": "Wappalyzer Technology Detection",
+        "name": "HTTP Missing Security Headers",
         "author": [
-          "hakluke",
-          "righettod",
-          "matejsmycka"
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
         ],
         "tags": [
-          "tech",
-          "discovery"
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
         ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
         "severity": "info",
         "metadata": {
           "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
         }
       },
-      "matcher-name": "nginx",
+      "matcher-name": "x-permitted-cross-domain-policies",
       "type": "http",
       "host": "annuaire.esante.gouv.fr",
       "port": "443",
@@ -654,47 +692,9 @@
       "url": "https://annuaire.esante.gouv.fr",
       "matched-at": "https://annuaire.esante.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: annuaire.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-b41f3eebe0ddbd36fc7cd3a8e2b8e8b6'; script-src 'self' 'nonce-b41f3eebe0ddbd36fc7cd3a8e2b8e8b6'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 03:28:39 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"b41f3eebe0ddbd36fc7cd3a8e2b8e8b6\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"b41f3eebe0ddbd36fc7cd3a8e2b8e8b6\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"b41f3eebe0ddbd36fc7cd3a8e2b8e8b6\"></script><script src=\"main.js\" type=\"module\" nonce=\"b41f3eebe0ddbd36fc7cd3a8e2b8e8b6\"></script></body>\n</html>\n\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-d5338623ba90ea22a34cce5e7528fa00'; script-src 'self' 'nonce-d5338623ba90ea22a34cce5e7528fa00'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Sun, 01 Nov 2026 03:39:13 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"d5338623ba90ea22a34cce5e7528fa00\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script><script src=\"main.js\" type=\"module\" nonce=\"d5338623ba90ea22a34cce5e7528fa00\"></script></body>\n</html>\n\n",
       "ip": "57.130.55.81",
-      "timestamp": "2026-10-01T03:28:40.129801145Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://annuaire.esante.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/technologies/nginx/nginx-version.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/nginx-version",
-      "template-id": "nginx-version",
-      "template-path": "/home/runner/nuclei-templates/http/technologies/nginx/nginx-version.yaml",
-      "info": {
-        "name": "Nginx version detect",
-        "author": [
-          "philippedelteil",
-          "daffainfo"
-        ],
-        "tags": [
-          "tech",
-          "nginx",
-          "discovery"
-        ],
-        "description": "Some nginx servers have the version on the response header. Useful when you need to find specific CVEs on your targets.",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "type": "http",
-      "host": "annuaire.esante.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://annuaire.esante.gouv.fr",
-      "matched-at": "https://annuaire.esante.gouv.fr",
-      "extracted-results": [
-        "nginx/1.29.8"
-      ],
-      "request": "GET / HTTP/1.1\r\nHost: annuaire.esante.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Security-Policy: default-src 'self' https://use.typekit.net ; style-src 'self' https://p.typekit.net 'nonce-8e5eccc12e5eafc5f8a1baec036b3b30'; script-src 'self' 'nonce-8e5eccc12e5eafc5f8a1baec036b3b30'; img-src 'self' data: ; base-uri 'self'; trusted-types angular angular#bundler; require-trusted-types-for 'script';\r\nContent-Type: text/html\r\nDate: Thu, 01 Oct 2026 03:28:51 GMT\r\nServer: nginx/1.29.8\r\n\r\n<!DOCTYPE html>\n<!-- param lang to put in variable when there are multiple languages -->\n<html class=\"no-js\" dir=\"ltr\" lang=\"fr\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Annuaire Santé</title>\n  <base href=\"/\">\n  <meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\">\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n  <meta content=\"\" name=\"description\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"icon\" type=\"image/x-icon\">\n  <link href=\"/assets/img/favicon.ico\" rel=\"shortcut icon\" type=\"image/x-icon\">\n\n<link rel=\"stylesheet\" href=\"styles.css\"></head>\n<body>\n<noscript>\n  <p class=\"js-off\">Javascript est désactivé dans votre navigateur.</p>\n</noscript>\n\n<app-root ngcspnonce=\"8e5eccc12e5eafc5f8a1baec036b3b30\"></app-root>\n<script src=\"runtime.js\" type=\"module\" nonce=\"8e5eccc12e5eafc5f8a1baec036b3b30\"></script><script src=\"polyfills.js\" type=\"module\" nonce=\"8e5eccc12e5eafc5f8a1baec036b3b30\"></script><script src=\"main.js\" type=\"module\" nonce=\"8e5eccc12e5eafc5f8a1baec036b3b30\"></script></body>\n</html>\n\n",
-      "ip": "57.130.55.81",
-      "timestamp": "2026-10-01T03:28:51.883027159Z",
+      "timestamp": "2026-11-01T03:39:13.109870194Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://annuaire.esante.gouv.fr'",
       "matcher-status": true
     },
@@ -727,7 +727,7 @@
         "DigiCert Inc"
       ],
       "ip": "57.130.55.81",
-      "timestamp": "2026-10-01T03:29:03.068580445Z",
+      "timestamp": "2026-11-01T03:39:16.437806003Z",
       "matcher-status": true
     },
     {
@@ -759,7 +759,7 @@
         "annuaire.esante.gouv.fr"
       ],
       "ip": "57.130.55.81",
-      "timestamp": "2026-10-01T03:29:03.068776831Z",
+      "timestamp": "2026-11-01T03:39:16.438003451Z",
       "matcher-status": true
     }
   ]
